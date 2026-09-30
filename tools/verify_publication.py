@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 import re
 import subprocess
+from urllib.parse import unquote
+import posixpath
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,13 +17,18 @@ def git(*args):
 
 def main():
     errors = []
-    for path in ROOT.glob('*.md'):
-        for target in re.findall(r'\]\(([^\s)]+)\)', path.read_text(encoding='utf-8')):
+    published = set(filter(None, git('ls-files', '-z').decode().split('\0')))
+    for name in sorted(published):
+        path = Path(name)
+        if path.suffix.lower() != '.md':
+            continue
+        for target in re.findall(r'\]\(([^\s)]+)\)', git('show', f':{name}').decode('utf-8-sig')):
             if target.startswith(('http://', 'https://', '#')):
                 continue
-            local = target.split('#', 1)[0]
-            if not (path.parent / local).exists():
-                errors.append(f'Broken link: {path.name}: {local}')
+            local = unquote(target.split('#', 1)[0])
+            resolved = posixpath.normpath(posixpath.join(path.parent.as_posix(), local))
+            if resolved not in published and not any(p.startswith(resolved.rstrip('/')+'/') for p in published):
+                errors.append(f'Unpublished/broken link: {name}: {local}')
     for manifest_path in ROOT.glob('*PUBLICATION_MANIFEST.json'):
         manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
         sources = manifest.get('original_training_source_sha256', manifest.get('source_sha256', {}))
@@ -31,6 +38,16 @@ def main():
         for name, expected in manifest['published_evidence_sha256'].items():
             if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
                 errors.append(f'Evidence hash mismatch: {name}')
+        for name, expected in manifest.get('protocol_files_sha256', {}).items():
+            if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+                errors.append(f'Frozen protocol hash mismatch: {name}')
+        bindings = {**sources, **manifest['published_evidence_sha256'],
+                    **manifest.get('protocol_files_sha256', {})}
+        for name, expected in bindings.items():
+            if name not in published:
+                errors.append(f'Manifest references unpublished file: {name}')
+            elif hashlib.sha256(git('show', f':{name}')).hexdigest() != expected:
+                errors.append(f'Staged source/evidence hash mismatch: {name}')
         if 'protocol_sha256' in manifest:
             if hashlib.sha256((ROOT / 'A0_PROTOCOL.md').read_bytes()).hexdigest() != manifest['protocol_sha256']:
                 errors.append('A0 frozen protocol hash mismatch')
@@ -50,7 +67,7 @@ def main():
         path = Path(name)
         if name.startswith(('runs/', 'analyses/')) or '__pycache__' in path.parts:
             errors.append(f'Local output staged: {name}')
-        if path.suffix in {'.pt', '.pth', '.ckpt', '.pyc', '.log', '.pid'} or path.name == 'launch_receipt.json':
+        if path.suffix in {'.pt', '.pth', '.ckpt', '.pyc', '.log', '.pid', '.zip'} or path.name == 'launch_receipt.json':
             errors.append(f'Excluded artifact staged: {name}')
         blob = git('show', f':{name}')
         total += len(blob)

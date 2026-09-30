@@ -1,0 +1,38 @@
+{
+  "unit_tests": {
+    "tests_run": 8,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "checked_utc": "2026-09-30T16:59:24.492311+00:00",
+  "executed_source_sha256_matches_published": true,
+  "linear_checks_scope": "Pure-transport and frozen linear systems only; not full learned stability or task efficacy.",
+  "preflight_scope": "Three full-size CUDA optimizer updates per arm plus abbreviated evaluation; no efficacy claim.",
+  "preflight": [
+    {
+      "arm": "nca_state_matched",
+      "updates": 3,
+      "parameters": 4993,
+      "train_peak_allocated_bytes": 341621760
+    },
+    {
+      "arm": "momentum_nca",
+      "updates": 3,
+      "parameters": 4689,
+      "train_peak_allocated_bytes": 371535360
+    },
+    {
+      "arm": "rd_nca",
+      "updates": 3,
+      "parameters": 4721,
+      "train_peak_allocated_bytes": 408531456
+    },
+    {
+      "arm": "inertial_rd",
+      "updates": 3,
+      "parameters": 4737,
+      "train_peak_allocated_bytes": 442675712
+    }
+  ]
+}

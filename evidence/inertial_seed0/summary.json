@@ -1,0 +1,1096 @@
+{
+  "protocol": "inertial_seeded_region_identity_seed0",
+  "execution_status": "COMPLETED_FROZEN_SCREEN",
+  "scientific_status": "NEGATIVE_EXPLORATORY_SCREEN",
+  "scientific_status_scope": "Descriptive interpretation after the frozen screen; not a preregistered binary efficacy gate.",
+  "independent_training_seeds": [
+    0
+  ],
+  "dimension": 2,
+  "evaluation_examples_per_size": 16,
+  "total_wall_seconds": 458.075274,
+  "all_sustained_95_thresholds_missing": true,
+  "candidate_conditional_repair_status": "UNEVALUABLE_ZERO_ELIGIBLE",
+  "not_established": [
+    "benefit over generic momentum",
+    "matched-quality speedup",
+    "conditional repair advantage",
+    "multi-seed superiority",
+    "3D effectiveness",
+    "PDE/NCA-family impossibility"
+  ],
+  "arms": [
+    {
+      "status": "TRAINED",
+      "seed": 0,
+      "completed_updates": 800,
+      "training_seconds_including_python_and_first_compile": 53.31060499999876,
+      "train_peak_allocated_bytes": 341654528,
+      "gradient_clip_fraction": 0.6775,
+      "gradient_probes": [
+        {
+          "steps": 16,
+          "loss": 0.4221615791320801,
+          "initial_state_task_gradient_l2": 0.1611703485250473
+        },
+        {
+          "steps": 64,
+          "loss": 0.4083654284477234,
+          "initial_state_task_gradient_l2": 38.748046875
+        }
+      ],
+      "arm": "nca_state_matched",
+      "initial_model": {
+        "arm": "nca_state_matched",
+        "content_channels": 32,
+        "persistent_scalars_per_cell": 32,
+        "hidden_width": 48,
+        "parameters": 4993,
+        "beta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "d": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "eta": 0.1
+      },
+      "final_model": {
+        "arm": "nca_state_matched",
+        "content_channels": 32,
+        "persistent_scalars_per_cell": 32,
+        "hidden_width": 48,
+        "parameters": 4993,
+        "beta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "d": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "eta": 0.1
+      },
+      "evaluation": {
+        "32": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.7744709849357605,
+              "bce": 0.4071418046951294,
+              "content_rms": 0.7403795719146729,
+              "velocity_rms": null,
+              "paired_correct": 0.2633374035358429,
+              "median_seconds_per_query": 0.0005857250007466064
+            },
+            "32": {
+              "balanced_accuracy": 0.8586207628250122,
+              "bce": 0.26867640018463135,
+              "content_rms": 1.6700427532196045,
+              "velocity_rms": null,
+              "paired_correct": 0.4465286135673523,
+              "median_seconds_per_query": 0.0012314750001678476
+            },
+            "64": {
+              "balanced_accuracy": 0.8516697883605957,
+              "bce": 0.2579170763492584,
+              "content_rms": 3.8511111736297607,
+              "velocity_rms": null,
+              "paired_correct": 0.4930572509765625,
+              "median_seconds_per_query": 0.0024172624998755055
+            },
+            "128": {
+              "balanced_accuracy": 0.838098406791687,
+              "bce": 0.28953051567077637,
+              "content_rms": 8.306467056274414,
+              "velocity_rms": null,
+              "paired_correct": 0.39049938321113586,
+              "median_seconds_per_query": 0.0051647374993990525
+            },
+            "256": {
+              "balanced_accuracy": 0.8284624814987183,
+              "bce": 0.41120386123657227,
+              "content_rms": 17.157690048217773,
+              "velocity_rms": null,
+              "paired_correct": 0.38440924882888794,
+              "median_seconds_per_query": 0.009678899999926216
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 3
+        },
+        "64": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.6300682425498962,
+              "bce": 0.5762192606925964,
+              "content_rms": 0.5904119610786438,
+              "velocity_rms": null,
+              "paired_correct": 0.07807382196187973,
+              "median_seconds_per_query": 0.001080750000255648
+            },
+            "32": {
+              "balanced_accuracy": 0.724295973777771,
+              "bce": 0.6880165338516235,
+              "content_rms": 1.5985972881317139,
+              "velocity_rms": null,
+              "paired_correct": 0.13074266910552979,
+              "median_seconds_per_query": 0.0022625000001426088
+            },
+            "64": {
+              "balanced_accuracy": 0.7368289232254028,
+              "bce": 3.3161778450012207,
+              "content_rms": 5.2620530128479,
+              "velocity_rms": null,
+              "paired_correct": 0.13184916973114014,
+              "median_seconds_per_query": 0.004509924999183568
+            },
+            "128": {
+              "balanced_accuracy": 0.7327308058738708,
+              "bce": 8.763381958007812,
+              "content_rms": 13.335599899291992,
+              "velocity_rms": null,
+              "paired_correct": 0.12985748052597046,
+              "median_seconds_per_query": 0.009082875000785862
+            },
+            "256": {
+              "balanced_accuracy": 0.7302848100662231,
+              "bce": 20.361156463623047,
+              "content_rms": 29.937807083129883,
+              "velocity_rms": null,
+              "paired_correct": 0.12746746838092804,
+              "median_seconds_per_query": 0.01817562500036729
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 2
+        },
+        "128": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.533336877822876,
+              "bce": 0.6773240566253662,
+              "content_rms": 0.5026137828826904,
+              "velocity_rms": null,
+              "paired_correct": 0.024193154647946358,
+              "median_seconds_per_query": 0.007479937499738298
+            },
+            "32": {
+              "balanced_accuracy": 0.5546202063560486,
+              "bce": 2.461013078689575,
+              "content_rms": 1.7647017240524292,
+              "velocity_rms": null,
+              "paired_correct": 0.04042787104845047,
+              "median_seconds_per_query": 0.015938762499899894
+            },
+            "64": {
+              "balanced_accuracy": 0.5559800863265991,
+              "bce": 11.00798225402832,
+              "content_rms": 6.937112331390381,
+              "velocity_rms": null,
+              "paired_correct": 0.04174816608428955,
+              "median_seconds_per_query": 0.030855287500344275
+            },
+            "128": {
+              "balanced_accuracy": 0.5557679533958435,
+              "bce": 29.05327606201172,
+              "content_rms": 18.04500961303711,
+              "velocity_rms": null,
+              "paired_correct": 0.04173593968153,
+              "median_seconds_per_query": 0.061203049999676296
+            },
+            "256": {
+              "balanced_accuracy": 0.5554107427597046,
+              "bce": 66.84420013427734,
+              "content_rms": 40.885780334472656,
+              "velocity_rms": null,
+              "paired_correct": 0.04145476594567299,
+              "median_seconds_per_query": 0.12429533749946131
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 0
+        }
+      }
+    },
+    {
+      "status": "TRAINED",
+      "seed": 0,
+      "completed_updates": 800,
+      "training_seconds_including_python_and_first_compile": 56.95604850000382,
+      "train_peak_allocated_bytes": 371568128,
+      "gradient_clip_fraction": 0.94,
+      "gradient_probes": [
+        {
+          "steps": 16,
+          "loss": 0.5176517367362976,
+          "initial_state_task_gradient_l2": 0.49886471033096313
+        },
+        {
+          "steps": 64,
+          "loss": 0.3503357470035553,
+          "initial_state_task_gradient_l2": 628.2086791992188
+        }
+      ],
+      "arm": "momentum_nca",
+      "initial_model": {
+        "arm": "momentum_nca",
+        "content_channels": 16,
+        "persistent_scalars_per_cell": 32,
+        "hidden_width": 88,
+        "parameters": 4689,
+        "beta": [
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869
+        ],
+        "d": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "eta": 0.1
+      },
+      "final_model": {
+        "arm": "momentum_nca",
+        "content_channels": 16,
+        "persistent_scalars_per_cell": 32,
+        "hidden_width": 88,
+        "parameters": 4689,
+        "beta": [
+          0.9034749865531921,
+          0.8966137170791626,
+          0.9056666493415833,
+          0.9058329463005066,
+          0.899558961391449,
+          0.8974955677986145,
+          0.8913324475288391,
+          0.8995346426963806,
+          0.9045447707176208,
+          0.9007874727249146,
+          0.9030037522315979,
+          0.920815110206604,
+          0.8998530507087708,
+          0.9030280709266663,
+          0.9038092494010925,
+          0.902238130569458
+        ],
+        "d": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "eta": 0.1
+      },
+      "evaluation": {
+        "32": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.7513102293014526,
+              "bce": 0.46921491622924805,
+              "content_rms": 1.6338599920272827,
+              "velocity_rms": 0.19239678978919983,
+              "paired_correct": 0.19001218676567078,
+              "median_seconds_per_query": 0.0006988499999351916
+            },
+            "32": {
+              "balanced_accuracy": 0.850684642791748,
+              "bce": 0.28340232372283936,
+              "content_rms": 5.08500862121582,
+              "velocity_rms": 0.2892371714115143,
+              "paired_correct": 0.3907429873943329,
+              "median_seconds_per_query": 0.0013495749999492546
+            },
+            "64": {
+              "balanced_accuracy": 0.8443683385848999,
+              "bce": 0.3216845989227295,
+              "content_rms": 14.38316535949707,
+              "velocity_rms": 0.33826345205307007,
+              "paired_correct": 0.42752739787101746,
+              "median_seconds_per_query": 0.002805212499879417
+            },
+            "128": {
+              "balanced_accuracy": 0.8169143199920654,
+              "bce": 0.4661048352718353,
+              "content_rms": 35.3836669921875,
+              "velocity_rms": 0.3522352874279022,
+              "paired_correct": 0.38124239444732666,
+              "median_seconds_per_query": 0.005380912500186241
+            },
+            "256": {
+              "balanced_accuracy": 0.733811616897583,
+              "bce": 1.2479380369186401,
+              "content_rms": 79.62989044189453,
+              "velocity_rms": 0.3598528504371643,
+              "paired_correct": 0.28599268198013306,
+              "median_seconds_per_query": 0.01054666250001901
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 1
+        },
+        "64": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.5730120539665222,
+              "bce": 0.630220353603363,
+              "content_rms": 1.424870491027832,
+              "velocity_rms": 0.1542666256427765,
+              "paired_correct": 0.043639905750751495,
+              "median_seconds_per_query": 0.001169987500361458
+            },
+            "32": {
+              "balanced_accuracy": 0.6849505305290222,
+              "bce": 0.5325067639350891,
+              "content_rms": 4.08207368850708,
+              "velocity_rms": 0.2586631178855896,
+              "paired_correct": 0.11609277129173279,
+              "median_seconds_per_query": 0.0025299625003754045
+            },
+            "64": {
+              "balanced_accuracy": 0.7594380378723145,
+              "bce": 0.48076075315475464,
+              "content_rms": 11.998351097106934,
+              "velocity_rms": 0.3219492435455322,
+              "paired_correct": 0.1904487907886505,
+              "median_seconds_per_query": 0.004837212500206078
+            },
+            "128": {
+              "balanced_accuracy": 0.7687906622886658,
+              "bce": 0.6587079763412476,
+              "content_rms": 30.7951602935791,
+              "velocity_rms": 0.3301118314266205,
+              "paired_correct": 0.2043905407190323,
+              "median_seconds_per_query": 0.009698237500742835
+            },
+            "256": {
+              "balanced_accuracy": 0.7446885108947754,
+              "bce": 1.2126946449279785,
+              "content_rms": 71.7144775390625,
+              "velocity_rms": 0.33166080713272095,
+              "paired_correct": 0.17287775874137878,
+              "median_seconds_per_query": 0.019176150000021153
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 0
+        },
+        "128": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.5203809142112732,
+              "bce": 0.6792818307876587,
+              "content_rms": 1.3420261144638062,
+              "velocity_rms": 0.13324175775051117,
+              "paired_correct": 0.01475550141185522,
+              "median_seconds_per_query": 0.005838375000166707
+            },
+            "32": {
+              "balanced_accuracy": 0.5540173649787903,
+              "bce": 0.7968554496765137,
+              "content_rms": 3.416832447052002,
+              "velocity_rms": 0.22004197537899017,
+              "paired_correct": 0.04024449735879898,
+              "median_seconds_per_query": 0.011842437499581138
+            },
+            "64": {
+              "balanced_accuracy": 0.6014416217803955,
+              "bce": 2.699357748031616,
+              "content_rms": 10.736337661743164,
+              "velocity_rms": 0.35070478916168213,
+              "paired_correct": 0.07893642783164978,
+              "median_seconds_per_query": 0.023905762499452976
+            },
+            "128": {
+              "balanced_accuracy": 0.6614123582839966,
+              "bce": 3.974825859069824,
+              "content_rms": 28.993310928344727,
+              "velocity_rms": 0.35461392998695374,
+              "paired_correct": 0.12687040865421295,
+              "median_seconds_per_query": 0.047864074999779405
+            },
+            "256": {
+              "balanced_accuracy": 0.6718102097511292,
+              "bce": 7.712793350219727,
+              "content_rms": 71.03190612792969,
+              "velocity_rms": 0.3609047830104828,
+              "paired_correct": 0.1334841102361679,
+              "median_seconds_per_query": 0.09437411250019068
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 0
+        }
+      }
+    },
+    {
+      "status": "TRAINED",
+      "seed": 0,
+      "completed_updates": 800,
+      "training_seconds_including_python_and_first_compile": 61.786759400005394,
+      "train_peak_allocated_bytes": 408564224,
+      "gradient_clip_fraction": 0.87625,
+      "gradient_probes": [
+        {
+          "steps": 16,
+          "loss": 0.6366569995880127,
+          "initial_state_task_gradient_l2": 0.09750795364379883
+        },
+        {
+          "steps": 64,
+          "loss": 0.876307487487793,
+          "initial_state_task_gradient_l2": 4.116065979003906
+        }
+      ],
+      "arm": "rd_nca",
+      "initial_model": {
+        "arm": "rd_nca",
+        "content_channels": 16,
+        "persistent_scalars_per_cell": 16,
+        "hidden_width": 128,
+        "parameters": 4721,
+        "beta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "d": [
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731,
+          0.10000001639127731
+        ],
+        "eta": 0.1
+      },
+      "final_model": {
+        "arm": "rd_nca",
+        "content_channels": 16,
+        "persistent_scalars_per_cell": 16,
+        "hidden_width": 128,
+        "parameters": 4721,
+        "beta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "d": [
+          0.11804980039596558,
+          0.11470646411180496,
+          0.11520415544509888,
+          0.10995813459157944,
+          0.116897813975811,
+          0.11441341787576675,
+          0.11278503388166428,
+          0.1250799298286438,
+          0.11965771019458771,
+          0.1050914004445076,
+          0.1235056072473526,
+          0.11821361631155014,
+          0.12055451422929764,
+          0.11165148764848709,
+          0.110066719353199,
+          0.11855042725801468
+        ],
+        "eta": 0.1
+      },
+      "evaluation": {
+        "32": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.6351604461669922,
+              "bce": 0.6306928992271423,
+              "content_rms": 0.33251282572746277,
+              "velocity_rms": null,
+              "paired_correct": 0.11230207234621048,
+              "median_seconds_per_query": 0.0010203500005445676
+            },
+            "32": {
+              "balanced_accuracy": 0.7905710339546204,
+              "bce": 0.44047626852989197,
+              "content_rms": 1.4517751932144165,
+              "velocity_rms": null,
+              "paired_correct": 0.31595614552497864,
+              "median_seconds_per_query": 0.002505212500182097
+            },
+            "64": {
+              "balanced_accuracy": 0.8126893043518066,
+              "bce": 0.49096471071243286,
+              "content_rms": 5.7366790771484375,
+              "velocity_rms": null,
+              "paired_correct": 0.378075510263443,
+              "median_seconds_per_query": 0.0036569625008269213
+            },
+            "128": {
+              "balanced_accuracy": 0.8076021075248718,
+              "bce": 0.6676408648490906,
+              "content_rms": 14.087907791137695,
+              "velocity_rms": null,
+              "paired_correct": 0.39975640177726746,
+              "median_seconds_per_query": 0.006365312500747677
+            },
+            "256": {
+              "balanced_accuracy": 0.7478574514389038,
+              "bce": 1.4167070388793945,
+              "content_rms": 29.552772521972656,
+              "velocity_rms": null,
+              "paired_correct": 0.41266748309135437,
+              "median_seconds_per_query": 0.012161412500063307
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 0
+        },
+        "64": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.5390042066574097,
+              "bce": 0.6792494058609009,
+              "content_rms": 0.26345178484916687,
+              "velocity_rms": null,
+              "paired_correct": 0.021819952875375748,
+              "median_seconds_per_query": 0.0014115375006440445
+            },
+            "32": {
+              "balanced_accuracy": 0.5926799774169922,
+              "bce": 0.6407970190048218,
+              "content_rms": 0.9023914933204651,
+              "velocity_rms": null,
+              "paired_correct": 0.059529077261686325,
+              "median_seconds_per_query": 0.0028601499998330837
+            },
+            "64": {
+              "balanced_accuracy": 0.6027830839157104,
+              "bce": 1.1968166828155518,
+              "content_rms": 5.4661688804626465,
+              "velocity_rms": null,
+              "paired_correct": 0.06368947774171829,
+              "median_seconds_per_query": 0.005932924999797251
+            },
+            "128": {
+              "balanced_accuracy": 0.6002516150474548,
+              "bce": 1.9872595071792603,
+              "content_rms": 15.353060722351074,
+              "velocity_rms": null,
+              "paired_correct": 0.0551031231880188,
+              "median_seconds_per_query": 0.011552962499990826
+            },
+            "256": {
+              "balanced_accuracy": 0.5689380168914795,
+              "bce": 4.4051079750061035,
+              "content_rms": 37.5421257019043,
+              "velocity_rms": null,
+              "paired_correct": 0.025316456332802773,
+              "median_seconds_per_query": 0.02285016249970795
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 0
+        },
+        "128": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.5116472244262695,
+              "bce": 0.6905944347381592,
+              "content_rms": 0.2527903616428375,
+              "velocity_rms": null,
+              "paired_correct": 0.006735941395163536,
+              "median_seconds_per_query": 0.007220425000014075
+            },
+            "32": {
+              "balanced_accuracy": 0.5179275274276733,
+              "bce": 0.7403343915939331,
+              "content_rms": 0.8492717742919922,
+              "velocity_rms": null,
+              "paired_correct": 0.015721270814538002,
+              "median_seconds_per_query": 0.013943437500529399
+            },
+            "64": {
+              "balanced_accuracy": 0.518742561340332,
+              "bce": 1.7034053802490234,
+              "content_rms": 6.228349208831787,
+              "velocity_rms": null,
+              "paired_correct": 0.01491442508995533,
+              "median_seconds_per_query": 0.027843562500493135
+            },
+            "128": {
+              "balanced_accuracy": 0.5104058384895325,
+              "bce": 3.1094679832458496,
+              "content_rms": 18.092721939086914,
+              "velocity_rms": null,
+              "paired_correct": 0.007652811706066132,
+              "median_seconds_per_query": 0.056079837499964924
+            },
+            "256": {
+              "balanced_accuracy": 0.5032747983932495,
+              "bce": 6.423002243041992,
+              "content_rms": 43.16099548339844,
+              "velocity_rms": null,
+              "paired_correct": 0.0017603911692276597,
+              "median_seconds_per_query": 0.11136561250077648
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 0
+        }
+      }
+    },
+    {
+      "status": "TRAINED",
+      "seed": 0,
+      "completed_updates": 800,
+      "training_seconds_including_python_and_first_compile": 75.87177990000055,
+      "train_peak_allocated_bytes": 442708480,
+      "gradient_clip_fraction": 0.805,
+      "gradient_probes": [
+        {
+          "steps": 16,
+          "loss": 0.622576117515564,
+          "initial_state_task_gradient_l2": 0.19043706357479095
+        },
+        {
+          "steps": 64,
+          "loss": 0.9070407152175903,
+          "initial_state_task_gradient_l2": 1.5154296159744263
+        }
+      ],
+      "arm": "inertial_rd",
+      "initial_model": {
+        "arm": "inertial_rd",
+        "content_channels": 16,
+        "persistent_scalars_per_cell": 32,
+        "hidden_width": 128,
+        "parameters": 4737,
+        "beta": [
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869,
+          0.9000000357627869
+        ],
+        "d": [
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672,
+          0.10000000894069672
+        ],
+        "eta": 0.1
+      },
+      "final_model": {
+        "arm": "inertial_rd",
+        "content_channels": 16,
+        "persistent_scalars_per_cell": 32,
+        "hidden_width": 128,
+        "parameters": 4737,
+        "beta": [
+          0.8951223492622375,
+          0.8915785551071167,
+          0.8932522535324097,
+          0.8952176570892334,
+          0.899975061416626,
+          0.8987268805503845,
+          0.9009930491447449,
+          0.8957725167274475,
+          0.8966028690338135,
+          0.8944373726844788,
+          0.8968916535377502,
+          0.8987315893173218,
+          0.8988864421844482,
+          0.8970760703086853,
+          0.8943960070610046,
+          0.895673394203186
+        ],
+        "d": [
+          0.08648151159286499,
+          0.07625177502632141,
+          0.10087671875953674,
+          0.11182812601327896,
+          0.12274334579706192,
+          0.07863626629114151,
+          0.11278966069221497,
+          0.0933937355875969,
+          0.10459091514348984,
+          0.10401389002799988,
+          0.10163523256778717,
+          0.11370577663183212,
+          0.1088782399892807,
+          0.11236672103404999,
+          0.10162892937660217,
+          0.07302587479352951
+        ],
+        "eta": 0.1
+      },
+      "evaluation": {
+        "32": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.6846131086349487,
+              "bce": 0.6018245220184326,
+              "content_rms": 0.3610115051269531,
+              "velocity_rms": 0.05457658693194389,
+              "paired_correct": 0.12472594529390335,
+              "median_seconds_per_query": 0.0011677500006044284
+            },
+            "32": {
+              "balanced_accuracy": 0.7289384603500366,
+              "bce": 0.5824671983718872,
+              "content_rms": 1.7152196168899536,
+              "velocity_rms": 0.13679629564285278,
+              "paired_correct": 0.1693057268857956,
+              "median_seconds_per_query": 0.002068949999738834
+            },
+            "64": {
+              "balanced_accuracy": 0.6993811130523682,
+              "bce": 0.6750432848930359,
+              "content_rms": 5.070214748382568,
+              "velocity_rms": 0.1360689103603363,
+              "paired_correct": 0.17807552218437195,
+              "median_seconds_per_query": 0.003605237499868963
+            },
+            "128": {
+              "balanced_accuracy": 0.6017364263534546,
+              "bce": 2.4945778846740723,
+              "content_rms": 15.618977546691895,
+              "velocity_rms": 0.19646316766738892,
+              "paired_correct": 0.12472594529390335,
+              "median_seconds_per_query": 0.007238375000270025
+            },
+            "256": {
+              "balanced_accuracy": 0.5349569916725159,
+              "bce": 8.029963493347168,
+              "content_rms": 41.868534088134766,
+              "velocity_rms": 0.22983621060848236,
+              "paired_correct": 0.11303288489580154,
+              "median_seconds_per_query": 0.015411924999170878
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 0
+        },
+        "64": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.541973352432251,
+              "bce": 0.6765757203102112,
+              "content_rms": 0.2868119776248932,
+              "velocity_rms": 0.045050304383039474,
+              "paired_correct": 0.024431264027953148,
+              "median_seconds_per_query": 0.0032191000000239
+            },
+            "32": {
+              "balanced_accuracy": 0.5434568524360657,
+              "bce": 1.0391991138458252,
+              "content_rms": 1.7155903577804565,
+              "velocity_rms": 0.15626339614391327,
+              "paired_correct": 0.024696821346879005,
+              "median_seconds_per_query": 0.006947299999410461
+            },
+            "64": {
+              "balanced_accuracy": 0.5133597254753113,
+              "bce": 1.1930150985717773,
+              "content_rms": 6.030331611633301,
+              "velocity_rms": 0.16090023517608643,
+              "paired_correct": 0.0047800298780202866,
+              "median_seconds_per_query": 0.013830200000484183
+            },
+            "128": {
+              "balanced_accuracy": 0.5000406503677368,
+              "bce": 3.931392192840576,
+              "content_rms": 19.050643920898438,
+              "velocity_rms": 0.22965538501739502,
+              "paired_correct": 0.0,
+              "median_seconds_per_query": 0.02757853749972128
+            },
+            "256": {
+              "balanced_accuracy": 0.5,
+              "bce": 10.280511856079102,
+              "content_rms": 49.43832015991211,
+              "velocity_rms": 0.2404237538576126,
+              "paired_correct": 0.0,
+              "median_seconds_per_query": 0.054314537499521975
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 0
+        },
+        "128": {
+          "curve": {
+            "16": {
+              "balanced_accuracy": 0.5108882784843445,
+              "bce": 0.6952012181282043,
+              "content_rms": 0.2746507525444031,
+              "velocity_rms": 0.043533265590667725,
+              "paired_correct": 0.00783618539571762,
+              "median_seconds_per_query": 0.017048437500307045
+            },
+            "32": {
+              "balanced_accuracy": 0.509708046913147,
+              "bce": 1.219687581062317,
+              "content_rms": 1.8125264644622803,
+              "velocity_rms": 0.16667845845222473,
+              "paired_correct": 0.006833740975707769,
+              "median_seconds_per_query": 0.044325150000076974
+            },
+            "64": {
+              "balanced_accuracy": 0.5013813376426697,
+              "bce": 1.3048986196517944,
+              "content_rms": 6.336162567138672,
+              "velocity_rms": 0.16246618330478668,
+              "paired_correct": 0.0011246943613514304,
+              "median_seconds_per_query": 0.0909183125004347
+            },
+            "128": {
+              "balanced_accuracy": 0.5000022053718567,
+              "bce": 4.084596633911133,
+              "content_rms": 19.46579933166504,
+              "velocity_rms": 0.22973234951496124,
+              "paired_correct": 0.0,
+              "median_seconds_per_query": 0.24662192499999946
+            },
+            "256": {
+              "balanced_accuracy": 0.5,
+              "bce": 10.418067932128906,
+              "content_rms": 49.905879974365234,
+              "velocity_rms": 0.2403525412082672,
+              "paired_correct": 0.0,
+              "median_seconds_per_query": 0.4330266249999113
+            }
+          },
+          "first_sustained_95_steps": null,
+          "seconds_per_query_at_sustained_95": null,
+          "repair_eligible_at_T64": 0
+        }
+      }
+    }
+  ]
+}

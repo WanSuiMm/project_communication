@@ -1,6 +1,40 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Current work: A0 protocol `rt_a0_2d3d_v2_1` is implemented in `a0_models.py`
+Current work (2026-10-01): the user-supplied inertial NCA wind tunnel is integrated
+under `new/nca_inertial_wind_tunnel/`. Read its `WIND_TUNNEL.md` and
+`LOCAL_INTEGRATION.md`. The latter records the original archive hash, limited
+metric/output fixes and the frozen local 2D screen. Eight unit tests, the linear
+checks and four full-size CUDA preflight arms passed. Seed 0 learning completed
+on 2026-10-01 at 00:46:51 +08:00 on the local RTX 4060 Laptop GPU: all four arms
+finished 800 updates and all three evaluation sizes without a numerical-failure
+or budget-limit status. The
+local run directory is `runs/inertial_20261001_seed0/`. Public results are in
+`evidence/inertial_seed0/`; read its RESULTS.md and summary.json first.
+INERTIAL_PUBLICATION_MANIFEST.json binds source, protocol and evidence hashes.
+Private local status files and receipts are not required for GitHub review.
+
+This is a negative exploratory result for the current inertial_rd recipe, not a
+rejection of all PDE/NCA architectures. At 32x32 and T=64, balanced accuracy was
+85.17% (state-matched NCA), 84.44% (momentum NCA), 81.27% (RD) and 69.94%
+(inertial RD). Inertial RD declined to 53.50% at T=256, and to 50.00% at both
+64x64 and 128x128 at T=256, where paired-source correctness was zero. No arm
+reached sustained aggregate 95% BA. Inertial RD had zero pre-damage eligible
+examples at every size, so its conditional repair outcome is unevaluable.
+There is no benefit over generic momentum in this single-seed screen. Each size
+has 16 held-out maps; no multi-seed superiority or universal impossibility claim
+is established. No follow-up training or monitoring has been launched.
+
+Run from this repository root with CUDA (new output directory required):
+
+```powershell
+python new/nca_inertial_wind_tunnel/run_wind_tunnel.py --device cuda --arms all --seed 0 --steps 800 --minutes 25 --out runs/NEW_INERTIAL_SCREEN
+```
+
+This tests explicit transport plus inertia against generic momentum and state
+capacity controls. It does not test redesigned graph substrates or 3D, and does
+not revise the older A0 evidence. No automatic extra seeds or monitor is scheduled.
+
+Previous work: A0 protocol `rt_a0_2d3d_v2_1` is implemented in `a0_models.py`
 and `a0_runner.py`; see `A0_PROTOCOL.md`. It adds same-emission attention,
 oracle transport diagnostics and a paired 2x2 normalization/medium comparison.
 The new schedule has four seeds, 480 updates per trial, a 25-minute cap and

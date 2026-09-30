@@ -1,5 +1,45 @@
 # Context for incremental scientific review
 
+## Current 2D inertial wind-tunnel screen (seed 0)
+
+This separate experiment asks whether explicit five-point reaction–transport
+with inertia learns seeded-region identity better than generic momentum NCA,
+with a state-capacity control. Four arms completed 800 AdamW updates each on
+512 fixed 32x32 training maps. Evaluation uses 16 held-out maps per size
+(32/64/128) at horizons 16/32/64/128/256. This is one exploratory seed.
+
+At 32x32 and T=64, `inertial_rd` reached 69.94% balanced accuracy, compared
+with 84.44% for `momentum_nca` and 85.17% for `nca_state_matched`. At T=256,
+`inertial_rd` was at 50% balanced accuracy with zero paired-source correctness
+on sizes 64 and 128. Every arm/size 95%-sustained threshold is null. The
+candidate has zero repair-eligible examples at every size, so conditional
+repair is unevaluable; this is not a repair failure estimate.
+
+The result is negative for this one-seed recipe. It does not refute an
+architecture family or support multi-seed superiority, a 3D claim, a repair
+claim, or a speedup claim. The result also does not establish that the task
+and training recipe have a reliable positive control.
+
+Read the [compact summary](evidence/inertial_seed0/summary.json),
+[per-arm results](evidence/inertial_seed0/RESULTS.md), [configuration](evidence/inertial_seed0/config.json),
+[linear checks](evidence/inertial_seed0/linear_checks.json),
+[validation](evidence/inertial_seed0/validation.json), and
+[publication manifest](INERTIAL_PUBLICATION_MANIFEST.json). The detailed
+[candidate](evidence/inertial_seed0/arms/inertial_rd_seed0.json),
+[generic momentum control](evidence/inertial_seed0/arms/momentum_nca_seed0.json),
+and [state-matched control](evidence/inertial_seed0/arms/nca_state_matched_seed0.json)
+retain their per-horizon records. The source protocol is
+[WIND_TUNNEL.md](new/nca_inertial_wind_tunnel/WIND_TUNNEL.md), with analytic
+scope in [THEORY.md](new/nca_inertial_wind_tunnel/THEORY.md) and local evidence
+notes in [LOCAL_INTEGRATION.md](new/nca_inertial_wind_tunnel/LOCAL_INTEGRATION.md).
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Cell family, five-point operator, arm updates and coefficients | `ARMS`, `laplacian`, `Cell.step`, `Cell.coefficients`, `Cell.rollout`, `make_cell` | `new/nca_inertial_wind_tunnel/cells.py` |
+| Region maps, labels, damage and task metrics | `components`, `sample`, `bank`, `damage`, `metrics` | `new/nca_inertial_wind_tunnel/tasks.py` |
+| Training, evaluation, thresholds and timing | `sustained_threshold`, `evaluation`, `gradient_probe`, `benchmark`, `train_one`, `main` | `new/nca_inertial_wind_tunnel/run_wind_tunnel.py` |
+| Pure-transport analytic checks | `roots`, `radius`, `block_matrix`, `run` | `new/nca_inertial_wind_tunnel/math_checks.py` |
+
 ## Current A0 status and minimum route
 
 Protocol rt_a0_2d3d_v2_1 completed 24/24 conditional trials (40 maximum; 16 3D RT

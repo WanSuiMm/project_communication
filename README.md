@@ -1,8 +1,64 @@
-# Reaction-Transport: communication qualification in 2D and 3D
+# Cellular computation: reaction-transport and inertial NCA screens
+
+This repository preserves two distinct architecture experiments: implicit
+message transport (historical v1/A0, 2D/3D) and an explicit inertial NCA
+(latest screen, **2D only**). The latest question is whether a prescribed
+reaction/transport decomposition improves persistent spatial computation over
+generic momentum NCA. **The completed seed-0 screen is negative for the current
+recipe:** inertial RD has 69.94% balanced accuracy at 32x32/T64 versus 84.44%
+for generic momentum, and degrades with longer rollouts. No arm reaches the
+sustained aggregate 95% criterion; candidate repair is unevaluable because no
+pre-damage map qualifies. This is not a family-wide impossibility result.
+
+All four arms completed 800 updates and every planned evaluation. Read the
+[new result table](evidence/inertial_seed0/RESULTS.md) and
+[incremental handoff](GPT_HANDOFF.md) first. No extra seeds, 3D extension,
+rescue sweep or recurring monitor was launched. Historical evidence is unchanged.
+
+## Start here
+
+For incremental review from `eeb6514`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+
+1. [RESULTS.md](RESULTS.md): latest result and limits, followed by earlier A0/v1.
+2. [GPT_CONTEXT.md](GPT_CONTEXT.md): independent experiment scopes, status and exact code symbols.
+3. [WIND_TUNNEL.md](new/nca_inertial_wind_tunnel/WIND_TUNNEL.md) and
+   [LOCAL_INTEGRATION.md](new/nca_inertial_wind_tunnel/LOCAL_INTEGRATION.md): frozen recipe, metric fixes and sampler conventions.
+4. [summary.json](evidence/inertial_seed0/summary.json),
+   [config.json](evidence/inertial_seed0/config.json) and
+   [validation.json](evidence/inertial_seed0/validation.json): all horizons and implementation checks.
+5. [cells.py](new/nca_inertial_wind_tunnel/cells.py),
+   [ARCHITECTURE.md](ARCHITECTURE.md) and
+   [inertial theory](new/nca_inertial_wind_tunnel/THEORY.md): equations, shapes and limits.
+
+Open the four per-arm JSON files under `evidence/inertial_seed0/arms/` only for
+repair/revision controls, distance bins or detailed timings. Start with the
+small summaries above. [INERTIAL_PUBLICATION_MANIFEST.json](INERTIAL_PUBLICATION_MANIFEST.json)
+binds exact executed sources, protocol documents and byte-identical per-arm
+metrics. Checkpoints, ZIPs, machine receipts and transient logs are excluded.
+
+## Reproduce the latest screen
+
+Run from the repository root using Python with NumPy and CUDA PyTorch. The
+recorded environment used PyTorch 2.5.1, NumPy 1.26.4 and an RTX 4060 Laptop GPU;
+backend settings are recorded in the publication manifest. No dataset download
+is needed. Every output directory must be new.
+
+```powershell
+python new/nca_inertial_wind_tunnel/test_core.py
+python new/nca_inertial_wind_tunnel/math_checks.py --out runs/NEW_INERTIAL_CHECKS/linear_checks.json
+python new/nca_inertial_wind_tunnel/run_wind_tunnel.py --device cuda --arms all --preflight --minutes 5 --out runs/NEW_INERTIAL_PREFLIGHT
+python new/nca_inertial_wind_tunnel/run_wind_tunnel.py --device cuda --arms all --seed 0 --steps 800 --minutes 25 --out runs/NEW_INERTIAL_SCREEN
+```
+
+Preflight is three optimizer updates per arm and is not efficacy evidence.
+The last command starts the full screen. Cross-device bitwise determinism and
+speedup are not claimed. This publication does not schedule another run.
+
+## Earlier implicit-message experiments
 
 This project tests whether a visual field model can retain local state, exchange
 narrow messages through a learned symmetric medium, and learn distant dependence.
-**The latest A0 result is a negative qualification in 2D:** attention solves all
+**The earlier A0 result is a negative qualification in 2D:** attention solves all
 reported conditions in four seeds, while raw and confidence-normalized RT both
 fail training-scale fitting. **3D remains inconclusive:** one attention seed
 fails, so all 3D RT arms are skipped. There is no evidence of an RT advantage.
@@ -28,11 +84,11 @@ with a 4x4 transverse cross-section, rotating the long axis. It does not test
 general curved 3D geometry. CNN is width/depth-matched rather than parameter-
 matched; attention is a controlled SDPA message block rather than a tuned ViT.
 
-## Start here
+## Historical A0/v1 reading route
 
-For an incremental review from `c669e18`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+The A0 update followed `c669e18`; its evidence head is `74d7725`.
 
-1. [RESULTS.md](RESULTS.md): current A0 outcomes first, followed by historical v1.
+1. [RESULTS.md](RESULTS.md): the A0 and historical v1 sections follow the latest inertial result.
 2. [GPT_CONTEXT.md](GPT_CONTEXT.md): claim boundaries, code symbols and evidence routing.
 3. [A0_PROTOCOL.md](A0_PROTOCOL.md): current frozen intervention and stopping rules;
    [PROTOCOL.md](PROTOCOL.md) describes historical v1.
@@ -48,7 +104,7 @@ For an incremental review from `c669e18`, begin with [GPT_HANDOFF.md](GPT_HANDOF
 
 ## Run from the repository root
 
-Current A0 (requires CUDA, no silent CPU substitution):
+Reproducing A0 (requires CUDA, no silent CPU substitution):
 
 ```powershell
 python a0.py check --out runs/new_a0_checks
@@ -85,7 +141,7 @@ cross-device bitwise determinism is not claimed.
 
 ## Included evidence
 
-[A0_PUBLICATION_MANIFEST.json](A0_PUBLICATION_MANIFEST.json) binds the latest code,
+[A0_PUBLICATION_MANIFEST.json](A0_PUBLICATION_MANIFEST.json) binds the A0 code,
 protocol and exported completed run. Its [numerical/oracle checks](evidence/a0_v2_1/checks.json)
 establish software and fixed-signal recoverability, not learned-model success.
 Checkpoints, private machine receipts, transient logs and caches remain local.

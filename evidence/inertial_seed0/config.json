@@ -1,0 +1,67 @@
+{
+  "device": "cuda",
+  "arms": [
+    "all"
+  ],
+  "seed": 0,
+  "steps": 800,
+  "channels": 16,
+  "hidden": 128,
+  "size": 32,
+  "batch": 8,
+  "train_examples": 512,
+  "eval_examples": 16,
+  "train_horizons": [
+    32,
+    48,
+    64
+  ],
+  "eval_horizons": [
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "eval_sizes": [
+    32,
+    64,
+    128
+  ],
+  "base_steps": 64,
+  "recovery_steps": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "probe_horizons": [
+    16,
+    64
+  ],
+  "lr": 0.001,
+  "log_every": 100,
+  "threads": 2,
+  "minutes": 25.0,
+  "compile_cell": false,
+  "smoke": false,
+  "preflight": false,
+  "conventions": {
+    "train_data_seed": 10000,
+    "training_schedule_seed": 20000,
+    "evaluation_data_seeds": {
+      "32": 30032,
+      "64": 30064,
+      "128": 30128
+    },
+    "balanced_accuracy": "Mean across maps of mean recall over classes present in each map.",
+    "paired_correct": "Pooled changed-component pixels with both original and flipped answers correct.",
+    "sustained_95": "First tested horizon with aggregate BA>=.95 at it and all later tested horizons; missing=null.",
+    "damage_eligibility": "Per-map pre-damage BA>=.95 at T64; zero eligible gives null conditional outcome.",
+    "labels": "Random position-independent component identities, conditioned on both labels appearing per original map.",
+    "source_flip": "Largest connected component; geometry unchanged.",
+    "geometry": "Rooms grow with canvas size; walls and doors stay one pixel wide.",
+    "spatial_operator": "Whole-grid replicated-boundary five-point positive Laplacian, not component-masked.",
+    "timing": "Three warmups then median of three synchronized batch-eight full inference times divided by eight; throughput-normalized per-query timing, not isolated batch-one latency."
+  }
+}

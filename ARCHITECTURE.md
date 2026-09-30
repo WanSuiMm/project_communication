@@ -1,5 +1,65 @@
 # Tensor and operator map
 
+## Current 2D inertial wind-tunnel cell (seed 0)
+
+The separate seeded-region task supplies three channels at every update:
+open-region mask, positive seed and negative seed. Each connected region gets
+a binary identity; BFS creates the target. Models are not given component IDs
+or graph distances. Counterfactual evaluation flips the largest component's
+seed while leaving the map geometry fixed. `X` stays available, so this is
+conditional state repair. The ordinary five-point Laplacian is applied over
+the whole grid: it does not remove transport across walls or gate edges by
+connected component.
+
+The candidate has 16 content channels and a persistent 16-channel velocity.
+Its update is
+
+\[
+V_{t+1}=B V_t+\eta R_\theta(H_t;X)-D\mathcal L H_t,\qquad
+H_{t+1}=H_t+V_{t+1}.
+\]
+
+Here `R_theta` is a two-layer, pointwise Tanh MLP over `[H,X]`; it does not
+read neighboring cells. `B` and `D` are learned, spatially constant,
+per-channel coefficients, initialized at beta=0.9 and d=0.1; eta=0.1. The
+cell uses a replicated-edge, positive five-point Laplacian with unit grid
+spacing. The coefficient bounds come from the pure-transport calculation;
+they do not certify stability of the complete nonlinear cell.
+
+| Arm | Per-step update | Comparison role |
+|---|---|---|
+| `inertial_rd` | `V'=B V+eta R(H,X)-D LH; H'=H+V'` | Explicit diffusion and inertia candidate |
+| `momentum_nca` | `V'=B V+eta F(H,LH,X); H'=H+V'` | Generic momentum control with neighbor perception |
+| `rd_nca` | `H'=H+eta R(H,X)-D LH` | No-inertia reaction–diffusion control |
+| `nca_state_matched` | `U'=U+eta F(U,LU,X)`, with `U` having 2C channels | Persistent-state-capacity control |
+
+All use 16 base channels and local inputs. Hidden widths are chosen for
+approximate parameter-count matching; this does not match FLOPs, activation
+memory, latency or representational capacity exactly. The generic momentum
+arm learns a reaction that reads `LH`; the candidate's explicit Laplacian
+term is not a mask-aware or component-aware transport operator.
+
+In the seed-0 screen, at 32x32 and T=64, balanced accuracy was 69.94% for the
+candidate, 84.44% for generic momentum and 85.17% for the state-matched arm.
+At T=256, the candidate scored 50% balanced accuracy and zero paired-source
+correctness at both 64x64 and 128x128. All sustained-95% thresholds were null;
+candidate repair had zero eligible samples at every size and is therefore
+unevaluable. These results support only a one-seed negative screen under this
+recipe. They do not establish a family-level refutation, multi-seed advantage,
+3D result, repair success/failure or speedup.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Operators, arm updates and rollout | `laplacian`, `Cell.step`, `Cell.coefficients`, `Cell.rollout`, `make_cell` | `new/nca_inertial_wind_tunnel/cells.py` |
+| Task generation and damage | `components`, `sample`, `bank`, `damage`, `metrics` | `new/nca_inertial_wind_tunnel/tasks.py` |
+| Training and measured evaluation | `sustained_threshold`, `evaluation`, `gradient_probe`, `benchmark`, `train_one`, `main` | `new/nca_inertial_wind_tunnel/run_wind_tunnel.py` |
+| Pure-transport linear checks | `roots`, `radius`, `block_matrix`, `run` | `new/nca_inertial_wind_tunnel/math_checks.py` |
+
+The [compact evidence summary](evidence/inertial_seed0/summary.json),
+[per-arm results](evidence/inertial_seed0/RESULTS.md), and
+[publication manifest](INERTIAL_PUBLICATION_MANIFEST.json) are the entry
+points for this screen.
+
 The original operator/reaction below is unchanged. Current A0 extensions are
 described in the final section and [A0_PROTOCOL.md](A0_PROTOCOL.md).
 

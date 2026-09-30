@@ -1,6 +1,48 @@
-# Results: A0 completed, current RT not qualified
+# Results: inertial NCA screen, with preserved A0/v1 evidence
 
-Latest protocol: [rt_a0_2d3d_v2_1](A0_PROTOCOL.md). Read the
+## Latest: inertial NCA, 2D seed 0
+
+**Completed, negative exploratory screen for the current recipe.** Four arms
+completed 800 updates and all planned evaluations in approximately 7 minutes
+38 seconds. No numerical-failure or budget-limit status was recorded. Read the
+[new per-arm tables](evidence/inertial_seed0/RESULTS.md),
+[summary](evidence/inertial_seed0/summary.json) and
+[configuration](evidence/inertial_seed0/config.json) first.
+
+Balanced accuracy (%), 16 held-out maps at each size, one training seed:
+
+| Model | 32x32, T64 | 32x32, T256 | 64x64, T256 | 128x128, T256 |
+|---|---:|---:|---:|---:|
+| State-matched NCA | 85.17 | 82.85 | 73.03 | 55.54 |
+| Momentum NCA | 84.44 | 73.38 | 74.47 | 67.18 |
+| RD NCA | 81.27 | 74.79 | 56.89 | 50.33 |
+| Inertial RD | 69.94 | 53.50 | 50.00 | 50.00 |
+
+The candidate already underperforms at the training size and within the training
+rollout range. At 32x32 its accuracy drops from 72.89% at T32 to 53.50% at T256.
+At 64x64 and 128x128, paired-source correctness at T256 is zero. The tested
+reaction/transport parameterization shows no benefit over generic momentum.
+
+No arm reaches sustained aggregate 95% BA, so matched-quality time-to-solution
+is null. Inertial RD has zero pre-damage eligible maps at all sizes: its main
+conditional-repair endpoint is **unevaluable**, not a measured zero repair rate.
+Other models learn partial structure, but this recipe has not established a
+robust high-quality reference solution. Gradient clipping and latency are recorded;
+they do not establish trainability or systems superiority.
+
+This is one exploratory training seed, not a significance claim, an NCA/PDE-family
+refutation, or a 3D result. It is a different task and operator from A0; their
+accuracy values must not be compared as successive versions of one benchmark.
+No follow-up seed, new architecture or experiment was launched after this result.
+
+[Validation](evidence/inertial_seed0/validation.json) and
+[linear checks](evidence/inertial_seed0/linear_checks.json) establish implementation
+checks only. [INERTIAL_PUBLICATION_MANIFEST.json](INERTIAL_PUBLICATION_MANIFEST.json)
+binds the frozen executed sources and byte-identical per-arm output files.
+
+## Earlier A0 experiment
+
+Earlier protocol: [rt_a0_2d3d_v2_1](A0_PROTOCOL.md). Read the
 [compact summary](evidence/a0_v2_1/summary.json),
 [full per-seed table](evidence/a0_v2_1/RESULTS.md) and
 [configuration](evidence/a0_v2_1/config.json) first. The

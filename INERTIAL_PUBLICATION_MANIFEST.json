@@ -1,0 +1,56 @@
+{
+  "canonical_run": "inertial_20261001_seed0",
+  "protocol": "inertial_seeded_region_identity_seed0",
+  "publication_kind": "completed_exploratory_screen",
+  "execution_status": "COMPLETED_FROZEN_SCREEN",
+  "scientific_status": "NEGATIVE_EXPLORATORY_SCREEN",
+  "source_sha256": {
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/math_checks.py": "20036b3c82dfb4af2a2294b602f0168e2e5024de2742476e980531f31f6c02d5",
+    "new/nca_inertial_wind_tunnel/run_wind_tunnel.py": "1a867d96c178655f3db89c67956182cfee251ad232de883913754fc0e86e3bd7",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "new/nca_inertial_wind_tunnel/test_core.py": "8577b20e8c85715c0b19f645638a7cc031627bd8055532031bcd1d5840d74805"
+  },
+  "protocol_files_sha256": {
+    "new/nca_inertial_wind_tunnel/THEORY.md": "952152ebe0ffad851f4bbac78f80787893268c66c96be81a29155d3098160eca",
+    "new/nca_inertial_wind_tunnel/WIND_TUNNEL.md": "49f70d3d9c410503a2a098fdc6485d058203f7583d7916361130c99ab377bbde"
+  },
+  "original_archive_sha256": "a125cb898bd680d3af1e73912b1ca7c1f3c1beba4713d6bb92171ac2277160e0",
+  "started_utc": "2026-09-30T16:39:13.359981+00:00",
+  "finished_utc": "2026-09-30T16:46:51.435255+00:00",
+  "runtime": {
+    "torch": "2.5.1",
+    "numpy": "1.26.4",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "backend": {
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": false,
+      "cudnn_allow_tf32": true,
+      "matmul_allow_tf32": false
+    }
+  },
+  "published_evidence_sha256": {
+    "evidence/inertial_seed0/summary.json": "987a46fc8aa08001d9e71f4f174dc8837c1ecb87914515b8d6c175f4d92a6790",
+    "evidence/inertial_seed0/config.json": "6c2ecd4f45c07500500122cf64e2efe8420d206a955a38f54849f6fb880423c7",
+    "evidence/inertial_seed0/RESULTS.md": "3ca37a4f5ac072bc9b366e887eb509fe5938ab23e2a6c654f3b876b851e4ce3c",
+    "evidence/inertial_seed0/validation.json": "2ba48bb0ff0887c6da21ec26df0d6e1aa1dc99c5277d637644bf3af6a3eb7ffc",
+    "evidence/inertial_seed0/linear_checks.json": "150bb49170adef590f1d240fef78f136fc6d1353296717a20accf165880e8cfe",
+    "evidence/inertial_seed0/arms/nca_state_matched_seed0.json": "e4ca239a4f9f7fb9226e385e0636829c6898cfbe95fa940e8ce13ba4d769a77f",
+    "evidence/inertial_seed0/arms/momentum_nca_seed0.json": "048a647d82d274dbd1c245f3a28e75cd960ff8f253cbec07d500404febe3cc43",
+    "evidence/inertial_seed0/arms/rd_nca_seed0.json": "cf8f4434a3e72a11cda5772fd09b4757b82cbdf7d0e1a2adfc1efc07441602ff",
+    "evidence/inertial_seed0/arms/inertial_rd_seed0.json": "7150bb7397f8b58cd1df143d891def17187530fa162fcba162417d5d3182905a"
+  },
+  "per_arm_outputs_are_byte_identical_to_local_run": true,
+  "excluded": [
+    "checkpoints",
+    "launch receipts",
+    "machine identifiers",
+    "PIDs",
+    "transient logs",
+    "local output directories",
+    "duplicate source snapshots",
+    "original ZIP",
+    "external CPU smoke outputs"
+  ]
+}

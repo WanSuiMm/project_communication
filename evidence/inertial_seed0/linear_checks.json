@@ -1,0 +1,185 @@
+{
+  "status": "COMPLETED_LINEAR_CHECKS_ONLY",
+  "seed": 20260930,
+  "real_stability_tests": {
+    "n": 20000,
+    "mismatches": 0
+  },
+  "complex_stability_tests": {
+    "n": 20000,
+    "mismatches": 0
+  },
+  "full_matrix_spectral_mapping_max_error": 2.6645352591003757e-15,
+  "real_space_vs_fourier_max_error": 2.2898349882893854e-16,
+  "outside_local_causality_cone_max": 0.0,
+  "first_order_shift_baseline_is_ballistic": true,
+  "zero_mode": {
+    "roots_beta_09": [
+      1.0,
+      0.9
+    ],
+    "h_infinity_from_h0_0_v0_1": 9.000000000000002
+  },
+  "complex_reaction_counterexample": {
+    "q_real": -0.2,
+    "q_imag": 0.1,
+    "rho_beta_0": 0.8062257748298549,
+    "rho_beta_09": 1.064684717415157
+  },
+  "switching_counterexample": {
+    "a_sequence": [
+      0.1,
+      3.7
+    ],
+    "beta": 0.9,
+    "rho_A": 0.9486832980505139,
+    "rho_B": 0.9486832980505141,
+    "rho_two_step_product": 4.873805429511964
+  },
+  "scaling": [
+    {
+      "grid_size": 32,
+      "lambda_min_nonzero": 0.038429439193539104,
+      "diffusive_fixed": {
+        "beta": 0.0,
+        "d": 0.2,
+        "slow_mode_radius": 0.9923141121612922,
+        "asymptotic_1pct_steps": 596.8666358260318
+      },
+      "inertial_fixed": {
+        "beta": 0.9,
+        "d": 0.2,
+        "slow_mode_radius": 0.9486832980505139,
+        "asymptotic_1pct_steps": 87.41738130713146
+      },
+      "spectrum_tuned_reference": {
+        "beta": 0.6748050596780449,
+        "d": 0.8294338603140224,
+        "slow_mode_radius": 0.8214651907890224,
+        "asymptotic_1pct_steps": 23.41623288281498
+      }
+    },
+    {
+      "grid_size": 64,
+      "lambda_min_nonzero": 0.009630546655606228,
+      "diffusive_fixed": {
+        "beta": 0.0,
+        "d": 0.2,
+        "slow_mode_radius": 0.9980738906688787,
+        "asymptotic_1pct_steps": 2388.6150468821465
+      },
+      "inertial_fixed": {
+        "beta": 0.9,
+        "d": 0.2,
+        "slow_mode_radius": 0.974942998868771,
+        "asymptotic_1pct_steps": 181.47543953069078
+      },
+      "spectrum_tuned_reference": {
+        "beta": 0.8216601260214943,
+        "d": 0.9086423822967544,
+        "slow_mode_radius": 0.9064547015827621,
+        "asymptotic_1pct_steps": 46.88903656355369
+      }
+    },
+    {
+      "grid_size": 128,
+      "lambda_min_nonzero": 0.0024090875896552147,
+      "diffusive_fixed": {
+        "beta": 0.0,
+        "d": 0.2,
+        "slow_mode_radius": 0.9995181824820689,
+        "asymptotic_1pct_steps": 9555.610785618439
+      },
+      "inertial_fixed": {
+        "beta": 0.9,
+        "d": 0.2,
+        "slow_mode_radius": 0.9949512520103044,
+        "asymptotic_1pct_steps": 909.836501373674
+      },
+      "spectrum_tuned_reference": {
+        "beta": 0.9064815259430554,
+        "d": 0.9526669984107912,
+        "slow_mode_radius": 0.952093233850055,
+        "asymptotic_1pct_steps": 93.80633719356041
+      }
+    },
+    {
+      "grid_size": 256,
+      "lambda_min_nonzero": 0.0006023626075915597,
+      "diffusive_fixed": {
+        "beta": 0.0,
+        "d": 0.2,
+        "slow_mode_radius": 0.9998795274784816,
+        "asymptotic_1pct_steps": 38223.59426156564
+      },
+      "inertial_fixed": {
+        "beta": 0.9,
+        "d": 0.2,
+        "slow_mode_radius": 0.9987819046931818,
+        "asymptotic_1pct_steps": 3778.329021031428
+      },
+      "spectrum_tuned_reference": {
+        "beta": 0.9520967536806481,
+        "d": 0.9759014152100194,
+        "slow_mode_radius": 0.9757544535797149,
+        "asymptotic_1pct_steps": 187.62680375896826
+      }
+    },
+    {
+      "grid_size": 512,
+      "lambda_min_nonzero": 0.00015059632171091815,
+      "diffusive_fixed": {
+        "beta": 0.0,
+        "d": 0.2,
+        "slow_mode_radius": 0.9999698807356578,
+        "asymptotic_1pct_steps": 152895.5282956776
+      },
+      "inertial_fixed": {
+        "beta": 0.9,
+        "d": 0.2,
+        "slow_mode_radius": 0.9996979861975444,
+        "asymptotic_1pct_steps": 15245.908303066908
+      },
+      "spectrum_tuned_reference": {
+        "beta": 0.9757549044284054,
+        "d": 0.9878402609367691,
+        "slow_mode_radius": 0.9878030696593352,
+        "asymptotic_1pct_steps": 375.2606718713499
+      }
+    }
+  ],
+  "constructed_turing_example": {
+    "reaction_J": [
+      [
+        1.0,
+        -2.0
+      ],
+      [
+        2.0,
+        -3.0
+      ]
+    ],
+    "continuous_D": [
+      0.1,
+      1.0
+    ],
+    "eta": 0.01,
+    "beta": 0.8,
+    "unstable_lambda_interval_continuous": [
+      2.0,
+      5.0
+    ],
+    "homogeneous_radius": 0.9270156211871727,
+    "max_radius": 1.0019344289247527,
+    "lambda_at_sampled_max": 3.29,
+    "max_radius_equal_diffusion": 0.9270156211871727,
+    "note": "Analytically chosen linear system. No nonlinear saturation or recovery tested."
+  },
+  "not_established": [
+    "better training",
+    "better task performance",
+    "regeneration",
+    "GPU speedup",
+    "a new architecture contribution"
+  ]
+}
