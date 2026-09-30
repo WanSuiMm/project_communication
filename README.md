@@ -30,6 +30,8 @@ matched; attention is a controlled SDPA message block rather than a tuned ViT.
 
 ## Start here
 
+For an incremental review from `c669e18`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+
 1. [RESULTS.md](RESULTS.md): current A0 outcomes first, followed by historical v1.
 2. [GPT_CONTEXT.md](GPT_CONTEXT.md): claim boundaries, code symbols and evidence routing.
 3. [A0_PROTOCOL.md](A0_PROTOCOL.md): current frozen intervention and stopping rules;
