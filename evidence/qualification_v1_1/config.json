@@ -1,0 +1,39 @@
+{
+  "protocol": "rt_2d3d_qualification_v1_1",
+  "dimensions": [
+    2,
+    3
+  ],
+  "seeds": [
+    1729,
+    2718
+  ],
+  "width": 64,
+  "message_width": 32,
+  "groups": 4,
+  "recurrent_steps": 8,
+  "train_steps": 240,
+  "batch_size": 8,
+  "eval_batch_size": 8,
+  "eval_per_axis": 64,
+  "train_distances": [
+    4,
+    8,
+    12,
+    16
+  ],
+  "lr": 0.003,
+  "weight_decay": 0.0001,
+  "gradient_clip": 1.0,
+  "budget_minutes": 25.0,
+  "device": "cuda",
+  "mode": "qualify",
+  "rank_sweep": [
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "rank_sweep_gate": "B_after_A_B_C_pass"
+}

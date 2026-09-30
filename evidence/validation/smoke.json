@@ -1,0 +1,191 @@
+[
+  {
+    "dim": 2,
+    "variant": "nca",
+    "shape": [
+      2,
+      5,
+      14,
+      20
+    ],
+    "loss": 0.793298602104187,
+    "forward_backward_seconds": 1.0549544000000424,
+    "edge_gradient_l1": 0
+  },
+  {
+    "dim": 2,
+    "variant": "vit",
+    "shape": [
+      2,
+      5,
+      14,
+      20
+    ],
+    "loss": 0.7192881107330322,
+    "forward_backward_seconds": 0.025360299999647395,
+    "edge_gradient_l1": 0
+  },
+  {
+    "dim": 2,
+    "variant": "constant",
+    "shape": [
+      2,
+      5,
+      14,
+      20
+    ],
+    "loss": 0.6804795265197754,
+    "forward_backward_seconds": 0.0744952000000012,
+    "edge_gradient_l1": 0
+  },
+  {
+    "dim": 2,
+    "variant": "learned",
+    "shape": [
+      2,
+      5,
+      14,
+      20
+    ],
+    "loss": 0.7477288246154785,
+    "forward_backward_seconds": 0.06946280000011029,
+    "edge_gradient_l1": 0.05556338813039474
+  },
+  {
+    "dim": 2,
+    "variant": "message_full",
+    "shape": [
+      2,
+      5,
+      14,
+      20
+    ],
+    "loss": 1.4132990837097168,
+    "forward_backward_seconds": 0.06075609999970766,
+    "edge_gradient_l1": 0.03228455420321552
+  },
+  {
+    "dim": 2,
+    "variant": "state_full",
+    "shape": [
+      2,
+      5,
+      14,
+      20
+    ],
+    "loss": 1.2842179536819458,
+    "forward_backward_seconds": 0.057899499999621185,
+    "edge_gradient_l1": 0.49836794135626405
+  },
+  {
+    "dim": 2,
+    "variant": "oracle",
+    "shape": [
+      2,
+      5,
+      14,
+      20
+    ],
+    "loss": 0.7244127988815308,
+    "forward_backward_seconds": 0.05518979999988005,
+    "edge_gradient_l1": 0
+  },
+  {
+    "dim": 3,
+    "variant": "nca",
+    "shape": [
+      2,
+      5,
+      4,
+      20,
+      4
+    ],
+    "loss": 0.6994972825050354,
+    "forward_backward_seconds": 0.058972699999685574,
+    "edge_gradient_l1": 0
+  },
+  {
+    "dim": 3,
+    "variant": "vit",
+    "shape": [
+      2,
+      5,
+      4,
+      20,
+      4
+    ],
+    "loss": 0.6984199285507202,
+    "forward_backward_seconds": 0.02381439999999202,
+    "edge_gradient_l1": 0
+  },
+  {
+    "dim": 3,
+    "variant": "constant",
+    "shape": [
+      2,
+      5,
+      4,
+      20,
+      4
+    ],
+    "loss": 0.6953094005584717,
+    "forward_backward_seconds": 0.1079291999999441,
+    "edge_gradient_l1": 0
+  },
+  {
+    "dim": 3,
+    "variant": "learned",
+    "shape": [
+      2,
+      5,
+      4,
+      20,
+      4
+    ],
+    "loss": 0.6981485486030579,
+    "forward_backward_seconds": 0.08028460000014093,
+    "edge_gradient_l1": 0.005218119604251115
+  },
+  {
+    "dim": 3,
+    "variant": "message_full",
+    "shape": [
+      2,
+      5,
+      4,
+      20,
+      4
+    ],
+    "loss": 1.576721429824829,
+    "forward_backward_seconds": 0.07884830000011789,
+    "edge_gradient_l1": 0.055272127807256766
+  },
+  {
+    "dim": 3,
+    "variant": "state_full",
+    "shape": [
+      2,
+      5,
+      4,
+      20,
+      4
+    ],
+    "loss": 1.426033616065979,
+    "forward_backward_seconds": 0.07782109999970999,
+    "edge_gradient_l1": 0.8492730632424355
+  },
+  {
+    "dim": 3,
+    "variant": "oracle",
+    "shape": [
+      2,
+      5,
+      4,
+      20,
+      4
+    ],
+    "loss": 0.7220237255096436,
+    "forward_backward_seconds": 0.09989139999970575,
+    "edge_gradient_l1": 0
+  }
+]

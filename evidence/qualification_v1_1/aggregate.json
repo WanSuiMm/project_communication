@@ -1,0 +1,4187 @@
+{
+  "status": "COMPLETED_FROZEN_SCHEDULE",
+  "decisions": {
+    "2": {
+      "A": "INCONCLUSIVE_POSITIVE_CONTROL",
+      "B": "NOT_RUN_A_DID_NOT_PASS",
+      "C": "NOT_RUN_B_DID_NOT_PASS"
+    },
+    "3": {
+      "A": "INCONCLUSIVE_POSITIVE_CONTROL",
+      "B": "NOT_RUN_A_DID_NOT_PASS",
+      "C": "NOT_RUN_B_DID_NOT_PASS"
+    }
+  },
+  "results": [
+    {
+      "key": "A_2d_cnn_r32_seed1729",
+      "gate": "A",
+      "dim": 2,
+      "variant": "cnn",
+      "seed": 1729,
+      "message_width": 32,
+      "parameters": 274370,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.6629873514175415,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.6337293982505798,
+          "elapsed_s": 0.9702614000002541
+        },
+        {
+          "step": 40,
+          "loss": 0.6617612838745117,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.6929247975349426,
+          "elapsed_s": 1.5832115000002887
+        },
+        {
+          "step": 80,
+          "loss": 0.7286554574966431,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.5699829459190369,
+          "elapsed_s": 2.181885400000283
+        },
+        {
+          "step": 120,
+          "loss": 0.6939631104469299,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.5852603316307068,
+          "elapsed_s": 2.784812100000181
+        },
+        {
+          "step": 160,
+          "loss": 0.7208499312400818,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.47061458230018616,
+          "elapsed_s": 3.3721235000002707
+        },
+        {
+          "step": 200,
+          "loss": 0.6987463235855103,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.2873353064060211,
+          "elapsed_s": 3.9466574000002765
+        },
+        {
+          "step": 240,
+          "loss": 0.6876514554023743,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.8084487915039062,
+          "elapsed_s": 4.509650899999997
+        }
+      ],
+      "training_seconds": 4.509749000000284,
+      "steps_done": 240,
+      "peak_allocated_mib": 113.42333984375,
+      "eval": {
+        "train_shape_d16": {
+          "n": 128,
+          "accuracy": 0.578125,
+          "source_accuracy": 0.578125,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.609375,
+              "source_accuracy": 0.609375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4453125,
+          "source_accuracy": 0.4453125,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 128,
+          "accuracy": 0.59375,
+          "source_accuracy": 0.59375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.625,
+              "source_accuracy": 0.625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 128,
+          "accuracy": 0.4375,
+          "source_accuracy": 0.4375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 128,
+          "accuracy": 0.5546875,
+          "source_accuracy": 0.5546875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.65625,
+              "source_accuracy": 0.65625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 3.902399999788031,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_3d_cnn_r32_seed1729",
+      "gate": "A",
+      "dim": 3,
+      "variant": "cnn",
+      "seed": 1729,
+      "message_width": 32,
+      "parameters": 283650,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.6859753131866455,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 2.0333869457244873,
+          "elapsed_s": 0.06562029999986407
+        },
+        {
+          "step": 40,
+          "loss": 0.6598539352416992,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.3683471977710724,
+          "elapsed_s": 0.783552299999883
+        },
+        {
+          "step": 80,
+          "loss": 0.7596113085746765,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.6336250305175781,
+          "elapsed_s": 1.5228867000000719
+        },
+        {
+          "step": 120,
+          "loss": 0.5827895998954773,
+          "batch_accuracy": 0.875,
+          "unclipped_grad_norm": 0.8949669599533081,
+          "elapsed_s": 2.2113460999999006
+        },
+        {
+          "step": 160,
+          "loss": 0.67148756980896,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.31520333886146545,
+          "elapsed_s": 2.9012870999999905
+        },
+        {
+          "step": 200,
+          "loss": 0.6830955147743225,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.31173989176750183,
+          "elapsed_s": 3.6033802000001742
+        },
+        {
+          "step": 240,
+          "loss": 0.6826212406158447,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.33099690079689026,
+          "elapsed_s": 4.303871000000072
+        }
+      ],
+      "training_seconds": 4.303954099999828,
+      "steps_done": 240,
+      "peak_allocated_mib": 130.7509765625,
+      "eval": {
+        "train_shape_d16": {
+          "n": 192,
+          "accuracy": 0.5052083333333334,
+          "source_accuracy": 0.5052083333333334,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 192,
+          "accuracy": 0.4583333333333333,
+          "source_accuracy": 0.4583333333333333,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.4375,
+              "source_accuracy": 0.4375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 192,
+          "accuracy": 0.5052083333333334,
+          "source_accuracy": 0.5052083333333334,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 192,
+          "accuracy": 0.4583333333333333,
+          "source_accuracy": 0.4583333333333333,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 192,
+          "accuracy": 0.5208333333333334,
+          "source_accuracy": 0.5208333333333334,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 5.584700000326848,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_2d_cnn_r32_seed2718",
+      "gate": "A",
+      "dim": 2,
+      "variant": "cnn",
+      "seed": 2718,
+      "message_width": 32,
+      "parameters": 274370,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.7605252265930176,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.8492696285247803,
+          "elapsed_s": 0.02083039999979519
+        },
+        {
+          "step": 40,
+          "loss": 0.6724926233291626,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.31900113821029663,
+          "elapsed_s": 0.6087198000000171
+        },
+        {
+          "step": 80,
+          "loss": 0.7573059797286987,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.9871982336044312,
+          "elapsed_s": 1.1867014999997991
+        },
+        {
+          "step": 120,
+          "loss": 0.7036697268486023,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.7078174948692322,
+          "elapsed_s": 1.7928212000001622
+        },
+        {
+          "step": 160,
+          "loss": 0.7103127241134644,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.3461638391017914,
+          "elapsed_s": 2.364947900000061
+        },
+        {
+          "step": 200,
+          "loss": 0.6899144053459167,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.11575237661600113,
+          "elapsed_s": 2.9594551000000138
+        },
+        {
+          "step": 240,
+          "loss": 0.6986597776412964,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.14622879028320312,
+          "elapsed_s": 3.5394062000000304
+        }
+      ],
+      "training_seconds": 3.5394799000000603,
+      "steps_done": 240,
+      "peak_allocated_mib": 113.42333984375,
+      "eval": {
+        "train_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 3.869399999985035,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_3d_cnn_r32_seed2718",
+      "gate": "A",
+      "dim": 3,
+      "variant": "cnn",
+      "seed": 2718,
+      "message_width": 32,
+      "parameters": 283650,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.7211582064628601,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.7409148812294006,
+          "elapsed_s": 0.031203699999878154
+        },
+        {
+          "step": 40,
+          "loss": 0.7978087663650513,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 1.1469546556472778,
+          "elapsed_s": 0.7104773999999452
+        },
+        {
+          "step": 80,
+          "loss": 0.6714912056922913,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.1730562150478363,
+          "elapsed_s": 1.4089668000001438
+        },
+        {
+          "step": 120,
+          "loss": 0.6747007966041565,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.2460370659828186,
+          "elapsed_s": 2.0996414000001096
+        },
+        {
+          "step": 160,
+          "loss": 0.6554840803146362,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.4540084898471832,
+          "elapsed_s": 2.783857800000078
+        },
+        {
+          "step": 200,
+          "loss": 0.6431662440299988,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.578330934047699,
+          "elapsed_s": 3.4712837000001855
+        },
+        {
+          "step": 240,
+          "loss": 0.6635430455207825,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.43601495027542114,
+          "elapsed_s": 4.1786064000002625
+        }
+      ],
+      "training_seconds": 4.178688999999849,
+      "steps_done": 240,
+      "peak_allocated_mib": 130.7509765625,
+      "eval": {
+        "train_shape_d16": {
+          "n": 192,
+          "accuracy": 0.4895833333333333,
+          "source_accuracy": 0.4895833333333333,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 192,
+          "accuracy": 0.4791666666666667,
+          "source_accuracy": 0.4791666666666667,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.421875,
+              "source_accuracy": 0.421875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 192,
+          "accuracy": 0.4895833333333333,
+          "source_accuracy": 0.4895833333333333,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.515625,
+              "source_accuracy": 0.515625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 192,
+          "accuracy": 0.4895833333333333,
+          "source_accuracy": 0.4895833333333333,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.4375,
+              "source_accuracy": 0.4375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.515625,
+              "source_accuracy": 0.515625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.515625,
+              "source_accuracy": 0.515625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 192,
+          "accuracy": 0.5052083333333334,
+          "source_accuracy": 0.5052083333333334,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.53125,
+              "source_accuracy": 0.53125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 5.103300000428135,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_2d_nca_r32_seed1729",
+      "gate": "A",
+      "dim": 2,
+      "variant": "nca",
+      "seed": 1729,
+      "message_width": 32,
+      "parameters": 72194,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.724542498588562,
+          "batch_accuracy": 0.125,
+          "unclipped_grad_norm": 0.6012007594108582,
+          "elapsed_s": 0.025459699999828445
+        },
+        {
+          "step": 40,
+          "loss": 0.6587408781051636,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.7201921939849854,
+          "elapsed_s": 0.5982892000001812
+        },
+        {
+          "step": 80,
+          "loss": 0.7259968519210815,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.6807475090026855,
+          "elapsed_s": 1.1735904000001938
+        },
+        {
+          "step": 120,
+          "loss": 0.7049022316932678,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.6593846678733826,
+          "elapsed_s": 1.7433968999998797
+        },
+        {
+          "step": 160,
+          "loss": 0.7230799198150635,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.5739209055900574,
+          "elapsed_s": 2.2829044999998587
+        },
+        {
+          "step": 200,
+          "loss": 0.6957721710205078,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.26587238907814026,
+          "elapsed_s": 2.843529000000217
+        },
+        {
+          "step": 240,
+          "loss": 0.7094324827194214,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.7594365477561951,
+          "elapsed_s": 3.4218516999999338
+        }
+      ],
+      "training_seconds": 3.4219292000002497,
+      "steps_done": 240,
+      "peak_allocated_mib": 111.07666015625,
+      "eval": {
+        "train_shape_d16": {
+          "n": 128,
+          "accuracy": 0.5703125,
+          "source_accuracy": 0.5703125,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.640625,
+              "source_accuracy": 0.640625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.4375,
+              "source_accuracy": 0.4375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 128,
+          "accuracy": 0.5625,
+          "source_accuracy": 0.5625,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.65625,
+              "source_accuracy": 0.65625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 128,
+          "accuracy": 0.4296875,
+          "source_accuracy": 0.4296875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.3125,
+              "source_accuracy": 0.3125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 128,
+          "accuracy": 0.53125,
+          "source_accuracy": 0.53125,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.609375,
+              "source_accuracy": 0.609375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 3.91959999979008,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      },
+      "latency_128_updates": {
+        "median_ms": 54.29890000004889,
+        "repetitions": 3,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_3d_nca_r32_seed1729",
+      "gate": "A",
+      "dim": 3,
+      "variant": "nca",
+      "seed": 1729,
+      "message_width": 32,
+      "parameters": 74562,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.7123842835426331,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 2.153611183166504,
+          "elapsed_s": 0.023563299999750598
+        },
+        {
+          "step": 40,
+          "loss": 0.6557894349098206,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.35908985137939453,
+          "elapsed_s": 0.6809674999999515
+        },
+        {
+          "step": 80,
+          "loss": 0.7553740739822388,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.6838501691818237,
+          "elapsed_s": 1.37891959999979
+        },
+        {
+          "step": 120,
+          "loss": 0.5814914703369141,
+          "batch_accuracy": 0.875,
+          "unclipped_grad_norm": 1.0019357204437256,
+          "elapsed_s": 2.062649099999817
+        },
+        {
+          "step": 160,
+          "loss": 0.6785054206848145,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.3441421389579773,
+          "elapsed_s": 2.744773200000054
+        },
+        {
+          "step": 200,
+          "loss": 0.6778950691223145,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.3123730421066284,
+          "elapsed_s": 3.447558200000003
+        },
+        {
+          "step": 240,
+          "loss": 0.6808220744132996,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.38053885102272034,
+          "elapsed_s": 4.12626199999977
+        }
+      ],
+      "training_seconds": 4.126338999999916,
+      "steps_done": 240,
+      "peak_allocated_mib": 128.3251953125,
+      "eval": {
+        "train_shape_d16": {
+          "n": 192,
+          "accuracy": 0.5104166666666666,
+          "source_accuracy": 0.5104166666666666,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 192,
+          "accuracy": 0.46875,
+          "source_accuracy": 0.46875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.4375,
+              "source_accuracy": 0.4375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 192,
+          "accuracy": 0.5208333333333334,
+          "source_accuracy": 0.5208333333333334,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.53125,
+              "source_accuracy": 0.53125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 192,
+          "accuracy": 0.4427083333333333,
+          "source_accuracy": 0.4427083333333333,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.375,
+              "source_accuracy": 0.375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 192,
+          "accuracy": 0.515625,
+          "source_accuracy": 0.515625,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 5.186899999898742,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      },
+      "latency_128_updates": {
+        "median_ms": 72.81150000017078,
+        "repetitions": 3,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_2d_nca_r32_seed2718",
+      "gate": "A",
+      "dim": 2,
+      "variant": "nca",
+      "seed": 2718,
+      "message_width": 32,
+      "parameters": 72194,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.7203623056411743,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.8093400597572327,
+          "elapsed_s": 0.023382500000025175
+        },
+        {
+          "step": 40,
+          "loss": 0.6698739528656006,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.36323919892311096,
+          "elapsed_s": 0.5546693000001142
+        },
+        {
+          "step": 80,
+          "loss": 0.7672520875930786,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.9866257309913635,
+          "elapsed_s": 1.1233186999997997
+        },
+        {
+          "step": 120,
+          "loss": 0.7086148858070374,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.7488955855369568,
+          "elapsed_s": 1.6785040999998273
+        },
+        {
+          "step": 160,
+          "loss": 0.7119928598403931,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.37851813435554504,
+          "elapsed_s": 2.237029099999745
+        },
+        {
+          "step": 200,
+          "loss": 0.6895109415054321,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.11929445713758469,
+          "elapsed_s": 2.790048399999705
+        },
+        {
+          "step": 240,
+          "loss": 0.6990988850593567,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.13550899922847748,
+          "elapsed_s": 3.365647199999785
+        }
+      ],
+      "training_seconds": 3.3657223999998678,
+      "steps_done": 240,
+      "peak_allocated_mib": 111.07666015625,
+      "eval": {
+        "train_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 3.7659999998140847,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      },
+      "latency_128_updates": {
+        "median_ms": 53.26240000022153,
+        "repetitions": 3,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_3d_nca_r32_seed2718",
+      "gate": "A",
+      "dim": 3,
+      "variant": "nca",
+      "seed": 2718,
+      "message_width": 32,
+      "parameters": 74562,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.666152834892273,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.42171579599380493,
+          "elapsed_s": 0.029839900000297348
+        },
+        {
+          "step": 40,
+          "loss": 0.8032849431037903,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 1.132584810256958,
+          "elapsed_s": 0.6759942000003321
+        },
+        {
+          "step": 80,
+          "loss": 0.674584686756134,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.1728295385837555,
+          "elapsed_s": 1.3545936000000438
+        },
+        {
+          "step": 120,
+          "loss": 0.6759605407714844,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.2634401321411133,
+          "elapsed_s": 2.0341843000001063
+        },
+        {
+          "step": 160,
+          "loss": 0.6556131839752197,
+          "batch_accuracy": 0.875,
+          "unclipped_grad_norm": 0.4458043575286865,
+          "elapsed_s": 2.7162976000004164
+        },
+        {
+          "step": 200,
+          "loss": 0.6519015431404114,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.5316578149795532,
+          "elapsed_s": 3.3802228000004106
+        },
+        {
+          "step": 240,
+          "loss": 0.68087238073349,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.5112308859825134,
+          "elapsed_s": 4.066547700000228
+        }
+      ],
+      "training_seconds": 4.066624700000375,
+      "steps_done": 240,
+      "peak_allocated_mib": 128.3251953125,
+      "eval": {
+        "train_shape_d16": {
+          "n": 192,
+          "accuracy": 0.484375,
+          "source_accuracy": 0.484375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.421875,
+              "source_accuracy": 0.421875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 192,
+          "accuracy": 0.515625,
+          "source_accuracy": 0.515625,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.59375,
+              "source_accuracy": 0.59375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 192,
+          "accuracy": 0.4947916666666667,
+          "source_accuracy": 0.4947916666666667,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 192,
+          "accuracy": 0.5,
+          "source_accuracy": 0.5,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 192,
+          "accuracy": 0.53125,
+          "source_accuracy": 0.53125,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.609375,
+              "source_accuracy": 0.609375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 5.276700000194978,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      },
+      "latency_128_updates": {
+        "median_ms": 77.51049999978932,
+        "repetitions": 3,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_2d_vit_r32_seed1729",
+      "gate": "A",
+      "dim": 2,
+      "variant": "vit",
+      "seed": 1729,
+      "message_width": 32,
+      "parameters": 86786,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.712201714515686,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.6656288504600525,
+          "elapsed_s": 0.03639310000016849
+        },
+        {
+          "step": 40,
+          "loss": 0.6759331822395325,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.7670978903770447,
+          "elapsed_s": 0.9622216000002481
+        },
+        {
+          "step": 80,
+          "loss": 0.7234091758728027,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.6202872395515442,
+          "elapsed_s": 1.9088795000002392
+        },
+        {
+          "step": 120,
+          "loss": 0.7012655735015869,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.6746342182159424,
+          "elapsed_s": 2.8343457999999373
+        },
+        {
+          "step": 160,
+          "loss": 0.7166404724121094,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.6558405160903931,
+          "elapsed_s": 3.7835611999998946
+        },
+        {
+          "step": 200,
+          "loss": 0.02028058096766472,
+          "batch_accuracy": 1.0,
+          "unclipped_grad_norm": 0.4052705466747284,
+          "elapsed_s": 4.729225900000074
+        },
+        {
+          "step": 240,
+          "loss": 1.4901160305669237e-08,
+          "batch_accuracy": 1.0,
+          "unclipped_grad_norm": 9.246550689567812e-07,
+          "elapsed_s": 5.6548234000001685
+        }
+      ],
+      "training_seconds": 5.654903099999956,
+      "steps_done": 240,
+      "peak_allocated_mib": 125.14501953125,
+      "eval": {
+        "train_shape_d16": {
+          "n": 128,
+          "accuracy": 1.0,
+          "source_accuracy": 1.0,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 128,
+          "accuracy": 1.0,
+          "source_accuracy": 1.0,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 128,
+          "accuracy": 1.0,
+          "source_accuracy": 1.0,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 128,
+          "accuracy": 1.0,
+          "source_accuracy": 1.0,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 128,
+          "accuracy": 1.0,
+          "source_accuracy": 1.0,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 9.892600000057428,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_3d_vit_r32_seed1729",
+      "gate": "A",
+      "dim": 3,
+      "variant": "vit",
+      "seed": 1729,
+      "message_width": 32,
+      "parameters": 89154,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.6968932151794434,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 2.0909478664398193,
+          "elapsed_s": 0.03731480000033116
+        },
+        {
+          "step": 40,
+          "loss": 0.6592236161231995,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.3422648012638092,
+          "elapsed_s": 1.2099437000001672
+        },
+        {
+          "step": 80,
+          "loss": 0.7568750381469727,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.6705374717712402,
+          "elapsed_s": 2.4366078000002744
+        },
+        {
+          "step": 120,
+          "loss": 0.5805098414421082,
+          "batch_accuracy": 0.875,
+          "unclipped_grad_norm": 0.963756799697876,
+          "elapsed_s": 3.6293792000001304
+        },
+        {
+          "step": 160,
+          "loss": 0.1922294795513153,
+          "batch_accuracy": 1.0,
+          "unclipped_grad_norm": 1.2492552995681763,
+          "elapsed_s": 4.8083715000002485
+        },
+        {
+          "step": 200,
+          "loss": 0.0,
+          "batch_accuracy": 1.0,
+          "unclipped_grad_norm": 4.38994227636158e-08,
+          "elapsed_s": 5.992291600000044
+        },
+        {
+          "step": 240,
+          "loss": 0.0,
+          "batch_accuracy": 1.0,
+          "unclipped_grad_norm": 0.0,
+          "elapsed_s": 7.183030800000324
+        }
+      ],
+      "training_seconds": 7.183108300000185,
+      "steps_done": 240,
+      "peak_allocated_mib": 143.2451171875,
+      "eval": {
+        "train_shape_d16": {
+          "n": 192,
+          "accuracy": 1.0,
+          "source_accuracy": 1.0,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 192,
+          "accuracy": 1.0,
+          "source_accuracy": 1.0,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 192,
+          "accuracy": 1.0,
+          "source_accuracy": 1.0,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 192,
+          "accuracy": 1.0,
+          "source_accuracy": 1.0,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 192,
+          "accuracy": 1.0,
+          "source_accuracy": 1.0,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 1.0,
+              "source_accuracy": 1.0,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 12.219400000049063,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_2d_vit_r32_seed2718",
+      "gate": "A",
+      "dim": 2,
+      "variant": "vit",
+      "seed": 2718,
+      "message_width": 32,
+      "parameters": 86786,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.720058023929596,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.7043285369873047,
+          "elapsed_s": 0.031733600000279694
+        },
+        {
+          "step": 40,
+          "loss": 0.6722524762153625,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.3376029431819916,
+          "elapsed_s": 0.9354573000000528
+        },
+        {
+          "step": 80,
+          "loss": 0.762647807598114,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 1.02255380153656,
+          "elapsed_s": 1.8638794000003145
+        },
+        {
+          "step": 120,
+          "loss": 0.7123926281929016,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.8014736175537109,
+          "elapsed_s": 2.7929612000002635
+        },
+        {
+          "step": 160,
+          "loss": 0.7063730955123901,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.3275524079799652,
+          "elapsed_s": 3.7147336000002724
+        },
+        {
+          "step": 200,
+          "loss": 0.6914743781089783,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.16585025191307068,
+          "elapsed_s": 4.648075200000221
+        },
+        {
+          "step": 240,
+          "loss": 0.6971648335456848,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.09640034288167953,
+          "elapsed_s": 5.5964232000001175
+        }
+      ],
+      "training_seconds": 5.596499799999947,
+      "steps_done": 240,
+      "peak_allocated_mib": 125.14501953125,
+      "eval": {
+        "train_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 10.20799999969313,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_3d_vit_r32_seed2718",
+      "gate": "A",
+      "dim": 3,
+      "variant": "vit",
+      "seed": 2718,
+      "message_width": 32,
+      "parameters": 89154,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.7515630125999451,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.7201616168022156,
+          "elapsed_s": 0.0413871000000654
+        },
+        {
+          "step": 40,
+          "loss": 0.7769555449485779,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 1.058595061302185,
+          "elapsed_s": 1.2250288999998702
+        },
+        {
+          "step": 80,
+          "loss": 0.6744194030761719,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.16787901520729065,
+          "elapsed_s": 2.41144869999971
+        },
+        {
+          "step": 120,
+          "loss": 0.6815358996391296,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.29223641753196716,
+          "elapsed_s": 3.6057044999997743
+        },
+        {
+          "step": 160,
+          "loss": 0.6561081409454346,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.48981165885925293,
+          "elapsed_s": 4.808834200000092
+        },
+        {
+          "step": 200,
+          "loss": 0.6430712938308716,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.5699977278709412,
+          "elapsed_s": 6.000538199999937
+        },
+        {
+          "step": 240,
+          "loss": 0.6696978807449341,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.4166000187397003,
+          "elapsed_s": 7.196346700000049
+        }
+      ],
+      "training_seconds": 7.196437900000092,
+      "steps_done": 240,
+      "peak_allocated_mib": 143.2451171875,
+      "eval": {
+        "train_shape_d16": {
+          "n": 192,
+          "accuracy": 0.484375,
+          "source_accuracy": 0.484375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.390625,
+              "source_accuracy": 0.390625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.59375,
+              "source_accuracy": 0.59375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 192,
+          "accuracy": 0.484375,
+          "source_accuracy": 0.484375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.53125,
+              "source_accuracy": 0.53125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.515625,
+              "source_accuracy": 0.515625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 192,
+          "accuracy": 0.4791666666666667,
+          "source_accuracy": 0.4791666666666667,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.53125,
+              "source_accuracy": 0.53125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 192,
+          "accuracy": 0.484375,
+          "source_accuracy": 0.484375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.359375,
+              "source_accuracy": 0.359375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.53125,
+              "source_accuracy": 0.53125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 192,
+          "accuracy": 0.484375,
+          "source_accuracy": 0.484375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.359375,
+              "source_accuracy": 0.359375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.515625,
+              "source_accuracy": 0.515625,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 12.04779999989114,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_2d_constant_r32_seed1729",
+      "gate": "A",
+      "dim": 2,
+      "variant": "constant",
+      "seed": 1729,
+      "message_width": 32,
+      "parameters": 72202,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.7233359813690186,
+          "batch_accuracy": 0.125,
+          "unclipped_grad_norm": 0.596865177154541,
+          "elapsed_s": 0.08134580000023561
+        },
+        {
+          "step": 40,
+          "loss": 0.6669167876243591,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.7210690379142761,
+          "elapsed_s": 2.4012047000001076
+        },
+        {
+          "step": 80,
+          "loss": 0.731013834476471,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.6504948735237122,
+          "elapsed_s": 4.7135864000001675
+        },
+        {
+          "step": 120,
+          "loss": 0.7027398943901062,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.6631651520729065,
+          "elapsed_s": 6.992605000000367
+        },
+        {
+          "step": 160,
+          "loss": 0.7219036817550659,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.564995288848877,
+          "elapsed_s": 9.289930500000082
+        },
+        {
+          "step": 200,
+          "loss": 0.6952221989631653,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.271832674741745,
+          "elapsed_s": 11.659434900000178
+        },
+        {
+          "step": 240,
+          "loss": 0.6943198442459106,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.7642373442649841,
+          "elapsed_s": 14.012188400000014
+        }
+      ],
+      "training_seconds": 14.012280800000099,
+      "steps_done": 240,
+      "peak_allocated_mib": 124.7646484375,
+      "eval": {
+        "train_shape_d16": {
+          "n": 128,
+          "accuracy": 0.5625,
+          "source_accuracy": 0.5625,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.53125,
+              "source_accuracy": 0.53125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 128,
+          "accuracy": 0.59375,
+          "source_accuracy": 0.59375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.625,
+              "source_accuracy": 0.625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 128,
+          "accuracy": 0.4765625,
+          "source_accuracy": 0.4765625,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 128,
+          "accuracy": 0.578125,
+          "source_accuracy": 0.578125,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.6875,
+              "source_accuracy": 0.6875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 34.79880000031699,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_3d_constant_r32_seed1729",
+      "gate": "A",
+      "dim": 3,
+      "variant": "constant",
+      "seed": 1729,
+      "message_width": 32,
+      "parameters": 74570,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.7096527218818665,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 2.146973133087158,
+          "elapsed_s": 0.07000990000005913
+        },
+        {
+          "step": 40,
+          "loss": 0.657078742980957,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.36923885345458984,
+          "elapsed_s": 2.829218999999739
+        },
+        {
+          "step": 80,
+          "loss": 0.7538903951644897,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.6884778141975403,
+          "elapsed_s": 5.797415699999874
+        },
+        {
+          "step": 120,
+          "loss": 0.580452024936676,
+          "batch_accuracy": 0.875,
+          "unclipped_grad_norm": 0.9945523738861084,
+          "elapsed_s": 8.590400699999918
+        },
+        {
+          "step": 160,
+          "loss": 0.677433967590332,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.3354640305042267,
+          "elapsed_s": 11.511686400000144
+        },
+        {
+          "step": 200,
+          "loss": 0.6746516227722168,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.3031916916370392,
+          "elapsed_s": 14.54360140000017
+        },
+        {
+          "step": 240,
+          "loss": 0.6730524301528931,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.3653411567211151,
+          "elapsed_s": 17.357938999999988
+        }
+      ],
+      "training_seconds": 17.35803679999981,
+      "steps_done": 240,
+      "peak_allocated_mib": 148.89013671875,
+      "eval": {
+        "train_shape_d16": {
+          "n": 192,
+          "accuracy": 0.5104166666666666,
+          "source_accuracy": 0.5104166666666666,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 192,
+          "accuracy": 0.4583333333333333,
+          "source_accuracy": 0.4583333333333333,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.421875,
+              "source_accuracy": 0.421875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 192,
+          "accuracy": 0.5052083333333334,
+          "source_accuracy": 0.5052083333333334,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.515625,
+              "source_accuracy": 0.515625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 192,
+          "accuracy": 0.4479166666666667,
+          "source_accuracy": 0.4479166666666667,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.390625,
+              "source_accuracy": 0.390625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 192,
+          "accuracy": 0.5208333333333334,
+          "source_accuracy": 0.5208333333333334,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 39.07859999981156,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_2d_constant_r32_seed2718",
+      "gate": "A",
+      "dim": 2,
+      "variant": "constant",
+      "seed": 2718,
+      "message_width": 32,
+      "parameters": 72202,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.7202317714691162,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.8038662672042847,
+          "elapsed_s": 0.0627689000002647
+        },
+        {
+          "step": 40,
+          "loss": 0.6699028015136719,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.3897712230682373,
+          "elapsed_s": 2.3465848000000733
+        },
+        {
+          "step": 80,
+          "loss": 0.7776715755462646,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 1.0934232473373413,
+          "elapsed_s": 4.627870799999982
+        },
+        {
+          "step": 120,
+          "loss": 0.7169198989868164,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.8592183589935303,
+          "elapsed_s": 6.961593700000321
+        },
+        {
+          "step": 160,
+          "loss": 0.7142432928085327,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.37515461444854736,
+          "elapsed_s": 9.624147300000004
+        },
+        {
+          "step": 200,
+          "loss": 0.6888155937194824,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.10723443329334259,
+          "elapsed_s": 12.064172100000178
+        },
+        {
+          "step": 240,
+          "loss": 0.6954353451728821,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.06967416405677795,
+          "elapsed_s": 14.325188799999978
+        }
+      ],
+      "training_seconds": 14.325272699999914,
+      "steps_done": 240,
+      "peak_allocated_mib": 124.7646484375,
+      "eval": {
+        "train_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 33.50430000000415,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_3d_constant_r32_seed2718",
+      "gate": "A",
+      "dim": 3,
+      "variant": "constant",
+      "seed": 2718,
+      "message_width": 32,
+      "parameters": 74570,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.6664196252822876,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.4243951737880707,
+          "elapsed_s": 0.06905959999994593
+        },
+        {
+          "step": 40,
+          "loss": 0.7991359233856201,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 1.131249189376831,
+          "elapsed_s": 2.79004759999998
+        },
+        {
+          "step": 80,
+          "loss": 0.6742773056030273,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.17067167162895203,
+          "elapsed_s": 5.503050999999687
+        },
+        {
+          "step": 120,
+          "loss": 0.6765472888946533,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.2818351089954376,
+          "elapsed_s": 8.197494099999858
+        },
+        {
+          "step": 160,
+          "loss": 0.6555935740470886,
+          "batch_accuracy": 0.875,
+          "unclipped_grad_norm": 0.46066898107528687,
+          "elapsed_s": 11.018716900000072
+        },
+        {
+          "step": 200,
+          "loss": 0.6504300236701965,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.520281970500946,
+          "elapsed_s": 13.849140799999986
+        },
+        {
+          "step": 240,
+          "loss": 0.6822957992553711,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.5200645327568054,
+          "elapsed_s": 16.583849699999973
+        }
+      ],
+      "training_seconds": 16.583932300000015,
+      "steps_done": 240,
+      "peak_allocated_mib": 148.89013671875,
+      "eval": {
+        "train_shape_d16": {
+          "n": 192,
+          "accuracy": 0.5,
+          "source_accuracy": 0.5,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 192,
+          "accuracy": 0.5208333333333334,
+          "source_accuracy": 0.5208333333333334,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.515625,
+              "source_accuracy": 0.515625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.609375,
+              "source_accuracy": 0.609375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.4375,
+              "source_accuracy": 0.4375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 192,
+          "accuracy": 0.4635416666666667,
+          "source_accuracy": 0.4635416666666667,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.390625,
+              "source_accuracy": 0.390625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.421875,
+              "source_accuracy": 0.421875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 192,
+          "accuracy": 0.5260416666666666,
+          "source_accuracy": 0.5260416666666666,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.453125,
+              "source_accuracy": 0.453125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.65625,
+              "source_accuracy": 0.65625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 192,
+          "accuracy": 0.5104166666666666,
+          "source_accuracy": 0.5104166666666666,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.53125,
+              "source_accuracy": 0.53125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 40.27010000027076,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_2d_learned_r32_seed1729",
+      "gate": "A",
+      "dim": 2,
+      "variant": "learned",
+      "seed": 1729,
+      "message_width": 32,
+      "parameters": 74402,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.6710420250892639,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.5716677904129028,
+          "elapsed_s": 0.09174669999993057
+        },
+        {
+          "step": 40,
+          "loss": 0.6913803815841675,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.8217685222625732,
+          "elapsed_s": 2.3520042999998623
+        },
+        {
+          "step": 80,
+          "loss": 0.7258391380310059,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.5678824782371521,
+          "elapsed_s": 4.7646467999998094
+        },
+        {
+          "step": 120,
+          "loss": 0.6893438696861267,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.7398285865783691,
+          "elapsed_s": 7.007171299999754
+        },
+        {
+          "step": 160,
+          "loss": 0.7236171960830688,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.7543179392814636,
+          "elapsed_s": 9.343156999999792
+        },
+        {
+          "step": 200,
+          "loss": 0.6871457099914551,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.2659243941307068,
+          "elapsed_s": 11.766904899999645
+        },
+        {
+          "step": 240,
+          "loss": 0.7137570977210999,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.7980643510818481,
+          "elapsed_s": 14.181397899999865
+        }
+      ],
+      "training_seconds": 14.181479299999864,
+      "steps_done": 240,
+      "peak_allocated_mib": 129.2705078125,
+      "eval": {
+        "train_shape_d16": {
+          "n": 128,
+          "accuracy": 0.546875,
+          "source_accuracy": 0.546875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.625,
+              "source_accuracy": 0.625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 128,
+          "accuracy": 0.484375,
+          "source_accuracy": 0.484375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 128,
+          "accuracy": 0.5234375,
+          "source_accuracy": 0.5234375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.640625,
+              "source_accuracy": 0.640625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 128,
+          "accuracy": 0.4765625,
+          "source_accuracy": 0.4765625,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.375,
+              "source_accuracy": 0.375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 128,
+          "accuracy": 0.5234375,
+          "source_accuracy": 0.5234375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.625,
+              "source_accuracy": 0.625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.421875,
+              "source_accuracy": 0.421875,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 35.593900000094436,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_3d_learned_r32_seed1729",
+      "gate": "A",
+      "dim": 3,
+      "variant": "learned",
+      "seed": 1729,
+      "message_width": 32,
+      "parameters": 76770,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.9375436902046204,
+          "batch_accuracy": 0.0,
+          "unclipped_grad_norm": 2.645599603652954,
+          "elapsed_s": 0.07783099999960541
+        },
+        {
+          "step": 40,
+          "loss": 0.6694850325584412,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.4462163746356964,
+          "elapsed_s": 2.997343600000022
+        },
+        {
+          "step": 80,
+          "loss": 0.7626185417175293,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.6472741365432739,
+          "elapsed_s": 6.042491700000028
+        },
+        {
+          "step": 120,
+          "loss": 0.575252115726471,
+          "batch_accuracy": 0.875,
+          "unclipped_grad_norm": 0.8778594732284546,
+          "elapsed_s": 9.043252699999812
+        },
+        {
+          "step": 160,
+          "loss": 0.6703699827194214,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.30303123593330383,
+          "elapsed_s": 11.984362400000009
+        },
+        {
+          "step": 200,
+          "loss": 0.6799138784408569,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.3027333915233612,
+          "elapsed_s": 14.987078499999825
+        },
+        {
+          "step": 240,
+          "loss": 0.6795867681503296,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.3495849370956421,
+          "elapsed_s": 18.099409599999944
+        }
+      ],
+      "training_seconds": 18.099491699999817,
+      "steps_done": 240,
+      "peak_allocated_mib": 154.36376953125,
+      "eval": {
+        "train_shape_d16": {
+          "n": 192,
+          "accuracy": 0.5104166666666666,
+          "source_accuracy": 0.5104166666666666,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 192,
+          "accuracy": 0.453125,
+          "source_accuracy": 0.453125,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.4375,
+              "source_accuracy": 0.4375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.4375,
+              "source_accuracy": 0.4375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 192,
+          "accuracy": 0.5,
+          "source_accuracy": 0.5,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.4375,
+              "source_accuracy": 0.4375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 192,
+          "accuracy": 0.4583333333333333,
+          "source_accuracy": 0.4583333333333333,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 192,
+          "accuracy": 0.515625,
+          "source_accuracy": 0.515625,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 40.07869999986724,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_2d_learned_r32_seed2718",
+      "gate": "A",
+      "dim": 2,
+      "variant": "learned",
+      "seed": 2718,
+      "message_width": 32,
+      "parameters": 74402,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.7012559175491333,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.7730463743209839,
+          "elapsed_s": 0.06243800000038391
+        },
+        {
+          "step": 40,
+          "loss": 0.6688936352729797,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.361809104681015,
+          "elapsed_s": 2.4710500999999567
+        },
+        {
+          "step": 80,
+          "loss": 0.7470622062683105,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.9691935777664185,
+          "elapsed_s": 4.863885800000389
+        },
+        {
+          "step": 120,
+          "loss": 0.7082087397575378,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 0.7585374712944031,
+          "elapsed_s": 7.1917999000002055
+        },
+        {
+          "step": 160,
+          "loss": 0.7125896215438843,
+          "batch_accuracy": 0.375,
+          "unclipped_grad_norm": 0.3663908839225769,
+          "elapsed_s": 9.680116400000315
+        },
+        {
+          "step": 200,
+          "loss": 0.6897837519645691,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.15284639596939087,
+          "elapsed_s": 12.105562600000212
+        },
+        {
+          "step": 240,
+          "loss": 0.6952927112579346,
+          "batch_accuracy": 0.5,
+          "unclipped_grad_norm": 0.07840676605701447,
+          "elapsed_s": 14.449092900000323
+        }
+      ],
+      "training_seconds": 14.449171900000238,
+      "steps_done": 240,
+      "peak_allocated_mib": 129.2705078125,
+      "eval": {
+        "train_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 128,
+          "accuracy": 0.4921875,
+          "source_accuracy": 0.4921875,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.40625,
+              "source_accuracy": 0.40625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.578125,
+              "source_accuracy": 0.578125,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 35.27540000004592,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          14,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    },
+    {
+      "key": "A_3d_learned_r32_seed2718",
+      "gate": "A",
+      "dim": 3,
+      "variant": "learned",
+      "seed": 2718,
+      "message_width": 32,
+      "parameters": 76770,
+      "status": "completed",
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.6547496914863586,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.35138198733329773,
+          "elapsed_s": 0.08212580000008529
+        },
+        {
+          "step": 40,
+          "loss": 0.7810889482498169,
+          "batch_accuracy": 0.25,
+          "unclipped_grad_norm": 1.1579408645629883,
+          "elapsed_s": 3.0256067999998777
+        },
+        {
+          "step": 80,
+          "loss": 0.6782587766647339,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.1847294121980667,
+          "elapsed_s": 6.027983999999833
+        },
+        {
+          "step": 120,
+          "loss": 0.6812182068824768,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.32595887780189514,
+          "elapsed_s": 9.122915699999794
+        },
+        {
+          "step": 160,
+          "loss": 0.6553621292114258,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.5833255052566528,
+          "elapsed_s": 12.256816600000093
+        },
+        {
+          "step": 200,
+          "loss": 0.6552704572677612,
+          "batch_accuracy": 0.625,
+          "unclipped_grad_norm": 0.5987929701805115,
+          "elapsed_s": 15.415691700000025
+        },
+        {
+          "step": 240,
+          "loss": 0.6840263605117798,
+          "batch_accuracy": 0.75,
+          "unclipped_grad_norm": 0.6143170595169067,
+          "elapsed_s": 18.420805899999777
+        }
+      ],
+      "training_seconds": 18.42089100000021,
+      "steps_done": 240,
+      "peak_allocated_mib": 154.36376953125,
+      "eval": {
+        "train_shape_d16": {
+          "n": 192,
+          "accuracy": 0.4791666666666667,
+          "source_accuracy": 0.4791666666666667,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.4375,
+              "source_accuracy": 0.4375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.515625,
+              "source_accuracy": 0.515625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "large_shape_d16": {
+          "n": 192,
+          "accuracy": 0.484375,
+          "source_accuracy": 0.484375,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.421875,
+              "source_accuracy": 0.421875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.546875,
+              "source_accuracy": 0.546875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.484375,
+              "source_accuracy": 0.484375,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d32": {
+          "n": 192,
+          "accuracy": 0.453125,
+          "source_accuracy": 0.453125,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.34375,
+              "source_accuracy": 0.34375,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.515625,
+              "source_accuracy": 0.515625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d64": {
+          "n": 192,
+          "accuracy": 0.5052083333333334,
+          "source_accuracy": 0.5052083333333334,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.421875,
+              "source_accuracy": 0.421875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.5625,
+              "source_accuracy": 0.5625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.53125,
+              "source_accuracy": 0.53125,
+              "detail_accuracy": null
+            }
+          ]
+        },
+        "d128": {
+          "n": 192,
+          "accuracy": 0.4947916666666667,
+          "source_accuracy": 0.4947916666666667,
+          "detail_accuracy": null,
+          "by_axis": [
+            {
+              "axis": 0,
+              "n": 64,
+              "accuracy": 0.46875,
+              "source_accuracy": 0.46875,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 1,
+              "n": 64,
+              "accuracy": 0.515625,
+              "source_accuracy": 0.515625,
+              "detail_accuracy": null
+            },
+            {
+              "axis": 2,
+              "n": 64,
+              "accuracy": 0.5,
+              "source_accuracy": 0.5,
+              "detail_accuracy": null
+            }
+          ]
+        }
+      },
+      "latency": {
+        "median_ms": 41.706799999701616,
+        "repetitions": 7,
+        "batch_size": 1,
+        "shape": [
+          1,
+          5,
+          4,
+          4,
+          140
+        ],
+        "includes_python_and_device_sync": true
+      }
+    }
+  ]
+}
