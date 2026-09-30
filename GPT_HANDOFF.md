@@ -1,4 +1,54 @@
-# Incremental review: A0 after c669e18
+# Incremental review: inertial NCA after eeb6514
+
+- Review base: `eeb6514b35f4e860ffbe69bdecb627d5ea172b7e`.
+- Evidence head: `e17bb5b04861996389fa263dc0d7041ae14cc4ff`.
+- The later handoff-only commit does not change code, results or claims.
+
+This update adds a separate 2D seeded-region experiment: explicit reaction and
+five-point transport with velocity state, compared with generic momentum,
+state-matched NCA and first-order RD. It does not rerun A0 or change its task.
+All four arms completed 800 updates with seed 0, and all 32/64/128 evaluations.
+
+## New evidence and claim boundary
+
+At 32x32/T64, candidate BA is 69.94%, versus 84.44% for generic momentum and
+85.17% for state-matched NCA. Candidate BA drops to 53.50% at 32x32/T256 and
+50% at both larger sizes/T256, where paired-source correctness is zero.
+No arm reaches sustained aggregate 95% BA. Candidate repair is unevaluable
+because no pre-damage map qualifies. This is a negative single-seed screen,
+not a family-wide impossibility result or a new preregistered binary gate.
+
+Training sources and the two theory/protocol documents match the executed
+snapshot byte-for-byte. Four published per-arm JSON files are exact copies of
+the frozen run. Code/protocol/evidence hashes are bound by
+[INERTIAL_PUBLICATION_MANIFEST.json](INERTIAL_PUBLICATION_MANIFEST.json).
+Private receipts, checkpoints, duplicate ZIP material and logs remain local.
+Earlier A0/v1 code, evidence and claims are unchanged. No new training is scheduled.
+
+## Minimum reading order
+
+1. [New result table](evidence/inertial_seed0/RESULTS.md), then
+   [summary.json](evidence/inertial_seed0/summary.json) for all rollout horizons.
+2. [Protocol](new/nca_inertial_wind_tunnel/WIND_TUNNEL.md) and
+   [integration notes](new/nca_inertial_wind_tunnel/LOCAL_INTEGRATION.md): metric fixes and sampler conventions.
+3. [cells.py](new/nca_inertial_wind_tunnel/cells.py), especially `Cell.step`,
+   then [tasks.py](new/nca_inertial_wind_tunnel/tasks.py) if questioning geometry or targets.
+4. Use individual JSON files under `evidence/inertial_seed0/arms/` only for
+   specific distance, repair, revision or timing questions. Do not begin with
+   all raw files or unchanged historical evidence.
+
+## Reviewer questions
+
+1. Does any implementation or measurement issue invalidate this scoped negative result?
+2. What does the candidate's within-training-horizon deficit establish separately
+   from its longer-rollout degradation, without causally attributing either to inertia alone?
+3. Given zero repair eligibility and no solved reference arm at the 95% criterion,
+   which claims remain unevaluable? Any suggested follow-up should be a separate
+   bounded diagnostic, not a reinterpretation of the frozen result.
+
+---
+
+# Historical handoff: A0 after c669e18
 
 - Review base: `c669e18cc6f1747ff99480c1e7a57ebc2866e956`.
 - Evidence head: `74d77256daadfcd2bf90741b63fa6ba62a8eb65b`.
