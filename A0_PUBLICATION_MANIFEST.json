@@ -1,0 +1,63 @@
+{
+  "canonical_run": "a0_20260930_2d3d_v2_1",
+  "protocol": "rt_a0_2d3d_v2_1",
+  "captured_utc": "2026-09-30T08:03:09.007456+00:00",
+  "publication_kind": "completed_run",
+  "run_status": "COMPLETED_FROZEN_SCHEDULE",
+  "decisions": {
+    "2": {
+      "calibration": "PASS",
+      "arms": {
+        "constant_raw": "NOT_QUALIFIED_FIT",
+        "constant_normalized": "NOT_QUALIFIED_FIT",
+        "learned_raw": "NOT_QUALIFIED_FIT",
+        "learned_normalized": "NOT_QUALIFIED_FIT"
+      }
+    },
+    "3": {
+      "calibration": "INCONCLUSIVE_POSITIVE_CONTROL",
+      "arms": {
+        "constant_raw": "NOT_RUN_CALIBRATION_NOT_PASSED",
+        "constant_normalized": "NOT_RUN_CALIBRATION_NOT_PASSED",
+        "learned_raw": "NOT_RUN_CALIBRATION_NOT_PASSED",
+        "learned_normalized": "NOT_RUN_CALIBRATION_NOT_PASSED"
+      }
+    }
+  },
+  "started_utc": "2026-09-30T07:47:39.437757+00:00",
+  "runtime": {
+    "python": "3.12.12",
+    "torch": "2.5.1",
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  },
+  "source_sha256": {
+    "__init__.py": "3b8b5fe5659961bb16fe0d11d6c9c34396d98760746fa1cb4661a227c7ea3cc0",
+    "a0.py": "32555c7160d0f0b2592ad968b0e1832de03f20c1f895c8a70d618437cfbd0937",
+    "a0_checks.py": "b427775d04edad6cfc6b90e923775694530405b66636ad5efdbfb0af66b7d193",
+    "a0_models.py": "ad81bcaec4156a9da75dc4866e2425d200acaf07d766c16d41c5a1af3ef657e0",
+    "a0_runner.py": "9dfa074f90321790bf97e19f7e0d2ca2aae0b68dbdcff02d15ae424a34b29852",
+    "data.py": "82619083f3f97a8c7ebbf12094706b5f704c8c93dfa51590b692f172f55e6aed",
+    "models.py": "2e7e9a9a1b0dba6078308fb6cbb48b6a5d6cc21f0b6c9f2ec1db73e9951efffb",
+    "plot_results.py": "86105825ea620d890decfabbeb72e02ad6e5b2e8a35dafcd4b06c87bff59ab75",
+    "run.py": "0840851bc9f3dabc083f0f162b844d7bb97d616820a27201bf74524d9db052a5",
+    "runner.py": "a95d096477714df8288b1ad5811c956ae16930af0134838c736287c3d1beb26c",
+    "test_transport.py": "39b240232cf624cf07d542675d1b693dad7c5f42c4d310bca6b779b71481cf05",
+    "transport.py": "ce19baddae5a1a603309df90efb00feb09e68a10161f92f3ce425aacb8b8bb12"
+  },
+  "protocol_sha256": "0f4fc150f90bfec94afc04abf7e3271578b87cdda517bfbe990d65f87ebcbd93",
+  "published_evidence_sha256": {
+    "evidence/a0_v2_1/aggregate.json": "65381f24c027d5764c3b1a896985f2fdbfafe085689f5fd4334b4c5e52502b07",
+    "evidence/a0_v2_1/config.json": "61cf4b820596016792988c5b85b60b9626fad258444a7ad66cd18020657fdd40",
+    "evidence/a0_v2_1/checks.json": "8df3f6402b938f6083a6fe97ec94984d8b2637835d3beef4e692b71e80094497",
+    "evidence/a0_v2_1/summary.json": "53f6e53038a7ec2765030a8dfa7d58a7d9d0ac6ea66a182f2e4ad92012f0f798",
+    "evidence/a0_v2_1/RESULTS.md": "fc8def0353b1387ae85c0ee396bc31de996a129375276fba7d0c01a635688aa4"
+  },
+  "excluded": [
+    "checkpoints",
+    "launch receipts",
+    "machine identities",
+    "private paths",
+    "transient logs",
+    "duplicate source snapshots"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "protocol": "rt_a0_2d3d_v2_1",
+  "dimensions": [
+    2,
+    3
+  ],
+  "seeds": [
+    1729,
+    2718,
+    31415,
+    57721
+  ],
+  "width": 64,
+  "message_width": 32,
+  "groups": 4,
+  "recurrent_steps": 8,
+  "train_steps": 480,
+  "batch_size": 8,
+  "eval_batch_size": 8,
+  "eval_per_axis": 64,
+  "train_distances": [
+    4,
+    8,
+    12,
+    16
+  ],
+  "lr": 0.003,
+  "weight_decay": 0.0001,
+  "gradient_clip": 1.0,
+  "epsilon": 1e-06,
+  "budget_minutes": 25.0,
+  "device": "cuda",
+  "variants": [
+    "attention",
+    "constant_raw",
+    "constant_normalized",
+    "learned_raw",
+    "learned_normalized"
+  ],
+  "fit_threshold": 0.99,
+  "per_axis_threshold": 0.98,
+  "distance_threshold": 0.99,
+  "axis_order": "unchanged_v1_palindrome",
+  "confidence": "sigmoid_per_group_shared_by_all_arms_initial_0.5",
+  "raw_definition": "T(c*v)",
+  "normalized_definition": "T(c*v)/(T(c)+epsilon)",
+  "mode": "qualify"
+}

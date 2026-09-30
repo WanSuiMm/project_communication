@@ -1,6 +1,51 @@
 # Context for incremental scientific review
 
-## Formal status
+## Current A0 status and minimum route
+
+Protocol rt_a0_2d3d_v2_1 completed 24/24 conditional trials (40 maximum; 16 3D RT
+trials skipped). In 2D, attention is perfect for all four seeds and all reported
+conditions; all four RT arms are NOT_QUALIFIED_FIT. In 3D, attention seed 1729
+fails and no RT treatment estimate exists. Numerical/oracle checks pass but
+do not establish learned-model qualification. B/C and width sweeps remain unrun.
+
+Read [RESULTS.md](RESULTS.md), [A0_PROTOCOL.md](A0_PROTOCOL.md), then the
+[small A0 summary](evidence/a0_v2_1/summary.json). Use the
+[per-seed table](evidence/a0_v2_1/RESULTS.md) before opening
+[aggregate.json](evidence/a0_v2_1/aggregate.json) for histories, axis metrics
+and diagnostics. [checks.json](evidence/a0_v2_1/checks.json) and
+[A0_PUBLICATION_MANIFEST.json](A0_PUBLICATION_MANIFEST.json) establish validation
+and provenance. Independent units are seeds 1729, 2718, 31415, 57721.
+
+Every A0 arm emits q=c*v, with learned sigmoid group weights c initialized at 0.5.
+Raw uses T(q); normalized uses T(q)/(T(c)+1e-6). Both perform the same packed
+grouped solve. Initial common parameters and medium scale match; only the
+receiver division changes within a medium/seed pair. Constant conductance is 1;
+learned conductance is 2*sigmoid(local symmetric features), initialized at 1.
+Attention projects query/key and uses q directly as values, with no separate
+value/output projection. C=64, r=32, G=4, K=8; two phases of four updates. A0 raw is
+not identical to v1 raw. Fixed axis order and target-only readout are retained.
+
+| A0 concept | Exact symbol | Source |
+|---|---|---|
+| Standalone entry | package/module dispatch | `a0.py`, `run.py` |
+| Forward and diagnostics | `A0Model.forward` | `a0_models.py` |
+| Same-value attention | `SharedValueAttention.forward` | `a0_models.py` |
+| Grouped numerator/confidence solve | `transport_pair` | `a0_models.py` |
+| Config, trial and conditional gate | `config`, `trial`, `decisions`, `main` | `a0_runner.py` |
+| Paired estimates | `paired_effects` | `a0_runner.py` |
+| Software and oracle checks | `run_checks`, `oracle_diagnostics` | `a0_checks.py` |
+| Public snapshot | `summarize`, `main` | `tools/export_a0_evidence.py` |
+
+The 2D result is negative under a reliable fitting control. It neither proves
+diffusion-family impossibility nor causally separates emitter/readout failures.
+Sampled normalized-model confidence remains dense on background; this is not
+proof that a different confidence/emission mechanism cannot learn. Confidence-
+mass contribution is not a total-information attribution through recurrence.
+Changes between v1 and A0 cannot isolate why attention fitting improved.
+
+The sections below describe historical v1 and its unchanged code/evidence.
+
+## Historical v1 formal status
 
 - Scientific status: `INCONCLUSIVE_POSITIVE_CONTROL` in both 2D and 3D.
 - Endpoint reached: completed Gate A, 20 model/seed/dimension runs.
@@ -74,4 +119,5 @@ of a fused transport kernel or a tuned attention backbone.
 3. After a reliable fitting control, what intervention would isolate medium
    learning from message emission and reception?
 
-No additional experiment has been run to answer these questions.
+Those were v1 review questions. A0 above supplies the registered paired
+normalization experiment, but does not causally isolate the remaining failure.

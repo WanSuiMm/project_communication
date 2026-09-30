@@ -1,4 +1,96 @@
-# First local 2D / 3D result
+# Results: A0 completed, current RT not qualified
+
+Latest protocol: [rt_a0_2d3d_v2_1](A0_PROTOCOL.md). Read the
+[compact summary](evidence/a0_v2_1/summary.json),
+[full per-seed table](evidence/a0_v2_1/RESULTS.md) and
+[configuration](evidence/a0_v2_1/config.json) first. The
+[raw aggregate](evidence/a0_v2_1/aggregate.json) retains histories, axis metrics
+and diagnostics. [A0_PUBLICATION_MANIFEST.json](A0_PUBLICATION_MANIFEST.json)
+binds current code and evidence to the run.
+
+## Final A0 qualification
+
+The conditional schedule completed 24/24 trials: eight attention trials across
+two dimensions/four seeds, then sixteen 2D RT trials. Sixteen potential 3D RT
+trials were skipped after failed calibration. This is a completed schedule,
+not an unfinished 24/40 run or budget exhaustion.
+
+| Dimension | Attention control | RT outcome |
+|---|---|---|
+| 2D | 4/4 seeds reach 100% in every evaluation condition | All four arms NOT_QUALIFIED_FIT |
+| 3D | Seed 1729 has 47.92% train d16; other three seeds reach 100% | INCONCLUSIVE_POSITIVE_CONTROL; RT not run |
+
+2D accuracy (%), seeds 1729 / 2718 / 31415 / 57721:
+
+| Arm | Train-shape d16 | d128 |
+|---|---:|---:|
+| Attention | 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 |
+| Constant raw | 50.78 / 46.09 / 55.47 / 43.75 | 50.78 / 45.31 / 54.69 / 46.09 |
+| Constant normalized | 50.78 / 50.78 / 55.47 / 43.75 | 50.78 / 47.66 / 55.47 / 46.88 |
+| Learned raw | 50.78 / 46.09 / 55.47 / 43.75 | 50.00 / 44.53 / 54.69 / 46.09 |
+| Learned normalized | 50.78 / 45.31 / 55.47 / 44.53 | 50.78 / 45.31 / 56.25 / 45.31 |
+
+There is no fitted RT arm whose distance generalization can be qualified.
+Confidence normalization does not resolve learning failure in this frozen
+configuration. The reliable 2D control makes this a clearer negative result
+than v1, but it does not establish an architecture-family impossibility or
+identify emission versus reaction/readout as the cause.
+
+## Paired A0 normalization effect
+
+Mean of four paired seed differences, normalized minus raw, percentage points:
+
+| Medium | Train d16 | Large-grid d16 | d32 | d64 | d128 |
+|---|---:|---:|---:|---:|---:|
+| Constant | +1.172 | -0.586 | +1.953 | -1.953 | +0.977 |
+| Learned | +0.000 | -0.195 | +0.977 | -0.977 | +0.586 |
+
+At d128, constant-medium seed differences are 0.000 / +2.344 / +0.781 / +0.781
+points; learned-medium differences are +0.781 / +0.781 / +1.562 / -0.781 points.
+Small positive averages at one distance do not establish useful communication
+when both arms remain near chance and fail fitting. Four seeds are replicate
+units; these are descriptive estimates, not significance or equivalence claims.
+
+Both arms use q=c*v, identical initial parameters within each pair, unit
+initial conductance and matched packed solver work. Only receiver division
+changes within a pair. A0 raw differs from v1 raw. Changes between experiments
+prevent attributing improved attention calibration to any single intervention.
+
+## A0 diagnostics and cost
+
+[Checks](evidence/a0_v2_1/checks.json) passed for grouped packing, normalized
+q/confidence/edge/tau gradients, supplied-value attention, paired initialization,
+initial medium matching and finite model gradients in both dimensions.
+
+In the fixed oracle cases, tau4096 permits correct raw-sign decoding through
+d128 on every tested axis. At d128, normalized value error is at most 0.00445;
+at tau1, all 40 sampled bits become undecodable zeros. This is recoverability in
+the tested large-scale oracle setting, not learned communication at every scale.
+
+The normalized arms' sampled final-update d128 probes retain mean background
+confidence about 0.34-0.48, versus source confidence about 0.47-0.53. Thus the
+source-only oracle confidence assumption is not realized in those probes.
+None of their sampled target denominators is <=epsilon. Confidence-mass share
+is not a measure of total bit information: earlier recurrent updates can move
+content into values emitted elsewhere. These observations do not isolate cause.
+
+| 2D arm | Mean of seed-median batch-one d128 latency, ms |
+|---|---:|
+| Attention | 22.13 |
+| Constant raw / normalized | 35.90 / 37.20 |
+| Learned raw / normalized | 36.58 / 37.33 |
+
+A0 includes a finite-logit evaluation check and matched packed solver work;
+cross-version timings are not kernel improvement/regression estimates. These
+are portable reference implementations, not optimized ceilings. A0 has no
+speed-pass gate. Models are not parameter-matched; exact counts are in the
+summary. Narrow straight geometry and fixed axis splitting remain limitations.
+
+Decision: do not escalate this configuration to B/C, rank sweeps or real vision.
+Any further experiment needs a distinct bounded diagnostic. No new experiment
+or monitor is scheduled by this publication. 3D normalization remains unmeasured.
+
+## Historical first local 2D / 3D result
 
 Canonical evidence: [per-seed results](evidence/qualification_v1_1/RESULTS.md),
 [raw aggregate](evidence/qualification_v1_1/aggregate.json), and
@@ -13,7 +105,7 @@ eight recurrent updates, training distances <=16, and tests through d=128.
 3D uses actual three-axis transport/Conv3d on a narrow 4x4 transverse volume,
 rotated across all three axes. It is not general 3D geometry qualification.
 
-## Accuracy at distance 128
+### Historical v1 accuracy at distance 128
 
 Values are the separate training seeds 1729 / 2718, in percent.
 
@@ -33,7 +125,7 @@ Learned transport also fails to fit the training-scale d16 evaluation
 (2D 54.7 / 49.2; 3D 51.0 / 47.9). Consequently, its chance-level long-distance
 scores cannot be isolated as an extrapolation failure after successful fitting.
 
-## Cost and validity
+### Historical v1 cost and validity
 
 Batch-one d128 latency, mean of each seed's synchronized median:
 

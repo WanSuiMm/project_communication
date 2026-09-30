@@ -22,13 +22,18 @@ def main():
             local = target.split('#', 1)[0]
             if not (path.parent / local).exists():
                 errors.append(f'Broken link: {path.name}: {local}')
-    manifest = json.loads((ROOT / 'PUBLICATION_MANIFEST.json').read_text(encoding='utf-8'))
-    for name, expected in manifest['original_training_source_sha256'].items():
-        if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
-            errors.append(f'Training-source hash mismatch: {name}')
-    for name, expected in manifest['published_evidence_sha256'].items():
-        if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
-            errors.append(f'Evidence hash mismatch: {name}')
+    for manifest_path in ROOT.glob('*PUBLICATION_MANIFEST.json'):
+        manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+        sources = manifest.get('original_training_source_sha256', manifest.get('source_sha256', {}))
+        for name, expected in sources.items():
+            if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+                errors.append(f'Training-source hash mismatch: {name}')
+        for name, expected in manifest['published_evidence_sha256'].items():
+            if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+                errors.append(f'Evidence hash mismatch: {name}')
+        if 'protocol_sha256' in manifest:
+            if hashlib.sha256((ROOT / 'A0_PROTOCOL.md').read_bytes()).hexdigest() != manifest['protocol_sha256']:
+                errors.append('A0 frozen protocol hash mismatch')
     patterns = {
         'private_key': r'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----',
         'github_token': r'(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})',
@@ -62,6 +67,20 @@ def main():
             if re.search(pattern, content):
                 # Do not emit potentially sensitive matching text.
                 errors.append(f'Content scan: {name}: {rule}')
+        if name.startswith('evidence/') and path.suffix == '.json':
+            data = json.loads(content)
+
+            def inspect_keys(value):
+                if isinstance(value, dict):
+                    for key, item in value.items():
+                        if key in {'host', 'pid', 'cwd', 'argv', 'stdout', 'stderr', 'gpu_uuid'}:
+                            errors.append(f'Private receipt metadata staged: {name}: {key}')
+                        inspect_keys(item)
+                elif isinstance(value, list):
+                    for item in value:
+                        inspect_keys(item)
+
+            inspect_keys(data)
     if not files:
         errors.append('No staged files to verify')
     print(json.dumps({'staged_files': len(files), 'total_bytes': total, 'errors': errors}, indent=2))
