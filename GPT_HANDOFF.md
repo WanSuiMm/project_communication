@@ -1,4 +1,87 @@
-# Incremental review: same-medium Momentum and audit after c13b73f
+# Incremental review: final masked-state control after 82635bb
+
+- Review base: `82635bbf0063d11359fd2d0b6c6571616a01f89b`.
+- Evidence head: `48497e147a9ee81dcb6027d51e103fe5c0156649`.
+- The subsequent handoff-only commit changes review metadata only.
+
+Only one new model was trained: generic Masked State-matched NCA. It completes
+the exploratory state/Momentum by whole-grid/masked-medium 2x2. The other three
+cells were already known when the final protocol was fixed. This is the final
+authorized experiment; no further training, architecture change or monitor is scheduled.
+
+## Minimal reading order
+
+1. [Current results](RESULTS.md), then [final control results](evidence/masked_state_seed0/RESULTS.md)
+   and [all 15 comparisons](evidence/masked_state_seed0/comparison.json).
+2. [Frozen final protocol](new/masked_state/PROTOCOL.md),
+   [MaskedState.step](new/masked_state/state_cells.py), and
+   [runner and contrasts](new/masked_state/run_state.py).
+3. [Recovery provenance](evidence/masked_state_seed0/recovery.json),
+   [recovery implementation](new/masked_state/recover_tail.py),
+   [validation](evidence/masked_state_seed0/validation.json), and
+   [publication hashes](STATE_PUBLICATION_MANIFEST.json).
+
+Do not begin with the original/augmented raw arm JSON or the previous audit's
+components.json. The original arm is an exact saved snapshot; the augmented
+arm adds only the explicitly listed diagnostics. Prior evidence is unchanged.
+
+## New decision-relevant evidence
+
+At the fixed 32/T64 endpoint:
+
+| Recipe | Whole-grid BA / paired (%) | Masked BA / paired (%) |
+|---|---:|---:|
+| State-matched NCA | 85.17 / 49.31 | 90.43 / 56.37 |
+| Momentum NCA | 84.44 / 42.75 | 96.45 / 77.25 |
+
+Masked Momentum exceeds Masked State by 6.02pp BA and 20.88pp paired correctness,
+meeting the descriptive joint 5pp threshold. Masking gains are 5.26pp/7.06pp
+for State versus 12.01pp/34.49pp for Momentum; interactions are +6.75pp/+27.43pp.
+Thus medium sensitivity is present in both generic recipes at this endpoint,
+and the same-medium Momentum recipe retains an advantage in this seed.
+
+Do not hide the failures: State masking worsens primary BCE from 0.2579 to
+0.9871. At 32/T256 Masked State falls to 11.38% BA, paired 9.38%, BCE 63.4853;
+its H RMS grows from 5.99 to 23.87. Masked Momentum also declines to 77.68% BA.
+Neither has a sustained 95% endpoint. The large State initial-state gradient
+probe (9.06e8 at T64) is a single-example loss-gradient measurement, not a
+Jacobian spectral norm or proof of an asymptotic dynamical mechanism.
+
+## Execution and claim boundaries
+
+The original process saved 800 updates and all 15 scientific endpoints, then
+left no final completion marker. It was no longer present when checked; its
+exit cause is unknown. Original outputs and status remain unchanged. Missing
+size128 timings and initial-state gradient probes were recovered from the same
+checkpoint without retraining. BA/BCE/H RMS replay exactly at 32/T64 and
+128/T256. All pre-existing fields are unchanged in the augmented record;
+all 15 comparisons were recomputed independently from raw evidence.
+This publication does not assert normal completion of the original process.
+Timings come from different sessions and do not establish a speedup.
+
+State has H32/hidden48/4993 parameters versus Momentum H16+V16/hidden88/4689:
+same persistent scalar capacity, different content/readout/program widths.
+The result does not isolate velocity or establish its universal necessity.
+Masking changes connectivity, degree and spectrum using a supplied task mask.
+One training seed remains the independent replicate; no population-level
+significance, conditional-repair advantage, stable attractor or 3D claim.
+
+The earlier explicit Inertial RD primary loss to generic Momentum and its
+finite-horizon amplification/mean-drift audit are unchanged. No detailed
+trajectory audit of the generic State or Momentum models has been performed.
+
+## Reviewer questions
+
+1. Do the pairing, source hashes and preserved scientific fields support the
+   final descriptive comparison despite incomplete original process finalization?
+2. Are both primary masking gains and the same-medium Momentum advantage
+   reported without claiming an isolated velocity mechanism?
+3. Do BCE deterioration and long-rollout failure rule out any stronger
+   interpretation suggested by the primary accuracy table?
+
+---
+
+# Historical handoff: same-medium Momentum and audit after c13b73f
 
 - Review base: `c13b73f7deadf6c6e0611659df5fa8d118af618c`.
 - Evidence head: `d3038c3a1a462491a7715a4d5573520572f6ad5e`.
