@@ -1,4 +1,85 @@
-# Incremental review: final masked-state control after 82635bb
+# Incremental review: generic dynamics audit after aa2d50a
+
+- Review base: `aa2d50a91e4ff02f74144dc699124bd886b5aa85`.
+- Evidence head: `4bcb8fef29bb796c3e1f7376d4b16f53163ba158`.
+- The subsequent handoff-only commit changes review metadata only.
+
+This completed, zero-training audit reuses the four existing seed-0 State and
+Momentum checkpoints, with whole-grid and masked media. It adds exact tangent
+and adjoint operators, finite-window gain estimates, trajectory diagnostics and
+finite-perturbation checks. No new architecture, training or monitoring is added.
+
+## Minimal reading order
+
+1. [Current results](RESULTS.md) and
+   [audit interpretation](evidence/dynamics_audit_seed0/INTERPRETATION.md).
+2. [Compact audit table](evidence/dynamics_audit_seed0/RESULTS.md),
+   [structured aggregates](evidence/dynamics_audit_seed0/analysis.json) and
+   [overview figure](evidence/dynamics_audit_seed0/dynamics_overview.png).
+3. [Frozen protocol](new/dynamics_audit/PROTOCOL.md),
+   [tangent/adjoint implementation](new/dynamics_audit/operators.py) and
+   [audit runner](new/dynamics_audit/audit.py).
+4. [Validation](evidence/dynamics_audit_seed0/validation.json) and
+   [publication hashes](DYNAMICS_PUBLICATION_MANIFEST.json).
+
+Do not start with the 16 raw JSON files. They support verification after the
+compact interpretation; checkpoints and local launch receipts are not published.
+The executed audit sources are bound separately from post-hoc analysis code.
+
+## New decision-relevant evidence
+
+All 40 historical endpoint comparisons replay with zero error. The audit
+completed normally. Performance uses 16 original maps per size (32 and 64);
+Jacobian diagnostics use the fixed first four maps. One training seed remains
+the independent replicate.
+
+The proposed near-zero-to-positive maximum-gain crossing was not observed:
+all 256 open-state K16 estimates are positive, including early horizons, and
+the estimates generally decrease while late performance deteriorates. For
+Masked Momentum at size32, T64 to T256 changes BA from 96.45% to 77.68%, while
+median open K16 log gain per step changes from 0.27742 to 0.17582. These are
+finite-window, raw-coordinate measurements, not asymptotic Lyapunov exponents.
+
+Continued state updates and growing source-flip logit effects coexist with
+declining paired correctness and increasingly wrong confidence. The generic
+masked models do not support directly transferring the earlier explicit
+Inertial RD component-mean drift explanation: most measured state and update
+energy is within-component variation. These observations do not establish a
+causal failure mechanism or a stable recurrence remedy.
+
+## Diagnostic limits and unchanged claims
+
+Only 562/1536 total product estimates and 148/256 open K16 estimates meet the
+frozen convergence criteria. Unconverged direction estimates are not certified
+maxima or upper bounds. At relative RMS perturbation 1e-4, the estimated leading
+direction has median linearization error 46.44%, versus 1.19% for random
+directions. Finite binary source flips and infinitesimal source tangents are
+distinct diagnostics. No rescue sweep, extra restarts or extra seeds were run.
+
+The audit does not rule out task-specific neutral modes, longer-product
+instability, unsampled windows or conclusions under another state metric.
+Full-state and open-endpoint-compressed products are distinguished; the latter
+still allow intermediate wall paths in whole-grid models. The supplied medium
+is fixed during differentiation.
+
+The previous same-medium Momentum advantage at the primary endpoint, both
+recipes' long-rollout failures and the earlier negative results remain intact.
+Different content/program widths still prevent causal isolation of velocity.
+Neither the medium interaction mechanism, selective dynamical isometry as a
+remedy, asymptotic stability nor a systems speedup is established.
+
+## Reviewer questions
+
+1. Do the exact operators, total driven-source tangent, endpoint compression
+   and replay checks match the frozen checkpoint dynamics and evaluation cohort?
+2. Are the convergence and finite-perturbation limits prominent enough to
+   prevent interpreting estimated maximum gain as a proven failure mechanism?
+3. Which mechanistic conclusions, if any, follow beyond rejecting the observed
+   maximum-gain zero-crossing narrative, without selecting a new architecture?
+
+---
+
+# Historical handoff: final masked-state control after 82635bb
 
 - Review base: `82635bbf0063d11359fd2d0b6c6571616a01f89b`.
 - Evidence head: `48497e147a9ee81dcb6027d51e103fe5c0156649`.
