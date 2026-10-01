@@ -1,0 +1,94 @@
+{
+  "review_base": "aa2d50a91e4ff02f74144dc699124bd886b5aa85",
+  "protocol": "generic_nca_dynamics_audit_seed0",
+  "execution_status": "COMPLETE",
+  "training": false,
+  "scientific_status": "NO_OBSERVED_MAXIMUM_GAIN_ZERO_CROSSING_WITH_DIAGNOSTIC_LIMITS",
+  "source_sha256": {
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/math_checks.py": "20036b3c82dfb4af2a2294b602f0168e2e5024de2742476e980531f31f6c02d5",
+    "new/nca_inertial_wind_tunnel/run_wind_tunnel.py": "1a867d96c178655f3db89c67956182cfee251ad232de883913754fc0e86e3bd7",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "new/nca_inertial_wind_tunnel/test_core.py": "8577b20e8c85715c0b19f645638a7cc031627bd8055532031bcd1d5840d74805",
+    "new/nca_inertial_wind_tunnel/THEORY.md": "952152ebe0ffad851f4bbac78f80787893268c66c96be81a29155d3098160eca",
+    "new/nca_inertial_wind_tunnel/WIND_TUNNEL.md": "49f70d3d9c410503a2a098fdc6485d058203f7583d7916361130c99ab377bbde",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/masked_medium/run_masked.py": "92670bb6b0f2f0d0d5e1d1a001fc6f73f8230021c33f6dde30341676cc9e1857",
+    "new/masked_medium/test_masked.py": "6d96434a9cf4981d11973f964d87d808be2d1ab3955d1cc0bef34c9afd30c621",
+    "new/masked_medium/PROTOCOL.md": "de4ab711619968b7205f0cd8031561e38585693721678740ffc9ff2e032c84f0",
+    "new/masked_momentum/momentum_cells.py": "862a54110275095d6d4c4e7c6d5ad7daf96928e334ff1ee4cb567619c88effae",
+    "new/masked_momentum/run_momentum.py": "09d1b42fb8455eafb801c0fdadcf7df2261ce7beb020657850b2b24f8464f0f2",
+    "new/masked_momentum/test_momentum.py": "edf595286b1a394db2ad3ece01039ee40f0a30a0e229e5ecb515f8901a14b164",
+    "new/masked_momentum/PROTOCOL.md": "33d904af43996fc876a15ef8fb51c56358839ca31fb784fb58252f5cbbc660c1",
+    "new/trajectory_audit/audit.py": "7bac2278d8932d53137227379cb26ddf556d86ee0cc80fef0592d2a12be7dceb",
+    "new/trajectory_audit/PROTOCOL.md": "81a78cb76ee2e4fb63e79e4bca63614269268b6a0cfa7c7421811b97c9c5f7f8",
+    "new/masked_state/run_state.py": "f41ea12c46b058827e6af8676dcb535941b7c9e00ed5df8066af553cbc77f87f",
+    "new/masked_state/state_cells.py": "c86c363304fb7bc1bb289075d5089509c9c02efded0be9a065a57e31a37b1d93",
+    "new/masked_state/test_state.py": "f306962adb9263de7777c92e6ce11e0cf0eb195ca87aa1c4d626e197b800829a",
+    "new/masked_state/PROTOCOL.md": "ddb96e9e45f9c9b681ba2c18c378c0ff95591a9d752ff32f7ea0a0e2b9898e1d",
+    "new/dynamics_audit/audit.py": "a24fae98942a9a5df8e2e7e4d4a8df03a1b1263606c8cf3b9b723d2cf032d63a",
+    "new/dynamics_audit/check.py": "ef60e780e9aac59f02b3a9183d915528d9d91334f7b2a1b0bf9e148aa4428750",
+    "new/dynamics_audit/operators.py": "a3329a4d74cdc9f0b43188ce9b0742f777e801d56e1d712893221c0d20dc2b45",
+    "new/dynamics_audit/PROTOCOL.md": "a96aa031f86722ebb2840795c27b48f3f22974cf0e7095a605540dcc7f154427"
+  },
+  "reference_sha256": {
+    "evidence/inertial_seed0/arms/nca_state_matched_seed0.json": "e4ca239a4f9f7fb9226e385e0636829c6898cfbe95fa940e8ce13ba4d769a77f",
+    "evidence/inertial_seed0/arms/momentum_nca_seed0.json": "048a647d82d274dbd1c245f3a28e75cd960ff8f253cbec07d500404febe3cc43",
+    "evidence/masked_state_seed0/arms/masked_state_nca_seed0.json": "62b1a2d28e91a8235be30a789f6906ebce90ad49f78460af807371efd13e22c5",
+    "evidence/masked_momentum_seed0/arms/masked_momentum_nca_seed0.json": "d4fb2c9d2db02acc24aae5227bbb2f5efda1d370b97e742eac3a98c9991aaf2e"
+  },
+  "analysis_source_sha256": {
+    "new/dynamics_audit/analyze.py": "b5bb9aaf062ab77c19e4a5572d29a8bb0b7103f8df05e0e7445521940be5aead"
+  },
+  "publication_tool_sha256": {
+    "tools/export_dynamics_evidence.py": "30bab6cc5bac3974bdfccf8a34c4f75a258ea799adaeb6fd84c5ba69db1f6f69"
+  },
+  "checkpoint_sha256": {
+    "nca_state_matched": "ebc3860e920ebe717de6b62095581ae3793b4103dbcc076680f66f221e2d2045",
+    "momentum_nca": "fe2f4a2a2f1d7170e44618ffbb9b2b2245f115ca75c63c85d789d1e6d0a72c98",
+    "masked_state_nca": "813799a66c552efa33edb6f31100bfa7189b59781621fd8bab88c6d937590c90",
+    "masked_momentum_nca": "e08afce75406afe5c5f44831e982c0814f39fdf9801d07e613c06257c456c5a8"
+  },
+  "published_evidence_sha256": {
+    "evidence/dynamics_audit_seed0/analysis.json": "fa773968693476362a8d4e499727cb7a6955869c56b24b153b53c740c4ab2a7b",
+    "evidence/dynamics_audit_seed0/completion.json": "54a6bddcf4eb79cfb89cafee37011a80966e941cfa6d3e9bd085c226ff38dbb6",
+    "evidence/dynamics_audit_seed0/dynamics_overview.png": "0cd0e73df3e4f5ea68591c5622e4d84b1e53d479094d30010226840a7982289e",
+    "evidence/dynamics_audit_seed0/INTERPRETATION.md": "e035dfa505f452a817f4094edff8b0becf15c781f521b5114fee1700d2ecdeda",
+    "evidence/dynamics_audit_seed0/manifest.json": "a5185170591e66640ca4c8edba6f59455f8aff91bcf543b1927638491eef8e5a",
+    "evidence/dynamics_audit_seed0/provenance.json": "dcadb8ddc7d117a6855c4656180b1003afde6ae34e9fb6d2fac8b557404b66b7",
+    "evidence/dynamics_audit_seed0/raw/masked_momentum_nca_size32_curves.json": "b1aba29cc5c44b801495eda13d1432f0e3a31d16b2671a9a83e6feb3c8436d2b",
+    "evidence/dynamics_audit_seed0/raw/masked_momentum_nca_size32_dynamics.json": "b0b0af137fe2353b5c9cdeee55e53bd9f0d9b51802f045872dcd79a0c7a405af",
+    "evidence/dynamics_audit_seed0/raw/masked_momentum_nca_size64_curves.json": "348954a66d720877ef885393820a89d390567185d9629114f0155567306f05c5",
+    "evidence/dynamics_audit_seed0/raw/masked_momentum_nca_size64_dynamics.json": "86c065e3a34e328191128e04dcc189b3013864ae6300ad398cc7b7543f1099fb",
+    "evidence/dynamics_audit_seed0/raw/masked_state_nca_size32_curves.json": "f2422a966d7811be9d79e9862ff6ec3f2e54893d5994848376f87fd4105280f4",
+    "evidence/dynamics_audit_seed0/raw/masked_state_nca_size32_dynamics.json": "ec0fc018f267f3998bc2cc0919e55f4f695dac50faea630a367f09bf741dde9d",
+    "evidence/dynamics_audit_seed0/raw/masked_state_nca_size64_curves.json": "218e4da530c0716c1c79ec37e889b6c3ab22f10fd1d0a9adf027d567d41bd6dd",
+    "evidence/dynamics_audit_seed0/raw/masked_state_nca_size64_dynamics.json": "f67f3d7d9febd28c6d2cdcf41dc5c79363e546c49acae645e3225129f74a8e00",
+    "evidence/dynamics_audit_seed0/raw/momentum_nca_size32_curves.json": "ed8f62cf33c59a097caefac9af17b545912af5108dc055e521edb3cf89915279",
+    "evidence/dynamics_audit_seed0/raw/momentum_nca_size32_dynamics.json": "40687061c11020e3489e94be86b4e199109b566ab315f498afa399ef3516b39b",
+    "evidence/dynamics_audit_seed0/raw/momentum_nca_size64_curves.json": "9345984cbb492cbf6a58ceb5d27fb146533be96ed2bc357492a5463529b54233",
+    "evidence/dynamics_audit_seed0/raw/momentum_nca_size64_dynamics.json": "98b6696e6a4e58bd05a1a6add9add152515bc5f1cb6d90a32dd2d592f7c46f08",
+    "evidence/dynamics_audit_seed0/raw/nca_state_matched_size32_curves.json": "ee5e3064844a78c868ae4e601ef3ffcb9fc07923e64dff3d3667e5ec0a33ec4c",
+    "evidence/dynamics_audit_seed0/raw/nca_state_matched_size32_dynamics.json": "2054f76f12820c00814c555d6bfe4874eb3535581c8768ac865dd6ecb02223f4",
+    "evidence/dynamics_audit_seed0/raw/nca_state_matched_size64_curves.json": "d77a1c7390620e69f209169c0f7827cfe361b1391c35a79a1765fedd1827cb43",
+    "evidence/dynamics_audit_seed0/raw/nca_state_matched_size64_dynamics.json": "dc5bbc5333b95569e0d2c5302c2b9a7b1dbe9b2a1e6794b3259228b74ceee101",
+    "evidence/dynamics_audit_seed0/RESULTS.md": "7add67134e2cbbc5b3424948e20df99d701e13c83b61a4248e361f59c270f200",
+    "evidence/dynamics_audit_seed0/validation.json": "fce3b62b1d81878f6e49034d4924956328c1de7f4f58563907c42b0800f80cf1"
+  },
+  "excluded": [
+    "checkpoints",
+    "machine receipts",
+    "PID",
+    "transient logs",
+    "redundant combined raw summary",
+    "local PDF copy"
+  ],
+  "notes": [
+    "All prior frozen sources and evidence unchanged.",
+    "All16 raw curve/dynamics files and compact derived JSON copied byte-for-byte.",
+    "Interpretation differs from local copy only in public evidence routing.",
+    "Manifest and completion records omit PID; original records retained locally.",
+    "Power convergence and finite-perturbation limitations are material.",
+    "No asymptotic Lyapunov, causal mechanism or new architecture claim."
+  ]
+}

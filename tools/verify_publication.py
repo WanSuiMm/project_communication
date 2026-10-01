@@ -46,6 +46,7 @@ def main():
         bindings = {**sources, **evidence, **manifest.get('protocol_files_sha256', {}),
                     **manifest.get('reference_sha256', {}),
                     **manifest.get('recovery_source_sha256', {}),
+                    **manifest.get('analysis_source_sha256', {}),
                     **manifest.get('publication_tool_sha256', {})}
         for name, expected in bindings.items():
             if name not in published:

@@ -1,0 +1,60 @@
+{
+  "cpu_numerical_gate": {
+    "status": "PASS",
+    "derivative_checks": [
+      {
+        "arm": "nca_state_matched",
+        "state_jvp_relative_error": 2.4001419658498578e-17,
+        "state_vjp_relative_error": 9.754220862360491e-17,
+        "source_jvp_relative_error": 0.0,
+        "total_driven_rollout_jvp_error": 1.5070521355503664e-16,
+        "product_adjoint_error": 0.0,
+        "product_finite_difference_error": 1.209464917015695e-11
+      },
+      {
+        "arm": "momentum_nca",
+        "state_jvp_relative_error": 3.6078047354342374e-17,
+        "state_vjp_relative_error": 6.81128352428536e-17,
+        "source_jvp_relative_error": 0.0,
+        "total_driven_rollout_jvp_error": 1.4206714319540414e-16,
+        "product_adjoint_error": 1.9289076677091227e-16,
+        "product_finite_difference_error": 1.8869835488161592e-11
+      },
+      {
+        "arm": "masked_state_nca",
+        "state_jvp_relative_error": 1.4078166592544892e-17,
+        "state_vjp_relative_error": 1.4014382157753275e-16,
+        "source_jvp_relative_error": 0.0,
+        "total_driven_rollout_jvp_error": 1.2879691800846577e-16,
+        "product_adjoint_error": 0.0,
+        "product_finite_difference_error": 1.0422230695115952e-11
+      },
+      {
+        "arm": "masked_momentum_nca",
+        "state_jvp_relative_error": 2.4690268897921883e-17,
+        "state_vjp_relative_error": 1.1155593403623628e-16,
+        "source_jvp_relative_error": 0.0,
+        "total_driven_rollout_jvp_error": 1.4829671303659738e-16,
+        "product_adjoint_error": 2.8134217158529503e-16,
+        "product_finite_difference_error": 2.2528028421542902e-11
+      }
+    ],
+    "free_momentum_exact_sigma_K16": 7.402436561270117,
+    "power_estimation_error": 0.0
+  },
+  "historical_replay_count": 40,
+  "historical_replay_max_error": 0.0,
+  "published_raw_files_byte_identical": true,
+  "executed_source_snapshot_matches": true,
+  "preflight": {
+    "status": "PREFLIGHT_PASSED",
+    "finished_utc": "2026-10-01T08:21:52.660384+00:00",
+    "elapsed_seconds": 4.265999999999622,
+    "training": false
+  },
+  "new_training_or_gpu_audit_for_publication": false,
+  "product_estimates_converged": 562,
+  "product_estimates_total": 1536,
+  "open_K16_converged": 148,
+  "open_K16_total": 256
+}

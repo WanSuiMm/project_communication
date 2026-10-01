@@ -1,0 +1,2314 @@
+{
+  "status": "VERIFIED_COMPLETED_AUDIT",
+  "training": false,
+  "execution_elapsed_seconds": 112.85900000000038,
+  "finished_utc": "2026-10-01T08:28:11.332531+00:00",
+  "source_and_checkpoint_hashes_match": true,
+  "independent_replay_comparisons": 40,
+  "maximum_replay_error": 0.0,
+  "maximum_window_batch_replay_relative_error": 0.0,
+  "all_products": {
+    "count": 1536,
+    "converged": 562
+  },
+  "open_K16": {
+    "count": 256,
+    "converged": 148,
+    "positive_log_gain_count": 256,
+    "log_gain": {
+      "count": 256,
+      "median": 0.19197154980405629,
+      "minimum": 0.08271289514756607,
+      "maximum": 0.9071162572993594,
+      "p90": 0.6663735114498556
+    }
+  },
+  "perturbation_relative_errors": {
+    "random": {
+      "0.0001": {
+        "count": 256,
+        "median": 0.011868314956462726,
+        "minimum": 0.0010156244736612221,
+        "maximum": 1.131429261505319,
+        "p90": 0.5852008477699333,
+        "below_10_percent": 193
+      },
+      "0.001": {
+        "count": 256,
+        "median": 0.021916597123519482,
+        "minimum": 0.004401753245725385,
+        "maximum": 1.0685028846831977,
+        "p90": 0.8910197186500237,
+        "below_10_percent": 200
+      }
+    },
+    "estimated_worst": {
+      "0.0001": {
+        "count": 256,
+        "median": 0.4644027179415937,
+        "minimum": 0.021714605643128347,
+        "maximum": 1.1855084915881522,
+        "p90": 0.9829679532216935,
+        "below_10_percent": 27
+      },
+      "0.001": {
+        "count": 256,
+        "median": 0.7733324944636524,
+        "minimum": 0.2253532933024765,
+        "maximum": 1.357938912251763,
+        "p90": 0.9980473060652897,
+        "below_10_percent": 0
+      }
+    }
+  },
+  "rows": [
+    {
+      "arm": "nca_state_matched",
+      "size": 32,
+      "t": 16,
+      "ba_all16": 0.7744709849357605,
+      "ba_jacobian_maps4": 0.7576153874397278,
+      "bce_all16": 0.4071418046951294,
+      "paired_all16": 0.2633374035358429,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.26455664576734705,
+        "minimum": 0.2227785501807116,
+        "maximum": 0.2865164872531365,
+        "p90": 0.28055687640574906
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 68.95593926588933,
+        "minimum": 35.32026232811089,
+        "maximum": 97.93106336080405,
+        "p90": 89.9315128996374
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 0.7610976552560416,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.06432353097738092,
+      "h_component_constant_energy_fraction_mean_maps": 0.5876157924513349,
+      "update_component_constant_energy_fraction_mean_maps": 0.4292609422579869,
+      "finite_source_flip_logit_rms_median_maps": 2.703907961299498,
+      "wrong_margin_median_of_maps_with_errors": -0.2023678943514824,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 32,
+      "t": 32,
+      "ba_all16": 0.8586207628250122,
+      "ba_jacobian_maps4": 0.8354941755533218,
+      "bce_all16": 0.26867640018463135,
+      "paired_all16": 0.4465286135673523,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.23716467433605237,
+        "minimum": 0.1932802748739096,
+        "maximum": 0.24905588906341983,
+        "p90": 0.24568520659230397
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 44.46444163247589,
+        "minimum": 22.031745663977517,
+        "maximum": 53.77960064056043,
+        "p90": 51.12497345348117
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 1.7717000185372345,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.07798333404945595,
+      "h_component_constant_energy_fraction_mean_maps": 0.49177021428062984,
+      "update_component_constant_energy_fraction_mean_maps": 0.449774169067904,
+      "finite_source_flip_logit_rms_median_maps": 7.454860724838106,
+      "wrong_margin_median_of_maps_with_errors": -0.21981912851333618,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 32,
+      "t": 48,
+      "ba_all16": 0.853995680809021,
+      "ba_jacobian_maps4": 0.8443259745836258,
+      "bce_all16": 0.2590000629425049,
+      "paired_all16": 0.46236297488212585,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.18091457206077066,
+        "minimum": 0.16862985674498066,
+        "maximum": 0.2494733851890478,
+        "p90": 0.23220508916005458
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 18.35745556832726,
+        "minimum": 14.851156008656897,
+        "maximum": 54.14004758034324,
+        "p90": 44.36447230552899
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 2.9561481889334176,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.07915484143021215,
+      "h_component_constant_energy_fraction_mean_maps": 0.4637667537846679,
+      "update_component_constant_energy_fraction_mean_maps": 0.38864629151294805,
+      "finite_source_flip_logit_rms_median_maps": 11.966005006169514,
+      "wrong_margin_median_of_maps_with_errors": -0.44023311138153076,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 32,
+      "t": 64,
+      "ba_all16": 0.8516697883605957,
+      "ba_jacobian_maps4": 0.8593540191650391,
+      "bce_all16": 0.2579170763492584,
+      "paired_all16": 0.4930572509765625,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.16075522006983173,
+        "minimum": 0.14711587140297502,
+        "maximum": 0.16373929699887552,
+        "p90": 0.16307862492279737
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 13.094100188299578,
+        "minimum": 10.526058477523993,
+        "maximum": 13.733371571032915,
+        "p90": 13.590727342410387
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 4.17166756325097,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.07911864428629217,
+      "h_component_constant_energy_fraction_mean_maps": 0.43883893377049576,
+      "update_component_constant_energy_fraction_mean_maps": 0.3566381307484585,
+      "finite_source_flip_logit_rms_median_maps": 15.942635126463054,
+      "wrong_margin_median_of_maps_with_errors": -0.44405046105384827,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 32,
+      "t": 96,
+      "ba_all16": 0.8371433019638062,
+      "ba_jacobian_maps4": 0.8515340834856033,
+      "bce_all16": 0.2741084098815918,
+      "paired_all16": 0.40414127707481384,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.1365113867042269,
+        "minimum": 0.131412549095953,
+        "maximum": 0.14095295567136748,
+        "p90": 0.13973243364575014
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 8.883538977977462,
+        "minimum": 8.187436011448675,
+        "maximum": 9.537651591482021,
+        "p90": 9.357329623553666
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 6.627571681708,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.07866155279644235,
+      "h_component_constant_energy_fraction_mean_maps": 0.40738599381236584,
+      "update_component_constant_energy_fraction_mean_maps": 0.34400831118188147,
+      "finite_source_flip_logit_rms_median_maps": 24.3061948846347,
+      "wrong_margin_median_of_maps_with_errors": -0.4348207414150238,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 32,
+      "t": 128,
+      "ba_all16": 0.838098406791687,
+      "ba_jacobian_maps4": 0.843086764216423,
+      "bce_all16": 0.28953051567077637,
+      "paired_all16": 0.39049938321113586,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.11434390207350159,
+        "minimum": 0.09599237357627789,
+        "maximum": 0.14255492297962094,
+        "p90": 0.13943835477282138
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 6.485837821112574,
+        "minimum": 4.645402297434548,
+        "maximum": 9.785275616272987,
+        "p90": 9.335727733720894
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 9.091695149366005,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.07829789710771501,
+      "h_component_constant_energy_fraction_mean_maps": 0.39130143140708173,
+      "update_component_constant_energy_fraction_mean_maps": 0.3409717104598842,
+      "finite_source_flip_logit_rms_median_maps": 32.74855515650756,
+      "wrong_margin_median_of_maps_with_errors": -0.5958566665649414,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 32,
+      "t": 192,
+      "ba_all16": 0.8303073644638062,
+      "ba_jacobian_maps4": 0.8462756723165512,
+      "bce_all16": 0.3378857374191284,
+      "paired_all16": 0.40170523524284363,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.09262600551467258,
+        "minimum": 0.08459481609997549,
+        "maximum": 0.10344962753843627,
+        "p90": 0.10149839600384641
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 4.412328004596677,
+        "minimum": 3.871016204055774,
+        "maximum": 5.234095450748117,
+        "p90": 5.078903639041723
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 14.005428023986765,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.07755227140003279,
+      "h_component_constant_energy_fraction_mean_maps": 0.3740729938258882,
+      "update_component_constant_energy_fraction_mean_maps": 0.33596108120732204,
+      "finite_source_flip_logit_rms_median_maps": 49.08126569547308,
+      "wrong_margin_median_of_maps_with_errors": -0.9060075283050537,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 32,
+      "t": 256,
+      "ba_all16": 0.8284624814987183,
+      "ba_jacobian_maps4": 0.8427777737379074,
+      "bce_all16": 0.41120386123657227,
+      "paired_all16": 0.38440924882888794,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.08869987830654356,
+        "minimum": 0.08271289514756607,
+        "maximum": 0.09496171768744371,
+        "p90": 0.09393058964353793
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 4.138026741106197,
+        "minimum": 3.756194419404122,
+        "maximum": 4.569425487000138,
+        "p90": 4.496074287518896
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 18.88195086817094,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.07665646665805607,
+      "h_component_constant_energy_fraction_mean_maps": 0.364464246025611,
+      "update_component_constant_energy_fraction_mean_maps": 0.32968249285334683,
+      "finite_source_flip_logit_rms_median_maps": 64.80169438230047,
+      "wrong_margin_median_of_maps_with_errors": -0.9940308332443237,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 64,
+      "t": 16,
+      "ba_all16": 0.6300682425498962,
+      "ba_jacobian_maps4": 0.6261551082134247,
+      "bce_all16": 0.5762192606925964,
+      "paired_all16": 0.07807382196187973,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.3056704924420285,
+        "minimum": 0.29265851177461133,
+        "maximum": 0.3174438515374655,
+        "p90": 0.31640658051481774
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 134.22981734934694,
+        "minimum": 108.04374467396414,
+        "maximum": 160.6296853309207,
+        "p90": 158.0362191637818
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 0.5774472574654939,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.05322504163114849,
+      "h_component_constant_energy_fraction_mean_maps": 0.6551425547753305,
+      "update_component_constant_energy_fraction_mean_maps": 0.32258682933519306,
+      "finite_source_flip_logit_rms_median_maps": 1.32080281292145,
+      "wrong_margin_median_of_maps_with_errors": -0.24639633297920227,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 64,
+      "t": 32,
+      "ba_all16": 0.724295973777771,
+      "ba_jacobian_maps4": 0.7092574387788773,
+      "bce_all16": 0.6880165338516235,
+      "paired_all16": 0.13074266910552979,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.29085012104623503,
+        "minimum": 0.2394821537221766,
+        "maximum": 0.32051110805307487,
+        "p90": 0.3163997352494805
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 108.40168617598421,
+        "minimum": 46.141578329171956,
+        "maximum": 168.7094034815197,
+        "p90": 158.743853789178
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 1.637035017869154,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.1121940824946929,
+      "h_component_constant_energy_fraction_mean_maps": 0.47556539339459847,
+      "update_component_constant_energy_fraction_mean_maps": 0.5221873693130235,
+      "finite_source_flip_logit_rms_median_maps": 5.334999927406669,
+      "wrong_margin_median_of_maps_with_errors": -1.5170954465866089,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 64,
+      "t": 48,
+      "ba_all16": 0.7398272752761841,
+      "ba_jacobian_maps4": 0.717239111661911,
+      "bce_all16": 1.888207197189331,
+      "paired_all16": 0.13574400544166565,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.23397502259386807,
+        "minimum": 0.19574024053793093,
+        "maximum": 0.2700608135722049,
+        "p90": 0.2614503621294231
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 42.54505904002622,
+        "minimum": 22.91619460488617,
+        "maximum": 75.26182372166258,
+        "p90": 66.94780802494931
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 3.4899376404782916,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.13339985525011006,
+      "h_component_constant_energy_fraction_mean_maps": 0.5210009865126758,
+      "update_component_constant_energy_fraction_mean_maps": 0.567054362616932,
+      "finite_source_flip_logit_rms_median_maps": 11.311570465363111,
+      "wrong_margin_median_of_maps_with_errors": -5.636301040649414,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 64,
+      "t": 64,
+      "ba_all16": 0.7368289232254028,
+      "ba_jacobian_maps4": 0.7134819626808167,
+      "bce_all16": 3.3161778450012207,
+      "paired_all16": 0.13184916973114014,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.19223402988120755,
+        "minimum": 0.1713018335037138,
+        "maximum": 0.21742252016105765,
+        "p90": 0.21279455060203212
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 21.930820720283265,
+        "minimum": 15.499834338965691,
+        "maximum": 32.41950742299575,
+        "p90": 30.292243458592985
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 5.574188654188009,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.13596318121011539,
+      "h_component_constant_energy_fraction_mean_maps": 0.5385020024488036,
+      "update_component_constant_energy_fraction_mean_maps": 0.5444659495057823,
+      "finite_source_flip_logit_rms_median_maps": 17.69588323400776,
+      "wrong_margin_median_of_maps_with_errors": -10.325546264648438,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 64,
+      "t": 96,
+      "ba_all16": 0.7316197156906128,
+      "ba_jacobian_maps4": 0.7109144777059555,
+      "bce_all16": 6.031668663024902,
+      "paired_all16": 0.12932637333869934,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.17192423285387975,
+        "minimum": 0.16737610201861747,
+        "maximum": 0.19739642017000752,
+        "p90": 0.19010809818432878
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 15.657738577653603,
+        "minimum": 14.556208917187437,
+        "maximum": 23.53156526720958,
+        "p90": 21.257925418578125
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 9.873739721145931,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.13734109962635527,
+      "h_component_constant_energy_fraction_mean_maps": 0.5394993734208611,
+      "update_component_constant_energy_fraction_mean_maps": 0.5242466172040823,
+      "finite_source_flip_logit_rms_median_maps": 30.71824702273032,
+      "wrong_margin_median_of_maps_with_errors": -16.934439659118652,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 64,
+      "t": 128,
+      "ba_all16": 0.7327308058738708,
+      "ba_jacobian_maps4": 0.7112937271595001,
+      "bce_all16": 8.763381958007812,
+      "paired_all16": 0.12985748052597046,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.13960099431268996,
+        "minimum": 0.12948052234214905,
+        "maximum": 0.1749566842045533,
+        "p90": 0.1649930346964679
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 9.339044220907986,
+        "minimum": 7.938214353609147,
+        "maximum": 16.433253712256644,
+        "p90": 14.401041880839244
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 14.24137215272592,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.13860761397006682,
+      "h_component_constant_energy_fraction_mean_maps": 0.5364535424980591,
+      "update_component_constant_energy_fraction_mean_maps": 0.5236730928918845,
+      "finite_source_flip_logit_rms_median_maps": 43.87413479460903,
+      "wrong_margin_median_of_maps_with_errors": -23.764192581176758,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 64,
+      "t": 192,
+      "ba_all16": 0.7316387295722961,
+      "ba_jacobian_maps4": 0.7107098400592804,
+      "bce_all16": 14.531076431274414,
+      "paired_all16": 0.12821988761425018,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.11689258085655094,
+        "minimum": 0.11112113404338063,
+        "maximum": 0.12170740312177239,
+        "p90": 0.12152572893344588
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 6.504846073643243,
+        "minimum": 5.917642508655722,
+        "maximum": 7.009865051100997,
+        "p90": 6.989587263731239
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 23.112032820065245,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.1402412430464531,
+      "h_component_constant_energy_fraction_mean_maps": 0.5358807809621158,
+      "update_component_constant_energy_fraction_mean_maps": 0.5322096286973776,
+      "finite_source_flip_logit_rms_median_maps": 70.33057090544483,
+      "wrong_margin_median_of_maps_with_errors": -35.77024269104004,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "nca_state_matched",
+      "size": 64,
+      "t": 256,
+      "ba_all16": 0.7302848100662231,
+      "ba_jacobian_maps4": 0.709865003824234,
+      "bce_all16": 20.361156463623047,
+      "paired_all16": 0.12746746838092804,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.10423601698613677,
+        "minimum": 0.1020759226201076,
+        "maximum": 0.10911648479798605,
+        "p90": 0.1077363338402301
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 5.3004212811506655,
+        "minimum": 5.120308862411602,
+        "maximum": 5.730849398165576,
+        "p90": 5.608843781466666
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 32.06071392866676,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.1409493244978886,
+      "h_component_constant_energy_fraction_mean_maps": 0.5356327685762459,
+      "update_component_constant_energy_fraction_mean_maps": 0.5273843261339901,
+      "finite_source_flip_logit_rms_median_maps": 96.86911440342912,
+      "wrong_margin_median_of_maps_with_errors": -49.90043258666992,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 32,
+      "t": 16,
+      "ba_all16": 0.7513102293014526,
+      "ba_jacobian_maps4": 0.7766890227794647,
+      "bce_all16": 0.46921491622924805,
+      "paired_all16": 0.19001218676567078,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.3122868752023286,
+        "minimum": 0.31066193023063976,
+        "maximum": 0.3160397915285275,
+        "p90": 0.3153434152035769
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 147.94673883270016,
+        "minimum": 144.11201565760382,
+        "maximum": 157.06137687405047,
+        "p90": 155.34349428756465
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 1.549368285093629,
+      "v_open_rms_mean_maps": 0.18312434241934283,
+      "h_update_open_rms_mean_maps": 0.19291501197036187,
+      "h_component_constant_energy_fraction_mean_maps": 0.6241629337669401,
+      "update_component_constant_energy_fraction_mean_maps": 0.48395990192706884,
+      "finite_source_flip_logit_rms_median_maps": 1.7984115247222907,
+      "wrong_margin_median_of_maps_with_errors": -0.21045246720314026,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 32,
+      "t": 32,
+      "ba_all16": 0.850684642791748,
+      "ba_jacobian_maps4": 0.8479741662740707,
+      "bce_all16": 0.28340232372283936,
+      "paired_all16": 0.3907429873943329,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.26866311849397884,
+        "minimum": 0.2619605413774096,
+        "maximum": 0.27562278263411555,
+        "p90": 0.27383463331935115
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 73.60681946039446,
+        "minimum": 66.11321571442531,
+        "maximum": 82.26654481194916,
+        "p90": 80.02161535602117
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 4.910719250696944,
+      "v_open_rms_mean_maps": 0.2951973201532452,
+      "h_update_open_rms_mean_maps": 0.29908904377878165,
+      "h_component_constant_energy_fraction_mean_maps": 0.45313779544324917,
+      "update_component_constant_energy_fraction_mean_maps": 0.2857035109679952,
+      "finite_source_flip_logit_rms_median_maps": 6.468031335507588,
+      "wrong_margin_median_of_maps_with_errors": -0.454088494181633,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 32,
+      "t": 48,
+      "ba_all16": 0.8649114966392517,
+      "ba_jacobian_maps4": 0.8483933806419373,
+      "bce_all16": 0.2732321619987488,
+      "paired_all16": 0.4823386073112488,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.2240467027852597,
+        "minimum": 0.22196765462889928,
+        "maximum": 0.2330996663172145,
+        "p90": 0.23098031344506703
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 36.062489917948234,
+        "minimum": 34.8649656018389,
+        "maximum": 41.66221742261787,
+        "p90": 40.32638436736917
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 9.391177559837702,
+      "v_open_rms_mean_maps": 0.33601551121715334,
+      "h_update_open_rms_mean_maps": 0.3373394080744034,
+      "h_component_constant_energy_fraction_mean_maps": 0.3191363863282216,
+      "update_component_constant_energy_fraction_mean_maps": 0.11690681670442082,
+      "finite_source_flip_logit_rms_median_maps": 9.571892598594669,
+      "wrong_margin_median_of_maps_with_errors": -0.4572799503803253,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 32,
+      "t": 64,
+      "ba_all16": 0.8443683385848999,
+      "ba_jacobian_maps4": 0.8424151837825775,
+      "bce_all16": 0.3216845989227295,
+      "paired_all16": 0.42752739787101746,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.19201695968497212,
+        "minimum": 0.17384152902221472,
+        "maximum": 0.20567358381296674,
+        "p90": 0.20465567850544536
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 21.8826680576589,
+        "minimum": 16.142643972967512,
+        "maximum": 26.86373782669953,
+        "p90": 26.437885934432135
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 14.344205140831198,
+      "v_open_rms_mean_maps": 0.3487972326179601,
+      "h_update_open_rms_mean_maps": 0.34919459878674464,
+      "h_component_constant_energy_fraction_mean_maps": 0.23042558970564586,
+      "update_component_constant_energy_fraction_mean_maps": 0.08206615928894788,
+      "finite_source_flip_logit_rms_median_maps": 11.189602312560993,
+      "wrong_margin_median_of_maps_with_errors": -0.7669287025928497,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 32,
+      "t": 96,
+      "ba_all16": 0.8242207169532776,
+      "ba_jacobian_maps4": 0.8220755010843277,
+      "bce_all16": 0.4059200882911682,
+      "paired_all16": 0.3885505497455597,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.18039626010875026,
+        "minimum": 0.17526561628593101,
+        "maximum": 0.18493552435322447,
+        "p90": 0.18370129011841954
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 17.927992136777554,
+        "minimum": 16.51468294364982,
+        "maximum": 19.27807403324921,
+        "p90": 18.90963492317484
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 24.875620343035433,
+      "v_open_rms_mean_maps": 0.3561979679849802,
+      "h_update_open_rms_mean_maps": 0.35634088371063644,
+      "h_component_constant_energy_fraction_mean_maps": 0.15232580413164268,
+      "update_component_constant_energy_fraction_mean_maps": 0.06659277342747533,
+      "finite_source_flip_logit_rms_median_maps": 12.211602922842086,
+      "wrong_margin_median_of_maps_with_errors": -1.2305418252944946,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 32,
+      "t": 128,
+      "ba_all16": 0.8169143199920654,
+      "ba_jacobian_maps4": 0.8145924210548401,
+      "bce_all16": 0.4661048352718353,
+      "paired_all16": 0.38124239444732666,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.17928278601154757,
+        "minimum": 0.17622429896332115,
+        "maximum": 0.18372593077147983,
+        "p90": 0.18245854986058374
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 17.61112297278423,
+        "minimum": 16.769953171148796,
+        "maximum": 18.90856307751911,
+        "p90": 18.537805043619024
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 35.829653097917515,
+      "v_open_rms_mean_maps": 0.3607372803060285,
+      "h_update_open_rms_mean_maps": 0.36085618504671657,
+      "h_component_constant_energy_fraction_mean_maps": 0.11966916124294505,
+      "update_component_constant_energy_fraction_mean_maps": 0.06069326672704894,
+      "finite_source_flip_logit_rms_median_maps": 12.208582481283308,
+      "wrong_margin_median_of_maps_with_errors": -1.2945781350135803,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 32,
+      "t": 192,
+      "ba_all16": 0.7675129175186157,
+      "ba_jacobian_maps4": 0.7439457476139069,
+      "bce_all16": 0.8113073706626892,
+      "paired_all16": 0.3157125413417816,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.17509968186610506,
+        "minimum": 0.17106363278509007,
+        "maximum": 0.18067953658737157,
+        "p90": 0.1797720339147424
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 16.484658551553633,
+        "minimum": 15.440873619371125,
+        "maximum": 18.009017152862636,
+        "p90": 17.75375270100065
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 58.321113404530706,
+      "v_open_rms_mean_maps": 0.3641029489421078,
+      "h_update_open_rms_mean_maps": 0.36414600520905627,
+      "h_component_constant_energy_fraction_mean_maps": 0.09137229343426241,
+      "update_component_constant_energy_fraction_mean_maps": 0.051845853682827375,
+      "finite_source_flip_logit_rms_median_maps": 12.711093391811502,
+      "wrong_margin_median_of_maps_with_errors": -1.9819671511650085,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 32,
+      "t": 256,
+      "ba_all16": 0.733811616897583,
+      "ba_jacobian_maps4": 0.6986990869045258,
+      "bce_all16": 1.2479380369186401,
+      "paired_all16": 0.28599268198013306,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.17396139808642658,
+        "minimum": 0.17264224097182787,
+        "maximum": 0.1755040338462146,
+        "p90": 0.17515577926149853
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 16.173935499111916,
+        "minimum": 15.835842057359349,
+        "maximum": 16.577801502351875,
+        "p90": 16.486281335798104
+      },
+      "converged_K16": 0,
+      "h_open_rms_mean_maps": 81.10028892828164,
+      "v_open_rms_mean_maps": 0.36820802312122664,
+      "h_update_open_rms_mean_maps": 0.3682669404162263,
+      "h_component_constant_energy_fraction_mean_maps": 0.07777845743507666,
+      "update_component_constant_energy_fraction_mean_maps": 0.04483561541269995,
+      "finite_source_flip_logit_rms_median_maps": 14.059698503813657,
+      "wrong_margin_median_of_maps_with_errors": -2.810146689414978,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 64,
+      "t": 16,
+      "ba_all16": 0.5730120539665222,
+      "ba_jacobian_maps4": 0.5725380778312683,
+      "bce_all16": 0.630220353603363,
+      "paired_all16": 0.043639905750751495,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.3311230903681036,
+        "minimum": 0.32915952755020256,
+        "maximum": 0.3313335820669699,
+        "p90": 0.33129980136079173
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 199.930673194007,
+        "minimum": 193.74685596090566,
+        "maximum": 200.60490223116184,
+        "p90": 200.4965746398351
+      },
+      "converged_K16": 0,
+      "h_open_rms_mean_maps": 1.3424762781453161,
+      "v_open_rms_mean_maps": 0.14208908447044424,
+      "h_update_open_rms_mean_maps": 0.14908909864455827,
+      "h_component_constant_energy_fraction_mean_maps": 0.828260778689869,
+      "update_component_constant_energy_fraction_mean_maps": 0.6375636086846315,
+      "finite_source_flip_logit_rms_median_maps": 0.7679129698068485,
+      "wrong_margin_median_of_maps_with_errors": -0.2245553731918335,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 64,
+      "t": 32,
+      "ba_all16": 0.6849505305290222,
+      "ba_jacobian_maps4": 0.6759788542985916,
+      "bce_all16": 0.5325067639350891,
+      "paired_all16": 0.11609277129173279,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.3577777018269388,
+        "minimum": 0.35515071928906494,
+        "maximum": 0.36021772372509636,
+        "p90": 0.35965395128754785
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 306.2750276482102,
+        "minimum": 293.6567324898608,
+        "maximum": 318.45576488379817,
+        "p90": 315.6259362049027
+      },
+      "converged_K16": 0,
+      "h_open_rms_mean_maps": 3.817146803147862,
+      "v_open_rms_mean_maps": 0.2592252839201641,
+      "h_update_open_rms_mean_maps": 0.26551058483997464,
+      "h_component_constant_energy_fraction_mean_maps": 0.614900099638267,
+      "update_component_constant_energy_fraction_mean_maps": 0.4550944232915137,
+      "finite_source_flip_logit_rms_median_maps": 3.7743295785101063,
+      "wrong_margin_median_of_maps_with_errors": -0.8370240032672882,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 64,
+      "t": 48,
+      "ba_all16": 0.7426791191101074,
+      "ba_jacobian_maps4": 0.7219269126653671,
+      "bce_all16": 0.6119066476821899,
+      "paired_all16": 0.15650172531604767,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.280162963889358,
+        "minimum": 0.2738705741395282,
+        "maximum": 0.28365294095412086,
+        "p90": 0.28311334745503614
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 88.49743202099754,
+        "minimum": 79.99220450452118,
+        "maximum": 93.5454164004561,
+        "p90": 92.74930277364894
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 7.518916322365664,
+      "v_open_rms_mean_maps": 0.3230103301760519,
+      "h_update_open_rms_mean_maps": 0.3240648356011798,
+      "h_component_constant_energy_fraction_mean_maps": 0.4159379635305466,
+      "update_component_constant_energy_fraction_mean_maps": 0.14070993126469422,
+      "finite_source_flip_logit_rms_median_maps": 7.42604643140012,
+      "wrong_margin_median_of_maps_with_errors": -1.4835699200630188,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 64,
+      "t": 64,
+      "ba_all16": 0.7594380378723145,
+      "ba_jacobian_maps4": 0.7410925775766373,
+      "bce_all16": 0.48076075315475464,
+      "paired_all16": 0.1904487907886505,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.22389532074327045,
+        "minimum": 0.22269201939699865,
+        "maximum": 0.22962072851785456,
+        "p90": 0.2280634407539383
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 35.958363251584814,
+        "minimum": 35.27139552409624,
+        "maximum": 39.40653463711939,
+        "p90": 38.46432687157489
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 11.653254894446922,
+      "v_open_rms_mean_maps": 0.3282665179538972,
+      "h_update_open_rms_mean_maps": 0.32847902696244885,
+      "h_component_constant_energy_fraction_mean_maps": 0.2502488141001581,
+      "update_component_constant_energy_fraction_mean_maps": 0.042990326401369724,
+      "finite_source_flip_logit_rms_median_maps": 10.152766359565135,
+      "wrong_margin_median_of_maps_with_errors": -1.1773850917816162,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 64,
+      "t": 96,
+      "ba_all16": 0.7770026326179504,
+      "ba_jacobian_maps4": 0.7889618873596191,
+      "bce_all16": 0.5693382024765015,
+      "paired_all16": 0.21125076711177826,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.19986130909276328,
+        "minimum": 0.188528513620673,
+        "maximum": 0.22575666799065008,
+        "p90": 0.2194980421348668
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 24.55757049591782,
+        "minimum": 20.41880352912038,
+        "maximum": 37.04401083694147,
+        "p90": 33.89010319438395
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 20.70730949792007,
+      "v_open_rms_mean_maps": 0.33031139407239407,
+      "h_update_open_rms_mean_maps": 0.33042858383809154,
+      "h_component_constant_energy_fraction_mean_maps": 0.1127341849848209,
+      "update_component_constant_energy_fraction_mean_maps": 0.01659726939629603,
+      "finite_source_flip_logit_rms_median_maps": 12.8469648408598,
+      "wrong_margin_median_of_maps_with_errors": -1.2180843949317932,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 64,
+      "t": 128,
+      "ba_all16": 0.7687906622886658,
+      "ba_jacobian_maps4": 0.7842393070459366,
+      "bce_all16": 0.6587079763412476,
+      "paired_all16": 0.2043905407190323,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.1851890474416335,
+        "minimum": 0.17901647852433802,
+        "maximum": 0.1855377981465159,
+        "p90": 0.18553049121981668
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 19.35669256476352,
+        "minimum": 17.536135827785053,
+        "maximum": 19.464742855069456,
+        "p90": 19.462467659235124
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 30.57078230526315,
+      "v_open_rms_mean_maps": 0.33494233259726397,
+      "h_update_open_rms_mean_maps": 0.3350517625937818,
+      "h_component_constant_energy_fraction_mean_maps": 0.06886306298973235,
+      "update_component_constant_energy_fraction_mean_maps": 0.015377749183599135,
+      "finite_source_flip_logit_rms_median_maps": 14.68897119123195,
+      "wrong_margin_median_of_maps_with_errors": -1.903124213218689,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 64,
+      "t": 192,
+      "ba_all16": 0.7551180124282837,
+      "ba_jacobian_maps4": 0.7786594927310944,
+      "bce_all16": 0.9283959269523621,
+      "paired_all16": 0.1811542958021164,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.18411452797749708,
+        "minimum": 0.1797393492979341,
+        "maximum": 0.1916953430822958,
+        "p90": 0.19007848091743412
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 19.03818953392875,
+        "minimum": 17.740135035362915,
+        "maximum": 21.480069158753295,
+        "p90": 20.947669183579716
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 51.18231780100858,
+      "v_open_rms_mean_maps": 0.3346874640333741,
+      "h_update_open_rms_mean_maps": 0.33463626752675024,
+      "h_component_constant_energy_fraction_mean_maps": 0.03944945018838613,
+      "update_component_constant_energy_fraction_mean_maps": 0.012577448526991896,
+      "finite_source_flip_logit_rms_median_maps": 17.180655590278352,
+      "wrong_margin_median_of_maps_with_errors": -2.723449945449829,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "momentum_nca",
+      "size": 64,
+      "t": 256,
+      "ba_all16": 0.7446885108947754,
+      "ba_jacobian_maps4": 0.7777338176965714,
+      "bce_all16": 1.2126946449279785,
+      "paired_all16": 0.17287775874137878,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.1765655754128346,
+        "minimum": 0.1720865487572145,
+        "maximum": 0.18019507826983822,
+        "p90": 0.17942650029352353
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 16.864234600049862,
+        "minimum": 15.695668461483407,
+        "maximum": 17.869962886658893,
+        "p90": 17.654654508897497
+      },
+      "converged_K16": 0,
+      "h_open_rms_mean_maps": 71.9821538074667,
+      "v_open_rms_mean_maps": 0.33628096744499314,
+      "h_update_open_rms_mean_maps": 0.33631601712202286,
+      "h_component_constant_energy_fraction_mean_maps": 0.02883322430989588,
+      "update_component_constant_energy_fraction_mean_maps": 0.011721901943684256,
+      "finite_source_flip_logit_rms_median_maps": 19.652328512697636,
+      "wrong_margin_median_of_maps_with_errors": -3.5857855081558228,
+      "free_momentum_K16": {
+        "sigma": 8.584617185419061,
+        "finite_time_log_gain": 0.13437324389104308
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 32,
+      "t": 16,
+      "ba_all16": 0.8410593271255493,
+      "ba_jacobian_maps4": 0.8682780116796494,
+      "bce_all16": 0.30479973554611206,
+      "paired_all16": 0.2272838056087494,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.6840711791658735,
+        "minimum": 0.49818114948935355,
+        "maximum": 0.7689527094811427,
+        "p90": 0.764737067678454
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 97139.47572352177,
+        "minimum": 2895.457451414442,
+        "maximum": 220409.69680770606,
+        "p90": 207095.756512062
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 0.7990480403333974,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.11248102901834582,
+      "h_component_constant_energy_fraction_mean_maps": 0.7609479544801838,
+      "update_component_constant_energy_fraction_mean_maps": 0.43811553408999493,
+      "finite_source_flip_logit_rms_median_maps": 3.124677588270561,
+      "wrong_margin_median_of_maps_with_errors": -0.8979600667953491,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 32,
+      "t": 32,
+      "ba_all16": 0.8921371698379517,
+      "ba_jacobian_maps4": 0.9036136269569397,
+      "bce_all16": 0.17841415107250214,
+      "paired_all16": 0.37661388516426086,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.2822245079904542,
+        "minimum": 0.2206910385892553,
+        "maximum": 0.38731125505451874,
+        "p90": 0.36511470306049265
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 102.98536220829457,
+        "minimum": 34.16004264905018,
+        "maximum": 491.2632234926093,
+        "p90": 388.9981910554857
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 2.268850716980465,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.13325849374267473,
+      "h_component_constant_energy_fraction_mean_maps": 0.8264502725809246,
+      "update_component_constant_energy_fraction_mean_maps": 0.6214528101664346,
+      "finite_source_flip_logit_rms_median_maps": 8.247027952916891,
+      "wrong_margin_median_of_maps_with_errors": -0.53021639585495,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 32,
+      "t": 48,
+      "ba_all16": 0.9213851690292358,
+      "ba_jacobian_maps4": 0.8954588025808334,
+      "bce_all16": 0.362207293510437,
+      "paired_all16": 0.6321558952331543,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.15960667876455886,
+        "minimum": 0.1548687616402593,
+        "maximum": 0.1920307011823755,
+        "p90": 0.18262822117293012
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 12.856593883701528,
+        "minimum": 11.916216293963346,
+        "maximum": 21.595635172393855,
+        "p90": 19.040714180281903
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 4.0405086632104945,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.14786952792464642,
+      "h_component_constant_energy_fraction_mean_maps": 0.8606105525507624,
+      "update_component_constant_energy_fraction_mean_maps": 0.7059471509467716,
+      "finite_source_flip_logit_rms_median_maps": 14.0764565831889,
+      "wrong_margin_median_of_maps_with_errors": -3.436363458633423,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 32,
+      "t": 64,
+      "ba_all16": 0.9042654037475586,
+      "ba_jacobian_maps4": 0.8939488679170609,
+      "bce_all16": 0.9871293306350708,
+      "paired_all16": 0.5637028217315674,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.1466589371585817,
+        "minimum": 0.13690406919449635,
+        "maximum": 0.15667022267131162,
+        "p90": 0.15495507550764118
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 10.474056611250155,
+        "minimum": 8.939369912468276,
+        "maximum": 12.264679704081766,
+        "p90": 11.943043039018194
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 5.948313266714704,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.1382893929926114,
+      "h_component_constant_energy_fraction_mean_maps": 0.8554904807974368,
+      "update_component_constant_energy_fraction_mean_maps": 0.7535571236392024,
+      "finite_source_flip_logit_rms_median_maps": 18.567951956485444,
+      "wrong_margin_median_of_maps_with_errors": -9.369747161865234,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 32,
+      "t": 96,
+      "ba_all16": 0.809116780757904,
+      "ba_jacobian_maps4": 0.7863749563694,
+      "bce_all16": 3.0289669036865234,
+      "paired_all16": 0.18392205238342285,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.13294832732232476,
+        "minimum": 0.1303189035034652,
+        "maximum": 0.14002691005868836,
+        "p90": 0.13817983959652505
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 8.392025995429368,
+        "minimum": 8.045415741033015,
+        "maximum": 9.397376559788007,
+        "p90": 9.132895607635238
+      },
+      "converged_K16": 0,
+      "h_open_rms_mean_maps": 9.18704874677581,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.13020016478474006,
+      "h_component_constant_energy_fraction_mean_maps": 0.8388978984130864,
+      "update_component_constant_energy_fraction_mean_maps": 0.7133958148822198,
+      "finite_source_flip_logit_rms_median_maps": 14.39395206269566,
+      "wrong_margin_median_of_maps_with_errors": -13.382304191589355,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 32,
+      "t": 128,
+      "ba_all16": 0.6760193109512329,
+      "ba_jacobian_maps4": 0.5967740267515182,
+      "bce_all16": 7.127575874328613,
+      "paired_all16": 0.07137636840343475,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.12590442697925824,
+        "minimum": 0.12161508502796817,
+        "maximum": 0.12634621024389453,
+        "p90": 0.1262557799724763
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 7.496778185567529,
+        "minimum": 6.999518496306416,
+        "maximum": 7.549938095096205,
+        "p90": 7.5390405082483225
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 11.210782946812401,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.13227436601595333,
+      "h_component_constant_energy_fraction_mean_maps": 0.8097989077033994,
+      "update_component_constant_energy_fraction_mean_maps": 0.6271791313133082,
+      "finite_source_flip_logit_rms_median_maps": 14.062856971147337,
+      "wrong_margin_median_of_maps_with_errors": -20.53343677520752,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 32,
+      "t": 192,
+      "ba_all16": 0.19388869404792786,
+      "ba_jacobian_maps4": 0.2234873827546835,
+      "bce_all16": 29.311622619628906,
+      "paired_all16": 0.1381242424249649,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.10975147691115812,
+        "minimum": 0.10715673016748856,
+        "maximum": 0.12077279424483084,
+        "p90": 0.11756461205429271
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 5.789450308413466,
+        "minimum": 5.553940538056898,
+        "maximum": 6.9058211987198845,
+        "p90": 6.580007437841707
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 13.48782911354428,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.17746135737447094,
+      "h_component_constant_energy_fraction_mean_maps": 0.6682375114548477,
+      "update_component_constant_energy_fraction_mean_maps": 0.6650826476434393,
+      "finite_source_flip_logit_rms_median_maps": 61.3371301176285,
+      "wrong_margin_median_of_maps_with_errors": -32.13222122192383,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 32,
+      "t": 256,
+      "ba_all16": 0.11382749676704407,
+      "ba_jacobian_maps4": 0.13645365834236145,
+      "bce_all16": 63.48527526855469,
+      "paired_all16": 0.09378806501626968,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.10359165834208645,
+        "minimum": 0.10109037094393644,
+        "maximum": 0.11192479054572939,
+        "p90": 0.1097938971746375
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 5.247019603104594,
+        "minimum": 5.040200863221794,
+        "maximum": 5.994225857199274,
+        "p90": 5.801042270638145
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 18.655280628283403,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.19471702466750246,
+      "h_component_constant_energy_fraction_mean_maps": 0.6230891529240705,
+      "update_component_constant_energy_fraction_mean_maps": 0.7633759070697962,
+      "finite_source_flip_logit_rms_median_maps": 122.91587630018168,
+      "wrong_margin_median_of_maps_with_errors": -77.10033798217773,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 64,
+      "t": 16,
+      "ba_all16": 0.5984761118888855,
+      "ba_jacobian_maps4": 0.5906466990709305,
+      "bce_all16": 0.6474594473838806,
+      "paired_all16": 0.05647516995668411,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.8573524475487697,
+        "minimum": 0.8546535573563953,
+        "maximum": 0.8588937421110835,
+        "p90": 0.8588245430506407
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 906964.8889342973,
+        "minimum": 868442.7269529082,
+        "maximum": 929404.9984607735,
+        "p90": 928377.8717494123
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 0.49800989908146714,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.07887299381857378,
+      "h_component_constant_energy_fraction_mean_maps": 0.8193112282521734,
+      "update_component_constant_energy_fraction_mean_maps": 0.20723823546951559,
+      "finite_source_flip_logit_rms_median_maps": 1.0478871032937476,
+      "wrong_margin_median_of_maps_with_errors": -0.9038113355636597,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 64,
+      "t": 32,
+      "ba_all16": 0.6981411576271057,
+      "ba_jacobian_maps4": 0.6861381679773331,
+      "bce_all16": 0.45778241753578186,
+      "paired_all16": 0.1154288724064827,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.9041942807421892,
+        "minimum": 0.8878785802535017,
+        "maximum": 0.9071162572993594,
+        "p90": 0.906790595057423
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 1919432.4652557515,
+        "minimum": 1477788.5186016473,
+        "maximum": 2010431.8682654547,
+        "p90": 2000046.7689380911
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 1.1515647529618283,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.10554609902206855,
+      "h_component_constant_energy_fraction_mean_maps": 0.7410430770020899,
+      "update_component_constant_energy_fraction_mean_maps": 0.31439740211018186,
+      "finite_source_flip_logit_rms_median_maps": 2.88331171115247,
+      "wrong_margin_median_of_maps_with_errors": -0.28164613246917725,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 64,
+      "t": 48,
+      "ba_all16": 0.803945779800415,
+      "ba_jacobian_maps4": 0.7746391147375107,
+      "bce_all16": 1.0986342430114746,
+      "paired_all16": 0.19881384074687958,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.33389709089531755,
+        "minimum": 0.27841368411155143,
+        "maximum": 0.3981069528245048,
+        "p90": 0.39392684658491967
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 280.3522089912618,
+        "minimum": 86.02336503309958,
+        "maximum": 583.8892037319318,
+        "p90": 548.8845189907022
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 2.3629186874706116,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.16253763643681018,
+      "h_component_constant_energy_fraction_mean_maps": 0.6845813922692418,
+      "update_component_constant_energy_fraction_mean_maps": 0.5569834367211701,
+      "finite_source_flip_logit_rms_median_maps": 6.123418165018181,
+      "wrong_margin_median_of_maps_with_errors": -5.3627166748046875,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 64,
+      "t": 64,
+      "ba_all16": 0.7593379616737366,
+      "ba_jacobian_maps4": 0.7670721411705017,
+      "bce_all16": 2.638400077819824,
+      "paired_all16": 0.16141453385353088,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.20206037661842352,
+        "minimum": 0.19892333216135194,
+        "maximum": 0.22605222252516163,
+        "p90": 0.21912044935576916
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 25.357295697617072,
+        "minimum": 24.11353532496053,
+        "maximum": 37.21960209012227,
+        "p90": 33.76873458806508
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 4.356236112895473,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.15635196694430015,
+      "h_component_constant_energy_fraction_mean_maps": 0.7101540122299582,
+      "update_component_constant_energy_fraction_mean_maps": 0.6530250327641492,
+      "finite_source_flip_logit_rms_median_maps": 9.430037149296503,
+      "wrong_margin_median_of_maps_with_errors": -11.39883279800415,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 64,
+      "t": 96,
+      "ba_all16": 0.7375642657279968,
+      "ba_jacobian_maps4": 0.7572787702083588,
+      "bce_all16": 5.5417890548706055,
+      "paired_all16": 0.10223953425884247,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.20179217862891574,
+        "minimum": 0.1485582067737762,
+        "maximum": 0.24891662717761653,
+        "p90": 0.24143548492683684
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 26.853754102700464,
+        "minimum": 10.771796771236573,
+        "maximum": 53.659902867137696,
+        "p90": 48.36358283766917
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 8.091171583996676,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.13541199413428073,
+      "h_component_constant_energy_fraction_mean_maps": 0.7359043761774207,
+      "update_component_constant_energy_fraction_mean_maps": 0.7628446593834406,
+      "finite_source_flip_logit_rms_median_maps": 8.408691128446524,
+      "wrong_margin_median_of_maps_with_errors": -23.03819465637207,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 64,
+      "t": 128,
+      "ba_all16": 0.4734991192817688,
+      "ba_jacobian_maps4": 0.46842505037784576,
+      "bce_all16": 11.018630027770996,
+      "paired_all16": 0.001549083855934441,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.18012274970549438,
+        "minimum": 0.15954488743004802,
+        "maximum": 0.2041742010730331,
+        "p90": 0.1997946520342401
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 18.05384208475669,
+        "minimum": 12.841963394045619,
+        "maximum": 26.2269423711177,
+        "p90": 24.588000797035274
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 10.72769563108419,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.1515455311824826,
+      "h_component_constant_energy_fraction_mean_maps": 0.7982806727537479,
+      "update_component_constant_energy_fraction_mean_maps": 0.7970324390404917,
+      "finite_source_flip_logit_rms_median_maps": 8.446027596055979,
+      "wrong_margin_median_of_maps_with_errors": -21.84335994720459,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 64,
+      "t": 192,
+      "ba_all16": 0.35279491543769836,
+      "ba_jacobian_maps4": 0.3348439261317253,
+      "bce_all16": 25.944414138793945,
+      "paired_all16": 0.0025670533068478107,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.16654979519730084,
+        "minimum": 0.14747528642232854,
+        "maximum": 0.19611291261821961,
+        "p90": 0.19177176920013433
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 14.785907233047732,
+        "minimum": 10.586764435476336,
+        "maximum": 23.053246416541167,
+        "p90": 21.62385818672722
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 16.34957870781586,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.14248814451922337,
+      "h_component_constant_energy_fraction_mean_maps": 0.8366927633302053,
+      "update_component_constant_energy_fraction_mean_maps": 0.6248419259173996,
+      "finite_source_flip_logit_rms_median_maps": 31.661704300072756,
+      "wrong_margin_median_of_maps_with_errors": -33.274980545043945,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 64,
+      "t": 256,
+      "ba_all16": 0.2592717707157135,
+      "ba_jacobian_maps4": 0.2893704604357481,
+      "bce_all16": 40.614070892333984,
+      "paired_all16": 0.04346286505460739,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.15397879651059315,
+        "minimum": 0.1070922670601618,
+        "maximum": 0.20098317401780444,
+        "p90": 0.1916222541689197
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 12.125191098128662,
+        "minimum": 5.548215102959299,
+        "maximum": 24.921497496903335,
+        "p90": 21.983150512787823
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 19.545119201167225,
+      "v_open_rms_mean_maps": null,
+      "h_update_open_rms_mean_maps": 0.18993665338752758,
+      "h_component_constant_energy_fraction_mean_maps": 0.7637493186622855,
+      "update_component_constant_energy_fraction_mean_maps": 0.6450131648662266,
+      "finite_source_flip_logit_rms_median_maps": 57.70891231823069,
+      "wrong_margin_median_of_maps_with_errors": -38.533687591552734,
+      "free_momentum_K16": {
+        "sigma": 1.0,
+        "finite_time_log_gain": 0.0
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 32,
+      "t": 16,
+      "ba_all16": 0.7042759656906128,
+      "ba_jacobian_maps4": 0.6883032768964767,
+      "bce_all16": 0.487579882144928,
+      "paired_all16": 0.1612667441368103,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.7682778966436619,
+        "minimum": 0.7659617109991008,
+        "maximum": 0.7696318726239013,
+        "p90": 0.7695945810571025
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 218084.93617119244,
+        "minimum": 210110.18781794194,
+        "maximum": 222817.86369432684,
+        "p90": 222685.04817943848
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 3.086876236111756,
+      "v_open_rms_mean_maps": 0.43733272643250043,
+      "h_update_open_rms_mean_maps": 0.46954212957305397,
+      "h_component_constant_energy_fraction_mean_maps": 0.11405058457126266,
+      "update_component_constant_energy_fraction_mean_maps": 0.047353586567216895,
+      "finite_source_flip_logit_rms_median_maps": 1.7532241054880364,
+      "wrong_margin_median_of_maps_with_errors": -0.6483122706413269,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 32,
+      "t": 32,
+      "ba_all16": 0.9147261381149292,
+      "ba_jacobian_maps4": 0.9253779798746109,
+      "bce_all16": 0.15975014865398407,
+      "paired_all16": 0.49817296862602234,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.7076349119510915,
+        "minimum": 0.6806782326540445,
+        "maximum": 0.7145316137572001,
+        "p90": 0.713845462183356
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 82857.35909244925,
+        "minimum": 53683.003523995896,
+        "maximum": 92272.90466311415,
+        "p90": 91278.20488220426
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 13.043861998976883,
+      "v_open_rms_mean_maps": 0.8088726078094927,
+      "h_update_open_rms_mean_maps": 0.8239505633294113,
+      "h_component_constant_energy_fraction_mean_maps": 0.046557961126262856,
+      "update_component_constant_energy_fraction_mean_maps": 0.028104644452293156,
+      "finite_source_flip_logit_rms_median_maps": 9.791392043926963,
+      "wrong_margin_median_of_maps_with_errors": -0.32083284854888916,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 32,
+      "t": 48,
+      "ba_all16": 0.9603995680809021,
+      "ba_jacobian_maps4": 0.9703347980976105,
+      "bce_all16": 0.07335740327835083,
+      "paired_all16": 0.6908648014068604,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.5300648506060835,
+        "minimum": 0.32507997912746434,
+        "maximum": 0.6333637463413978,
+        "p90": 0.6302459344787606
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 11206.777493878782,
+        "minimum": 181.50435829104222,
+        "maximum": 25180.36848339237,
+        "p90": 24023.126342855292
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 26.868324628929912,
+      "v_open_rms_mean_maps": 0.9840719212881501,
+      "h_update_open_rms_mean_maps": 0.9913370896006106,
+      "h_component_constant_energy_fraction_mean_maps": 0.029111398749230882,
+      "update_component_constant_energy_fraction_mean_maps": 0.009407441349567773,
+      "finite_source_flip_logit_rms_median_maps": 19.571821673131517,
+      "wrong_margin_median_of_maps_with_errors": -0.513569176197052,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 32,
+      "t": 64,
+      "ba_all16": 0.9644959568977356,
+      "ba_jacobian_maps4": 0.9714390933513641,
+      "bce_all16": 0.05115070939064026,
+      "paired_all16": 0.772472620010376,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.27742349574851954,
+        "minimum": 0.17804784458257936,
+        "maximum": 0.45229767345829913,
+        "p90": 0.4255038938797561
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 177.205223804043,
+        "minimum": 17.266453471682922,
+        "maximum": 1389.5882723895145,
+        "p90": 1072.5737068458761
+      },
+      "converged_K16": 3,
+      "h_open_rms_mean_maps": 42.56997896698874,
+      "v_open_rms_mean_maps": 1.0708950567512214,
+      "h_update_open_rms_mean_maps": 1.0745371595884583,
+      "h_component_constant_energy_fraction_mean_maps": 0.017949737482540723,
+      "update_component_constant_energy_fraction_mean_maps": 0.002981992671676682,
+      "finite_source_flip_logit_rms_median_maps": 25.25596441805424,
+      "wrong_margin_median_of_maps_with_errors": -0.17814414203166962,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 32,
+      "t": 96,
+      "ba_all16": 0.9256061911582947,
+      "ba_jacobian_maps4": 0.9333595931529999,
+      "bce_all16": 0.24017128348350525,
+      "paired_all16": 0.6823385953903198,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.1627247885550442,
+        "minimum": 0.16174667854810618,
+        "maximum": 0.163572771837322,
+        "p90": 0.16347774685932837
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 13.512737230462475,
+        "minimum": 13.302431748789736,
+        "maximum": 13.696829043940161,
+        "p90": 13.676057070512895
+      },
+      "converged_K16": 0,
+      "h_open_rms_mean_maps": 76.64808071818572,
+      "v_open_rms_mean_maps": 1.1341207994383748,
+      "h_update_open_rms_mean_maps": 1.134973315703579,
+      "h_component_constant_energy_fraction_mean_maps": 0.008248334110559039,
+      "update_component_constant_energy_fraction_mean_maps": 0.0012557778459167343,
+      "finite_source_flip_logit_rms_median_maps": 29.897428958409975,
+      "wrong_margin_median_of_maps_with_errors": -2.228290855884552,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 32,
+      "t": 128,
+      "ba_all16": 0.8617134094238281,
+      "ba_jacobian_maps4": 0.8640218824148178,
+      "bce_all16": 0.9152428507804871,
+      "paired_all16": 0.5327649116516113,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.16948537345365633,
+        "minimum": 0.16774422428876898,
+        "maximum": 0.18227677471122256,
+        "p90": 0.17892785894647686
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 15.060950451463937,
+        "minimum": 14.642197337359868,
+        "maximum": 18.475183430784934,
+        "p90": 17.56860440933651
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 112.24941815929517,
+      "v_open_rms_mean_maps": 1.150908639948549,
+      "h_update_open_rms_mean_maps": 1.151153777377866,
+      "h_component_constant_energy_fraction_mean_maps": 0.004969461269007394,
+      "update_component_constant_energy_fraction_mean_maps": 0.0010363214351559662,
+      "finite_source_flip_logit_rms_median_maps": 34.712839032548516,
+      "wrong_margin_median_of_maps_with_errors": -6.280717134475708,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 32,
+      "t": 192,
+      "ba_all16": 0.8024148941040039,
+      "ba_jacobian_maps4": 0.7998510897159576,
+      "bce_all16": 3.5378382205963135,
+      "paired_all16": 0.45408040285110474,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.16165023046063626,
+        "minimum": 0.15562959215622094,
+        "maximum": 0.1639847346474782,
+        "p90": 0.1638946293374972
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 13.288954874104082,
+        "minimum": 12.062162349228633,
+        "maximum": 13.787408586145213,
+        "p90": 13.767579170997628
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 185.0596078678673,
+      "v_open_rms_mean_maps": 1.162218873719104,
+      "h_update_open_rms_mean_maps": 1.1623791657393132,
+      "h_component_constant_energy_fraction_mean_maps": 0.002750215812316651,
+      "update_component_constant_energy_fraction_mean_maps": 0.0008977206906008206,
+      "finite_source_flip_logit_rms_median_maps": 47.831123497894225,
+      "wrong_margin_median_of_maps_with_errors": -19.26718044281006,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 32,
+      "t": 256,
+      "ba_all16": 0.7767652273178101,
+      "ba_jacobian_maps4": 0.7786902785301208,
+      "bce_all16": 6.869405746459961,
+      "paired_all16": 0.4277710020542145,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.17581898730741827,
+        "minimum": 0.16471950617697678,
+        "maximum": 0.17678717131756386,
+        "p90": 0.17650808503835522
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 16.66155518371673,
+        "minimum": 13.950454645779883,
+        "maximum": 16.92166478829316,
+        "p90": 16.846662689778515
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 258.86908724479974,
+      "v_open_rms_mean_maps": 1.1675005741437097,
+      "h_update_open_rms_mean_maps": 1.1675293719340187,
+      "h_component_constant_energy_fraction_mean_maps": 0.0019992492091702356,
+      "update_component_constant_energy_fraction_mean_maps": 0.0008948828932115041,
+      "finite_source_flip_logit_rms_median_maps": 63.7487995302086,
+      "wrong_margin_median_of_maps_with_errors": -32.60820770263672,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 64,
+      "t": 16,
+      "ba_all16": 0.5709202289581299,
+      "ba_jacobian_maps4": 0.5736597627401352,
+      "bce_all16": 0.6632289886474609,
+      "paired_all16": 0.038328759372234344,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.7824830100056205,
+        "minimum": 0.7820877629244231,
+        "maximum": 0.7826749847371423,
+        "p90": 0.7826466521916179
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 273683.9842787521,
+        "minimum": 271958.3495206637,
+        "maximum": 274525.5889469001,
+        "p90": 274401.2347844845
+      },
+      "converged_K16": 0,
+      "h_open_rms_mean_maps": 1.7321192906047618,
+      "v_open_rms_mean_maps": 0.236050156551964,
+      "h_update_open_rms_mean_maps": 0.2560953267780135,
+      "h_component_constant_energy_fraction_mean_maps": 0.35970034549581154,
+      "update_component_constant_energy_fraction_mean_maps": 0.11985236284854679,
+      "finite_source_flip_logit_rms_median_maps": 0.8022880005524068,
+      "wrong_margin_median_of_maps_with_errors": -0.6483616828918457,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 64,
+      "t": 32,
+      "ba_all16": 0.7342300415039062,
+      "ba_jacobian_maps4": 0.7157811671495438,
+      "bce_all16": 0.3870152235031128,
+      "paired_all16": 0.15021687746047974,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.7296847350755054,
+        "minimum": 0.7289197141212368,
+        "maximum": 0.7299500904814686,
+        "p90": 0.7298880476315719
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 117589.63819098083,
+        "minimum": 116159.02378165828,
+        "maximum": 118089.8964478893,
+        "p90": 117972.86404246473
+      },
+      "converged_K16": 0,
+      "h_open_rms_mean_maps": 7.593365360507977,
+      "v_open_rms_mean_maps": 0.547590811857707,
+      "h_update_open_rms_mean_maps": 0.5637258721329949,
+      "h_component_constant_energy_fraction_mean_maps": 0.10488329450997158,
+      "update_component_constant_energy_fraction_mean_maps": 0.04493556088293703,
+      "finite_source_flip_logit_rms_median_maps": 5.040498873293293,
+      "wrong_margin_median_of_maps_with_errors": -0.3208017945289612,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 64,
+      "t": 48,
+      "ba_all16": 0.7884318828582764,
+      "ba_jacobian_maps4": 0.7603247165679932,
+      "bce_all16": 0.29844531416893005,
+      "paired_all16": 0.23130033910274506,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.6520067339574815,
+        "minimum": 0.6509995444841016,
+        "maximum": 0.6520687902456667,
+        "p90": 0.6520582791708003
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 33931.7976246593,
+        "minimum": 33389.364888436954,
+        "maximum": 33965.502084709275,
+        "p90": 33959.79146255495
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 17.332818058864056,
+      "v_open_rms_mean_maps": 0.7428700856559791,
+      "h_update_open_rms_mean_maps": 0.7513467780412667,
+      "h_component_constant_energy_fraction_mean_maps": 0.054561763816082166,
+      "update_component_constant_energy_fraction_mean_maps": 0.01812311336910128,
+      "finite_source_flip_logit_rms_median_maps": 10.153745469962296,
+      "wrong_margin_median_of_maps_with_errors": -0.5136023163795471,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 64,
+      "t": 64,
+      "ba_all16": 0.8475168943405151,
+      "ba_jacobian_maps4": 0.8477491736412048,
+      "bce_all16": 0.2421482354402542,
+      "paired_all16": 0.2924227714538574,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.587481904515575,
+        "minimum": 0.5870585350776677,
+        "maximum": 0.5878320549125695,
+        "p90": 0.5877939298469933
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 12084.958285391876,
+        "minimum": 12003.29604224994,
+        "maximum": 12152.775739482668,
+        "p90": 12145.370065197323
+      },
+      "converged_K16": 0,
+      "h_open_rms_mean_maps": 29.314208317660654,
+      "v_open_rms_mean_maps": 0.8531575446953243,
+      "h_update_open_rms_mean_maps": 0.8587392139427049,
+      "h_component_constant_energy_fraction_mean_maps": 0.03299132668314668,
+      "update_component_constant_energy_fraction_mean_maps": 0.008153344264479707,
+      "finite_source_flip_logit_rms_median_maps": 13.35761598859251,
+      "wrong_margin_median_of_maps_with_errors": -0.21834148466587067,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 64,
+      "t": 96,
+      "ba_all16": 0.7861167788505554,
+      "ba_jacobian_maps4": 0.8112233430147171,
+      "bce_all16": 0.5369826555252075,
+      "paired_all16": 0.23891298472881317,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.4939442191240223,
+        "minimum": 0.4839026945535147,
+        "maximum": 0.49451329974880326,
+        "p90": 0.49445900309943364
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 2705.7293482686628,
+        "minimum": 2304.094675702353,
+        "maximum": 2730.425661480153,
+        "p90": 2728.0570452437123
+      },
+      "converged_K16": 1,
+      "h_open_rms_mean_maps": 56.94465334767094,
+      "v_open_rms_mean_maps": 0.9808576496133224,
+      "h_update_open_rms_mean_maps": 0.9835302879433345,
+      "h_component_constant_energy_fraction_mean_maps": 0.014523771376126052,
+      "update_component_constant_energy_fraction_mean_maps": 0.00193542968717581,
+      "finite_source_flip_logit_rms_median_maps": 16.590316591456748,
+      "wrong_margin_median_of_maps_with_errors": -1.2154341042041779,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 64,
+      "t": 128,
+      "ba_all16": 0.6869519352912903,
+      "ba_jacobian_maps4": 0.711747333407402,
+      "bce_all16": 1.8109325170516968,
+      "paired_all16": 0.17026644945144653,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.4893645882562536,
+        "minimum": 0.23441877528373914,
+        "maximum": 0.49988517428834667,
+        "p90": 0.4998450083316323
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 2549.313545569684,
+        "minimum": 42.550874391078985,
+        "maximum": 2975.4863648877104,
+        "p90": 2973.5761994768354
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 87.47081352932597,
+      "v_open_rms_mean_maps": 1.0526847280289884,
+      "h_update_open_rms_mean_maps": 1.0545989660519366,
+      "h_component_constant_energy_fraction_mean_maps": 0.007792039622069179,
+      "update_component_constant_energy_fraction_mean_maps": 0.0014570270856882619,
+      "finite_source_flip_logit_rms_median_maps": 19.989830177749987,
+      "wrong_margin_median_of_maps_with_errors": -5.468820571899414,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 64,
+      "t": 192,
+      "ba_all16": 0.6516221761703491,
+      "ba_jacobian_maps4": 0.6597836315631866,
+      "bce_all16": 6.290374755859375,
+      "paired_all16": 0.14893335103988647,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.2038682347732998,
+        "minimum": 0.15939188004336852,
+        "maximum": 0.4611202707725483,
+        "p90": 0.389805339608015
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 27.384203128930608,
+        "minimum": 12.810563201279518,
+        "maximum": 1600.264700505962,
+        "p90": 1130.887909939826
+      },
+      "converged_K16": 2,
+      "h_open_rms_mean_maps": 153.83603987512942,
+      "v_open_rms_mean_maps": 1.1385463813202672,
+      "h_update_open_rms_mean_maps": 1.1393708777551457,
+      "h_component_constant_energy_fraction_mean_maps": 0.0035314866844750607,
+      "update_component_constant_energy_fraction_mean_maps": 0.0007706360446504035,
+      "finite_source_flip_logit_rms_median_maps": 29.30383004334314,
+      "wrong_margin_median_of_maps_with_errors": -20.223477363586426,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    },
+    {
+      "arm": "masked_momentum_nca",
+      "size": 64,
+      "t": 256,
+      "ba_all16": 0.6414989233016968,
+      "ba_jacobian_maps4": 0.6115079075098038,
+      "bce_all16": 11.435558319091797,
+      "paired_all16": 0.1413649618625641,
+      "finite_time_log_gain_K16": {
+        "count": 4,
+        "median": 0.1761076892872291,
+        "minimum": 0.1690979016928207,
+        "maximum": 0.4821869088343363,
+        "p90": 0.3905428529247907
+      },
+      "sigma_K16": {
+        "count": 4,
+        "median": 16.73946256167875,
+        "minimum": 14.962789619961022,
+        "maximum": 2241.701694209196,
+        "p90": 1574.2611552100507
+      },
+      "converged_K16": 4,
+      "h_open_rms_mean_maps": 224.56692382201382,
+      "v_open_rms_mean_maps": 1.165502253087121,
+      "h_update_open_rms_mean_maps": 1.1657167157687025,
+      "h_component_constant_energy_fraction_mean_maps": 0.0021789720571058283,
+      "update_component_constant_energy_fraction_mean_maps": 0.000631192180643402,
+      "finite_source_flip_logit_rms_median_maps": 40.41899631924868,
+      "wrong_margin_median_of_maps_with_errors": -33.336795806884766,
+      "free_momentum_K16": {
+        "sigma": 8.000314978429364,
+        "finite_time_log_gain": 0.12996755707552735
+      }
+    }
+  ],
+  "limits": [
+    "One training seed; Jacobian estimates on fixed four maps.",
+    "Positive finite-window gain is not asymptotic instability.",
+    "Unconverged power iterations are not upper bounds.",
+    "Finite worst-direction perturbations often leave the linear regime.",
+    "Component energies are means of per-map fractions, not pooled-energy fractions.",
+    "No new model execution or experiment performed for this analysis."
+  ]
+}

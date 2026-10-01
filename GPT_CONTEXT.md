@@ -1,6 +1,59 @@
 # Context for incremental scientific review
 
-## Final 2x2 status: scientific endpoints saved, auxiliary tail recovered
+## Current: generic dynamics audit completed, with diagnostic limitations
+
+- Execution: `COMPLETE`,112.859 seconds; training:false; four existing seed0
+  generic State/Momentum checkpoints, two media, sizes32/64, eight anchors.
+- Provenance: all40 historical comparisons replay exactly, sources and
+  checkpoint hashes match; no earlier frozen code or evidence changed.
+- Spectral scope: windows1/8/16, raw Euclidean H/V units, full state and open
+  endpoint compression. Fixed maps0..3; performance curves retain all16 maps.
+- Precision:562/1536 product estimates and148/256 open K16 estimates satisfy
+  the frozen residual/spread criterion. Others are not certified top norms.
+- Scientific status: `NO_OBSERVED_MAXIMUM_GAIN_ZERO_CROSSING_WITH_DIAGNOSTIC_LIMITS`.
+- Stop: no new training, inference rerun, architecture or monitor scheduled.
+
+All256 open K16 log-gain estimates are positive, and usually decline while
+late accuracy deteriorates. At size32, Masked Momentum BA goes96.45% to77.68%
+from T64 toT256 while g16 changes0.27742 to0.17582; Masked State BA goes90.43%
+to11.38% while g16 changes0.14666 to0.10359. This does not identify a
+near-zero-to-positive transition or establish asymptotic stability/instability.
+
+Generic Masked Momentum shows continued updates, growing H norms and wrong
+confidence. Its source-flip response grows while paired correctness drops.
+Mean per-map component-constant H energy is only0.20% at32/T256; the earlier
+explicit-inertial component-mean interpretation cannot simply be reused.
+Worst-direction finite perturbations often leave the linear regime: at1e-4
+relative RMS, median linearization error46.44%, versus1.19% for random directions.
+No causal velocity isolation, medium-spectrum mechanism or stable recurrence
+design is established. The original primary Momentum advantage is unchanged.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Exact tangent and adjoint | `LinearStep.force`, `force_adj`, `apply`, `adj`, `input_apply` | `new/dynamics_audit/operators.py` |
+| Ordered Jacobian product, norm estimate | `product`, `estimate` | `new/dynamics_audit/operators.py` |
+| Drift and continuously driven source tangent | `trajectories`, `scaled_update`, `summarize_tangent` | `new/dynamics_audit/audit.py` |
+| Analytic shear and nonlinear checks | `free_baseline`, `perturbation`, `diagnose` | `new/dynamics_audit/audit.py` |
+| Autograd, adjoint, finite-difference and exact SVD gate | `main` | `new/dynamics_audit/check.py` |
+| CPU-only derived analysis | `main` | `new/dynamics_audit/analyze.py` |
+
+For Momentum, J=[[I+D,B],[D,B]], with D the learned force derivative and B
+channelwise beta. The adjoint is (u+D*(u+w),B*(u+w)). Source tangents include
+encoder initialization and repeated direct X injection. Geometry is fixed;
+mask-channel derivatives are excluded. Open compression applies only at
+product endpoints, so whole-grid intermediate paths may still cross walls.
+The finite binary source flip is distinct from its infinitesimal tangent.
+
+Start with [interpretation](evidence/dynamics_audit_seed0/INTERPRETATION.md),
+[table](evidence/dynamics_audit_seed0/RESULTS.md),
+[compact analysis](evidence/dynamics_audit_seed0/analysis.json),
+[protocol](new/dynamics_audit/PROTOCOL.md), then
+[validation](evidence/dynamics_audit_seed0/validation.json) and
+[publication hashes](DYNAMICS_PUBLICATION_MANIFEST.json). Per-map curve/dynamics
+JSON under `evidence/dynamics_audit_seed0/raw/` is secondary. No checkpoint or
+local machine receipt is required to inspect the published scientific evidence.
+
+## Previous final 2x2: scientific endpoints saved, auxiliary tail recovered
 
 - Scientific status: `MOMENTUM_JOINT_5PP_ADVANTAGE`, descriptive, one training seed.
 - Original execution: 800 updates and all 15 scientific endpoints saved; no

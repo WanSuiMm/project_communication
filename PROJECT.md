@@ -1,5 +1,35 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Authorized follow-up (2026-10-01): inference-only dynamical audit of the four
+existing generic State/Momentum checkpoints, completing the medium by recurrence
+comparison. No additional training or model change. Frozen protocol:
+`new/dynamics_audit/PROTOCOL.md`; implementation: `operators.py` and `audit.py`
+there. Sizes32/64; all16 original evaluation maps for curves; fixed maps0..3
+for matrix-free Jacobian products at8 anchors, windows1/8/16,2 starts and16
+power iterations. Report convergence diagnostics, free-momentum shear baseline,
+drift, repeated source drive and readout sensitivity; do not assume a critical
+zero crossing. Full/open endpoint norms use fixed raw H/V units.
+The derivative/adjoint/finite-difference gate passed, including encoder plus
+repeated source injection; the four-arm CUDA preflight passed in4.27 seconds.
+Formal dispatch verified on2026-10-01 at16:26:16 +08:00, local RTX4060 Laptop.
+Output: `runs/dynamics_audit_20261001_seed0/`; completed at16:28:11 +08:00 in
+112.859 seconds. All40 historical replay comparisons have zero error; code and
+checkpoint hashes verified. Public review: `evidence/dynamics_audit_seed0/INTERPRETATION.md`,
+analysis.json and dynamics_overview.png there; `DYNAMICS_PUBLICATION_MANIFEST.json`
+binds executed sources and public evidence. CPU-only post-hoc analysis command
+(requires retained local audit output and checkpoints):
+`python new/dynamics_audit/analyze.py --run runs/dynamics_audit_20261001_seed0 --out analyses/NEW_DYNAMICS_REVIEW`.
+All256 open K16 log-gain estimates are positive already; late accuracy collapse
+usually accompanies declining local gain, not a near-zero-to-positive crossing.
+Only148/256 open K16 estimates satisfy convergence criteria; large finite
+worst-direction perturbations often leave the linear regime. Generic Momentum
+shows persistent updates and growing wrong confidence; its energy is largely
+within-component variation, so the older explicit-inertial mean-drift explanation
+cannot simply be reused. Neither asymptotic stability nor a causal mechanism is
+established. The private launch receipt remains local. No additional experiment
+or monitoring was started for the result inspection.
+This follow-up changes only the diagnostic scope; the stop on new training holds.
+
 Final authorized arm (2026-10-01): `masked_state_nca` supplies the missing
 state-matched generic NCA/Momentum by whole-grid/masked medium 2x2 comparison.
 Protocol: `new/masked_state/PROTOCOL.md`; model:H32, no velocity, hidden48,

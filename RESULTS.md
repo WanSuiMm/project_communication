@@ -1,5 +1,62 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
+## Latest: completed zero-training generic dynamics audit
+
+Four existing generic State/Momentum checkpoints, whole-grid and masked media,
+sizes32/64, eight anchors and windows1/8/16. Completed in112.859 seconds, without
+training. All40 historical replay comparisons have zero error; source and
+checkpoint hashes match. Performance curves use16 maps; Jacobian diagnostics
+use fixed maps0..3. One trained seed remains the independent replicate.
+
+**No near-zero-to-positive crossing of maximum finite-window gain is observed.**
+All256 open K16 estimates are positive, already large before the performance
+peak, and generally decline while late performance deteriorates. This does
+not imply improving stability or exclude task-specific neutral modes, longer
+product instability or behavior in unsampled windows.
+
+Masked Momentum, size32; g16=log(sigma_estimate)/16 for the window starting at T:
+
+| T | BA %, all16 | BCE | Paired % | Median g16, maps0..3 | Converged /4 |
+|---|---:|---:|---:|---:|---:|
+| 32 | 91.47 | 0.1598 | 49.82 | 0.70763 | 3 |
+| 64 | 96.45 | 0.0512 | 77.25 | 0.27742 | 3 |
+| 128 | 86.17 | 0.9152 | 53.28 | 0.16949 | 2 |
+| 256 | 77.68 | 6.8694 | 42.78 | 0.17582 | 4 |
+
+The four diagnostic maps themselves also decline: BA97.14%,86.40%,77.87% at
+T64,T128,T256. Masked State shows BA90.43% to11.38% from T64 toT256 while
+median g16 decreases0.14666 to0.10359. Short-window maximal gain is therefore
+not a sufficient account of the observed performance trend.
+
+Persistent motion and growing wrong confidence are directly observed. For
+Masked Momentum at32, mean per-map open H RMS grows42.57 to258.87 from T64
+toT256, while V RMS remains approximately1.1. The median source-flip logit RMS
+on the changed component grows25.26 to63.75, despite declining paired
+correctness. A growing response to source identity is not necessarily useful
+task information. The component-constant H-energy fraction falls1.79% to0.20%
+(mean of per-map fractions), so the earlier explicit-inertial mean-drift account
+must not be transferred wholesale to generic Momentum.
+
+**Diagnostic limits:** only562/1536 product estimates converge by the frozen
+criteria;148/256 converge in the main open K16 subset. Unconverged values are
+not certified maxima or upper bounds. At relative RMS perturbation1e-4,
+worst-direction linearization error has median46.44%, versus1.19% for random
+directions. Large infinitesimal gains often fail to quantitatively predict
+these finite perturbations. Free momentum alone yields positive finite-window
+gain (masked K16 sigma8.0003, g16=0.12997). None of these measurements is an
+asymptotic Lyapunov exponent or proof of a causal failure mechanism.
+
+The primary same-medium Momentum advantage is unchanged. No new stability
+parameterization is validated. Read [full interpretation](evidence/dynamics_audit_seed0/INTERPRETATION.md),
+[all64 table rows](evidence/dynamics_audit_seed0/RESULTS.md),
+[compact metrics](evidence/dynamics_audit_seed0/analysis.json), and
+[figure](evidence/dynamics_audit_seed0/dynamics_overview.png) first.
+[Validation](evidence/dynamics_audit_seed0/validation.json) and
+[hash bindings](DYNAMICS_PUBLICATION_MANIFEST.json) establish provenance.
+The16 byte-identical [raw files](evidence/dynamics_audit_seed0/raw/) retain
+per-map power iterations, perturbations, source tangents and block diagnostics.
+No additional experiment or monitor is scheduled.
+
 ## Final: generic recurrence by medium, 2D seed 0
 
 The last authorized arm, Masked State-matched NCA, saved all 800 training updates

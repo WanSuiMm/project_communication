@@ -1,7 +1,17 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
 This repository tests whether explicit reaction/transport structure improves
-persistent cellular computation. The final **2D, seed-0, recurrence-by-medium
+persistent cellular computation. The latest **zero-training dynamics audit**
+compares four existing generic State/Momentum checkpoints at sizes32/64. It
+finds positive finite-window gain already early in the rollout, usually declining
+as accuracy deteriorates. No near-zero-to-positive maximum-gain crossing is
+observed. Persistent updates and increasingly confident errors remain visible.
+Forty historical endpoints replay exactly. Spectral precision is limited:
+148/256 open K16 estimates converge, and finite worst-direction perturbations
+often leave the linear regime. These are diagnostic observations, not an
+asymptotic Lyapunov result or an identified causal mechanism.
+
+The final **2D, seed-0, recurrence-by-medium
 2x2 screen** adds Masked State-matched NCA. At the frozen 32x32/T64 endpoint,
 Masked Momentum reaches **96.45% BA / 77.25% paired-source correctness**, versus
 **90.43% / 56.37%** for Masked State. Masking improves both generic recipes on
@@ -21,8 +31,10 @@ of Masked Inertial RD exactly reproduces all15 historical checkpoints. It finds
 open-pixel state growth, increasingly confident errors and substantial component
 mean drift. Independent temperature calibration improves late BCE without
 changing decisions. These observations do not establish fixed-point, directional
-or asymptotic convergence. The detailed audit was not run on Masked Momentum;
-its original evaluator also records increasing norms and late BCE deterioration.
+or asymptotic convergence. That calibration audit applies to explicit Inertial
+RD. The newer generic audit above is a separate analysis: generic Masked
+Momentum has predominantly within-component state variation, so the older
+component-mean explanation cannot simply be transferred to it.
 
 Persistent state capacity is equal (32 scalars), but State uses H32/hidden48/
 4993 parameters and Momentum uses H16+V16/hidden88/4689 parameters. This is a
@@ -30,31 +42,61 @@ recipe comparison, not an isolated causal test of velocity. Single-seed results
 do not establish population-level superiority, repair superiority, a general
 PDE impossibility claim or a speedup. The earlier same-medium comparison still
 favors generic Momentum over explicit Inertial RD at the primary endpoint.
-This is the final authorized experiment; no further training or monitor is scheduled.
+The latest audit adds diagnostics only; no further training or monitor is scheduled.
 Earlier implicit-message v1/A0 (2D/3D), unmasked inertial, and masked-medium
 evidence are preserved unchanged.
 
 ## Start here
 
-For incremental review from `82635bb`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `aa2d50a`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [RESULTS.md](RESULTS.md): final 2x2, BCE and rollout failures, then previous results.
-2. [Final control results](evidence/masked_state_seed0/RESULTS.md) and
-   [all 15 comparisons](evidence/masked_state_seed0/comparison.json).
-3. [Frozen final protocol](new/masked_state/PROTOCOL.md) and
-   [GPT_CONTEXT.md](GPT_CONTEXT.md): model differences, source map and claim limits.
-4. [Recovery provenance](evidence/masked_state_seed0/recovery.json),
-   [validation](evidence/masked_state_seed0/validation.json), and
-   [publication manifest](STATE_PUBLICATION_MANIFEST.json).
-5. For background only: [previous Momentum comparison](evidence/masked_momentum_seed0/RESULTS.md)
-   and [inertial trajectory audit](evidence/trajectory_audit_seed0/INTERPRETATION.md).
+1. [RESULTS.md](RESULTS.md): current audit, then the preserved training comparisons.
+2. [Audit interpretation](evidence/dynamics_audit_seed0/INTERPRETATION.md),
+   [64-point table](evidence/dynamics_audit_seed0/RESULTS.md),
+   [compact analysis](evidence/dynamics_audit_seed0/analysis.json), and
+   [overview figure](evidence/dynamics_audit_seed0/dynamics_overview.png).
+3. [Frozen audit protocol](new/dynamics_audit/PROTOCOL.md) and
+   [GPT_CONTEXT.md](GPT_CONTEXT.md): derivative definitions and claim boundaries.
+4. [Validation](evidence/dynamics_audit_seed0/validation.json) and
+   [publication hashes](DYNAMICS_PUBLICATION_MANIFEST.json).
+5. For context only: [final 2x2](evidence/masked_state_seed0/RESULTS.md),
+   [earlier Momentum comparison](evidence/masked_momentum_seed0/RESULTS.md), and
+   [explicit-inertial audit](evidence/trajectory_audit_seed0/INTERPRETATION.md).
 
-Raw per-arm JSON and the6.2MB audit `components.json` are secondary: open only
+The16 [new raw curve/dynamics files](evidence/dynamics_audit_seed0/raw/) and the
+older6.2MB audit `components.json` are secondary: open only
 for specific repair, revision, distance or component-vector questions. Start
 with the small summaries above. Checkpoints, machine receipts, duplicate ZIPs
 and transient logs are excluded. Original publication manifests remain valid.
 
-## Reproduce the latest screen
+## Reproduce the latest audit
+
+Dependencies are in [requirements.txt](requirements.txt). Reviewing published
+metrics needs no checkpoints. This CPU-only check validates tangents, adjoints,
+the driven source derivative and an exact two-dimensional SVD case:
+
+```powershell
+python new/dynamics_audit/check.py
+```
+
+Exact checkpoint replay requires the four retained local `.pt` files whose
+hashes are in [the manifest](DYNAMICS_PUBLICATION_MANIFEST.json). Their
+repository-relative locations are pinned in `new/dynamics_audit/audit.py::ARMS`.
+Checkpoints are excluded from GitHub. With those files present, use new outputs:
+
+```powershell
+python new/dynamics_audit/audit.py --preflight --out runs/NEW_DYNAMICS_PREFLIGHT
+python new/dynamics_audit/audit.py --out runs/NEW_DYNAMICS_AUDIT
+python new/dynamics_audit/analyze.py --run runs/NEW_DYNAMICS_AUDIT --out analyses/NEW_DYNAMICS_REVIEW
+```
+
+The analysis command only summarizes saved output on CPU; it also verifies
+local checkpoint/source hashes. Freshly retrained weights may differ and will
+be rejected by the frozen audit's identity gate. The old training recipes below
+remain available, but cross-device checkpoint identity is not promised. No
+training or GPU audit was rerun for this publication.
+
+## Reproduce the previous training screen
 
 Run from the repository root using Python with NumPy and CUDA PyTorch. The
 recorded environment used PyTorch 2.5.1, NumPy 1.26.4 and an RTX 4060 Laptop GPU;
