@@ -1,6 +1,48 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: completed zero-training generic dynamics audit
+## Latest: Workspace + Revision paired screen fails the joint gate
+
+Execution: **COMPLETE**, all four arms at 600 updates, 1112.28 seconds.
+Scientific decision: **`NO_JOINT_SCREEN_PASS`**. Primary size32 hold is minimum
+aggregate BA across T128/T192/T256; the mean paired revision-minus-additive
+effect is **-9.02 pp** (required >=+5 pp and positive in both seeds).
+
+| Seed | Additive BA64 (%) | Revision BA64 (%) | Additive hold (%) | Revision hold (%) | Hold effect (pp) | Revision warm changed K64 (%) |
+|---|---:|---:|---:|---:|---:|---:|
+| 0 | 94.29 | 99.19 | 94.18 | 100.00 | +5.82 | 0.00 |
+| 1 | 78.54 | 50.00 | 73.86 | 50.00 | -23.86 | 37.50 |
+
+Seed 0 supplies a real reach/hold observation: revision BA is 100% at measured
+T96 through T256 on size32, and 99.44% at size64/T256. Yet after a source switch,
+size32 changed-component accuracy is 0% at K64 and K128 versus 100% for a cold
+restart; unchanged-component accuracy stays 100% at K64. **Holding an answer
+has not become revising an answer.** Seed 1 never qualifies, so the result does
+not support a reliable revision advantage. Two model seeds are the independent
+units; 16 shared evaluation maps per size are not additional training replicates.
+
+Seed 0's size32 Z-only repair reaches 100%, but W/Z joint repair only 90.51%
+after 64 steps; at size64 these are 96.91% and 80.42%. W RMS still grows from
+2.942 to 9.718 at size32/T64 to T256. Thus neither general regeneration nor
+full-state stability is established. Seed 1 has no eligible clean95 maps for
+conditional repair, so its null conditionals must not be presented as recovery.
+
+Both arms have 5033 parameters, W24/Z8 and two communication phases per step,
+with matching initial parameters, data and schedules within each seed. The
+only intervention is additive `Z+0.5Q` versus revision `Z+0.5(Q-Z)`. This tests
+the rule within a shared workspace split, not the value of the split itself.
+Older State/Momentum recipes are not matched controls for this new training.
+The preflight-based 800-to-600 amendment occurred before efficacy training.
+
+Read the [interpretation](evidence/workspace_revision_paired01/INTERPRETATION.md),
+[compact metrics and failed predicates](evidence/workspace_revision_paired01/analysis.json),
+[overview](evidence/workspace_revision_paired01/overview.png) and
+[frozen protocol](new/workspace_revision/PROTOCOL.md). The
+[validation](evidence/workspace_revision_paired01/validation.json) independently
+recomputes 400 BA aggregates and all 22 seed-level gate predicates.
+[Publication hashes](REVISION_PUBLICATION_MANIFEST.json) bind executed sources,
+raw records and schedules. No new training or GPU rollout was run for publication.
+
+## Previous: completed zero-training generic dynamics audit
 
 Four existing generic State/Momentum checkpoints, whole-grid and masked media,
 sizes32/64, eight anchors and windows1/8/16. Completed in112.859 seconds, without

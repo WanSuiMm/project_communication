@@ -1,0 +1,39 @@
+{
+  "protocol": "workspace_revision_v1",
+  "started_utc": "2026-10-01T16:27:00.288522+00:00",
+  "preflight": false,
+  "training": true,
+  "config": {
+    "preflight": false,
+    "device": "cuda"
+  },
+  "seeds": [
+    0,
+    1
+  ],
+  "updates_per_arm": 600,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch": "2.5.1",
+  "numpy": "1.26.4",
+  "maximum_minutes": 25.0,
+  "source_sha256": {
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "new/workspace_revision/PROTOCOL.md": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "tools/launch_revision.ps1": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9"
+  },
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "matmul_tf32": false,
+    "cudnn_tf32": true
+  },
+  "evaluation_data_sha256": {
+    "32": "28563e96a56b3062da34c0b810bf29b1b51dac72759dcf6569b834be82159e4e",
+    "64": "05919e40bbd65300bb4a05f79d60f9e4ceaa4e74945ca9d6cc63ebdc308e7608"
+  }
+}

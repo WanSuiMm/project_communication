@@ -1,75 +1,75 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-This repository tests whether explicit reaction/transport structure improves
-persistent cellular computation. The latest **zero-training dynamics audit**
-compares four existing generic State/Momentum checkpoints at sizes32/64. It
-finds positive finite-window gain already early in the rollout, usually declining
-as accuracy deteriorates. No near-zero-to-positive maximum-gain crossing is
-observed. Persistent updates and increasingly confident errors remain visible.
-Forty historical endpoints replay exactly. Spectral precision is limited:
-148/256 open K16 estimates converge, and finite worst-direction perturbations
-often leave the linear regime. These are diagnostic observations, not an
-asymptotic Lyapunov result or an identified causal mechanism.
-
-The final **2D, seed-0, recurrence-by-medium
-2x2 screen** adds Masked State-matched NCA. At the frozen 32x32/T64 endpoint,
-Masked Momentum reaches **96.45% BA / 77.25% paired-source correctness**, versus
-**90.43% / 56.37%** for Masked State. Masking improves both generic recipes on
-these two primary metrics, with larger gains for Momentum. State masking also
-worsens BCE (0.258 to 0.987), so the improvement is not uniform across metrics.
-Both models deteriorate beyond the training rollout: at 32/T256 BA is 77.68%
-for Masked Momentum and 11.38% for Masked State. Neither has sustained 95% BA.
-
-The new arm saved 800 updates and all 15 scientific evaluation points, but its
-original process left no final completion marker. Only missing size128 timings
-and gradient probes were recovered from the existing checkpoint, without
-retraining. Two representative endpoints replay exactly; original evidence is
-preserved separately. See [recovery provenance](evidence/masked_state_seed0/recovery.json).
-
-An inference-only [trajectory audit](evidence/trajectory_audit_seed0/INTERPRETATION.md)
-of Masked Inertial RD exactly reproduces all15 historical checkpoints. It finds
-open-pixel state growth, increasingly confident errors and substantial component
-mean drift. Independent temperature calibration improves late BCE without
-changing decisions. These observations do not establish fixed-point, directional
-or asymptotic convergence. That calibration audit applies to explicit Inertial
-RD. The newer generic audit above is a separate analysis: generic Masked
-Momentum has predominantly within-component state variation, so the older
-component-mean explanation cannot simply be transferred to it.
-
-Persistent state capacity is equal (32 scalars), but State uses H32/hidden48/
-4993 parameters and Momentum uses H16+V16/hidden88/4689 parameters. This is a
-recipe comparison, not an isolated causal test of velocity. Single-seed results
-do not establish population-level superiority, repair superiority, a general
-PDE impossibility claim or a speedup. The earlier same-medium comparison still
-favors generic Momentum over explicit Inertial RD at the primary endpoint.
-The latest audit adds diagnostics only; no further training or monitor is scheduled.
-Earlier implicit-message v1/A0 (2D/3D), unmasked inertial, and masked-medium
-evidence are preserved unchanged.
+This repository tests whether changing the medium and update rule improves
+persistent cellular computation. The latest **Workspace + Revision paired
+screen** completed all four 600-update runs. It **fails the joint gate**:
+revision's mean hold effect is **-9.02 pp** across two paired seeds. Seed 0
+reaches and holds excellent accuracy, including at doubled spatial size, but
+retains the old answer after a source change (0% changed-component accuracy
+versus 100% from a cold start at size32/K64). Seed 1 stays at 50% BA.
+This supports a narrower single-seed reach/hold observation, not a successful
+general revision rule. Both arms share the workspace split; only their Z
+update differs. [Full interpretation](evidence/workspace_revision_paired01/INTERPRETATION.md).
 
 ## Start here
 
-For incremental review from `aa2d50a`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `b992e2e`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [RESULTS.md](RESULTS.md): current audit, then the preserved training comparisons.
-2. [Audit interpretation](evidence/dynamics_audit_seed0/INTERPRETATION.md),
-   [64-point table](evidence/dynamics_audit_seed0/RESULTS.md),
-   [compact analysis](evidence/dynamics_audit_seed0/analysis.json), and
-   [overview figure](evidence/dynamics_audit_seed0/dynamics_overview.png).
-3. [Frozen audit protocol](new/dynamics_audit/PROTOCOL.md) and
-   [GPT_CONTEXT.md](GPT_CONTEXT.md): derivative definitions and claim boundaries.
-4. [Validation](evidence/dynamics_audit_seed0/validation.json) and
-   [publication hashes](DYNAMICS_PUBLICATION_MANIFEST.json).
-5. For context only: [final 2x2](evidence/masked_state_seed0/RESULTS.md),
-   [earlier Momentum comparison](evidence/masked_momentum_seed0/RESULTS.md), and
-   [explicit-inertial audit](evidence/trajectory_audit_seed0/INTERPRETATION.md).
+1. [RESULTS.md](RESULTS.md) and
+   [current interpretation](evidence/workspace_revision_paired01/INTERPRETATION.md).
+2. [Compact metrics](evidence/workspace_revision_paired01/analysis.json) and
+   [both-seed overview](evidence/workspace_revision_paired01/overview.png).
+3. [Frozen protocol](new/workspace_revision/PROTOCOL.md),
+   [cell](new/workspace_revision/revision_cells.py),
+   [trainer/evaluator](new/workspace_revision/run_revision.py), and
+   [GPT_CONTEXT.md](GPT_CONTEXT.md).
+4. [Validation](evidence/workspace_revision_paired01/validation.json) and
+   [publication hashes](REVISION_PUBLICATION_MANIFEST.json).
+5. Historical context: [generic dynamics audit](evidence/dynamics_audit_seed0/INTERPRETATION.md)
+   and [final medium/recurrence comparison](evidence/masked_state_seed0/RESULTS.md).
 
-The16 [new raw curve/dynamics files](evidence/dynamics_audit_seed0/raw/) and the
-older6.2MB audit `components.json` are secondary: open only
-for specific repair, revision, distance or component-vector questions. Start
-with the small summaries above. Checkpoints, machine receipts, duplicate ZIPs
+The four current [raw arm records](evidence/workspace_revision_paired01/raw/)
+and [training schedules](evidence/workspace_revision_paired01/schedules/) are
+secondary, as are the older audit's large per-map files. Start with the small
+summaries above. Checkpoints, machine receipts, duplicate ZIPs
 and transient logs are excluded. Original publication manifests remain valid.
 
-## Reproduce the latest audit
+## Previous evidence
+
+The seed-0 medium/recurrence screen favors generic Masked Momentum over Masked
+State at32/T64, but both deteriorate at long rollout. This compares recipes
+with different widths, not velocity alone. Its missing auxiliary tail was
+recovered from saved weights without training; [recovery provenance](evidence/masked_state_seed0/recovery.json)
+retains that distinction. The subsequent generic dynamics audit finds positive
+finite-window gain already early, with limited numerical precision and no
+observed near-zero-to-positive crossing. Earlier explicit-inertial drift
+diagnostics do not directly transfer to generic Momentum. These results and
+the earlier 2D/3D transport failures remain unchanged in [RESULTS.md](RESULTS.md).
+No further training or monitor is scheduled.
+
+## Reproduce the current paired screen
+
+From this repository root, install [requirements.txt](requirements.txt), then
+use new output directories. Training requires CUDA; the first check is CPU-only.
+The recorded environment used PyTorch 2.5.1 and NumPy 1.26.4; exact data,
+schedule, initial parameter and executed-source hashes are published. Four
+600-update runs took 18.54 minutes on an RTX 4060 Laptop GPU. Cross-device
+bitwise identity is not promised.
+
+```powershell
+python new/workspace_revision/check.py
+python new/workspace_revision/run_revision.py --preflight --out runs/NEW_REVISION_PREFLIGHT
+pwsh -File tools/launch_revision.ps1 -RunName NEW_REVISION_RUN -Preflight runs/NEW_REVISION_PREFLIGHT
+```
+
+The launcher verifies matching passed preflight sources, records a local
+receipt and returns after dispatch verification. Read the final `status.json`
+and `aggregate.json` to distinguish execution completion from scientific pass.
+The run has a 25-minute cap; no ongoing monitor is created. Review of the
+published results requires no weights or new run. Publication used only CPU
+checks and saved measurements; the original evidence remains unchanged.
+
+## Reproduce the previous dynamics audit
 
 Dependencies are in [requirements.txt](requirements.txt). Reviewing published
 metrics needs no checkpoints. This CPU-only check validates tangents, adjoints,

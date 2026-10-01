@@ -1,0 +1,84 @@
+{
+  "decision": "NO_JOINT_SCREEN_PASS",
+  "complete": true,
+  "mean_hold_effect_pp": -9.019887447357178,
+  "pairs": [
+    {
+      "seed": 0,
+      "paired_identity": {
+        "initial_parameter_sha256": true,
+        "train_data_sha256": true,
+        "schedule_sha256": true
+      },
+      "additive_hold": 0.9417636394500732,
+      "revision_hold": 1.0,
+      "hold_effect_pp": 5.823636054992676,
+      "reach_effect_pp": 4.9014270305633545,
+      "checks": {
+        "positive_hold_effect": true,
+        "revision_reach_ba85": true,
+        "revision_reach_paired50": true,
+        "reach_noninferior3pp": true,
+        "hold_within3pp_of_reach": true,
+        "switch_changed80": false,
+        "switch_unchanged85": true,
+        "switch_changed_noninferior3pp": false,
+        "switch_unchanged_noninferior3pp": true,
+        "repair_ba85": true,
+        "repair_noninferior3pp": true
+      }
+    },
+    {
+      "seed": 1,
+      "paired_identity": {
+        "initial_parameter_sha256": true,
+        "train_data_sha256": true,
+        "schedule_sha256": true
+      },
+      "additive_hold": 0.7386341094970703,
+      "revision_hold": 0.5,
+      "hold_effect_pp": -23.86341094970703,
+      "reach_effect_pp": -28.540891408920288,
+      "checks": {
+        "positive_hold_effect": false,
+        "revision_reach_ba85": false,
+        "revision_reach_paired50": false,
+        "reach_noninferior3pp": false,
+        "hold_within3pp_of_reach": true,
+        "switch_changed80": false,
+        "switch_unchanged85": false,
+        "switch_changed_noninferior3pp": false,
+        "switch_unchanged_noninferior3pp": false,
+        "repair_ba85": false,
+        "repair_noninferior3pp": false
+      }
+    }
+  ],
+  "statuses": [
+    {
+      "arm": "ws_additive",
+      "seed": 0,
+      "status": "COMPLETE",
+      "updates": 600
+    },
+    {
+      "arm": "ws_revision",
+      "seed": 0,
+      "status": "COMPLETE",
+      "updates": 600
+    },
+    {
+      "arm": "ws_additive",
+      "seed": 1,
+      "status": "COMPLETE",
+      "updates": 600
+    },
+    {
+      "arm": "ws_revision",
+      "seed": 1,
+      "status": "COMPLETE",
+      "updates": 600
+    }
+  ],
+  "limits": "Two paired model seeds, shared evaluation maps; descriptive only. No idempotence/stability guarantee. Two communication phases per macro-step."
+}

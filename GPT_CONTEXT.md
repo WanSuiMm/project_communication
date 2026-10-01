@@ -1,6 +1,71 @@
 # Context for incremental scientific review
 
-## Current: generic dynamics audit completed, with diagnostic limitations
+## Current: Workspace + Revision paired screen completed, joint gate failed
+
+- Execution status: `COMPLETE`; four arms, seeds0/1, 600 updates each, 1112.28s.
+- Scientific status: `NO_JOINT_SCREEN_PASS`; mean primary hold effect -9.02 pp.
+- Scope: 2D seeded-component task; size32 training; size32 primary evaluation,
+  size64 secondary; 16 shared held-out maps per size. Independent unit: model
+  seed, n=2, descriptive only. No 3D result or significance claim.
+- Provenance: eight executed source files match snapshots; per-seed initial
+  parameters, data and schedules match between arms; saved checkpoint hashes
+  verified. Raw records and schedules are copied without alteration.
+- Stop: completed bounded screen. No rescue sweep, new seed or monitoring.
+
+Input X is `[batch,3,height,width]`: supplied binary medium and two signed
+source channels. Persistent state is W24/Z8. Encoder initializes W from X,
+Z starts at zero, readout uses only Z. Both arms have 5033 trainable parameters.
+
+```math
+\begin{aligned}
+W' &= W+0.1F(W,Z,L_MW,L_MZ,X),\\
+Q &= Q_\theta(W',Z,L_MW',L_MZ,X),\\
+Z'_{\mathrm{add}} &= Z+0.5Q,\\
+Z'_{\mathrm{rev}} &= Z+0.5(Q-Z).
+\end{aligned}
+```
+
+F and Q have pointwise hidden tanh and zero-initialized last layers. Each
+macro-step has two masked communication phases in both arms. Alpha is fixed;
+there is no learned gate or output clamp. Fixed finite Q weights give a bounded
+candidate due to hidden tanh, hence a bound on revision Z, but not on W or task
+correctness. This screen isolates the Z update within the shared W/Z split.
+
+Paired training supervises reach plus alternating hold/switch/repair branches.
+Reach gradients span at most 64 steps; auxiliary states are detached, optionally
+advanced without gradients, then supervised for 16/32 more steps. No hidden-state
+ground truth or checkpoint from the old recipes is used. Runtime-only preflight
+reduced the initial 800-update proposal to 600 before efficacy training.
+
+Primary hold is min BA at T128/T192/T256, not a map minimum or an asymptotic
+statement. Revision seed0 gives +5.82 pp hold, seed1 -23.86 pp. Seed0 reaches
+99.19% BA64 and 100% hold; seed1 stays at 50%. Seed0's warm source-change
+accuracy is 0% at K64/K128 versus 100% from cold initialization on size32.
+Cold fresh-pair success cannot replace warm revision. This is history dependence
+without an identified attractor mechanism. Z-only repair retains W; joint W/Z
+repair is worse. W continues to grow despite stable output. Size64 is secondary
+and cannot rescue the failed joint gate. Across seeds, data/schedules also change;
+do not attribute failure specifically to initialization.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Matched cell and initialization | `RevisionCell.initial`, `step`, `logits`, `make_cell` | `new/workspace_revision/revision_cells.py` |
+| Frozen geometry operator | `masked_laplacian` | `new/masked_medium/masked_cells.py` |
+| Shared schedule and branch objective | `schedule`, `branch_loss`, `train_one` | `new/workspace_revision/run_revision.py` |
+| Fresh/warm/cold/damage evaluation and gate | `evaluate`, `summary` | `new/workspace_revision/run_revision.py` |
+| CPU implementation check | `run_checks` | `new/workspace_revision/check.py` |
+| CPU evidence verification/publication | `main` | `tools/export_revision_evidence.py` |
+
+Start with [results](RESULTS.md),
+[interpretation](evidence/workspace_revision_paired01/INTERPRETATION.md),
+[analysis](evidence/workspace_revision_paired01/analysis.json), then
+[protocol](new/workspace_revision/PROTOCOL.md) and
+[validation](evidence/workspace_revision_paired01/validation.json).
+The [publication manifest](REVISION_PUBLICATION_MANIFEST.json) binds scientific
+evidence and code; checkpoints and machine receipts stay local. Older training
+recipes differ in objective and per-step communication, so are contextual only.
+
+## Previous: generic dynamics audit completed, with diagnostic limitations
 
 - Execution: `COMPLETE`,112.859 seconds; training:false; four existing seed0
   generic State/Momentum checkpoints, two media, sizes32/64, eight anchors.

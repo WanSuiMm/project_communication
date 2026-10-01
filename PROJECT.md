@@ -1,5 +1,46 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Authorized new screen (2026-10-02): workspace/task-state additive versus
+candidate revision, paired seeds0/1. This new user request supersedes the
+earlier training stop for this bounded experiment only. Both arms share W24/Z8,
+5033 parameters, initialization, binary masked medium, two communication phases
+per macro-step, training data and reach/hold/switch/repair supervision.
+Only Z update changes: Z+0.5Q versus Z+0.5(Q-Z). Read the frozen protocol at
+new/workspace_revision/PROTOCOL.md; entry is run_revision.py there.
+The comparison tests revision within a shared state split, not the split itself.
+Size32 training, size32/64 held-out evaluation through T256; 600 updates per
+arm, two model seeds, 25-minute whole-run cap. No hyperparameter sweep.
+CPU model checks and CUDA preflight passed. Based on preflight runtime,
+formal updates were reduced from800 to600 equally before any efficacy run.
+The final matching-source preflight completed in10.09 seconds at
+runs/workspace_revision_20261002_dispatch_check/. Its two arms have identical
+initial-parameter, data and schedule hashes. Read-only review found no scientific
+control blocker; formal failure exit codes were corrected before dispatch.
+Formal dispatch was verified on2026-10-02 at00:26:56 +08:00 on the local
+RTX4060 Laptop GPU, including the child's first completed training update.
+Output: runs/workspace_revision_20261002_paired01/. Completed2026-10-02 at
+00:45:32 +08:00 in1112.28 seconds; all four arms completed600 updates.
+Scientific status: NO_JOINT_SCREEN_PASS, mean paired hold effect-9.02pp.
+Revision seed0 reaches99.19% BA64 and100% hold at size32, but warm source
+revision scores0% on the changed component atK64 versus100% from cold start.
+Seed1 remains50% BA. Z-only repair is stronger than joint W/Z repair; W keeps
+growing. This does not validate the full reach/hold/reopen hypothesis.
+Public review: evidence/workspace_revision_paired01/INTERPRETATION.md,
+analysis.json and overview.png; REVISION_PUBLICATION_MANIFEST.json binds
+code and evidence. Publication recomputed400 BA aggregates and all primary
+predicates on CPU; no new training or GPU rollout. The local launch receipt
+stays private. Old sources/evidence/checkpoints remain unchanged. No monitoring
+or further experiment is scheduled.
+
+Commands from this repository root:
+
+    python new/workspace_revision/check.py
+    python new/workspace_revision/run_revision.py --preflight --out runs/NEW_REVISION_PREFLIGHT
+    pwsh -File tools/launch_revision.ps1 -RunName NEW_REVISION_RUN -Preflight runs/NEW_REVISION_PREFLIGHT
+
+The historical entries below retain the stopping boundaries in effect at their
+dates; they do not cancel the newly authorized screen above.
+
 Authorized follow-up (2026-10-01): inference-only dynamical audit of the four
 existing generic State/Momentum checkpoints, completing the medium by recurrence
 comparison. No additional training or model change. Frozen protocol:

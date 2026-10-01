@@ -1,0 +1,61 @@
+{
+  "review_base": "b992e2eac68d1bcfc81b70044bb89100bc664c2d",
+  "protocol": "workspace_revision_v1",
+  "execution_status": "COMPLETE",
+  "scientific_status": "NO_JOINT_SCREEN_PASS",
+  "model_seeds": [
+    0,
+    1
+  ],
+  "updates_per_arm": 600,
+  "source_sha256": {
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "new/workspace_revision/PROTOCOL.md": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "tools/launch_revision.ps1": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9"
+  },
+  "publication_tool_sha256": {
+    "tools/export_revision_evidence.py": "79cce8d4de805e59c72aa03412a0b321f4c4f8c733ae0151482945a378f292ad"
+  },
+  "checkpoint_sha256": {
+    "ws_additive_seed0": "6ce36da721d41dff2722d3f18f3af06619b602bfcf0a6c958d03acc14e5715e2",
+    "ws_revision_seed0": "cdec2c8062d469582927889907d6023f924d13f058c37075d7f7b2ef8834ba86",
+    "ws_additive_seed1": "c2c6d9f9c7779ec69b00d9b992732b04a6c7981046f78c6920978b6865fb485e",
+    "ws_revision_seed1": "47d2cc4a4afcd8c82be7ca5f6831b4ffc550304bd1ba9c0d1a6048358e8c972e"
+  },
+  "original_private_manifest_sha256": "7b96ee18ed18f55416c0e500ed628833758de991b1d83263d107fb8b1dc2bdbd",
+  "original_private_completion_sha256": "d43e951e7a5cacfe87f8a713ffcead5e20da4dd2a71474d9d14201e97dbf1c22",
+  "published_evidence_sha256": {
+    "evidence/workspace_revision_paired01/aggregate.json": "b2d94eb3a1a1158c104aad521cefe5659fa18dd2b4dd3fc4f68555aee63b7778",
+    "evidence/workspace_revision_paired01/analysis.json": "02e9d950bebbd534a517f1a58dd98df436113659e0f6ef5a9482adf132a4ff56",
+    "evidence/workspace_revision_paired01/completion.json": "b24d149bd0c689d4d20b33e33ea0a1ff0fdb85c5fbe028b0f0a6b61dfe2b6a63",
+    "evidence/workspace_revision_paired01/INTERPRETATION.md": "1564d29fe2f2dc67068ddd89647099a9759fa4ffb10b8b568171f8d6fa329a59",
+    "evidence/workspace_revision_paired01/manifest.json": "5135564da684055290081b06f76f01a51b50356fae07323be830388ab65c4f49",
+    "evidence/workspace_revision_paired01/overview.png": "41139cadf4cf3ebc9b6a011d4134e49cad3164d10f6148c9879a5d46d043e7e8",
+    "evidence/workspace_revision_paired01/raw/ws_additive_seed0.json": "3aabd80e11d4cc4c89b2ac77b43b6ba9dc050ad40b1a528140acee738189ab8f",
+    "evidence/workspace_revision_paired01/raw/ws_additive_seed1.json": "0219d947bfa6be83f2f09b9ea8fd98132c60efeb48ca901ae5b762bdde39ca03",
+    "evidence/workspace_revision_paired01/raw/ws_revision_seed0.json": "c4b10d00f62f4cd45de8c9a32ec3623f16c545ff0a8ec79db0d25c328e8b0384",
+    "evidence/workspace_revision_paired01/raw/ws_revision_seed1.json": "c464e8ecc9348d4d10c128836d27e94193ce743d99d6e2e555ab5285d6c0d7c2",
+    "evidence/workspace_revision_paired01/RESULTS.md": "481a5ef69572a63b59108028f7f74b2e5a29e48bf2efd5eb17aa320db42bf283",
+    "evidence/workspace_revision_paired01/schedules/schedule_seed0.json": "dee33d83868ad8bbab86e7959a3475abf1567aa828be7745e4658f7b030862e6",
+    "evidence/workspace_revision_paired01/schedules/schedule_seed1.json": "e762cd8fab8b4a628276e42f584e428b62d45bc8d93e4e49b16f610ceb409d61",
+    "evidence/workspace_revision_paired01/validation.json": "04ac536d6a6b89dfc15e2f4f2cf7f2dfeae4a4259aafde907ffe5dca20b7323a"
+  },
+  "excluded": [
+    "checkpoints",
+    "host and PID",
+    "local launch receipts",
+    "transient logs",
+    "smoke outputs"
+  ],
+  "notes": [
+    "Original raw results, schedules and source snapshots remain unchanged.",
+    "Only manifest/completion publication copies omit local metadata.",
+    "No post-hoc rescue run or hyperparameter sweep.",
+    "Two seeds; size64 secondary; previous training recipes are not matched controls."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "cpu_model_check": {
+    "arms": [
+      "ws_additive",
+      "ws_revision"
+    ],
+    "checks": [
+      "same_initial_parameters_and_rng",
+      "first_zero_latent_step_agrees",
+      "manual_update_algebra_and_raw_candidate",
+      "fixed_point_and_unbounded_additive_counterexample",
+      "masked_disconnected_component_isolation_with_active_F_and_Q",
+      "finite_nonzero_reach_and_detached_repair_gradients",
+      "readout_uses_only_Z"
+    ],
+    "default_parameter_count_per_arm": 5033,
+    "device": "cpu",
+    "status": "PASS"
+  },
+  "executed_source_snapshot_matches": true,
+  "initial_and_final_parameter_hashes_verified": true,
+  "training_and_evaluation_banks_recreated_on_cpu": true,
+  "source_snapshot_files": 8,
+  "schedule_rows_verified": 1200,
+  "mode_counts_per_seed": {
+    "hold": 200,
+    "switch": 200,
+    "repair": 200
+  },
+  "ba_aggregates_recomputed_from_per_map": 400,
+  "paired_rms_switch_and_conditional_metrics_recomputed": true,
+  "rms_reduction_tolerance": {
+    "relative": 1e-06,
+    "absolute": 1e-06,
+    "reason": "GPU float32 versus CPU float64 mean"
+  },
+  "primary_predicates_independently_recomputed": 22,
+  "mean_hold_effect_pp": -9.019887447357178,
+  "decision": "NO_JOINT_SCREEN_PASS",
+  "raw_and_schedules_byte_identical": true,
+  "new_training_or_gpu_rollout_for_publication": false,
+  "preflight": {
+    "status": "PREFLIGHT_PASSED",
+    "finished_utc": "2026-10-01T16:26:37.021915+00:00",
+    "elapsed_seconds": 10.094000000004598,
+    "completed_arms": 2
+  }
+}
