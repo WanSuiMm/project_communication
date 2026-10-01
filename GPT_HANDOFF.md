@@ -1,4 +1,50 @@
-# Incremental review: inertial NCA after eeb6514
+# Incremental review: masked medium after 48095e5
+
+- Review base: `48095e5b7fae82ec65d1fd1ce0b4e54726fe7df2`.
+- Evidence head: `35bfd1e0a2fac7e38183cf6e0c7a03d8b95c41b0`.
+- The subsequent handoff-only commit changes review metadata only.
+
+Only the two structured cells receive an input-mask-respecting transport
+operator. Same seed, initialization/RNG and logged rollout/damage schedule;
+800 updates per arm. No original sources or frozen evidence were changed.
+
+## Minimal reading order
+
+1. [Masked results](evidence/masked_medium_seed0/RESULTS.md) and
+   [paired comparison](evidence/masked_medium_seed0/paired_comparison.json).
+2. [Frozen protocol](new/masked_medium/PROTOCOL.md).
+3. [masked_laplacian / MaskedCell.step](new/masked_medium/masked_cells.py),
+   [runner reuse and pairing](new/masked_medium/run_masked.py), and
+   [four implementation tests](new/masked_medium/test_masked.py).
+4. [Publication manifest](MASKED_PUBLICATION_MANIFEST.json) binds sources and
+   byte-identical public results. Open detailed arm JSON only for a specific
+   repair, revision, gradient or distance question.
+
+## Changed and unchanged claims
+
+At the prespecified 32x32/T64 endpoint, inertial RD gains +18.85pp BA and
++19.42pp paired correctness, passing the descriptive joint +5pp criterion.
+RD loses 8.06pp and 20.68pp. Masked inertial BA at T256 is 91.55%, 75.69%,
+50.00% for sizes 32, 64, 128. No sustained aggregate 95% threshold is reached.
+This is a positive within-recipe operator intervention for the inertial arm,
+with an opposite RD result. Connectivity, degree and spectrum all change;
+wall leakage is not isolated as the sole mechanism. No multi-seed significance,
+same-medium generic momentum superiority, repair success or speedup is claimed.
+The original inertial negative screen and historical A0 claims are unchanged.
+No new experiments or monitor are scheduled.
+
+## Reviewer questions
+
+1. Does the implementation preserve the intended single operator intervention
+   and valid pairing with the frozen controls?
+2. What mechanisms are consistent with the opposite RD and inertial effects,
+   without inferring a mechanism from this single seed?
+3. Given low paired correctness, failure at 128x128 and no masked momentum arm,
+   what is the smallest defensible next comparison?
+
+---
+
+# Historical handoff: inertial NCA after eeb6514
 
 - Review base: `eeb6514b35f4e860ffbe69bdecb627d5ea172b7e`.
 - Evidence head: `e17bb5b04861996389fa263dc0d7041ae14cc4ff`.
