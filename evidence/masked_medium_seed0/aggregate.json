@@ -1,0 +1,69 @@
+{
+  "statuses": {
+    "masked_rd_nca": "TRAINED",
+    "masked_inertial_rd": "TRAINED"
+  },
+  "metrics": [
+    {
+      "arm": "masked_rd_nca",
+      "size": 32,
+      "last_horizon": 256,
+      "balanced_accuracy": 0.7667862176895142,
+      "paired_correct": 0.16784408688545227,
+      "first_sustained_95_steps": null,
+      "seconds_per_query_at_sustained_95": null,
+      "repair_eligible": 0
+    },
+    {
+      "arm": "masked_rd_nca",
+      "size": 64,
+      "last_horizon": 256,
+      "balanced_accuracy": 0.5018397569656372,
+      "paired_correct": 0.001681862398982048,
+      "first_sustained_95_steps": null,
+      "seconds_per_query_at_sustained_95": null,
+      "repair_eligible": 0
+    },
+    {
+      "arm": "masked_rd_nca",
+      "size": 128,
+      "last_horizon": 256,
+      "balanced_accuracy": 0.5001639127731323,
+      "paired_correct": 0.0,
+      "first_sustained_95_steps": null,
+      "seconds_per_query_at_sustained_95": null,
+      "repair_eligible": 0
+    },
+    {
+      "arm": "masked_inertial_rd",
+      "size": 32,
+      "last_horizon": 256,
+      "balanced_accuracy": 0.9155259728431702,
+      "paired_correct": 0.41924482583999634,
+      "first_sustained_95_steps": null,
+      "seconds_per_query_at_sustained_95": null,
+      "repair_eligible": 7
+    },
+    {
+      "arm": "masked_inertial_rd",
+      "size": 64,
+      "last_horizon": 256,
+      "balanced_accuracy": 0.7569258213043213,
+      "paired_correct": 0.1594228595495224,
+      "first_sustained_95_steps": null,
+      "seconds_per_query_at_sustained_95": null,
+      "repair_eligible": 2
+    },
+    {
+      "arm": "masked_inertial_rd",
+      "size": 128,
+      "last_horizon": 256,
+      "balanced_accuracy": 0.5,
+      "paired_correct": 0.0,
+      "first_sustained_95_steps": null,
+      "seconds_per_query_at_sustained_95": null,
+      "repair_eligible": 0
+    }
+  ],
+  "seed": 0
+}

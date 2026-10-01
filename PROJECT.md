@@ -1,6 +1,39 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Current work (2026-10-01): the user-supplied inertial NCA wind tunnel is integrated
+Current follow-up (2026-10-01): the user authorized the bounded masked-medium
+diagnostic in `new/masked_medium/PROTOCOL.md`. Only masked RD and masked inertial
+RD are added, paired with the frozen unmasked seed-0 controls. The intervention
+is input-mask edge weights m_i*m_j; initialization, data, 800 updates and all
+evaluation settings are retained. Original sources and evidence stay unchanged.
+The main outcome is the paired change at 32x32/T64; this does not test superiority
+over a generic momentum model with the same masked graph.
+
+Entry commands from this repository root (new output directories required):
+
+```powershell
+python new/masked_medium/test_masked.py
+python new/masked_medium/run_masked.py --preflight --out runs/NEW_MASKED_PREFLIGHT
+python new/masked_medium/run_masked.py --out runs/NEW_MASKED_SCREEN
+```
+
+Four operator/initialization/isolation checks passed, followed by a three-update
+CUDA preflight for each masked arm. The formal run was dispatched on 2026-10-01
+at 12:09 +08:00 on the local RTX4060 Laptop GPU; the child manifest was verified.
+The formal run finished at 12:12:23 +08:00; both arms completed 800 updates.
+At the prespecified 32x32/T64 endpoint, masked inertial RD improved balanced
+accuracy from 69.94% to 88.79% and paired-source correctness from 17.81% to
+37.22%, passing the descriptive joint +5 percentage-point criterion. Masked RD
+declined from 81.27% to 73.21% and from 37.81% to 17.13%, respectively.
+At T256, masked inertial RD reached 91.55% BA at 32x32 and 75.69% at 64x64,
+but returned to 50.00% at 128x128. No sustained aggregate 95% endpoint was
+reached. This single-seed diagnostic supports an operator-dependent improvement
+within the inertial recipe; scale generalization and superiority over a masked
+generic-momentum control remain unestablished.
+Run directory: `runs/masked_medium_20261001_seed0/`. Read its status.json
+for execution state and RESULTS.md / paired_comparison.json for completed arms.
+No automatic additional seed, architecture change or continuous monitor is scheduled.
+
+Previous screen (2026-10-01): the user-supplied inertial NCA wind tunnel is integrated
 under `new/nca_inertial_wind_tunnel/`. Read its `WIND_TUNNEL.md` and
 `LOCAL_INTEGRATION.md`. The latter records the original archive hash, limited
 metric/output fixes and the frozen local 2D screen. Eight unit tests, the linear
@@ -22,7 +55,8 @@ reached sustained aggregate 95% BA. Inertial RD had zero pre-damage eligible
 examples at every size, so its conditional repair outcome is unevaluable.
 There is no benefit over generic momentum in this single-seed screen. Each size
 has 16 held-out maps; no multi-seed superiority or universal impossibility claim
-is established. No follow-up training or monitoring has been launched.
+is established. The separately authorized masked follow-up above tests one
+operator intervention; it does not revise this completed negative result.
 
 Run from this repository root with CUDA (new output directory required):
 

@@ -1,0 +1,102 @@
+{
+  "protocol": "masked_medium_seed0",
+  "config": {
+    "device": "cuda",
+    "arms": [
+      "masked_rd_nca",
+      "masked_inertial_rd"
+    ],
+    "seed": 0,
+    "steps": 800,
+    "channels": 16,
+    "hidden": 128,
+    "size": 32,
+    "batch": 8,
+    "train_examples": 512,
+    "eval_examples": 16,
+    "train_horizons": [
+      32,
+      48,
+      64
+    ],
+    "eval_horizons": [
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "eval_sizes": [
+      32,
+      64,
+      128
+    ],
+    "base_steps": 64,
+    "recovery_steps": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "probe_horizons": [
+      16,
+      64
+    ],
+    "lr": 0.001,
+    "log_every": 100,
+    "threads": 2,
+    "minutes": 25.0,
+    "compile_cell": false,
+    "smoke": false,
+    "preflight": false,
+    "out": "runs/masked_medium_20261001_seed0"
+  },
+  "torch": "2.5.1",
+  "numpy": "1.26.4",
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_allow_tf32": true,
+    "matmul_allow_tf32": false
+  },
+  "pairing": {
+    "masked_rd_nca": {
+      "base_arm": "rd_nca",
+      "initial_state_dict_sha256": "43ed5fef07e8028f0baa00c5b8342dc0e129127e691c614fc6d0e241f0a17bec",
+      "same_initial_parameters_and_rng": true,
+      "control_sha256": "cf8f4434a3e72a11cda5772fd09b4757b82cbdf7d0e1a2adfc1efc07441602ff"
+    },
+    "masked_inertial_rd": {
+      "base_arm": "inertial_rd",
+      "initial_state_dict_sha256": "dbd7af265d6fe66d6b30bfaf2a688de728bc54fb1d653d688f7f3cbcd8795ef2",
+      "same_initial_parameters_and_rng": true,
+      "control_sha256": "7150bb7397f8b58cd1df143d891def17187530fa162fcba162417d5d3182905a"
+    }
+  },
+  "source_sha256": {
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/math_checks.py": "20036b3c82dfb4af2a2294b602f0168e2e5024de2742476e980531f31f6c02d5",
+    "new/nca_inertial_wind_tunnel/run_wind_tunnel.py": "1a867d96c178655f3db89c67956182cfee251ad232de883913754fc0e86e3bd7",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "new/nca_inertial_wind_tunnel/test_core.py": "8577b20e8c85715c0b19f645638a7cc031627bd8055532031bcd1d5840d74805",
+    "new/nca_inertial_wind_tunnel/THEORY.md": "952152ebe0ffad851f4bbac78f80787893268c66c96be81a29155d3098160eca",
+    "new/nca_inertial_wind_tunnel/WIND_TUNNEL.md": "49f70d3d9c410503a2a098fdc6485d058203f7583d7916361130c99ab377bbde",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/masked_medium/run_masked.py": "92670bb6b0f2f0d0d5e1d1a001fc6f73f8230021c33f6dde30341676cc9e1857",
+    "new/masked_medium/test_masked.py": "6d96434a9cf4981d11973f964d87d808be2d1ab3955d1cc0bef34c9afd30c621",
+    "new/masked_medium/PROTOCOL.md": "de4ab711619968b7205f0cd8031561e38585693721678740ffc9ff2e032c84f0"
+  },
+  "control_publication_manifest_sha256": "9cc5053c919c36522c8e141729681260ebf0dadefbd34fce893c26af1369a0ee",
+  "publication_notes": [
+    "Per-arm JSON and paired comparison are byte-identical copies of completed evidence.",
+    "Local PID, host, launch receipts, checkpoints and logs are excluded.",
+    "One training seed; masking changes graph connectivity, degree and spectrum; no masked momentum control was run."
+  ],
+  "evidence_sha256": {
+    "evidence/masked_medium_seed0/aggregate.json": "6965d2edf20bf57be3f56461bb900d177e2383659f6c00c45afd419becff85cb",
+    "evidence/masked_medium_seed0/paired_comparison.json": "98afe3a76ee53726e04c011ea9b30cdc055356f4d3d32d6ba1b193c67f41e5e5",
+    "evidence/masked_medium_seed0/RESULTS.md": "5a8b0ea8e19d2ae699e483ae40182cb5162203dfee708443c6ea0359f095f723",
+    "evidence/masked_medium_seed0/arms/masked_inertial_rd_seed0.json": "aca3d13e53b2a9aaaa9743640332f47c98febcf7436dc3bc400b5cdcf169f798",
+    "evidence/masked_medium_seed0/arms/masked_rd_nca_seed0.json": "c767ec842735a21623a94648f1ffc815cdfa4938c1d075c62b8fefc2a1d9b0b0"
+  }
+}

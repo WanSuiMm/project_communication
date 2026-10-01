@@ -1,6 +1,31 @@
 # Context for incremental scientific review
 
-## Current 2D inertial wind-tunnel screen (seed 0)
+## Current masked-medium diagnostic
+
+Status: completed exploratory operator intervention; dimension: 2D; seed: 0;
+updates: 800 per arm; held-out maps: 16 per size. The original sources and
+controls are frozen. `new/masked_medium/masked_cells.py::masked_laplacian`
+computes sum over four neighbors of m_i*m_j*(H_i-H_j), using only input mask.
+`MaskedCell.step` wraps the original structured cells with that operator.
+`run_masked.py` reuses the original training/evaluation functions and verifies
+initialization/RNG, source hashes and logged training schedule pairing.
+
+Primary 32x32/T64: masked inertial RD gains +18.85pp BA and +19.42pp paired
+correctness, satisfying the prespecified descriptive joint +5pp criterion.
+Masked RD loses 8.06pp and 20.68pp. Candidate BA at T256 is 91.55%, 75.69%,
+50.00% for sizes 32, 64, 128. No sustained aggregate 95% endpoint is reached.
+Masking changes connectivity, degree and spectrum; the specific causal
+mechanism is not isolated. No masked momentum arm, multiple seeds, 3D claim,
+controlled speedup or general architecture pass is established.
+
+Read [masked results](evidence/masked_medium_seed0/RESULTS.md),
+[paired comparisons](evidence/masked_medium_seed0/paired_comparison.json),
+[protocol](new/masked_medium/PROTOCOL.md) and
+[manifest](MASKED_PUBLICATION_MANIFEST.json). Raw per-arm records are exact
+copies; host/PID/receipts/checkpoints remain local. Earlier claims below remain
+bound to their original experiments.
+
+## Previous 2D inertial wind-tunnel screen (seed 0)
 
 This separate experiment asks whether explicit five-point reaction–transport
 with inertia learns seeded-region identity better than generic momentum NCA,

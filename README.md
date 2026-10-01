@@ -1,5 +1,25 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
+Latest update: a completed **2D masked-medium diagnostic**, seed 0, replaces
+only the structured cells' transport operator with input-mask edge weights.
+Inertial RD improves at 32x32/T64 from 69.94% to 88.79% balanced accuracy and
+from 17.81% to 37.22% paired-source correctness; first-order RD gets worse.
+The inertial arm passes the prespecified descriptive joint +5pp criterion,
+but 128x128/T256 remains at chance and no sustained aggregate 95% endpoint is
+reached. No same-medium generic momentum control or multi-seed claim exists.
+Start with [the masked results](evidence/masked_medium_seed0/RESULTS.md),
+[paired comparisons](evidence/masked_medium_seed0/paired_comparison.json),
+[protocol](new/masked_medium/PROTOCOL.md), then [GPT_HANDOFF.md](GPT_HANDOFF.md).
+Earlier frozen results below are preserved.
+
+Reproduce this diagnostic from the repository root:
+
+```powershell
+python new/masked_medium/test_masked.py
+python new/masked_medium/run_masked.py --preflight --out runs/NEW_MASKED_PREFLIGHT
+python new/masked_medium/run_masked.py --out runs/NEW_MASKED_SCREEN
+```
+
 This repository preserves two distinct architecture experiments: implicit
 message transport (historical v1/A0, 2D/3D) and an explicit inertial NCA
 (latest screen, **2D only**). The latest question is whether a prescribed
@@ -17,7 +37,7 @@ rescue sweep or recurring monitor was launched. Historical evidence is unchanged
 
 ## Start here
 
-For incremental review from `eeb6514`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For the latest incremental review from `48095e5`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
 1. [RESULTS.md](RESULTS.md): latest result and limits, followed by earlier A0/v1.
 2. [GPT_CONTEXT.md](GPT_CONTEXT.md): independent experiment scopes, status and exact code symbols.

@@ -1,6 +1,8 @@
 param(
     [string]$RunName = 'inertial_20261001_seed0',
-    [int]$Minutes = 25
+    [int]$Minutes = 25,
+    [ValidateSet('inertial','masked')]
+    [string]$Experiment = 'inertial'
 )
 $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
@@ -14,6 +16,10 @@ $pythonPath = (Get-Command python -CommandType Application | Select-Object -Firs
 $entry = 'new/nca_inertial_wind_tunnel/run_wind_tunnel.py'
 $arguments = @('-u', $entry, '--device', 'cuda', '--arms', 'all', '--seed', '0',
     '--steps', '800', '--minutes', "$Minutes", '--out', "runs/$RunName")
+if ($Experiment -eq 'masked') {
+    $entry = 'new/masked_medium/run_masked.py'
+    $arguments = @('-u', $entry, '--device', 'cuda', '--minutes', "$Minutes", '--out', "runs/$RunName")
+}
 New-Item -ItemType Directory -Path $launchDirectory | Out-Null
 $started = Get-Date
 $process = Start-Process -FilePath $pythonPath -ArgumentList $arguments `
@@ -31,6 +37,7 @@ $receipt = [ordered]@{
     run_directory = $runDirectory
     gpu = (& nvidia-smi --query-gpu=name,memory.total,memory.used --format=csv,noheader)
     maximum_minutes = $Minutes
+    experiment = $Experiment
     continuous_monitoring = $false
 }
 $receipt | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $launchDirectory 'launch_receipt.json') -Encoding utf8

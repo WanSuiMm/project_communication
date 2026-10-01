@@ -1,6 +1,31 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: inertial NCA, 2D seed 0
+## Latest follow-up: masked medium, 2D seed 0
+
+Both masked arms completed 800 updates with matched initialization, RNG and
+logged rollout/damage schedules relative to their frozen unmasked controls.
+Only the structured transport operator changes to input-mask edge weights.
+
+| Model | BA at 32x32/T64, old → masked | Paired correctness, old → masked | Prespecified descriptive outcome |
+|---|---:|---:|---|
+| RD | 81.27% → 73.21% | 37.81% → 17.13% | NO_JOINT_5PP_GAIN |
+| Inertial RD | 69.94% → 88.79% | 17.81% → 37.22% | JOINT_GAIN_5PP |
+
+At T256, masked inertial RD reaches 91.55% BA at size 32, 75.69% at size 64,
+and 50.00% at size 128. No sustained aggregate 95% threshold is reached.
+This supports an operator-dependent improvement within the tested inertial
+recipe, with unresolved scale generalization. The opposite RD effect prevents
+a blanket claim that masking helps both dynamics. One seed is not statistical
+significance; no same-medium momentum comparison or architecture superiority
+claim is established. Repair eligibility counts alone do not prove repair.
+
+Read [compact results](evidence/masked_medium_seed0/RESULTS.md),
+[all paired horizons](evidence/masked_medium_seed0/paired_comparison.json), and
+[publication manifest](MASKED_PUBLICATION_MANIFEST.json). Detailed per-arm JSON
+under `evidence/masked_medium_seed0/arms/` is secondary. Original evidence below
+remains unchanged.
+
+## Previous: inertial NCA, 2D seed 0
 
 **Completed, negative exploratory screen for the current recipe.** Four arms
 completed 800 updates and all planned evaluations in approximately 7 minutes
