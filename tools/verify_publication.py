@@ -35,14 +35,18 @@ def main():
         for name, expected in sources.items():
             if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
                 errors.append(f'Training-source hash mismatch: {name}')
-        for name, expected in manifest['published_evidence_sha256'].items():
+        evidence = {**manifest.get('published_evidence_sha256', {}),
+                    **manifest.get('evidence_sha256', {})}
+        for name, expected in evidence.items():
             if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
                 errors.append(f'Evidence hash mismatch: {name}')
         for name, expected in manifest.get('protocol_files_sha256', {}).items():
             if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
                 errors.append(f'Frozen protocol hash mismatch: {name}')
-        bindings = {**sources, **manifest['published_evidence_sha256'],
-                    **manifest.get('protocol_files_sha256', {})}
+        bindings = {**sources, **evidence, **manifest.get('protocol_files_sha256', {}),
+                    **manifest.get('reference_sha256', {}),
+                    **manifest.get('recovery_source_sha256', {}),
+                    **manifest.get('publication_tool_sha256', {})}
         for name, expected in bindings.items():
             if name not in published:
                 errors.append(f'Manifest references unpublished file: {name}')

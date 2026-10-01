@@ -1,7 +1,7 @@
 param(
     [string]$RunName = 'inertial_20261001_seed0',
     [int]$Minutes = 25,
-    [ValidateSet('inertial','masked','momentum')]
+    [ValidateSet('inertial','masked','momentum','state')]
     [string]$Experiment = 'inertial'
 )
 $ErrorActionPreference = 'Stop'
@@ -22,6 +22,10 @@ if ($Experiment -eq 'masked') {
 }
 if ($Experiment -eq 'momentum') {
     $entry = 'new/masked_momentum/run_momentum.py'
+    $arguments = @('-u', $entry, '--device', 'cuda', '--minutes', "$Minutes", '--out', "runs/$RunName")
+}
+if ($Experiment -eq 'state') {
+    $entry = 'new/masked_state/run_state.py'
     $arguments = @('-u', $entry, '--device', 'cuda', '--minutes', "$Minutes", '--out', "runs/$RunName")
 }
 New-Item -ItemType Directory -Path $launchDirectory | Out-Null

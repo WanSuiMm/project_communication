@@ -1,6 +1,69 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: same-medium generic momentum control and trajectory audit
+## Final: generic recurrence by medium, 2D seed 0
+
+The last authorized arm, Masked State-matched NCA, saved all 800 training updates
+and all 15 scientific evaluation points. The original process did not finalize;
+only missing size128 timings and initial-state gradient probes were subsequently
+recovered from its checkpoint, with no retraining. The 32/T64 and 128/T256 BA,
+BCE and H RMS replay exactly. Exit cause is unknown; original records remain
+unchanged. [Recovery](evidence/masked_state_seed0/recovery.json) and
+[validation](evidence/masked_state_seed0/validation.json) document this distinction.
+
+Frozen primary endpoint: 32x32/T64; one training seed, 16 held-out maps.
+BA averages class recall within each map then averages maps; paired correctness
+pools changed-component pixels that are correct under both original and flipped
+source labels. Neither maps nor pixels are independent training replicates.
+
+| Generic recipe | Whole-grid BA (%) | Masked BA (%) | Whole-grid paired (%) | Masked paired (%) |
+|---|---:|---:|---:|---:|
+| State-matched NCA | 85.17 | 90.43 | 49.31 | 56.37 |
+| Momentum NCA | 84.44 | 96.45 | 42.75 | 77.25 |
+
+| Primary contrast | BA difference (pp) | Paired difference (pp) |
+|---|---:|---:|
+| Masked Momentum minus Masked State | +6.02 | +20.88 |
+| Masking effect, State | +5.26 | +7.06 |
+| Masking effect, Momentum | +12.01 | +34.49 |
+| Difference-in-differences | +6.75 | +27.43 |
+
+Outcome: `MOMENTUM_JOINT_5PP_ADVANTAGE`, a descriptive threshold specified before
+the new arm ran, not statistical significance. The other three cells were already
+known when the [final protocol](new/masked_state/PROTOCOL.md) was written.
+Within this seed, both generic recipes benefit from the task-respecting medium
+on the primary metrics, and Momentum retains an advantage on that same medium.
+This neither makes the medium sufficient nor shows that velocity alone causes
+the advantage. State uses H32/hidden48/4993 parameters, Momentum H16+V16/hidden88/
+4689 parameters: equal persistent scalars, differing widths and 6.48% more
+parameters for State. Masking also changes connectivity, degree and spectrum.
+
+The negative secondary findings are substantial. At 32/T64, State masking
+improves BA while worsening BCE from 0.2579 to 0.9871. With longer rollout:
+
+| Size | Masked State BA T64 to T256 (%) | Masked Momentum BA T64 to T256 (%) |
+|---|---:|---:|
+| 32 | 90.43 to 11.38 | 96.45 to 77.68 |
+| 64 | 75.93 to 25.93 | 84.75 to 64.15 |
+| 128 | 63.93 to 38.59 | 75.20 to 51.90 |
+
+At 32/T256, Masked State paired correctness falls to 9.38%, BCE reaches 63.4853,
+and H RMS rises from 5.99 at T64 to 23.87. Its 87.38% training clip fraction
+and initial-state task-gradient norm of 9.06e8 at T64 flag sensitivity, but the
+single-example loss-gradient probe is not a Jacobian spectral norm or a proof
+of asymptotic instability. No sustained 95% endpoint is reached. Conditional
+repair cohorts differ (State 5 eligible maps versus Momentum 12 at size32).
+Timings span separate runs, including a separate recovery process for size128;
+no controlled speedup or conditional-repair superiority is established.
+
+Read [final generated results](evidence/masked_state_seed0/RESULTS.md),
+[all 15 comparisons](evidence/masked_state_seed0/comparison.json), then
+[publication hashes](STATE_PUBLICATION_MANIFEST.json). The
+[original arm](evidence/masked_state_seed0/original_arm.json) is byte-identical
+to the saved run; the [augmented arm](evidence/masked_state_seed0/arms/masked_state_nca_seed0.json)
+only adds the documented diagnostics. Earlier results below remain intact.
+This completes the final authorized comparison. No further experiment is scheduled.
+
+## Previous: same-medium generic momentum control and trajectory audit
 
 Masked Momentum completed800 updates and all three evaluation sizes on2026-10-01.
 Exact initial parameters/RNG match the old generic control; logged rollout and

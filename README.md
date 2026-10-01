@@ -1,13 +1,20 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
 This repository tests whether explicit reaction/transport structure improves
-persistent cellular computation. The latest **2D, seed-0, same-medium control**
-favors generic Masked Momentum at the frozen 32x32/T64 endpoint: BA96.45%
-and paired-source correctness77.25%, versus88.79% and37.22% for Masked Inertial RD.
-The generic control completes800 updates and all evaluations. This is a negative
-primary comparison for the explicit recipe, with a horizon-dependent tradeoff:
-at32/T256 the generic control declines to77.68% BA, while explicit RD reaches
-91.55%. Neither reaches sustained aggregate95% across subsequent checkpoints.
+persistent cellular computation. The final **2D, seed-0, recurrence-by-medium
+2x2 screen** adds Masked State-matched NCA. At the frozen 32x32/T64 endpoint,
+Masked Momentum reaches **96.45% BA / 77.25% paired-source correctness**, versus
+**90.43% / 56.37%** for Masked State. Masking improves both generic recipes on
+these two primary metrics, with larger gains for Momentum. State masking also
+worsens BCE (0.258 to 0.987), so the improvement is not uniform across metrics.
+Both models deteriorate beyond the training rollout: at 32/T256 BA is 77.68%
+for Masked Momentum and 11.38% for Masked State. Neither has sustained 95% BA.
+
+The new arm saved 800 updates and all 15 scientific evaluation points, but its
+original process left no final completion marker. Only missing size128 timings
+and gradient probes were recovered from the existing checkpoint, without
+retraining. Two representative endpoints replay exactly; original evidence is
+preserved separately. See [recovery provenance](evidence/masked_state_seed0/recovery.json).
 
 An inference-only [trajectory audit](evidence/trajectory_audit_seed0/INTERPRETATION.md)
 of Masked Inertial RD exactly reproduces all15 historical checkpoints. It finds
@@ -17,28 +24,30 @@ changing decisions. These observations do not establish fixed-point, directional
 or asymptotic convergence. The detailed audit was not run on Masked Momentum;
 its original evaluator also records increasing norms and late BCE deterioration.
 
-Single-seed results do not establish population-level superiority, repair
-superiority, a general PDE impossibility claim or a speedup. Hidden widths and
-initial spatial coupling differ between the parameter-matched architecture
-packages. No extra seed, architecture rescue or continuous monitor was launched.
+Persistent state capacity is equal (32 scalars), but State uses H32/hidden48/
+4993 parameters and Momentum uses H16+V16/hidden88/4689 parameters. This is a
+recipe comparison, not an isolated causal test of velocity. Single-seed results
+do not establish population-level superiority, repair superiority, a general
+PDE impossibility claim or a speedup. The earlier same-medium comparison still
+favors generic Momentum over explicit Inertial RD at the primary endpoint.
+This is the final authorized experiment; no further training or monitor is scheduled.
 Earlier implicit-message v1/A0 (2D/3D), unmasked inertial, and masked-medium
 evidence are preserved unchanged.
 
 ## Start here
 
-For incremental review from `c13b73f`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `82635bb`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [RESULTS.md](RESULTS.md): latest comparison, rollout tradeoffs and audit conclusions.
-2. [Momentum results](evidence/masked_momentum_seed0/RESULTS.md) and
-   [all paired horizons](evidence/masked_momentum_seed0/comparison.json).
-3. [Audit interpretation](evidence/trajectory_audit_seed0/INTERPRETATION.md),
-   [tables](evidence/trajectory_audit_seed0/RESULTS.md) and
-   [summary](evidence/trajectory_audit_seed0/summary.json).
-4. [Momentum protocol](new/masked_momentum/PROTOCOL.md),
-   [audit protocol](new/trajectory_audit/PROTOCOL.md), and
-   [GPT_CONTEXT.md](GPT_CONTEXT.md) for source symbols and claim boundaries.
-5. [Publication manifest](MOMENTUM_AUDIT_PUBLICATION_MANIFEST.json) for code,
-   reference and evidence hashes. [ARCHITECTURE.md](ARCHITECTURE.md) explains the equations.
+1. [RESULTS.md](RESULTS.md): final 2x2, BCE and rollout failures, then previous results.
+2. [Final control results](evidence/masked_state_seed0/RESULTS.md) and
+   [all 15 comparisons](evidence/masked_state_seed0/comparison.json).
+3. [Frozen final protocol](new/masked_state/PROTOCOL.md) and
+   [GPT_CONTEXT.md](GPT_CONTEXT.md): model differences, source map and claim limits.
+4. [Recovery provenance](evidence/masked_state_seed0/recovery.json),
+   [validation](evidence/masked_state_seed0/validation.json), and
+   [publication manifest](STATE_PUBLICATION_MANIFEST.json).
+5. For background only: [previous Momentum comparison](evidence/masked_momentum_seed0/RESULTS.md)
+   and [inertial trajectory audit](evidence/trajectory_audit_seed0/INTERPRETATION.md).
 
 Raw per-arm JSON and the6.2MB audit `components.json` are secondary: open only
 for specific repair, revision, distance or component-vector questions. Start
@@ -53,10 +62,17 @@ backend settings are recorded in the publication manifest. No dataset download
 is needed. Every output directory must be new.
 
 ```powershell
-python new/masked_momentum/test_momentum.py
-python new/masked_momentum/run_momentum.py --preflight --out runs/NEW_MOMENTUM_PREFLIGHT
-python new/masked_momentum/run_momentum.py --out runs/NEW_MOMENTUM_CONTROL
+python new/masked_state/test_state.py
+python new/masked_state/run_state.py --preflight --out runs/NEW_STATE_PREFLIGHT
+python new/masked_state/run_state.py --out runs/NEW_STATE_CONTROL
 ```
+
+The runner reuses the original trainer/evaluator and verifies frozen source and
+reference hashes. Existing three controls are included as public evidence.
+The separate `new/masked_state/recover_tail.py` helper only completes missing
+planned auxiliaries from a local checkpoint; it never trains. Its published
+recovery record identifies exactly which fields were added. Checkpoints remain
+local and are not needed to review the scientific endpoints.
 
 The audit requires the existing masked inertial checkpoint, whose SHA is in
 the audit manifest. Checkpoints remain local. On a fresh clone, generate it with

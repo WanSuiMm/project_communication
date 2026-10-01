@@ -1,5 +1,34 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Final authorized arm (2026-10-01): `masked_state_nca` supplies the missing
+state-matched generic NCA/Momentum by whole-grid/masked medium 2x2 comparison.
+Protocol: `new/masked_state/PROTOCOL.md`; model:H32, no velocity, hidden48,
+4993 parameters, original state-NCA initialization/RNG. Frozen seed0/800-update
+recipe and evaluator are reused. Main comparison is32/T64 BA and paired-source
+correctness; all horizons and difference-in-differences are retained. State
+scalar counts match, but program/readout widths and parameter counts differ.
+Three implementation tests and the three-update CUDA preflight passed.
+The run saved 800 updates and all 15 scientific endpoints, but the original
+process exited without a final completion marker; cause is unknown. Original
+run: `runs/masked_state_20261001_seed0/`, retained unchanged. Missing size128
+timings and gradient probes were recovered without training in
+`runs/masked_state_20261001_tail_recovery/`; two endpoints replay exactly.
+Public evidence: `evidence/masked_state_seed0/RESULTS.md`, comparison.json and
+recovery.json; hash bindings: `STATE_PUBLICATION_MANIFEST.json`.
+At 32/T64, Masked State reaches 90.43% BA / 56.37% paired correctness versus
+Masked Momentum 96.45% / 77.25%. Masking improves both primary metrics in both
+generic recipes, but State BCE worsens and long-rollout BA collapses to 11.38%
+at 32/T256. This supports a same-medium recipe advantage in one seed, not
+isolated velocity causality or stable cellular computation.
+Stop after this final arm. No extra seeds, architecture changes or recurring monitor.
+From repository root, use new output directories:
+
+```powershell
+python new/masked_state/test_state.py
+python new/masked_state/run_state.py --preflight --out runs/NEW_STATE_PREFLIGHT
+python new/masked_state/run_state.py --out runs/NEW_STATE_CONTROL
+```
+
 Completed work (2026-10-01): inference-only trajectory audit of the existing
 masked inertial checkpoint and one `masked_momentum_nca` training control.
 The audit is now complete: all15 reference checkpoints replay exactly.

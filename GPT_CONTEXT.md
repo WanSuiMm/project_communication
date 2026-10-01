@@ -1,6 +1,50 @@
 # Context for incremental scientific review
 
-## Current same-medium control: completed
+## Final 2x2 status: scientific endpoints saved, auxiliary tail recovered
+
+- Scientific status: `MOMENTUM_JOINT_5PP_ADVANTAGE`, descriptive, one training seed.
+- Original execution: 800 updates and all 15 scientific endpoints saved; no
+  final completion marker, process no longer present, cause unknown.
+- Auxiliary status: `PLANNED_AUXILIARIES_RECOVERED`; missing size128 timings and
+  initial-state gradient probes added from the existing checkpoint, no retraining.
+- Verification: all 15 four-way comparisons recomputed from raw; two checkpoint
+  endpoints replay exactly; original fields and executed sources unchanged.
+- Stop: final authorized arm; no further run, seed, architecture or monitor scheduled.
+
+At 32/T64, State goes from whole-grid 85.17% BA / 49.31% paired to masked
+90.43% / 56.37%. Momentum goes from 84.44% / 42.75% to 96.45% / 77.25%.
+Same-medium Momentum advantages are 6.02pp BA and 20.88pp paired correctness;
+descriptive interactions are +6.75pp and +27.43pp. State's masked BCE is worse
+(0.9871 versus unmasked 0.2579). Masked State collapses at 32/T256 to 11.38%
+BA, paired 9.38%, BCE 63.4853; Masked Momentum also declines, to 77.68% BA.
+Neither reaches sustained 95%. These are finite-horizon observations, not proof
+of convergence, asymptotic divergence or scale-robust cellular computation.
+
+This compares established recipes: State H32/hidden48/4993 parameters versus
+Momentum H16+V16/hidden88/4689. Equal persistent scalar capacity does not isolate
+velocity: content/readout/program widths differ. Within each recipe masking is
+the intervention, with original initialization/RNG preserved. All four logged
+rollout/damage schedules match; only one training seed remains the replicate.
+The input mask supplies task-specific geometry and changes degree and spectrum.
+
+| Final concept | Exact source symbol | File |
+|---|---|---|
+| Generic masked state update | `MaskedState.step`, `make_cell` | `new/masked_state/state_cells.py` |
+| Frozen references and final contrasts | `verify`, `summarize`, `main` | `new/masked_state/run_state.py` |
+| Missing diagnostic recovery, no training | `main` | `new/masked_state/recover_tail.py` |
+| Pairing, isolation, backward checks | `Tests` | `new/masked_state/test_state.py` |
+| Scientific-field and publication audit | `main` | `tools/export_state_evidence.py` |
+
+Start with [current results](RESULTS.md), [comparison](evidence/masked_state_seed0/comparison.json)
+and [protocol](new/masked_state/PROTOCOL.md). Then inspect
+[recovery](evidence/masked_state_seed0/recovery.json),
+[validation](evidence/masked_state_seed0/validation.json) and
+[hash bindings](STATE_PUBLICATION_MANIFEST.json). Raw original/augmented records
+are secondary. The publication does not claim that the original process finished
+normally. Missing-finalization cause is not inferred from the large gradients.
+The earlier audit below applies to Masked Inertial RD, not either generic model.
+
+## Previous same-medium control: completed
 
 Status: valid exploratory single-seed comparison; seed0;800 updates; all15
 size/horizon endpoints. `new/masked_momentum/momentum_cells.py::MaskedMomentum.step`

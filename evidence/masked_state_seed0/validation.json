@@ -1,0 +1,26 @@
+{
+  "implementation_tests": {
+    "command": "python new/masked_state/test_state.py",
+    "count": 3,
+    "status": "PASSED"
+  },
+  "completed_updates": 800,
+  "all_15_comparisons_recomputed_from_raw": true,
+  "logged_training_schedule_matches_all_four": true,
+  "executed_source_snapshot_matches_current": true,
+  "original_arm_preserved_byte_for_byte": true,
+  "original_scientific_fields_unchanged_in_augmented_record": true,
+  "checkpoint_replay_endpoints": [
+    [
+      32,
+      64
+    ],
+    [
+      128,
+      256
+    ]
+  ],
+  "replay_max_absolute_error": 0,
+  "recovery_scope": "Missing planned size128 timings and gradient probes only; no retraining",
+  "original_process_finalization": "MISSING_CAUSE_UNKNOWN"
+}

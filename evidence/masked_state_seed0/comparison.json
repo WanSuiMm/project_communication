@@ -1,0 +1,650 @@
+{
+  "protocol": "masked_state_final_seed0",
+  "status": "TRAINED",
+  "seed": 0,
+  "decision": "MOMENTUM_JOINT_5PP_ADVANTAGE",
+  "logged_schedule_matches_all_four": true,
+  "primary": {
+    "size": 32,
+    "steps": 64,
+    "unmasked_state": {
+      "ba": 0.8516697883605957,
+      "bce": 0.2579170763492584,
+      "h_rms": 3.8511111736297607,
+      "v_rms": null,
+      "paired": 0.4930572509765625
+    },
+    "unmasked_momentum": {
+      "ba": 0.8443683385848999,
+      "bce": 0.3216845989227295,
+      "h_rms": 14.38316535949707,
+      "v_rms": 0.33826345205307007,
+      "paired": 0.42752739787101746
+    },
+    "masked_momentum": {
+      "ba": 0.9644959568977356,
+      "bce": 0.05115070939064026,
+      "h_rms": 36.32884216308594,
+      "v_rms": 0.9111604690551758,
+      "paired": 0.772472620010376
+    },
+    "masked_state": {
+      "ba": 0.9042654037475586,
+      "bce": 0.9871293306350708,
+      "h_rms": 5.98555850982666,
+      "v_rms": null,
+      "paired": 0.5637028217315674
+    },
+    "momentum_minus_state_masked_ba_pp": 6.0230553150177,
+    "state_masking_effect_ba_pp": 5.259561538696289,
+    "momentum_masking_effect_ba_pp": 12.01276183128357,
+    "interaction_ba_pp": 6.75320029258728,
+    "momentum_minus_state_masked_paired_pp": 20.87697982788086,
+    "state_masking_effect_paired_pp": 7.064557075500488,
+    "momentum_masking_effect_paired_pp": 34.49452221393585,
+    "interaction_paired_pp": 27.429965138435364
+  },
+  "all_horizons": [
+    {
+      "size": 32,
+      "steps": 16,
+      "unmasked_state": {
+        "ba": 0.7744709849357605,
+        "bce": 0.4071418046951294,
+        "h_rms": 0.7403795719146729,
+        "v_rms": null,
+        "paired": 0.2633374035358429
+      },
+      "unmasked_momentum": {
+        "ba": 0.7513102293014526,
+        "bce": 0.46921491622924805,
+        "h_rms": 1.6338599920272827,
+        "v_rms": 0.19239678978919983,
+        "paired": 0.19001218676567078
+      },
+      "masked_momentum": {
+        "ba": 0.7042759656906128,
+        "bce": 0.487579882144928,
+        "h_rms": 2.6576035022735596,
+        "v_rms": 0.3751497268676758,
+        "paired": 0.1612667441368103
+      },
+      "masked_state": {
+        "ba": 0.8410593271255493,
+        "bce": 0.30479973554611206,
+        "h_rms": 1.0437840223312378,
+        "v_rms": null,
+        "paired": 0.2272838056087494
+      },
+      "momentum_minus_state_masked_ba_pp": -13.678336143493652,
+      "state_masking_effect_ba_pp": 6.658834218978882,
+      "momentum_masking_effect_ba_pp": -4.703426361083984,
+      "interaction_ba_pp": -11.362260580062866,
+      "momentum_minus_state_masked_paired_pp": -6.601706147193909,
+      "state_masking_effect_paired_pp": -3.6053597927093506,
+      "momentum_masking_effect_paired_pp": -2.8745442628860474,
+      "interaction_paired_pp": 0.7308155298233032
+    },
+    {
+      "size": 32,
+      "steps": 32,
+      "unmasked_state": {
+        "ba": 0.8586207628250122,
+        "bce": 0.26867640018463135,
+        "h_rms": 1.6700427532196045,
+        "v_rms": null,
+        "paired": 0.4465286135673523
+      },
+      "unmasked_momentum": {
+        "ba": 0.850684642791748,
+        "bce": 0.28340232372283936,
+        "h_rms": 5.08500862121582,
+        "v_rms": 0.2892371714115143,
+        "paired": 0.3907429873943329
+      },
+      "masked_momentum": {
+        "ba": 0.9147261381149292,
+        "bce": 0.15975014865398407,
+        "h_rms": 11.17442798614502,
+        "v_rms": 0.6908870339393616,
+        "paired": 0.49817296862602234
+      },
+      "masked_state": {
+        "ba": 0.8921371698379517,
+        "bce": 0.17841415107250214,
+        "h_rms": 2.7359836101531982,
+        "v_rms": null,
+        "paired": 0.37661388516426086
+      },
+      "momentum_minus_state_masked_ba_pp": 2.258896827697754,
+      "state_masking_effect_ba_pp": 3.3516407012939453,
+      "momentum_masking_effect_ba_pp": 6.404149532318115,
+      "interaction_ba_pp": 3.05250883102417,
+      "momentum_minus_state_masked_paired_pp": 12.155908346176147,
+      "state_masking_effect_paired_pp": -6.991472840309143,
+      "momentum_masking_effect_paired_pp": 10.742998123168945,
+      "interaction_paired_pp": 17.73447096347809
+    },
+    {
+      "size": 32,
+      "steps": 64,
+      "unmasked_state": {
+        "ba": 0.8516697883605957,
+        "bce": 0.2579170763492584,
+        "h_rms": 3.8511111736297607,
+        "v_rms": null,
+        "paired": 0.4930572509765625
+      },
+      "unmasked_momentum": {
+        "ba": 0.8443683385848999,
+        "bce": 0.3216845989227295,
+        "h_rms": 14.38316535949707,
+        "v_rms": 0.33826345205307007,
+        "paired": 0.42752739787101746
+      },
+      "masked_momentum": {
+        "ba": 0.9644959568977356,
+        "bce": 0.05115070939064026,
+        "h_rms": 36.32884216308594,
+        "v_rms": 0.9111604690551758,
+        "paired": 0.772472620010376
+      },
+      "masked_state": {
+        "ba": 0.9042654037475586,
+        "bce": 0.9871293306350708,
+        "h_rms": 5.98555850982666,
+        "v_rms": null,
+        "paired": 0.5637028217315674
+      },
+      "momentum_minus_state_masked_ba_pp": 6.0230553150177,
+      "state_masking_effect_ba_pp": 5.259561538696289,
+      "momentum_masking_effect_ba_pp": 12.01276183128357,
+      "interaction_ba_pp": 6.75320029258728,
+      "momentum_minus_state_masked_paired_pp": 20.87697982788086,
+      "state_masking_effect_paired_pp": 7.064557075500488,
+      "momentum_masking_effect_paired_pp": 34.49452221393585,
+      "interaction_paired_pp": 27.429965138435364
+    },
+    {
+      "size": 32,
+      "steps": 128,
+      "unmasked_state": {
+        "ba": 0.838098406791687,
+        "bce": 0.28953051567077637,
+        "h_rms": 8.306467056274414,
+        "v_rms": null,
+        "paired": 0.39049938321113586
+      },
+      "unmasked_momentum": {
+        "ba": 0.8169143199920654,
+        "bce": 0.4661048352718353,
+        "h_rms": 35.3836669921875,
+        "v_rms": 0.3522352874279022,
+        "paired": 0.38124239444732666
+      },
+      "masked_momentum": {
+        "ba": 0.8617134094238281,
+        "bce": 0.9152428507804871,
+        "h_rms": 95.49378967285156,
+        "v_rms": 0.9771587252616882,
+        "paired": 0.5327649116516113
+      },
+      "masked_state": {
+        "ba": 0.6760193109512329,
+        "bce": 7.127575874328613,
+        "h_rms": 10.843693733215332,
+        "v_rms": null,
+        "paired": 0.07137636840343475
+      },
+      "momentum_minus_state_masked_ba_pp": 18.56940984725952,
+      "state_masking_effect_ba_pp": -16.20790958404541,
+      "momentum_masking_effect_ba_pp": 4.4799089431762695,
+      "interaction_ba_pp": 20.68781852722168,
+      "momentum_minus_state_masked_paired_pp": 46.13885432481766,
+      "state_masking_effect_paired_pp": -31.91230148077011,
+      "momentum_masking_effect_paired_pp": 15.152251720428467,
+      "interaction_paired_pp": 47.06455320119858
+    },
+    {
+      "size": 32,
+      "steps": 256,
+      "unmasked_state": {
+        "ba": 0.8284624814987183,
+        "bce": 0.41120386123657227,
+        "h_rms": 17.157690048217773,
+        "v_rms": null,
+        "paired": 0.38440924882888794
+      },
+      "unmasked_momentum": {
+        "ba": 0.733811616897583,
+        "bce": 1.2479380369186401,
+        "h_rms": 79.62989044189453,
+        "v_rms": 0.3598528504371643,
+        "paired": 0.28599268198013306
+      },
+      "masked_momentum": {
+        "ba": 0.7767652273178101,
+        "bce": 6.869405746459961,
+        "h_rms": 219.8068389892578,
+        "v_rms": 0.9909887313842773,
+        "paired": 0.4277710020542145
+      },
+      "masked_state": {
+        "ba": 0.11382749676704407,
+        "bce": 63.48527526855469,
+        "h_rms": 23.873258590698242,
+        "v_rms": null,
+        "paired": 0.09378806501626968
+      },
+      "momentum_minus_state_masked_ba_pp": 66.2937730550766,
+      "state_masking_effect_ba_pp": -71.46349847316742,
+      "momentum_masking_effect_ba_pp": 4.295361042022705,
+      "interaction_ba_pp": 75.75885951519012,
+      "momentum_minus_state_masked_paired_pp": 33.39829370379448,
+      "state_masking_effect_paired_pp": -29.062118381261826,
+      "momentum_masking_effect_paired_pp": 14.177832007408142,
+      "interaction_paired_pp": 43.23995038866997
+    },
+    {
+      "size": 64,
+      "steps": 16,
+      "unmasked_state": {
+        "ba": 0.6300682425498962,
+        "bce": 0.5762192606925964,
+        "h_rms": 0.5904119610786438,
+        "v_rms": null,
+        "paired": 0.07807382196187973
+      },
+      "unmasked_momentum": {
+        "ba": 0.5730120539665222,
+        "bce": 0.630220353603363,
+        "h_rms": 1.424870491027832,
+        "v_rms": 0.1542666256427765,
+        "paired": 0.043639905750751495
+      },
+      "masked_momentum": {
+        "ba": 0.5709202289581299,
+        "bce": 0.6632289886474609,
+        "h_rms": 1.631933569908142,
+        "v_rms": 0.2231934815645218,
+        "paired": 0.038328759372234344
+      },
+      "masked_state": {
+        "ba": 0.5984761118888855,
+        "bce": 0.6474594473838806,
+        "h_rms": 0.7356340289115906,
+        "v_rms": null,
+        "paired": 0.05647516995668411
+      },
+      "momentum_minus_state_masked_ba_pp": -2.7555882930755615,
+      "state_masking_effect_ba_pp": -3.159213066101074,
+      "momentum_masking_effect_ba_pp": -0.2091825008392334,
+      "interaction_ba_pp": 2.950030565261841,
+      "momentum_minus_state_masked_paired_pp": -1.8146410584449768,
+      "state_masking_effect_paired_pp": -2.1598652005195618,
+      "momentum_masking_effect_paired_pp": -0.5311146378517151,
+      "interaction_paired_pp": 1.6287505626678467
+    },
+    {
+      "size": 64,
+      "steps": 32,
+      "unmasked_state": {
+        "ba": 0.724295973777771,
+        "bce": 0.6880165338516235,
+        "h_rms": 1.5985972881317139,
+        "v_rms": null,
+        "paired": 0.13074266910552979
+      },
+      "unmasked_momentum": {
+        "ba": 0.6849505305290222,
+        "bce": 0.5325067639350891,
+        "h_rms": 4.08207368850708,
+        "v_rms": 0.2586631178855896,
+        "paired": 0.11609277129173279
+      },
+      "masked_momentum": {
+        "ba": 0.7342300415039062,
+        "bce": 0.3870152235031128,
+        "h_rms": 7.182477951049805,
+        "v_rms": 0.5179323554039001,
+        "paired": 0.15021687746047974
+      },
+      "masked_state": {
+        "ba": 0.6981411576271057,
+        "bce": 0.45778241753578186,
+        "h_rms": 1.7643569707870483,
+        "v_rms": null,
+        "paired": 0.1154288724064827
+      },
+      "momentum_minus_state_masked_ba_pp": 3.6088883876800537,
+      "state_masking_effect_ba_pp": -2.6154816150665283,
+      "momentum_masking_effect_ba_pp": 4.927951097488403,
+      "interaction_ba_pp": 7.543432712554932,
+      "momentum_minus_state_masked_paired_pp": 3.478800505399704,
+      "state_masking_effect_paired_pp": -1.5313796699047089,
+      "momentum_masking_effect_paired_pp": 3.412410616874695,
+      "interaction_paired_pp": 4.943790286779404
+    },
+    {
+      "size": 64,
+      "steps": 64,
+      "unmasked_state": {
+        "ba": 0.7368289232254028,
+        "bce": 3.3161778450012207,
+        "h_rms": 5.2620530128479,
+        "v_rms": null,
+        "paired": 0.13184916973114014
+      },
+      "unmasked_momentum": {
+        "ba": 0.7594380378723145,
+        "bce": 0.48076075315475464,
+        "h_rms": 11.998351097106934,
+        "v_rms": 0.3219492435455322,
+        "paired": 0.1904487907886505
+      },
+      "masked_momentum": {
+        "ba": 0.8475168943405151,
+        "bce": 0.2421482354402542,
+        "h_rms": 27.686372756958008,
+        "v_rms": 0.8033451437950134,
+        "paired": 0.2924227714538574
+      },
+      "masked_state": {
+        "ba": 0.7593379616737366,
+        "bce": 2.638400077819824,
+        "h_rms": 4.645511150360107,
+        "v_rms": null,
+        "paired": 0.16141453385353088
+      },
+      "momentum_minus_state_masked_ba_pp": 8.817893266677856,
+      "state_masking_effect_ba_pp": 2.250903844833374,
+      "momentum_masking_effect_ba_pp": 8.807885646820068,
+      "interaction_ba_pp": 6.556981801986694,
+      "momentum_minus_state_masked_paired_pp": 13.100823760032654,
+      "state_masking_effect_paired_pp": 2.9565364122390747,
+      "momentum_masking_effect_paired_pp": 10.197398066520691,
+      "interaction_paired_pp": 7.240861654281616
+    },
+    {
+      "size": 64,
+      "steps": 128,
+      "unmasked_state": {
+        "ba": 0.7327308058738708,
+        "bce": 8.763381958007812,
+        "h_rms": 13.335599899291992,
+        "v_rms": null,
+        "paired": 0.12985748052597046
+      },
+      "unmasked_momentum": {
+        "ba": 0.7687906622886658,
+        "bce": 0.6587079763412476,
+        "h_rms": 30.7951602935791,
+        "v_rms": 0.3301118314266205,
+        "paired": 0.2043905407190323
+      },
+      "masked_momentum": {
+        "ba": 0.6869519352912903,
+        "bce": 1.8109325170516968,
+        "h_rms": 82.25953674316406,
+        "v_rms": 0.9812389016151428,
+        "paired": 0.17026644945144653
+      },
+      "masked_state": {
+        "ba": 0.4734991192817688,
+        "bce": 11.018630027770996,
+        "h_rms": 10.651637077331543,
+        "v_rms": null,
+        "paired": 0.001549083855934441
+      },
+      "momentum_minus_state_masked_ba_pp": 21.34528160095215,
+      "state_masking_effect_ba_pp": -25.923168659210205,
+      "momentum_masking_effect_ba_pp": -8.183872699737549,
+      "interaction_ba_pp": 17.739295959472656,
+      "momentum_minus_state_masked_paired_pp": 16.87173655955121,
+      "state_masking_effect_paired_pp": -12.830839667003602,
+      "momentum_masking_effect_paired_pp": -3.4124091267585754,
+      "interaction_paired_pp": 9.418430540245026
+    },
+    {
+      "size": 64,
+      "steps": 256,
+      "unmasked_state": {
+        "ba": 0.7302848100662231,
+        "bce": 20.361156463623047,
+        "h_rms": 29.937807083129883,
+        "v_rms": null,
+        "paired": 0.12746746838092804
+      },
+      "unmasked_momentum": {
+        "ba": 0.7446885108947754,
+        "bce": 1.2126946449279785,
+        "h_rms": 71.7144775390625,
+        "v_rms": 0.33166080713272095,
+        "paired": 0.17287775874137878
+      },
+      "masked_momentum": {
+        "ba": 0.6414989233016968,
+        "bce": 11.435558319091797,
+        "h_rms": 209.2994842529297,
+        "v_rms": 1.077292799949646,
+        "paired": 0.1413649618625641
+      },
+      "masked_state": {
+        "ba": 0.2592717707157135,
+        "bce": 40.614070892333984,
+        "h_rms": 22.21868324279785,
+        "v_rms": null,
+        "paired": 0.04346286505460739
+      },
+      "momentum_minus_state_masked_ba_pp": 38.22271525859833,
+      "state_masking_effect_ba_pp": -47.101303935050964,
+      "momentum_masking_effect_ba_pp": -10.318958759307861,
+      "interaction_ba_pp": 36.7823451757431,
+      "momentum_minus_state_masked_paired_pp": 9.79020968079567,
+      "state_masking_effect_paired_pp": -8.400460332632065,
+      "momentum_masking_effect_paired_pp": -3.1512796878814697,
+      "interaction_paired_pp": 5.249180644750595
+    },
+    {
+      "size": 128,
+      "steps": 16,
+      "unmasked_state": {
+        "ba": 0.533336877822876,
+        "bce": 0.6773240566253662,
+        "h_rms": 0.5026137828826904,
+        "v_rms": null,
+        "paired": 0.024193154647946358
+      },
+      "unmasked_momentum": {
+        "ba": 0.5203809142112732,
+        "bce": 0.6792818307876587,
+        "h_rms": 1.3420261144638062,
+        "v_rms": 0.13324175775051117,
+        "paired": 0.01475550141185522
+      },
+      "masked_momentum": {
+        "ba": 0.5222933292388916,
+        "bce": 0.7205089330673218,
+        "h_rms": 1.226791501045227,
+        "v_rms": 0.14175966382026672,
+        "paired": 0.01259168703109026
+      },
+      "masked_state": {
+        "ba": 0.5234154462814331,
+        "bce": 0.7530438303947449,
+        "h_rms": 0.5959732532501221,
+        "v_rms": null,
+        "paired": 0.01674816571176052
+      },
+      "momentum_minus_state_masked_ba_pp": -0.11221170425415039,
+      "state_masking_effect_ba_pp": -0.9921431541442871,
+      "momentum_masking_effect_ba_pp": 0.19124150276184082,
+      "interaction_ba_pp": 1.183384656906128,
+      "momentum_minus_state_masked_paired_pp": -0.41564786806702614,
+      "state_masking_effect_paired_pp": -0.7444988936185837,
+      "momentum_masking_effect_paired_pp": -0.21638143807649612,
+      "interaction_paired_pp": 0.5281174555420876
+    },
+    {
+      "size": 128,
+      "steps": 32,
+      "unmasked_state": {
+        "ba": 0.5546202063560486,
+        "bce": 2.461013078689575,
+        "h_rms": 1.7647017240524292,
+        "v_rms": null,
+        "paired": 0.04042787104845047
+      },
+      "unmasked_momentum": {
+        "ba": 0.5540173649787903,
+        "bce": 0.7968554496765137,
+        "h_rms": 3.416832447052002,
+        "v_rms": 0.22004197537899017,
+        "paired": 0.04024449735879898
+      },
+      "masked_momentum": {
+        "ba": 0.587637722492218,
+        "bce": 0.5827516317367554,
+        "h_rms": 4.53182315826416,
+        "v_rms": 0.3330306112766266,
+        "paired": 0.06430318206548691
+      },
+      "masked_state": {
+        "ba": 0.5302028059959412,
+        "bce": 0.6852493286132812,
+        "h_rms": 1.285417914390564,
+        "v_rms": null,
+        "paired": 0.020415648818016052
+      },
+      "momentum_minus_state_masked_ba_pp": 5.7434916496276855,
+      "state_masking_effect_ba_pp": -2.441740036010742,
+      "momentum_masking_effect_ba_pp": 3.3620357513427734,
+      "interaction_ba_pp": 5.803775787353516,
+      "momentum_minus_state_masked_paired_pp": 4.388753324747086,
+      "state_masking_effect_paired_pp": -2.0012222230434418,
+      "momentum_masking_effect_paired_pp": 2.4058684706687927,
+      "interaction_paired_pp": 4.4070906937122345
+    },
+    {
+      "size": 128,
+      "steps": 64,
+      "unmasked_state": {
+        "ba": 0.5559800863265991,
+        "bce": 11.00798225402832,
+        "h_rms": 6.937112331390381,
+        "v_rms": null,
+        "paired": 0.04174816608428955
+      },
+      "unmasked_momentum": {
+        "ba": 0.6014416217803955,
+        "bce": 2.699357748031616,
+        "h_rms": 10.736337661743164,
+        "v_rms": 0.35070478916168213,
+        "paired": 0.07893642783164978
+      },
+      "masked_momentum": {
+        "ba": 0.7520227432250977,
+        "bce": 0.40002119541168213,
+        "h_rms": 19.172298431396484,
+        "v_rms": 0.6584993600845337,
+        "paired": 0.14841075241565704
+      },
+      "masked_state": {
+        "ba": 0.6392724514007568,
+        "bce": 3.903911590576172,
+        "h_rms": 4.01084566116333,
+        "v_rms": null,
+        "paired": 0.0738753080368042
+      },
+      "momentum_minus_state_masked_ba_pp": 11.275029182434082,
+      "state_masking_effect_ba_pp": 8.329236507415771,
+      "momentum_masking_effect_ba_pp": 15.058112144470215,
+      "interaction_ba_pp": 6.728875637054443,
+      "momentum_minus_state_masked_paired_pp": 7.453544437885284,
+      "state_masking_effect_paired_pp": 3.212714195251465,
+      "momentum_masking_effect_paired_pp": 6.947432458400726,
+      "interaction_paired_pp": 3.7347182631492615
+    },
+    {
+      "size": 128,
+      "steps": 128,
+      "unmasked_state": {
+        "ba": 0.5557679533958435,
+        "bce": 29.05327606201172,
+        "h_rms": 18.04500961303711,
+        "v_rms": null,
+        "paired": 0.04173593968153
+      },
+      "unmasked_momentum": {
+        "ba": 0.6614123582839966,
+        "bce": 3.974825859069824,
+        "h_rms": 28.993310928344727,
+        "v_rms": 0.35461392998695374,
+        "paired": 0.12687040865421295
+      },
+      "masked_momentum": {
+        "ba": 0.6150194406509399,
+        "bce": 2.3816184997558594,
+        "h_rms": 66.51859283447266,
+        "v_rms": 0.8946097493171692,
+        "paired": 0.07999999821186066
+      },
+      "masked_state": {
+        "ba": 0.49419113993644714,
+        "bce": 13.874028205871582,
+        "h_rms": 11.759307861328125,
+        "v_rms": null,
+        "paired": 0.0018092909594997764
+      },
+      "momentum_minus_state_masked_ba_pp": 12.08283007144928,
+      "state_masking_effect_ba_pp": -6.157681345939636,
+      "momentum_masking_effect_ba_pp": -4.639291763305664,
+      "interaction_ba_pp": 1.5183895826339722,
+      "momentum_minus_state_masked_paired_pp": 7.819070725236088,
+      "state_masking_effect_paired_pp": -3.9926648722030222,
+      "momentum_masking_effect_paired_pp": -4.6870410442352295,
+      "interaction_paired_pp": -0.6943761720322073
+    },
+    {
+      "size": 128,
+      "steps": 256,
+      "unmasked_state": {
+        "ba": 0.5554107427597046,
+        "bce": 66.84420013427734,
+        "h_rms": 40.885780334472656,
+        "v_rms": null,
+        "paired": 0.04145476594567299
+      },
+      "unmasked_momentum": {
+        "ba": 0.6718102097511292,
+        "bce": 7.712793350219727,
+        "h_rms": 71.03190612792969,
+        "v_rms": 0.3609047830104828,
+        "paired": 0.1334841102361679
+      },
+      "masked_momentum": {
+        "ba": 0.5190180540084839,
+        "bce": 11.832719802856445,
+        "h_rms": 184.1033172607422,
+        "v_rms": 1.0345063209533691,
+        "paired": 0.07119804620742798
+      },
+      "masked_state": {
+        "ba": 0.3858875036239624,
+        "bce": 22.556129455566406,
+        "h_rms": 20.649242401123047,
+        "v_rms": null,
+        "paired": 0.00886308029294014
+      },
+      "momentum_minus_state_masked_ba_pp": 13.313055038452148,
+      "state_masking_effect_ba_pp": -16.95232391357422,
+      "momentum_masking_effect_ba_pp": -15.279215574264526,
+      "interaction_ba_pp": 1.6731083393096924,
+      "momentum_minus_state_masked_paired_pp": 6.233496591448784,
+      "state_masking_effect_paired_pp": -3.259168565273285,
+      "momentum_masking_effect_paired_pp": -6.228606402873993,
+      "interaction_paired_pp": -2.969437837600708
+    }
+  ],
+  "limits": "Single seed; state scalars equal, parameter counts approximate; differing H/program widths prevent isolated velocity attribution. Small gaps are not equivalence. No further experiment scheduled."
+}

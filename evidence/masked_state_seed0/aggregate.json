@@ -1,0 +1,38 @@
+{
+  "statuses": {
+    "masked_state_nca": "TRAINED"
+  },
+  "metrics": [
+    {
+      "arm": "masked_state_nca",
+      "size": 32,
+      "last_horizon": 256,
+      "balanced_accuracy": 0.11382749676704407,
+      "paired_correct": 0.09378806501626968,
+      "first_sustained_95_steps": null,
+      "seconds_per_query_at_sustained_95": null,
+      "repair_eligible": 5
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 64,
+      "last_horizon": 256,
+      "balanced_accuracy": 0.2592717707157135,
+      "paired_correct": 0.04346286505460739,
+      "first_sustained_95_steps": null,
+      "seconds_per_query_at_sustained_95": null,
+      "repair_eligible": 2
+    },
+    {
+      "arm": "masked_state_nca",
+      "size": 128,
+      "last_horizon": 256,
+      "balanced_accuracy": 0.3858875036239624,
+      "paired_correct": 0.00886308029294014,
+      "first_sustained_95_steps": null,
+      "seconds_per_query_at_sustained_95": null,
+      "repair_eligible": 0
+    }
+  ],
+  "seed": 0
+}

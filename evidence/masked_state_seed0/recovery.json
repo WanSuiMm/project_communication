@@ -1,0 +1,48 @@
+{
+  "status": "PLANNED_AUXILIARIES_RECOVERED",
+  "training_repeated": false,
+  "original_execution_finalized": false,
+  "original_status": {
+    "status": "RUNNING",
+    "phase": "evaluation",
+    "arm": "masked_state_nca",
+    "grid_size": 128
+  },
+  "cause_of_missing_finalization": "Not established; original log contained no terminal exception.",
+  "original_arm_sha256": "a97ef02c5d69bfde13a24dd61eee9f0f7252a96dc416674bf38291ad750af7c7",
+  "checkpoint_sha256": "813799a66c552efa33edb6f31100bfa7189b59781621fd8bab88c6d937590c90",
+  "source_manifest_sha256": "bc1fa739b1c1c5a617c11b85e3227e303423f7028bfc4c91f7cfe58b2ba656ec",
+  "recovery_script_sha256": "0e2b03328e3be20e2916b7c686ffb35763e09a0885c7d8ff464f8e23bd36d64e",
+  "checkpoint_replay": [
+    {
+      "size": 32,
+      "steps": 64,
+      "absolute_errors": {
+        "balanced_accuracy": 0.0,
+        "bce": 0.0,
+        "content_rms": 0.0
+      }
+    },
+    {
+      "size": 128,
+      "steps": 256,
+      "absolute_errors": {
+        "balanced_accuracy": 0.0,
+        "bce": 0.0,
+        "content_rms": 0.0
+      }
+    }
+  ],
+  "recovered_fields": [
+    "evaluation.128.latency_by_horizon.16",
+    "evaluation.128.latency_by_horizon.32",
+    "evaluation.128.latency_by_horizon.64",
+    "evaluation.128.latency_by_horizon.128",
+    "evaluation.128.latency_by_horizon.256",
+    "evaluation.128.seconds_per_query_at_sustained_95",
+    "gradient_probes"
+  ],
+  "finished_utc": "2026-10-01T07:51:05.335933+00:00",
+  "elapsed_seconds": 15.984000000000378,
+  "timing_limit": "Only missing size128 timings were collected in a separate process. No cross-run speed comparison."
+}
