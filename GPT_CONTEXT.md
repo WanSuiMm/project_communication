@@ -1,6 +1,44 @@
 # Context for incremental scientific review
 
-## Current masked-medium diagnostic
+## Current same-medium control: completed
+
+Status: valid exploratory single-seed comparison; seed0;800 updates; all15
+size/horizon endpoints. `new/masked_momentum/momentum_cells.py::MaskedMomentum.step`
+uses F(H,L_m H,X) with generic momentum and no explicit diffusion force. The
+original momentum factory, initialization/RNG and frozen trainer are reused.
+Hidden width88/parameters4689 versus128/4737 for explicit masked inertial RD;
+generic force starts at zero, explicit diffusion is nonzero at initialization.
+
+At32/T64, Momentum BA96.45%, paired77.25%, BCE0.0512 versus the explicit
+candidate's88.79%,37.22%,0.2503. Outcome `MOMENTUM_JOINT_5PP_ADVANTAGE`:
+the explicit candidate loses7.66pp BA and40.02pp paired correctness. At32/T256,
+Momentum BA falls77.68%, below candidate91.55%, while paired correctness is
+42.78% versus41.92%. Neither has sustained95% BA. Do not hide this horizon
+tradeoff or select the late horizon to replace the frozen primary endpoint.
+
+Read [comparison](evidence/masked_momentum_seed0/comparison.json),
+[protocol](new/masked_momentum/PROTOCOL.md), and
+[publication manifest](MOMENTUM_AUDIT_PUBLICATION_MANIFEST.json). Raw JSON contains
+damage, revision and timing metrics. Different repair eligibility cohorts prevent
+direct conditional-repair superiority claims. No cross-run speedup or multi-seed
+claim. All historical sources and evidence are unchanged.
+
+## Completed masked-inertial trajectory audit and previous medium intervention
+
+Interpretation update: classification improvement with extended rollout is
+not evidence of hidden-state convergence. At32, T64/128/256 H RMS is
+17.19/50.88/126.95, V RMS0.483/0.575/0.617 and BCE0.250/0.657/1.452.
+Global RMS includes walls, while BCE is traversable-only. Directional alignment,
+component-mean drift and confidence amplification are hypotheses to audit.
+Conditional damage recovery is a decision metric, not proof of an attractor.
+The new generic masked momentum protocol is `new/masked_momentum/PROTOCOL.md`;
+it retains known hidden-width and initial-transport differences from the candidate.
+The [completed trajectory audit](evidence/trajectory_audit_seed0/INTERPRETATION.md)
+replays all15 historical checkpoints exactly. At32/T256, H RMS on open pixels
+is120.61 and component-constant energy fraction97.04%; wrong-margin median
+is -18.42. Independent calibration reduces BCE1.4519 to0.2492 without changing
+BA. At128/T256 calibrated BCE is0.6903 and BA stays50%. These finite-horizon
+observations support amplification/mean drift, not asymptotic convergence.
 
 Status: completed exploratory operator intervention; dimension: 2D; seed: 0;
 updates: 800 per arm; held-out maps: 16 per size. The original sources and
@@ -15,8 +53,9 @@ correctness, satisfying the prespecified descriptive joint +5pp criterion.
 Masked RD loses 8.06pp and 20.68pp. Candidate BA at T256 is 91.55%, 75.69%,
 50.00% for sizes 32, 64, 128. No sustained aggregate 95% endpoint is reached.
 Masking changes connectivity, degree and spectrum; the specific causal
-mechanism is not isolated. No masked momentum arm, multiple seeds, 3D claim,
-controlled speedup or general architecture pass is established.
+mechanism is not isolated. The new masked momentum arm above is a separate
+follow-up. Multiple-seed, 3D, controlled-speedup and general architecture-pass
+claims remain unestablished.
 
 Read [masked results](evidence/masked_medium_seed0/RESULTS.md),
 [paired comparisons](evidence/masked_medium_seed0/paired_comparison.json),

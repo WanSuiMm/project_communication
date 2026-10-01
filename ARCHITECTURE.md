@@ -129,3 +129,28 @@ Diagnostics sample the final update. The source-mass statistic is
 T(c*source_mask) at the target divided by clamped T(c), averaged over target
 samples/groups, with per-axis records retained. It is not attribution of all
 information: previous updates can place content in values emitted elsewhere.
+
+## Masked inertial follow-up: neutral component means
+
+For the explicit masked model only, `masked_cells.masked_laplacian` uses
+edge weights m_i*m_j. On each open connected component C, sum_C L_m H=0.
+With spatially constant, channelwise diagonal B and D, the component means obey
+
+    mean_C(V_next) = B mean_C(V) + eta mean_C(R(H,X))
+    mean_C(H_next) = mean_C(H) + mean_C(V_next).
+
+This cancellation is exact algebra; it does not imply that the learned reaction
+mean is constant, nonzero, or stabilizing. Nor is the mean equation closed in
+the mean alone, since R depends on the full spatial state. If the reaction mean
+approaches a nonzero vector r, then mean velocity can approach
+eta*(I-B)^(-1)*r, permitting linear mean-state drift. A componentwise constant
+target is in the operator nullspace, but the learned hidden representation
+need not be componentwise constant. Isolated wall nodes also contribute neutral
+modes and must be separated in diagnostics.
+
+The observed rise in BA, BCE and H RMS at longer rollout establishes neither
+fixed-point convergence nor exponential blow-up. Check component-projection
+energy, residual variation, reaction/velocity means and direction changes.
+Positive scalar logit-temperature adjustment cannot change decision signs;
+held-out improvement after independent fitting probes scale sensitivity without
+proving the cause of hidden-state drift.

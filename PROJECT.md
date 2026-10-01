@@ -1,6 +1,29 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Current follow-up (2026-10-01): the user authorized the bounded masked-medium
+Completed work (2026-10-01): inference-only trajectory audit of the existing
+masked inertial checkpoint and one `masked_momentum_nca` training control.
+The audit is now complete: all15 reference checkpoints replay exactly.
+Read `evidence/trajectory_audit_seed0/INTERPRETATION.md` and RESULTS.md there.
+Open-pixel norms grow, remaining wrong margins amplify, and independently fitted
+temperature removes much of the32-scale BCE deterioration without changing BA.
+Large-domain wrong decisions persist; fixed-point or projective convergence is
+not established. Reproduce with
+`python new/trajectory_audit/audit.py --out runs/NEW_TRAJECTORY_AUDIT`.
+The control protocol is `new/masked_momentum/PROTOCOL.md`; same seed0,800 updates,
+data and evaluator, with matched original momentum initialization. Three tests
+passed (weight/RNG and all-open equivalence, isolation, finite backward).
+The formal control finished at14:08:11 +08:00 on2026-10-01, all800 updates and
+all evaluations valid. At32/T64 it reaches96.45% BA/77.25% paired correctness,
+beating masked inertial RD by7.66/40.02pp. At32/T256 BA declines to77.68%
+versus91.55% for the explicit candidate, exposing a horizon tradeoff.
+Local run: `runs/masked_momentum_20261001_seed0/`; public evidence:
+`evidence/masked_momentum_seed0/RESULTS.md` and comparison.json there.
+Reproduce from this repository root with
+`python new/masked_momentum/run_momentum.py --out runs/NEW_MOMENTUM_CONTROL`.
+No ongoing monitor or additional seed/retuning is scheduled. Both recipes lack
+evidence of convergent computation; read the audit and primary comparison together.
+
+Previous follow-up (2026-10-01): the user authorized the bounded masked-medium
 diagnostic in `new/masked_medium/PROTOCOL.md`. Only masked RD and masked inertial
 RD are added, paired with the frozen unmasked seed-0 controls. The intervention
 is input-mask edge weights m_i*m_j; initialization, data, 800 updates and all

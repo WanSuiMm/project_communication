@@ -1,60 +1,49 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-Latest update: a completed **2D masked-medium diagnostic**, seed 0, replaces
-only the structured cells' transport operator with input-mask edge weights.
-Inertial RD improves at 32x32/T64 from 69.94% to 88.79% balanced accuracy and
-from 17.81% to 37.22% paired-source correctness; first-order RD gets worse.
-The inertial arm passes the prespecified descriptive joint +5pp criterion,
-but 128x128/T256 remains at chance and no sustained aggregate 95% endpoint is
-reached. No same-medium generic momentum control or multi-seed claim exists.
-Start with [the masked results](evidence/masked_medium_seed0/RESULTS.md),
-[paired comparisons](evidence/masked_medium_seed0/paired_comparison.json),
-[protocol](new/masked_medium/PROTOCOL.md), then [GPT_HANDOFF.md](GPT_HANDOFF.md).
-Earlier frozen results below are preserved.
+This repository tests whether explicit reaction/transport structure improves
+persistent cellular computation. The latest **2D, seed-0, same-medium control**
+favors generic Masked Momentum at the frozen 32x32/T64 endpoint: BA96.45%
+and paired-source correctness77.25%, versus88.79% and37.22% for Masked Inertial RD.
+The generic control completes800 updates and all evaluations. This is a negative
+primary comparison for the explicit recipe, with a horizon-dependent tradeoff:
+at32/T256 the generic control declines to77.68% BA, while explicit RD reaches
+91.55%. Neither reaches sustained aggregate95% across subsequent checkpoints.
 
-Reproduce this diagnostic from the repository root:
+An inference-only [trajectory audit](evidence/trajectory_audit_seed0/INTERPRETATION.md)
+of Masked Inertial RD exactly reproduces all15 historical checkpoints. It finds
+open-pixel state growth, increasingly confident errors and substantial component
+mean drift. Independent temperature calibration improves late BCE without
+changing decisions. These observations do not establish fixed-point, directional
+or asymptotic convergence. The detailed audit was not run on Masked Momentum;
+its original evaluator also records increasing norms and late BCE deterioration.
 
-```powershell
-python new/masked_medium/test_masked.py
-python new/masked_medium/run_masked.py --preflight --out runs/NEW_MASKED_PREFLIGHT
-python new/masked_medium/run_masked.py --out runs/NEW_MASKED_SCREEN
-```
-
-This repository preserves two distinct architecture experiments: implicit
-message transport (historical v1/A0, 2D/3D) and an explicit inertial NCA
-(latest screen, **2D only**). The latest question is whether a prescribed
-reaction/transport decomposition improves persistent spatial computation over
-generic momentum NCA. **The completed seed-0 screen is negative for the current
-recipe:** inertial RD has 69.94% balanced accuracy at 32x32/T64 versus 84.44%
-for generic momentum, and degrades with longer rollouts. No arm reaches the
-sustained aggregate 95% criterion; candidate repair is unevaluable because no
-pre-damage map qualifies. This is not a family-wide impossibility result.
-
-All four arms completed 800 updates and every planned evaluation. Read the
-[new result table](evidence/inertial_seed0/RESULTS.md) and
-[incremental handoff](GPT_HANDOFF.md) first. No extra seeds, 3D extension,
-rescue sweep or recurring monitor was launched. Historical evidence is unchanged.
+Single-seed results do not establish population-level superiority, repair
+superiority, a general PDE impossibility claim or a speedup. Hidden widths and
+initial spatial coupling differ between the parameter-matched architecture
+packages. No extra seed, architecture rescue or continuous monitor was launched.
+Earlier implicit-message v1/A0 (2D/3D), unmasked inertial, and masked-medium
+evidence are preserved unchanged.
 
 ## Start here
 
-For the latest incremental review from `48095e5`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `c13b73f`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [RESULTS.md](RESULTS.md): latest result and limits, followed by earlier A0/v1.
-2. [GPT_CONTEXT.md](GPT_CONTEXT.md): independent experiment scopes, status and exact code symbols.
-3. [WIND_TUNNEL.md](new/nca_inertial_wind_tunnel/WIND_TUNNEL.md) and
-   [LOCAL_INTEGRATION.md](new/nca_inertial_wind_tunnel/LOCAL_INTEGRATION.md): frozen recipe, metric fixes and sampler conventions.
-4. [summary.json](evidence/inertial_seed0/summary.json),
-   [config.json](evidence/inertial_seed0/config.json) and
-   [validation.json](evidence/inertial_seed0/validation.json): all horizons and implementation checks.
-5. [cells.py](new/nca_inertial_wind_tunnel/cells.py),
-   [ARCHITECTURE.md](ARCHITECTURE.md) and
-   [inertial theory](new/nca_inertial_wind_tunnel/THEORY.md): equations, shapes and limits.
+1. [RESULTS.md](RESULTS.md): latest comparison, rollout tradeoffs and audit conclusions.
+2. [Momentum results](evidence/masked_momentum_seed0/RESULTS.md) and
+   [all paired horizons](evidence/masked_momentum_seed0/comparison.json).
+3. [Audit interpretation](evidence/trajectory_audit_seed0/INTERPRETATION.md),
+   [tables](evidence/trajectory_audit_seed0/RESULTS.md) and
+   [summary](evidence/trajectory_audit_seed0/summary.json).
+4. [Momentum protocol](new/masked_momentum/PROTOCOL.md),
+   [audit protocol](new/trajectory_audit/PROTOCOL.md), and
+   [GPT_CONTEXT.md](GPT_CONTEXT.md) for source symbols and claim boundaries.
+5. [Publication manifest](MOMENTUM_AUDIT_PUBLICATION_MANIFEST.json) for code,
+   reference and evidence hashes. [ARCHITECTURE.md](ARCHITECTURE.md) explains the equations.
 
-Open the four per-arm JSON files under `evidence/inertial_seed0/arms/` only for
-repair/revision controls, distance bins or detailed timings. Start with the
-small summaries above. [INERTIAL_PUBLICATION_MANIFEST.json](INERTIAL_PUBLICATION_MANIFEST.json)
-binds exact executed sources, protocol documents and byte-identical per-arm
-metrics. Checkpoints, ZIPs, machine receipts and transient logs are excluded.
+Raw per-arm JSON and the6.2MB audit `components.json` are secondary: open only
+for specific repair, revision, distance or component-vector questions. Start
+with the small summaries above. Checkpoints, machine receipts, duplicate ZIPs
+and transient logs are excluded. Original publication manifests remain valid.
 
 ## Reproduce the latest screen
 
@@ -62,6 +51,22 @@ Run from the repository root using Python with NumPy and CUDA PyTorch. The
 recorded environment used PyTorch 2.5.1, NumPy 1.26.4 and an RTX 4060 Laptop GPU;
 backend settings are recorded in the publication manifest. No dataset download
 is needed. Every output directory must be new.
+
+```powershell
+python new/masked_momentum/test_momentum.py
+python new/masked_momentum/run_momentum.py --preflight --out runs/NEW_MOMENTUM_PREFLIGHT
+python new/masked_momentum/run_momentum.py --out runs/NEW_MOMENTUM_CONTROL
+```
+
+The audit requires the existing masked inertial checkpoint, whose SHA is in
+the audit manifest. Checkpoints remain local. On a fresh clone, generate it with
+`python new/masked_medium/run_masked.py --out runs/masked_medium_20261001_seed0`,
+then run `python new/trajectory_audit/audit.py --out runs/NEW_TRAJECTORY_AUDIT`.
+The audit reconstruction gate stops on a mismatch; cross-device bitwise replay
+is not promised. All published audit measurements can be reviewed without a
+checkpoint. This publication schedules no new runs.
+
+For the earlier unmasked four-arm screen:
 
 ```powershell
 python new/nca_inertial_wind_tunnel/test_core.py

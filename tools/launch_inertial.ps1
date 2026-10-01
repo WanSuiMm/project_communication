@@ -1,7 +1,7 @@
 param(
     [string]$RunName = 'inertial_20261001_seed0',
     [int]$Minutes = 25,
-    [ValidateSet('inertial','masked')]
+    [ValidateSet('inertial','masked','momentum')]
     [string]$Experiment = 'inertial'
 )
 $ErrorActionPreference = 'Stop'
@@ -18,6 +18,10 @@ $arguments = @('-u', $entry, '--device', 'cuda', '--arms', 'all', '--seed', '0',
     '--steps', '800', '--minutes', "$Minutes", '--out', "runs/$RunName")
 if ($Experiment -eq 'masked') {
     $entry = 'new/masked_medium/run_masked.py'
+    $arguments = @('-u', $entry, '--device', 'cuda', '--minutes', "$Minutes", '--out', "runs/$RunName")
+}
+if ($Experiment -eq 'momentum') {
+    $entry = 'new/masked_momentum/run_momentum.py'
     $arguments = @('-u', $entry, '--device', 'cuda', '--minutes', "$Minutes", '--out', "runs/$RunName")
 }
 New-Item -ItemType Directory -Path $launchDirectory | Out-Null

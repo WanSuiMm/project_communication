@@ -1,6 +1,71 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest follow-up: masked medium, 2D seed 0
+## Latest: same-medium generic momentum control and trajectory audit
+
+Masked Momentum completed800 updates and all three evaluation sizes on2026-10-01.
+Exact initial parameters/RNG match the old generic control; logged rollout and
+damage schedules match both references. All evaluation statuses are valid.
+
+Primary endpoint: size32, T64, one model seed and16 held-out maps:
+
+| Model | BA (%) | Paired-source correctness (%) | BCE |
+|---|---:|---:|---:|
+| Masked Momentum | 96.45 | 77.25 | 0.0512 |
+| Masked Inertial RD | 88.79 | 37.22 | 0.2503 |
+| Original unmasked Momentum | 84.44 | 42.75 | 0.3217 |
+
+Masked Momentum beats the explicit candidate by7.66pp BA and40.02pp paired
+correctness, satisfying the prespecified descriptive reverse joint5pp criterion.
+Relative to the original generic control, masking gains12.01pp and34.49pp.
+This is a negative primary result for explicit-factorization superiority in
+this seed/recipe; it is not a multi-seed or isolated causal factorization result.
+
+Long rollout reverses the BA ranking at sizes32 and64:
+
+| Size | Momentum BA T64 → T256 (%) | Inertial RD BA T64 → T256 (%) |
+|---|---:|---:|
+| 32 | 96.45 → 77.68 | 88.79 → 91.55 |
+| 64 | 84.75 → 64.15 | 75.39 → 75.69 |
+| 128 | 75.20 → 51.90 | 57.47 → 50.00 |
+
+At32/T256, paired correctness is42.78% for Momentum versus41.92% for Inertial
+RD, despite the opposite BA ranking. BA alone is insufficient to rank source
+information retention. Momentum BCE rises0.0512 to6.8694 and H RMS36.33 to219.81
+fromT64 toT256. Both models lack a sustained95% endpoint; a single96.45% peak
+does not satisfy it. Momentum's changed-component accuracy after a source switch
+and64 extra steps is29.04% at32. Conditional repair cohorts differ (12 versus7
+eligible maps), so their conditional percentages are not a matched repair comparison.
+
+Read [full control results](evidence/masked_momentum_seed0/RESULTS.md) and
+[all comparisons](evidence/masked_momentum_seed0/comparison.json). The separate
+[candidate audit](evidence/trajectory_audit_seed0/INTERPRETATION.md) finds open
+state growth, increasingly confident errors and component-mean drift. It supports
+a finite-horizon amplification interpretation, not a stable attractor. Independent
+temperature fitting does not change decisions or fix the128-scale failure.
+No corresponding detailed trajectory audit of generic Momentum was performed.
+
+No automatic retuning, extra seeds, new architecture or follow-up run is scheduled.
+
+## Previous follow-up: masked medium, 2D seed 0
+
+**Interpretation correction:** improved classification accuracy with longer
+rollout does not establish a stable attractor or fixed-point convergence.
+For masked inertial RD at32, T64/128/256 BA is88.79/89.96/91.55%, while
+BCE rises0.250/0.657/1.452, H RMS rises17.19/50.88/126.95 and V RMS
+rises0.483/0.575/0.617. The existing RMS includes walls; BCE uses only open
+pixels. These observations warrant an inference-only trajectory audit, not
+an assertion of exponential divergence or calibrated convergence. Conditional
+decision recovery is distinct from return to a stable hidden state. Source
+revision failure does not by itself identify a deep attractor basin.
+
+The separately authorized [trajectory audit](evidence/trajectory_audit_seed0/INTERPRETATION.md)
+is complete, with exact replay of all15 stored checkpoints. Open-pixel H RMS
+at32 rises14.48 to120.61 fromT64 toT256; wrong-margin median changes -1.889
+to -18.421. Independently calibrated test BCE atT256 is0.2492 versus raw1.4519,
+with unchanged BA. Componentwise-constant H energy is97.04% at32/T256, but
+also99.51% at128/T256 where BA is50%. These support finite-horizon amplification
+and mean drift, not convergence or correct propagation throughout the domain.
+The completed same-medium generic momentum comparison is reported above.
 
 Both masked arms completed 800 updates with matched initialization, RNG and
 logged rollout/damage schedules relative to their frozen unmasked controls.

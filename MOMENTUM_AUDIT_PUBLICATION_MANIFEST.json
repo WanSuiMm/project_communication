@@ -1,0 +1,48 @@
+{
+  "review_base": "c13b73f7deadf6c6e0611659df5fa8d118af618c",
+  "source_sha256": {
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/math_checks.py": "20036b3c82dfb4af2a2294b602f0168e2e5024de2742476e980531f31f6c02d5",
+    "new/nca_inertial_wind_tunnel/run_wind_tunnel.py": "1a867d96c178655f3db89c67956182cfee251ad232de883913754fc0e86e3bd7",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "new/nca_inertial_wind_tunnel/test_core.py": "8577b20e8c85715c0b19f645638a7cc031627bd8055532031bcd1d5840d74805",
+    "new/nca_inertial_wind_tunnel/THEORY.md": "952152ebe0ffad851f4bbac78f80787893268c66c96be81a29155d3098160eca",
+    "new/nca_inertial_wind_tunnel/WIND_TUNNEL.md": "49f70d3d9c410503a2a098fdc6485d058203f7583d7916361130c99ab377bbde",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/masked_medium/run_masked.py": "92670bb6b0f2f0d0d5e1d1a001fc6f73f8230021c33f6dde30341676cc9e1857",
+    "new/masked_medium/test_masked.py": "6d96434a9cf4981d11973f964d87d808be2d1ab3955d1cc0bef34c9afd30c621",
+    "new/masked_medium/PROTOCOL.md": "de4ab711619968b7205f0cd8031561e38585693721678740ffc9ff2e032c84f0",
+    "new/masked_momentum/momentum_cells.py": "862a54110275095d6d4c4e7c6d5ad7daf96928e334ff1ee4cb567619c88effae",
+    "new/masked_momentum/run_momentum.py": "09d1b42fb8455eafb801c0fdadcf7df2261ce7beb020657850b2b24f8464f0f2",
+    "new/masked_momentum/test_momentum.py": "edf595286b1a394db2ad3ece01039ee40f0a30a0e229e5ecb515f8901a14b164",
+    "new/masked_momentum/PROTOCOL.md": "33d904af43996fc876a15ef8fb51c56358839ca31fb784fb58252f5cbbc660c1",
+    "new/trajectory_audit/audit.py": "7bac2278d8932d53137227379cb26ddf556d86ee0cc80fef0592d2a12be7dceb",
+    "new/trajectory_audit/PROTOCOL.md": "81a78cb76ee2e4fb63e79e4bca63614269268b6a0cfa7c7421811b97c9c5f7f8"
+  },
+  "reference_sha256": {
+    "evidence/inertial_seed0/arms/momentum_nca_seed0.json": "048a647d82d274dbd1c245f3a28e75cd960ff8f253cbec07d500404febe3cc43",
+    "evidence/masked_medium_seed0/arms/masked_inertial_rd_seed0.json": "aca3d13e53b2a9aaaa9743640332f47c98febcf7436dc3bc400b5cdcf169f798"
+  },
+  "audit_checkpoint_sha256": "ed1aa8216fb83174cddbd204e68fd3dc21c9e3ae8b631bdc5209366637a3434a",
+  "evidence_sha256": {
+    "evidence/masked_momentum_seed0/aggregate.json": "5f53a9de07f508e519f3bf55e209204ecff5b74167830d8dbfae06cbc1984d8f",
+    "evidence/masked_momentum_seed0/comparison.json": "4c7f2280b9b25d085f2db943e274365a2e213f7e54c98af1e2989aa2aedd602e",
+    "evidence/masked_momentum_seed0/manifest.json": "e4f575cafdffdfb3ad1e1d771965845820c6f911ad4002899c0472879f614605",
+    "evidence/masked_momentum_seed0/RESULTS.md": "e1fd9f215c7ecdb0755a91f681a57acc260e6a081a6784d528801cc41288d1aa",
+    "evidence/masked_momentum_seed0/validation.json": "90c9a87a8d614a9eab91c393b1bb2f1252c9ecb496998a6d9250e9fed656424c",
+    "evidence/masked_momentum_seed0/arms/masked_momentum_nca_seed0.json": "d4fb2c9d2db02acc24aae5227bbb2f5efda1d370b97e742eac3a98c9991aaf2e",
+    "evidence/trajectory_audit_seed0/components.json": "0db1209ede13ecf385deef18bbc31d00e5a58a027b638fefada395436da54968",
+    "evidence/trajectory_audit_seed0/INTERPRETATION.md": "987f98bbc4f4c4d37a1af6c460e00318e436f75b2722ac88109b29bcfe7e8054",
+    "evidence/trajectory_audit_seed0/manifest.json": "c5ae00ff83521a4bcf398ec53871c250b38cb32f43b79d92111520a3f7c0651b",
+    "evidence/trajectory_audit_seed0/reconstruction.json": "1fea1cc2e720a8b7a0316c348cb6ead67db6c3249ebe17cbb4bd94610d4fe438",
+    "evidence/trajectory_audit_seed0/RESULTS.md": "69508023f62c7c64655463cd59fed8e5067191d6e36799fe4c14ea51adc0e3cf",
+    "evidence/trajectory_audit_seed0/summary.json": "aea60b24f7f99b368a0d533432db693cccfd312ecbfc1d1333c923307a542935"
+  },
+  "notes": [
+    "Original historical sources/evidence unchanged.",
+    "Momentum raw arm, comparison and generated results are byte-identical to local run.",
+    "Momentum manifest excludes PID; audit receipt, checkpoints, logs and local launch data remain excluded.",
+    "Audit component records are secondary; start with compact summaries.",
+    "No detailed trajectory audit of generic Momentum was run."
+  ]
+}

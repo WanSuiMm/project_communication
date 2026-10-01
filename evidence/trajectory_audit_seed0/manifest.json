@@ -1,0 +1,53 @@
+{
+  "checkpoint_sha256": "ed1aa8216fb83174cddbd204e68fd3dc21c9e3ae8b631bdc5209366637a3434a",
+  "reference_sha256": "aca3d13e53b2a9aaaa9743640332f47c98febcf7436dc3bc400b5cdcf169f798",
+  "source_sha256": {
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/math_checks.py": "20036b3c82dfb4af2a2294b602f0168e2e5024de2742476e980531f31f6c02d5",
+    "new/nca_inertial_wind_tunnel/run_wind_tunnel.py": "1a867d96c178655f3db89c67956182cfee251ad232de883913754fc0e86e3bd7",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "new/nca_inertial_wind_tunnel/test_core.py": "8577b20e8c85715c0b19f645638a7cc031627bd8055532031bcd1d5840d74805",
+    "new/nca_inertial_wind_tunnel/THEORY.md": "952152ebe0ffad851f4bbac78f80787893268c66c96be81a29155d3098160eca",
+    "new/nca_inertial_wind_tunnel/WIND_TUNNEL.md": "49f70d3d9c410503a2a098fdc6485d058203f7583d7916361130c99ab377bbde",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/masked_medium/run_masked.py": "92670bb6b0f2f0d0d5e1d1a001fc6f73f8230021c33f6dde30341676cc9e1857",
+    "new/masked_medium/test_masked.py": "6d96434a9cf4981d11973f964d87d808be2d1ab3955d1cc0bef34c9afd30c621",
+    "new/masked_medium/PROTOCOL.md": "de4ab711619968b7205f0cd8031561e38585693721678740ffc9ff2e032c84f0",
+    "new/trajectory_audit/audit.py": "7bac2278d8932d53137227379cb26ddf556d86ee0cc80fef0592d2a12be7dceb",
+    "new/trajectory_audit/PROTOCOL.md": "81a78cb76ee2e4fb63e79e4bca63614269268b6a0cfa7c7421811b97c9c5f7f8"
+  },
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_allow_tf32": true,
+    "matmul_allow_tf32": false
+  },
+  "torch": "2.5.1",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "test_examples": 16,
+  "calibration_examples": 32,
+  "sizes": [
+    32,
+    64,
+    128
+  ],
+  "horizons": [
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "test_seeds": {
+    "32": 30032,
+    "64": 30064,
+    "128": 30128
+  },
+  "calibration_seeds": {
+    "32": 51032,
+    "64": 51064,
+    "128": 51128
+  },
+  "started_utc": "2026-10-01T06:17:51.270908+00:00",
+  "training": false
+}
