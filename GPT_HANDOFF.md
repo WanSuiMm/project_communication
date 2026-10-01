@@ -1,4 +1,79 @@
-# Incremental review: masked medium after 48095e5
+# Incremental review: same-medium Momentum and audit after c13b73f
+
+- Review base: `c13b73f7deadf6c6e0611659df5fa8d118af618c`.
+- Evidence head: `d3038c3a1a462491a7715a4d5573520572f6ad5e`.
+- The subsequent handoff-only commit changes review metadata only.
+
+Two completed additions: one generic Masked Momentum training arm and an
+inference-only trajectory audit of the existing Masked Inertial checkpoint.
+Historical sources, results, checkpoints and protocols remain unchanged.
+
+## Minimal reading order
+
+1. [Current results](RESULTS.md), then
+   [control results](evidence/masked_momentum_seed0/RESULTS.md) and
+   [all15 paired horizons](evidence/masked_momentum_seed0/comparison.json).
+2. [Audit interpretation](evidence/trajectory_audit_seed0/INTERPRETATION.md),
+   [audit table](evidence/trajectory_audit_seed0/RESULTS.md), and
+   [compact audit summary](evidence/trajectory_audit_seed0/summary.json).
+3. [Control protocol](new/masked_momentum/PROTOCOL.md),
+   [MaskedMomentum.step](new/masked_momentum/momentum_cells.py),
+   [audit protocol](new/trajectory_audit/PROTOCOL.md), and
+   [audit implementation](new/trajectory_audit/audit.py).
+4. [Publication manifest](MOMENTUM_AUDIT_PUBLICATION_MANIFEST.json) and
+   [validation](evidence/masked_momentum_seed0/validation.json).
+
+Do not begin with the6.2MB components.json or raw arm JSON. They are secondary
+sources for component-vector, repair, revision and distance questions.
+
+## New decision-relevant evidence
+
+Masked Momentum completes800 updates and all evaluations with matched original
+generic initialization/RNG and logged schedules matching both references.
+At the frozen32/T64 endpoint it reaches96.45% BA,77.25% paired correctness,
+BCE0.0512 versus explicit masked inertial88.79%,37.22%,0.2503. Generic wins
+by7.66pp/40.02pp, satisfying the reverse descriptive joint5pp criterion.
+Masking also improves generic Momentum versus its own old control by12.01pp
+BA and34.49pp paired correctness. A benefit from the medium is not unique to
+the explicit decomposition.
+
+The BA ranking reverses at32/T256: Momentum77.68%, explicit91.55%. However,
+paired correctness is42.78% versus41.92%, and neither reaches sustained95%.
+Momentum BCE rises to6.8694 and H RMS to219.81. Source revision remains weak.
+Keep this horizon/metric tradeoff visible without replacing the primary endpoint.
+
+The candidate audit exactly reproduces all15 historical evaluation checkpoints.
+At32/T64→T256, open H RMS14.48→120.61, wrong-margin median -1.889→-18.421,
+and component-constant energy89.10%→97.04%. Independent32-map calibration
+gives held-out BCE0.2569→0.2492, versus raw0.2503→1.4519; BA is unchanged.
+This supports amplification and component-mean drift over the tested horizon.
+At128/T256, constant-mode energy is99.51% while BA remains50%; temperature
+cannot fix those wrong decisions. Direction/velocity convergence is unproven.
+
+## Claim changes and limits
+
+The explicit candidate lacks a primary advantage over the new same-medium
+generic control in this seed. Earlier within-candidate masking gains still hold.
+Reject the interpretation that BA improvement demonstrates a stable attractor;
+conditional decision recovery alone also does not establish attractor recovery.
+The detailed audit applies only to explicit Masked Inertial RD. Generic Momentum
+has existing evaluator norms/BCE, but no new component or temperature audit.
+
+One training seed,16 held-out maps per size, differing hidden widths and initial
+transport, and different conditional-repair cohorts limit attribution. No
+population-level superiority, isolated factorization mechanism, controlled
+speedup, general PDE rejection or3D claim. No new run or monitor is scheduled.
+
+## Reviewer questions
+
+1. Does any pairing or implementation issue invalidate the primary generic-control win?
+2. How should the late-horizon BA/paired-correctness tradeoff constrain the next claim?
+3. Does the audit justify finite-horizon amplification/mean drift, while withholding
+   constant-force limits and fixed-point/projective convergence claims?
+
+---
+
+# Historical handoff: masked medium after 48095e5
 
 - Review base: `48095e5b7fae82ec65d1fd1ce0b4e54726fe7df2`.
 - Evidence head: `35bfd1e0a2fac7e38183cf6e0c7a03d8b95c41b0`.
