@@ -1,4 +1,97 @@
-# Incremental review: short-BPTT Phase-II initialization replication
+# Incremental review: Direct Spatial Carry negative development screen
+
+- Review base: `0decc2926b52967496d57a90f8f803383e383178`.
+- Evidence head: `592762476340a26c01a29f16b8f7b0bb349f5e3b`.
+- This subsequent handoff-only commit changes review metadata only.
+
+All8 new matched K8 runs completed300 updates in797.797 seconds. The sole
+intervention replaces the W identity path with fixed lazy averaging over the
+same masked graph: W-0.5*D_M^dagger*L_M(W). F still receives old features;
+Q receives updated W. Additive Z,5033 parameters, initialization, training
+bank/schedule, loss/optimizer clocks and evaluator remain matched.
+
+**DEVELOPMENT_NO_GO**: baseline reaches AND holds in2/4 seeds; carry in0/4.
+The baseline reproduces all four historical final parameter hashes and whole
+evaluation payloads exactly. This is an interpretable negative development
+result, not a baseline-reproduction failure. Seeds2-5 and these maps were
+already inspected; no fresh confirmation or new training is authorized here.
+
+## Minimal reading order
+
+1. [Current result and boundary](RESULTS.md) and
+   [full carry report](evidence/direct_spatial_carry_init2345/RESULTS.md).
+2. [Compact metrics](evidence/direct_spatial_carry_init2345/analysis.json),
+   [curves](evidence/direct_spatial_carry_init2345/curves.csv), and
+   [paired contrasts](evidence/direct_spatial_carry_init2345/paired_effects.csv).
+3. [Frozen protocol](new/direct_spatial_carry/PROTOCOL.md),
+   [cell](new/direct_spatial_carry/carry_cells.py),
+   [runner and decisions](new/direct_spatial_carry/run.py), and
+   [CPU checks](new/direct_spatial_carry/check.py).
+4. [Independent arithmetic audit](new/direct_spatial_carry/analyze.py),
+   [validation](evidence/direct_spatial_carry_init2345/validation.json), and
+   [source/evidence bindings](DIRECT_CARRY_PUBLICATION_MANIFEST.json).
+
+Read the8 raw arm JSONs only for detailed follow-up; summaries above are the
+entry points. Raw records, schedule, aggregate and CSV are byte-identical.
+Public manifest/completion/preflight copies omit PID metadata; private
+originals, checkpoints, launch receipts and transient logs remain local.
+
+## Decision-relevant delta
+
+Primary size32/T64 STRICT16<d<32, paired mean AND pooled>=80%, both BAs>=85%.
+Hold limits declines at BOTH T128 and T256. Continuation additionally needs
+>=3 carry reach+hold seeds, retention of2/5, improvement over concurrent
+baseline count, and baseline2/5 reproduction. None of the carry seeds reaches.
+
+| Seed | Baseline primary mean / pooled % | Carry primary mean / pooled % |
+|---|---:|---:|
+| 2 | 93.70 / 92.97 | 0.00 / 0.00 |
+| 3 | 21.85 / 17.27 | 2.87 / 3.12 |
+| 4 | 52.40 / 44.76 | 14.39 / 11.41 |
+| 5 | 96.45 / 95.68 | 7.59 / 4.42 |
+
+Both primary statistics decline in every seed. Carry loses historical
+positives2/5 and does not rescue3/4. At size64/T256, carry d>32 paired
+correctness is0% in all four seeds. Do not mistake carry seed2 hold=True for
+successful retention: its primary score was already zero.
+
+An important secondary exception is seed4 atT128: pooled narrow accuracy is
+74.64% versus baseline43.59% at size32, and82.54% versus37.06% at size64.
+The corresponding carry values fall to19.50% and26.25% atT256, below baseline;
+size32 original BA drops4.88pp fromT64, failing hold. This is transient narrow
+performance, not a pass or robust far propagation. Preserve this exception
+instead of saying carry is worse at every distance and time.
+
+The fixed operator preserves channel coordinates and is maximum-norm
+nonexpansive by itself. Replacing half of local retention with spatial mixing
+does not guarantee semantic preservation or whole-cell stability. This result
+rejects the tested rho0.5 average-carry recipe under the frozen protocol.
+It does not isolate smoothing, dilution or any other mechanism, nor refute
+directional carry, other spatial operators, short BPTT or NCA in general.
+
+Peak allocated memory is95.12MiB baseline and96.08MiB carry; the small memory
+overhead does not compensate for failed efficacy. CPU verification covers29
+source snapshots,8 checkpoints,96 BA aggregates,672 paired aggregates with
+reconstructed denominators,8 arm decisions,312 effects and936 CSV rows.
+It verifies saved-result arithmetic/provenance, without regenerating logits.
+No extra training or checkpoint inference was performed for publication.
+
+Unchanged: all Phase-II/Phase-I qualification outcomes, original positive K8
+cases, previous revision/source-switch/dynamics conclusions and earlier
+transport failures. No automatic confirmation, architecture rescue or monitor.
+
+## Questions for review
+
+1. Does the code implement precisely the stated identity-to-lazy-average
+   substitution, with real-edge degrees and unchanged F/Q inputs and clocks?
+2. Are baseline exact reproduction, failure of BOTH primary statistics,
+   seed2 zero-score hold and seed4 transient T128 gains all represented fairly?
+3. Are the conclusion and stopping decision restricted to this frozen
+   development recipe, without asserting a causal failure mechanism?
+
+---
+
+# Historical handoff: short-BPTT Phase-II initialization replication
 
 - Review base: `7d1e32697144add1c063d4157bbd1ca62338a45f`.
 - Evidence head: `73542a1a1e123e6f27aaad8c6991e14208901e15`.
