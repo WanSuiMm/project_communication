@@ -1,88 +1,90 @@
-# Incremental review: Streaming Carry development screen
+# Incremental review: local persistent state and ephemeral interface
 
-- Review base: `e4a8574689ca8f9989d9ef14ce2270416230e7a7`.
-- Evidence head: `df4aed4e86f7e4619ec443815ef0544b9bda6847`.
+- Review base: `cdb00c9c33cf1a04139da627fff36767d636343f`.
+- Evidence head: `697cd2f7783fdcf1951c2ba93532ac8e4c6766c2`.
 - This following handoff-only commit changes review metadata, not code or evidence.
 
-All8 new matched K8 arms completed300 updates in828.297 seconds (13.80 minutes).
-**DEVELOPMENT_NO_GO**: baseline reaches AND holds in2/4 seeds; stream in1/4.
-Every baseline final parameter hash and full evaluation payload exactly
-reproduces Phase II. Seeds2-5 and these maps were already inspected; this is
-development evidence, not fresh confirmation.
+All12 matched K8 arms completed300 updates in1281.532 seconds (21.36 minutes).
+**DEVELOPMENT_NO_GO**: reach+hold counts are baseline2/4, stream1/4,
+interface0/4. All8 control final parameter hashes and complete evaluation
+payloads reproduce their historical records exactly. This is development
+evidence on previously inspected seeds/maps, conditional on one bank/schedule.
+Rollup eligible-map counts sum repeated seed evaluations; the independent
+unit remains initialization seed, n=4.
 
 ## Minimal reading order
 
-1. [Current result and boundary](RESULTS.md) and
-   [complete screen report](evidence/streaming_carry_init2345/RESULTS.md).
-2. [Compact metrics](evidence/streaming_carry_init2345/analysis.json),
-   [distance/rollout curves](evidence/streaming_carry_init2345/curves.csv), and
-   [paired contrasts](evidence/streaming_carry_init2345/paired_effects.csv).
-3. [Frozen protocol](new/streaming_carry/PROTOCOL.md),
-   [streaming cell](new/streaming_carry/stream_cells.py),
-   [runner/gates](new/streaming_carry/run.py), and
-   [architecture/feature clock](ARCHITECTURE.md).
-4. [CPU checks](new/streaming_carry/check.py),
-   [saved-result analysis](new/streaming_carry/analyze.py),
-   [validation](evidence/streaming_carry_init2345/validation.json), and
-   [publication bindings](STREAMING_CARRY_PUBLICATION_MANIFEST.json).
+1. [Current results](evidence/local_interface_init2345/RESULTS.md) and
+   [compact analysis](evidence/local_interface_init2345/analysis.json).
+2. [Frozen protocol](new/local_interface/PROTOCOL.md),
+   [cell equations and shapes](ARCHITECTURE.md), and
+   [exact cell](new/local_interface/interface_cells.py).
+3. [Runner and decision](new/local_interface/run.py),
+   [validation](evidence/local_interface_init2345/validation.json), and
+   [publication bindings](LOCAL_INTERFACE_PUBLICATION_MANIFEST.json).
+4. For detailed arithmetic, use [curves](evidence/local_interface_init2345/curves.csv),
+   [paired effects](evidence/local_interface_init2345/paired_effects.csv),
+   [CPU checks](new/local_interface/check.py), and
+   [saved-result audit](new/local_interface/analyze.py).
 
-The8 [raw arm JSONs](evidence/streaming_carry_init2345/raw/) are secondary.
-Raw arms, shared schedule, aggregate and CSVs are byte-identical copies.
-Public manifest/completion/preflight copies omit PID metadata. Original
-records, checkpoints, machine receipts and transient logs remain local.
+The12 [raw arm JSONs](evidence/local_interface_init2345/raw/) are secondary.
+Original outputs and checkpoints remain local; public manifest/completion/
+preflight copies omit private process metadata. Large logs and machine
+launch receipts are excluded.
 
 ## Decision-relevant change
 
-W24 becomes four6-channel directional lanes; Z8 remains stationary local
-state. Fixed T moves through open links and reverses lanes at blocked links;
-wall ports stay fixed. It is a permutation, with inverse B T B and T^T T=I.
-The candidate uses W'=T(W)+0.1F(T(W),Z,L(W),L(Z),X), then the unchanged
-additive Z update. F receives incoming carriers but OLD Laplacian features;
-Q sees updated W. This preserves the two-hop macro-step bound. F's first
-feature also changes, so this tests the specified recipe, not T's isolated
-causal effect. Parameters (5033), initialization, data/schedule and K8 clocks
-are matched. Fixed-operator losslessness does not protect the learned cell.
+The candidate retains both W24 and Z8 locally. A shared affine E35->24 emits
+four6-channel directional messages before each of two residual phases.
+Only these messages cross masked open edges using the existing fixed port
+permutation. W'=W+0.1F(W,Z,T(E(W,Z,X)),X); then
+Z'=Z+0.5Q(W',Z,T(E(W',Z,X)),X). Messages are newly emitted each phase and are
+not a persistent carrier state. F59->31->24 and Q59->21->8 give5033 parameters.
 
-Primary is size32/T64 STRICT16<d<32: mean AND pooled paired correctness>=80%,
-both original/flipped BA>=85%. Hold limits declines at BOTH T128 and T256.
-Continuation also requires>=3 stream reach+hold seeds, retention of2/5 and
-improvement over the concurrent baseline count. Those conditions fail.
+Encoder/readout initial draws match both controls. Complete candidate
+initialization differs. Raw Laplacian/neighbor inputs are removed, and hidden
+widths/state allocation change with the communication interface. This tests
+the complete parameterization, not an isolated effect of role separation.
+Only fixed T is lossless; encoding, receive/store/re-emit and learned residual
+updates have no losslessness or stability guarantee.
 
-| Seed | Baseline primary mean / pooled % | Stream primary mean / pooled % |
-|---|---:|---:|
-| 2 | 93.70 / 92.97 | 1.08 / 1.47 |
-| 3 | 21.85 / 17.27 | 8.28 / 5.62 |
-| 4 | 52.40 / 44.76 | 88.89 / 85.92 |
-| 5 | 96.45 / 95.68 | 16.05 / 13.02 |
+Primary size32/T64 strict16<d<32 pooled paired correctness:
 
-Seed4 is a sustained positive case: primary mean/pooled at size32 rises to
-99.64/99.35% atT128 and100/100% atT256. On size64, d>32 mean/pooled rises
-26.32/12.48 ->55.78/38.60 ->74.99/59.43%. Size64 is descriptive and cannot
-replace the primary gate. Stream loses original successful seeds2/5; seed3
-also fails. Seed5's hold=True preserves a weak result, not task success.
-Seed2/3 long-rollout deterioration is observed, without a causal diagnosis.
+| Seed | Baseline % | Stream % | Interface % |
+|---:|---:|---:|---:|
+| 2 | 92.97 | 1.47 | 0.00 |
+| 3 | 17.27 | 5.62 | 0.00 |
+| 4 | 44.76 | 85.92 | 0.00 |
+| 5 | 95.68 | 13.02 | 0.00 |
 
-Unlike the prior average-carry seed4 transient, this new seed4 case improves
-throughT256. It remains one initialization: useful positive evidence inside
-an overall failed development screen, not a robust architecture result.
-n=4 is conditional on one training bank/schedule. No significance, broad
-distance-scaling, arbitrary routing, warm-editing or3D claim follows.
+Both interface mean and pooled metrics are zero atT64/T128/T256:0/2918
+paired-correct pixels in each seed/horizon. Size64 d>32 also has0/27436 hits
+for every interface seed/horizon. Paired correctness requires the original
+and flipped cue to be answered correctly at the same changed-region pixel;
+these zero values are not whole-grid ordinary accuracy. Interface seed4's
+Hold=True preserves a failed endpoint, not successful remote computation.
 
-Verification covers35 source bindings,8 saved checkpoint parameter hashes,
-96 BA and672 paired aggregates/denominators,8 decisions,312 effects and936
-CSV rows. Publication also checks59 source/evidence index hashes and228
-Markdown links. No new training or model inference was used for publication.
+The frozen gate requires both paired statistics>=80%, both BAs>=85%, hold
+atT128 AND T256, at least3 interface reach+hold seeds including2/5, and a
+count exceeding both controls. The candidate fails reach in all4 seeds.
+Farther or later results do not rescue the endpoint.
 
-Unchanged: previous average-carry DEVELOPMENT_NO_GO, Phase-II/Phase-I gates
-and original positive K8 cases, revision/source-switch/dynamics conclusions
-and earlier transport failures. No automatic confirmation, architecture
-rescue, sweep or monitor is scheduled.
+Changed: this specific ephemeral-interface recipe has a completed negative
+development result. Unchanged: Streaming Carry's overall no-go and sustained
+seed4 positive case, Direct Spatial Carry's no-go, Phase-II/Phase-I decisions,
+and earlier revision, dynamics and transport findings. The new result does
+not identify a failure mechanism or refute every local-state/interface design.
+No significance, broad reliability, arbitrary horizon or3D claim follows.
+
+Publication uses saved-result arithmetic/provenance checks and CPU checkpoint
+hash verification. No new training or checkpoint inference was performed.
 
 ## Questions for review
 
-1. Does the implementation satisfy the port bijection, blocked-link bounce
-   and stated incoming-versus-old feature clock without adding a third hop?
-2. Are baseline exact reproduction, loss of seeds2/5 and seed4's sustained
-   narrow and farther gains all represented with both mean and pooled values?
-3. Is the failed continuation decision kept separate from the one positive
-   case, without treating pure T isometry as semantic or nonlinear stability?
+1. Does the cell implement local identity for both persistent blocks and
+   ephemeral messages in both phases, without hidden direct-neighbor inputs?
+2. Are initialization matching, all8 exact control reproductions, integer
+   denominators, null bands and the frozen reach/hold decision represented
+   consistently across summaries, raw records and CSVs?
+3. Is the specific negative result kept separate from the broader design
+   principle and the previous persistent-stream seed4 positive case?
