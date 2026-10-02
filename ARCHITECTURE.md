@@ -1,6 +1,65 @@
 # Tensor and operator map
 
-## Current architecture: Streaming Carry versus additive K8
+## Current architecture: Local Interface versus additive K8 and Streaming Carry
+
+The task and controls are the masked seeded-region system described in
+[the frozen protocol](new/local_interface/PROTOCOL.md). Input X has shape
+[B,3,H,W], persistent workspace W has 24 channels, and local state Z has 8.
+Both state blocks retain identity paths at their cells. The candidate has a
+transient message field M with 24 channels, arranged as four six-channel
+directional ports. It is emitted afresh in each phase and is never stored as
+an additional persistent state.
+
+Let E be one shared pointwise affine map from [W,Z,X] (35 channels) to M
+(24 channels). Let T_M be the masked four-port permutation, F the workspace
+residual, and Q the local-state residual:
+
+$$
+\begin{aligned}
+M_1 &= E_\theta(W,Z,X), & U_1 &= T_M M_1, \\
+W' &= W+0.1F_\theta(W,Z,U_1,X), \\
+M_2 &= E_\theta(W',Z,X), & U_2 &= T_M M_2, \\
+Z' &= Z+0.5Q_\theta(W',Z,U_2,X).
+\end{aligned}
+$$
+
+F and Q each receive 59 channels [W or W', Z, U, X] and use pointwise Tanh
+MLPs 59->31->24 and 59->21->8. E is shared between phases; the message is
+consumed by that phase's residual and discarded. F and Q do not read L(W),
+L(Z), raw neighboring states or component IDs. X remains available at each
+update. The two sequential phases allow at most two graph hops per macro-step,
+or radius 16 within a K8 window.
+
+The fixed masked permutation moves open ports to their neighbors and bounces
+blocked or exterior links into the opposite directional lane; wall ports stay
+fixed. T_M preserves global Euclidean norms. E and the learned recurrence do
+not inherit that guarantee: for F=Q=0, the local state is unchanged regardless
+of the emitted messages, while general emission, consumption, and
+re-emission need not preserve task information or remain stable. This is an
+ephemeral interface rather than a persistent carrier bank.
+
+There are 5,033 trainable parameters: encoder 96, E 864, F 2,628, Q 1,436,
+and readout 9. The common encoder/readout draws match the controls; the full
+initial parameter set does not, because E/F/Q are new or differently shaped.
+State allocation, neighbor representation and hidden widths change together,
+so the experiment compares complete parameterizations and does not isolate
+the effect of interface factorization.
+
+The completed [development screen](evidence/local_interface_init2345/RESULTS.md)
+is **DEVELOPMENT_NO_GO**: Local Interface reaches and holds in 0/4 seeds,
+versus 2/4 for the additive baseline and 1/4 for Streaming Carry. This is
+conditional developmental evidence on inspected seeds/maps. It does not
+identify a failure mechanism, establish a family-wide limit, or support a
+3D claim.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Shared emitter and phase-specific transport | InterfaceCell._message | new/local_interface/interface_cells.py |
+| Local state residuals and two-phase recurrence | InterfaceCell.step | new/local_interface/interface_cells.py |
+| Three-arm factory | make_variant | new/local_interface/interface_cells.py |
+| Frozen protocol and endpoint | — | new/local_interface/PROTOCOL.md |
+
+## Previous comparison: Streaming Carry versus additive K8
 
 The task and medium are the masked seeded-region system in
 [the protocol](new/streaming_carry/PROTOCOL.md). Inputs X have shape

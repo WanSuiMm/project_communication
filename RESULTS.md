@@ -1,6 +1,59 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: lossless Streaming Carry has one sustained positive case, but fails the gate
+## Latest: learned ephemeral Local Interface fails the development gate
+
+Execution **COMPLETE**: all 12 matched arms completed 300 updates in 1281.532
+seconds (21.36 minutes). Scientific decision **DEVELOPMENT_NO_GO**: baseline
+reaches and holds in 2/4 seeds, Streaming Carry in 1/4, and Local Interface in
+0/4. Every baseline and stream control exactly reproduces its historical final
+parameter hash and complete evaluation payload.
+
+The frozen primary is size32/T64, strict graph distance 16<d<32. Reach requires
+both per-map mean and pooled paired correctness >=80%, with original and
+flipped BA >=85%; hold also limits declines at both T128 and T256. Each
+interface seed has 0.00% mean and 0.00% pooled paired correctness over 32 maps
+and 2,918 eligible pixels. Original/flipped BA by seed is 72.22/67.53%,
+58.82/56.43%, 76.55/71.44%, and 70.60/65.49%. Seed 4 has hold=True but
+reach=False, so no interface seed passes the combined endpoint.
+
+| Seed | Variant | Primary mean / pooled % | Reach / hold |
+|---:|---|---:|---|
+| 2 | Baseline | 93.70 / 92.97 | True / True |
+| 2 | Streaming Carry | 1.08 / 1.47 | False / False |
+| 2 | Local Interface | 0.00 / 0.00 | False / False |
+| 3 | Baseline | 21.85 / 17.27 | False / False |
+| 3 | Streaming Carry | 8.28 / 5.62 | False / False |
+| 3 | Local Interface | 0.00 / 0.00 | False / False |
+| 4 | Baseline | 52.40 / 44.76 | False / True |
+| 4 | Streaming Carry | 88.89 / 85.92 | True / True |
+| 4 | Local Interface | 0.00 / 0.00 | False / True |
+| 5 | Baseline | 96.45 / 95.68 | True / True |
+| 5 | Streaming Carry | 16.05 / 13.02 | False / True |
+| 5 | Local Interface | 0.00 / 0.00 | False / False |
+
+The candidate keeps W24 and Z8 at their spatial positions. A shared learned
+encoder emits 24 transient message channels, six per N/E/S/W port; messages are
+transported in two phases and discarded after each local update. The fixed
+transport alone is lossless. The encoder, nonlinear residuals and repeated
+receive/store/re-emit recurrence have no losslessness or stability guarantee.
+The candidate changes state allocation, neighbor representation and hidden
+widths together, so this comparison does not isolate an interface mechanism.
+Seeds/maps were previously inspected, n=4 is conditional on one training
+bank/schedule, and the result is 2D only. No family-wide or causal claim follows.
+
+Read the [full report](evidence/local_interface_init2345/RESULTS.md),
+[compact metrics](evidence/local_interface_init2345/analysis.json),
+[validation](evidence/local_interface_init2345/validation.json),
+[completion record](evidence/local_interface_init2345/completion.json),
+[all curves](evidence/local_interface_init2345/curves.csv),
+[paired effects](evidence/local_interface_init2345/paired_effects.csv),
+[frozen protocol](new/local_interface/PROTOCOL.md), and
+[publication bindings](LOCAL_INTERFACE_PUBLICATION_MANIFEST.json).
+The sanitized raw arm records are available under
+[raw/](evidence/local_interface_init2345/raw/); they are secondary to the
+report and compact analysis.
+
+## Previous: lossless Streaming Carry has one sustained positive case, but fails the gate
 
 Execution **COMPLETE**: all8 matched arms completed300 updates in828.297 seconds
 (13.80 minutes). Scientific decision **DEVELOPMENT_NO_GO**: baseline reaches

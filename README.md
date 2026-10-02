@@ -1,16 +1,29 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
 This repository tests whether changing the medium and update rule improves
-persistent cellular computation. The latest **Streaming Carry** development
-screen is **DEVELOPMENT_NO_GO**: reach+hold is **1/4** for fixed masked
-permutation streaming versus **2/4** for the additive baseline, below the
-frozen 3/4 streaming gate. The stream arm passes only seed 4; the other three
-fail reach. All four baseline arms exactly reproduce their Phase-II final
-parameters and complete evaluation records. Eight matched K8 runs completed
-300 updates each in 828.297 seconds (13.80 minutes). This is a bounded
-development result on inspected seeds and maps. The fixed transport preserves
-Euclidean norms, but the nonlinear residual and local-memory updates do not
-inherit that guarantee. [Current results](evidence/streaming_carry_init2345/RESULTS.md).
+persistent cellular computation. The latest **Local Interface** development
+screen is **DEVELOPMENT_NO_GO**: reach+hold is **0/4** for the ephemeral
+interface, versus **2/4** for the additive baseline and **1/4** for Streaming
+Carry. All 12 matched runs completed 300 updates each in 1281.532 seconds
+(21.36 minutes). Every interface seed scores 0% mean and pooled paired
+correctness on the primary size32/T64 band, strict graph distance 16<d<32
+(2,918 eligible pixels across 32 maps). Interface seed 4 has hold=True but
+fails reach, so it does not pass the combined endpoint. All eight baseline and
+stream controls exactly reproduce their historical final parameter hashes and
+complete evaluation records. This development comparison changes state
+allocation, neighbor representation and hidden widths together; it does not
+isolate an interface effect. [Local Interface results](evidence/local_interface_init2345/RESULTS.md).
+
+The preceding **Streaming Carry** development screen remains
+**DEVELOPMENT_NO_GO**: reach+hold is **1/4** for fixed masked permutation
+streaming versus **2/4** for the additive baseline, below the frozen 3/4
+streaming gate. The stream arm passes only seed 4; the other three fail reach.
+All four baseline arms exactly reproduce their Phase-II final parameters and
+complete evaluation records. Eight matched K8 runs completed 300 updates each
+in 828.297 seconds (13.80 minutes). This is a bounded development result on
+inspected seeds and maps. The fixed transport preserves Euclidean norms, but
+the nonlinear residual and local-memory updates do not inherit that guarantee.
+[Streaming Carry results](evidence/streaming_carry_init2345/RESULTS.md).
 
 The previous **Direct Spatial Carry** development screen remains
 **DEVELOPMENT_NO_GO**: fixed normalized neighbor averaging reduced reach+hold
@@ -61,31 +74,35 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `e4a8574`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `cdb00c9c33cf1a04139da627fff36767d636343f`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [RESULTS.md](RESULTS.md) and
-   [current Streaming Carry report](evidence/streaming_carry_init2345/RESULTS.md).
-2. [Compact analysis](evidence/streaming_carry_init2345/analysis.json),
-   [all distance/rollout rows](evidence/streaming_carry_init2345/curves.csv), and
-   [paired effects](evidence/streaming_carry_init2345/paired_effects.csv).
-3. [Frozen protocol](new/streaming_carry/PROTOCOL.md),
-   [streaming cell](new/streaming_carry/stream_cells.py),
-   [runner and decisions](new/streaming_carry/run.py), and
-   [GPT_CONTEXT.md](GPT_CONTEXT.md).
-4. [Validation](evidence/streaming_carry_init2345/validation.json),
-   [analysis code](new/streaming_carry/analyze.py),
-   [evidence exporter](tools/export_streaming_carry_evidence.py), and
-   [publication hashes](STREAMING_CARRY_PUBLICATION_MANIFEST.json).
-5. Previous [Direct Spatial Carry](evidence/direct_spatial_carry_init2345/RESULTS.md)
-   and historical context: [Phase II](evidence/short_bptt_phase2_init2345/RESULTS.md),
+1. [Current Local Interface report](evidence/local_interface_init2345/RESULTS.md),
+   [compact analysis](evidence/local_interface_init2345/analysis.json),
+   [validation](evidence/local_interface_init2345/validation.json),
+   [completion record](evidence/local_interface_init2345/completion.json), and
+   [public manifest](evidence/local_interface_init2345/manifest.json).
+2. [Frozen protocol](new/local_interface/PROTOCOL.md),
+   [cell implementation](new/local_interface/interface_cells.py),
+   [runner and decisions](new/local_interface/run.py),
+   [analysis code](new/local_interface/analyze.py),
+   [GPT_CONTEXT.md](GPT_CONTEXT.md), and [ARCHITECTURE.md](ARCHITECTURE.md).
+3. [Distance/rollout curves](evidence/local_interface_init2345/curves.csv),
+   [paired effects](evidence/local_interface_init2345/paired_effects.csv),
+   [raw arm records](evidence/local_interface_init2345/raw/), and
+   [publication bindings](LOCAL_INTERFACE_PUBLICATION_MANIFEST.json).
+   Raw records are secondary to the summaries above.
+4. [RESULTS.md](RESULTS.md), the preceding
+   [Streaming Carry report](evidence/streaming_carry_init2345/RESULTS.md),
+   and earlier evidence: [Direct Spatial Carry](evidence/direct_spatial_carry_init2345/RESULTS.md),
+   [Phase II](evidence/short_bptt_phase2_init2345/RESULTS.md),
    [Phase I](evidence/short_bptt_paired01/RESULTS.md),
    [source-switch audit](evidence/switch_audit_seed0/RESULTS.md),
    [prior training screen](evidence/workspace_revision_paired01/INTERPRETATION.md),
    and [generic dynamics audit](evidence/dynamics_audit_seed0/INTERPRETATION.md).
 
-The eight current [raw arm files](evidence/streaming_carry_init2345/raw/) are
-secondary to the summaries above. Checkpoints, machine receipts, duplicate ZIPs
-and transient logs are excluded. Earlier publication manifests remain valid.
+The sanitized Local Interface package includes its [completion summary](evidence/local_interface_init2345/completion.json)
+and omits checkpoints, local machine receipts and transient logs. Earlier
+publication manifests remain valid.
 
 ## Previous evidence
 
@@ -100,7 +117,38 @@ diagnostics do not directly transfer to generic Momentum. These results and
 the earlier 2D/3D transport failures remain unchanged in [RESULTS.md](RESULTS.md).
 No further training or monitor is scheduled.
 
-## Reproduce Streaming Carry
+## Reproduce Local Interface
+
+Install [requirements.txt](requirements.txt) and run from this repository root
+with new output directories. The candidate keeps W (24 channels) and Z (8
+channels) at their cells and emits a fresh 24-channel message field for each of
+two communication phases. The CPU check covers parameter/state sizes, shared
+initialization, the explicit port operator, gradients, light-cone and K8 clock
+properties. Training requires CUDA.
+
+    python new/local_interface/check.py
+    python new/local_interface/run.py --preflight --out runs/NEW_INTERFACE_PREFLIGHT
+    pwsh -File tools/launch_local_interface.ps1 -RunName NEW_INTERFACE_RUN -Preflight runs/NEW_INTERFACE_PREFLIGHT
+
+The frozen screen uses four previously inspected initialization seeds and 300
+updates for each of three variants. The runner checks saved identities and
+decisions; [analysis](new/local_interface/analyze.py) reviews saved results on
+CPU, and the [exporter](tools/export_local_interface_evidence.py) writes a
+sanitized evidence package. The candidate and controls each have 5,033
+parameters, but the candidate's changed state allocation, message path and
+hidden widths form one bundled comparison.
+
+For the CPU saved-result audit, point it to the completed local run and its
+matching preflight, then use a new output directory:
+
+    python new/local_interface/analyze.py --run runs/RECORDED_INTERFACE_RUN --preflight runs/RECORDED_INTERFACE_PREFLIGHT --out analyses/NEW_INTERFACE_REVIEW
+
+This audit checks saved metrics, control identities and checkpoint state hashes
+without model inference or training. The private run and preflight directories
+are not part of the public evidence package; the published result can be
+reviewed from the sanitized summaries and curves.
+
+## Reproduce the previous Streaming Carry screen
 
 Install [requirements.txt](requirements.txt) and run from this repository root
 with new output directories. The stream arm divides W (24 channels) into four

@@ -1,6 +1,61 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Current completed experiment (2026-10-02): lossless-path Streaming Carry,
+Latest completed experiment (2026-10-02): local persistent state plus a learned
+ephemeral communication interface. Frozen protocol: new/local_interface/PROTOCOL.md.
+W24 and Z8 both retain local identity. One shared pointwise E35->24 emits
+four6-channel directional messages before each of two residual phases; only
+those messages cross open edges through the existing masked port permutation.
+F59->31->24 and Q59->21->8 give exactly5033 parameters with32 persistent
+channels and24 transient message channels. Encoder/readout draws match the
+controls; differently shaped F/Q and E do not share complete initialization.
+The candidate has no direct Laplacian/raw-neighbor input or persistent carrier.
+This changes the complete parameterization, including hidden-width allocation;
+it does not isolate a causal effect of role separation or match FLOPs/latency.
+
+Matched development screen: baseline/stream/interface, seeds2/3/4/5,
+300 updates per arm (12 arms), unchanged K8 training and exact historical
+data/schedule. Same size32/T64 strict16<d<32 mean+pooled and BA reach gate,
+with hold at bothT128/T256. Control full evaluation/final parameters must
+reproduce history. Continue only if interface reach+hold>=3/4 including2/5,
+and its count exceeds both concurrent controls. No mechanism is inferred
+from prior stream seed4. Frozen estimate/hard cap40 minutes, watchdog41.
+CPU checks passed:5033 parameters, common encoder/readout initialization,
+independent nonzero forward/gradient reference, local zero-residual identity,
+two-hop light cone/component isolation and unchanged K8 gradient clock.
+Runner fresh-process imports,45 source bindings, seven decision truth cases,
+eight corrupted hold cases and historical control identities/anchors passed.
+Three-arm CUDA preflight passed in8.547 seconds at
+runs/local_interface_20261002_preflight/. Peak allocated memory was87.14/88.70/
+89.49MiB (baseline/stream/interface). Worst steady update0.4295 seconds gives
+2035.44 seconds (33.92 minutes) under the frozen estimate, within the40-minute
+cap. Primary coverage:32 maps and2918 pixels. The launcher verified the first
+training update and child manifest. Original outputs and private launch
+metadata remain local under runs/local_interface_20261002_init2345/.
+All12 arms completed300 updates at18:18:29 +08:00 in1281.532 seconds
+(21.36 minutes). DEVELOPMENT_NO_GO: baseline reach+hold2/4, stream1/4,
+interface0/4. All8 control final parameter hashes and complete evaluation
+payloads exactly reproduce their historical records. Interface primary
+size32 strict16<d<32 mean and pooled accuracy are0% for every seed at
+T64/T128/T256 (0/2918 paired-correct pixels). Size64 d>32 is also0% for
+every seed/horizon (0/27436). Near-cue behavior remains seed-dependent;
+longer rollout does not recover the required remote behavior. Interface
+seed4 Hold=True retains a failed endpoint, not successful computation.
+Saved-result CPU audit passed:45 executed/current source bindings,12 checkpoint
+parameter hashes,1008 paired aggregates reconstructed from integer per-map
+counts,936 curve rows,624 paired contrasts and all12 reach/hold decisions.
+This negative result concerns the complete ephemeral-interface parameterization
+under this developmental recipe; it does not isolate the cause or establish
+that local-state/interface separation is generally impossible. No follow-up
+training or monitor is started. Public review starts at
+evidence/local_interface_init2345/RESULTS.md, analysis.json and validation.json;
+source/evidence bindings are in LOCAL_INTERFACE_PUBLICATION_MANIFEST.json.
+Commands from repository root:
+
+    python new/local_interface/check.py
+    python new/local_interface/run.py --preflight --out runs/NEW_INTERFACE_PREFLIGHT
+    pwsh -File tools/launch_local_interface.ps1 -RunName NEW_INTERFACE_RUN -Preflight runs/NEW_INTERFACE_PREFLIGHT
+
+Previous completed experiment (2026-10-02): lossless-path Streaming Carry,
 new/streaming_carry/PROTOCOL.md. W24 becomes four directional6-channel lanes;
 Z8 remains stationary local state. Fixed streaming follows open edges and
 reverses direction on blocked edges; wall ports stay fixed. This is a

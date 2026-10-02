@@ -1,6 +1,74 @@
 # Context for incremental scientific review
 
-## Current: Streaming Carry development screen is a no-go
+## Current: Local Interface development screen is a no-go
+
+- Execution: COMPLETE; all 12 matched arms completed 300 updates each in
+  1281.532 seconds (21.36 minutes).
+- Scientific status: DEVELOPMENT_NO_GO; reach+hold is baseline 2/4, stream
+  1/4, and interface 0/4.
+- Frozen endpoint: size32/T64, strict graph distance 16<d<32; paired per-map
+  mean and pooled accuracy must both reach 80%, and original/flipped BA must
+  each reach 85%. At both T128 and T256, declines must stay within 3 pp for BA
+  and 5 pp for each paired statistic relative to T64.
+- Interface outcome: all four seeds have 0.00% per-map mean and 0.00% pooled
+  paired correctness across 32 maps and 2,918 eligible pixels. All four also
+  miss the BA threshold. Seed 4 has hold=True but reach=False, so it does not
+  pass the combined endpoint.
+- Controls: all eight baseline/stream arms exactly reproduce historical final
+  parameter hashes and complete evaluation payloads. Baseline reaches and
+  holds in 2/4 seeds; stream does so in 1/4.
+- Scope: previously inspected seeds and maps are reused; the independent unit
+  is initialization seed, n=4 conditional on one training bank and schedule.
+  This is developmental evidence, not fresh confirmation.
+  Each size uses 32 fixed evaluation maps across seeds. The compact analysis
+  rollups sum `eligible_maps` over seed evaluations; that field counts repeated
+  map evaluations, not additional maps or independent statistical units.
+
+| Seed | Interface mean / pooled % | Interface reach / hold |
+|---:|---:|---|
+| 2 | 0.00 / 0.00 | False / False |
+| 3 | 0.00 / 0.00 | False / False |
+| 4 | 0.00 / 0.00 | False / True |
+| 5 | 0.00 / 0.00 | False / False |
+
+- Intervention: W24 and Z8 stay locally resident. One shared pointwise E maps
+  [W,Z,X] (35 channels) to a fresh 24-channel message M, split into four
+  six-channel directional ports and transported by the fixed masked
+  permutation. F updates W; a second emission uses W' and the same E before Q
+  updates Z. The message is consumed within its phase and discarded.
+- Matched: 5,033 parameters, 32 persistent state channels, two communication
+  phases, K8 training, data/schedule, evaluator and 300 updates. The candidate
+  alone adds 24 transient message channels. Only the common encoder/readout
+  initialization draws are shared;
+  the complete candidate initialization differs because E/F/Q are new or
+  differently shaped parameters.
+- Claim boundary: this is a bundled parameterization comparison. State
+  allocation, neighbor representation and hidden widths change together, so
+  the result does not isolate interface factorization. The pure port
+  permutation is norm-preserving, but E, residual updates and repeated
+  receive/store/re-emit computation have no losslessness or stability
+  guarantee. There is no family-wide, mechanism, arbitrary-routing or 3D claim.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Fresh two-phase interface messages and local state updates | InterfaceCell.step, InterfaceCell._message | new/local_interface/interface_cells.py |
+| Variant construction | make_variant | new/local_interface/interface_cells.py |
+| Training, reach/hold and arm decisions | train_one, predicates, decision, aggregate | new/local_interface/run.py |
+| Independent saved-result analysis | main | new/local_interface/analyze.py |
+| Sanitized evidence export | main, public | tools/export_local_interface_evidence.py |
+
+Read the [full report](evidence/local_interface_init2345/RESULTS.md),
+[compact analysis](evidence/local_interface_init2345/analysis.json),
+[validation](evidence/local_interface_init2345/validation.json),
+[completion record](evidence/local_interface_init2345/completion.json),
+[protocol](new/local_interface/PROTOCOL.md), and
+[publication bindings](LOCAL_INTERFACE_PUBLICATION_MANIFEST.json).
+Use [curves](evidence/local_interface_init2345/curves.csv),
+[paired effects](evidence/local_interface_init2345/paired_effects.csv) and
+[sanitized raw records](evidence/local_interface_init2345/raw/) for detailed
+denominators and per-seed checks. The full three-arm table is in the report.
+
+## Previous: Streaming Carry development screen is a no-go
 
 - Execution: `COMPLETE`; eight matched arms, 300 updates each, 828.297 seconds.
 - Scientific status: `DEVELOPMENT_NO_GO`; reach+hold is baseline 2/4 and
