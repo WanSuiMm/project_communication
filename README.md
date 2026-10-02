@@ -1,14 +1,23 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
 This repository tests whether changing the medium and update rule improves
-persistent cellular computation. The latest **Direct Spatial Carry** development
-screen is **DEVELOPMENT_NO_GO**: adding fixed normalized neighbor averaging
-to the W skip path reduces reach+hold from baseline **2/4 to 0/4**. All four
-seeds lose primary paired accuracy; the baseline exactly reproduces Phase II
-in final parameters and every evaluation record. The eight matched K8 runs
-completed300 updates each in13.30 minutes. This rejects the tested rho=0.5
-average-carry recipe, without identifying its failure mechanism or rejecting
-all spatial carry. [Current results](evidence/direct_spatial_carry_init2345/RESULTS.md).
+persistent cellular computation. The latest **Streaming Carry** development
+screen is **DEVELOPMENT_NO_GO**: reach+hold is **1/4** for fixed masked
+permutation streaming versus **2/4** for the additive baseline, below the
+frozen 3/4 streaming gate. The stream arm passes only seed 4; the other three
+fail reach. All four baseline arms exactly reproduce their Phase-II final
+parameters and complete evaluation records. Eight matched K8 runs completed
+300 updates each in 828.297 seconds (13.80 minutes). This is a bounded
+development result on inspected seeds and maps. The fixed transport preserves
+Euclidean norms, but the nonlinear residual and local-memory updates do not
+inherit that guarantee. [Current results](evidence/streaming_carry_init2345/RESULTS.md).
+
+The previous **Direct Spatial Carry** development screen remains
+**DEVELOPMENT_NO_GO**: fixed normalized neighbor averaging reduced reach+hold
+from baseline **2/4 to 0/4**. All four seeds lost primary paired accuracy; its
+baseline exactly reproduced Phase II in final parameters and evaluation
+records. The tested rho=0.5 recipe failed without identifying a mechanism or
+rejecting all spatial carry. [Direct Carry results](evidence/direct_spatial_carry_init2345/RESULTS.md).
 
 The previous **short-BPTT Phase II** completed
 12 matched runs: additive cells, K8/K16/K64, four new initialization seeds,
@@ -52,31 +61,31 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `0decc29`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `e4a8574`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
 1. [RESULTS.md](RESULTS.md) and
-   [current screen report](evidence/direct_spatial_carry_init2345/RESULTS.md).
-2. [Compact metrics](evidence/direct_spatial_carry_init2345/analysis.json),
-   [all distance/rollout rows](evidence/direct_spatial_carry_init2345/curves.csv), and
-   [per-seed paired effects](evidence/direct_spatial_carry_init2345/paired_effects.csv).
-3. [Frozen protocol](new/direct_spatial_carry/PROTOCOL.md),
-   [carry cell](new/direct_spatial_carry/carry_cells.py),
-   [runner and decisions](new/direct_spatial_carry/run.py), and
+   [current Streaming Carry report](evidence/streaming_carry_init2345/RESULTS.md).
+2. [Compact analysis](evidence/streaming_carry_init2345/analysis.json),
+   [all distance/rollout rows](evidence/streaming_carry_init2345/curves.csv), and
+   [paired effects](evidence/streaming_carry_init2345/paired_effects.csv).
+3. [Frozen protocol](new/streaming_carry/PROTOCOL.md),
+   [streaming cell](new/streaming_carry/stream_cells.py),
+   [runner and decisions](new/streaming_carry/run.py), and
    [GPT_CONTEXT.md](GPT_CONTEXT.md).
-4. [Validation](evidence/direct_spatial_carry_init2345/validation.json),
-   [analysis code](new/direct_spatial_carry/analyze.py), and
-   [publication hashes](DIRECT_CARRY_PUBLICATION_MANIFEST.json).
-5. Historical context: [Phase II](evidence/short_bptt_phase2_init2345/RESULTS.md),
+4. [Validation](evidence/streaming_carry_init2345/validation.json),
+   [analysis code](new/streaming_carry/analyze.py),
+   [evidence exporter](tools/export_streaming_carry_evidence.py), and
+   [publication hashes](STREAMING_CARRY_PUBLICATION_MANIFEST.json).
+5. Previous [Direct Spatial Carry](evidence/direct_spatial_carry_init2345/RESULTS.md)
+   and historical context: [Phase II](evidence/short_bptt_phase2_init2345/RESULTS.md),
    [Phase I](evidence/short_bptt_paired01/RESULTS.md),
    [source-switch audit](evidence/switch_audit_seed0/RESULTS.md),
    [prior training screen](evidence/workspace_revision_paired01/INTERPRETATION.md),
    and [generic dynamics audit](evidence/dynamics_audit_seed0/INTERPRETATION.md).
 
-The eight current [raw arm files](evidence/direct_spatial_carry_init2345/raw/) and
-[shared training schedule](evidence/direct_spatial_carry_init2345/schedule.json) are byte-identical
-copies of completed outputs. They are secondary. Start with the small
-summaries above. Checkpoints, machine receipts, duplicate ZIPs
-and transient logs are excluded. Original publication manifests remain valid.
+The eight current [raw arm files](evidence/streaming_carry_init2345/raw/) are
+secondary to the summaries above. Checkpoints, machine receipts, duplicate ZIPs
+and transient logs are excluded. Earlier publication manifests remain valid.
 
 ## Previous evidence
 
@@ -91,7 +100,30 @@ diagnostics do not directly transfer to generic Momentum. These results and
 the earlier 2D/3D transport failures remain unchanged in [RESULTS.md](RESULTS.md).
 No further training or monitor is scheduled.
 
-## Reproduce Direct Spatial Carry
+## Reproduce Streaming Carry
+
+Install [requirements.txt](requirements.txt) and run from this repository root
+with new output directories. The stream arm divides W (24 channels) into four
+six-channel directional lanes. Both arms keep stationary Z (8 channels), 5,033
+parameters and the fixed K8 training budget. The CPU check verifies the masked
+port permutation, inverse and norm preservation, plus baseline identity.
+Training requires CUDA.
+
+```powershell
+python new/streaming_carry/check.py
+python new/streaming_carry/run.py --preflight --out runs/NEW_STREAM_PREFLIGHT
+pwsh -File tools/launch_streaming_carry.ps1 -RunName NEW_STREAM_RUN -Preflight runs/NEW_STREAM_PREFLIGHT
+```
+
+The formal screen uses four paired initialization seeds and 300 updates per arm.
+The analysis command verifies saved metrics and gate decisions on CPU; the
+exporter creates the sanitized evidence package.
+
+```powershell
+python new/streaming_carry/analyze.py --run runs/RECORDED_STREAM_RUN --out analyses/NEW_STREAM_REVIEW
+```
+
+## Reproduce the previous Direct Spatial Carry screen
 
 Install [requirements.txt](requirements.txt) and use new output directories
 from this repository root. Both arms use the same historical initialization,

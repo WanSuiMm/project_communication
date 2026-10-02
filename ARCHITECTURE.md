@@ -1,6 +1,58 @@
 # Tensor and operator map
 
-## Current comparison: Direct Spatial Carry versus additive K8
+## Current architecture: Streaming Carry versus additive K8
+
+The task and medium are the masked seeded-region system in
+[the protocol](new/streaming_carry/PROTOCOL.md). Inputs X have shape
+[B,3,H,W] (mask, positive source, negative source); persistent state W has 24
+channels and local state Z has 8. W is divided into four six-channel
+directional lanes N/E/S/W. The model keeps 32 persistent channels and 5,033
+trainable parameters, matching the additive baseline.
+
+For each open cell i and direction d, T_M sends lane (i,d) to the neighboring
+open cell (i+delta_d,d). If that edge is blocked by a wall or exterior boundary,
+the lane bounces to (i,opposite(d)). Wall-cell ports stay fixed, and isolated
+open cells reverse directions in place. Every destination port has one
+predecessor, so T_M is a permutation of position/direction registers. If B
+reverses lane labels, T_M^-1=B T_M B and T_M^T T_M=I. The fixed transport
+therefore preserves global Euclidean norms and distances. Directional ports
+identify incoming lanes, not complete source provenance.
+
+```math
+\begin{aligned}
+U &= T_M W,\\
+W'_{\rm baseline} &= W+0.1F_\theta(W,Z,L_MW,L_MZ,X),\\
+W'_{\rm stream} &= U+0.1F_\theta(U,Z,L_MW,L_MZ,X),\\
+Z' &= Z+0.5Q_\theta(W',Z,L_MW',L_MZ,X).
+\end{aligned}
+```
+
+The pointwise F input has 67 features `[U,Z,L_M W,L_M Z,X]`:
+24+8+24+8+3 channels. F maps 67->40->24; Q maps 67->16->8 with Tanh hidden
+activations and linear outputs. Readout remains a 1x1 map from Z to one logit.
+`StreamingCell.step` computes old-state L(W) and L(Z) in parallel with T_M,
+then uses incoming U as F's first feature. The old Laplacian features remain
+available to the residual branch. Q applies the second local communication
+phase, giving at most two graph hops per macro-step; applying L_M(T_M W) inside
+F would add a third hop and change the protocol's spatial radius.
+
+The fixed operator alone is lossless. The nonlinear residual can mix, amplify
+or erase messages, and the local-memory update has no norm-preservation
+guarantee. This is not a pure collision model: old neighbor features remain in
+F. It adds neither learned routing nor carrier channels, and it does not restore
+gradients across K8 detach points. No arbitrary-routing, causal failure
+mechanism, broad robustness or 3D claim follows from the completed
+[development screen](evidence/streaming_carry_init2345/RESULTS.md), which is
+negative at the frozen gate (baseline reaches and holds in 2/4 seeds, stream
+in 1/4).
+
+Implementation lives in [stream_cells.py](new/streaming_carry/stream_cells.py);
+the CPU operator and clock checks are in
+[check.py](new/streaming_carry/check.py). The saved-result analysis and public
+evidence exporter are [analyze.py](new/streaming_carry/analyze.py) and
+[export_streaming_carry_evidence.py](tools/export_streaming_carry_evidence.py).
+
+## Previous comparison: Direct Spatial Carry versus additive K8
 
 The task and medium are the masked seeded-region system described in
 [the protocol](new/direct_spatial_carry/PROTOCOL.md). Inputs X have shape

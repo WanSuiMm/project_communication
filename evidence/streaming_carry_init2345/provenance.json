@@ -1,0 +1,21 @@
+{
+  "source_run": "streaming_carry_20261002_init2345",
+  "original_analysis_provenance_sha256": "936a740cc5f77f0d07c27233650887f66fc9edf4870496ad5a9fcecfcb3975fd",
+  "original_private_manifest_sha256": "c319d934f0bcae8fc6a0e7dc5e372ecab7be7f50891546eea554fadf421160cc",
+  "original_private_completion_sha256": "3b48febf960c64bd057abcb52fdf2a26c322868bcf452a6bd8c281f141a5ca50",
+  "checkpoint_sha256": {
+    "baseline_K8_seed2.pt": "571057377060907122ec018be6d79bb590c462371baa28b7bfd1b983a316d2a4",
+    "baseline_K8_seed3.pt": "476d16f0eeb8871268cf3a0653241af393f450559e9c79b0bd5d6476c65f390b",
+    "baseline_K8_seed4.pt": "2e3d5ece7091be78a4da3060cc96d0820614a6ca16cbded34cccbee65f6b7ddb",
+    "baseline_K8_seed5.pt": "9c712a010ae3c8c4f595fa45d652d52d7ee0703fa65e7b134ab8755a06001a6a",
+    "stream_K8_seed2.pt": "a67c26a1f6a9116b4c5f13a79db9d64e700a90dfd3358a11ed67b9d3fcb62a54",
+    "stream_K8_seed3.pt": "e626ece7b2dcebd6495c519029a453cdf13d7a7daeaebe5172e449de467bb8d5",
+    "stream_K8_seed4.pt": "e6433dfdbf4237d62336f354bb8cdf573cb1c666197b8a183059b641d51b93ee",
+    "stream_K8_seed5.pt": "b8c6beae646d03117874c3885c094c3b9edf3e4602a83c4f86dbfee3080858db"
+  },
+  "notes": [
+    "Raw arm records, schedule, aggregate, CSV and Markdown reports copied byte-identically.",
+    "Only PID metadata removed from manifest/completion/preflight JSON.",
+    "Frozen originals remain local and unchanged. No training or checkpoint inference."
+  ]
+}

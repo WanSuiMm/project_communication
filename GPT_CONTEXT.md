@@ -1,6 +1,74 @@
 # Context for incremental scientific review
 
-## Current: Direct Spatial Carry development screen is negative
+## Current: Streaming Carry development screen is a no-go
+
+- Execution: `COMPLETE`; eight matched arms, 300 updates each, 828.297 seconds.
+- Scientific status: `DEVELOPMENT_NO_GO`; reach+hold is baseline 2/4 and
+  stream 1/4, below the frozen stream threshold of 3/4. Only stream seed 4
+  passes; seeds 2, 3 and 5 fail reach.
+- Baseline reproduction: all four baseline final parameter hashes and complete
+  evaluation records exactly match Phase II.
+- Scope: development with previously inspected initialization seeds2-5 and
+  maps; independent unit is seed, n = 4 conditional on one training bank and
+  schedule. This is not fresh confirmation.
+- Primary: size 32/T64, strict graph distance 16<d<32; both per-map mean and
+  pooled paired correctness must reach 80%, with both balanced accuracies >=85%.
+  Hold requires T128 and T256 drops <=3 percentage points in balanced accuracy
+  and <=5 percentage points in both paired statistics relative to T64.
+
+| Seed | Baseline mean/pooled % | Stream mean/pooled % | Baseline reach+hold | Stream reach+hold |
+|---:|---:|---:|---|---|
+| 2 | 93.70 / 92.97 | 1.08 / 1.47 | pass | fail |
+| 3 | 21.85 / 17.27 | 8.28 / 5.62 | fail | fail |
+| 4 | 52.40 / 44.76 | 88.89 / 85.92 | fail | pass |
+| 5 | 96.45 / 95.68 | 16.05 / 13.02 | pass | fail |
+
+Seed 4 stream's fixed size 32 primary band has paired mean/pooled correctness
+88.89/85.92% at T64, 99.64/99.35% at T128, and 100/100% at T256. At size 64,
+the same narrow band is 93.01/93.50%, 93.39/94.33%, and 93.75/94.85% at
+T64/128/256; size 64 is descriptive and does not enter the frozen hold gate.
+For d>32 at size 64, stream paired mean at T64/128/256 is
+26.32/55.78/74.99%, while pooled correctness is 12.48/38.60/59.43%. These
+single-seed measurements do not change the frozen size 32 primary decision.
+
+- Intervention: a fixed masked port permutation streams the 24 W channels as
+  four six-channel N/E/S/W lanes; Z8 stays local. Open links move each lane to
+  its neighbor, blocked links bounce it into the opposite lane, and wall ports
+  stay fixed. No learned transport parameters are added.
+- Matched: same additive baseline, initialization, data, schedule, evaluator,
+  K8 trainer, 300 updates, 64-step trajectories, eight losses and one optimizer
+  update; both arms retain 5,033 parameters and two communication phases.
+- Claim boundary: the fixed permutation preserves global Euclidean norms and
+  distances. The nonlinear residual and local-memory updates do not inherit
+  that guarantee. F's first feature is incoming T(W), while old L(W) and L(Z)
+  remain in its input, so this is not a pure collision model. No arbitrary
+  routing, causal failure mechanism, broad robustness or 3D claim follows.
+- Stop: the screen is complete; no retuning, confirmation run or monitor is
+  scheduled.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Masked port permutation and inverse | `stream`, `inverse_stream` | `new/streaming_carry/stream_cells.py` |
+| Incoming carrier and residual update | `StreamingCell.step` | `new/streaming_carry/stream_cells.py` |
+| CPU operator, gradient and clock checks | `main` | `new/streaming_carry/check.py` |
+| Paired metrics and distance-band evaluation | `p2.paired`, `p2.evaluate` | `new/short_bptt_phase2/run.py` |
+| Reach/hold, baseline reproduction and decision | `predicates`, `decision`, `aggregate` | `new/streaming_carry/run.py` |
+| Saved-result arithmetic and validation | `main` | `new/streaming_carry/analyze.py` |
+| Sanitized evidence package | `main`, `public` | `tools/export_streaming_carry_evidence.py` |
+
+Read [results](evidence/streaming_carry_init2345/RESULTS.md),
+[compact analysis](evidence/streaming_carry_init2345/analysis.json),
+[protocol](new/streaming_carry/PROTOCOL.md),
+[validation](evidence/streaming_carry_init2345/validation.json), and
+[publication bindings](STREAMING_CARRY_PUBLICATION_MANIFEST.json). Use
+[curves](evidence/streaming_carry_init2345/curves.csv),
+[paired effects](evidence/streaming_carry_init2345/paired_effects.csv) and
+[raw arm records](evidence/streaming_carry_init2345/raw/) for detailed
+denominators and per-seed checks. Checkpoints and machine receipts are excluded
+from the public package. Baseline comparison identities are part of the
+validation record.
+
+## Previous: Direct Spatial Carry development screen is negative
 
 - Execution: `COMPLETE`;8 arms,300 updates,797.797 seconds.
 - Scientific status: `DEVELOPMENT_NO_GO`.

@@ -1,6 +1,62 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: fixed Direct Spatial Carry fails the development gate
+## Latest: lossless Streaming Carry has one sustained positive case, but fails the gate
+
+Execution **COMPLETE**: all8 matched arms completed300 updates in828.297 seconds
+(13.80 minutes). Scientific decision **DEVELOPMENT_NO_GO**: baseline reaches
+and holds in2/4 seeds; stream in1/4. The baseline reproduces all four Phase-II
+final parameter hashes and complete evaluation records exactly.
+
+W24 is now four directional6-channel lanes, with Z8 stationary local state.
+Fixed T moves along open edges and reverses lanes at blocked links; wall
+ports stay fixed. This is a norm-preserving permutation. F reads incoming
+T(W), Z and old L(W)/L(Z); Q reads updated W. Parameters (5033), initialization,
+data/schedule, K8 training and two-hop macro-step locality are matched.
+This compares the full specified recipe, including the incoming F feature.
+
+Primary size32/T64 STRICT16<d<32 paired correctness, mean / pooled percentages:
+
+| Seed | Baseline | Stream | Stream reach and hold |
+|---|---:|---:|---|
+| 2 | 93.70 / 92.97 | 1.08 / 1.47 | Fail |
+| 3 | 21.85 / 17.27 | 8.28 / 5.62 | Fail |
+| 4 | 52.40 / 44.76 | 88.89 / 85.92 | Pass |
+| 5 | 96.45 / 95.68 | 16.05 / 13.02 | Fail |
+
+The gate requires both paired statistics>=80%, both original/flipped BA>=85%,
+and bounded declines at BOTH T128/T256. Continuation additionally requires
+stream reach+hold>=3/4, retention of positive seeds2/5 and a count exceeding
+the concurrent baseline. Stream meets none of those continuation requirements.
+
+Seed4 is a sustained positive case, unlike the previous average-carry
+transient. Its size32 primary mean / pooled rises from88.89/85.92% atT64 to
+99.64/99.35% atT128 and100/100% atT256. On size64, d>32 pooled accuracy rises
+12.48 ->38.60 ->59.43%; per-map mean rises26.32 ->55.78 ->74.99%.
+These measurements use different aggregations and do not imply general
+large-grid qualification. Stream seeds2/3 deteriorate substantially byT256;
+seed5 remains weak. Both original successful baseline seeds2/5 are lost.
+
+This rejects this matched streaming recipe as a robust improvement under
+the frozen development criterion. It preserves evidence that the recipe
+can learn useful sustained propagation in one initialization. Pure transport
+isometry does not certify task-signal preservation or whole-cell stability;
+the experiment does not identify the failure mechanism or refute every
+lossless transport architecture. Seeds/maps were previously inspected,
+n=4 is conditional on one training bank/schedule, and this is2D only.
+
+Peak allocated memory baseline95.12MiB, stream97.08MiB. Systems measurements
+are descriptive, without an accuracy-matched efficiency claim. No extra
+training or checkpoint inference was performed for publication. No automatic
+confirmation or rescue experiment is scheduled. Earlier results are unchanged.
+
+[Full report](evidence/streaming_carry_init2345/RESULTS.md),
+[compact metrics](evidence/streaming_carry_init2345/analysis.json),
+[all curves](evidence/streaming_carry_init2345/curves.csv),
+[validation](evidence/streaming_carry_init2345/validation.json),
+[frozen protocol](new/streaming_carry/PROTOCOL.md), and
+[publication bindings](STREAMING_CARRY_PUBLICATION_MANIFEST.json).
+
+## Previous: fixed Direct Spatial Carry fails the development gate
 
 **DEVELOPMENT_NO_GO**. All8 matched runs completed300 updates in797.797 seconds
 (13.30 minutes). Baseline reach+hold is2/4; carry is0/4. Every baseline final

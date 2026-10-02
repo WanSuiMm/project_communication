@@ -1,6 +1,54 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Current completed experiment (2026-10-02): Direct Spatial Carry development
+Current completed experiment (2026-10-02): lossless-path Streaming Carry,
+new/streaming_carry/PROTOCOL.md. W24 becomes four directional6-channel lanes;
+Z8 remains stationary local state. Fixed streaming follows open edges and
+reverses direction on blocked edges; wall ports stay fixed. This is a
+permutation of position/direction registers, not normalized neighbor averaging.
+Learned modules,5033 parameters, initialization and the K8 recipe are matched.
+F reads incoming T(W), Z and OLD L(W)/L(Z); Q reads updated W. This explicit
+clock retains two-hop macro-step locality while allowing residual modification
+of arriving messages. The residual branch retains old neighborhood perception;
+this is not a model with all Laplacian features removed.
+
+Development only: rerun baseline/stream on inspected seeds2/3/4/5, same
+train bank10002/schedule20002/eval40032,40064;300 updates per arm,8 arms.
+Same primary reach/hold gate: stream>=3/4, retain2/5, exceed current baseline
+count; baseline2/5 must reproduce. No efficacy tuning, automatic confirmation,
+new topology, sweep or monitoring. Prior averaging-carry failure is unchanged.
+
+CPU checks passed: all64 binary2x3 masks agree with independent port scatter,
+bijectivity/inverse/norm/adjoint hold, no wall/component leakage, identical
+initial parameters, T=I old-cell forward/gradient equivalence, nonzero residual
+reference, pure-stream zero-residual rollout and two-hop/K8 dependency checks.
+Two-arm CUDA preflight passed in7.359 seconds at
+runs/streaming_carry_20261002_preflight/. Peak allocated memory baseline87.14
+and stream88.70MiB. Worst steady update0.406s gives1289.28s (21.49 minutes)
+under the frozen estimate, within the25-minute cap (26-minute watchdog).
+Historical initial/data/schedule/evaluation identity bindings are checked.
+All8 arms completed300 updates at16:27:07 +08:00 in828.297 seconds
+(13.80 minutes), within the25-minute cap. DEVELOPMENT_NO_GO: baseline
+reach+hold2/4 versus stream1/4. Stream loses historical positive seeds2/5
+and rescues seed4. Seed4 primary pooled accuracy rises85.92 ->99.35 ->100%
+atT64/128/256; size64 d>32 pooled rises12.48 ->38.60 ->59.43%.
+This sustained positive case does not replace the failed multi-seed gate.
+Outputs: runs/streaming_carry_20261002_init2345/. Public entry:
+evidence/streaming_carry_init2345/RESULTS.md, analysis.json and validation.json.
+Source/evidence bindings: STREAMING_CARRY_PUBLICATION_MANIFEST.json.
+CPU saved-result audit passed:35 source bindings,8 checkpoint parameter hashes,
+96 BA and672 paired aggregates with reconstructed denominators,8 arm decisions,
+312 paired contrasts and936 CSV rows. All four baseline final parameter hashes
+and complete evaluation records exactly reproduce Phase II. No model outputs
+were regenerated for publication; original run artifacts remain unchanged.
+Fixed T is lossless; the full learned recurrence has no such guarantee.
+No follow-up training, confirmation, rescue or monitoring is scheduled.
+Commands from repository root:
+
+    python new/streaming_carry/check.py
+    python new/streaming_carry/run.py --preflight --out runs/NEW_STREAM_PREFLIGHT
+    pwsh -File tools/launch_streaming_carry.ps1 -RunName NEW_STREAM_RUN -Preflight runs/NEW_STREAM_PREFLIGHT
+
+Previous completed experiment (2026-10-02): Direct Spatial Carry development
 screen. Frozen protocol: new/direct_spatial_carry/PROTOCOL.md. Only the W
 identity term changes to W-0.5*D_M^dagger*L_M(W); F/Q, additive Z, W24/Z8,
 5033 parameters, two communication phases and K8 training remain unchanged.

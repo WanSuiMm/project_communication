@@ -1,0 +1,107 @@
+{
+  "review_base": "e4a8574689ca8f9989d9ef14ce2270416230e7a7",
+  "execution_status": "COMPLETE",
+  "decision": "DEVELOPMENT_NO_GO",
+  "counts": {
+    "baseline": {
+      "reach": 2,
+      "reach_and_hold": 2
+    },
+    "stream": {
+      "reach": 1,
+      "reach_and_hold": 1
+    }
+  },
+  "source_sha256": {
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "new/workspace_revision/PROTOCOL.md": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "tools/launch_revision.ps1": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9",
+    "new/short_bptt/PROTOCOL.md": "f20d0dfbc8fd2ee21ea973a7562ed7f435fc4da824da67376165659d50818158",
+    "new/short_bptt/training.py": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+    "new/short_bptt/check.py": "d2e839fef75a2fba8b0f7e759cf140714fe186221543438c20b0eacbb41453c4",
+    "new/short_bptt/run.py": "dae5e6ed365842777aea0fc199867aa8913b346a2382ab7aa736985bde8ad9d9",
+    "tools/launch_short_bptt.ps1": "0a7859d1e34f970fdbc38cd93c29ba07019ec2d4d9e352bc64f8a8dc6bec7942",
+    "new/short_bptt_phase2/PROTOCOL.md": "80a13c66a6ec03e1da247e18f04d867d954fe7f33d6f7b6e719376cba6c711da",
+    "new/short_bptt_phase2/training.py": "7e0c95c7088933ef88402f04359103c16ffe3cf8dd09fab6f2352fbaef4f25cb",
+    "new/short_bptt_phase2/check.py": "a9aec169d3a8c7ea110d6a260fee8ac6d95e9f7d8016269823a93df73f751e77",
+    "new/short_bptt_phase2/run.py": "12b3c4b0a7f12cb77ea81f8a5a92170f55bb9a5c320fbbb3d1af91e0ac8669ce",
+    "tools/launch_bptt_phase2.ps1": "dace8dd7e5b50a9139cde6e48e90f4107372a81f3b987d35f47478a2e32df08a",
+    "new/direct_spatial_carry/carry_cells.py": "214b5d5a6c1b791ef6f4767f93470ca57bd3eec7134f941a4139a38d95ef19d7",
+    "new/direct_spatial_carry/run.py": "7f874533d65d580574177d04a68a2795c275295479f7341aced5626b2f1f750e",
+    "new/direct_spatial_carry/check.py": "593f9c49ac0f202ce1829f577f58eebeb001dde7c631874bf53e4948b8e795b4",
+    "new/direct_spatial_carry/PROTOCOL.md": "a4d9cceabc8f5fdbf104eea1f654b580a96d718de45facb5d346b8427aaa126f",
+    "tools/launch_direct_carry.ps1": "c80e7e8b4e358507efd28d350149245c144834fe46f38305db2eee7139e031b3",
+    "BPTT_PHASE2_PUBLICATION_MANIFEST.json": "9281168c0dcec7a75987f461074580d203c4f958797b28aced65004f6d120dfd",
+    "evidence/short_bptt_phase2_init2345/manifest.json": "2d471eb833895497eec35c0dfc2bd6192675ad780fd019272b9b23aec4f68cdf",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed2.json": "273122c6ef7c1070cca212f9f7fe6562911eb276dcafb2a0a29afd78340080fc",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed3.json": "22a08fff5ccfb52a398e3f7ac29abdde868cc02a21208cb821537717ba78d891",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed4.json": "c350f665a3a8eb0c68ec08994368c0a7595c1b6a4c8c1df39a29b367bbdc0a7e",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed5.json": "212671c5895f9abb8c3d5a2630456d41207ea2e01bc11bef32c0b9948da81f26",
+    "new/streaming_carry/stream_cells.py": "88152e1243d519590a6aa22b66ba2e84eda9b59831c2722f254c1b440fbc7dfb",
+    "new/streaming_carry/run.py": "c2410ed7bf07363ad8d02e44cd6ed41b2defef1b6733d32042176c729c2559cb",
+    "new/streaming_carry/check.py": "653dd97f2dd21100ac6c3376ea14ee8e8df5be9b800487ea56f4df6dffe9bcf4",
+    "new/streaming_carry/PROTOCOL.md": "e14978715194afa06d0b9f1c5a26b49b45d650f0275de285ca92e8e9611a38d2",
+    "tools/launch_streaming_carry.ps1": "c5f4cde9af9bdfd59c2565ab1cf9c1f6f8f63d737baf9d4cb5ade87f20e98a89",
+    "DIRECT_CARRY_PUBLICATION_MANIFEST.json": "bba5b527e93485c0a526a8b670b1164f9480d25b9d672ec1dd6a4bdc60aa4dbb"
+  },
+  "analysis_source_sha256": {
+    "new/streaming_carry/analyze.py": "07c549d7ece620857cbcaccf3e24e1b8264b4a4ab8525f37184370115aad61bf"
+  },
+  "publication_tool_sha256": {
+    "tools/export_streaming_carry_evidence.py": "fff1f32adaa184336fc6548c989788ec774b883bf9f6121422cc03bd52ba00bd"
+  },
+  "checkpoint_sha256": {
+    "baseline_K8_seed2.pt": "571057377060907122ec018be6d79bb590c462371baa28b7bfd1b983a316d2a4",
+    "baseline_K8_seed3.pt": "476d16f0eeb8871268cf3a0653241af393f450559e9c79b0bd5d6476c65f390b",
+    "baseline_K8_seed4.pt": "2e3d5ece7091be78a4da3060cc96d0820614a6ca16cbded34cccbee65f6b7ddb",
+    "baseline_K8_seed5.pt": "9c712a010ae3c8c4f595fa45d652d52d7ee0703fa65e7b134ab8755a06001a6a",
+    "stream_K8_seed2.pt": "a67c26a1f6a9116b4c5f13a79db9d64e700a90dfd3358a11ed67b9d3fcb62a54",
+    "stream_K8_seed3.pt": "e626ece7b2dcebd6495c519029a453cdf13d7a7daeaebe5172e449de467bb8d5",
+    "stream_K8_seed4.pt": "e6433dfdbf4237d62336f354bb8cdf573cb1c666197b8a183059b641d51b93ee",
+    "stream_K8_seed5.pt": "b8c6beae646d03117874c3885c094c3b9edf3e4602a83c4f86dbfee3080858db"
+  },
+  "published_evidence_sha256": {
+    "evidence/streaming_carry_init2345/aggregate.json": "1335e48e61f74b07847e58752bbb9b80f683e4d6bf3e50b17776ea3751fe1ee1",
+    "evidence/streaming_carry_init2345/analysis.json": "223fc509446df15c5ff0323ff4c9bad6d94ad08f3f3ee2ced94c85c02accd77d",
+    "evidence/streaming_carry_init2345/completion.json": "988fdb2c60420ba88a5b866ba7f5583c0d9ff8df185fd0bdc89da24f56e01747",
+    "evidence/streaming_carry_init2345/curves.csv": "433b545ed069e2a19903e89f5d245f71bb4a1927782a58f331f1739f4bf37e96",
+    "evidence/streaming_carry_init2345/manifest.json": "65eed082c34c7bc07c70007b6e6a5b13088f452b742c27bc995b430b24ef2976",
+    "evidence/streaming_carry_init2345/paired_effects.csv": "e4ba8737993a3d4d0d820783181e60f30b8474491d8524f483be870476ea9b6e",
+    "evidence/streaming_carry_init2345/preflight/aggregate.json": "b0b3831d6b6960f7ff092a92fe0d9ff9f588dd9741b38a11e37eb58ef81e9432",
+    "evidence/streaming_carry_init2345/preflight/manifest.json": "37daee4cce81233e5fd21bd6ce646ae1b904ffe0c5cfb54854459773494bd28b",
+    "evidence/streaming_carry_init2345/preflight/status.json": "92eeb3585ceff7dce368d211f38485c110fd8a6fd1bc9ae738dcdd585afe4240",
+    "evidence/streaming_carry_init2345/provenance.json": "b3f05ee612f39a1ead3d15df58b6eea7e68ba4b448f07e21841357b6da5157cb",
+    "evidence/streaming_carry_init2345/raw/baseline_K8_seed2.json": "ab75a16814dc4fce6dd472e7a8f232f0527ed48ca09af94f7aaa193265ab155a",
+    "evidence/streaming_carry_init2345/raw/baseline_K8_seed3.json": "7304155a851a642d62abc098bb83ef6f7ca3f9a2252c57dc744c4b26afe10a31",
+    "evidence/streaming_carry_init2345/raw/baseline_K8_seed4.json": "ad6f9f8ffe4327f7c2890a29e14bd58ce16feb99b4e9020327587ee384c66efd",
+    "evidence/streaming_carry_init2345/raw/baseline_K8_seed5.json": "3394e3469cc3e65e51c47be2904d775d2abeb308fcd38e39bd970a797ef8fb58",
+    "evidence/streaming_carry_init2345/raw/stream_K8_seed2.json": "eb00c9f213b2eb98371a36ef7b24d5a1a5261fe1e8bb0c9724ce392c7bfdf11d",
+    "evidence/streaming_carry_init2345/raw/stream_K8_seed3.json": "f56d14b47eae8611b1276cb673ed6ed74e17093b4da587000b309ed993057fe4",
+    "evidence/streaming_carry_init2345/raw/stream_K8_seed4.json": "402dfa34d2215417242cfbfc736b25c722012e9c0171f1381e8ab2233d20f45b",
+    "evidence/streaming_carry_init2345/raw/stream_K8_seed5.json": "b7cb1a8680c30a55d93b30c8d682820fe31b5074e9330454cf3190640c19a01a",
+    "evidence/streaming_carry_init2345/RESULTS.md": "14733f1f72e1b85a6b0d8e20c35db12b480ff94d138f7ea6c4d96d62cca4e3b7",
+    "evidence/streaming_carry_init2345/runner_RESULTS.md": "6fb26682627aa84d7cb5655364047eed1856250ebeb4d10312c905ac15e9cf32",
+    "evidence/streaming_carry_init2345/schedule.json": "b46f2ae3545b8210d137908430fa96b027764ea0841f4f2b49c2dc50cbb3c263",
+    "evidence/streaming_carry_init2345/validation.json": "47f4a7e7856779962505deda15e4ba2bca98e1a01f9390c360d9aa96a96306c8"
+  },
+  "notes": [
+    "Stream reaches and holds in 1/4 seeds; baseline reaches and holds in 2/4.",
+    "Stream gate-passing seeds: 4.",
+    "Other stream seeds that do not meet both predicates: 2, 3, 5.",
+    "Baseline final parameters and complete evaluations exactly reproduce Phase II in 4/4 seeds.",
+    "Seed and map reuse makes this a development result; no significance or cross-distribution reliability claim.",
+    "Only the fixed port permutation is lossless; no causal failure mechanism or full-recurrence stability claim is made."
+  ],
+  "excluded": [
+    "checkpoints",
+    "machine launch receipts",
+    "PID",
+    "transient logs",
+    "local smoke artifacts"
+  ]
+}
