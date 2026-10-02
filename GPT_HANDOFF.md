@@ -1,91 +1,86 @@
-# Incremental review: Streaming seed4 operator audit
+# Incremental review: exactly nested stationary sidecar
 
-- Review base: `87763540c7e342a8fe278b8c198930f4decc2c1a`.
-- Evidence head: `4c424cfe3ce605c3749e1430d7aef32bfc38f04f`.
+- Review base: `723dd4aae6dc082ee998dd647b9df9a49b58962f`.
+- Evidence head: `33ced27d9f4966f6aa776e53cd521b9f5c98cbba`.
 - This following handoff-only commit changes review metadata, not code or evidence.
 
-One selected existing Streaming seed4 checkpoint, no training. Four cold-rollout
-conditions completed in 12.36 seconds. All six historical size32/64 by
-T64/T128/T256 evaluation records replay exactly (maximum error 0).
-Scientific status: SELECTED_CHECKPOINT_OPERATOR_SENSITIVITY. No new GO gate
-or model-seed replication. The prior multi-seed architecture decisions remain.
+All12 arms completed300 updates in1676.281 seconds. Four original Streaming
+controls reproduce historical final parameter hashes and full evaluations
+exactly. Frozen scientific status: **DEVELOPMENT_NO_GO**. Reach+hold is
+stream1/4, carried H0/4, instantaneous side branch0/4.
+This is a2D development comparison on inspected seeds2/3/4/5 and reused maps.
 
 ## Minimal reading order
 
-1. [Current results](evidence/stream_path_audit_seed4/RESULTS.md),
-   [interpretation and limits](evidence/stream_path_audit_seed4/INTERPRETATION.md),
-   and [compact summary](evidence/stream_path_audit_seed4/summary.json).
-2. [Frozen protocol](new/stream_path_audit/PROTOCOL.md),
-   [exact pathway switches](new/stream_path_audit/operators.py),
-   [clock and shapes](ARCHITECTURE.md), and
-   [runner/replay gate](new/stream_path_audit/audit.py).
-3. [Saved-result validation](evidence/stream_path_audit_seed4/validation.json),
-   [replay validation](evidence/stream_path_audit_seed4/replay_validation.json),
-   [public provenance](evidence/stream_path_audit_seed4/provenance.json), and
-   [publication hash bindings](STREAM_PATH_AUDIT_PUBLICATION_MANIFEST.json).
-4. Detailed [curves](evidence/stream_path_audit_seed4/curves.csv),
-   [contrasts](evidence/stream_path_audit_seed4/contrasts.json),
-   [CPU reference](new/stream_path_audit/check.py), and
-   [arithmetic analyzer](new/stream_path_audit/analyze.py).
+1. [Current results](evidence/stationary_sidecar_init2345/RESULTS.md) and
+   [compact analysis](evidence/stationary_sidecar_init2345/analysis.json).
+   Start with primary_rows, seed4_trajectory, primary_trajectories and
+   hold_failure_reasons; raw per-map JSON is secondary.
+2. [Frozen protocol](new/stationary_sidecar/PROTOCOL.md),
+   [exact sidecar cell](new/stationary_sidecar/sidecar_cells.py),
+   [architecture](ARCHITECTURE.md), and
+   [runner/gates](new/stationary_sidecar/run.py).
+3. [Saved-result validation](evidence/stationary_sidecar_init2345/validation.json),
+   [CPU qualification](evidence/stationary_sidecar_init2345/cpu_validation.json),
+   [provenance](evidence/stationary_sidecar_init2345/provenance.json), and
+   [publication bindings](STATIONARY_SIDECAR_PUBLICATION_MANIFEST.json).
+   The analyzer is [CPU-only saved arithmetic](new/stationary_sidecar/analyze.py).
+4. [All curves](evidence/stationary_sidecar_init2345/curves.csv),
+   [paired memory-minus-controls effects](evidence/stationary_sidecar_init2345/paired_effects.csv),
+   and12 [raw arm records](evidence/stationary_sidecar_init2345/raw/).
 
-The 2.1 MB [raw conditions](evidence/stream_path_audit_seed4/raw_conditions.json)
-are secondary. Metrics, curves, contrasts, replay and arithmetic validation
-are byte-identical copies. Manifest/completion are sanitized copies; their
-public hashes are bound separately. Validation input_sha256 refers to original
-run files, including excluded private manifest/completion bytes. Checkpoints,
-machine identifiers, runtime commands and source snapshots remain local.
+## Changed evidence and claim
 
-## Intervention and decision-relevant evidence
+The original W24/Z8, F/Q, operators and clocks are retained. G67->32->12
+writes extra H12; zero-initialized P_F/P_Q feed it into the old residuals.
+Memory retains H; stateless consumes the same instantaneous write and resets
+only H. Side arms have identical7989 parameters and full initialization;
+stream has5033. Neutral projected W/Z/logits/core derivatives are verified,
+but extra gradients can change joint norm clipping and optimizer updates.
+All side paths open by update3; K8 retains the16-hop graph-radius upper bound.
 
-Use the same W24/Z8 cell, trained parameters, encoder, readout, residual scales
-and original/source-flip evaluation maps (32 each at sizes32/64). Starting
-from the same cold initialization, switch fixed T_M to identity, and/or replace
-both Laplacian slots in BOTH F and Q by zero tensors. F retains pre-stream
-L(W)/L(Z); Q retains post-F L(Wplus) and pre-update L(Z). Turning off T also
-changes the incoming workspace feature read by F. Equal macro-step counts
-do not match communication opportunity: hop bounds are 2/2/1/0.
+| Seed4 primary pooled | T64 | T128 | T256 |
+|---|---:|---:|---:|
+| Original Streaming | 85.92% | 99.35% | 100.00% |
+| Persistent H | 94.24% | 0.00% | 0.38% |
+| Stateless side branch | 100.00% | 100.00% | 88.49% |
 
-| Condition | Primary pooled T64 % | T128 % | T256 % | Size64 d>32 T256 % |
-|---|---:|---:|---:|---:|
-| Full original cell | 85.92 | 99.35 | 100.00 | 59.43 |
-| T_M replaced by identity | 0.00 | 0.00 | 0.00 | 0.00 |
-| Direct Laplacian inputs zeroed | 0.00 | 0.00 | 0.00 | 0.00 |
-| Both interventions | 0.00 | 0.00 | 0.00 | 0.00 |
+Only original seed4 passes hold. Memory loses all2918 primary paired hits
+atT128. Stateless seed4 drops to BA78.06/76.13% atT256 and also fails paired
+hold. Stateless seed2 improves at later horizons but misses the frozen T64
+threshold; later gains do not change its gate.
 
-Primary is size32 strict16<d<32, paired correct under BOTH source alternatives
-at the SAME changed-component pixel. Full correct counts at T64/T128/T256
-are 2507/2899/2918 out of2918; every primary knockout count is0/2918.
-These are not ordinary whole-grid accuracy percentages.
+The carried-sidecar recipe did not improve reliable continued computation
+on these four seeds. Carry simultaneously changes temporal accumulation and
+activation scale; this does not isolate a scale-independent memory mechanism.
+Old Z already provides stationary memory. No general memory rejection,
+Jacobian/overwrite mechanism, population reliability, fresh confirmation,
+FLOP equality, trained stability guarantee or3D claim is established.
 
-Nearby behavior also collapses. At size32, no_perception has0/1706 paired hits
-in d<8 already atT8. No_transport has906/1706 atT8 and1067/1706 atT16, then
-zero byT32. AtT64 all knockouts have original/flipped BA50.00%/48.44%.
-Thus the loss is not adequately characterized as only slower remote propagation.
+## Unchanged claims and validation
 
-Changed: this particular successful frozen solution fails to retain behavior
-under either pathway intervention, supporting sensitivity to the original
-hybrid update. Unchanged: Streaming's multi-seed DEVELOPMENT_NO_GO (1/4 versus
-baseline2/4), the previous sustained seed4 positive case, Persistent Roles0/4,
-Local Interface0/4, and all earlier gate conclusions.
+The selected-seed4 operator audit remains an intervention-sensitivity result.
+Earlier architecture no-go decisions and positive original seed4 behavior
+remain unchanged; their frozen files and checkpoints were preserved.
 
-Knockouts alter learned feature/state distributions and effective spatial
-depth. They do not identify the reason H/C/Z failed, uniquely locate semantic
-operations, prove that restoring Laplacians will repair training, or show that
-retrained knockout models cannot succeed. Positive factorial interaction is
-descriptive arithmetic, not an additive causal decomposition. One selected
-model remains n=1, without significance or architecture-superiority claims.
+Saved-result verification passed45 source bindings/current and both snapshots,
+12 CPU checkpoint hashes,4 exact historical controls, banks/schedules/preflight,
+144 BA means,1008 paired aggregates with independent denominators,936 curve
+rows,624 contrasts and all frozen decisions. The focused CPU qualification
+was rerun, including its documented tiny untrained-model smoke. There was no
+new scientific training or trained-checkpoint inference for publication.
+Raw arm/schedule/aggregate/CSV files are byte-identical; metadata copies remove
+machine identifiers. Checkpoints and launch receipts remain local.
 
-Verification: nonzero independent CPU reference passed; six historical replay
-records match in5628 integer and2636 float leaves. Saved CPU analysis checks39
-source bindings,672 paired aggregates/denominators,96 BA means,672 curve rows
-and600 contrasts. Publication performed no additional inference or training.
+## Concrete reviewer questions
 
-## Questions for review
+1. Do the zero-feedback nesting, shared core draws, immediate stateless
+   consumption and unchanged clocks implement the stated carry contrast?
+2. Do the frozen reach/hold rules explain why both seed4 side arms fail,
+   despite higher T64 scores and stateless T128 perfection?
+3. Are claim boundaries sufficient to separate this failed carried-sidecar
+   recipe from generic local memory, activation-scale effects and identified
+   long-rollout failure mechanisms?
 
-1. Are the carry replacement and both F/Q Laplacian switches implemented
-   with the historical clocks and unchanged weights? Are the different light
-   cones kept explicit?
-2. Do paired denominators, all six exact replay records and knockout effects
-   agree across raw evidence, summary, curves and contrasts?
-3. Does the interpretation distinguish frozen-solution sensitivity from
-   training causality, and retain the near-cue collapse and selected-model limit?
+Do not open the large raw files first or infer a new architecture proposal
+from this negative screen.
