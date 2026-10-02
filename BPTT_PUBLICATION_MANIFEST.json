@@ -1,0 +1,72 @@
+{
+  "review_base": "c2d705fcb56fdc2b31c68a33ecc7a02610b3fdee",
+  "execution_status": "COMPLETE",
+  "scientific_status": "BASELINE_UNQUALIFIED_ALL_FOUR_PAIRS_WITH_ONE_SHORT_WINDOW_POSITIVE_CASE",
+  "source_sha256": {
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "new/workspace_revision/PROTOCOL.md": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "tools/launch_revision.ps1": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9",
+    "new/short_bptt/PROTOCOL.md": "f20d0dfbc8fd2ee21ea973a7562ed7f435fc4da824da67376165659d50818158",
+    "new/short_bptt/training.py": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+    "new/short_bptt/check.py": "d2e839fef75a2fba8b0f7e759cf140714fe186221543438c20b0eacbb41453c4",
+    "new/short_bptt/run.py": "dae5e6ed365842777aea0fc199867aa8913b346a2382ab7aa736985bde8ad9d9",
+    "tools/launch_short_bptt.ps1": "0a7859d1e34f970fdbc38cd93c29ba07019ec2d4d9e352bc64f8a8dc6bec7942"
+  },
+  "analysis_source_sha256": {
+    "new/short_bptt/analyze.py": "d02980a5a8489f7ada642e2f9583a1483466021a16610d426e50966de6ac2040"
+  },
+  "publication_tool_sha256": {
+    "tools/export_bptt_evidence.py": "cdd40d4c450850498d2aed9560d97b58b9ee10539247f234b1c3afe4d5831fe5"
+  },
+  "checkpoint_sha256": {
+    "ws_additive_K64_seed0.pt": "c6293aadb152bd78f2d66781c4e85fbb9339e2ff8be65e5dcc9429c8bf221751",
+    "ws_additive_K64_seed1.pt": "37db503879a7e2603c7104068ab494d21556e8c2a5a7b9e6a044a6f092a07bc4",
+    "ws_additive_K8_seed0.pt": "a07d44a2d178970ba327f3e2fbc2293703063212815c3d4678be457af76530b7",
+    "ws_additive_K8_seed1.pt": "9a30d242307c7464d4af38a9822bf66208187a08e0195128c33e6a07edfdb2ef",
+    "ws_revision_K64_seed0.pt": "bfb5f54e29757d333b48a5e5d162ef5d8d63a4ed128a6377a3272bdca8ad8d2b",
+    "ws_revision_K64_seed1.pt": "eb4e0f51bdce306908cd122aa2fd7d3f8c621bd53a0fcc83a8282cb591d6a155",
+    "ws_revision_K8_seed0.pt": "c1f49368781691ceb8b3f207aec0d630f664043ad16d516fdce224423772589a",
+    "ws_revision_K8_seed1.pt": "3669fbadd80499231ebc8c2c28e6f6a0d0fc81a0861399deb63abac59082c71a"
+  },
+  "published_evidence_sha256": {
+    "evidence/short_bptt_paired01/aggregate.json": "4afa7023a862f5b75dd67596c54504710aa4db0adfd4289fef056917081d79b7",
+    "evidence/short_bptt_paired01/analysis.json": "556bdb7d93e271cb80c60fa6af0fc50b347d70f76dbfa4db53bd245a38ff7dee",
+    "evidence/short_bptt_paired01/completion.json": "e593b96f4ad2429df8bef3e36d5b4c0bfd5466288d1a2c11aa271da592f20a2b",
+    "evidence/short_bptt_paired01/curves.csv": "6871debbc1662f4db78fad7b930082a67c19ac9d55d05600aebad4ee4a7e8e65",
+    "evidence/short_bptt_paired01/manifest.json": "16eb5c5ed3730e4799f986345f02eb19723960341702d70cbe53f4cb9c9f0eaf",
+    "evidence/short_bptt_paired01/overview.png": "01323a35d007072d3b61eae910f9aca884bcd639635b7ecba3c304ae92083b1a",
+    "evidence/short_bptt_paired01/preflight/aggregate.json": "4c2c3ecd24bb8012768b9b696795743dfafebb5575da4e5b84231a6a7d806f7c",
+    "evidence/short_bptt_paired01/preflight/manifest.json": "2593dbf991868d0d57d69315926b60251f3bcde1dd261e0d3b3d5fabbe3e533e",
+    "evidence/short_bptt_paired01/preflight/status.json": "c934543f16ffd7be72f18d4b1989a82bac02610be0db1255062ff34203b51542",
+    "evidence/short_bptt_paired01/provenance.json": "9defcd1d7496e7c0823516754885a47b789292af8d437eb24fb1b8823ae5ce0d",
+    "evidence/short_bptt_paired01/raw/ws_additive_K64_seed0.json": "d0bfa92518d174be6441eabc91bd76b9055589597a4c55576641f6ccc21119b9",
+    "evidence/short_bptt_paired01/raw/ws_additive_K64_seed1.json": "f2765c853d91eb9fd53926091f7d0f524fdc21d805623aa62155877cd6e10c03",
+    "evidence/short_bptt_paired01/raw/ws_additive_K8_seed0.json": "81fd7fed4b624221fb736eb753b5f866b414f37e7f3af407f6dfc40ca0c60ada",
+    "evidence/short_bptt_paired01/raw/ws_additive_K8_seed1.json": "22c51af76e809fed9461ccb33457762be2a78260585c36bcee38d81e5e2e5aa1",
+    "evidence/short_bptt_paired01/raw/ws_revision_K64_seed0.json": "ce452a1473412b02c7cbf206e549f17b83595f1aeb84e5463822a9db2583ef9e",
+    "evidence/short_bptt_paired01/raw/ws_revision_K64_seed1.json": "d51310f5b4e487cfbebc5bcff3173083a083442c113c063fe15c98c8fc2543c0",
+    "evidence/short_bptt_paired01/raw/ws_revision_K8_seed0.json": "2bb3913cca7cb19ad12663493097004d769cc4761155998b669eb85988f6734f",
+    "evidence/short_bptt_paired01/raw/ws_revision_K8_seed1.json": "d30e263bb373df30d44c7fa3efebbb27b852c7657b0ce3580f7e1a4cbdb7f1cc",
+    "evidence/short_bptt_paired01/RESULTS.md": "76566e975e9554ee29b064d786d56502b206b5e4c7f41c24ccc106bfe1b02979",
+    "evidence/short_bptt_paired01/runner_RESULTS.md": "b583bc91612604a51942661d475c9f3d355aa448768ed9757b494468cebf7963",
+    "evidence/short_bptt_paired01/schedules/schedule_seed0.json": "86f9b5fb4447c4afb9345952fb164d7eec5ce2b6a0fb833f544fc9b7b5444665",
+    "evidence/short_bptt_paired01/schedules/schedule_seed1.json": "5250a24f89428d1133b001c562bb87c2a0e0e352090d42ac9d11516660c8adbb",
+    "evidence/short_bptt_paired01/validation.json": "6837576da964b193a02d008a402148980df1b40d55ff3727a21379e44b628634"
+  },
+  "excluded": [
+    "checkpoints",
+    "local launch receipt",
+    "PID and host",
+    "transient logs"
+  ],
+  "notes": [
+    "All four full controls unqualified at the frozen far-paired endpoint.",
+    "One K8 additive seed meets reach/hold predicates; not an architecture-level pass.",
+    "Per-map far accuracy80.87% corresponds to pooled59.53%; distance/size limits retained."
+  ]
+}

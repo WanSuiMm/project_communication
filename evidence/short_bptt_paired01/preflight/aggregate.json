@@ -1,0 +1,36 @@
+{
+  "complete": true,
+  "decision": "PREFLIGHT_PASSED",
+  "budget_worst_update_seconds": 0.326988750000055,
+  "recommended_updates": 300,
+  "statuses": [
+    {
+      "architecture": "ws_additive",
+      "gradient_horizon": 64,
+      "seed": 0,
+      "status": "COMPLETE",
+      "completed_updates": 3
+    },
+    {
+      "architecture": "ws_additive",
+      "gradient_horizon": 8,
+      "seed": 0,
+      "status": "COMPLETE",
+      "completed_updates": 3
+    },
+    {
+      "architecture": "ws_revision",
+      "gradient_horizon": 8,
+      "seed": 0,
+      "status": "COMPLETE",
+      "completed_updates": 3
+    },
+    {
+      "architecture": "ws_revision",
+      "gradient_horizon": 64,
+      "seed": 0,
+      "status": "COMPLETE",
+      "completed_updates": 3
+    }
+  ]
+}

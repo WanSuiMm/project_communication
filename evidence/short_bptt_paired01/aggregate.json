@@ -1,0 +1,150 @@
+{
+  "complete": true,
+  "decision": "COMPLETE",
+  "pairs": [
+    {
+      "architecture": "ws_additive",
+      "seed": 0,
+      "paired_identity": {
+        "initial_parameter_sha256": true,
+        "train_data_sha256": true,
+        "schedule_sha256": true
+      },
+      "full_ba64": 0.8720381259918213,
+      "short_ba64": 0.9121890664100647,
+      "full_far_paired64": 0.15827229619026184,
+      "short_far_paired64": 0.23183192312717438,
+      "far_effect_pp": 7.355962693691254,
+      "full_qualified": false,
+      "short_reach_predicates_pass": false,
+      "short_hold_predicates_pass": false,
+      "decision": "BASELINE_UNQUALIFIED"
+    },
+    {
+      "architecture": "ws_additive",
+      "seed": 1,
+      "paired_identity": {
+        "initial_parameter_sha256": true,
+        "train_data_sha256": true,
+        "schedule_sha256": true
+      },
+      "full_ba64": 0.8773447275161743,
+      "short_ba64": 0.980290949344635,
+      "full_far_paired64": 0.0,
+      "short_far_paired64": 0.8086513876914978,
+      "far_effect_pp": 80.86513876914978,
+      "full_qualified": false,
+      "short_reach_predicates_pass": true,
+      "short_hold_predicates_pass": true,
+      "decision": "BASELINE_UNQUALIFIED"
+    },
+    {
+      "architecture": "ws_revision",
+      "seed": 0,
+      "paired_identity": {
+        "initial_parameter_sha256": true,
+        "train_data_sha256": true,
+        "schedule_sha256": true
+      },
+      "full_ba64": 0.780369758605957,
+      "short_ba64": 0.8389999866485596,
+      "full_far_paired64": 0.2143903374671936,
+      "short_far_paired64": 0.00665182014927268,
+      "far_effect_pp": -20.773851731792092,
+      "full_qualified": false,
+      "short_reach_predicates_pass": false,
+      "short_hold_predicates_pass": false,
+      "decision": "BASELINE_UNQUALIFIED"
+    },
+    {
+      "architecture": "ws_revision",
+      "seed": 1,
+      "paired_identity": {
+        "initial_parameter_sha256": true,
+        "train_data_sha256": true,
+        "schedule_sha256": true
+      },
+      "full_ba64": 0.8615670204162598,
+      "short_ba64": 0.643795371055603,
+      "full_far_paired64": 0.0,
+      "short_far_paired64": 0.1781359314918518,
+      "far_effect_pp": 17.81359314918518,
+      "full_qualified": false,
+      "short_reach_predicates_pass": false,
+      "short_hold_predicates_pass": false,
+      "decision": "BASELINE_UNQUALIFIED"
+    }
+  ],
+  "architectures": {
+    "ws_additive": {
+      "completed_pairs": 2,
+      "mean_far_effect_pp": 44.11055073142052,
+      "reach_status": "BASELINE_UNQUALIFIED",
+      "reach_and_hold_pass": false
+    },
+    "ws_revision": {
+      "completed_pairs": 2,
+      "mean_far_effect_pp": -1.4801292913034558,
+      "reach_status": "BASELINE_UNQUALIFIED",
+      "reach_and_hold_pass": false
+    }
+  },
+  "statuses": [
+    {
+      "architecture": "ws_additive",
+      "gradient_horizon": 64,
+      "seed": 0,
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "architecture": "ws_additive",
+      "gradient_horizon": 8,
+      "seed": 0,
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "architecture": "ws_revision",
+      "gradient_horizon": 8,
+      "seed": 0,
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "architecture": "ws_revision",
+      "gradient_horizon": 64,
+      "seed": 0,
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "architecture": "ws_revision",
+      "gradient_horizon": 64,
+      "seed": 1,
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "architecture": "ws_revision",
+      "gradient_horizon": 8,
+      "seed": 1,
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "architecture": "ws_additive",
+      "gradient_horizon": 8,
+      "seed": 1,
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "architecture": "ws_additive",
+      "gradient_horizon": 64,
+      "seed": 1,
+      "status": "COMPLETE",
+      "completed_updates": 300
+    }
+  ]
+}

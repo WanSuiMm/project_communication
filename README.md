@@ -1,8 +1,19 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
 This repository tests whether changing the medium and update rule improves
-persistent cellular computation. The latest **zero-training source-switch
-audit** confirms that revision seed0's candidate continues to support the old
+persistent cellular computation. The latest **matched short-BPTT screen**
+completed eight 300-update runs: additive/revision cells, K8/K64 gradients,
+two paired seeds, identical 64-step forward trajectories and losses.
+**All four full-BPTT controls failed qualification**, so neither architecture
+passes the frozen comparison. One additive K8 seed reaches **80.87% far paired
+accuracy** at size32/T64 and retains 78.24% at T256. This is a per-map average;
+pooled far-pixel accuracy is 59.53% at T64, with weak distance/size extrapolation.
+Peak allocated CUDA memory is **82.4% lower** for K8; training times are similar.
+This is a useful positive case and a systems observation, not a general
+short-BPTT advantage. [Current results](evidence/short_bptt_paired01/RESULTS.md).
+
+The preceding **zero-training source-switch audit** confirms that revision
+seed0's candidate continues to support the old
 answer. W-only and Z-only resets or transplants fail to restore reliable
 switching, while cold reset of both succeeds. At size32/K128, all four
 single-block interventions predict negative everywhere on the changed region;
@@ -22,25 +33,26 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `7cb1ca9`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `c2d705f`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
 1. [RESULTS.md](RESULTS.md) and
-   [current audit report](evidence/switch_audit_seed0/RESULTS.md).
-2. [Compact metrics](evidence/switch_audit_seed0/analysis.json) and
-   [audit overview](evidence/switch_audit_seed0/overview.png).
-3. [Frozen protocol](new/switch_audit/PROTOCOL.md),
-   [post-execution scope clarification](new/switch_audit/REVIEW_NOTES.md),
-   [audit code](new/switch_audit/audit.py), and
+   [current screen report](evidence/short_bptt_paired01/RESULTS.md).
+2. [Compact metrics](evidence/short_bptt_paired01/analysis.json) and
+   [distance/rollout figure](evidence/short_bptt_paired01/overview.png).
+3. [Frozen protocol](new/short_bptt/PROTOCOL.md),
+   [gradient accumulation and detachment](new/short_bptt/training.py),
+   [runner and decisions](new/short_bptt/run.py), and
    [GPT_CONTEXT.md](GPT_CONTEXT.md).
-4. [Validation](evidence/switch_audit_seed0/validation.json) and
-   [publication hashes](SWITCH_PUBLICATION_MANIFEST.json).
-5. Historical context: [paired training screen](evidence/workspace_revision_paired01/INTERPRETATION.md)
+4. [Validation](evidence/short_bptt_paired01/validation.json),
+   [analysis code](new/short_bptt/analyze.py), and
+   [publication hashes](BPTT_PUBLICATION_MANIFEST.json).
+5. Historical context: [source-switch audit](evidence/switch_audit_seed0/RESULTS.md),
+   [prior training screen](evidence/workspace_revision_paired01/INTERPRETATION.md),
    and [generic dynamics audit](evidence/dynamics_audit_seed0/INTERPRETATION.md).
 
-The two current [raw audit files](evidence/switch_audit_seed0/raw/) are
-losslessly compacted JSON, with exact decoded-value equality checked against
-the original files. They and the previous training schedules are secondary.
-Start with the small
+The eight current [raw arm files](evidence/short_bptt_paired01/raw/) and
+[training schedules](evidence/short_bptt_paired01/schedules/) are byte-identical
+copies of completed outputs. They are secondary. Start with the small
 summaries above. Checkpoints, machine receipts, duplicate ZIPs
 and transient logs are excluded. Original publication manifests remain valid.
 
@@ -57,7 +69,37 @@ diagnostics do not directly transfer to generic Momentum. These results and
 the earlier 2D/3D transport failures remain unchanged in [RESULTS.md](RESULTS.md).
 No further training or monitor is scheduled.
 
-## Reproduce the current source-switch audit
+## Reproduce the current short-BPTT screen
+
+Install [requirements.txt](requirements.txt) and run from this repository root,
+using new output directories. The CPU check verifies forward identity, actual
+gradient cuts, parameter-gradient accumulation and a single optimizer clock.
+CUDA is required for training; no prior weights are needed.
+
+```powershell
+python new/short_bptt/check.py
+python new/short_bptt/run.py --preflight --out runs/NEW_BPTT_PREFLIGHT
+pwsh -File tools/launch_short_bptt.ps1 -RunName NEW_BPTT_RUN -Preflight runs/NEW_BPTT_PREFLIGHT
+```
+
+The frozen runtime-only preflight rule selected 300 updates on the recorded
+GPU; another machine may select a different budget. To replicate the recorded
+300-update budget with the exact published sources, the runner also accepts
+the [published passed preflight](evidence/short_bptt_paired01/preflight/):
+
+```powershell
+python new/short_bptt/run.py --preflight-dir evidence/short_bptt_paired01/preflight --out runs/NEW_BPTT_300
+```
+
+The runner writes all metrics and frozen gate decisions. The separate analysis
+script verifies the specific recorded 300-update screen and its observed
+qualification outcomes; it is not a generic evaluator for new runs. Training
+took 12.18 minutes on an RTX 4060 Laptop GPU; cross-device bitwise identity is
+not promised. `COMPLETE` is execution status, not a scientific pass: read pair
+and architecture qualifications. New training/inference was not needed to
+publish the present evidence. No follow-up run is scheduled.
+
+## Reproduce the previous source-switch audit
 
 The audit uses the retained `ws_revision_seed0.pt` at the repository-relative
 location pinned in [audit.py](new/switch_audit/audit.py); the checkpoint hash is

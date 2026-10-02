@@ -1,6 +1,55 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: candidate/workspace source-switch audit, zero training
+## Latest: matched short-BPTT screen, one positive case with unqualified controls
+
+Execution: **COMPLETE**, eight arms at 300 updates each, 730.797 seconds.
+Scientific status: **BASELINE_UNQUALIFIED for both architectures**; all four
+full-K64 controls fail the predeclared far-paired threshold. This prevents a
+qualified comparative verdict, not publication of the observed outcomes.
+
+Primary size32/T64 percentages; far means graph distance >16. Paired correctness
+requires the same pixel to be correct under both fresh source alternatives.
+The statistic averages eligible per-map fractions, with model seed the
+independent unit (n=2 per architecture).
+
+| Cell | Seed | K64 BA | K8 BA | K64 far paired | K8 far paired | K8 reach / hold predicates |
+|---|---:|---:|---:|---:|---:|---|
+| Additive | 0 | 87.20 | 91.22 | 15.83 | 23.18 | Fail / Fail |
+| Additive | 1 | 87.73 | 98.03 | 0.00 | 80.87 | Pass / Pass |
+| Revision | 0 | 78.04 | 83.90 | 21.44 | 0.67 | Fail / Fail |
+| Revision | 1 | 86.16 | 64.38 | 0.00 | 17.81 | Fail / Fail |
+
+Additive K8 seed1 retains 79.20%/78.24% far paired at T128/T256. This is an
+example of computation beyond the single-window dependency radius (two
+communication phases per macro-step, hence radius16 for K8). It is not an
+architecture-level pass: the other short runs fail reach, all full controls
+are unqualified, and **80.87% per-map mean corresponds to only 59.53% pooled
+far-pixel accuracy**. The same seed scores 45.60% in distance [32,64), and
+0% at distance >=64 on size32/T64 (the latter has only one eligible map).
+Size64 far paired is 28.40% at T64 and 41.51% at T256. Reliable long-distance
+and size extrapolation are not established.
+
+Peak allocated CUDA memory is 514.04 MiB for K64 versus 90.49 MiB for K8
+across both cells and seeds, **82.4% lower**. This includes data, optimizer
+and gradient storage. Training times are similar (86-96 seconds per arm).
+Additive K64 clips 88.67%/90.67% of updates versus 6.67%/6.67% for K8;
+this does not establish clipping as the cause of full-control failure.
+
+Forward trajectories, eight equally weighted losses and one optimizer update
+per trajectory are matched. The new objective and runtime-selected 300-update
+budget cannot borrow qualification from the older 600-update recipe.
+CPU publication analysis verified executed sources, parameter/data/schedule
+hashes, 96 BA aggregates, 336 paired aggregates and all four pair decisions.
+No extra training or inference, rescue tuning, 3D test, warm source-switch
+test or significance claim is included.
+
+Read [full report](evidence/short_bptt_paired01/RESULTS.md),
+[compact analysis](evidence/short_bptt_paired01/analysis.json),
+[figure](evidence/short_bptt_paired01/overview.png),
+[frozen protocol](new/short_bptt/PROTOCOL.md), and
+[publication hashes](BPTT_PUBLICATION_MANIFEST.json).
+
+## Previous: candidate/workspace source-switch audit, zero training
 
 Revision seed0, sizes32/64,16 fixed maps each; completed in9.609 seconds. All232
 saved replay comparisons and candidate-step reconstruction have zero error.

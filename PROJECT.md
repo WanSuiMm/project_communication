@@ -1,6 +1,49 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Current audit (2026-10-02): completed zero-training candidate/workspace source
+Current completed screen (2026-10-02): matched short-BPTT training on the
+existing workspace additive/revision cells, K8 versusK64, paired seeds0/1.
+Eight runs; every training trajectory starts fresh, executes64 macro-steps,
+has identical equally weighted losses at8,16,...64, and makes one optimizer
+update only after all64 steps. K8 cuts BOTH W/Z history while retaining values.
+No state pool, new model, warm-switch gate or pretrained weights. Frozen
+protocol: new/short_bptt/PROTOCOL.md. Primary endpoint:size32/T64 paired
+correctness beyond graph distance16; two communication phases per macro-step
+are accounted for. Full controls must qualify before judging truncation.
+Hold atT128/T256 and size64 are reported separately; model seed is the unit.
+
+CPU forward/gradient/detach checks passed, including exact full-gradient
+agreement with a reference and parameter-gradient accumulation across windows.
+Four-arm CUDA preflight passed in9.375 seconds. Its worst steady-update
+estimate was0.32699 seconds; the predeclared runtime-only budget rule selected
+300 updates per arm, equally for all eight runs, before efficacy training.
+Preflight: runs/short_bptt_20261002_preflight/. All paired initial-parameter,
+data and schedule hashes match. Preflight training peaks were510.69MiB for
+K64 and87.14MiB forK8 in both cells; these are engineering observations only.
+
+All eight arms completed 300 updates in 730.797 seconds, finishing at
+10:29:14 +08:00 on 2026-10-02. Output: runs/short_bptt_20261002_paired01/.
+All four full-K64 controls failed the frozen far-paired qualification;
+both architecture comparisons are BASELINE_UNQUALIFIED. Additive K8 seed1
+meets its short reach/hold predicates: far paired 80.87% at T64 and 78.24%
+at T256 on size32. The T64 pooled-pixel value is only 59.53%, and size64/T64
+far paired is 28.40%. This is one positive case, not an architecture pass.
+Peak allocated CUDA memory falls from 514.04 to 90.49 MiB (82.4%); training
+times are similar. No general superiority or reliable scale extrapolation.
+
+Public review: evidence/short_bptt_paired01/RESULTS.md and analysis.json;
+BPTT_PUBLICATION_MANIFEST.json binds sources and evidence. CPU analysis at
+analyses/short_bptt_20261002_review/ verified snapshots, parameter/data/schedule
+hashes, 96 BA aggregates, 336 paired aggregates and all four pair decisions.
+No extra training or inference was used for publication. Checkpoints and
+machine receipts stay local; no further experiment or monitor is scheduled.
+
+Commands from repository root, new output names only:
+
+    python new/short_bptt/check.py
+    python new/short_bptt/run.py --preflight --out runs/NEW_BPTT_PREFLIGHT
+    pwsh -File tools/launch_short_bptt.ps1 -RunName NEW_BPTT_RUN -Preflight runs/NEW_BPTT_PREFLIGHT
+
+Previous audit (2026-10-02): completed zero-training candidate/workspace source
 switch audit on the existing revision seed0 checkpoint, sizes32/64,16 maps
 each. Frozen protocol: new/switch_audit/PROTOCOL.md. Output:
 runs/switch_audit_20261002_seed0/; completed in9.609 seconds. All232 historical

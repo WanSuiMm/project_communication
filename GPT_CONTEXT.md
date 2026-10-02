@@ -1,6 +1,61 @@
 # Context for incremental scientific review
 
-## Current: source-switch audit completed, candidate persistence with W/Z interaction
+## Current: matched short-BPTT screen completed, all full controls unqualified
+
+- Execution: `COMPLETE`; eight arms, 300 updates each, 730.797 seconds.
+- Scientific status:
+  `BASELINE_UNQUALIFIED_ALL_FOUR_PAIRS_WITH_ONE_SHORT_WINDOW_POSITIVE_CASE`.
+- Design: existing additive/revision cells, K8/K64, paired seeds0/1; W24/Z8,
+  5033 parameters and two masked communication phases per macro-step.
+- Scope: 2D size32 training; fresh original/flipped evaluation on sizes32/64,
+  16 fixed maps each, at T64/128/256. Model seed is the unit, n=2 per cell.
+- Primary: size32/T64 paired correctness at graph distance >16, averaged
+  per map. Full control requires BA>=85% and far paired>=80%; all four fail.
+- Stop: the bounded screen is complete. No new training, retuning or monitor.
+
+Every training trajectory starts fresh, runs64 steps, averages the same eight
+losses at8,...64, and performs one optimizer update afterward. K8 accumulates
+parameter gradients across eight backwards and detaches BOTH W/Z seven times
+without resetting values. K64 retains the graph and backpropagates once.
+Weights remain fixed inside each trajectory; clipping happens once at its end.
+The encoder only receives gradients through windows connected to initialization.
+Matched initialization, data, schedules, optimizer and update count were verified.
+
+Additive K8 seed1 reaches BA98.03%, far paired80.87% and keeps far paired78.24%
+atT256. Its short reach/hold predicates pass, but architecture qualification
+requires both seeds and qualified full controls. The primary per-map80.87%
+corresponds to pooled-pixel59.53%; size64/T64 far paired is28.40%. Far-distance
+bins deteriorate. This is one positive example of compositional local behavior
+with short gradients, not general long-horizon credit assignment or a new
+TBPTT algorithm. It does not establish warm reopening or robust extrapolation.
+
+K8 peak allocated CUDA memory is90.49 versus514.04 MiB for K64 (82.4% lower),
+with similar training times. Peak allocation includes more than activations.
+Clipping is much more frequent in additive K64, but causality is not isolated.
+The runtime-only preflight selected300 updates before efficacy; the objective
+differs from the old600-update reach/auxiliary recipe. Old qualification cannot
+be imported. Do not interpret the runner's `decision: COMPLETE` as scientific
+success, or treat failed full controls as evidence against truncation.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Matched loss, detach and backward clock | `backward_trajectory` | `new/short_bptt/training.py` |
+| Forward and gradient invariants | `main` | `new/short_bptt/check.py` |
+| Paired metric, distance bins, training and gates | `paired`, `evaluate`, `train_one`, `aggregate` | `new/short_bptt/run.py` |
+| Independent aggregate/hash verification and figure | `main` | `new/short_bptt/analyze.py` |
+| Evidence copying and publication bindings | `main` | `tools/export_bptt_evidence.py` |
+
+Start with [results](evidence/short_bptt_paired01/RESULTS.md),
+[compact analysis](evidence/short_bptt_paired01/analysis.json),
+[frozen protocol](new/short_bptt/PROTOCOL.md), and
+[validation](evidence/short_bptt_paired01/validation.json).
+[Publication hashes](BPTT_PUBLICATION_MANIFEST.json) bind the executed sources,
+analysis and public evidence. All96 BA and336 paired aggregates and four gate
+decisions were recomputed from stored per-map values. Raw arm JSONs and schedules
+are byte-identical; local PID metadata is omitted from public status/manifests.
+Checkpoints stay local; no extra inference was used for publication.
+
+## Previous: source-switch audit completed, candidate persistence with W/Z interaction
 
 - Execution: `COMPLETE`,9.609 seconds; no training, no Jacobian computation.
 - Checkpoint: original revision seed0 from the paired screen, unchanged.
@@ -34,8 +89,9 @@ signed-margin and accuracy contrasts, including interactions, are saved per map.
 
 Do not claim stale W alone, generally necessary simultaneous reset, an on-manifold
 causal mechanism, successful conditional invalidation, or stable useful computation
-solely from W motion. This audit leaves the original two-seed joint failure,
-seed1 qualification failure and untested short-BPTT hypothesis unchanged.
+solely from W motion. This audit leaves the original two-seed joint failure
+and seed1 qualification failure unchanged. Short BPTT was still untested at
+the time of this audit; the subsequent screen is described above.
 
 | Concept | Exact symbol | Source |
 |---|---|---|

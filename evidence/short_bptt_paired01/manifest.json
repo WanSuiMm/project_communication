@@ -1,0 +1,59 @@
+{
+  "protocol": "short_bptt_v1",
+  "started_utc": "2026-10-02T02:17:04.375230+00:00",
+  "training": true,
+  "preflight": false,
+  "updates_per_arm": 300,
+  "seeds": [
+    0,
+    1
+  ],
+  "architectures": [
+    "ws_additive",
+    "ws_revision"
+  ],
+  "gradient_horizons": [
+    8,
+    64
+  ],
+  "forward_steps": 64,
+  "loss_times": [
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64
+  ],
+  "source_sha256": {
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "new/workspace_revision/PROTOCOL.md": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "tools/launch_revision.ps1": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9",
+    "new/short_bptt/PROTOCOL.md": "f20d0dfbc8fd2ee21ea973a7562ed7f435fc4da824da67376165659d50818158",
+    "new/short_bptt/training.py": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+    "new/short_bptt/check.py": "d2e839fef75a2fba8b0f7e759cf140714fe186221543438c20b0eacbb41453c4",
+    "new/short_bptt/run.py": "dae5e6ed365842777aea0fc199867aa8913b346a2382ab7aa736985bde8ad9d9",
+    "tools/launch_short_bptt.ps1": "0a7859d1e34f970fdbc38cd93c29ba07019ec2d4d9e352bc64f8a8dc6bec7942"
+  },
+  "evaluation_data_sha256": {
+    "32": "28563e96a56b3062da34c0b810bf29b1b51dac72759dcf6569b834be82159e4e",
+    "64": "05919e40bbd65300bb4a05f79d60f9e4ceaa4e74945ca9d6cc63ebdc308e7608"
+  },
+  "torch": "2.5.1",
+  "numpy": "1.26.4",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "maximum_seconds": 1500,
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  }
+}
