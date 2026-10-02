@@ -1,4 +1,71 @@
-# Incremental review: completed Workspace + Revision screen
+# Incremental review: zero-training candidate/workspace switch audit
+
+- Review base: `7cb1ca975c13104b3abb157cf5324ea977ad1051`.
+- Evidence head: `a700da6e8579830c36cea8ad6ecd014198430766`.
+- This subsequent handoff-only commit changes review metadata only.
+
+The audit reuses revision seed0, sizes32/64,16 fixed maps each, with no training
+or Jacobian computation. It measures the actual post-F candidate, full-rollout
+W/Z interventions and candidate-only W/Z/X factorials. It completed in9.609s;
+all232 historical metric comparisons replay exactly.
+
+## Minimal reading order for this delta
+
+1. [Audit results](evidence/switch_audit_seed0/RESULTS.md) and
+   [overview figure](evidence/switch_audit_seed0/overview.png).
+2. [Compact metrics and per-map contrasts](evidence/switch_audit_seed0/analysis.json).
+3. [Frozen protocol](new/switch_audit/PROTOCOL.md),
+   [post-execution review notes](new/switch_audit/REVIEW_NOTES.md), and
+   [audit implementation](new/switch_audit/audit.py).
+4. [Validation](evidence/switch_audit_seed0/validation.json) and
+   [publication hashes](SWITCH_PUBLICATION_MANIFEST.json).
+
+The two raw JSON files are secondary. They have been losslessly compacted,
+with decoded equality and original/published hashes recorded. Checkpoints and
+machine receipts remain local. No extra inference was used for publication.
+
+## New evidence and corrected interpretation
+
+Warm candidate readout itself retains the old answer: changed-component
+accuracy0% at size32/K64 and K128, versus100% for cold. At size64/K128 the
+warm candidate is1.63% correct, cold output99.49%. This rules out the narrow
+account that an already-correct candidate is merely averaged too slowly.
+
+Single-block W/Z resets and mature donor transplants do not recover reliable
+switching. At size32/K128, all four predict negative across every changed
+component;37.5% is exactly the six negative target labels among16 maps. It is
+not partial retrieval. A correct Z transplant initially gives100% changed
+accuracy, then drops to37.5% in the old workspace. A new W donor with old Z
+also fails. Both blocks influence the candidate; the continuous signed-margin
+factorial includes a nonzero interaction, with per-map contrasts published.
+
+This refines the proposed stale-workspace explanation: W-only causality has
+not been isolated. Mixed donor states can be off-distribution, and donors
+contain extra computation. The result does not prove both blocks must always
+be reset, identify an attractor mechanism, or validate conditional invalidation
+as a new architecture. Only one trained checkpoint was audited.
+
+The protocol overstates fresh-flip norm replay: the old record stores W/Z
+norms only for the original curve. Both curves' BA/BCE and per-map BA were
+replayed; original W/Z norms and warm/cold switch metrics were also replayed.
+The clarification is explicit in the review notes; frozen code/protocol and
+original generated evidence were not rewritten.
+
+The previous two-seed `NO_JOINT_SCREEN_PASS`, -9.02pp hold effect, seed1
+qualification failure, and untested short-BPTT hypothesis remain unchanged.
+
+## Questions for review
+
+1. Does Q_K use post-F W correctly, and are candidate-only interventions
+   distinguished from full recurrent interventions?
+2. Are both W and Z confounds, incompatible mixed donors and donor compute
+   costs kept explicit before assigning a mechanism?
+3. Are all-negative37.5% behavior and the single-checkpoint limitation retained
+   alongside cold success? Is any claim stronger than this evidence permits?
+
+---
+
+# Historical handoff: completed Workspace + Revision screen
 
 - Review base: `b992e2eac68d1bcfc81b70044bb89100bc664c2d`.
 - Evidence head: `cf157cfb36adf1be4a2bb5914575746630e2d5c6`.
