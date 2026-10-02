@@ -1,6 +1,62 @@
 # Context for incremental scientific review
 
-## Current: matched short-BPTT screen completed, all full controls unqualified
+## Current: Phase II completed, K8 replication threshold not met
+
+- Execution: `COMPLETE`; 12 arms, 300 updates each, 1095.047 seconds.
+- K8 narrow reach: `NOT_REPLICATED`, 2/4 versus required3/4.
+- K8 narrow reach+hold: `NOT_REPLICATED`, 2/4 versus required3/4.
+- Comparison: `BASELINE_UNQUALIFIED`; K64 reaches0/4.
+- K16 context: reaches3/4; reaches+holds1/4.
+- Scope: additive only, K8/16/64, initialization seeds2/3/4/5. Shared train
+  bank10002 and batch schedule20002; new eval banks40032/40064,32 maps each.
+- Unit: initialization seed,n=4 conditional on one data bank and schedule.
+  Backend nondeterminism is not claimed to have been eliminated.
+- Stop: bounded run complete; no rescue training, new architecture or monitor.
+
+Primary is STRICT16<d<32 at size32/T64: paired correctness must be>=80% both
+per map and pooled, and original/flipped BA must both be>=85%. This band and
+architecture were selected after Phase I, then frozen for new evaluation maps.
+The previous broader gate is unchanged. K16 covers this primary band within
+its own radius32, so its reach is not cross-window evidence. Normalized d/(2K)
+bands are secondary and must not replace the shared absolute endpoint.
+
+Forward64, losses every8, and one optimizer update after64 are shared. K16 sums
+two losses before each16-step backward; K8 uses one, K64 uses all eight.
+Parameter gradients accumulate across windows. Both W/Z histories are cut
+without changing state values; clipping is once at the trajectory end.
+Model architecture remains W24/Z8,5033 parameters,two masked phases per step.
+
+K8 seeds2/5 reach and hold: pooled primary92.97/95.68% atT64,93.21/93.59%
+atT256. The other seeds are17.27/44.76% atT64. At size64/T256, the positive
+models retain89.65/97.25% pooled in the primary band, but d>32 is36.78/14.83%.
+There are no distance>=64 changed pixels in size32 evaluation; these are null
+measurements, not failures. All K8 clip<=6%, including failures; K16 seed2
+clips60% and passes. Large/small gradients alone do not explain success.
+
+Public records preserve all12 raw arm files, integer hits/denominators and
+the shared schedule byte-identically. Only PID metadata is removed from
+analysis/status/manifest/preflight copies. The CPU review independently
+reconstructed denominators and144 BA/1008 paired aggregates and verified all
+12 decisions, parameters, data and source hashes. No new training/inference.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Loss cadence versus detach cadence | `backward_trajectory` | `new/short_bptt_phase2/training.py` |
+| K16 independent gradient reference and K8/K64 equivalence | `main` | `new/short_bptt_phase2/check.py` |
+| Integer paired counts and absolute/normalized bands | `paired`, `selections`, `evaluate` | `new/short_bptt_phase2/run.py` |
+| Absolute replication versus control qualification | `reach_predicate`, `aggregate` | `new/short_bptt_phase2/run.py` |
+| Independent saved-result verification | `main` | `new/short_bptt_phase2/analyze.py` |
+| Sanitized publication | `main`, `public` | `tools/export_bptt_phase2_evidence.py` |
+
+Start with [results](evidence/short_bptt_phase2_init2345/RESULTS.md),
+[compact analysis](evidence/short_bptt_phase2_init2345/analysis.json),
+[protocol](new/short_bptt_phase2/PROTOCOL.md),
+[validation](evidence/short_bptt_phase2_init2345/validation.json), and
+[publication bindings](BPTT_PHASE2_PUBLICATION_MANIFEST.json).
+Do not infer general credit assignment, a new RelationFirst representation,
+optimal K, broad distance extrapolation or robust training across datasets.
+
+## Previous: matched short-BPTT Phase I completed, all full controls unqualified
 
 - Execution: `COMPLETE`; eight arms, 300 updates each, 730.797 seconds.
 - Scientific status:

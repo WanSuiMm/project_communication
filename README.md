@@ -1,7 +1,17 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
 This repository tests whether changing the medium and update rule improves
-persistent cellular computation. The latest **matched short-BPTT screen**
+persistent cellular computation. The latest **short-BPTT Phase II** completed
+12 matched runs: additive cells, K8/K16/K64, four new initialization seeds,
+one fixed training bank and schedule. **K8 reaches and holds in 2/4 seeds,
+below the frozen 3/4 replication criterion.** K16 reaches in 3/4 but reaches
+and holds in only 1/4; all four K64 controls remain unqualified. Two new K8
+positive cases retain high accuracy in the selected narrow distance band,
+including on larger grids, while farther propagation is weak. This prospective
+follow-up tests strict graph distance **16<d<32** on new maps; it does not amend
+Phase I's broader failed gate. [Current results](evidence/short_bptt_phase2_init2345/RESULTS.md).
+
+The previous **matched short-BPTT Phase-I screen**
 completed eight 300-update runs: additive/revision cells, K8/K64 gradients,
 two paired seeds, identical 64-step forward trajectories and losses.
 **All four full-BPTT controls failed qualification**, so neither architecture
@@ -10,7 +20,7 @@ accuracy** at size32/T64 and retains 78.24% at T256. This is a per-map average;
 pooled far-pixel accuracy is 59.53% at T64, with weak distance/size extrapolation.
 Peak allocated CUDA memory is **82.4% lower** for K8; training times are similar.
 This is a useful positive case and a systems observation, not a general
-short-BPTT advantage. [Current results](evidence/short_bptt_paired01/RESULTS.md).
+short-BPTT advantage. [Phase-I results](evidence/short_bptt_paired01/RESULTS.md).
 
 The preceding **zero-training source-switch audit** confirms that revision
 seed0's candidate continues to support the old
@@ -33,25 +43,26 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `c2d705f`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `7d1e326`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
 1. [RESULTS.md](RESULTS.md) and
-   [current screen report](evidence/short_bptt_paired01/RESULTS.md).
-2. [Compact metrics](evidence/short_bptt_paired01/analysis.json) and
-   [distance/rollout figure](evidence/short_bptt_paired01/overview.png).
-3. [Frozen protocol](new/short_bptt/PROTOCOL.md),
-   [gradient accumulation and detachment](new/short_bptt/training.py),
-   [runner and decisions](new/short_bptt/run.py), and
+   [current screen report](evidence/short_bptt_phase2_init2345/RESULTS.md).
+2. [Compact metrics](evidence/short_bptt_phase2_init2345/analysis.json) and
+   [all 72 distance/rollout rows](evidence/short_bptt_phase2_init2345/curves.csv).
+3. [Frozen protocol](new/short_bptt_phase2/PROTOCOL.md),
+   [gradient accumulation and detachment](new/short_bptt_phase2/training.py),
+   [runner and decisions](new/short_bptt_phase2/run.py), and
    [GPT_CONTEXT.md](GPT_CONTEXT.md).
-4. [Validation](evidence/short_bptt_paired01/validation.json),
-   [analysis code](new/short_bptt/analyze.py), and
-   [publication hashes](BPTT_PUBLICATION_MANIFEST.json).
-5. Historical context: [source-switch audit](evidence/switch_audit_seed0/RESULTS.md),
+4. [Validation](evidence/short_bptt_phase2_init2345/validation.json),
+   [analysis code](new/short_bptt_phase2/analyze.py), and
+   [publication hashes](BPTT_PHASE2_PUBLICATION_MANIFEST.json).
+5. Historical context: [Phase I](evidence/short_bptt_paired01/RESULTS.md),
+   [source-switch audit](evidence/switch_audit_seed0/RESULTS.md),
    [prior training screen](evidence/workspace_revision_paired01/INTERPRETATION.md),
    and [generic dynamics audit](evidence/dynamics_audit_seed0/INTERPRETATION.md).
 
-The eight current [raw arm files](evidence/short_bptt_paired01/raw/) and
-[training schedules](evidence/short_bptt_paired01/schedules/) are byte-identical
+The twelve current [raw arm files](evidence/short_bptt_phase2_init2345/raw/) and
+[shared training schedule](evidence/short_bptt_phase2_init2345/schedule.json) are byte-identical
 copies of completed outputs. They are secondary. Start with the small
 summaries above. Checkpoints, machine receipts, duplicate ZIPs
 and transient logs are excluded. Original publication manifests remain valid.
@@ -69,7 +80,32 @@ diagnostics do not directly transfer to generic Momentum. These results and
 the earlier 2D/3D transport failures remain unchanged in [RESULTS.md](RESULTS.md).
 No further training or monitor is scheduled.
 
-## Reproduce the current short-BPTT screen
+## Reproduce the current short-BPTT Phase II
+
+Install [requirements.txt](requirements.txt), run from this repository root,
+and use new output directories. No prior weights are needed. The CPU check
+verifies the new K16 gradients against an independent window reference and
+K8/K64 against the frozen trainer. It also verifies exact forward identity.
+
+```powershell
+python new/short_bptt_phase2/check.py
+python new/short_bptt_phase2/run.py --preflight --out runs/NEW_PHASE2_PREFLIGHT
+pwsh -File tools/launch_bptt_phase2.ps1 -RunName NEW_PHASE2_RUN -Preflight runs/NEW_PHASE2_PREFLIGHT
+```
+
+CUDA preflight must pass the fixed 300-update budget estimate; it aborts if the
+estimate exceeds 30 minutes. It never changes the count or selects settings
+using efficacy. The formal runner writes per-arm measurements, `aggregate.json`
+and `RESULTS.md`. Execution completion, absolute K8 replication and K64 control
+qualification are separate fields. This run took 18.25 minutes on an RTX 4060
+Laptop GPU with PyTorch 2.5.1 and NumPy 1.26.4; bitwise portability is not promised.
+
+The separate analysis script verifies the recorded screen and contains its
+result-specific interpretation. Use the runner's gate report for a new run.
+All published measurements can be reviewed without weights. Checkpoints remain
+local; no extra training or checkpoint inference was used for publication.
+
+## Reproduce the previous short-BPTT Phase I
 
 Install [requirements.txt](requirements.txt) and run from this repository root,
 using new output directories. The CPU check verifies forward identity, actual

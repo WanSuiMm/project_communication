@@ -1,6 +1,62 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: matched short-BPTT screen, one positive case with unqualified controls
+## Latest: Phase-II initialization replication misses its K8 threshold
+
+Execution: **COMPLETE**, 12 arms at 300 updates each, 1095.047 seconds.
+**K8 narrow reach and sustained replication are both `NOT_REPLICATED`: 2/4
+seeds pass, below the frozen 3/4 criterion.** All four K64 controls remain
+unqualified, so the comparison is separately `BASELINE_UNQUALIFIED`.
+
+| Gradient window | Narrow reach | Narrow reach and hold |
+|---|---:|---:|
+| K8 | 2/4 | 2/4 |
+| K16 | 3/4 | 1/4 |
+| K64 | 0/4 | 0/4 |
+
+Only additive was tested. Initialization seeds2/3/4/5 share training bank10002
+and schedule20002. New evaluation banks40032/40064 contain32 maps per size.
+Primary size32/T64 uses **strict16<d<32**, with both per-map and pooled paired
+accuracy>=80% and both original/flipped BA>=85%. Hold limits the decline at
+T128 and T256. This selected narrow endpoint was frozen prospectively after
+Phase I; it does not replace or pass Phase I's broader d>16 gate.
+
+Primary paired percentages (per-map mean / pooled pixels):
+
+| Initialization seed | K8 | K16 | K64 |
+|---|---:|---:|---:|
+| 2 | 93.70 / 92.97 | 99.06 / 98.83 | 0.16 / 0.14 |
+| 3 | 21.85 / 17.27 | 90.19 / 87.77 | 76.44 / 70.56 |
+| 4 | 52.40 / 44.76 | 57.56 / 51.75 | 0.00 / 0.00 |
+| 5 | 96.45 / 95.68 | 92.90 / 90.47 | 12.88 / 9.49 |
+
+K8 seeds2/5 remain positive examples: primary pooled accuracy is93.21/93.59%
+at size32/T256 and89.65/97.25% at size64/T256. Yet d>32 pooled accuracy on
+size64/T256 is only36.78/14.83%. Narrow propagation transfers better than broad
+far propagation. Size32 has no changed-component pixels at distance>=64 in
+this bank; null entries must not be read as zero accuracy.
+
+K16's primary band lies within its single-window radius32, so its3/4 reach
+does not prove cross-window composition. Only seed2 also holds. K8 is worse
+than K64 on seed3; there is no general superiority or optimal-K conclusion.
+All K8 clipping rates are<=6%, including both reach failures; low clipping is
+not sufficient for success. K16 seed2 clips60% and still reaches and holds.
+The clipping observation does not identify a causal mechanism.
+
+Peak allocated CUDA memory K8/K16/K64 is95.12/155.81/519.41MiB; per-arm
+training times are84.28-92.86 seconds. These are descriptive systems numbers,
+not activation-only memory or an accuracy-matched speedup result.
+Verification covered18 source snapshots,12 checkpoints, shared identities,
+144 BA aggregates,1008 paired aggregates/denominators and all12 arm decisions.
+No extra training or inference. n=4 is conditional on one training bank and
+schedule, without a significance or cross-distribution robustness claim.
+
+[Full report](evidence/short_bptt_phase2_init2345/RESULTS.md),
+[compact metrics](evidence/short_bptt_phase2_init2345/analysis.json),
+[all curve rows](evidence/short_bptt_phase2_init2345/curves.csv),
+[frozen protocol](new/short_bptt_phase2/PROTOCOL.md), and
+[publication hashes](BPTT_PHASE2_PUBLICATION_MANIFEST.json).
+
+## Previous: matched short-BPTT Phase I, one positive case with unqualified controls
 
 Execution: **COMPLETE**, eight arms at 300 updates each, 730.797 seconds.
 Scientific status: **BASELINE_UNQUALIFIED for both architectures**; all four

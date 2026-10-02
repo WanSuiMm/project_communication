@@ -1,6 +1,65 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Current completed screen (2026-10-02): matched short-BPTT training on the
+Current completed experiment (2026-10-02): short-BPTT Phase II, additive only,
+K8/K16/K64, four new initialization seeds2/3/4/5. Fixed training bank10002 and
+schedule20002 separate initialization variability from changing training data.
+All12 arms use300 updates,64-step fresh trajectories, identical losses every8
+steps and one optimizer update afterward. Frozen prospective protocol:
+new/short_bptt_phase2/PROTOCOL.md. New evaluation banks40032/40064,32 maps each.
+Primary size32/T64 band STRICT16<d<32, both per-map and pooled paired>=80%,
+both original/flipped BA>=85%; at least3/4 K8 seeds for descriptive replication.
+Hold, full-K64 qualification, old d>16, farther bands and size64 stay separate.
+This selected narrow-band follow-up does not replace the old failed gate.
+
+CPU K8/K64 equivalence and independent K16 gradient-reference checks passed;
+forward values match exactly and weights remain unchanged within trajectories.
+CUDA preflight passed in14.265 seconds at runs/short_bptt_phase2_20261002_preflight/.
+All three K arms completed3 updates with matched identities and finite outputs.
+The primary band covers32 held-out maps and2918 pixels. Worst steady-update
+estimate0.367 seconds gives1765.44 seconds (29.42 minutes) under the frozen
+12*300*c*1.20+180 rule, within30 minutes. Budget stays300 updates per arm.
+Formal dispatch verified at11:19:17 +08:00 on the local RTX4060 Laptop GPU,
+including the first completed training update. Run:
+runs/short_bptt_phase2_20261002_init2345/. All12 arms completed300 updates at
+11:37:34 +08:00 in1095.047 seconds (18.25 minutes); process exited and stderr
+is empty. K8 narrow reach2/4 and reach+hold2/4, below the frozen>=3/4 threshold:
+NOT_REPLICATED for both properties. K16 reaches3/4 but reach+hold only1/4;
+all four K64 controls remain unqualified (BASELINE_UNQUALIFIED).
+
+K8 seeds2/5 are positive cases: primary mean/pooled93.70/92.97% and96.45/95.68%
+at size32/T64, respectively. Their pooled primary remains93.21/93.59% atT256,
+and89.65/97.25% at size64/T256. Farther distance>32 at size64/T256 is only
+36.78/14.83% pooled. Successful narrow propagation does not establish reliable
+global propagation. K16's primary band fits inside its single-window radius.
+All K8 clipping fractions are<=6%, including reach failures; low clipping is
+not sufficient. Peak allocated memory K8/K16/K64:95.12/155.81/519.41MiB.
+
+CPU result review: analyses/short_bptt_phase2_20261002_review/RESULTS.md,
+analysis.json, curves.csv and provenance.json. Entry:
+new/short_bptt_phase2/analyze.py. Verified18 source snapshots,12 checkpoints,
+data/schedule/initial-parameter identities,144 BA aggregates,1008 paired
+aggregates with independently reconstructed denominators and all12 decisions.
+No extra training or inference. Conditional n=4 initialization replication,
+not a claim across training banks. Original Phase-I gate stays unchanged.
+Public review: evidence/short_bptt_phase2_init2345/RESULTS.md, analysis.json and
+curves.csv; BPTT_PHASE2_PUBLICATION_MANIFEST.json binds code and public evidence.
+Durable private launch receipt:
+runs/short_bptt_phase2_20261002_init2345_launch_20261002_111917/launch_receipt.json.
+All18 current sources match their preflight snapshots. An additional CPU gate
+check confirms absolute replication and control qualification are independent,
+and incomplete runs cannot pass. Cap30 minutes; emergency watchdog31 minutes.
+No automatic retry or continuous monitoring.
+Existing code, evidence and checkpoints remain unchanged. Commands from repo root:
+
+    python new/short_bptt_phase2/check.py
+    python new/short_bptt_phase2/run.py --preflight --out runs/NEW_PHASE2_PREFLIGHT
+    pwsh -File tools/launch_bptt_phase2.ps1 -RunName NEW_PHASE2_RUN -Preflight runs/NEW_PHASE2_PREFLIGHT
+    python new/short_bptt_phase2/analyze.py --run runs/short_bptt_phase2_20261002_init2345 --out analyses/NEW_PHASE2_REVIEW
+
+The analysis script's interpretation is specific to the recorded screen;
+use the runner's aggregate and gate report to interpret a new training run.
+
+Previous completed screen (2026-10-02): matched short-BPTT training on the
 existing workspace additive/revision cells, K8 versusK64, paired seeds0/1.
 Eight runs; every training trajectory starts fresh, executes64 macro-steps,
 has identical equally weighted losses at8,16,...64, and makes one optimizer

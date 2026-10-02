@@ -1,0 +1,216 @@
+{
+  "execution": {
+    "status": "COMPLETE",
+    "completed_arms": 12,
+    "finished_utc": "2026-10-02T03:37:34.581316+00:00",
+    "elapsed_seconds": 1095.0470000000005
+  },
+  "counts": {
+    "8": {
+      "reach": 2,
+      "reach_and_hold": 2
+    },
+    "16": {
+      "reach": 3,
+      "reach_and_hold": 1
+    },
+    "64": {
+      "reach": 0,
+      "reach_and_hold": 0
+    }
+  },
+  "verdicts": [
+    {
+      "seed": 2,
+      "K": 16,
+      "reach": true,
+      "hold": true,
+      "primary_mean": 0.9905820627986056,
+      "primary_pooled": 0.9883481836874571
+    },
+    {
+      "seed": 3,
+      "K": 16,
+      "reach": true,
+      "hold": false,
+      "primary_mean": 0.9018825105813748,
+      "primary_pooled": 0.8776559287183002
+    },
+    {
+      "seed": 4,
+      "K": 16,
+      "reach": false,
+      "hold": false,
+      "primary_mean": 0.5756228648460417,
+      "primary_pooled": 0.5174777244688142
+    },
+    {
+      "seed": 5,
+      "K": 16,
+      "reach": true,
+      "hold": false,
+      "primary_mean": 0.9290062843193584,
+      "primary_pooled": 0.9047292666209733
+    },
+    {
+      "seed": 2,
+      "K": 64,
+      "reach": false,
+      "hold": true,
+      "primary_mean": 0.001620040421549246,
+      "primary_pooled": 0.0013708019191226869
+    },
+    {
+      "seed": 3,
+      "K": 64,
+      "reach": false,
+      "hold": false,
+      "primary_mean": 0.7643949189889494,
+      "primary_pooled": 0.705620287868403
+    },
+    {
+      "seed": 4,
+      "K": 64,
+      "reach": false,
+      "hold": true,
+      "primary_mean": 0.0,
+      "primary_pooled": 0.0
+    },
+    {
+      "seed": 5,
+      "K": 64,
+      "reach": false,
+      "hold": true,
+      "primary_mean": 0.1288121203572316,
+      "primary_pooled": 0.09492803289924606
+    },
+    {
+      "seed": 2,
+      "K": 8,
+      "reach": true,
+      "hold": true,
+      "primary_mean": 0.9370121752102093,
+      "primary_pooled": 0.9297464016449623
+    },
+    {
+      "seed": 3,
+      "K": 8,
+      "reach": false,
+      "hold": false,
+      "primary_mean": 0.21853083845720084,
+      "primary_pooled": 0.17272104180945852
+    },
+    {
+      "seed": 4,
+      "K": 8,
+      "reach": false,
+      "hold": true,
+      "primary_mean": 0.5239869975494874,
+      "primary_pooled": 0.44756682659355723
+    },
+    {
+      "seed": 5,
+      "K": 8,
+      "reach": true,
+      "hold": true,
+      "primary_mean": 0.9644596674318395,
+      "primary_pooled": 0.9568197395476353
+    }
+  ],
+  "systems": [
+    {
+      "seed": 2,
+      "K": 16,
+      "training_seconds": 92.625,
+      "peak_MiB": 155.80810546875,
+      "clip_fraction": 0.6
+    },
+    {
+      "seed": 3,
+      "K": 16,
+      "training_seconds": 88.03200000000015,
+      "peak_MiB": 155.80810546875,
+      "clip_fraction": 0.23
+    },
+    {
+      "seed": 4,
+      "K": 16,
+      "training_seconds": 86.07799999999952,
+      "peak_MiB": 155.80810546875,
+      "clip_fraction": 0.62
+    },
+    {
+      "seed": 5,
+      "K": 16,
+      "training_seconds": 92.86000000000058,
+      "peak_MiB": 155.80810546875,
+      "clip_fraction": 0.5666666666666667
+    },
+    {
+      "seed": 2,
+      "K": 64,
+      "training_seconds": 86.85899999999947,
+      "peak_MiB": 519.41357421875,
+      "clip_fraction": 0.92
+    },
+    {
+      "seed": 3,
+      "K": 64,
+      "training_seconds": 85.3119999999999,
+      "peak_MiB": 519.41357421875,
+      "clip_fraction": 0.88
+    },
+    {
+      "seed": 4,
+      "K": 64,
+      "training_seconds": 86.32800000000043,
+      "peak_MiB": 519.41357421875,
+      "clip_fraction": 0.91
+    },
+    {
+      "seed": 5,
+      "K": 64,
+      "training_seconds": 86.57799999999952,
+      "peak_MiB": 519.41357421875,
+      "clip_fraction": 0.9133333333333333
+    },
+    {
+      "seed": 2,
+      "K": 8,
+      "training_seconds": 87.96799999999985,
+      "peak_MiB": 95.11865234375,
+      "clip_fraction": 0.04666666666666667
+    },
+    {
+      "seed": 3,
+      "K": 8,
+      "training_seconds": 91.67199999999957,
+      "peak_MiB": 95.11865234375,
+      "clip_fraction": 0.06
+    },
+    {
+      "seed": 4,
+      "K": 8,
+      "training_seconds": 84.78100000000086,
+      "peak_MiB": 95.11865234375,
+      "clip_fraction": 0.016666666666666666
+    },
+    {
+      "seed": 5,
+      "K": 8,
+      "training_seconds": 84.28199999999924,
+      "peak_MiB": 95.11865234375,
+      "clip_fraction": 0.016666666666666666
+    }
+  ],
+  "validation": {
+    "status": "PASS",
+    "source_files": 18,
+    "checkpoints": 12,
+    "data_schedule_initial_parameters": true,
+    "BA_aggregates": 144,
+    "paired_aggregates_and_denominators": 1008,
+    "arm_decisions": 12,
+    "new_training_or_inference": false
+  }
+}
