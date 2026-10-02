@@ -1,4 +1,61 @@
-# Incremental review: generic dynamics audit after aa2d50a
+# Incremental review: completed Workspace + Revision screen
+
+- Review base: `b992e2eac68d1bcfc81b70044bb89100bc664c2d`.
+- Evidence head: `cf157cfb36adf1be4a2bb5914575746630e2d5c6`.
+- This subsequent handoff-only commit changes review metadata only.
+
+All four paired arms completed 600 updates in 1112.28 seconds. Scientific
+decision: **NO_JOINT_SCREEN_PASS**, with mean revision-minus-additive hold
+effect **-9.02 pp** across two model seeds. This is new authorized training;
+publication itself used only CPU verification of saved evidence.
+
+## Minimal new reading order
+
+1. [Current results](RESULTS.md) and
+   [interpretation](evidence/workspace_revision_paired01/INTERPRETATION.md).
+2. [Compact metrics and failed predicates](evidence/workspace_revision_paired01/analysis.json)
+   and [both-seed overview](evidence/workspace_revision_paired01/overview.png).
+3. [Frozen protocol](new/workspace_revision/PROTOCOL.md),
+   [cell](new/workspace_revision/revision_cells.py) and
+   [trainer/evaluator](new/workspace_revision/run_revision.py).
+4. [Validation](evidence/workspace_revision_paired01/validation.json) and
+   [publication hashes](REVISION_PUBLICATION_MANIFEST.json).
+
+Raw arm records and shared schedules are secondary. They are byte-identical
+copies; checkpoints, local receipts and machine metadata are excluded.
+
+## Changed and unchanged conclusions
+
+Revision seed0 reaches 99.19% BA64 and 100% hold on size32; size64 BA256 is
+99.44%. However, its warm changed-component accuracy is 0% at K64/K128 versus
+100% from cold initialization on size32. It holds an old answer but fails to
+revise it. Revision seed1 stays at 50% BA. Hold effects are +5.82 and -23.86 pp;
+neither the single-seed positive result nor size64 rescues the joint gate.
+
+Z-only repair retains W; joint W/Z damage is much less recoverable. W keeps
+growing despite stable output. No full-state stability, general repair,
+attractor mechanism, 3D result or speedup is established. Both arms share the
+W/Z split and all 5033 initial parameters; only the Z recurrence changes. The
+split's own contribution remains untested. Two seeds are descriptive, with
+different training banks/schedules across seeds; failure cannot be attributed
+specifically to initialization. The runtime-only amendment from 800 to 600
+updates preceded efficacy training.
+
+The earlier dynamics audit and medium/recurrence comparisons remain unchanged.
+Their different training and one-phase communication recipes are not matched
+controls for this two-phase screen. No rescue sweep or new run was launched.
+
+## Reviewer questions
+
+1. Does the matched intervention support only a within-workspace update-rule
+   comparison, without crediting the shared split or altered training?
+2. Are cold/fresh paired success and warm source revision correctly separated?
+3. Are failed qualification, null repair eligibility, continuing W growth and
+   the two-seed uncertainty retained alongside the seed0 reach/hold signal?
+
+---
+
+# Historical handoff: generic dynamics audit after aa2d50a
 
 - Review base: `aa2d50a91e4ff02f74144dc699124bd886b5aa85`.
 - Evidence head: `4bcb8fef29bb796c3e1f7376d4b16f53163ba158`.
