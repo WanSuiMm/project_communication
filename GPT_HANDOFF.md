@@ -1,4 +1,91 @@
-# Incremental review: matched short-BPTT screen
+# Incremental review: short-BPTT Phase-II initialization replication
+
+- Review base: `7d1e32697144add1c063d4157bbd1ca62338a45f`.
+- Evidence head: `73542a1a1e123e6f27aaad8c6991e14208901e15`.
+- This subsequent handoff-only commit changes review metadata only.
+
+All12 new runs completed300 updates in1095.047 seconds. Existing additive cell,
+K8/K16/K64, initialization seeds2/3/4/5; one fixed training bank and shared
+batch schedule. No cell modification or state pool. Losses remain every8 steps,
+forward trajectories64, one optimizer update afterward. K16 accumulates two
+losses before each backward; both W/Z states are detached only at its boundary.
+
+## Minimal reading order
+
+1. [Result and limitations](evidence/short_bptt_phase2_init2345/RESULTS.md).
+2. [Compact metrics](evidence/short_bptt_phase2_init2345/analysis.json) and
+   [all72 curve rows](evidence/short_bptt_phase2_init2345/curves.csv).
+3. [Frozen protocol](new/short_bptt_phase2/PROTOCOL.md),
+   [trainer](new/short_bptt_phase2/training.py),
+   [runner/gates](new/short_bptt_phase2/run.py), and
+   [CPU checks](new/short_bptt_phase2/check.py).
+4. [Independent aggregate verification](new/short_bptt_phase2/analyze.py),
+   [validation](evidence/short_bptt_phase2_init2345/validation.json), and
+   [publication hashes](BPTT_PHASE2_PUBLICATION_MANIFEST.json).
+
+Read raw arm JSON only for detailed follow-up. All12 arm records and the shared
+schedule are byte-identical copies. Public analysis/status/manifest/preflight
+copies omit PID metadata; frozen originals remain local. Checkpoints and machine
+receipts are excluded. No additional training or checkpoint inference for publication.
+
+## Decision-relevant delta
+
+| K | Narrow reach | Narrow reach and hold |
+|---|---:|---:|
+| 8 | 2/4 | 2/4 |
+| 16 | 3/4 | 1/4 |
+| 64 | 0/4 | 0/4 |
+
+**K8 replication is NOT_REPLICATED** for both reach and sustained reach, because
+the frozen threshold is>=3/4 seeds. **Comparison is BASELINE_UNQUALIFIED**:
+none of the full controls qualify. These are separate scientific decisions.
+
+Primary now uses STRICT16<d<32 on new32-map evaluation banks, requiring>=80%
+both per-map and pooled paired accuracy, and both original/flipped BA>=85%.
+The architecture and band were selected from Phase I and frozen before this
+follow-up. This is a narrower prospective replication, not a replacement for
+the old d>16 gate. Do not combine the phases into one success rate: their data,
+random-factor controls and endpoints differ. n=4 is conditional initialization
+replication with one shared training bank/schedule, not dataset robustness.
+
+K8 seeds2/5 provide two positive cases: primary pooled92.97/95.68% atT64 and
+93.21/93.59% atT256. On size64/T256 they retain89.65/97.25% in that band, but
+d>32 pooled accuracy is36.78/14.83%. K8 seeds3/4 score17.27/44.76% at the primary.
+K8 is worse than K64 on seed3. There is no general superiority or optimal-K claim.
+K16's primary band fits inside its single-window radius32;3/4 reach is not
+cross-window evidence, and only1/4 also holds. Size32 has no changed-component
+pixels at distance>=64; corresponding nulls are not zero accuracy.
+
+All four K8 clipping fractions are<=6%, including the two failures. K16 seed2
+clips60% and passes reach+hold. Low clipping is not sufficient and high clipping
+is not invariably failure; the causal explanation remains open. Peak allocated
+memory K8/K16/K64 is95.12/155.81/519.41MiB with84.28-92.86s training per arm.
+No accuracy-matched systems claim or activation-only memory interpretation.
+
+Verification covers18 executed source snapshots,12 checkpoint parameter sets,
+initialization/data/schedule hashes,144 BA and1008 paired aggregates with
+reconstructed denominators, and all12 decisions. CPU K16 gradient-reference and
+K8/K64 equivalence checks pass. Frozen historical code/evidence remain unchanged.
+
+Unchanged: Phase-I unqualified comparisons, previous revision joint-gate failure,
+source-switch audit and earlier transport/dynamics results. This screen does not
+test warm source changes, optimizer-crossing state lifetime, a RelationFirst
+representation, arbitrary delayed credit assignment or a new NCA primitive.
+No further experiment or monitor is scheduled.
+
+## Questions for review
+
+1. Are common supervision and optimizer clocks preserved forK16, including
+   gradient accumulation and detachment of both states?
+2. Are the selected narrow endpoint, two aggregation weights, fixed-data scope
+   and separate full-control qualification kept explicit?
+3. Do successful K8 cases support the stated limited propagation claim without
+   hiding failed seeds, long-distance weakness or K16 hold failures?
+4. Are the empty distance bins and clipping observations interpreted correctly?
+
+---
+
+# Historical handoff: matched short-BPTT Phase-I screen
 
 - Review base: `c2d705fcb56fdc2b31c68a33ecc7a02610b3fdee`.
 - Evidence head: `7af8b2d8df225c9db713cf00d931ba673d00ad01`.
