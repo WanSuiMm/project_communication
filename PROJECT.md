@@ -1,6 +1,61 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Latest completed experiment (2026-10-02): local persistent state plus a learned
+Latest completed experiment (2026-10-02): persistent local, carrier and
+task roles. Frozen protocol: new/persistent_roles/PROTOCOL.md. The candidate
+has H12 stationary computation, C12 persistent four-direction carrier and Z8
+stationary readout state. A shared pointwise R35->72->32 is evaluated twice
+per macro-step: (H,C,Z)<-(H+.1*dH,T(C+.1*dC),Z+.5*dZ). H/C split the original
+encoder3->24 once; Z0=0; R output layer is zero initialized. Exactly5033
+parameters and32 persistent channels match the unchanged baseline/stream.
+Only C crosses cells; no Laplacian or ephemeral emitter. Old Streaming
+already has stationary Z; this candidate adds dedicated local computation
+capacity while changing carrier width, perception, parameter sharing and
+readout timing. It does not isolate H causality or match FLOPs/latency.
+Candidate K8 has16 phases, carrier radius<=16 and task-readout radius<=15.
+
+Fixed development recipe: seeds2/3/4/5, baseline/stream/roles (12 arms),
+300 updates per arm, unchanged historical data/schedule and K8 losses.
+Same size32/T64 strict16<d<32 mean+pooled and BA reach gate; hold at both
+T128/T256. All eight concurrent controls must reproduce historical full
+evaluation and final parameter hashes. DEVELOPMENT_GO requires roles
+reach+hold>=3/4 including2/5 and exceeding both controls. The shared seeds
+and maps were already inspected: no independent confirmation claim.
+Formal hard cap40 minutes; watchdog41. No efficacy tuning, sweep or monitor.
+Five focused CPU checks passed: common initialization and5033 parameters,
+independent nonzero forward/backward reference and base isometry, phase
+readout clock/component isolation, three-state K8 gradient/detach clock,
+and decision/hold truth cases. CPU record:
+runs/persistent_roles_20261002_cpu_check/checks.json. Three-arm CUDA
+preflight passed in8.219 seconds at runs/persistent_roles_20261002_preflight/.
+Peak allocated memory baseline87.14/stream88.70/roles84.77MiB. Worst last-two
+median update0.4375 seconds gives a frozen estimate2070 seconds (34.50
+minutes), within the40-minute hard cap. All51 source bindings, initialization
+identities and32-map/2918-pixel primary coverage passed. All12 formal arms
+completed300 updates at21:28:55 +08:00 in1204.234 seconds (20.07 minutes).
+DEVELOPMENT_NO_GO: baseline reach+hold2/4, stream1/4, roles0/4. All eight
+control final parameter hashes and complete evaluations reproduce history.
+Candidate primary pooled accuracy by seed2/3/4/5 is0.00/0.31/0.00/1.58%
+atT64 and0.00/0.58/0.00/2.09% atT256. Every candidate Hold=True preserves
+a failed endpoint. Size64 d>32 remains at most0.24% pooled across all seeds
+and measured horizons. This is a negative result for the complete tested
+parameterization, not an isolated H effect or family-wide impossibility.
+Original outputs/checkpoints/private receipt remain local under
+runs/persistent_roles_20261002_init2345/. Public review starts at
+evidence/persistent_roles_init2345/RESULTS.md, analysis.json and validation.json;
+PERSISTENT_ROLES_PUBLICATION_MANIFEST.json binds source and public evidence.
+Saved-result CPU audit passed:51 source hashes against current/formal/preflight
+copies,12 checkpoint parameter hashes, all eight exact historical controls,
+144 BA means,1008 paired aggregates/independent denominators,12 decisions,
+936 curve rows and624 paired contrasts. No new training or checkpoint
+inference was performed for publication; originals remain unchanged.
+No follow-up training or continuous monitor is scheduled.
+Commands from repository root:
+
+    python new/persistent_roles/check.py
+    python new/persistent_roles/run.py --preflight --out runs/NEW_ROLES_PREFLIGHT
+    pwsh -File tools/launch_persistent_roles.ps1 -RunName NEW_ROLES_RUN -Preflight runs/NEW_ROLES_PREFLIGHT
+
+Previous completed experiment (2026-10-02): local persistent state plus a learned
 ephemeral communication interface. Frozen protocol: new/local_interface/PROTOCOL.md.
 W24 and Z8 both retain local identity. One shared pointwise E35->24 emits
 four6-channel directional messages before each of two residual phases; only

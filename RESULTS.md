@@ -1,6 +1,42 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: learned ephemeral Local Interface fails the development gate
+## Latest: Persistent Roles fails the development gate
+
+Execution **COMPLETE**:12 matched arms completed300 updates each in1204.234
+seconds (20.07 minutes). Scientific decision **DEVELOPMENT_NO_GO**:
+baseline reaches and holds in2/4 seeds, Streaming Carry in1/4 and Persistent
+Roles in0/4. All eight control final parameter hashes and full evaluation
+records exactly reproduce history.
+
+Candidate primary size32/T64 strict16<d<32 pooled paired correctness for
+seeds2/3/4/5 is0.00/0.31/0.00/1.58% (0/9/0/46 correct out of2918 pixels
+per seed), versus the frozen80% threshold for BOTH mean and pooled metrics.
+AtT256 it is0.00/0.58/0.00/2.09%. All candidate Hold=True values retain a
+failed reach endpoint. Size64 d>32 peaks at65/27436 pooled hits (0.24%)
+throughT256. Modest later gains cannot replace the frozen primary.
+
+H12 stationary workspace, C12 persistent directional carrier and Z8 task
+state are updated by shared R35->72->32, twice per macro-step. The candidate
+matches5033 parameters and32 persistent scalars, but role allocation,
+carrier width, perception, sharing and readout timing change together.
+Its K8 carrier radius is<=16 and task-readout radius<=15. This is a negative
+development result for this recipe, not an isolated H effect or a general
+rejection of persistent local/communication state. Inspected seeds/maps,
+one training bank/schedule and n=4 do not support population or3D claims.
+
+The canonical per-seed table and integer denominators are generated from
+saved records in the [full report](evidence/persistent_roles_init2345/RESULTS.md)
+and [analysis](evidence/persistent_roles_init2345/analysis.json).
+See [validation](evidence/persistent_roles_init2345/validation.json),
+[completion](evidence/persistent_roles_init2345/completion.json),
+[curves](evidence/persistent_roles_init2345/curves.csv),
+[paired effects](evidence/persistent_roles_init2345/paired_effects.csv),
+[protocol](new/persistent_roles/PROTOCOL.md) and
+[source/evidence bindings](PERSISTENT_ROLES_PUBLICATION_MANIFEST.json).
+The12 [raw arm records](evidence/persistent_roles_init2345/raw/) are secondary;
+checkpoints, machine receipts and transient logs remain local.
+
+## Previous: learned ephemeral Local Interface fails the development gate
 
 Execution **COMPLETE**: all 12 matched arms completed 300 updates in 1281.532
 seconds (21.36 minutes). Scientific decision **DEVELOPMENT_NO_GO**: baseline

@@ -1,6 +1,67 @@
 # Tensor and operator map
 
-## Current architecture: Local Interface versus additive K8 and Streaming Carry
+## Current architecture: Persistent Roles versus additive K8 and Streaming Carry
+
+Input X has shape[B,3,height,width]: mask, positive source, negative source.
+Persistent state is H[B,12,height,width], C[B,12,height,width] and
+Z[B,8,height,width]. H is stationary computation workspace; Z is stationary
+task-facing state; C has four N/E/S/W lanes, each with three payload channels.
+These names provide structural default paths, not enforced semantic roles.
+
+Initialize encoder(X) using the original pointwise3->24 encoder and split
+its first12 channels into H, remaining12 into C; Z0=0. One shared pointwise
+Tanh MLP R35->72->32 receives[H,C,Z,X]. Each phase is:
+
+$$
+\begin{aligned}
+(\Delta H,\Delta C,\Delta Z)&=R_\theta(H,C,Z,X),\\
+H'&=H+0.1\Delta H,\\
+C'&=T_M(C+0.1\Delta C),\\
+Z'&=Z+0.5\Delta Z.
+\end{aligned}
+$$
+
+Repeat the same phase twice per macro-step. Readout8->1 uses Z alone.
+R has4928 parameters, encoder96 and readout9, total5033. Module creation
+first instantiates the default original cell, retaining encoder/readout
+draws and RNG advancement; its F/Q modules are not retained in the candidate.
+R is newly initialized and its final layer is zero. Full initial parameters
+therefore differ despite common encoder/readout identity.
+
+T_M is the validated masked port permutation with blocked/exterior bounce-back
+and fixed wall ports. For fixed mask, the zero-residual base map
+B=I_H\oplus T_C\oplus I_Z is isometric. After p phases C=T_M^p(C0), or
+T_M^(2t)(C0) after t macro-steps. The general phase Jacobian is
+J=B(I+D*dR/dS), with D having block scales0.1/0.1/0.5; trained stability,
+losslessness and semantic payload preservation are not guaranteed.
+Zero residual-head initialization gives J=B but initially blocks upstream
+gradients through that head. Numerical state survives detach; gradients do not.
+
+Only C crosses cell boundaries. R has no Laplacian or raw-neighbor inputs.
+Since H/Z read incoming C BEFORE the phase streams, after p phases the
+initial-carrier radius is<=p while the task-readout radius is<=p-1.
+K8 has16 phases: carrier<=16 and task-readout<=15. The primary strict16<d<32
+is beyond either bound. Two macro phases do not imply identical output
+causal clocks or FLOPs to the old F/Q cell.
+
+Old Streaming already has T_W\oplus I_Z and Laplacian residual perception.
+This candidate adds a dedicated stationary H workspace while reducing
+transported width24->12 and changing perception, rule sharing and readout
+timing. Matching parameter/state counts does not isolate H causality.
+The [completed development screen](evidence/persistent_roles_init2345/RESULTS.md)
+is DEVELOPMENT_NO_GO: roles0/4 reach+hold, baseline2/4 and stream1/4;
+all eight controls reproduce exactly. No mechanism, broad reliability,
+family-wide impossibility, arbitrary addressing or3D result is established.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| One-time local/carrier initialization | PersistentRoleCell.initial | new/persistent_roles/role_cells.py |
+| Shared pointwise collision and carrier stream | PersistentRoleCell.phase | new/persistent_roles/role_cells.py |
+| Two phases per macro-step | PersistentRoleCell.step | new/persistent_roles/role_cells.py |
+| Default-path, gradient and clock checks | check_independent_forward_gradient_and_base, check_readout_clock_and_isolation, check_three_state_K8_clock | new/persistent_roles/check.py |
+| Frozen comparison | — | new/persistent_roles/PROTOCOL.md |
+
+## Previous architecture: Local Interface versus additive K8 and Streaming Carry
 
 The task and controls are the masked seeded-region system described in
 [the frozen protocol](new/local_interface/PROTOCOL.md). Input X has shape

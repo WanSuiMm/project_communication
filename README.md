@@ -1,7 +1,23 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
 This repository tests whether changing the medium and update rule improves
-persistent cellular computation. The latest **Local Interface** development
+persistent cellular computation. The latest **Persistent Roles** development
+screen is **DEVELOPMENT_NO_GO**: reach+hold is **0/4**, versus **2/4** for the
+additive baseline and **1/4** for Streaming Carry. All12 matched runs completed
+300 updates in1204.234 seconds (20.07 minutes), and all eight old controls
+exactly reproduce their historical final parameters and complete evaluations.
+At size32/T64, strict16<d<32, candidate pooled paired correctness is
+0.00/0.31/0.00/1.58% across seeds2/3/4/5. Longer rollout does not recover the
+primary; size64/d>32 remains at most0.24% pooled throughT256. All four
+candidate Hold=True values preserve weak endpoints, not successful computation.
+The candidate uses H12 stationary workspace, C12 persistent directional
+carrier and Z8 stationary task state, with one shared local residual rule
+followed by streaming twice per macro-step. It matches5033 parameters and32
+persistent scalars, but changes role allocation, carrier width, perception,
+parameter sharing and readout timing together; no H-specific cause is isolated.
+[Persistent Roles results](evidence/persistent_roles_init2345/RESULTS.md).
+
+The preceding **Local Interface** development
 screen is **DEVELOPMENT_NO_GO**: reach+hold is **0/4** for the ephemeral
 interface, versus **2/4** for the additive baseline and **1/4** for Streaming
 Carry. All 12 matched runs completed 300 updates each in 1281.532 seconds
@@ -74,24 +90,25 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `cdb00c9c33cf1a04139da627fff36767d636343f`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `891f968d85e84e1bc47e0fd3bcbe83210c55f2f6`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [Current Local Interface report](evidence/local_interface_init2345/RESULTS.md),
-   [compact analysis](evidence/local_interface_init2345/analysis.json),
-   [validation](evidence/local_interface_init2345/validation.json),
-   [completion record](evidence/local_interface_init2345/completion.json), and
-   [public manifest](evidence/local_interface_init2345/manifest.json).
-2. [Frozen protocol](new/local_interface/PROTOCOL.md),
-   [cell implementation](new/local_interface/interface_cells.py),
-   [runner and decisions](new/local_interface/run.py),
-   [analysis code](new/local_interface/analyze.py),
+1. [Current Persistent Roles report](evidence/persistent_roles_init2345/RESULTS.md),
+   [compact analysis](evidence/persistent_roles_init2345/analysis.json),
+   [validation](evidence/persistent_roles_init2345/validation.json),
+   [completion record](evidence/persistent_roles_init2345/completion.json), and
+   [public manifest](evidence/persistent_roles_init2345/manifest.json).
+2. [Frozen protocol](new/persistent_roles/PROTOCOL.md),
+   [cell implementation](new/persistent_roles/role_cells.py),
+   [runner and decisions](new/persistent_roles/run.py),
+   [analysis code](new/persistent_roles/analyze.py),
    [GPT_CONTEXT.md](GPT_CONTEXT.md), and [ARCHITECTURE.md](ARCHITECTURE.md).
-3. [Distance/rollout curves](evidence/local_interface_init2345/curves.csv),
-   [paired effects](evidence/local_interface_init2345/paired_effects.csv),
-   [raw arm records](evidence/local_interface_init2345/raw/), and
-   [publication bindings](LOCAL_INTERFACE_PUBLICATION_MANIFEST.json).
+3. [Distance/rollout curves](evidence/persistent_roles_init2345/curves.csv),
+   [paired effects](evidence/persistent_roles_init2345/paired_effects.csv),
+   [raw arm records](evidence/persistent_roles_init2345/raw/), and
+   [publication bindings](PERSISTENT_ROLES_PUBLICATION_MANIFEST.json).
    Raw records are secondary to the summaries above.
 4. [RESULTS.md](RESULTS.md), the preceding
+   [Local Interface report](evidence/local_interface_init2345/RESULTS.md),
    [Streaming Carry report](evidence/streaming_carry_init2345/RESULTS.md),
    and earlier evidence: [Direct Spatial Carry](evidence/direct_spatial_carry_init2345/RESULTS.md),
    [Phase II](evidence/short_bptt_phase2_init2345/RESULTS.md),
@@ -100,7 +117,7 @@ For incremental review from `cdb00c9c33cf1a04139da627fff36767d636343f`, begin wi
    [prior training screen](evidence/workspace_revision_paired01/INTERPRETATION.md),
    and [generic dynamics audit](evidence/dynamics_audit_seed0/INTERPRETATION.md).
 
-The sanitized Local Interface package includes its [completion summary](evidence/local_interface_init2345/completion.json)
+The sanitized Persistent Roles package includes its [completion summary](evidence/persistent_roles_init2345/completion.json)
 and omits checkpoints, local machine receipts and transient logs. Earlier
 publication manifests remain valid.
 
@@ -117,7 +134,35 @@ diagnostics do not directly transfer to generic Momentum. These results and
 the earlier 2D/3D transport failures remain unchanged in [RESULTS.md](RESULTS.md).
 No further training or monitor is scheduled.
 
-## Reproduce Local Interface
+## Reproduce Persistent Roles
+
+Install [requirements.txt](requirements.txt), run from this repository root,
+and use new output directories. No prior weights are needed for training.
+The CPU suite checks default continuation, nonzero gradients, phase readout
+lag, disconnected components and three-state K8 cuts. Training requires CUDA.
+
+    python new/persistent_roles/check.py
+    python new/persistent_roles/run.py --preflight --out runs/NEW_ROLES_PREFLIGHT
+    pwsh -File tools/launch_persistent_roles.ps1 -RunName NEW_ROLES_RUN -Preflight runs/NEW_ROLES_PREFLIGHT
+
+The fixed screen trains baseline/stream/roles on seeds2/3/4/5,300 updates
+per arm. A failed runtime preflight stops without reducing that budget.
+The hard cap is40 minutes. The runner writes all raw metrics, aggregate,
+curves, paired effects and its frozen decision. Previously inspected data
+and initialization seeds make this development, not fresh confirmation.
+
+The result-specific CPU audit needs the completed local run, its matching
+preflight and retained checkpoints. It performs no checkpoint inference:
+
+    python new/persistent_roles/analyze.py --run runs/RECORDED_ROLES_RUN --preflight runs/RECORDED_ROLES_PREFLIGHT --out analyses/NEW_ROLES_REVIEW
+
+All published measurements can be reviewed without weights. The
+[exporter](tools/export_persistent_roles_evidence.py) retains raw saved
+metrics byte-identically and sanitizes private manifest/completion copies.
+Cross-device bitwise reproduction is not promised; exact control matches
+describe this completed local run.
+
+## Reproduce the previous Local Interface
 
 Install [requirements.txt](requirements.txt) and run from this repository root
 with new output directories. The candidate keeps W (24 channels) and Z (8

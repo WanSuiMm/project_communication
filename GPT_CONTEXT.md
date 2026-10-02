@@ -1,6 +1,64 @@
 # Context for incremental scientific review
 
-## Current: Local Interface development screen is a no-go
+## Current: Persistent Roles development screen is a no-go
+
+- Execution: COMPLETE;12 matched arms completed300 updates each in1204.234
+  seconds (20.07 minutes). Scientific decision: DEVELOPMENT_NO_GO.
+- Reach+hold: baseline2/4, stream1/4, roles0/4. All eight controls exactly
+  reproduce their historical final parameter hashes and complete evaluations.
+- Frozen primary: size32/T64, strict16<d<32. Paired per-map mean AND pooled
+  correctness>=80%, original AND flipped BA>=85%. Hold at BOTH T128/T256
+  permits BA declines<=3pp and paired-statistic declines<=5pp from T64.
+  Continuation additionally needs at least3/4 candidate reach+hold seeds,
+  including2/5, and a count exceeding BOTH controls. Every roles seed misses
+  reach. All four hold=True values preserve failed endpoints.
+- Candidate primary pooled correctness by seed2/3/4/5 atT64 is
+  0.00/0.31/0.00/1.58% (0/9/0/46 correct out of2918 paired pixels per seed).
+  These require the SAME changed-region pixel to be correct under BOTH source
+  alternatives; they are not ordinary whole-grid pixel accuracy.
+  AtT256 pooled is0.00/0.58/0.00/2.09%; no horizon recovers reach.
+  Size64/d>32 remains<=0.24% pooled throughT256 (max65/27436).
+- Architecture: H12 stationary computation, C12 persistent four-direction
+  carrier (three channels per lane), Z8 stationary task state. One pointwise
+  R35->72->32 with Tanh hidden and zero-initialized output is shared across
+  two collision-then-stream phases per macro-step. Each phase updates
+  (H,C,Z)<-(H+.1*dH,T(C+.1*dC),Z+.5*dZ). Only C moves; no Laplacian input.
+  H/C split the old encoder3->24 once; Z0=0; readout uses Z alone.
+- Matched:5033 parameters,32 persistent scalars, common encoder/readout
+  initialization, historical data/schedule, K8 losses,300 updates and the
+  evaluator. Full candidate initialization differs. K8 carrier radius<=16,
+  task-readout radius<=15; reused normalized2K bands are historical comparison
+  bands, not exact candidate readout bounds.
+- Scope: complete parameterization comparison. Relative to old Streaming,
+  a dedicated H workspace is added while carrier width24->12, perception,
+  rule sharing and readout clock also change. Old Streaming already has
+  stationary Z. No H-specific failure cause, family-wide impossibility,
+  restored cross-detach gradients, arbitrary addressing, stable trained
+  recurrence, fresh confirmation or3D claim follows.
+- Independent unit: initialization seed n=4, conditional on one fixed bank
+  and schedule. The same32 evaluation maps per size are reused across seeds.
+  Rollup eligible-map totals count map-seed evaluations, not extra samples.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| One-time H/C initialization | PersistentRoleCell.initial | new/persistent_roles/role_cells.py |
+| Shared collision then carrier stream | PersistentRoleCell.phase, PersistentRoleCell.step | new/persistent_roles/role_cells.py |
+| Three-state K8 training | backward_trajectory | new/short_bptt_phase2/training.py |
+| Endpoint, hold and development decision | predicates, decision, aggregate | new/persistent_roles/run.py |
+| Saved arithmetic, denominators and CPU parameter hashes | main | new/persistent_roles/analyze.py |
+| Sanitized publication | main, public | tools/export_persistent_roles_evidence.py |
+
+Start with [results](evidence/persistent_roles_init2345/RESULTS.md) and
+[compact analysis](evidence/persistent_roles_init2345/analysis.json), then
+[protocol](new/persistent_roles/PROTOCOL.md), [architecture](ARCHITECTURE.md),
+[validation](evidence/persistent_roles_init2345/validation.json),
+[completion](evidence/persistent_roles_init2345/completion.json) and
+[publication bindings](PERSISTENT_ROLES_PUBLICATION_MANIFEST.json).
+[Curves](evidence/persistent_roles_init2345/curves.csv),
+[paired effects](evidence/persistent_roles_init2345/paired_effects.csv) and
+[raw records](evidence/persistent_roles_init2345/raw/) are secondary.
+
+## Previous: Local Interface development screen is a no-go
 
 - Execution: COMPLETE; all 12 matched arms completed 300 updates each in
   1281.532 seconds (21.36 minutes).
