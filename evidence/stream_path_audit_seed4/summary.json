@@ -1,0 +1,42 @@
+{
+  "status": "COMPLETE",
+  "training": false,
+  "model_seed": 4,
+  "model_replications": 1,
+  "elapsed_seconds": 12.360000000000582,
+  "replay": {
+    "status": "PASS",
+    "size_horizon_records": 6,
+    "integer_leaves": 5628,
+    "float_leaves": 2636,
+    "maximum_absolute_error": 0.0
+  },
+  "pathway_sensitivity": {
+    "no_transport": {
+      "descriptive_label": "sustained_knockout_loss",
+      "T64_128_256_pooled_effect_pp": [
+        -85.91501028101439,
+        -99.34886908841672,
+        -100.0
+      ]
+    },
+    "no_perception": {
+      "descriptive_label": "sustained_knockout_loss",
+      "T64_128_256_pooled_effect_pp": [
+        -85.91501028101439,
+        -99.34886908841672,
+        -100.0
+      ]
+    },
+    "neither": {
+      "descriptive_label": "sustained_knockout_loss",
+      "T64_128_256_pooled_effect_pp": [
+        -85.91501028101439,
+        -99.34886908841672,
+        -100.0
+      ]
+    }
+  },
+  "interpretation": "Selected frozen checkpoint under distribution-changing knockouts; no training-cause or architecture-superiority claim.",
+  "parameters_and_checkpoint_unchanged": true
+}

@@ -1,5 +1,37 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Latest completed diagnostic (2026-10-02): zero-training operator audit of
+the original Streaming seed4 checkpoint. New frozen protocol/code:
+new/stream_path_audit/PROTOCOL.md, operators.py, check.py, audit.py.
+Fixed four-way cold rollout switches T_M versus identity and direct masked
+Laplacian inputs versus zeros in BOTH F/Q. Same parameters and historical
+32-map evaluation banks per size32/64; no other model seeds or training.
+All six historical T64/128/256 evaluations replay exactly (maximum error0).
+Completed all four conditions in12.36 seconds under the five-minute cap.
+Full primary pooled85.92/99.35/100%; either single knockout and both-off
+give0/2918 at all three horizons, and size64 d>32 also drops to zero.
+Near-cue paired behavior collapses too, so a pure slower-propagation account
+is not established. The frozen solution is sensitive to both pathways;
+knockouts change learned distributions and effective hop depth (2/2/1/0),
+and do not prove the cause of H/C/Z failure or inability to retrain a knockout.
+One selected model, n=1; all earlier architecture gate decisions unchanged.
+Outputs: runs/stream_path_audit_20261002_seed4_01/RESULTS.md,
+INTERPRETATION.md, summary.json, curves.csv, contrasts.json; raw_conditions.json
+is secondary. Saved-result validation at
+analyses/stream_path_audit_20261002_seed4_01/validation.json passed39 source
+bindings,672 paired aggregates/denominators,96 BA means,672 curve rows and
+600 contrasts. Original code/checkpoints/evidence were preserved.
+Public review begins at evidence/stream_path_audit_seed4/RESULTS.md,
+INTERPRETATION.md, summary.json and validation.json. The
+STREAM_PATH_AUDIT_PUBLICATION_MANIFEST.json binds all public evidence and code;
+manifest/completion copies omit machine metadata. No new inference or training
+was performed for publication.
+Commands from repository root, new output names only:
+
+    python new/stream_path_audit/check.py
+    python new/stream_path_audit/audit.py --out runs/NEW_STREAM_PATH_AUDIT
+    python new/stream_path_audit/analyze.py --run runs/NEW_STREAM_PATH_AUDIT --out analyses/NEW_STREAM_PATH_REVIEW
+
 Latest completed experiment (2026-10-02): persistent local, carrier and
 task roles. Frozen protocol: new/persistent_roles/PROTOCOL.md. The candidate
 has H12 stationary computation, C12 persistent four-direction carrier and Z8

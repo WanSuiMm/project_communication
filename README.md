@@ -1,5 +1,17 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
+Latest diagnostic: a **zero-training operator audit of Streaming seed4**.
+All six historical size/horizon evaluations replay exactly. Replacing fixed
+streaming by identity or removing direct Laplacian inputs in both F/Q reduces
+primary pooled paired correctness from **85.92 / 99.35 / 100%** at
+T64/T128/T256 to **0 / 0 / 0%**; near-cue behavior also collapses.
+This selected frozen solution is sensitive to both interventions. They alter
+learned feature/state distributions and hop depth, so the result does not
+identify training causality or prove that restoring Laplacians repairs H/C/Z.
+No new model was trained. Earlier multi-seed gate decisions are unchanged.
+[Audit results](evidence/stream_path_audit_seed4/RESULTS.md) and
+[interpretation](evidence/stream_path_audit_seed4/INTERPRETATION.md).
+
 This repository tests whether changing the medium and update rule improves
 persistent cellular computation. The latest **Persistent Roles** development
 screen is **DEVELOPMENT_NO_GO**: reach+hold is **0/4**, versus **2/4** for the
@@ -90,22 +102,21 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `891f968d85e84e1bc47e0fd3bcbe83210c55f2f6`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `87763540c7e342a8fe278b8c198930f4decc2c1a`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [Current Persistent Roles report](evidence/persistent_roles_init2345/RESULTS.md),
-   [compact analysis](evidence/persistent_roles_init2345/analysis.json),
-   [validation](evidence/persistent_roles_init2345/validation.json),
-   [completion record](evidence/persistent_roles_init2345/completion.json), and
-   [public manifest](evidence/persistent_roles_init2345/manifest.json).
-2. [Frozen protocol](new/persistent_roles/PROTOCOL.md),
-   [cell implementation](new/persistent_roles/role_cells.py),
-   [runner and decisions](new/persistent_roles/run.py),
-   [analysis code](new/persistent_roles/analyze.py),
+1. [Current seed4 audit report](evidence/stream_path_audit_seed4/RESULTS.md),
+   [interpretation](evidence/stream_path_audit_seed4/INTERPRETATION.md),
+   [compact summary](evidence/stream_path_audit_seed4/summary.json), and
+   [validation](evidence/stream_path_audit_seed4/validation.json).
+2. [Frozen protocol](new/stream_path_audit/PROTOCOL.md),
+   [pathway switches](new/stream_path_audit/operators.py),
+   [audit runner](new/stream_path_audit/audit.py),
+   [saved arithmetic analysis](new/stream_path_audit/analyze.py),
    [GPT_CONTEXT.md](GPT_CONTEXT.md), and [ARCHITECTURE.md](ARCHITECTURE.md).
-3. [Distance/rollout curves](evidence/persistent_roles_init2345/curves.csv),
-   [paired effects](evidence/persistent_roles_init2345/paired_effects.csv),
-   [raw arm records](evidence/persistent_roles_init2345/raw/), and
-   [publication bindings](PERSISTENT_ROLES_PUBLICATION_MANIFEST.json).
+3. [Distance/rollout curves](evidence/stream_path_audit_seed4/curves.csv),
+   [paired contrasts](evidence/stream_path_audit_seed4/contrasts.json),
+   [raw conditions](evidence/stream_path_audit_seed4/raw_conditions.json), and
+   [publication bindings](STREAM_PATH_AUDIT_PUBLICATION_MANIFEST.json).
    Raw records are secondary to the summaries above.
 4. [RESULTS.md](RESULTS.md), the preceding
    [Local Interface report](evidence/local_interface_init2345/RESULTS.md),
@@ -133,6 +144,27 @@ observed near-zero-to-positive crossing. Earlier explicit-inertial drift
 diagnostics do not directly transfer to generic Momentum. These results and
 the earlier 2D/3D transport failures remain unchanged in [RESULTS.md](RESULTS.md).
 No further training or monitor is scheduled.
+
+## Reproduce the seed4 operator audit
+
+Use the same Python/PyTorch/NumPy environment as the existing training screen.
+The CPU smoke needs no checkpoint. The CUDA audit requires the retained
+original `stream_K8_seed4.pt` and original run/source bindings under
+`runs/streaming_carry_20261002_init2345/`; checkpoints are excluded from Git.
+The published metrics and CPU reference can be reviewed without those files.
+The preceding Streaming Carry reproduction section gives the original
+training commands; no training was performed for this publication.
+
+    python new/stream_path_audit/check.py
+    python new/stream_path_audit/audit.py --out runs/NEW_STREAM_PATH_AUDIT
+    python new/stream_path_audit/analyze.py --run runs/NEW_STREAM_PATH_AUDIT --out analyses/NEW_STREAM_PATH_REVIEW
+
+The saved-result analyzer performs CPU arithmetic/provenance checks and does
+not run checkpoint inference. The [exporter](tools/export_stream_path_audit.py)
+publishes byte-identical metrics and sanitized metadata. Public validation's
+`input_sha256` refers to original run bytes; the publication manifest separately
+binds the public manifest/completion copies. Begin with the summaries above,
+then inspect the 2.1 MB raw condition file only for detailed per-map evidence.
 
 ## Reproduce Persistent Roles
 

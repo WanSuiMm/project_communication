@@ -1,5 +1,36 @@
 # Tensor and operator map
 
+## Current diagnostic: switches on the original Streaming cell
+
+This audit changes no learned parameters. State W[B,24,height,width] has
+four six-channel lanes; Z[B,8,height,width] remains stationary. Keep original
+encoder3->24, F67->40->24, Q67->16->8 and readout8->1. Define K as T_M or
+identity and P as masked Laplacian or the zero map. One macro-step is:
+
+$$
+\begin{aligned}
+W^+ &= K(W)+0.1F_\theta(K(W),Z,P(W),P(Z),X),\\
+Z^+ &= Z+0.5Q_\theta(W^+,Z,P(W^+),P(Z),X).
+\end{aligned}
+$$
+
+The zero map preserves feature dimensions and zeroes both neighborhood slots
+in both networks. F uses pre-stream W/Z perception; Q sees post-F W and
+pre-update Z. Replacing T also replaces the incoming feature F reads.
+All four combinations use the same weights and cold source/source-flip inputs.
+Maximum graph hops per step are2 with perception,1 with transport alone,
+and0 with neither. This is fixed-checkpoint intervention, not a communication-
+depth-matched training comparison. Numeric legacy2K distance bands retain their
+historical definitions rather than claiming the same dependency bound.
+
+Full six historical evaluations replay exactly. Every knockout loses primary
+paired correctness and near-cue behavior. This supports sensitivity of this
+selected solution, with no unique semantic mechanism, training-cause or
+retrained-model conclusion. See [results](evidence/stream_path_audit_seed4/RESULTS.md)
+and [limits](evidence/stream_path_audit_seed4/INTERPRETATION.md).
+Source: `step` in new/stream_path_audit/operators.py; frozen original
+`StreamingCell.step` remains unchanged in new/streaming_carry/stream_cells.py.
+
 ## Current architecture: Persistent Roles versus additive K8 and Streaming Carry
 
 Input X has shape[B,3,height,width]: mask, positive source, negative source.

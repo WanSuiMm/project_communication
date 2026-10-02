@@ -1,6 +1,49 @@
 # Context for incremental scientific review
 
-## Current: Persistent Roles development screen is a no-go
+## Current diagnostic: fixed-weight Streaming seed4 operator sensitivity
+
+- Execution: COMPLETE, 12.36 seconds, zero training. Four cold-rollout
+  conditions use the same original seed4 weights, initialization and inputs.
+  Two sizes, 32 historical maps each, T8/16/32/64/128/256. Model n=1 selected
+  from the prior failed multi-seed screen; maps are not training replicates.
+- Scientific status: SELECTED_CHECKPOINT_OPERATOR_SENSITIVITY. No new GO gate.
+  Full original evaluations at size32/64 and T64/128/256 replay exactly:
+  5628 integer leaves and2636 float leaves, maximum absolute error0.
+- Switches: T_M versus identity in the workspace carry and first F feature;
+  masked Laplacians versus zero tensors in BOTH F and Q input slots. F retains
+  pre-stream perception clock and Q retains post-F W/pre-update Z clock.
+  Parameters, W24/Z8 widths, residual scales and readout remain unchanged.
+- Primary size32 strict16<d<32 pooled paired correctness at T64/128/256 is
+  85.92/99.35/100% for full and0% (0/2918) for every knockout. Size64 d>32
+  full is12.48/38.60/59.43%; every knockout is0% there as well.
+- Nearby computation also fails. Without perception, d<8 has0/1706 hits
+  already atT8. Without transport it has906/1706 atT8 and1067/1706 atT16,
+  then zero byT32. Primary failure is not solely a slower remote wave.
+- Scope: knockouts change learned feature/state distributions. Upper-bound
+  graph hops per macro-step are2/2/1/0 for full/no_transport/no_perception/
+  neither. Equal steps do not equal matched communication opportunity.
+  Loss measures intervention sensitivity of this solution, not unique semantic
+  path attribution, the cause of H/C/Z failure or inability to retrain.
+  The prior Streaming DEVELOPMENT_NO_GO and positive seed4 case are unchanged.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Fixed-weight F/Q switches | step, CONDITIONS, hops_per_step | new/stream_path_audit/operators.py |
+| Independent nonzero CPU reference | reference_step, reference_stream, reference_laplacian, check | new/stream_path_audit/check.py |
+| Replay gate, cold rollouts and paired contrasts | compare_tree, evaluate, contrasts, main | new/stream_path_audit/audit.py |
+| Saved denominator/count/CSV/source verification | main | new/stream_path_audit/analyze.py |
+| Public copies and sanitization | main, public | tools/export_stream_path_audit.py |
+
+Start at [results](evidence/stream_path_audit_seed4/RESULTS.md),
+[interpretation](evidence/stream_path_audit_seed4/INTERPRETATION.md) and
+[summary](evidence/stream_path_audit_seed4/summary.json). Then read
+[protocol](new/stream_path_audit/PROTOCOL.md),
+[validation](evidence/stream_path_audit_seed4/validation.json) and
+[publication bindings](STREAM_PATH_AUDIT_PUBLICATION_MANIFEST.json).
+[Raw conditions](evidence/stream_path_audit_seed4/raw_conditions.json) are
+secondary; original checkpoint and machine metadata remain local.
+
+## Previous: Persistent Roles development screen is a no-go
 
 - Execution: COMPLETE;12 matched arms completed300 updates each in1204.234
   seconds (20.07 minutes). Scientific decision: DEVELOPMENT_NO_GO.

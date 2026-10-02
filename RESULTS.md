@@ -1,5 +1,38 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
+## Latest diagnostic: Streaming seed4 depends on both tested pathways
+
+Zero-training fixed-checkpoint audit completed in12.36 seconds. All six
+historical size32/64 by T64/128/256 evaluations replay with zero error.
+Four cold-rollout conditions switch fixed T_M versus identity and both F/Q
+Laplacian inputs versus zero tensors; all weights and data remain unchanged.
+
+| Condition | Size32 primary pooled T64 / T128 / T256 % | Size64 d>32 pooled T256 % |
+|---|---:|---:|
+| Full Streaming seed4 | 85.92 / 99.35 / 100.00 | 59.43 |
+| T_M replaced by identity | 0.00 / 0.00 / 0.00 | 0.00 |
+| Direct Laplacian inputs removed | 0.00 / 0.00 / 0.00 | 0.00 |
+| Both removed | 0.00 / 0.00 / 0.00 | 0.00 |
+
+Each primary knockout result is0/2918 hits. Near-cue behavior also collapses;
+the loss cannot be attributed solely to slower remote communication.
+This selected frozen solution does not retain success under either knockout.
+Interventions alter learned feature/state distributions and available hop
+depth (2/2/1/0); they do not isolate training causality or establish that
+restoring Laplacians would rescue H/C/Z. One checkpoint, n=1; no architecture
+superiority, significance or retrained-knockout conclusion. Earlier gates
+and the seed4 positive observation are unchanged.
+
+Public canonical outputs: [report](evidence/stream_path_audit_seed4/RESULTS.md),
+[interpretation](evidence/stream_path_audit_seed4/INTERPRETATION.md) and
+[summary](evidence/stream_path_audit_seed4/summary.json). The independent saved-result validation
+passed39 source bindings,672 paired aggregates/denominators,96 BA means,
+672 curve rows and600 contrasts. Frozen protocol and implementation are
+new/stream_path_audit/PROTOCOL.md and operators.py; analyze.py verifies saved
+arithmetic without additional inference. [Validation](evidence/stream_path_audit_seed4/validation.json)
+and [publication bindings](STREAM_PATH_AUDIT_PUBLICATION_MANIFEST.json) preserve
+the distinction between original private run hashes and sanitized public files.
+
 ## Latest: Persistent Roles fails the development gate
 
 Execution **COMPLETE**:12 matched arms completed300 updates each in1204.234
