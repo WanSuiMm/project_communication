@@ -1,6 +1,55 @@
 # Context for incremental scientific review
 
-## Current diagnostic: fixed-weight Streaming seed4 operator sensitivity
+## Current experiment: exactly nested stationary sidecar is a no-go
+
+- Execution: COMPLETE,12 arms x300 updates,1676.281 seconds. Formal status:
+  DEVELOPMENT_NO_GO; inspected seed n=4, one fixed training bank/schedule,
+  reused32 evaluation maps per size32/64. This is a2D development screen.
+- Controls: four original Streaming final parameter hashes and complete
+  evaluations exactly reproduce history. All core initial parameters match
+  across three arms; the two side-arm full initial states also match.
+- Intervention: original W24/Z8, F67->40->24, Q67->16->8, streaming,
+  Laplacians and perception clocks remain. Extra G67->32->12 writes H12;
+  zero-initialized bias-free P_F/P_Q feed active H into the old residuals.
+  Memory retains H; stateless consumes the same instantaneous write and
+  resets only H. Both side arms7989 params, original5033; not FLOP matched.
+- Frozen gate: T64 size32 strict16<d<32, both paired mean/pooled>=80%, both
+  source-orientation BA>=85%; hold bounds declines at BOTH T128/T256.
+  GO needs memory>=3/4 including4 and strictly above both controls.
+  Reach+hold: stream1/4, memory0/4, stateless0/4. All three reach only seed4.
+- Seed4 primary pooled T64/T128/T256: stream85.92/99.35/100%,
+  memory94.24/0/0.38%, stateless100/100/88.49%. Memory loses primary and BA
+  atT128. Stateless fails paired and BA hold atT256. Seed2 stateless reaches
+  the primary threshold only later; its failed T64 cannot be rescued.
+- Meaning: the additional carried-sidecar recipe does not stabilize or
+  reproduce the rare positive long-rollout regime. Some finite-horizon gains
+  are descriptive. Original Z is already local memory; this does not reject
+  stationary state in general, identify a Jacobian/overwrite mechanism,
+  restore gradients across detach, prove significance, or claim3D results.
+- Neutral nesting concerns projected W/Z/logits and raw core derivatives.
+  It does not preserve optimizer updates under joint clipping. Additional
+  H carry changes accumulation and activation scale together; stateless W/Z
+  remain recurrent. Side gradient paths open by update3, not all at update1.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Extra local carry and immediate stateless feedback | SidecarCell.step | new/stationary_sidecar/sidecar_cells.py |
+| Original-core initial identity | core_state_dict, cpu_initialization_reference | sidecar_cells.py, run.py in new/stationary_sidecar |
+| Three-state detach without reset | backward_trajectory | new/short_bptt_phase2/training.py |
+| Gradient-entry, reach, hold and GO | gradient_entry_check, predicates, decision | new/stationary_sidecar/run.py |
+| Independent saved counts, control hashes and hold failures | verify_metric, gate_row, hold_failures, main | new/stationary_sidecar/analyze.py |
+| Sanitized publication | main, public | tools/export_stationary_sidecar_evidence.py |
+
+Read [results](evidence/stationary_sidecar_init2345/RESULTS.md),
+[analysis](evidence/stationary_sidecar_init2345/analysis.json),
+[protocol](new/stationary_sidecar/PROTOCOL.md),
+[validation](evidence/stationary_sidecar_init2345/validation.json),
+[CPU qualification](evidence/stationary_sidecar_init2345/cpu_validation.json)
+and [publication bindings](STATIONARY_SIDECAR_PUBLICATION_MANIFEST.json).
+Analysis fields primary_trajectories, seed4_trajectory and hold_failure_reasons
+contain the exact rollout metrics and failed constraints. Raw JSON is secondary.
+
+## Previous diagnostic: fixed-weight Streaming seed4 operator sensitivity
 
 - Execution: COMPLETE, 12.36 seconds, zero training. Four cold-rollout
   conditions use the same original seed4 weights, initialization and inputs.

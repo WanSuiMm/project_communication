@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "source_files": 45,
+  "source_hashes_current_and_two_snapshots": 45,
+  "checkpoint_state_hashes_cpu_only": 12,
+  "historical_controls_exact_initial_final_evaluation_data_schedule": 4,
+  "historical_control_final_and_full_evaluation_reproduced": 4,
+  "training_schedule_evaluation_bindings": true,
+  "preflight_bindings_and_source_snapshot": true,
+  "BA_means": 144,
+  "paired_aggregates_and_independent_denominators": 1008,
+  "arm_gate_decisions": 12,
+  "side_gradient_entry_verified": 8,
+  "all_initial_core_parameters_matched": true,
+  "full_initial_memory_stateless_parameters_matched": true,
+  "curve_csv_rows": 936,
+  "paired_effect_csv_rows": 624,
+  "runner_aggregate_effects": 624,
+  "new_training_or_model_inference": false,
+  "checkpoint_check": "weights_only CPU state_dict SHA against each saved final parameter SHA",
+  "raw_arm_schedule_aggregate_and_CSVs_byte_identical": true,
+  "focused_CPU_qualification_rerun_passed": true,
+  "formal_run_bound_to_passed_preflight": true,
+  "private_fields_removed_from_manifest_and_completion_copies": [
+    "gpu",
+    "pid"
+  ],
+  "checkpoint_files_published": false,
+  "new_scientific_training_or_trained_checkpoint_inference": false,
+  "focused_CPU_check_includes_tiny_untrained_model_smoke": true
+}

@@ -1,5 +1,35 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Latest completed experiment (2026-10-03): exactly nested stationary-sidecar
+development screen, protocol new/stationary_sidecar/PROTOCOL.md.
+All12 arms completed300 updates in1676.281 seconds (27.94 minutes).
+Scientific decision DEVELOPMENT_NO_GO: stream1/4 reach+hold, memory0/4,
+stateless0/4. All four original Streaming final parameter hashes and complete
+evaluations exactly reproduce history. Every arm reaches only at seed4.
+Seed4 primary pooled T64/T128/T256: stream85.92/99.35/100%,
+memory94.24/0/0.38%, stateless100/100/88.49%. Both side branches fail hold;
+later stateless seed2 gains cannot replace its failed frozen T64 endpoint.
+Original W24/Z8, F/Q, operators, clocks and K8 trainer retained; side arms
+have7989 parameters versus stream5033. Extra H carry is the single structural
+memory/stateless difference, also changing accumulation/scale. Old Z already
+provides local memory. No general memory rejection or causal failure mechanism.
+Canonical public report and analysis: evidence/stationary_sidecar_init2345/
+RESULTS.md and analysis.json. Validation independently checks45 sources,
+12 CPU checkpoint hashes,4 exact controls,144 BA means,1008 paired metrics,
+936 curves,624 contrasts, data/schedule/preflight and all gates.
+CPU qualification rerun passed; no new scientific training or trained-checkpoint
+inference for publication. STATIONARY_SIDECAR_PUBLICATION_MANIFEST.json binds
+the unchanged raw evidence and sanitized metadata. Checkpoints/receipts remain
+local. Original run runs/stationary_sidecar_20261002_init2345_01 and preflight
+runs/stationary_sidecar_20261002_preflight01 were preserved. No new experiment
+or continuous monitor was started for result review.
+Commands from repository root; new output names required:
+
+    python new/stationary_sidecar/check.py --out analyses/NEW_SIDECAR_CHECK.json
+    python new/stationary_sidecar/run.py --preflight --out runs/NEW_SIDECAR_PREFLIGHT
+    pwsh -File tools/launch_stationary_sidecar.ps1 -RunName NEW_SIDECAR_RUN -Preflight runs/NEW_SIDECAR_PREFLIGHT
+    python new/stationary_sidecar/analyze.py --run runs/NEW_SIDECAR_RUN --preflight runs/NEW_SIDECAR_PREFLIGHT --out analyses/NEW_SIDECAR_REVIEW
+
 Latest completed diagnostic (2026-10-02): zero-training operator audit of
 the original Streaming seed4 checkpoint. New frozen protocol/code:
 new/stream_path_audit/PROTOCOL.md, operators.py, check.py, audit.py.

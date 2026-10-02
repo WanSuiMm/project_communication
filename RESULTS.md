@@ -1,5 +1,41 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
+## Latest experiment: stationary sidecar does not improve reach+hold
+
+**COMPLETE, DEVELOPMENT_NO_GO.** All12 arms completed300 updates in
+1676.281 seconds (27.94 minutes). Original Streaming controls reproduce
+historical final parameter hashes/full evaluations in4/4 seeds.
+
+| Variant | Parameters | T64 reach | Reach+hold |
+|---|---:|---:|---:|
+| Original Streaming | 5033 | 1/4 | 1/4 |
+| Persistent H sidecar | 7989 | 1/4 | 0/4 |
+| Same-capacity stateless side branch | 7989 | 1/4 | 0/4 |
+
+Every T64 reach is seed4; only original Streaming holds. Its size32 primary
+pooled T64/T128/T256 is85.92/99.35/100%, versus memory94.24/0/0.38% and
+stateless100/100/88.49%. The memory primary loses all2918 paired hits atT128.
+Stateless drops to BA78.06/76.13% atT256; its paired metrics also fail hold.
+Seed2 stateless improves from67.07% pooled atT64 to80.36/86.46% later, but
+the frozen endpoint remains a failure. No later metric replaces the gate.
+
+The old core is nested exactly at zero feedback, with all original modules,
+operators and clocks retained. Memory/stateless differ only by extra H carry
+and have identical parameters and initialization. Carry changes accumulation
+and scale together, and additional gradients can change global clipping.
+This negative recipe result does not reject local memory (old Z8 already
+provides it), identify a failure mechanism, or establish population/3D claims.
+
+Generated [full report](evidence/stationary_sidecar_init2345/RESULTS.md) and
+[analysis](evidence/stationary_sidecar_init2345/analysis.json) retain all seeds,
+rollout horizons, mean/pooled distinctions, failed hold checks and denominators.
+[Validation](evidence/stationary_sidecar_init2345/validation.json) checks45
+source bindings,12 CPU checkpoint hashes,4 exact controls,144 BA means,
+1008 paired aggregates,936 curves and624 contrasts. The focused CPU
+qualification was rerun; no new scientific training or trained-checkpoint
+inference was launched for publication. [Bindings](STATIONARY_SIDECAR_PUBLICATION_MANIFEST.json)
+distinguish unchanged raw evidence from sanitized metadata copies.
+
 ## Latest diagnostic: Streaming seed4 depends on both tested pathways
 
 Zero-training fixed-checkpoint audit completed in12.36 seconds. All six
@@ -33,7 +69,7 @@ arithmetic without additional inference. [Validation](evidence/stream_path_audit
 and [publication bindings](STREAM_PATH_AUDIT_PUBLICATION_MANIFEST.json) preserve
 the distinction between original private run hashes and sanitized public files.
 
-## Latest: Persistent Roles fails the development gate
+## Previous experiment: Persistent Roles fails the development gate
 
 Execution **COMPLETE**:12 matched arms completed300 updates each in1204.234
 seconds (20.07 minutes). Scientific decision **DEVELOPMENT_NO_GO**:

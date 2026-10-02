@@ -1,5 +1,20 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
+Latest experiment: **Stationary Sidecar — DEVELOPMENT_NO_GO**. All12 arms
+completed300 updates in27.94 minutes. Four original Streaming controls exactly
+reproduce historical final parameter hashes and full evaluations. Reach+hold
+is **stream1/4, persistent H0/4, stateless0/4**. Both side branches preserve
+the original W24/Z8 core and add the same7989-parameter recipe; only extra H
+carry differs. Stream has5033 parameters. Seed4 primary pooled T64/T128/T256:
+stream **85.92/99.35/100%**, memory **94.24/0/0.38%**, stateless
+**100/100/88.49%**. Both side branches fail hold. This recipe improves some
+finite-horizon endpoints but does not make beneficial long rollout more
+reproducible. Carry changes temporal accumulation and scale together; no
+general rejection of stationary memory or failure mechanism follows.
+[Current report](evidence/stationary_sidecar_init2345/RESULTS.md),
+[compact analysis](evidence/stationary_sidecar_init2345/analysis.json), and
+[frozen protocol](new/stationary_sidecar/PROTOCOL.md).
+
 Latest diagnostic: a **zero-training operator audit of Streaming seed4**.
 All six historical size/horizon evaluations replay exactly. Replacing fixed
 streaming by identity or removing direct Laplacian inputs in both F/Q reduces
@@ -13,7 +28,7 @@ No new model was trained. Earlier multi-seed gate decisions are unchanged.
 [interpretation](evidence/stream_path_audit_seed4/INTERPRETATION.md).
 
 This repository tests whether changing the medium and update rule improves
-persistent cellular computation. The latest **Persistent Roles** development
+persistent cellular computation. The preceding **Persistent Roles** development
 screen is **DEVELOPMENT_NO_GO**: reach+hold is **0/4**, versus **2/4** for the
 additive baseline and **1/4** for Streaming Carry. All12 matched runs completed
 300 updates in1204.234 seconds (20.07 minutes), and all eight old controls
@@ -102,23 +117,24 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `87763540c7e342a8fe278b8c198930f4decc2c1a`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `723dd4aae6dc082ee998dd647b9df9a49b58962f`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [Current seed4 audit report](evidence/stream_path_audit_seed4/RESULTS.md),
-   [interpretation](evidence/stream_path_audit_seed4/INTERPRETATION.md),
-   [compact summary](evidence/stream_path_audit_seed4/summary.json), and
-   [validation](evidence/stream_path_audit_seed4/validation.json).
-2. [Frozen protocol](new/stream_path_audit/PROTOCOL.md),
-   [pathway switches](new/stream_path_audit/operators.py),
-   [audit runner](new/stream_path_audit/audit.py),
-   [saved arithmetic analysis](new/stream_path_audit/analyze.py),
+1. [Current Sidecar report](evidence/stationary_sidecar_init2345/RESULTS.md),
+   [compact analysis](evidence/stationary_sidecar_init2345/analysis.json), and
+   [saved-result validation](evidence/stationary_sidecar_init2345/validation.json).
+2. [Frozen protocol](new/stationary_sidecar/PROTOCOL.md),
+   [exact nested cell](new/stationary_sidecar/sidecar_cells.py),
+   [training and gates](new/stationary_sidecar/run.py),
+   [saved arithmetic analysis](new/stationary_sidecar/analyze.py),
    [GPT_CONTEXT.md](GPT_CONTEXT.md), and [ARCHITECTURE.md](ARCHITECTURE.md).
-3. [Distance/rollout curves](evidence/stream_path_audit_seed4/curves.csv),
-   [paired contrasts](evidence/stream_path_audit_seed4/contrasts.json),
-   [raw conditions](evidence/stream_path_audit_seed4/raw_conditions.json), and
-   [publication bindings](STREAM_PATH_AUDIT_PUBLICATION_MANIFEST.json).
+3. [Distance/rollout curves](evidence/stationary_sidecar_init2345/curves.csv),
+   [paired contrasts](evidence/stationary_sidecar_init2345/paired_effects.csv),
+   [raw arms](evidence/stationary_sidecar_init2345/raw/), and
+   [publication bindings](STATIONARY_SIDECAR_PUBLICATION_MANIFEST.json).
    Raw records are secondary to the summaries above.
 4. [RESULTS.md](RESULTS.md), the preceding
+   [seed4 operator audit](evidence/stream_path_audit_seed4/RESULTS.md),
+   [Persistent Roles report](evidence/persistent_roles_init2345/RESULTS.md),
    [Local Interface report](evidence/local_interface_init2345/RESULTS.md),
    [Streaming Carry report](evidence/streaming_carry_init2345/RESULTS.md),
    and earlier evidence: [Direct Spatial Carry](evidence/direct_spatial_carry_init2345/RESULTS.md),
@@ -128,9 +144,22 @@ For incremental review from `87763540c7e342a8fe278b8c198930f4decc2c1a`, begin wi
    [prior training screen](evidence/workspace_revision_paired01/INTERPRETATION.md),
    and [generic dynamics audit](evidence/dynamics_audit_seed0/INTERPRETATION.md).
 
-The sanitized Persistent Roles package includes its [completion summary](evidence/persistent_roles_init2345/completion.json)
+The sanitized Sidecar package includes its [completion summary](evidence/stationary_sidecar_init2345/completion.json)
 and omits checkpoints, local machine receipts and transient logs. Earlier
 publication manifests remain valid.
+
+Minimal sidecar reproduction from repository root with the existing requirements:
+
+```text
+python new/stationary_sidecar/check.py --out analyses/NEW_SIDECAR_CHECK.json
+python new/stationary_sidecar/run.py --preflight --out runs/NEW_SIDECAR_PREFLIGHT
+pwsh -File tools/launch_stationary_sidecar.ps1 -RunName NEW_SIDECAR_RUN -Preflight runs/NEW_SIDECAR_PREFLIGHT
+python new/stationary_sidecar/analyze.py --run runs/NEW_SIDECAR_RUN --preflight runs/NEW_SIDECAR_PREFLIGHT --out analyses/NEW_SIDECAR_REVIEW
+```
+
+Training requires CUDA; analysis reads locally generated checkpoints on CPU.
+Existing public JSON/CSV and integer denominators support saved-result review
+without downloading checkpoints or launching training.
 
 ## Previous evidence
 

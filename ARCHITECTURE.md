@@ -1,5 +1,45 @@
 # Tensor and operator map
 
+## Current architecture: exactly nested stationary sidecar
+
+Keep original W[B,24,height,width], Z[B,8,height,width] and add H[B,12,height,width].
+W has four six-channel carrier lanes, Z/H remain stationary. G67->32->12
+reads only original pre-stream [W,Z,L_M(W),L_M(Z),X]; pointwise feedback
+P_F12->24 and P_Q12->8 have no bias. For one macro step:
+
+```math
+U=0.1G_\theta(W,Z,L_M(W),L_M(Z),X),
+H^*=H+U\ \text{(memory)},\qquad H^*=U\ \text{(stateless)},
+I=T_M(W),
+W'=I+0.1\{F_\theta(I,Z,L_M(W),L_M(Z),X)+P_FH^*\},
+Z'=Z+0.5\{Q_\theta(W',Z,L_M(W'),L_M(Z),X)+P_QH^*\}.
+```
+
+Store H'=H* for memory, H'=0 for stateless; both consume H* immediately.
+Readout uses Z only. The G input does not contain H/LH, so the stateless
+arm has no dormant H feature columns. Only original T_M/L_M cross cells;
+the original upper bound of two hops per macro and16 per K8 remains.
+
+Construct original modules first, preserving all5033 core parameter draws.
+Side arms share identical initialization: H0=0, G_in default, G_out weight
+N(0,.02)/bias0, P_F/P_Q weight0. G adds2572 parameters and feedback384,
+total7989. The extra persistent H carry is the single structural difference.
+Old stationary Z remains; names do not establish enforced semantic roles.
+
+P_F=P_Q=0 nests projected W/Z/logits and core derivatives for arbitrary finite
+H, including nonzero original F/Q tails. Full states have different dimensions.
+Raw gradients do not imply identical joint-clipped AdamW updates. Original
+Q_out=0 blocks initial P_F task gradients; P_Q opens first, P_F/G by update3.
+H values survive K8 cuts but autograd history does not. Extra accumulation
+can change scale; no full recurrence stability or losslessness guarantee.
+
+Source map: SidecarCell.initial/step/logits/metadata and core_state_dict in
+new/stationary_sidecar/sidecar_cells.py; neutral_check, reference_check,
+clock_and_gradient_entry, geometry_check and decision_check in check.py.
+Training/gates are in run.py; saved arithmetic and CPU checkpoint verification
+in analyze.py. [Frozen protocol](new/stationary_sidecar/PROTOCOL.md) and
+[completed negative result](evidence/stationary_sidecar_init2345/RESULTS.md).
+
 ## Current diagnostic: switches on the original Streaming cell
 
 This audit changes no learned parameters. State W[B,24,height,width] has
@@ -31,7 +71,7 @@ and [limits](evidence/stream_path_audit_seed4/INTERPRETATION.md).
 Source: `step` in new/stream_path_audit/operators.py; frozen original
 `StreamingCell.step` remains unchanged in new/streaming_carry/stream_cells.py.
 
-## Current architecture: Persistent Roles versus additive K8 and Streaming Carry
+## Previous architecture: Persistent Roles versus additive K8 and Streaming Carry
 
 Input X has shape[B,3,height,width]: mask, positive source, negative source.
 Persistent state is H[B,12,height,width], C[B,12,height,width] and
