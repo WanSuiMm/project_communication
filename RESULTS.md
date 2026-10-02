@@ -1,6 +1,52 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: Phase-II initialization replication misses its K8 threshold
+## Latest: fixed Direct Spatial Carry fails the development gate
+
+**DEVELOPMENT_NO_GO**. All8 matched runs completed300 updates in797.797 seconds
+(13.30 minutes). Baseline reach+hold is2/4; carry is0/4. Every baseline final
+parameter hash and full evaluation record exactly reproduces Phase II.
+
+Only the W skip path changes from identity to W-0.5*D_M^dagger*L_M(W).
+F/Q, additive Z, initialization,5033 parameters, data/schedule and K8 training
+are matched. Primary size32/T64 is strict16<d<32, with paired correctness
+required under BOTH source alternatives. Mean / pooled percentages:
+
+| Seed | Baseline | Carry |
+|---|---:|---:|
+| 2 | 93.70 / 92.97 | 0.00 / 0.00 |
+| 3 | 21.85 / 17.27 | 2.87 / 3.12 |
+| 4 | 52.40 / 44.76 | 14.39 / 11.41 |
+| 5 | 96.45 / 95.68 | 7.59 / 4.42 |
+
+Carry loses the original successful seeds2/5 and rescues neither3 nor4.
+At size64/T256 its d>32 paired correctness is0% in all four seeds. A meaningful
+transient exception is seed4 atT128: strict16<d<32 pooled accuracy is74.64%
+versus baseline43.59% at size32, and82.54% versus37.06% at size64. ByT256 those
+carry values fall to19.50% and26.25%, below their concurrent baselines. This
+is delayed, transient narrow performance, not sustained rescue; it cannot
+replace the fixed T64 endpoint. Size64/T128 d>32 pooled is only0.70% versus0%
+for this seed. Carry seed2's
+hold=True is stability of failure: its primary stays at0%, not task retention.
+
+This is a negative result for this fixed-average parameterization. Replacing
+half of local retention with neighbor mixing does not isolate a failure
+mechanism or refute all spatial carry. Previously inspected seeds/maps make
+this development, conditional on one train bank and schedule. Do not advance
+the recipe to confirmation or interpret whole-grid BA as far paired accuracy.
+Earlier scientific conclusions remain unchanged.
+
+CPU verification:29 source snapshots,8 checkpoints,96 BA aggregates,
+672 paired aggregates with reconstructed denominators,8 arm decisions,
+312 contrasts and936 CSV rows. No new training or checkpoint inference.
+Peak allocated memory is95.12MiB baseline versus96.08MiB carry.
+
+[Detailed report](evidence/direct_spatial_carry_init2345/RESULTS.md),
+[compact metrics](evidence/direct_spatial_carry_init2345/analysis.json),
+[all contrasts](evidence/direct_spatial_carry_init2345/paired_effects.csv),
+[protocol](new/direct_spatial_carry/PROTOCOL.md), and
+[publication hashes](DIRECT_CARRY_PUBLICATION_MANIFEST.json).
+
+## Previous: Phase-II initialization replication misses its K8 threshold
 
 Execution: **COMPLETE**, 12 arms at 300 updates each, 1095.047 seconds.
 **K8 narrow reach and sustained replication are both `NOT_REPLICATED`: 2/4

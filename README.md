@@ -1,7 +1,16 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
 This repository tests whether changing the medium and update rule improves
-persistent cellular computation. The latest **short-BPTT Phase II** completed
+persistent cellular computation. The latest **Direct Spatial Carry** development
+screen is **DEVELOPMENT_NO_GO**: adding fixed normalized neighbor averaging
+to the W skip path reduces reach+hold from baseline **2/4 to 0/4**. All four
+seeds lose primary paired accuracy; the baseline exactly reproduces Phase II
+in final parameters and every evaluation record. The eight matched K8 runs
+completed300 updates each in13.30 minutes. This rejects the tested rho=0.5
+average-carry recipe, without identifying its failure mechanism or rejecting
+all spatial carry. [Current results](evidence/direct_spatial_carry_init2345/RESULTS.md).
+
+The previous **short-BPTT Phase II** completed
 12 matched runs: additive cells, K8/K16/K64, four new initialization seeds,
 one fixed training bank and schedule. **K8 reaches and holds in 2/4 seeds,
 below the frozen 3/4 replication criterion.** K16 reaches in 3/4 but reaches
@@ -9,7 +18,7 @@ and holds in only 1/4; all four K64 controls remain unqualified. Two new K8
 positive cases retain high accuracy in the selected narrow distance band,
 including on larger grids, while farther propagation is weak. This prospective
 follow-up tests strict graph distance **16<d<32** on new maps; it does not amend
-Phase I's broader failed gate. [Current results](evidence/short_bptt_phase2_init2345/RESULTS.md).
+Phase I's broader failed gate. [Phase-II results](evidence/short_bptt_phase2_init2345/RESULTS.md).
 
 The previous **matched short-BPTT Phase-I screen**
 completed eight 300-update runs: additive/revision cells, K8/K64 gradients,
@@ -43,26 +52,28 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `7d1e326`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `0decc29`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
 1. [RESULTS.md](RESULTS.md) and
-   [current screen report](evidence/short_bptt_phase2_init2345/RESULTS.md).
-2. [Compact metrics](evidence/short_bptt_phase2_init2345/analysis.json) and
-   [all 72 distance/rollout rows](evidence/short_bptt_phase2_init2345/curves.csv).
-3. [Frozen protocol](new/short_bptt_phase2/PROTOCOL.md),
-   [gradient accumulation and detachment](new/short_bptt_phase2/training.py),
-   [runner and decisions](new/short_bptt_phase2/run.py), and
+   [current screen report](evidence/direct_spatial_carry_init2345/RESULTS.md).
+2. [Compact metrics](evidence/direct_spatial_carry_init2345/analysis.json),
+   [all distance/rollout rows](evidence/direct_spatial_carry_init2345/curves.csv), and
+   [per-seed paired effects](evidence/direct_spatial_carry_init2345/paired_effects.csv).
+3. [Frozen protocol](new/direct_spatial_carry/PROTOCOL.md),
+   [carry cell](new/direct_spatial_carry/carry_cells.py),
+   [runner and decisions](new/direct_spatial_carry/run.py), and
    [GPT_CONTEXT.md](GPT_CONTEXT.md).
-4. [Validation](evidence/short_bptt_phase2_init2345/validation.json),
-   [analysis code](new/short_bptt_phase2/analyze.py), and
-   [publication hashes](BPTT_PHASE2_PUBLICATION_MANIFEST.json).
-5. Historical context: [Phase I](evidence/short_bptt_paired01/RESULTS.md),
+4. [Validation](evidence/direct_spatial_carry_init2345/validation.json),
+   [analysis code](new/direct_spatial_carry/analyze.py), and
+   [publication hashes](DIRECT_CARRY_PUBLICATION_MANIFEST.json).
+5. Historical context: [Phase II](evidence/short_bptt_phase2_init2345/RESULTS.md),
+   [Phase I](evidence/short_bptt_paired01/RESULTS.md),
    [source-switch audit](evidence/switch_audit_seed0/RESULTS.md),
    [prior training screen](evidence/workspace_revision_paired01/INTERPRETATION.md),
    and [generic dynamics audit](evidence/dynamics_audit_seed0/INTERPRETATION.md).
 
-The twelve current [raw arm files](evidence/short_bptt_phase2_init2345/raw/) and
-[shared training schedule](evidence/short_bptt_phase2_init2345/schedule.json) are byte-identical
+The eight current [raw arm files](evidence/direct_spatial_carry_init2345/raw/) and
+[shared training schedule](evidence/direct_spatial_carry_init2345/schedule.json) are byte-identical
 copies of completed outputs. They are secondary. Start with the small
 summaries above. Checkpoints, machine receipts, duplicate ZIPs
 and transient logs are excluded. Original publication manifests remain valid.
@@ -80,7 +91,37 @@ diagnostics do not directly transfer to generic Momentum. These results and
 the earlier 2D/3D transport failures remain unchanged in [RESULTS.md](RESULTS.md).
 No further training or monitor is scheduled.
 
-## Reproduce the current short-BPTT Phase II
+## Reproduce Direct Spatial Carry
+
+Install [requirements.txt](requirements.txt) and use new output directories
+from this repository root. Both arms use the same historical initialization,
+data, schedule,5033 parameters and K8 trainer; no prior weights are needed.
+CPU checks compare carry with explicit neighbor averaging and verify baseline
+equivalence at rho=0, including gradients. Training requires CUDA.
+
+```powershell
+python new/direct_spatial_carry/check.py
+python new/direct_spatial_carry/run.py --preflight --out runs/NEW_CARRY_PREFLIGHT
+pwsh -File tools/launch_direct_carry.ps1 -RunName NEW_CARRY_RUN -Preflight runs/NEW_CARRY_PREFLIGHT
+```
+
+Fixed300 updates per arm; preflight must fit the25-minute estimate, otherwise
+abort without reducing the budget. Formal run writes all8 raw records,
+`aggregate.json`, `curves.csv`, `paired_effects.csv` and `RESULTS.md`.
+`COMPLETE` describes execution; the frozen scientific decision is separate.
+The recorded screen finished in13.30 minutes on an RTX4060 Laptop GPU.
+Peak allocation baseline95.12MiB, carry96.08MiB; these are systems measurements,
+not matched-accuracy benefits. No follow-up confirmation is scheduled.
+
+The CPU analysis command below verifies saved results and contains the
+recorded screen's interpretation. It needs local checkpoints but does no
+checkpoint inference. All published measurements can be reviewed without them.
+
+```powershell
+python new/direct_spatial_carry/analyze.py --run runs/RECORDED_CARRY_RUN --out analyses/NEW_CARRY_REVIEW
+```
+
+## Reproduce the previous short-BPTT Phase II
 
 Install [requirements.txt](requirements.txt), run from this repository root,
 and use new output directories. No prior weights are needed. The CPU check

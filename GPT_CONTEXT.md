@@ -1,6 +1,61 @@
 # Context for incremental scientific review
 
-## Current: Phase II completed, K8 replication threshold not met
+## Current: Direct Spatial Carry development screen is negative
+
+- Execution: `COMPLETE`;8 arms,300 updates,797.797 seconds.
+- Scientific status: `DEVELOPMENT_NO_GO`.
+- Narrow reach AND hold: baseline2/4, carry0/4. Every primary mean and pooled
+  value decreases with carry. Both old positives2/5 are lost.
+- Intervention: only W identity -> W-0.5*D_M^dagger*L_M(W), fixed rho0.5,
+  degree counts real open neighbors; isolated/wall nodes retain identity.
+- Matched: F/Q, additive Z, W24/Z8,5033 parameters, two communication phases,
+  K8,300 updates,64 forward steps, eight equally weighted losses and one
+  optimizer step. Same Phase-II bank10002/schedule20002/eval40032,40064.
+- Baseline reproduction:4/4 final parameter hashes and complete evaluations
+  exactly match the earlier Phase-II K8 records. No baseline drift here.
+- Scope: development with previously inspected seeds2-5/maps, n=4
+  initialization variation conditional on one bank/schedule; not confirmation.
+- Stop: no continuation to fresh-seed confirmation, new architecture or monitor.
+
+Primary size32/T64 strict16<d<32: mean AND pooled paired>=80%, both BA>=85%.
+Hold requires T128 AND T256 drops<=3pp BA and<=5pp paired relative to T64.
+Continue only with>=3 carry successes, preservation of2/5 and more successes
+than concurrent baseline, with baseline2/5 reproduced. Full-K64 qualification
+is not a gate in this two-arm architecture screen.
+
+Primary pooled baseline -> carry: seed2 92.97->0%, seed3 17.27->3.12%,
+seed4 44.76->11.41%, seed5 95.68->4.42%. At size64/T256, carry d>32 paired
+is0% for all four. Seed4 has a transient T128 narrow-band benefit: pooled
+74.64% versus43.59% at size32 and82.54% versus37.06% at size64. It falls below
+baseline again byT256 and fails hold; this does not rescue the fixed endpoint.
+Do not mistake carry seed2 hold=True for retained ability: its reach is false
+and primary stays zero. Whole-grid BA and paired far-pixel correctness differ.
+
+Interpretation: the tested lazy-average path harms this K8 recipe. It replaces
+part of temporal identity with mixing, so averaging-induced dilution or other
+mechanisms are hypotheses, not identified causes. Channel preservation does
+not ensure task-information preservation. Other carry operators remain untested.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Real-edge degree and fixed carry | `masked_degree`, `spatial_carry` | `new/direct_spatial_carry/carry_cells.py` |
+| Sole W intervention with old F/new-W Q | `DirectCarryCell.step` | `new/direct_spatial_carry/carry_cells.py` |
+| Unchanged gradient accumulation | `backward_trajectory` | `new/short_bptt_phase2/training.py` |
+| Original paired evaluator | `paired`, `selections`, `evaluate` | `new/short_bptt_phase2/run.py` |
+| Reach/hold, baseline reproduction, comparison | `predicates`, `decision`, `aggregate` | `new/direct_spatial_carry/run.py` |
+| Independent CPU result arithmetic | `main` | `new/direct_spatial_carry/analyze.py` |
+
+Read [results](evidence/direct_spatial_carry_init2345/RESULTS.md),
+[compact analysis](evidence/direct_spatial_carry_init2345/analysis.json),
+[protocol](new/direct_spatial_carry/PROTOCOL.md),
+[validation](evidence/direct_spatial_carry_init2345/validation.json), and
+[publication bindings](DIRECT_CARRY_PUBLICATION_MANIFEST.json).
+Raw records/schedule/aggregate/CSV are byte-identical; public manifest/status
+copies omit PID only. Checkpoints, machine receipts and logs remain local.
+CPU verification reconstructs denominators and aggregates saved counts;
+it does not regenerate logits. Earlier evidence is unchanged.
+
+## Previous: Phase II completed, K8 replication threshold not met
 
 - Execution: `COMPLETE`; 12 arms, 300 updates each, 1095.047 seconds.
 - K8 narrow reach: `NOT_REPLICATED`, 2/4 versus required3/4.

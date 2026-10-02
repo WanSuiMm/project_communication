@@ -1,6 +1,53 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Current completed experiment (2026-10-02): short-BPTT Phase II, additive only,
+Current completed experiment (2026-10-02): Direct Spatial Carry development
+screen. Frozen protocol: new/direct_spatial_carry/PROTOCOL.md. Only the W
+identity term changes to W-0.5*D_M^dagger*L_M(W); F/Q, additive Z, W24/Z8,
+5033 parameters, two communication phases and K8 training remain unchanged.
+Rerun baseline and carry for initialization seeds2/3/4/5, 300 updates each,
+with the exact Phase-II bank/schedule/evaluation maps (8 arms). These already
+inspected seeds/maps make this a development screen, not confirmation.
+Primary reach/hold thresholds are unchanged. Continue only if carry reaches
+and holds in>=3/4, keeps seeds2/5, and exceeds the concurrent baseline count;
+baseline2/5 must reproduce, otherwise report BASELINE_REPRODUCTION_DRIFT.
+Report every distance band, size32/64, T64/128/256 and per-seed paired effects.
+No normalization, routing, sweep, automatic confirmation or monitoring.
+
+CPU implementation/gradient/decision checks passed. Read-only independent
+review found a final-evaluation deadline gap, now closed; no remaining
+correctness blocker was found within the review's stated scope. The final
+matching-source CUDA preflight passed in6.375 seconds at
+runs/direct_spatial_carry_20261002_dispatch_check/. Both arms completed3
+updates; peak allocated memory baseline87.14MiB and carry88.11MiB. Worst
+steady update0.406 seconds gives1289.28 seconds (21.49 minutes) under the
+frozen runtime rule. Source, initialization, training-bank and evaluation-bank
+identity checks passed. Earlier engineering preflight is retained separately.
+Formal dispatch verified at13:53:26 +08:00, local RTX4060 Laptop GPU,
+including its first completed training update. Run:
+runs/direct_spatial_carry_20261002_init2345/. Private launch receipt:
+runs/direct_spatial_carry_20261002_init2345_launch_20261002_135326/launch_receipt.json.
+Completed at14:06:46 +08:00 in797.797 seconds (13.30 minutes), all8 arms
+at300 updates. Status: DEVELOPMENT_NO_GO; baseline reach+hold2/4, carry0/4.
+All four baseline final parameters and complete evaluation records exactly
+reproduce Phase II. Carry primary pooled values by seed2/3/4/5 are
+0.00/3.12/11.41/4.42%, below baseline92.97/17.27/44.76/95.68% respectively.
+At size64/T256 carry d>32 paired correctness is0% in all four seeds.
+No confirmation, rescue experiment or monitoring is scheduled.
+CPU review at analyses/direct_spatial_carry_20261002_review/ verifies29 source
+snapshots,8 checkpoints,96 BA and672 paired aggregates/denominators,8 arm
+decisions,312 contrasts and936 CSV rows; no new training or inference.
+Public entry: evidence/direct_spatial_carry_init2345/RESULTS.md and analysis.json.
+Code/evidence bindings: DIRECT_CARRY_PUBLICATION_MANIFEST.json.
+The carry alone is maximum-norm nonexpansive; full-cell stability, useful
+information preservation and gradients across detach are not guaranteed.
+Earlier evidence and claims remain unchanged. Commands from repository root:
+
+    python new/direct_spatial_carry/check.py
+    python new/direct_spatial_carry/run.py --preflight --out runs/NEW_CARRY_PREFLIGHT
+    pwsh -File tools/launch_direct_carry.ps1 -RunName NEW_CARRY_RUN -Preflight runs/NEW_CARRY_PREFLIGHT
+    python new/direct_spatial_carry/analyze.py --run runs/direct_spatial_carry_20261002_init2345 --out analyses/NEW_CARRY_REVIEW
+
+Previous completed experiment (2026-10-02): short-BPTT Phase II, additive only,
 K8/K16/K64, four new initialization seeds2/3/4/5. Fixed training bank10002 and
 schedule20002 separate initialization variability from changing training data.
 All12 arms use300 updates,64-step fresh trajectories, identical losses every8

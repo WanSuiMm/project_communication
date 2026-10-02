@@ -1,0 +1,99 @@
+{
+  "review_base": "0decc2926b52967496d57a90f8f803383e383178",
+  "execution_status": "COMPLETE",
+  "decision": "DEVELOPMENT_NO_GO",
+  "counts": {
+    "baseline": {
+      "reach": 2,
+      "reach_and_hold": 2
+    },
+    "carry": {
+      "reach": 0,
+      "reach_and_hold": 0
+    }
+  },
+  "source_sha256": {
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "new/workspace_revision/PROTOCOL.md": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "tools/launch_revision.ps1": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9",
+    "new/short_bptt/PROTOCOL.md": "f20d0dfbc8fd2ee21ea973a7562ed7f435fc4da824da67376165659d50818158",
+    "new/short_bptt/training.py": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+    "new/short_bptt/check.py": "d2e839fef75a2fba8b0f7e759cf140714fe186221543438c20b0eacbb41453c4",
+    "new/short_bptt/run.py": "dae5e6ed365842777aea0fc199867aa8913b346a2382ab7aa736985bde8ad9d9",
+    "tools/launch_short_bptt.ps1": "0a7859d1e34f970fdbc38cd93c29ba07019ec2d4d9e352bc64f8a8dc6bec7942",
+    "new/short_bptt_phase2/PROTOCOL.md": "80a13c66a6ec03e1da247e18f04d867d954fe7f33d6f7b6e719376cba6c711da",
+    "new/short_bptt_phase2/training.py": "7e0c95c7088933ef88402f04359103c16ffe3cf8dd09fab6f2352fbaef4f25cb",
+    "new/short_bptt_phase2/check.py": "a9aec169d3a8c7ea110d6a260fee8ac6d95e9f7d8016269823a93df73f751e77",
+    "new/short_bptt_phase2/run.py": "12b3c4b0a7f12cb77ea81f8a5a92170f55bb9a5c320fbbb3d1af91e0ac8669ce",
+    "tools/launch_bptt_phase2.ps1": "dace8dd7e5b50a9139cde6e48e90f4107372a81f3b987d35f47478a2e32df08a",
+    "new/direct_spatial_carry/carry_cells.py": "214b5d5a6c1b791ef6f4767f93470ca57bd3eec7134f941a4139a38d95ef19d7",
+    "new/direct_spatial_carry/run.py": "7f874533d65d580574177d04a68a2795c275295479f7341aced5626b2f1f750e",
+    "new/direct_spatial_carry/check.py": "593f9c49ac0f202ce1829f577f58eebeb001dde7c631874bf53e4948b8e795b4",
+    "new/direct_spatial_carry/PROTOCOL.md": "a4d9cceabc8f5fdbf104eea1f654b580a96d718de45facb5d346b8427aaa126f",
+    "tools/launch_direct_carry.ps1": "c80e7e8b4e358507efd28d350149245c144834fe46f38305db2eee7139e031b3",
+    "BPTT_PHASE2_PUBLICATION_MANIFEST.json": "9281168c0dcec7a75987f461074580d203c4f958797b28aced65004f6d120dfd",
+    "evidence/short_bptt_phase2_init2345/manifest.json": "2d471eb833895497eec35c0dfc2bd6192675ad780fd019272b9b23aec4f68cdf",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed2.json": "273122c6ef7c1070cca212f9f7fe6562911eb276dcafb2a0a29afd78340080fc",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed3.json": "22a08fff5ccfb52a398e3f7ac29abdde868cc02a21208cb821537717ba78d891",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed4.json": "c350f665a3a8eb0c68ec08994368c0a7595c1b6a4c8c1df39a29b367bbdc0a7e",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed5.json": "212671c5895f9abb8c3d5a2630456d41207ea2e01bc11bef32c0b9948da81f26"
+  },
+  "analysis_source_sha256": {
+    "new/direct_spatial_carry/analyze.py": "7b2f058f47adae2090a5d202046b57845017ec5810ae57aa92f0af2fcb5a51b8"
+  },
+  "publication_tool_sha256": {
+    "tools/export_direct_carry_evidence.py": "a098e2ba460ab4858b413718d391c3d98a673465e3c6373ad63a11389d02ee27"
+  },
+  "checkpoint_sha256": {
+    "baseline_K8_seed2.pt": "571057377060907122ec018be6d79bb590c462371baa28b7bfd1b983a316d2a4",
+    "baseline_K8_seed3.pt": "476d16f0eeb8871268cf3a0653241af393f450559e9c79b0bd5d6476c65f390b",
+    "baseline_K8_seed4.pt": "2e3d5ece7091be78a4da3060cc96d0820614a6ca16cbded34cccbee65f6b7ddb",
+    "baseline_K8_seed5.pt": "9c712a010ae3c8c4f595fa45d652d52d7ee0703fa65e7b134ab8755a06001a6a",
+    "carry_K8_seed2.pt": "6e283dd5e39dba0a07b148a050f8df330016ec57eba0c13b49fa07074f5e7a5c",
+    "carry_K8_seed3.pt": "78c6d08a39663877fa150bda1b97a7236cd73b56879a468a6796b6af4f88eca6",
+    "carry_K8_seed4.pt": "111420423423d2b3b035e90d2893a079e5288ecb154bd0bd218b958b2e1028c7",
+    "carry_K8_seed5.pt": "152b91c583a579c99518d8fd78cf4eb303bee30bf258811cb225aeca51266657"
+  },
+  "published_evidence_sha256": {
+    "evidence/direct_spatial_carry_init2345/aggregate.json": "d74a40720ea2200d906507396ac1aa5bc93efac0ef424ca142b18579e699e0e7",
+    "evidence/direct_spatial_carry_init2345/analysis.json": "a3808598ad10accf5ee19972b828bd8cb78ecf53598ca79af9a881b065f2400c",
+    "evidence/direct_spatial_carry_init2345/completion.json": "fc2ecbd5e576e1f3bb5a4666c641b44eb2cf568b4754aa3a9468bf98406a176d",
+    "evidence/direct_spatial_carry_init2345/curves.csv": "297f503f29f19fc534d14de0c09f353af43a6bc3860b5e3b89ab1460543a0abf",
+    "evidence/direct_spatial_carry_init2345/manifest.json": "11f2a7abf37411c1cb9b630b78a9e387e57b68186563e831d65d39ab41ef30c9",
+    "evidence/direct_spatial_carry_init2345/paired_effects.csv": "abc677364d3a54ed2f979e4527c4c7cc6c1d2c3ff03097ecb83d0e22e34c6ba3",
+    "evidence/direct_spatial_carry_init2345/preflight/aggregate.json": "c645ba98939606200fc927f8cd1fa27e57f33f8355c9bdac871711fbad11967a",
+    "evidence/direct_spatial_carry_init2345/preflight/manifest.json": "ebfda287ca54616ef27afd879cf4a127b7548a07ad506dd35b307321552e67e9",
+    "evidence/direct_spatial_carry_init2345/preflight/status.json": "ecd3b2e47273e990ff664a0a1709abb2b72789eb6a63ac54dd0b7fb4f21eeb14",
+    "evidence/direct_spatial_carry_init2345/provenance.json": "1e69854d77a6a098bb1e0cb85cf18a38c3f0aa6d77ecbe3fa628117193bf9495",
+    "evidence/direct_spatial_carry_init2345/raw/baseline_K8_seed2.json": "1fe186ba171f59868c722e2f065e33b704d82cd22d429ab0089288a0e093b54f",
+    "evidence/direct_spatial_carry_init2345/raw/baseline_K8_seed3.json": "7550cb1d0bc111df3ca983ccdd3975b924f2241c872a5422f614e3761e34519f",
+    "evidence/direct_spatial_carry_init2345/raw/baseline_K8_seed4.json": "087fdba8abf6155c60b9199628867e7459f2df4d5c459059649726d2b91aa769",
+    "evidence/direct_spatial_carry_init2345/raw/baseline_K8_seed5.json": "250dda389237d8ef20c3adcf7f18a01f58317e83bba0b85d4d74543f439b1cda",
+    "evidence/direct_spatial_carry_init2345/raw/carry_K8_seed2.json": "52c5ab5968e39bf8075fa4723c58b1c20747202e9b6dc325ecd042e10429181d",
+    "evidence/direct_spatial_carry_init2345/raw/carry_K8_seed3.json": "250fd4662576c2b3cff227454a6155db17907e1830dd56a96da02b63d3eb9f81",
+    "evidence/direct_spatial_carry_init2345/raw/carry_K8_seed4.json": "63eedaed40ea0bad6971abf2a35b54182405ecfad76dc029a8544e625ca01ce5",
+    "evidence/direct_spatial_carry_init2345/raw/carry_K8_seed5.json": "485ddfa2eb50d2add5cdc565a45568d7e3f05ccaf4f95ca8274f6711a3538970",
+    "evidence/direct_spatial_carry_init2345/RESULTS.md": "f90823f31c0548549e17e12b7ba33a50ea6d83ec77b3596fe84664049cfda380",
+    "evidence/direct_spatial_carry_init2345/runner_RESULTS.md": "edefe1e9ec25033a8633a8b33de84dae030222d58976573fd8d7b82a4b398136",
+    "evidence/direct_spatial_carry_init2345/schedule.json": "b46f2ae3545b8210d137908430fa96b027764ea0841f4f2b49c2dc50cbb3c263",
+    "evidence/direct_spatial_carry_init2345/validation.json": "e8de2397f7eb0fef24b94eec0c04de4f759c9c15409ddf11198d5c2f256cc350"
+  },
+  "notes": [
+    "Carry reaches and holds in0/4, concurrent baseline in2/4.",
+    "Baseline final parameters and complete evaluations exactly reproduce Phase II in4/4.",
+    "All primary paired means and pooled values decline with carry.",
+    "Previously inspected seeds/maps: development only. The result rejects this fixed-average recipe, not all spatial carry."
+  ],
+  "excluded": [
+    "checkpoints",
+    "machine launch receipts",
+    "PID",
+    "transient logs",
+    "local smoke artifacts"
+  ]
+}

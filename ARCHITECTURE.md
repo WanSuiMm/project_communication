@@ -1,6 +1,45 @@
 # Tensor and operator map
 
-## Current 2D inertial wind-tunnel cell (seed 0)
+## Current comparison: Direct Spatial Carry versus additive K8
+
+The task and medium are the masked seeded-region system described in
+[the protocol](new/direct_spatial_carry/PROTOCOL.md). Inputs X have shape
+[B,3,H,W] (mask, positive source, negative source); persistent states W and Z
+have24 and8 channels. The pointwise feature tensor has67 channels:
+[W,Z,L_M W,L_M Z,X]. F uses67->40->24 channels, Q uses67->16->8, with Tanh
+hidden activations and linear outputs; readout is a1x1 map from Z to one logit.
+
+```math
+\begin{aligned}
+P_M &= I-\tfrac12D_M^\dagger L_M,\\
+W'_{\rm baseline} &= W+0.1F_\theta(W,Z,L_MW,L_MZ,X),\\
+W'_{\rm carry} &= P_MW+0.1F_\theta(W,Z,L_MW,L_MZ,X),\\
+Z' &= Z+0.5Q_\theta(W',Z,L_MW',L_MZ,X).
+\end{aligned}
+```
+
+D_M counts real four-neighbor open edges, excluding exterior ghost nodes.
+Degree-zero nodes retain W. P_M acts independently on each channel; it
+preserves constants, cannot cross closed edges and is maximum-norm
+nonexpansive. It is lazy diffusion and mixes spatial values. These properties
+do not guarantee Euclidean contraction, full-cell stability or useful message
+preservation. The modified term replaces part of identity retention; it is
+not an additional protected state bank. Both arms retain two communication
+phases per step,5033 parameters and identical initialization draws.
+
+`DirectCarryCell.step` in [carry_cells.py](new/direct_spatial_carry/carry_cells.py)
+reuses the exact old L(W) feature at channel offset32. F receives pre-carry
+features; Q receives the updated W. The baseline factory returns the unchanged
+`RevisionCell('ws_additive')`. The [CPU check](new/direct_spatial_carry/check.py)
+compares with an explicit neighbor loop and tests rho0 forward/gradient
+equivalence. K8 detaches BOTH states while keeping their values; carry does
+not restore gradients across those cuts.
+
+[The completed development screen](evidence/direct_spatial_carry_init2345/RESULTS.md)
+is negative: baseline reaches and holds in2/4 seeds, carry in0/4. All earlier
+architecture definitions and results below are historical and unchanged.
+
+## Historical 2D inertial wind-tunnel cell (seed 0)
 
 The separate seeded-region task supplies three channels at every update:
 open-region mask, positive seed and negative seed. Each connected region gets
