@@ -1,107 +1,91 @@
-# Incremental review: persistent local, carrier and task roles
+# Incremental review: Streaming seed4 operator audit
 
-- Review base: `891f968d85e84e1bc47e0fd3bcbe83210c55f2f6`.
-- Evidence head: `84af24f36c44bac7acfe3f972ef281e0c812557e`.
+- Review base: `87763540c7e342a8fe278b8c198930f4decc2c1a`.
+- Evidence head: `4c424cfe3ce605c3749e1430d7aef32bfc38f04f`.
 - This following handoff-only commit changes review metadata, not code or evidence.
 
-All 12 matched K8 arms completed 300 updates in 1204.234 seconds (20.07 minutes).
-**DEVELOPMENT_NO_GO**: reach-and-hold counts are baseline 2/4, stream 1/4,
-roles 0/4. All eight control final parameter hashes and complete evaluation
-payloads reproduce their historical records exactly. This is development
-evidence on previously inspected seeds/maps, conditional on one bank/schedule.
-The independent comparison unit remains initialization seed, n=4. Counts
-pooled across seeds are descriptive; rollup map counts repeat the same maps.
+One selected existing Streaming seed4 checkpoint, no training. Four cold-rollout
+conditions completed in 12.36 seconds. All six historical size32/64 by
+T64/T128/T256 evaluation records replay exactly (maximum error 0).
+Scientific status: SELECTED_CHECKPOINT_OPERATOR_SENSITIVITY. No new GO gate
+or model-seed replication. The prior multi-seed architecture decisions remain.
 
 ## Minimal reading order
 
-1. [Current results](evidence/persistent_roles_init2345/RESULTS.md) and
-   [compact analysis](evidence/persistent_roles_init2345/analysis.json).
-2. [Frozen protocol](new/persistent_roles/PROTOCOL.md),
-   [cell equations and shapes](ARCHITECTURE.md), and
-   [exact cell](new/persistent_roles/role_cells.py).
-3. [Runner and decision](new/persistent_roles/run.py),
-   [validation](evidence/persistent_roles_init2345/validation.json), and
-   [publication bindings](PERSISTENT_ROLES_PUBLICATION_MANIFEST.json).
-4. For detailed arithmetic, use [curves](evidence/persistent_roles_init2345/curves.csv),
-   [paired effects](evidence/persistent_roles_init2345/paired_effects.csv),
-   [CPU checks](new/persistent_roles/check.py), and
-   [saved-result audit](new/persistent_roles/analyze.py).
+1. [Current results](evidence/stream_path_audit_seed4/RESULTS.md),
+   [interpretation and limits](evidence/stream_path_audit_seed4/INTERPRETATION.md),
+   and [compact summary](evidence/stream_path_audit_seed4/summary.json).
+2. [Frozen protocol](new/stream_path_audit/PROTOCOL.md),
+   [exact pathway switches](new/stream_path_audit/operators.py),
+   [clock and shapes](ARCHITECTURE.md), and
+   [runner/replay gate](new/stream_path_audit/audit.py).
+3. [Saved-result validation](evidence/stream_path_audit_seed4/validation.json),
+   [replay validation](evidence/stream_path_audit_seed4/replay_validation.json),
+   [public provenance](evidence/stream_path_audit_seed4/provenance.json), and
+   [publication hash bindings](STREAM_PATH_AUDIT_PUBLICATION_MANIFEST.json).
+4. Detailed [curves](evidence/stream_path_audit_seed4/curves.csv),
+   [contrasts](evidence/stream_path_audit_seed4/contrasts.json),
+   [CPU reference](new/stream_path_audit/check.py), and
+   [arithmetic analyzer](new/stream_path_audit/analyze.py).
 
-The 12 [raw arm JSONs](evidence/persistent_roles_init2345/raw/) are secondary.
-Raw metrics and schedule are copied byte-identically. Public manifest,
-completion and preflight copies omit private process/device metadata.
-Checkpoints, machine launch receipts and logs remain local and are excluded.
+The 2.1 MB [raw conditions](evidence/stream_path_audit_seed4/raw_conditions.json)
+are secondary. Metrics, curves, contrasts, replay and arithmetic validation
+are byte-identical copies. Manifest/completion are sanitized copies; their
+public hashes are bound separately. Validation input_sha256 refers to original
+run files, including excluded private manifest/completion bytes. Checkpoints,
+machine identifiers, runtime commands and source snapshots remain local.
 
-## Decision-relevant change
+## Intervention and decision-relevant evidence
 
-The candidate has stationary H12 workspace, persistent C12 carriers
-(four directions, three channels each), and stationary Z8 task state.
-A shared R35 -> 72 -> 32 Tanh rule emits simultaneous residuals for all
-three blocks. Each of two phases per macro step computes
-`H' = H + 0.1 Delta_H`, `C' = T(C + 0.1 Delta_C)`, and
-`Z' = Z + 0.5 Delta_Z`. Only C moves through the existing masked port
-permutation, with blocked/exterior ports bouncing back and wall ports fixed.
-There are no direct Laplacian or neighbor inputs. Encoder, rule and readout
-total 5033 parameters, matching the historical controls.
+Use the same W24/Z8 cell, trained parameters, encoder, readout, residual scales
+and original/source-flip evaluation maps (32 each at sizes32/64). Starting
+from the same cold initialization, switch fixed T_M to identity, and/or replace
+both Laplacian slots in BOTH F and Q by zero tensors. F retains pre-stream
+L(W)/L(Z); Q retains post-F L(Wplus) and pre-update L(Z). Turning off T also
+changes the incoming workspace feature read by F. Equal macro-step counts
+do not match communication opportunity: hop bounds are 2/2/1/0.
 
-Encoder/readout initialization draws match the controls. H and C split the
-old 24-channel encoder output; Z starts at zero. Complete candidate
-initialization differs. With zero residuals and a fixed mask, the base
-`I_H ⊕ T_C ⊕ I_Z` is isometric. The full learned recurrence has
-no losslessness or stability guarantee. K8 gives 16 carrier phases and
-read-before-stream Z radius at most 15; the primary strict d>16 is unchanged.
+| Condition | Primary pooled T64 % | T128 % | T256 % | Size64 d>32 T256 % |
+|---|---:|---:|---:|---:|
+| Full original cell | 85.92 | 99.35 | 100.00 | 59.43 |
+| T_M replaced by identity | 0.00 | 0.00 | 0.00 | 0.00 |
+| Direct Laplacian inputs zeroed | 0.00 | 0.00 | 0.00 | 0.00 |
+| Both interventions | 0.00 | 0.00 | 0.00 | 0.00 |
 
-Historical Streaming already has moving W24 and stationary Z8. This recipe
-adds a dedicated stationary workspace while changing carrier width,
-perception, rule sharing and readout clock together. It is a test of that
-complete parameterization, not an isolated causal test of H or the first
-architecture to combine moving and stationary state.
+Primary is size32 strict16<d<32, paired correct under BOTH source alternatives
+at the SAME changed-component pixel. Full correct counts at T64/T128/T256
+are 2507/2899/2918 out of2918; every primary knockout count is0/2918.
+These are not ordinary whole-grid accuracy percentages.
 
-Primary size 32/T64 strict 16<d<32 paired correctness:
+Nearby behavior also collapses. At size32, no_perception has0/1706 paired hits
+in d<8 already atT8. No_transport has906/1706 atT8 and1067/1706 atT16, then
+zero byT32. AtT64 all knockouts have original/flipped BA50.00%/48.44%.
+Thus the loss is not adequately characterized as only slower remote propagation.
 
-| Seed | Baseline pooled % | Stream pooled % | Roles per-map mean % | Roles pooled % | Roles correct / pixels |
-|---:|---:|---:|---:|---:|---:|
-| 2 | 92.97 | 1.47 | 0.00 | 0.00 | 0/2918 |
-| 3 | 17.27 | 5.62 | 0.53 | 0.31 | 9/2918 |
-| 4 | 44.76 | 85.92 | 0.00 | 0.00 | 0/2918 |
-| 5 | 95.68 | 13.02 | 1.80 | 1.58 | 46/2918 |
+Changed: this particular successful frozen solution fails to retain behavior
+under either pathway intervention, supporting sensitivity to the original
+hybrid update. Unchanged: Streaming's multi-seed DEVELOPMENT_NO_GO (1/4 versus
+baseline2/4), the previous sustained seed4 positive case, Persistent Roles0/4,
+Local Interface0/4, and all earlier gate conclusions.
 
-Paired correctness requires the original and flipped cue to be answered
-correctly at the same changed-region pixel; these values are not whole-grid
-ordinary accuracy. All four roles seeds have Hold=True but Reach=False:
-holding a failed endpoint does not establish successful remote computation.
-The frozen gate requires both primary paired statistics >=80%, both BAs
->=85%, hold at T128 and T256, at least three candidate reach-and-hold seeds
-including seeds 2/5, and a success count exceeding both controls.
+Knockouts alter learned feature/state distributions and effective spatial
+depth. They do not identify the reason H/C/Z failed, uniquely locate semantic
+operations, prove that restoring Laplacians will repair training, or show that
+retrained knockout models cannot succeed. Positive factorial interaction is
+descriptive arithmetic, not an additive causal decomposition. One selected
+model remains n=1, without significance or architecture-superiority claims.
 
-Longer rollouts do not recover the endpoint. Roles seed 5 has the largest
-primary pooled T256 value, 61/2918 = 2.09%. Its size 64/d>32 T256 result is
-also the maximum roles far-band pooled value, 65/27436 = 0.24%.
-Other horizons and per-map means are available in the compact analysis;
-these secondary endpoints do not replace the frozen gate.
-
-Changed: this persistent H/C/Z recipe has a completed negative development
-result and fails to make the prior rare Streaming behavior more reproducible.
-Unchanged: the earlier Local Interface no-go, Streaming's overall no-go and
-sustained seed 4 positive case, Direct Spatial Carry's no-go, Phase-II/Phase-I
-decisions, and earlier revision, dynamics and transport findings.
-No failure mechanism is isolated. No general impossibility, population
-reliability, significance, arbitrary-horizon or 3D claim follows.
-
-The saved-result audit verifies 51 executed source hashes against current
-files and both snapshots, 12 CPU checkpoint state hashes, eight historical
-control reproductions, data/schedule bindings, 144 BA means, 1008 paired
-metric/count aggregates, 12 gates, 936 curve rows and 624 paired contrasts.
-No new training or checkpoint inference was performed for publication.
+Verification: nonzero independent CPU reference passed; six historical replay
+records match in5628 integer and2636 float leaves. Saved CPU analysis checks39
+source bindings,672 paired aggregates/denominators,96 BA means,672 curve rows
+and600 contrasts. Publication performed no additional inference or training.
 
 ## Questions for review
 
-1. Does the cell implement persistent stationary H/Z and moving C, with
-   simultaneous residuals, the stated readout clock and no hidden neighbor
-   inputs? Are the fixed zero-residual invariants kept separate from learned
-   recurrence stability claims?
-2. Are initialization matching, all eight exact control reproductions,
-   integer denominators, null bands and the frozen reach/hold decision
-   consistent across the summaries, raw records and CSVs?
-3. Is this specific bundled negative result kept separate from the broader
-   role-separation principle and the previous Streaming seed 4 positive case?
+1. Are the carry replacement and both F/Q Laplacian switches implemented
+   with the historical clocks and unchanged weights? Are the different light
+   cones kept explicit?
+2. Do paired denominators, all six exact replay records and knockout effects
+   agree across raw evidence, summary, curves and contrasts?
+3. Does the interpretation distinguish frozen-solution sensitivity from
+   training causality, and retain the near-cue collapse and selected-model limit?
