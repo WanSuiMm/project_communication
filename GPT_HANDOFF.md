@@ -1,4 +1,85 @@
-# Incremental review: zero-training candidate/workspace switch audit
+# Incremental review: matched short-BPTT screen
+
+- Review base: `c2d705fcb56fdc2b31c68a33ecc7a02610b3fdee`.
+- Evidence head: `7af8b2d8df225c9db713cf00d931ba673d00ad01`.
+- This subsequent handoff-only commit changes review metadata only.
+
+Eight new training runs compare K8 and K64 gradients in the existing additive
+and revision cells, paired seeds0/1. All completed300 updates in730.797 seconds.
+Forward length64, eight equally weighted losses, fresh initialization, one
+optimizer update per trajectory and all within-pair identities are matched.
+K8 detaches both W/Z without changing their values, and accumulates gradients
+from all windows before clipping/updating. No architecture change was made.
+
+## Minimal reading order for this delta
+
+1. [Result and limitations](evidence/short_bptt_paired01/RESULTS.md) and
+   [distance/rollout figure](evidence/short_bptt_paired01/overview.png).
+2. [Compact metrics](evidence/short_bptt_paired01/analysis.json).
+3. [Frozen protocol](new/short_bptt/PROTOCOL.md),
+   [backward implementation](new/short_bptt/training.py),
+   [runner and decisions](new/short_bptt/run.py), and
+   [CPU checks](new/short_bptt/check.py).
+4. [Validation](evidence/short_bptt_paired01/validation.json),
+   [analysis code](new/short_bptt/analyze.py), and
+   [publication hashes](BPTT_PUBLICATION_MANIFEST.json).
+
+Raw arm JSONs and schedules are secondary, byte-identical copies. Public
+preflight records document the runtime-only choice of300 updates before
+efficacy. Checkpoints, machine receipts and transient logs remain local.
+Publication used CPU verification, with no new training or checkpoint inference.
+
+## New evidence and claim boundary
+
+**All four full-K64 controls fail qualification** at the frozen size32/T64
+far-paired endpoint. Both architecture comparisons are BASELINE_UNQUALIFIED.
+The runner's aggregate `decision: COMPLETE` means execution completion only.
+It does not support either a general truncation failure or superiority claim.
+
+One positive case remains meaningful: additive K8 seed1 reaches BA98.03% and
+far paired80.87%, retaining79.20%/78.24% atT128/T256. Its short reach and hold
+predicates pass. Additive seed0 and both revision K8 arms fail reach; hence
+there is no reproducible two-seed architecture pass, even aside from controls.
+
+Keep the denominator visible: **80.87% per-map mean is59.53% pooled far pixels**.
+Size32/T64 accuracy is45.60% in distance[32,64), and0% at distance>=64, the latter
+on just one map. At size64 far paired is28.40% atT64 and41.51% atT256. The result
+supports one instance of shared-rule composition beyond a K8 window, not robust
+long-distance/size extrapolation or arbitrary delayed credit assignment.
+Two communication phases per step give the window a radius16, not8.
+
+Peak allocated CUDA memory is514.04MiB for K64 and90.49MiB for K8:82.4% lower.
+Training times are similar,86-96 seconds per arm, with no accuracy-matched
+systems advantage established. Additive K64 clips88.67%/90.67% of updates;
+K8 clips6.67%/6.67%. This suggests an optimization difference but does not
+identify clipping as the cause of full-control failure.
+
+Sources, checkpoints, data and schedules verify;96 BA and336 paired aggregates
+and all four pair decisions were recomputed. The CPU gradient tests pass with
+zero full-gradient reference error. The new loss recipe and300-update budget
+cannot borrow positive-control qualification from the older600-update study.
+This is ordinary TBPTT on existing cells, not a claimed new training algorithm.
+
+Unchanged: the earlier NO_JOINT_SCREEN_PASS and the source-switch audit's
+old-aligned candidate/W-Z interaction result. The present screen evaluates
+fresh starts, not warm source revision; it neither repairs nor retests that
+failure. The earlier negative transport and dynamics evidence is preserved.
+No further experiment or monitor is scheduled.
+
+## Questions for review
+
+1. Are full and truncated gradients correctly matched in loss normalization,
+   parameter accumulation and one-update timing, including encoder gradients?
+2. Is the graph-distance>16 endpoint correct for two communication phases,
+   and is paired correctness kept distinct from BA and fixed-label accuracy?
+3. Do summaries retain the unqualified controls, seed dependence, per-map
+   versus pooled discrepancy and sparse far-distance support?
+4. Is the memory reduction separated from efficacy/speedup claims, and is the
+   clipping observation kept descriptive rather than causal?
+
+---
+
+# Historical handoff: zero-training candidate/workspace switch audit
 
 - Review base: `7cb1ca975c13104b3abb157cf5324ea977ad1051`.
 - Evidence head: `a700da6e8579830c36cea8ad6ecd014198430766`.
