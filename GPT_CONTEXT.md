@@ -1,6 +1,59 @@
 # Context for incremental scientific review
 
-## Current: Workspace + Revision paired screen completed, joint gate failed
+## Current: source-switch audit completed, candidate persistence with W/Z interaction
+
+- Execution: `COMPLETE`,9.609 seconds; no training, no Jacobian computation.
+- Checkpoint: original revision seed0 from the paired screen, unchanged.
+- Scope: two sizes32/64,16 shared maps each, K0/1/2/4/8/16/32/64/128 after
+  switching source at T64. One trained model; sizes/maps are not new replicates.
+- Scientific status:
+  `OLD_ALIGNED_CANDIDATE_AND_W_Z_INTERACTION_WITHOUT_SINGLE_BLOCK_RECOVERY`.
+- Validation:232 old metric comparisons replay exactly; reconstructed step
+  error0; affine readout identity error<=7.153e-7. BA/BCE replay covers original
+  and fresh-flip trajectories; W/Z RMS only the original trajectory. The frozen
+  protocol overstates norm coverage; [post-execution notes](new/switch_audit/REVIEW_NOTES.md)
+  explicitly correct the scope without editing the executed snapshot.
+
+Candidate timing: from (W_K,Z_K), compute Wplus_K with the real F update,
+then Q_K=Qnet(Wplus_K,Z_K,X), which drives Z_(K+1). O(Q_K) uses the existing
+affine readout, including bias. O(Z_(K+1))=.5O(Z_K)+.5O(Q_K) is checked.
+This is a projection of Q, not an interpretation of all latent coordinates.
+
+Six full-rollout branches compare warm, W-only reset, Z-only reset, cold reset
+of both, W-only mature donor and Z-only mature donor. Mature donors come from
+new-input T64 and contain extra computation. Candidate-only factorials cross
+post-F warm/new-aged W, pre-update warm/new-aged Z, and old/new X. No extra F
+is run inside those queries. Thus direct X contrasts omit other input paths.
+
+At size32/K128 the warm candidate/output is0% correct on the changed component;
+cold output is100%. All four single-block interventions reach37.5%, which is
+all-negative prediction across all changed pixels, not source-based recovery.
+At size64 the corresponding warm output is1.64%, cold99.49%, single-block
+37.17%-45.40%. The candidate function responds to both donor blocks; continuous
+signed-margin and accuracy contrasts, including interactions, are saved per map.
+
+Do not claim stale W alone, generally necessary simultaneous reset, an on-manifold
+causal mechanism, successful conditional invalidation, or stable useful computation
+solely from W motion. This audit leaves the original two-seed joint failure,
+seed1 qualification failure and untested short-BPTT hypothesis unchanged.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Candidate clock and affine identity | `probe`, `check` | `new/switch_audit/audit.py` |
+| Natural replay and intervention branches | `natural`, `audit_size` | `new/switch_audit/audit.py` |
+| Per-map metrics and source-distance bins | `describe` | `new/switch_audit/audit.py` |
+| Contrasts, label-bias derivation and figure | `positive_fraction`, `main` | `new/switch_audit/analyze.py` |
+| Lossless raw publication and aggregate verification | `main` | `tools/export_switch_evidence.py` |
+
+Start with [audit results](evidence/switch_audit_seed0/RESULTS.md),
+[compact analysis](evidence/switch_audit_seed0/analysis.json),
+[protocol](new/switch_audit/PROTOCOL.md), and
+[validation](evidence/switch_audit_seed0/validation.json).
+[Publication hashes](SWITCH_PUBLICATION_MANIFEST.json) bind code and evidence.
+Raw JSON is losslessly compacted, not byte-identical; decoded equality is verified.
+No new inference or training was performed for publication. No further run scheduled.
+
+## Previous: Workspace + Revision paired screen completed, joint gate failed
 
 - Execution status: `COMPLETE`; four arms, seeds0/1, 600 updates each, 1112.28s.
 - Scientific status: `NO_JOINT_SCREEN_PASS`; mean primary hold effect -9.02 pp.

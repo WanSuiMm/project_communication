@@ -1,0 +1,40 @@
+{
+  "protocol": "switch_audit_v1",
+  "started_utc": "2026-10-02T01:28:31.893013+00:00",
+  "training": false,
+  "checkpoint_sha256": "cdec2c8062d469582927889907d6023f924d13f058c37075d7f7b2ef8834ba86",
+  "source_sha256": {
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "new/workspace_revision/PROTOCOL.md": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "tools/launch_revision.ps1": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9",
+    "new/switch_audit/audit.py": "6bb074a9d6c47c47a72aa1645d6616a86e39a4a1736cfbfb29bc2a621ab333e5",
+    "new/switch_audit/PROTOCOL.md": "6d6e7a8342cded377edd1561748b14e2f591ccf599e6fc65f371eff97c36ae50"
+  },
+  "torch": "2.5.1",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "maximum_seconds": 300,
+  "anchors": [
+    0,
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "sizes": [
+    32,
+    64
+  ],
+  "model_seeds": [
+    0
+  ],
+  "maps_per_size": 16
+}

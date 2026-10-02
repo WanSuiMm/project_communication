@@ -1,6 +1,42 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: Workspace + Revision paired screen fails the joint gate
+## Latest: candidate/workspace source-switch audit, zero training
+
+Revision seed0, sizes32/64,16 fixed maps each; completed in9.609 seconds. All232
+saved replay comparisons and candidate-step reconstruction have zero error.
+Warm candidate readout itself is old-aligned: size32 new-target accuracy is0%
+at K64/K128; size64 is2.09%/1.63%. Slow averaging of an otherwise correct
+candidate is therefore not the observed failure.
+
+Full-rollout changed-component accuracy at K128 (%):
+
+| Intervention at old T64 | Size32 | Size64 |
+|---|---:|---:|
+| Retain W and Z, switch input | 0.00 | 1.64 |
+| Reset W to new-input encoding, retain Z | 37.50 | 43.36 |
+| Reset Z to zero, retain W | 37.50 | 37.17 |
+| Transplant W from new-input T64, retain Z | 37.50 | 45.39 |
+| Transplant Z from new-input T64, retain W | 37.50 | 45.40 |
+| Cold reset of both | 100.00 | 99.49 |
+
+At size32/K128, **all four single-block interventions predict negative on every
+changed-component pixel**;37.5% equals the six negative labels among16 maps.
+This is fixed-label behavior, not partial recovery. Resetting Z also harms
+unchanged-component accuracy (77.57%/61.70% at sizes32/64). Candidate-only
+cross-interventions at fixed new X show dependence on both W and Z and a
+nonadditive response. Donors from different trajectories can be off-distribution;
+the result does not prove a W-only mechanism or that both blocks must generally
+be reset. Mature donors include extra computation and are diagnostic controls.
+
+The earlier `NO_JOINT_SCREEN_PASS` remains unchanged. No seed1 training-failure
+diagnosis, short-BPTT test, new architecture or retraining is included.
+Read [audit report](evidence/switch_audit_seed0/RESULTS.md),
+[figure](evidence/switch_audit_seed0/overview.png),
+[compact metrics](evidence/switch_audit_seed0/analysis.json),
+[exact replay scope and contrasts](new/switch_audit/REVIEW_NOTES.md), and
+[publication hashes](SWITCH_PUBLICATION_MANIFEST.json).
+
+## Previous: Workspace + Revision paired screen fails the joint gate
 
 Execution: **COMPLETE**, all four arms at 600 updates, 1112.28 seconds.
 Scientific decision: **`NO_JOINT_SCREEN_PASS`**. Primary size32 hold is minimum

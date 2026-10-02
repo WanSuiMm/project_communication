@@ -1,0 +1,48 @@
+{
+  "review_base": "7cb1ca975c13104b3abb157cf5324ea977ad1051",
+  "execution_status": "COMPLETE",
+  "scientific_status": "OLD_ALIGNED_CANDIDATE_AND_W_Z_INTERACTION_WITHOUT_SINGLE_BLOCK_RECOVERY",
+  "training": false,
+  "model_seed": 0,
+  "source_sha256": {
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "new/workspace_revision/PROTOCOL.md": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "tools/launch_revision.ps1": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9",
+    "new/switch_audit/audit.py": "6bb074a9d6c47c47a72aa1645d6616a86e39a4a1736cfbfb29bc2a621ab333e5",
+    "new/switch_audit/PROTOCOL.md": "6d6e7a8342cded377edd1561748b14e2f591ccf599e6fc65f371eff97c36ae50"
+  },
+  "analysis_source_sha256": {
+    "new/switch_audit/analyze.py": "f13ca4763c77e9402f647b606edc6727c34ee6cc068a898236e5cf148c5d323d"
+  },
+  "publication_tool_sha256": {
+    "tools/export_switch_evidence.py": "83624149a32ed220b272be6a98d1d0a79038facb86ba3d1077da61c7a4afe7e1"
+  },
+  "review_notes_sha256": "d44ff166964507397e11365a811e85cfc9955775f0ee76b9f24b771ec44d66f8",
+  "checkpoint_sha256": "cdec2c8062d469582927889907d6023f924d13f058c37075d7f7b2ef8834ba86",
+  "published_evidence_sha256": {
+    "evidence/switch_audit_seed0/analysis.json": "96c07af33a8f8af075da37a8ea322d686ebc79c3c3a459a6856a54c6fcedbe0b",
+    "evidence/switch_audit_seed0/completion.json": "ba1b7b006644e0d8d9dc2c424c6d0f92ad09e8cec9555a597ff76c49329d5bcf",
+    "evidence/switch_audit_seed0/manifest.json": "2ccd7172cf4a573ea777ed1cd388d34165c8b7e8f64f7f49dd486c260e274e02",
+    "evidence/switch_audit_seed0/overview.png": "d88dfe413b33043d652fa9f2a65c77319e19e42db79f7ddda1cdfde5658f0eab",
+    "evidence/switch_audit_seed0/provenance.json": "724c98d7dcce822528c21c7c3a8788fb874d1d4db806cb1f0c01ee07418a43f8",
+    "evidence/switch_audit_seed0/raw/size32.json": "3ad1e838d972688550f5a89e8764342ba7dba6c3faced53b59b5186470081682",
+    "evidence/switch_audit_seed0/raw/size64.json": "ebc0485af0464ce544b346d12077f94b9534b9d4a0461d5e71b7846e0d7a08ef",
+    "evidence/switch_audit_seed0/RESULTS.md": "6a5730deabdc55f0677e498e9034873c12773e4584159534ca1b73ae61cbb7a3",
+    "evidence/switch_audit_seed0/validation.json": "d691a6200e901ad2de85262e719cd2836ddacba373a4d81676da20bf0e024493"
+  },
+  "excluded": [
+    "checkpoint",
+    "launch receipt",
+    "local PID and host",
+    "transient logs"
+  ],
+  "notes": [
+    "Raw JSON losslessly compacted; not byte-identical to original.",
+    "No independent-model replication; prior two-seed joint-gate failure unchanged."
+  ]
+}

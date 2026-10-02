@@ -1,7 +1,16 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
 This repository tests whether changing the medium and update rule improves
-persistent cellular computation. The latest **Workspace + Revision paired
+persistent cellular computation. The latest **zero-training source-switch
+audit** confirms that revision seed0's candidate continues to support the old
+answer. W-only and Z-only resets or transplants fail to restore reliable
+switching, while cold reset of both succeeds. At size32/K128, all four
+single-block interventions predict negative everywhere on the changed region;
+their 37.5% accuracy is label bias, not partial recovery. This implicates both
+state blocks in the tested interventions, without isolating a unique mechanism.
+[Audit results](evidence/switch_audit_seed0/RESULTS.md).
+
+The preceding **Workspace + Revision paired
 screen** completed all four 600-update runs. It **fails the joint gate**:
 revision's mean hold effect is **-9.02 pp** across two paired seeds. Seed 0
 reaches and holds excellent accuracy, including at doubled spatial size, but
@@ -13,24 +22,25 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `b992e2e`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `7cb1ca9`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
 1. [RESULTS.md](RESULTS.md) and
-   [current interpretation](evidence/workspace_revision_paired01/INTERPRETATION.md).
-2. [Compact metrics](evidence/workspace_revision_paired01/analysis.json) and
-   [both-seed overview](evidence/workspace_revision_paired01/overview.png).
-3. [Frozen protocol](new/workspace_revision/PROTOCOL.md),
-   [cell](new/workspace_revision/revision_cells.py),
-   [trainer/evaluator](new/workspace_revision/run_revision.py), and
+   [current audit report](evidence/switch_audit_seed0/RESULTS.md).
+2. [Compact metrics](evidence/switch_audit_seed0/analysis.json) and
+   [audit overview](evidence/switch_audit_seed0/overview.png).
+3. [Frozen protocol](new/switch_audit/PROTOCOL.md),
+   [post-execution scope clarification](new/switch_audit/REVIEW_NOTES.md),
+   [audit code](new/switch_audit/audit.py), and
    [GPT_CONTEXT.md](GPT_CONTEXT.md).
-4. [Validation](evidence/workspace_revision_paired01/validation.json) and
-   [publication hashes](REVISION_PUBLICATION_MANIFEST.json).
-5. Historical context: [generic dynamics audit](evidence/dynamics_audit_seed0/INTERPRETATION.md)
-   and [final medium/recurrence comparison](evidence/masked_state_seed0/RESULTS.md).
+4. [Validation](evidence/switch_audit_seed0/validation.json) and
+   [publication hashes](SWITCH_PUBLICATION_MANIFEST.json).
+5. Historical context: [paired training screen](evidence/workspace_revision_paired01/INTERPRETATION.md)
+   and [generic dynamics audit](evidence/dynamics_audit_seed0/INTERPRETATION.md).
 
-The four current [raw arm records](evidence/workspace_revision_paired01/raw/)
-and [training schedules](evidence/workspace_revision_paired01/schedules/) are
-secondary, as are the older audit's large per-map files. Start with the small
+The two current [raw audit files](evidence/switch_audit_seed0/raw/) are
+losslessly compacted JSON, with exact decoded-value equality checked against
+the original files. They and the previous training schedules are secondary.
+Start with the small
 summaries above. Checkpoints, machine receipts, duplicate ZIPs
 and transient logs are excluded. Original publication manifests remain valid.
 
@@ -47,7 +57,30 @@ diagnostics do not directly transfer to generic Momentum. These results and
 the earlier 2D/3D transport failures remain unchanged in [RESULTS.md](RESULTS.md).
 No further training or monitor is scheduled.
 
-## Reproduce the current paired screen
+## Reproduce the current source-switch audit
+
+The audit uses the retained `ws_revision_seed0.pt` at the repository-relative
+location pinned in [audit.py](new/switch_audit/audit.py); the checkpoint hash is
+in [SWITCH_PUBLICATION_MANIFEST.json](SWITCH_PUBLICATION_MANIFEST.json).
+Weights stay local. Reviewing all published measurements requires no weights.
+The CPU check needs only [requirements.txt](requirements.txt); inference needs
+the exact checkpoint and CUDA. Use new output directories:
+
+```powershell
+python new/switch_audit/audit.py --check
+python new/switch_audit/audit.py --out runs/NEW_SWITCH_AUDIT
+python new/switch_audit/analyze.py --run runs/NEW_SWITCH_AUDIT --out analyses/NEW_SWITCH_REVIEW
+```
+
+The completed audit took 9.61 seconds, with no training. All 232 historical
+comparisons replay exactly. Both natural trajectories' BA/BCE are checked;
+W/Z RMS replay covers the original trajectory only because the fresh-flip
+reference did not store norms. The original protocol's broader wording is
+clarified in [review notes](new/switch_audit/REVIEW_NOTES.md), without rewriting
+its frozen snapshot. New mixed donors may be off-distribution. One trained
+seed and two sizes do not establish population-level or causal claims.
+
+## Reproduce the previous paired screen
 
 From this repository root, install [requirements.txt](requirements.txt), then
 use new output directories. Training requires CUDA; the first check is CPU-only.

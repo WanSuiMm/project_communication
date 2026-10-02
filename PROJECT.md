@@ -1,5 +1,31 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Current audit (2026-10-02): completed zero-training candidate/workspace source
+switch audit on the existing revision seed0 checkpoint, sizes32/64,16 maps
+each. Frozen protocol: new/switch_audit/PROTOCOL.md. Output:
+runs/switch_audit_20261002_seed0/; completed in9.609 seconds. All232 historical
+replay comparisons and the candidate step reconstruction have zero error.
+Public report: evidence/switch_audit_seed0/RESULTS.md, analysis.json and
+overview.png; SWITCH_PUBLICATION_MANIFEST.json binds raw inputs and sources.
+Local analysis is preserved at analyses/switch_audit_20261002_review/.
+Post-execution scope clarification: new/switch_audit/REVIEW_NOTES.md. Fresh-flip
+replay verifies BA/BCE, while W/Z RMS replay is for original-input curves only.
+Warm candidate readout remains old-aligned atK64/K128. Single-block W or Z
+reset/transplant does not reliably recover source revision; reset-both cold
+does. At size32/K128 all four single-block interventions predict negative
+everywhere on the changed components, giving37.5% solely because6/16 target
+labels are negative. Candidate-only W/Z cross-interventions show contributions
+from both blocks and an interaction; a W-only stale-workspace mechanism is
+not isolated. Mixed donor states may be off-distribution. This is one frozen
+model, no new training, seed1/BPTT audit or architecture selection. The prior
+NO_JOINT_SCREEN_PASS result is unchanged. No further experiment is scheduled.
+
+Commands from repository root, with new output names:
+
+    python new/switch_audit/audit.py --check
+    python new/switch_audit/audit.py --out runs/NEW_SWITCH_AUDIT
+    python new/switch_audit/analyze.py --run runs/NEW_SWITCH_AUDIT --out analyses/NEW_SWITCH_REVIEW
+
 Authorized new screen (2026-10-02): workspace/task-state additive versus
 candidate revision, paired seeds0/1. This new user request supersedes the
 earlier training stop for this bounded experiment only. Both arms share W24/Z8,
