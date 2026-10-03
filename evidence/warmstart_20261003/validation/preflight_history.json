@@ -1,0 +1,26 @@
+{
+  "preflight01": {
+    "decision": "PREFLIGHT_FAILED",
+    "estimated_formal_seconds": 2451.033600002504,
+    "former_maximum_seconds": 2400,
+    "time_estimate_was_launch_gate": true,
+    "gradient_entry_gate": true,
+    "memory_gate": true
+  },
+  "cpu02_status": "PASS",
+  "cpu02_sha256": "89b8b180f9ff2458266928491cf75ca079e9ff20f528c49b126d7e3aab7c38ee",
+  "preflight02": {
+    "decision": "PREFLIGHT_PASSED",
+    "estimated_formal_seconds": 2661.129599995888,
+    "maximum_seconds": null,
+    "time_estimate_is_launch_gate": false,
+    "runtime_limit_enforced": false,
+    "gradient_entry_gate": true,
+    "memory_gate": true
+  },
+  "preflight02_input_sha256": {
+    "status.json": "46622318742eda51f162a6fb193bf9af77b6b27ee5df39e17de691ac9cb2ac1a",
+    "manifest.json": "9f57b53caeeb42be3bd91589852365d50f9df5dec59f23165599424783e4d4d0",
+    "aggregate.json": "92e5217277c3272c4983250ac49dd6e5eed219ab224174d261aed5f4d8f57941"
+  }
+}

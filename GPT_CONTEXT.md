@@ -1,6 +1,57 @@
 # Context for incremental scientific review
 
-## Current follow-up: independent A/B/C on original Streaming seed4
+## Current screen: detached on-policy warm-start of original StreamingCell
+
+- Protocol: detached_warmstart_v1_nocap. 2D only; execution COMPLETE,8 arms x300
+  updates,1629.375 seconds. Decision DEVELOPMENT_NOT_QUALIFIED.
+- Same5033-parameter W24/Z8 original masked StreamingCell, two-hop macro
+  clock, K8,64-step trained suffix, eight equally weighted task losses,
+  training bank10002 and original schedule20002. Initialization seeds2/3/4/5
+  are four paired units conditional on this bank/schedule.
+- Both arms compute a no-grad prefix for the last four examples. Baseline
+  discards it and calls the untouched historical K8 helper for all eight.
+  Warmstart keeps the detached state for those four examples and starts the
+  other four fresh. Prefix age choices32/64/128/192 share frozen seed60002.
+  Older supervised state ages and the detached encoder history are part of
+  the intervention; it is not an isolated credit-assignment intervention.
+- Four baseline initial/final parameter hashes and full six historical
+  endpoint records exactly reproduce. Fresh32-map banks at sizes32/64 use
+  new seeds60032/60064. Baseline seed4 qualifies on the fresh full gate.
+- Full phenotype passes: baseline1/4(seed4), warmstart0/4. Positive screen
+  required warmstart>=3/4 and at least two more passes than baseline, with
+  qualified historical/fresh controls. No threshold or seed rescue occurred.
+- The same reach/hold/retention/growth/per-step-regression/matched-frontier
+  conjunction from seed4_followup is reused. Partial improvements are
+  retained separately: seed2 gains some output retention/growth; seed4 degrades.
+  Full-gate failure is not uniform component failure or a general theorem.
+- Stage diagnostics at updates0/100/200/300 use16 separate held-out size32
+  maps(seed61032),128 paired steps, acquisition/destruction integer accounting
+  and continuous survival. These are exploratory; no order parameter,
+  computational phase transition or latent continuation closure is established.
+- Before formal training the user removed the time cap. Failed preflight01
+  remains recorded; CPU02/preflight02 qualified the amended no-cap source.
+  Scientific conditions are unchanged. Prefix finite flags cover every state
+  with sticky detection and eight-step host checks. No new GPU training or
+  inference is used for this publication.
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Detached prefix, mixed fresh/warm suffix and original baseline | _prefix_state, backward_warmstart, _backward_mixed_trajectory | new/warmstart/training.py |
+| Paired training, original replay and development decision | arms, train_one, replay, aggregate | new/warmstart/run.py |
+| Exploratory integer turnover and continuous survival | diagnose, summarize_correct_traces | new/warmstart/diagnostics.py |
+| Unchanged fresh full phenotype | evaluate, summarize_from_traces, predicate | new/seed4_followup/phenotype.py |
+| Saved CPU checkpoint/trace validation | main | tools/validate_warmstart.py |
+| Sanitized evidence and public arithmetic | main | tools/export_warmstart.py |
+
+Start with [results](evidence/warmstart_20261003/RESULTS.md),
+[compact aggregate](evidence/warmstart_20261003/summary.json), and
+[protocol](new/warmstart/PROTOCOL.md). Individual full summaries and gate
+checks are secondary; frontier integer CSVs and stage turnover records are
+for verification. Full Boolean traces, checkpoints and machine receipts
+remain local. [Reproduction](evidence/warmstart_20261003/REPRODUCTION.md)
+distinguishes public arithmetic from full local saved-trace validation.
+
+## Preceding follow-up: independent A/B/C on original Streaming seed4
 
 - A/B execution COMPLETE,13 arms x300 updates,1866.672 seconds. Same5033
   parameter StreamingCell/W24/Z8, K8,64-step forward, eight losses, fixed

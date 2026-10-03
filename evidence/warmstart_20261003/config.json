@@ -1,0 +1,106 @@
+{
+  "protocol": "detached_warmstart_v1_nocap",
+  "expected_formal_arms": 8,
+  "updates_per_arm": 300,
+  "maximum_seconds": null,
+  "runtime_limit_enforced": false,
+  "watchdog_enabled": false,
+  "gradient_horizon": 8,
+  "trained_suffix_steps": 64,
+  "loss_times_suffix": [
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64
+  ],
+  "warm_examples": 4,
+  "fresh_examples": 4,
+  "prefix_age_choices": [
+    32,
+    64,
+    128,
+    192
+  ],
+  "age_schedule_sha256": "585037fd368da826a521816a3da875006214d17c9f90332f960237f7d5b53f33",
+  "age_unit": "original two-hop macro step",
+  "stage_updates": [
+    0,
+    100,
+    200,
+    300
+  ],
+  "stage_diagnostic_seed": 61032,
+  "stage_diagnostic_maps": 16,
+  "stage_diagnostic_data_sha256": "67cdd639f4703ed9d5ffa456bf05aa820c3064271f26b35625f072ec988e30f2",
+  "stage_diagnostic_steps": 128,
+  "train_data_seed": 10002,
+  "train_data_sha256": "5ff2af1eb77781ed766ff3c8ba1b4477cebb8b345873a715d9808b7cecdd5fee",
+  "schedule_seed": 20002,
+  "schedule_sha256": "b46f2ae3545b8210d137908430fa96b027764ea0841f4f2b49c2dc50cbb3c263",
+  "new_evaluation_seeds": [
+    60032,
+    60064
+  ],
+  "maps_per_size": 32,
+  "new_evaluation_data_sha256": {
+    "32": "38828fedf66353081707351efb37e72908c6f42a5f6dabe0b6873e5e788708d5",
+    "64": "391fe1a8b52f402192d3f520492844c74ee76c2ea7c8bb31897b38ae1294a0ba"
+  },
+  "historical_evaluation_data_sha256": {
+    "32": "f6933d36ef59ef6dc286d551c1006c6ca86cc1508c8451406b5b18345cf87106",
+    "64": "64797b4796585377474d45fb8ebe0f4292dbb8ea8eb21403d0978821ddd15e9b"
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "clip_norm": 1.0,
+    "batch": 8
+  },
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  },
+  "torch": "2.5.1",
+  "numpy": "1.26.4",
+  "threads": 2,
+  "independent_unit": "paired initialization",
+  "n": 4,
+  "arms": [
+    {
+      "seed": 2,
+      "variants": [
+        "baseline",
+        "warmstart"
+      ]
+    },
+    {
+      "seed": 3,
+      "variants": [
+        "baseline",
+        "warmstart"
+      ]
+    },
+    {
+      "seed": 4,
+      "variants": [
+        "baseline",
+        "warmstart"
+      ]
+    },
+    {
+      "seed": 5,
+      "variants": [
+        "baseline",
+        "warmstart"
+      ]
+    }
+  ],
+  "protocol_note": "The runtime estimate is informational; the formal run used no deadline or watchdog."
+}

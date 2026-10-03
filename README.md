@@ -1,6 +1,20 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-Latest follow-up: **original seed4 reproduces, full phenotype does not reproduce
+Latest 2D screen: **detached warm-start — DEVELOPMENT_NOT_QUALIFIED**. All eight
+paired arms completed300 updates in27.16 minutes. The four historical baseline
+replays pass exactly, and baseline seed4 qualifies on the new evaluation banks.
+Full phenotype passes are **baseline1/4 versus warmstart0/4**. Same original
+StreamingCell and K8; half of each warm-start batch begins at a detached
+on-policy state aged32/64/128/192 steps. Some components improve at seed2,
+while seed4 loses reach and long-rollout retention. This fixed recipe does not
+improve full-phenotype reproducibility in the sampled four initializations;
+it does not identify a mechanism or reject warm-start methods in general.
+[Current results](evidence/warmstart_20261003/RESULTS.md),
+[all-arm aggregate](evidence/warmstart_20261003/summary.json),
+[frozen protocol and runtime amendment](new/warmstart/PROTOCOL.md), and
+[reproduction notes](evidence/warmstart_20261003/REPRODUCTION.md).
+
+Preceding follow-up: **original seed4 reproduces, full phenotype does not reproduce
 in the sampled A/B interventions**. All13 arms completed300 updates in31.11
 minutes. The control exactly matches historical initial/final parameters and
 all six endpoint records, and passes the new phenotype on fresh32-map banks
@@ -146,24 +160,22 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `ba433ecc28a7454db853cac6d6c258076a14f6fc`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `91be5bcb957ea9c33399e06201ada65cc3132732`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [Latest A/B/C results](evidence/seed4_followup_20261003/RESULTS.md),
-   [interpretation](evidence/seed4_followup_20261003/INTERPRETATION.md), and
-   [compact aggregate](evidence/seed4_followup_20261003/summary.json).
-2. [Frozen follow-up protocol](new/seed4_followup/PROTOCOL.md),
-   [training runner](new/seed4_followup/train.py),
-   [phenotype evaluator](new/seed4_followup/phenotype.py),
-   [rollback runner](new/seed4_followup/causal.py), and [GPT_CONTEXT.md](GPT_CONTEXT.md).
-3. [Compact record of full local training validation](evidence/seed4_followup_20261003/training/validation.json),
-   [C validation](evidence/seed4_followup_20261003/causal/validation.json),
-   [public arithmetic](evidence/seed4_followup_20261003/publication_validation.json),
-   [provenance](evidence/seed4_followup_20261003/provenance.json), and
-   [bindings](SEED4_FOLLOWUP_PUBLICATION_MANIFEST.json).
-4. [Reproduction notes](evidence/seed4_followup_20261003/REPRODUCTION.md).
+1. [Latest warm-start results](evidence/warmstart_20261003/RESULTS.md) and
+   [compact all-arm aggregate](evidence/warmstart_20261003/summary.json).
+2. [Frozen protocol](new/warmstart/PROTOCOL.md),
+   [training helper](new/warmstart/training.py),
+   [runner](new/warmstart/run.py),
+   [unchanged full phenotype](new/seed4_followup/phenotype.py), and [GPT_CONTEXT.md](GPT_CONTEXT.md).
+3. [Saved-artifact validation](evidence/warmstart_20261003/validation/local_validation.json),
+   [public arithmetic](evidence/warmstart_20261003/publication_validation.json),
+   [provenance](evidence/warmstart_20261003/provenance.json), and
+   [bindings](WARMSTART_PUBLICATION_MANIFEST.json).
+4. [Reproduction notes](evidence/warmstart_20261003/REPRODUCTION.md).
    Verify without a checkpoint/GPU using
-   `python tools/export_seed4_followup.py --verify-only`. Individual model
-   summaries, raw records, matched CSVs and C events are secondary; full
+   `python tools/export_warmstart.py --verify-only`. Individual model
+   summaries, raw records, matched CSVs and stage diagnostics are secondary; full
    trajectories, checkpoints, logs and machine receipts remain local.
 
 Previous context, if needed:

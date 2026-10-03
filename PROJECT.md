@@ -1,6 +1,51 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Latest completed follow-up (2026-10-03): three independent original-seed4
+Latest completed experiment (2026-10-03): detached warm-start training-state
+distribution control for the ORIGINAL StreamingCell, frozen at
+new/warmstart/PROTOCOL.md (detached_warmstart_v1_nocap). Four paired
+initializations2/3/4/5, baseline versus warmstart, eight arms300 updates each.
+Both arms compute the same no-grad prefix; baseline discards it, warmstart
+keeps the detached prefix state for half the batch (ages32/64/128/192), while
+the other half stays fresh. Architecture, K8, trained64-step suffix, historical
+training bank/schedule and full phenotype gates are fixed. Fresh primary
+evaluation uses32 maps each at size32/64, seeds60032/60064; exploratory
+stage diagnostics use16 held-out size32 maps, seed61032, at updates0/100/200/300.
+
+CPU02 qualification passed70 source bindings, exact historical baseline
+loss/state/all-gradient checks and transient-NaN recovery detection. GPU
+preflight02 completed both three-update maximum-age arms; identity, finite
+gradient and memory gates passed. Estimated formal time2661.13 seconds
+(44.35 minutes) is descriptive. The user removed the runtime limit before
+formal launch; no timing gate, deadline or termination watchdog is enabled.
+The earlier preflight01 failure under the former cap remains preserved;
+new/warmstart/PROTOCOL.md records the execution amendment for public review.
+Nonfinite values, source drift and historical control mismatch still stop
+execution without rescue. COMPLETE8/8 arms,300 updates each in1629.375 seconds
+(27.16 minutes). All four historical baseline initial/final hashes and six
+full endpoint records match exactly. Baseline seed4 qualifies on the new
+full phenotype. Full passes: baseline1/4(seed4), warmstart0/4; decision
+DEVELOPMENT_NOT_QUALIFIED. Partial components change in both directions:
+seed2 gains some retention/growth while seed4 loses its full phenotype.
+No mechanism, phase transition, or general warm-start rejection follows.
+Run: runs/warmstart_20261003_paired01; local checkpoints/traces remain intact.
+Public entry: evidence/warmstart_20261003/RESULTS.md and summary.json.
+No ongoing monitor was created. Publication uses saved artifacts on CPU,
+without new training or GPU inference.
+Independent saved-result CPU validation passes583 checks:70 current source/
+reference bindings and70 snapshots,8 final plus32 stage checkpoints,24 exact
+saved historical replay records,8 fresh phenotype gates from16 Boolean
+trace files,32 stage summaries with4096 turnover identities and384 finite
+recorded RMS values. Stage Boolean traces were not saved; their survival
+statistics are checked from recorded summaries rather than independently
+replayed from raw stage trajectories. Public verification and reproduction
+notes are at evidence/warmstart_20261003/REPRODUCTION.md.
+Canonical commands from repository root, new output names required:
+
+    python -X utf8 -B new/warmstart/check.py --out analyses/NEW_WARMSTART_CPU.json
+    python -X utf8 -u -B new/warmstart/run.py --preflight --qualification analyses/NEW_WARMSTART_CPU.json --out runs/NEW_WARMSTART_PREFLIGHT
+    pwsh -File tools/launch_warmstart.ps1 -RunName NEW_WARMSTART_TRAINING -Preflight runs/NEW_WARMSTART_PREFLIGHT
+
+Preceding completed follow-up (2026-10-03): three independent original-seed4
 follow-ups, frozen at new/seed4_followup/PROTOCOL.md. A changes only four
 batch schedules at fixed initialization/bank; B probes four parameter-space
 directions at two paired radii with fixed training; C uses the old trained

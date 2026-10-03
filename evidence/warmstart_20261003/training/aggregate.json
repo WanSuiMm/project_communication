@@ -1,0 +1,46 @@
+{
+  "complete": true,
+  "completed_arms": 8,
+  "identities_verified": true,
+  "updates_per_arm": 300,
+  "expected_arms": 8,
+  "independent_unit": "paired initialization",
+  "n": 4,
+  "decision": "DEVELOPMENT_NOT_QUALIFIED",
+  "historical_controls_qualified": true,
+  "known_seed4_fresh_qualified": true,
+  "passes": {
+    "baseline": 1,
+    "warmstart": 0
+  },
+  "phenotype_pass": {
+    "baseline_seed2": false,
+    "warmstart_seed2": false,
+    "warmstart_seed3": false,
+    "baseline_seed3": false,
+    "baseline_seed4": true,
+    "warmstart_seed4": false,
+    "warmstart_seed5": false,
+    "baseline_seed5": false
+  },
+  "paired_full_pass_change": -1,
+  "pairs": {
+    "2": {
+      "baseline": false,
+      "warmstart": false
+    },
+    "3": {
+      "baseline": false,
+      "warmstart": false
+    },
+    "4": {
+      "baseline": true,
+      "warmstart": false
+    },
+    "5": {
+      "baseline": false,
+      "warmstart": false
+    }
+  },
+  "scope": "Conditional four initializations, fixed bank/schedule; no phase transition, causal closure or reliability theorem."
+}

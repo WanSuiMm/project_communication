@@ -1,0 +1,1478 @@
+{
+  "protocol": "detached_warmstart_v1_nocap",
+  "review_base": "91be5bcb957ea9c33399e06201ada65cc3132732",
+  "execution_status": "COMPLETE",
+  "elapsed_seconds": 1629.375,
+  "expected_arms": 8,
+  "completed_arms": 8,
+  "updates_per_arm": 300,
+  "independent_unit": "paired initialization",
+  "n": 4,
+  "decision": "DEVELOPMENT_NOT_QUALIFIED",
+  "historical_controls_qualified": true,
+  "known_seed4_fresh_qualified": true,
+  "baseline_passes": 1,
+  "warmstart_passes": 0,
+  "paired_full_pass_change": -1,
+  "pairs": {
+    "2": {
+      "baseline": false,
+      "warmstart": false
+    },
+    "3": {
+      "baseline": false,
+      "warmstart": false
+    },
+    "4": {
+      "baseline": true,
+      "warmstart": false
+    },
+    "5": {
+      "baseline": false,
+      "warmstart": false
+    }
+  },
+  "arms": [
+    {
+      "name": "baseline_seed2",
+      "seed": 2,
+      "variant": "baseline",
+      "historical_replay": "PASS",
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": false,
+      "full_phenotype": false,
+      "failed_checks": [
+        "hold_size32_T128_flipped_ba_drop",
+        "hold_size32_T128_original_ba_drop",
+        "hold_size32_T256_flipped_ba_drop",
+        "hold_size32_T256_original_ba_drop",
+        "reach_size32_T64_flipped_ba",
+        "reach_size32_T64_original_ba",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct",
+        "size64_matched_frontier_effect"
+      ],
+      "checks": {
+        "hold_size32_T128_flipped_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.06509149074554443
+        },
+        "hold_size32_T128_original_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.06194037199020386
+        },
+        "hold_size32_T128_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": 0.009956825917793118
+        },
+        "hold_size32_T128_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": 0.0068248293792655184
+        },
+        "hold_size32_T256_flipped_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.09720674157142639
+        },
+        "hold_size32_T256_original_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.10583096742630005
+        },
+        "hold_size32_T256_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": 0.009956825917793118
+        },
+        "hold_size32_T256_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": 0.0068248293792655184
+        },
+        "reach_size32_T64_flipped_ba": {
+          "pass": false,
+          "threshold": ">=0.85",
+          "value": 0.5885529518127441
+        },
+        "reach_size32_T64_original_ba": {
+          "pass": false,
+          "threshold": ">=0.85",
+          "value": 0.5688828229904175
+        },
+        "reach_size32_T64_strict_map_mean": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.009956825917793118
+        },
+        "reach_size32_T64_strict_pooled": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.0068248293792655184
+        },
+        "size32_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": -0.03979374509584127
+        },
+        "size32_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.0
+        },
+        "size32_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 1692
+        },
+        "size32_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size32_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.9989550679205852
+        },
+        "size32_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.052391232086427764
+        },
+        "size64_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": -0.1127951180472189
+        },
+        "size64_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.040265753976243206
+        },
+        "size64_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 13757
+        },
+        "size64_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size64_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.9693297733963169
+        },
+        "size64_matched_frontier_effect": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": 0.032975804020506524
+        }
+      },
+      "size32_T64_original_ba": 0.5688828229904175,
+      "size32_T64_flipped_ba": 0.5885529518127441,
+      "size32_strict_pooled_T64": 0.0068248293792655184,
+      "size32_strict_pooled_T64_numerator": 21,
+      "size32_strict_pooled_T64_denominator": 3077,
+      "size32_strict_pooled_T128": 0.0,
+      "size32_strict_pooled_T128_numerator": 0,
+      "size32_strict_pooled_T128_denominator": 3077,
+      "size32_strict_pooled_T256": 0.0,
+      "size32_strict_pooled_T256_numerator": 0,
+      "size32_strict_pooled_T256_denominator": 3077,
+      "size32_retention64_to256": 0.0,
+      "size32_retained_numerator": 0,
+      "size32_retained_denominator": 360,
+      "size32_coverage_gain64_to256": -0.03979374509584127,
+      "size32_coverage_T64": 0.04035422037888129,
+      "size32_coverage_T256": 0.0005604752830400179,
+      "size32_ever_regressed_ratio": 0.9989550679205852,
+      "size32_ever_regressed_numerator": 3824,
+      "size32_ever_regressed_denominator": 3828,
+      "size32_frontier_effect": 0.052391232086427764,
+      "size32_frontier_eligible_maps": 32,
+      "size32_frontier_common_strata": 1692,
+      "size64_retention64_to256": 0.040265753976243206,
+      "size64_retained_numerator": 200,
+      "size64_retained_denominator": 4967,
+      "size64_coverage_gain64_to256": -0.1127951180472189,
+      "size64_coverage_T64": 0.12422468987595038,
+      "size64_coverage_T256": 0.011429571828731493,
+      "size64_ever_regressed_ratio": 0.9693297733963169,
+      "size64_ever_regressed_numerator": 14159,
+      "size64_ever_regressed_denominator": 14607,
+      "size64_frontier_effect": 0.032975804020506524,
+      "size64_frontier_eligible_maps": 32,
+      "size64_frontier_common_strata": 13757
+    },
+    {
+      "name": "warmstart_seed2",
+      "seed": 2,
+      "variant": "warmstart",
+      "historical_replay": null,
+      "reach": false,
+      "hold": true,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "failed_checks": [
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "checks": {
+        "hold_size32_T128_flipped_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.019956886768341064
+        },
+        "hold_size32_T128_original_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.01577049493789673
+        },
+        "hold_size32_T128_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.1551951925303685
+        },
+        "hold_size32_T128_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.11634709132271694
+        },
+        "hold_size32_T256_flipped_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.02773517370223999
+        },
+        "hold_size32_T256_original_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.015623390674591064
+        },
+        "hold_size32_T256_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.27435447922158596
+        },
+        "hold_size32_T256_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.21774455638609036
+        },
+        "reach_size32_T64_flipped_ba": {
+          "pass": true,
+          "threshold": ">=0.85",
+          "value": 0.8615673184394836
+        },
+        "reach_size32_T64_original_ba": {
+          "pass": true,
+          "threshold": ">=0.85",
+          "value": 0.9001726508140564
+        },
+        "reach_size32_T64_strict_map_mean": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.05782582509082343
+        },
+        "reach_size32_T64_strict_pooled": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.04874878128046799
+        },
+        "size32_all_changed_coverage_gain64_to256": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.08250196166349061
+        },
+        "size32_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.8879336813018115
+        },
+        "size32_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 3533
+        },
+        "size32_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size32_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.27761747732893655
+        },
+        "size32_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.06565929313202662
+        },
+        "size64_all_changed_coverage_gain64_to256": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.11827230892356941
+        },
+        "size64_all_changed_retention64_to256": {
+          "pass": true,
+          "threshold": ">=0.95",
+          "value": 0.9611299435028249
+        },
+        "size64_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 10936
+        },
+        "size64_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size64_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.15360918574529162
+        },
+        "size64_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.06032195940955756
+        }
+      },
+      "size32_T64_original_ba": 0.9001726508140564,
+      "size32_T64_flipped_ba": 0.8615673184394836,
+      "size32_strict_pooled_T64": 0.04874878128046799,
+      "size32_strict_pooled_T64_numerator": 150,
+      "size32_strict_pooled_T64_denominator": 3077,
+      "size32_strict_pooled_T128": 0.16509587260318492,
+      "size32_strict_pooled_T128_numerator": 508,
+      "size32_strict_pooled_T128_denominator": 3077,
+      "size32_strict_pooled_T256": 0.26649333766655836,
+      "size32_strict_pooled_T256_numerator": 820,
+      "size32_strict_pooled_T256_denominator": 3077,
+      "size32_retention64_to256": 0.8879336813018115,
+      "size32_retained_numerator": 2892,
+      "size32_retained_denominator": 3257,
+      "size32_coverage_gain64_to256": 0.08250196166349061,
+      "size32_coverage_T64": 0.3650935993722677,
+      "size32_coverage_T256": 0.4475955610357583,
+      "size32_ever_regressed_ratio": 0.27761747732893655,
+      "size32_ever_regressed_numerator": 1347,
+      "size32_ever_regressed_denominator": 4852,
+      "size32_frontier_effect": 0.06565929313202662,
+      "size32_frontier_eligible_maps": 32,
+      "size32_frontier_common_strata": 3533,
+      "size64_retention64_to256": 0.9611299435028249,
+      "size64_retained_numerator": 8506,
+      "size64_retained_denominator": 8850,
+      "size64_coverage_gain64_to256": 0.11827230892356941,
+      "size64_coverage_T64": 0.22133853541416568,
+      "size64_coverage_T256": 0.3396108443377351,
+      "size64_ever_regressed_ratio": 0.15360918574529162,
+      "size64_ever_regressed_numerator": 2194,
+      "size64_ever_regressed_denominator": 14283,
+      "size64_frontier_effect": 0.06032195940955756,
+      "size64_frontier_eligible_maps": 32,
+      "size64_frontier_common_strata": 10936
+    },
+    {
+      "name": "baseline_seed3",
+      "seed": 3,
+      "variant": "baseline",
+      "historical_replay": "PASS",
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": false,
+      "full_phenotype": false,
+      "failed_checks": [
+        "hold_size32_T128_flipped_ba_drop",
+        "hold_size32_T128_original_ba_drop",
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T256_flipped_ba_drop",
+        "hold_size32_T256_original_ba_drop",
+        "hold_size32_T256_strict_mean_map_coverage_drop",
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size32_matched_frontier_effect",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct",
+        "size64_matched_frontier_effect"
+      ],
+      "checks": {
+        "hold_size32_T128_flipped_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.1702331304550171
+        },
+        "hold_size32_T128_original_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.2666633129119873
+        },
+        "hold_size32_T128_strict_mean_map_coverage_drop": {
+          "pass": false,
+          "threshold": "<=0.05",
+          "value": 0.07382083243223836
+        },
+        "hold_size32_T128_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": 0.04029899252518687
+        },
+        "hold_size32_T256_flipped_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.6161699146032333
+        },
+        "hold_size32_T256_original_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.7167003452777863
+        },
+        "hold_size32_T256_strict_mean_map_coverage_drop": {
+          "pass": false,
+          "threshold": "<=0.05",
+          "value": 0.08990516512815921
+        },
+        "hold_size32_T256_strict_pooled_coverage_drop": {
+          "pass": false,
+          "threshold": "<=0.05",
+          "value": 0.059798505037374064
+        },
+        "reach_size32_T64_flipped_ba": {
+          "pass": true,
+          "threshold": ">=0.85",
+          "value": 0.8636627197265625
+        },
+        "reach_size32_T64_original_ba": {
+          "pass": true,
+          "threshold": ">=0.85",
+          "value": 0.9070134162902832
+        },
+        "reach_size32_T64_strict_map_mean": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.08990516512815921
+        },
+        "reach_size32_T64_strict_pooled": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.059798505037374064
+        },
+        "size32_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": -0.3774240555991481
+        },
+        "size32_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.0
+        },
+        "size32_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 3974
+        },
+        "size32_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size32_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 1.0
+        },
+        "size32_matched_frontier_effect": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": 0.045176811836450156
+        },
+        "size64_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": -0.12277410964385754
+        },
+        "size64_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.2918725686047734
+        },
+        "size64_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 21791
+        },
+        "size64_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size64_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.7881779971979451
+        },
+        "size64_matched_frontier_effect": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": 0.029862457804841244
+        }
+      },
+      "size32_T64_original_ba": 0.9070134162902832,
+      "size32_T64_flipped_ba": 0.8636627197265625,
+      "size32_strict_pooled_T64": 0.059798505037374064,
+      "size32_strict_pooled_T64_numerator": 184,
+      "size32_strict_pooled_T64_denominator": 3077,
+      "size32_strict_pooled_T128": 0.019499512512187196,
+      "size32_strict_pooled_T128_numerator": 60,
+      "size32_strict_pooled_T128_denominator": 3077,
+      "size32_strict_pooled_T256": 0.0,
+      "size32_strict_pooled_T256_numerator": 0,
+      "size32_strict_pooled_T256_denominator": 3077,
+      "size32_retention64_to256": 0.0,
+      "size32_retained_numerator": 0,
+      "size32_retained_denominator": 3367,
+      "size32_coverage_gain64_to256": -0.3774240555991481,
+      "size32_coverage_T64": 0.3774240555991481,
+      "size32_coverage_T256": 0.0,
+      "size32_ever_regressed_ratio": 1.0,
+      "size32_ever_regressed_numerator": 5324,
+      "size32_ever_regressed_denominator": 5324,
+      "size32_frontier_effect": 0.045176811836450156,
+      "size32_frontier_eligible_maps": 32,
+      "size32_frontier_common_strata": 3974,
+      "size64_retention64_to256": 0.2918725686047734,
+      "size64_retained_numerator": 2776,
+      "size64_retained_denominator": 9511,
+      "size64_coverage_gain64_to256": -0.12277410964385754,
+      "size64_coverage_T64": 0.23787014805922368,
+      "size64_coverage_T256": 0.11509603841536614,
+      "size64_ever_regressed_ratio": 0.7881779971979451,
+      "size64_ever_regressed_numerator": 11814,
+      "size64_ever_regressed_denominator": 14989,
+      "size64_frontier_effect": 0.029862457804841244,
+      "size64_frontier_eligible_maps": 32,
+      "size64_frontier_common_strata": 21791
+    },
+    {
+      "name": "warmstart_seed3",
+      "seed": 3,
+      "variant": "warmstart",
+      "historical_replay": null,
+      "reach": false,
+      "hold": true,
+      "dynamics": false,
+      "frontier": false,
+      "full_phenotype": false,
+      "failed_checks": [
+        "reach_size32_T64_flipped_ba",
+        "reach_size32_T64_original_ba",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size32_matched_frontier_effect",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "checks": {
+        "hold_size32_T128_flipped_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.01496422290802002
+        },
+        "hold_size32_T128_original_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.015373945236206055
+        },
+        "hold_size32_T128_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.02044096998176027
+        },
+        "hold_size32_T128_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.011374715632109199
+        },
+        "hold_size32_T256_flipped_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.01665186882019043
+        },
+        "hold_size32_T256_original_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.020487725734710693
+        },
+        "hold_size32_T256_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.06158527189461452
+        },
+        "hold_size32_T256_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.032499187520311994
+        },
+        "reach_size32_T64_flipped_ba": {
+          "pass": false,
+          "threshold": ">=0.85",
+          "value": 0.8414051532745361
+        },
+        "reach_size32_T64_original_ba": {
+          "pass": false,
+          "threshold": ">=0.85",
+          "value": 0.8354793787002563
+        },
+        "reach_size32_T64_strict_map_mean": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.005596515313681953
+        },
+        "reach_size32_T64_strict_pooled": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.0055248618784530384
+        },
+        "size32_all_changed_coverage_gain64_to256": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.0506669655868176
+        },
+        "size32_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.7644549763033175
+        },
+        "size32_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 5562
+        },
+        "size32_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size32_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.5451887293992557
+        },
+        "size32_matched_frontier_effect": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": 0.024293883118759484
+        },
+        "size64_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": -0.0007753101240496199
+        },
+        "size64_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.40425531914893614
+        },
+        "size64_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 1009
+        },
+        "size64_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size64_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.9963273871983211
+        },
+        "size64_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.12195804688737456
+        }
+      },
+      "size32_T64_original_ba": 0.8354793787002563,
+      "size32_T64_flipped_ba": 0.8414051532745361,
+      "size32_strict_pooled_T64": 0.0055248618784530384,
+      "size32_strict_pooled_T64_numerator": 17,
+      "size32_strict_pooled_T64_denominator": 3077,
+      "size32_strict_pooled_T128": 0.016899577510562237,
+      "size32_strict_pooled_T128_numerator": 52,
+      "size32_strict_pooled_T128_denominator": 3077,
+      "size32_strict_pooled_T256": 0.03802404939876503,
+      "size32_strict_pooled_T256_numerator": 117,
+      "size32_strict_pooled_T256_denominator": 3077,
+      "size32_retention64_to256": 0.7644549763033175,
+      "size32_retained_numerator": 1613,
+      "size32_retained_denominator": 2110,
+      "size32_coverage_gain64_to256": 0.0506669655868176,
+      "size32_coverage_T64": 0.23652056944288757,
+      "size32_coverage_T256": 0.2871875350297052,
+      "size32_ever_regressed_ratio": 0.5451887293992557,
+      "size32_ever_regressed_numerator": 2051,
+      "size32_ever_regressed_denominator": 3762,
+      "size32_frontier_effect": 0.024293883118759484,
+      "size32_frontier_eligible_maps": 32,
+      "size32_frontier_common_strata": 5562,
+      "size64_retention64_to256": 0.40425531914893614,
+      "size64_retained_numerator": 38,
+      "size64_retained_denominator": 94,
+      "size64_coverage_gain64_to256": -0.0007753101240496199,
+      "size64_coverage_T64": 0.0023509403761504603,
+      "size64_coverage_T256": 0.0015756302521008404,
+      "size64_ever_regressed_ratio": 0.9963273871983211,
+      "size64_ever_regressed_numerator": 3798,
+      "size64_ever_regressed_denominator": 3812,
+      "size64_frontier_effect": 0.12195804688737456,
+      "size64_frontier_eligible_maps": 32,
+      "size64_frontier_common_strata": 1009
+    },
+    {
+      "name": "baseline_seed4",
+      "seed": 4,
+      "variant": "baseline",
+      "historical_replay": "PASS",
+      "reach": true,
+      "hold": true,
+      "dynamics": true,
+      "frontier": true,
+      "full_phenotype": true,
+      "failed_checks": [],
+      "checks": {
+        "hold_size32_T128_flipped_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.014370441436767578
+        },
+        "hold_size32_T128_original_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.018659234046936035
+        },
+        "hold_size32_T128_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.10475642493573933
+        },
+        "hold_size32_T128_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.14722131946701333
+        },
+        "hold_size32_T256_flipped_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.022086501121520996
+        },
+        "hold_size32_T256_original_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.02700209617614746
+        },
+        "hold_size32_T256_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.10537831548300292
+        },
+        "hold_size32_T256_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.14884627884302892
+        },
+        "reach_size32_T64_flipped_ba": {
+          "pass": true,
+          "threshold": ">=0.85",
+          "value": 0.9771604537963867
+        },
+        "reach_size32_T64_original_ba": {
+          "pass": true,
+          "threshold": ">=0.85",
+          "value": 0.9626483917236328
+        },
+        "reach_size32_T64_strict_map_mean": {
+          "pass": true,
+          "threshold": ">=0.80",
+          "value": 0.8946216845169971
+        },
+        "reach_size32_T64_strict_pooled": {
+          "pass": true,
+          "threshold": ">=0.80",
+          "value": 0.8511537211569711
+        },
+        "size32_all_changed_coverage_gain64_to256": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.1981840600829503
+        },
+        "size32_all_changed_retention64_to256": {
+          "pass": true,
+          "threshold": ">=0.95",
+          "value": 1.0
+        },
+        "size32_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 1238
+        },
+        "size32_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 31
+        },
+        "size32_ever_regressed_over_ever_correct": {
+          "pass": true,
+          "threshold": "<=0.15",
+          "value": 0.030249736194161096
+        },
+        "size32_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.32367536359739724
+        },
+        "size64_all_changed_coverage_gain64_to256": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.29844437775110044
+        },
+        "size64_all_changed_retention64_to256": {
+          "pass": true,
+          "threshold": ">=0.95",
+          "value": 0.9689242648110195
+        },
+        "size64_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 5570
+        },
+        "size64_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size64_ever_regressed_over_ever_correct": {
+          "pass": true,
+          "threshold": "<=0.15",
+          "value": 0.06813460739509763
+        },
+        "size64_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.24419240365080605
+        }
+      },
+      "size32_T64_original_ba": 0.9626483917236328,
+      "size32_T64_flipped_ba": 0.9771604537963867,
+      "size32_strict_pooled_T64": 0.8511537211569711,
+      "size32_strict_pooled_T64_numerator": 2619,
+      "size32_strict_pooled_T64_denominator": 3077,
+      "size32_strict_pooled_T128": 0.9983750406239844,
+      "size32_strict_pooled_T128_numerator": 3072,
+      "size32_strict_pooled_T128_denominator": 3077,
+      "size32_strict_pooled_T256": 1.0,
+      "size32_strict_pooled_T256_numerator": 3077,
+      "size32_strict_pooled_T256_denominator": 3077,
+      "size32_retention64_to256": 1.0,
+      "size32_retained_numerator": 6761,
+      "size32_retained_denominator": 6761,
+      "size32_coverage_gain64_to256": 0.1981840600829503,
+      "size32_coverage_T64": 0.7578746777267122,
+      "size32_coverage_T256": 0.9560587378096626,
+      "size32_ever_regressed_ratio": 0.030249736194161096,
+      "size32_ever_regressed_numerator": 258,
+      "size32_ever_regressed_denominator": 8529,
+      "size32_frontier_effect": 0.32367536359739724,
+      "size32_frontier_eligible_maps": 31,
+      "size32_frontier_common_strata": 1238,
+      "size64_retention64_to256": 0.9689242648110195,
+      "size64_retained_numerator": 20329,
+      "size64_retained_denominator": 20981,
+      "size64_coverage_gain64_to256": 0.29844437775110044,
+      "size64_coverage_T64": 0.524734893957583,
+      "size64_coverage_T256": 0.8231792717086834,
+      "size64_ever_regressed_ratio": 0.06813460739509763,
+      "size64_ever_regressed_numerator": 2296,
+      "size64_ever_regressed_denominator": 33698,
+      "size64_frontier_effect": 0.24419240365080605,
+      "size64_frontier_eligible_maps": 32,
+      "size64_frontier_common_strata": 5570
+    },
+    {
+      "name": "warmstart_seed4",
+      "seed": 4,
+      "variant": "warmstart",
+      "historical_replay": null,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "failed_checks": [
+        "hold_size32_T128_flipped_ba_drop",
+        "hold_size32_T128_original_ba_drop",
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T128_strict_pooled_coverage_drop",
+        "hold_size32_T256_flipped_ba_drop",
+        "hold_size32_T256_original_ba_drop",
+        "hold_size32_T256_strict_mean_map_coverage_drop",
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "checks": {
+        "hold_size32_T128_flipped_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.14665478467941284
+        },
+        "hold_size32_T128_original_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.12376582622528076
+        },
+        "hold_size32_T128_strict_mean_map_coverage_drop": {
+          "pass": false,
+          "threshold": "<=0.05",
+          "value": 0.05966403126329328
+        },
+        "hold_size32_T128_strict_pooled_coverage_drop": {
+          "pass": false,
+          "threshold": "<=0.05",
+          "value": 0.06207344816379595
+        },
+        "hold_size32_T256_flipped_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.40523189306259155
+        },
+        "hold_size32_T256_original_ba_drop": {
+          "pass": false,
+          "threshold": "<=0.03",
+          "value": 0.3802937865257263
+        },
+        "hold_size32_T256_strict_mean_map_coverage_drop": {
+          "pass": false,
+          "threshold": "<=0.05",
+          "value": 0.48397639280771576
+        },
+        "hold_size32_T256_strict_pooled_coverage_drop": {
+          "pass": false,
+          "threshold": "<=0.05",
+          "value": 0.45466363340916477
+        },
+        "reach_size32_T64_flipped_ba": {
+          "pass": true,
+          "threshold": ">=0.85",
+          "value": 0.9232721924781799
+        },
+        "reach_size32_T64_original_ba": {
+          "pass": true,
+          "threshold": ">=0.85",
+          "value": 0.9084675312042236
+        },
+        "reach_size32_T64_strict_map_mean": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.5433290219955417
+        },
+        "reach_size32_T64_strict_pooled": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.4696132596685083
+        },
+        "size32_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": -0.4882860665844636
+        },
+        "size32_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.040995921871646274
+        },
+        "size32_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 3706
+        },
+        "size32_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size32_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.9581607290803645
+        },
+        "size32_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.07222655972851898
+        },
+        "size64_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": -0.32315426170468187
+        },
+        "size64_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.05059752603256692
+        },
+        "size64_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 9539
+        },
+        "size64_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size64_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.9546701502286088
+        },
+        "size64_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.09405524032407257
+        }
+      },
+      "size32_T64_original_ba": 0.9084675312042236,
+      "size32_T64_flipped_ba": 0.9232721924781799,
+      "size32_strict_pooled_T64": 0.4696132596685083,
+      "size32_strict_pooled_T64_numerator": 1445,
+      "size32_strict_pooled_T64_denominator": 3077,
+      "size32_strict_pooled_T128": 0.40753981150471236,
+      "size32_strict_pooled_T128_numerator": 1254,
+      "size32_strict_pooled_T128_denominator": 3077,
+      "size32_strict_pooled_T256": 0.014949626259343516,
+      "size32_strict_pooled_T256_numerator": 46,
+      "size32_strict_pooled_T256_denominator": 3077,
+      "size32_retention64_to256": 0.040995921871646274,
+      "size32_retained_numerator": 191,
+      "size32_retained_denominator": 4659,
+      "size32_coverage_gain64_to256": -0.4882860665844636,
+      "size32_coverage_T64": 0.5222508687366887,
+      "size32_coverage_T256": 0.03396480215222509,
+      "size32_ever_regressed_ratio": 0.9581607290803645,
+      "size32_ever_regressed_numerator": 6939,
+      "size32_ever_regressed_denominator": 7242,
+      "size32_frontier_effect": 0.07222655972851898,
+      "size32_frontier_eligible_maps": 32,
+      "size32_frontier_common_strata": 3706,
+      "size64_retention64_to256": 0.05059752603256692,
+      "size64_retained_numerator": 724,
+      "size64_retained_denominator": 14309,
+      "size64_coverage_gain64_to256": -0.32315426170468187,
+      "size64_coverage_T64": 0.35786814725890354,
+      "size64_coverage_T256": 0.03471388555422169,
+      "size64_ever_regressed_ratio": 0.9546701502286088,
+      "size64_ever_regressed_numerator": 29232,
+      "size64_ever_regressed_denominator": 30620,
+      "size64_frontier_effect": 0.09405524032407257,
+      "size64_frontier_eligible_maps": 32,
+      "size64_frontier_common_strata": 9539
+    },
+    {
+      "name": "baseline_seed5",
+      "seed": 5,
+      "variant": "baseline",
+      "historical_replay": "PASS",
+      "reach": false,
+      "hold": true,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "failed_checks": [
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "checks": {
+        "hold_size32_T128_flipped_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": 0.006895661354064941
+        },
+        "hold_size32_T128_original_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": 0.002077460289001465
+        },
+        "hold_size32_T128_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.02229003270044383
+        },
+        "hold_size32_T128_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.012349691257718565
+        },
+        "hold_size32_T256_flipped_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": 0.028571724891662598
+        },
+        "hold_size32_T256_original_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": 0.018229901790618896
+        },
+        "hold_size32_T256_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.06829292602594314
+        },
+        "hold_size32_T256_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.036399090022749436
+        },
+        "reach_size32_T64_flipped_ba": {
+          "pass": true,
+          "threshold": ">=0.85",
+          "value": 0.9156743288040161
+        },
+        "reach_size32_T64_original_ba": {
+          "pass": true,
+          "threshold": ">=0.85",
+          "value": 0.8996118307113647
+        },
+        "reach_size32_T64_strict_map_mean": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.18843464815920605
+        },
+        "reach_size32_T64_strict_pooled": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.12837179070523236
+        },
+        "size32_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": -0.01446026230243247
+        },
+        "size32_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.9143374741200828
+        },
+        "size32_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 4210
+        },
+        "size32_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size32_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.26103729104157736
+        },
+        "size32_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.11400294921109441
+        },
+        "size64_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": 0.011154461784713882
+        },
+        "size64_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.8692467475675085
+        },
+        "size64_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 16299
+        },
+        "size64_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size64_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.5120307290911726
+        },
+        "size64_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.052344381848648786
+        }
+      },
+      "size32_T64_original_ba": 0.8996118307113647,
+      "size32_T64_flipped_ba": 0.9156743288040161,
+      "size32_strict_pooled_T64": 0.12837179070523236,
+      "size32_strict_pooled_T64_numerator": 395,
+      "size32_strict_pooled_T64_denominator": 3077,
+      "size32_strict_pooled_T128": 0.14072148196295092,
+      "size32_strict_pooled_T128_numerator": 433,
+      "size32_strict_pooled_T128_denominator": 3077,
+      "size32_strict_pooled_T256": 0.1647708807279818,
+      "size32_strict_pooled_T256_numerator": 507,
+      "size32_strict_pooled_T256_denominator": 3077,
+      "size32_retention64_to256": 0.9143374741200828,
+      "size32_retained_numerator": 3533,
+      "size32_retained_denominator": 3864,
+      "size32_coverage_gain64_to256": -0.01446026230243247,
+      "size32_coverage_T64": 0.43313529873332585,
+      "size32_coverage_T256": 0.4186750364308934,
+      "size32_ever_regressed_ratio": 0.26103729104157736,
+      "size32_ever_regressed_numerator": 1218,
+      "size32_ever_regressed_denominator": 4666,
+      "size32_frontier_effect": 0.11400294921109441,
+      "size32_frontier_eligible_maps": 32,
+      "size32_frontier_common_strata": 4210,
+      "size64_retention64_to256": 0.8692467475675085,
+      "size64_retained_numerator": 7951,
+      "size64_retained_denominator": 9147,
+      "size64_coverage_gain64_to256": 0.011154461784713882,
+      "size64_coverage_T64": 0.22876650660264106,
+      "size64_coverage_T256": 0.23992096838735494,
+      "size64_ever_regressed_ratio": 0.5120307290911726,
+      "size64_ever_regressed_numerator": 7065,
+      "size64_ever_regressed_denominator": 13798,
+      "size64_frontier_effect": 0.052344381848648786,
+      "size64_frontier_eligible_maps": 32,
+      "size64_frontier_common_strata": 16299
+    },
+    {
+      "name": "warmstart_seed5",
+      "seed": 5,
+      "variant": "warmstart",
+      "historical_replay": null,
+      "reach": false,
+      "hold": true,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "failed_checks": [
+        "reach_size32_T64_flipped_ba",
+        "reach_size32_T64_original_ba",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "checks": {
+        "hold_size32_T128_flipped_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -8.386373519897461e-05
+        },
+        "hold_size32_T128_original_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.0033823251724243164
+        },
+        "hold_size32_T128_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.006682992659247454
+        },
+        "hold_size32_T128_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.003249918752031199
+        },
+        "hold_size32_T256_flipped_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.006703197956085205
+        },
+        "hold_size32_T256_original_ba_drop": {
+          "pass": true,
+          "threshold": "<=0.03",
+          "value": -0.01076662540435791
+        },
+        "hold_size32_T256_strict_mean_map_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.013442198524142482
+        },
+        "hold_size32_T256_strict_pooled_coverage_drop": {
+          "pass": true,
+          "threshold": "<=0.05",
+          "value": -0.002924926876828079
+        },
+        "reach_size32_T64_flipped_ba": {
+          "pass": false,
+          "threshold": ">=0.85",
+          "value": 0.7223144173622131
+        },
+        "reach_size32_T64_original_ba": {
+          "pass": false,
+          "threshold": ">=0.85",
+          "value": 0.7787305116653442
+        },
+        "reach_size32_T64_strict_map_mean": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.03734082312650579
+        },
+        "reach_size32_T64_strict_pooled": {
+          "pass": false,
+          "threshold": ">=0.80",
+          "value": 0.0035749106272343193
+        },
+        "size32_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": 0.00874341441542427
+        },
+        "size32_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.8828382838283828
+        },
+        "size32_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 2286
+        },
+        "size32_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size32_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.9376470588235294
+        },
+        "size32_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.3198065723722861
+        },
+        "size64_all_changed_coverage_gain64_to256": {
+          "pass": false,
+          "threshold": ">=0.05",
+          "value": -0.0022509003601440536
+        },
+        "size64_all_changed_retention64_to256": {
+          "pass": false,
+          "threshold": ">=0.95",
+          "value": 0.6955260977630489
+        },
+        "size64_common_frontier_strata": {
+          "pass": true,
+          "threshold": ">=100",
+          "value": 9850
+        },
+        "size64_eligible_frontier_maps": {
+          "pass": true,
+          "threshold": ">=16",
+          "value": 32
+        },
+        "size64_ever_regressed_over_ever_correct": {
+          "pass": false,
+          "threshold": "<=0.15",
+          "value": 0.9680104649779998
+        },
+        "size64_matched_frontier_effect": {
+          "pass": true,
+          "threshold": ">=0.05",
+          "value": 0.3450041781368588
+        }
+      },
+      "size32_T64_original_ba": 0.7787305116653442,
+      "size32_T64_flipped_ba": 0.7223144173622131,
+      "size32_strict_pooled_T64": 0.0035749106272343193,
+      "size32_strict_pooled_T64_numerator": 11,
+      "size32_strict_pooled_T64_denominator": 3077,
+      "size32_strict_pooled_T128": 0.0068248293792655184,
+      "size32_strict_pooled_T128_numerator": 21,
+      "size32_strict_pooled_T128_denominator": 3077,
+      "size32_strict_pooled_T256": 0.006499837504062398,
+      "size32_strict_pooled_T256_numerator": 20,
+      "size32_strict_pooled_T256_denominator": 3077,
+      "size32_retention64_to256": 0.8828382838283828,
+      "size32_retained_numerator": 535,
+      "size32_retained_denominator": 606,
+      "size32_coverage_gain64_to256": 0.00874341441542427,
+      "size32_coverage_T64": 0.06792960430445018,
+      "size32_coverage_T256": 0.07667301871987445,
+      "size32_ever_regressed_ratio": 0.9376470588235294,
+      "size32_ever_regressed_numerator": 2391,
+      "size32_ever_regressed_denominator": 2550,
+      "size32_frontier_effect": 0.3198065723722861,
+      "size32_frontier_eligible_maps": 32,
+      "size32_frontier_common_strata": 2286,
+      "size64_retention64_to256": 0.6955260977630489,
+      "size64_retained_numerator": 1679,
+      "size64_retained_denominator": 2414,
+      "size64_coverage_gain64_to256": -0.0022509003601440536,
+      "size64_coverage_T64": 0.06037414965986394,
+      "size64_coverage_T256": 0.05812324929971989,
+      "size64_ever_regressed_ratio": 0.9680104649779998,
+      "size64_ever_regressed_numerator": 8140,
+      "size64_ever_regressed_denominator": 8409,
+      "size64_frontier_effect": 0.3450041781368588,
+      "size64_frontier_eligible_maps": 32,
+      "size64_frontier_common_strata": 9850
+    }
+  ],
+  "scope": "Conditional four initializations, fixed bank/schedule; no phase transition, causal closure or reliability theorem."
+}
