@@ -1,86 +1,83 @@
-# Incremental review: exactly nested stationary sidecar
+# Incremental review: original Streaming seed4 behavioral audit
 
-- Review base: `723dd4aae6dc082ee998dd647b9df9a49b58962f`.
-- Evidence head: `33ced27d9f4966f6aa776e53cd521b9f5c98cbba`.
+- Review base: `2e550abfeb1bf53e1348dae7f5653fa6ccd8e47b`.
+- Evidence head: `af99c9ecf83391bac25150a2ffba71a928b88273`.
 - This following handoff-only commit changes review metadata, not code or evidence.
 
-All12 arms completed300 updates in1676.281 seconds. Four original Streaming
-controls reproduce historical final parameter hashes and full evaluations
-exactly. Frozen scientific status: **DEVELOPMENT_NO_GO**. Reach+hold is
-stream1/4, carried H0/4, instantaneous side branch0/4.
-This is a2D development comparison on inspected seeds2/3/4/5 and reused maps.
+Zero training, one selected original checkpoint,32 historical maps per
+size32/64, every macro step0..256. Completed in31.813 seconds. All six full
+historical endpoint payloads replay exactly. Earlier architecture no-go
+decisions, including the stationary-sidecar screen, remain unchanged.
 
 ## Minimal reading order
 
-1. [Current results](evidence/stationary_sidecar_init2345/RESULTS.md) and
-   [compact analysis](evidence/stationary_sidecar_init2345/analysis.json).
-   Start with primary_rows, seed4_trajectory, primary_trajectories and
-   hold_failure_reasons; raw per-map JSON is secondary.
-2. [Frozen protocol](new/stationary_sidecar/PROTOCOL.md),
-   [exact sidecar cell](new/stationary_sidecar/sidecar_cells.py),
-   [architecture](ARCHITECTURE.md), and
-   [runner/gates](new/stationary_sidecar/run.py).
-3. [Saved-result validation](evidence/stationary_sidecar_init2345/validation.json),
-   [CPU qualification](evidence/stationary_sidecar_init2345/cpu_validation.json),
-   [provenance](evidence/stationary_sidecar_init2345/provenance.json), and
-   [publication bindings](STATIONARY_SIDECAR_PUBLICATION_MANIFEST.json).
-   The analyzer is [CPU-only saved arithmetic](new/stationary_sidecar/analyze.py).
-4. [All curves](evidence/stationary_sidecar_init2345/curves.csv),
-   [paired memory-minus-controls effects](evidence/stationary_sidecar_init2345/paired_effects.csv),
-   and12 [raw arm records](evidence/stationary_sidecar_init2345/raw/).
+1. [Current report and figures](evidence/frontier_audit_seed4/RESULTS.md),
+   [diagnosis](evidence/frontier_audit_seed4/DIAGNOSIS.md), and
+   [compact summary](evidence/frontier_audit_seed4/summary.json).
+   Begin with sizes.*.transitions, ever_regressed_after_being_correct,
+   frontier, distance_profile and endpoints. Timing medians condition on
+   acquisition; censor counts are present beside them.
+2. [Frozen protocol](new/frontier_audit/PROTOCOL.md),
+   [trajectory/replay runner](new/frontier_audit/audit.py),
+   [per-map metrics](new/frontier_audit/metrics.py), and
+   [independent saved-trace validator](new/frontier_audit/validate.py).
+3. [Full local-trace validation record](evidence/frontier_audit_seed4/validation.json),
+   [public arithmetic validation](evidence/frontier_audit_seed4/publication_validation.json),
+   [provenance](evidence/frontier_audit_seed4/provenance.json), and
+   [publication bindings](FRONTIER_AUDIT_PUBLICATION_MANIFEST.json).
+4. [Size32 matched counts](evidence/frontier_audit_seed4/frontier_matches_size32.csv)
+   and [size64 matched counts](evidence/frontier_audit_seed4/frontier_matches_size64.csv).
+   Verify exported effects without checkpoints using
+   `python tools/export_frontier_audit.py --verify-only`.
 
-## Changed evidence and claim
+## Changed evidence
 
-The original W24/Z8, F/Q, operators and clocks are retained. G67->32->12
-writes extra H12; zero-initialized P_F/P_Q feed it into the old residuals.
-Memory retains H; stateless consumes the same instantaneous write and resets
-only H. Side arms have identical7989 parameters and full initialization;
-stream has5033. Neutral projected W/Z/logits/core derivatives are verified,
-but extra gradients can change joint norm clipping and optimizer updates.
-All side paths open by update3; K8 retains the16-hop graph-radius upper bound.
+| Changed-component behavior | size32 | size64 |
+|---|---:|---:|
+| Correct-at64 retention at256 | 6856/6856 (100%) | 18827/19084 (98.65%) |
+| Wrong at64, correct at256 | 1446 | 13275 |
+| Ever-correct pixels with any regression0..256 | 186/8303 (2.24%) | 2768/33328 (8.31%) |
+| Never correct through256 | 392/8695 | 10860/44188 |
+| Matched frontier one-step acquisition difference | +30.92 pp | +22.44 pp |
 
-| Seed4 primary pooled | T64 | T128 | T256 |
-|---|---:|---:|---:|
-| Original Streaming | 85.92% | 99.35% | 100.00% |
-| Persistent H | 94.24% | 0.00% | 0.38% |
-| Stateless side branch | 100.00% | 100.00% | 88.49% |
+Retention at endpoints is not per-step monotonicity: one size32 pixel correct
+at64 briefly errs and recovers by256. Matched acquisition compares currently
+wrong pixels with versus without a correct open one-hop neighbor at starts
+0,8,...,248, using t->t+1. Only common map/time/exact-BFS-distance strata
+contribute, weighted within maps by nf*nn/(nf+nn), then equal-map averaged.
+There are1081/5801 common strata and31/32 /32/32 eligible maps respectively.
 
-Only original seed4 passes hold. Memory loses all2918 primary paired hits
-atT128. Stateless seed4 drops to BA78.06/76.13% atT256 and also fails paired
-hold. Stateless seed2 improves at later horizons but misses the frozen T64
-threshold; later gains do not change its gate.
+The selected solution exhibits mostly retained paired correctness and local
+acquisition in the observed interval. This is output behavior, not proof of
+causal neighbor handoff, flood-fill, invariant latent closure or bounded state.
+A macro step can use two graph hops; neighboring outputs can respond to a
+common latent signal. Model n=1, maps reused, terminal stability ends at256.
+No resolution scaling law, training basin or cross-checkpoint reliability
+claim follows. Size64 distant regions remain partly unsolved.
 
-The carried-sidecar recipe did not improve reliable continued computation
-on these four seeds. Carry simultaneously changes temporal accumulation and
-activation scale; this does not isolate a scale-independent memory mechanism.
-Old Z already provides stationary memory. No general memory rejection,
-Jacobian/overwrite mechanism, population reliability, fresh confirmation,
-FLOP equality, trained stability guarantee or3D claim is established.
+## Validation and unchanged material
 
-## Unchanged claims and validation
+The local CPU check verified45 source bindings,64 maps/BFS,2240 transitions,
+123296 frontier strata and192 paired aggregates. Replay compares5628 integer
+and2636 floating leaves, maximum error0. Five synthetic metric fixtures pass.
+The public checker recomputes all6882 matched CSV strata,64 map effects,
+64 start intervals,140 transition accounts and18 endpoint aggregates.
 
-The selected-seed4 operator audit remains an intervention-sensitivity result.
-Earlier architecture no-go decisions and positive original seed4 behavior
-remain unchanged; their frozen files and checkpoints were preserved.
-
-Saved-result verification passed45 source bindings/current and both snapshots,
-12 CPU checkpoint hashes,4 exact historical controls, banks/schedules/preflight,
-144 BA means,1008 paired aggregates with independent denominators,936 curve
-rows,624 contrasts and all frozen decisions. The focused CPU qualification
-was rerun, including its documented tiny untrained-model smoke. There was no
-new scientific training or trained-checkpoint inference for publication.
-Raw arm/schedule/aggregate/CSV files are byte-identical; metadata copies remove
-machine identifiers. Checkpoints and launch receipts remain local.
+Original training/cell code, checkpoint and frozen evidence were preserved.
+Summary removes only redundant per-map transition rows; first/stable per-map
+and exact-distance profiles remain. Full traces and large behavior/evaluation
+JSON remain local, with hashes in provenance. Manifest/completion copies remove
+machine identifiers. Full saved-trace validation was done locally; exported
+arithmetic verification is a narrower check. No model inference or training
+was performed to prepare this upload.
 
 ## Concrete reviewer questions
 
-1. Do the zero-feedback nesting, shared core draws, immediate stateless
-   consumption and unchanged clocks implement the stated carry contrast?
-2. Do the frozen reach/hold rules explain why both seed4 side arms fail,
-   despite higher T64 scores and stateless T128 perfection?
-3. Are claim boundaries sufficient to separate this failed carried-sidecar
-   recipe from generic local memory, activation-scale effects and identified
-   long-rollout failure mechanisms?
+1. Does the retained/gained/ever-regressed accounting justify describing this
+   selected solution as mostly retaining solved outputs while acquiring regions?
+2. Is the map/time/exact-distance matching implemented correctly, and are the
+   causal and two-hop limitations of its acquisition association stated clearly?
+3. Do censor counts, finite horizon, incomplete distant regions and checkpoint
+   selection adequately limit any algorithm or trainability interpretation?
 
-Do not open the large raw files first or infer a new architecture proposal
-from this negative screen.
+No new architecture or follow-up experiment is proposed in this delivery.
