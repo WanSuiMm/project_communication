@@ -1,0 +1,44 @@
+{
+  "execution": "COMPLETE",
+  "cases": 492,
+  "execution_seconds": 885.4690360999994,
+  "new_training": false,
+  "training_trajectories": 1,
+  "case_counts": {
+    "by_bank": {
+      "confirmation32": {
+        "observed": 99,
+        "expected": 99,
+        "pass": true
+      },
+      "confirmation64": {
+        "observed": 99,
+        "expected": 99,
+        "pass": true
+      },
+      "primary32": {
+        "observed": 147,
+        "expected": 147,
+        "pass": true
+      },
+      "primary64": {
+        "observed": 147,
+        "expected": 147,
+        "pass": true
+      }
+    },
+    "total_pass": true,
+    "inventory_errors": []
+  },
+  "all_arms_finite": true,
+  "case_index": "case_index.json",
+  "profiles": "profiles.csv",
+  "factorial": "factorial.json",
+  "reading_order": [
+    "RESULTS.md",
+    "INTERPRETATION.md",
+    "profiles.csv",
+    "case_index.json"
+  ],
+  "claim": "conditional state-production and coadaptation evidence; no universal mechanism or physical phase transition"
+}

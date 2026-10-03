@@ -1,6 +1,30 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest follow-up: full seed4 behavior is not reproduced by sampled A/B changes
+## Latest diagnostic: joint195/200 zero-training causal audit
+
+COMPLETE492 conditions,885.469 seconds; four full endpoint traces match
+historical Boolean correctness and margins exactly. All arms remain finite.
+Primary32 cross-continuation (equal-map strict T256):
+
+| State at64 | Continuation | Readout | Strict T256 |
+|---|---|---|---:|
+| 195 | 195 | 195 | .93268 |
+| 195 | 200 | 195 | .93333 |
+| 200 | 195 | 195 | 1.00000 |
+| 200 | 200 | 195 | 1.00000 |
+
+E/F/Q/R full factorial effects are context dependent; readout replacement is
+small. The primary32 interpolation jump is dominated by map10, while195
+already preserves solved cells on the independent size32 bank. This supports
+conditional state-production/coadaptation sensitivity; no population phase
+transition or unique local semantic gate is established.
+
+[Canonical report](evidence/joint195_200_20261003/RESULTS.md),
+[interpretation](evidence/joint195_200_20261003/INTERPRETATION.md),
+[all492 profiles](evidence/joint195_200_20261003/profiles.csv),
+[frozen protocol](new/audit_195_200/PROTOCOL.md).
+
+## Earlier follow-up: full seed4 behavior is not reproduced by sampled A/B changes
 
 **COMPLETE,13 arms x300 updates,31.11 minutes.** Historical control exactly
 reproduces initial/final parameters and six endpoint records and qualifies

@@ -1,5 +1,28 @@
 # Tensor and operator map
 
+## Current195/200 audit: unchanged cell, separate intervention axes
+
+E=encoder, F=f_in/f_out, Q=q_in/q_out, R=readout. The frozen audit replaces
+these blocks independently between two checkpoints of one training trajectory;
+it does not add an architecture. At64, a paired state `(W,Z)` is produced by
+one checkpoint, continued by another, and scored under either R. R never enters
+the recurrent rule. Spatial swaps use the same reciprocal plan in both cue
+worlds, keeping W's four directional lanes separate when testing a lane.
+Readout-null Z deltas obey `R_weight * deltaZ approximately0` within1e-6;
+that preserves the immediate score numerically, not future semantic content.
+
+`instrument.parts` follows the original two-hop clock exactly: pre-stream
+L(W)/L(Z) enter F; post-F W and its Laplacian enter Q. The fixed-order
+Q(W,Z)->Q(TW,Z)->Q(TW+etaF,Z) telescope is exact linear-readout bookkeeping.
+It is an order-specific mediation split; nonlinear Q-input knockouts do not
+form additive semantic attributions. `probes.pulse` modifies selected cells
+for64->65 then restores the original rule; F/transport pulses blend the
+intermediate W before Q reads its neighbors.
+
+[Frozen protocol](new/audit_195_200/PROTOCOL.md),
+[source map](GPT_CONTEXT.md), and
+[current evidence](evidence/joint195_200_20261003/RESULTS.md).
+
 ## Current follow-up: original StreamingCell unchanged
 
 The A/B/C follow-ups keep W[B,24,H,W], four six-channel carrier lanes, and

@@ -1,6 +1,30 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-Latest diagnostic: **historical seed4 dense update100--200 replay completed**.
+Latest diagnostic: **joint195/200 zero-training causal audit completed**,492
+conditions in14.76 minutes, with all four full historical endpoint traces
+replayed exactly. On the primary size32 bank, the state produced at64 by200
+reaches strict T256 coverage100% even under the195 continuation rule; the
+195 state reaches93.33% under the200 rule. Readout replacement has little
+effect. Encoder/workspace changes and their interaction with Q matter;
+the average Q block effect is not an independent verdict on Q. The sharp
+interpolation improvement on primary32 is concentrated in one map, and195
+already performs well on the independent size32 bank. This locates conditional
+state-production/coadaptation sensitivity, without establishing a general
+computational phase transition or a unique local commitment mechanism.
+
+Start here for the update:
+
+1. [Results](evidence/joint195_200_20261003/RESULTS.md) and
+   [interpretation](evidence/joint195_200_20261003/INTERPRETATION.md).
+2. [All492 profiles](evidence/joint195_200_20261003/profiles.csv),
+   [case index](evidence/joint195_200_20261003/case_index.json), and
+   [all-order factorial effects](evidence/joint195_200_20261003/factorial.json).
+3. [Frozen protocol](new/audit_195_200/PROTOCOL.md),
+   [architecture/source map](ARCHITECTURE.md), and
+   [reproduction notes](evidence/joint195_200_20261003/REPRODUCTION.md).
+4. [Incremental handoff](GPT_HANDOFF.md) for a GitHub-connected reviewer.
+
+Preceding diagnostic: **historical seed4 dense update100--200 replay completed**.
 One unchanged K8 training trajectory exactly reproduces the historical
 parameters at0/100/200/300 and all six final historical endpoint payloads.
 The21 checkpoints100,105,...,200 plus300 control give44 paired256-step

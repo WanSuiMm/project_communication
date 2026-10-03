@@ -1,6 +1,40 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Latest completed experiment (2026-10-03): historical seed4 dense
+Latest completed experiment (2026-10-03): joint historical u195/u200
+zero-training causal audit, new/audit_195_200/PROTOCOL.md (audit195_200_v1).
+Original StreamingCell and checkpoints remain unchanged. The suite records492
+conditions across primary16-map and independent diagnostic8-map banks at32/64:
+11-point weight interpolation, all16 E/F/Q/R coalitions and all24 block-order
+effects, producer/continuation/readout cross cube, sparse role-matched W/Z/lane/
+channel/readout-null swaps, local bidirectional transplants, fixed-cohort
+survival and one-step update/feature pulses with continuation through256.
+Five CPU fixtures pass. GPU preflight01 exactly replays four full257-step
+endpoint traces (all Boolean arrays and paired margins, maximum error0).
+Actual-state null-readout errors stay below1e-6, instrumented steps and suffix
+shams are exact, and semantic telescopes pass. Peak allocated234273792 bytes.
+Measured runtime estimate798.47 seconds is descriptive; no cap or watchdog.
+Formal dispatch verifies the first completed inference and saves a durable
+local launch receipt. Run: runs/audit195_200_20261003_joint01.
+COMPLETE492/492 conditions in885.469 seconds; empty stderr and launch-session
+exit0, process gone. All four full historical Boolean/margin traces match
+exactly and all counterfactual arms remain finite. Primary32 cross-continuation
+strict T256: state200/rule195/readout195=1.000; state195/rule200/readout195=.93333.
+Readout changes are small; E/F/Q block interactions are large. The apparent
+primary32 interpolation jump removes a failure concentrated in map10;195 is
+already strong on the independent size32 bank. This supports conditional
+state-production/coadaptation sensitivity, not a universal closure mechanism.
+One selected training trajectory; independent task maps do not replicate
+training seeds. Public entry: evidence/joint195_200_20261003/RESULTS.md.
+Saved-artifact CPU validation03 passes all492 cases,1940 fixed cohorts,
+80 live/snapshot source bindings,12 reference input hashes,16 swap plans,
+and all16-coalition/24-order factorial metrics; maximum numeric error0.
+Earlier validator reports are retained locally; fixes changed no run evidence.
+Canonical commands from repository root, new output names required:
+
+    python -X utf8 -u -B new/audit_195_200/run.py --preflight --out runs/NEW_AUDIT_PREFLIGHT
+    pwsh -File tools/launch_audit_195_200.ps1 -RunName NEW_AUDIT -Preflight runs/NEW_AUDIT_PREFLIGHT
+
+Preceding completed experiment (2026-10-03): historical seed4 dense
 update100--200 transition audit, new/transition_100_200/PROTOCOL.md
 (seed4_dense_transition_v1). Original architecture and original K8 helper,
 bank10002/schedule20002/init4 unchanged. Replay300 updates to verify exact

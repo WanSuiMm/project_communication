@@ -1,0 +1,331 @@
+{
+  "by_size": [
+    {
+      "size": 32,
+      "complete": true,
+      "agreement_rows": [
+        {
+          "contrast": "u200_minus_u195",
+          "metric": "strict128_equal_map",
+          "primary_delta": 0.0800711521196581,
+          "confirmation_delta": 0.0008064516129031585,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "u200_minus_u195",
+          "metric": "acquisition64_128_primary_equal_map",
+          "primary_delta": 0.07859687066542431,
+          "confirmation_delta": -0.011084804132587167,
+          "direction_agrees": false
+        },
+        {
+          "contrast": "u200_minus_u195",
+          "metric": "first_exit64_128_primary_equal_map",
+          "primary_delta": -0.05953684297589713,
+          "confirmation_delta": 0.0,
+          "direction_agrees": false
+        },
+        {
+          "contrast": "u200_minus_u195",
+          "metric": "survival64_256_primary_equal_map",
+          "primary_delta": 0.06333751865157278,
+          "confirmation_delta": 0.0,
+          "direction_agrees": false
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "strict128_equal_map",
+          "block": "E",
+          "primary_delta": 0.05153375814430846,
+          "confirmation_delta": 0.125,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "strict128_equal_map",
+          "block": "F",
+          "primary_delta": 0.03725841940317252,
+          "confirmation_delta": 0.0,
+          "direction_agrees": false
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "strict128_equal_map",
+          "block": "Q",
+          "primary_delta": -0.008725175919778247,
+          "confirmation_delta": -0.12419354838709684,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "strict128_equal_map",
+          "block": "R",
+          "primary_delta": 4.150491955364395e-06,
+          "confirmation_delta": 0.0,
+          "direction_agrees": false
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "acquisition64_128_primary_equal_map",
+          "block": "E",
+          "primary_delta": 0.0567035329347221,
+          "confirmation_delta": 0.18419993014850014,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "acquisition64_128_primary_equal_map",
+          "block": "F",
+          "primary_delta": 0.036904954135349145,
+          "confirmation_delta": -0.0020665898248777292,
+          "direction_agrees": false
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "acquisition64_128_primary_equal_map",
+          "block": "Q",
+          "primary_delta": -0.015137558978342772,
+          "confirmation_delta": -0.1928654216839324,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "acquisition64_128_primary_equal_map",
+          "block": "R",
+          "primary_delta": 0.00012594257369584008,
+          "confirmation_delta": -0.00035272277227721416,
+          "direction_agrees": false
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "first_exit64_128_primary_equal_map",
+          "block": "E",
+          "primary_delta": -0.054034688130632946,
+          "confirmation_delta": -0.07142857142857142,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "first_exit64_128_primary_equal_map",
+          "block": "F",
+          "primary_delta": -0.03854221168063022,
+          "confirmation_delta": 0.0,
+          "direction_agrees": false
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "first_exit64_128_primary_equal_map",
+          "block": "Q",
+          "primary_delta": 0.03303160593674951,
+          "confirmation_delta": 0.07142857142857142,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "first_exit64_128_primary_equal_map",
+          "block": "R",
+          "primary_delta": 8.45089861651845e-06,
+          "confirmation_delta": 0.0,
+          "direction_agrees": false
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "survival64_256_primary_equal_map",
+          "block": "E",
+          "primary_delta": 0.0652310599582092,
+          "confirmation_delta": 0.07142857142857145,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "survival64_256_primary_equal_map",
+          "block": "F",
+          "primary_delta": 0.04178473727972159,
+          "confirmation_delta": 0.0,
+          "direction_agrees": false
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "survival64_256_primary_equal_map",
+          "block": "Q",
+          "primary_delta": -0.0437516723483325,
+          "confirmation_delta": -0.07142857142857145,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "survival64_256_primary_equal_map",
+          "block": "R",
+          "primary_delta": 7.339376197448844e-05,
+          "confirmation_delta": 0.0,
+          "direction_agrees": false
+        }
+      ],
+      "interpretation": "Agreement across diagnostic map banks only; this is not training-trajectory replication or treatment-threshold qualification."
+    },
+    {
+      "size": 64,
+      "complete": true,
+      "agreement_rows": [
+        {
+          "contrast": "u200_minus_u195",
+          "metric": "strict128_equal_map",
+          "primary_delta": 0.011209423637684623,
+          "confirmation_delta": 0.020875060913895793,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "u200_minus_u195",
+          "metric": "acquisition64_128_primary_equal_map",
+          "primary_delta": 0.07503152500747345,
+          "confirmation_delta": 0.02587546133617946,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "u200_minus_u195",
+          "metric": "first_exit64_128_primary_equal_map",
+          "primary_delta": -0.014561183207917916,
+          "confirmation_delta": -0.008057643663370794,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "u200_minus_u195",
+          "metric": "survival64_256_primary_equal_map",
+          "primary_delta": 0.014789610566122269,
+          "confirmation_delta": 0.008057643663370806,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "strict128_equal_map",
+          "block": "E",
+          "primary_delta": 0.17355544832033032,
+          "confirmation_delta": 0.17272888267791178,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "strict128_equal_map",
+          "block": "F",
+          "primary_delta": 0.16827952154454515,
+          "confirmation_delta": 0.12498936960088591,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "strict128_equal_map",
+          "block": "Q",
+          "primary_delta": -0.3307283313990244,
+          "confirmation_delta": -0.27727765738431936,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "strict128_equal_map",
+          "block": "R",
+          "primary_delta": 0.00010278517183351839,
+          "confirmation_delta": 0.0004344660194174621,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "acquisition64_128_primary_equal_map",
+          "block": "E",
+          "primary_delta": 0.07340861390644811,
+          "confirmation_delta": 0.06302766735939021,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "acquisition64_128_primary_equal_map",
+          "block": "F",
+          "primary_delta": 0.0755724470436926,
+          "confirmation_delta": 0.06730839322942596,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "acquisition64_128_primary_equal_map",
+          "block": "Q",
+          "primary_delta": -0.07470873510756186,
+          "confirmation_delta": -0.1048511861394747,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "acquisition64_128_primary_equal_map",
+          "block": "R",
+          "primary_delta": 0.0007591991648946047,
+          "confirmation_delta": 0.00039058688683797177,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "first_exit64_128_primary_equal_map",
+          "block": "E",
+          "primary_delta": -0.15034724705837674,
+          "confirmation_delta": -0.1872106586375838,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "first_exit64_128_primary_equal_map",
+          "block": "F",
+          "primary_delta": -0.17104111491613083,
+          "confirmation_delta": -0.12382532874041653,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "first_exit64_128_primary_equal_map",
+          "block": "Q",
+          "primary_delta": 0.3070923108918851,
+          "confirmation_delta": 0.30306719212685757,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "first_exit64_128_primary_equal_map",
+          "block": "R",
+          "primary_delta": -0.00026513212529550244,
+          "confirmation_delta": -8.884841222803385e-05,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "survival64_256_primary_equal_map",
+          "block": "E",
+          "primary_delta": 0.1557838593547842,
+          "confirmation_delta": 0.18720834199822853,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "survival64_256_primary_equal_map",
+          "block": "F",
+          "primary_delta": 0.16597763003478602,
+          "confirmation_delta": 0.12319766439322984,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "survival64_256_primary_equal_map",
+          "block": "Q",
+          "primary_delta": -0.307225406652818,
+          "confirmation_delta": -0.3024845933309822,
+          "direction_agrees": true
+        },
+        {
+          "contrast": "factorial_block_shapley_sign",
+          "metric": "survival64_256_primary_equal_map",
+          "block": "R",
+          "primary_delta": 0.00025352782937004825,
+          "confirmation_delta": 0.00013623060289468433,
+          "direction_agrees": true
+        }
+      ],
+      "interpretation": "Agreement across diagnostic map banks only; this is not training-trajectory replication or treatment-threshold qualification."
+    }
+  ],
+  "scope": "Independent map banks provide map-set confirmation for one selected training trajectory; no training seeds are replicated."
+}

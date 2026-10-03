@@ -1,6 +1,50 @@
 # Context for incremental scientific review
 
-## Current diagnostic: historical seed4 dense update100--200 replay
+## Current diagnostic: joint195/200 conditional mechanism audit
+
+- Protocol audit195_200_v1;2D only, zero training. COMPLETE492 conditions in
+  885.469 seconds. Four full257-step primary endpoint Boolean and paired-margin
+  traces replay exactly, maximum error0. No counterfactual arm is nonfinite.
+- One selected training trajectory, same original W24/Z8 StreamingCell. Primary
+  banks16 maps each at32/64 (61032/61064); independent diagnostic banks8 each
+  (62032/62064). Use equal-map means; prior dense reports also showed pooled
+  cell rates, which differ. These maps do not replicate training seeds.
+- The eight-cell cross cube separates state producer at64, continuation rule
+  and post-hoc readout. Primary32 strict T256: S200/D195/R195=1.000;
+  S195/D200/R195=.93333, baseline195=.93268. Production before64 accounts for
+  much of this contrast; changing the continuation rule still affects timing.
+- Replacing only E or F with200 weights in a195 background gives primary32
+  strict T256 .99967/1.000, while Q alone gives.89528. Full16 coalitions and
+  all24 replacement orders expose coadaptation. A negative average Q marginal
+  does not mean the trained200 Q is intrinsically harmful.
+- Interpolation primary32 first-exit64->128 .04281 atlambda.4 to.000406 at.5.
+  The removed failure is concentrated in map10. Independent32 baseline195
+  already has survival1.000; no general state phase boundary is identified.
+- Sparse same-role swaps, readout-null/span changes, local cross-checkpoint
+  transplants and one-step pulses keep both cue worlds paired. Fixed-cohort
+  all-steps-correct includes immediate swap damage. Small localized effects
+  cannot identify a unique hidden-state contract or rule out global structure.
+- Original180MB summary and420MB duplicate analysis remain local; public
+  column-encoded per-map cases preserve scientific values, all negative arms,
+  update probes and plans. Begin with the small summary/profiles, not all files.
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Replay, factorial/interpolation, cross continuation and roles | Runner.replay, experiments, suffix | new/audit_195_200/run.py |
+| Fixed-cohort risk, survival and turnover | summarize, _interval, _cohort_summary | new/audit_195_200/metrics.py |
+| Sparse paired reciprocal swaps, readout-relative projections | build_swaps, apply_swap, apply_z_projection_swap, transplant_between | new/audit_195_200/state_interventions.py |
+| Original-clock step accounting and order-specific logit telescope | parts, semantic_decomposition, preactivation_parts | new/audit_195_200/instrument.py |
+| Label-signed update statistics and masked single-step knockouts | summary, pulse | new/audit_195_200/probes.py |
+| All24-order effects and saved-mask baseline comparisons | analyze, _factorial_summary, _state_pulse_effects | new/audit_195_200/analyze.py |
+| Offline saved-trace validation and compact public export | main | new/audit_195_200/validate_saved.py; tools/export_joint195_evidence.py |
+| Explicit public-archive reproduction adapter | main | tools/replay_joint195_public.py |
+
+Canonical entry: [results](evidence/joint195_200_20261003/RESULTS.md),
+[interpretation](evidence/joint195_200_20261003/INTERPRETATION.md),
+[summary](evidence/joint195_200_20261003/summary.json).
+Earlier multi-seed architecture/warm-start negative verdicts remain unchanged.
+
+## Preceding diagnostic: historical seed4 dense update100--200 replay
 
 - Protocol: seed4_dense_transition_v1,2D only. Execution COMPLETE300 updates,
   44 audits,353.141 seconds; training112.687 seconds. One selected seed4

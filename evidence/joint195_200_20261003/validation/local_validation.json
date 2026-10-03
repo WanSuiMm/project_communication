@@ -1,0 +1,379 @@
+{
+  "schema_version": "audit-195-200-saved-validation-v1",
+  "validation_status": "PASS",
+  "run_directory": "audit195_200_20261003_joint01",
+  "validation_scope": "saved-artifact, offline CPU validation; no inference or training",
+  "run_controls": {
+    "status": "COMPLETE",
+    "completed_cases": 492,
+    "aggregate_pass": true,
+    "aggregate_cases": 492,
+    "replay_controls": 4
+  },
+  "artifacts": {
+    "source_and_reference_bindings": {
+      "source_hashes_checked": 80,
+      "live_source_mismatches": [],
+      "snapshot_source_mismatches": [],
+      "reference_input_hashes_checked": 12,
+      "reference_input_mismatches": []
+    },
+    "reference_checkpoints": {
+      "updates_checked": [
+        {
+          "update": 195,
+          "file": "checkpoints/u195.pt",
+          "parameter_sha256_matches": true,
+          "metadata_matches": true,
+          "reference_sizes": {
+            "32": {
+              "trace_sha256_matches": true,
+              "parameter_sha256_matches": true
+            },
+            "64": {
+              "trace_sha256_matches": true,
+              "parameter_sha256_matches": true
+            }
+          }
+        },
+        {
+          "update": 200,
+          "file": "checkpoints/u200.pt",
+          "parameter_sha256_matches": true,
+          "metadata_matches": true,
+          "reference_sizes": {
+            "32": {
+              "trace_sha256_matches": true,
+              "parameter_sha256_matches": true
+            },
+            "64": {
+              "trace_sha256_matches": true,
+              "parameter_sha256_matches": true
+            }
+          }
+        }
+      ],
+      "reference_bank_tensor_hashes": {
+        "32": "67cdd639f4703ed9d5ffa456bf05aa820c3064271f26b35625f072ec988e30f2",
+        "64": "d9f8fd09af083496c7675dda2e8af2fd4441646e58984d956aef28c4057a2e39"
+      }
+    },
+    "cases": {
+      "case_files": 492,
+      "finite_cases": 492,
+      "nonfinite_intervention_cases": 0,
+      "cohort_records_recomputed": 1940,
+      "full_baseline_trajectory_quantile_sets_recomputed": 8,
+      "group_counts": {
+        "confirmation32": {
+          "baseline": 2,
+          "cross_continuation": 8,
+          "factorial": 16,
+          "interpolation": 9,
+          "local_transplant": 12,
+          "update_pulse": 32,
+          "state_swap": 20
+        },
+        "confirmation64": {
+          "baseline": 2,
+          "cross_continuation": 8,
+          "factorial": 16,
+          "interpolation": 9,
+          "local_transplant": 12,
+          "update_pulse": 32,
+          "state_swap": 20
+        },
+        "primary32": {
+          "baseline": 2,
+          "cross_continuation": 8,
+          "factorial": 16,
+          "interpolation": 9,
+          "local_transplant": 12,
+          "update_pulse": 32,
+          "state_swap": 68
+        },
+        "primary64": {
+          "baseline": 2,
+          "cross_continuation": 8,
+          "factorial": 16,
+          "interpolation": 9,
+          "local_transplant": 12,
+          "update_pulse": 32,
+          "state_swap": 68
+        }
+      },
+      "case_file_errors": [],
+      "factorial_cases_by_bank": {
+        "confirmation32": 16,
+        "confirmation64": 16,
+        "primary32": 16,
+        "primary64": 16
+      }
+    },
+    "swap_plans": {
+      "plans_expected": 16,
+      "plans_checked": 16,
+      "age_bin_matching_independently_recomputed": false
+    },
+    "factorial_analysis": {
+      "factorial_sections_checked": 4,
+      "shapley_metrics_checked": 16
+    }
+  },
+  "checks": {
+    "aggregate": {
+      "checked": 2,
+      "passed": 2
+    },
+    "analysis_factorial_inventory": {
+      "checked": 1,
+      "passed": 1
+    },
+    "bank_inventory": {
+      "checked": 1,
+      "passed": 1
+    },
+    "baseline_full_margin_finite": {
+      "checked": 24,
+      "passed": 24
+    },
+    "baseline_full_margin_shape": {
+      "checked": 24,
+      "passed": 24
+    },
+    "baseline_inventory": {
+      "checked": 16,
+      "passed": 16
+    },
+    "case_bank_binding": {
+      "checked": 492,
+      "passed": 492
+    },
+    "case_boolean_trace_shape": {
+      "checked": 1476,
+      "passed": 1476
+    },
+    "case_group_inventory": {
+      "checked": 4,
+      "passed": 4
+    },
+    "case_identity": {
+      "checked": 1968,
+      "passed": 1968
+    },
+    "case_inventory": {
+      "checked": 1,
+      "passed": 1
+    },
+    "case_margin_endpoint_finite": {
+      "checked": 1476,
+      "passed": 1476
+    },
+    "case_margin_endpoint_shape": {
+      "checked": 1476,
+      "passed": 1476
+    },
+    "case_schema": {
+      "checked": 1476,
+      "passed": 1476
+    },
+    "case_trace_hash": {
+      "checked": 492,
+      "passed": 492
+    },
+    "checkpoint_metadata": {
+      "checked": 4,
+      "passed": 4
+    },
+    "checkpoint_tensor_hash": {
+      "checked": 2,
+      "passed": 2
+    },
+    "cohort_integer_counts": {
+      "checked": 1940,
+      "passed": 1940
+    },
+    "cohort_inventory": {
+      "checked": 492,
+      "passed": 492
+    },
+    "cohort_margin_counts": {
+      "checked": 346536,
+      "passed": 346536
+    },
+    "cohort_margin_means": {
+      "checked": 179088,
+      "passed": 179088
+    },
+    "cohort_mask_shape": {
+      "checked": 1940,
+      "passed": 1940
+    },
+    "confirmation_bank_generator_hash": {
+      "checked": 2,
+      "passed": 2
+    },
+    "factorial_analysis": {
+      "checked": 260,
+      "passed": 260
+    },
+    "factorial_identity": {
+      "checked": 64,
+      "passed": 64
+    },
+    "factorial_inventory": {
+      "checked": 4,
+      "passed": 4
+    },
+    "factorial_shapley": {
+      "checked": 688,
+      "passed": 688
+    },
+    "finite_nonfinite_inventory": {
+      "checked": 1,
+      "passed": 1
+    },
+    "historical_boolean_replay": {
+      "checked": 12,
+      "passed": 12
+    },
+    "historical_margin_replay": {
+      "checked": 4,
+      "passed": 4
+    },
+    "manifest_protocol": {
+      "checked": 4,
+      "passed": 4
+    },
+    "margin_quantiles": {
+      "checked": 533796,
+      "passed": 533796
+    },
+    "metric_integer_counts": {
+      "checked": 1651824,
+      "passed": 1651824
+    },
+    "metric_rates": {
+      "checked": 515880,
+      "passed": 515880
+    },
+    "paired_boolean_definition": {
+      "checked": 492,
+      "passed": 492
+    },
+    "paired_margin_endpoint_definition": {
+      "checked": 492,
+      "passed": 492
+    },
+    "primary_bank_reference_tensor_hash": {
+      "checked": 2,
+      "passed": 2
+    },
+    "reference_checkpoint_parameter_binding": {
+      "checked": 4,
+      "passed": 4
+    },
+    "reference_checkpoint_trace_hash": {
+      "checked": 4,
+      "passed": 4
+    },
+    "reference_input_hash": {
+      "checked": 12,
+      "passed": 12
+    },
+    "reference_input_inventory": {
+      "checked": 1,
+      "passed": 1
+    },
+    "replay_control": {
+      "checked": 8,
+      "passed": 8
+    },
+    "replay_control_inventory": {
+      "checked": 1,
+      "passed": 1
+    },
+    "run_status": {
+      "checked": 2,
+      "passed": 2
+    },
+    "saved_bank_byte_hash": {
+      "checked": 4,
+      "passed": 4
+    },
+    "saved_bank_metadata": {
+      "checked": 8,
+      "passed": 8
+    },
+    "saved_bank_schema": {
+      "checked": 4,
+      "passed": 4
+    },
+    "saved_bank_shapes": {
+      "checked": 4,
+      "passed": 4
+    },
+    "saved_bank_tensor_hash": {
+      "checked": 4,
+      "passed": 4
+    },
+    "source_live_hash": {
+      "checked": 80,
+      "passed": 80
+    },
+    "source_snapshot_hash": {
+      "checked": 80,
+      "passed": 80
+    },
+    "swap_plan_counts": {
+      "checked": 672,
+      "passed": 672
+    },
+    "swap_plan_eligibility": {
+      "checked": 16,
+      "passed": 16
+    },
+    "swap_plan_inventory": {
+      "checked": 1,
+      "passed": 1
+    },
+    "swap_plan_involution": {
+      "checked": 80,
+      "passed": 80
+    },
+    "swap_plan_metadata": {
+      "checked": 80,
+      "passed": 80
+    },
+    "swap_plan_range": {
+      "checked": 16,
+      "passed": 16
+    },
+    "swap_plan_shape": {
+      "checked": 16,
+      "passed": 16
+    },
+    "swap_plan_stratum_matching": {
+      "checked": 16,
+      "passed": 16
+    },
+    "trajectory_margin_quantiles_unavailable": {
+      "checked": 1452,
+      "passed": 1452
+    }
+  },
+  "check_totals": {
+    "checked": 3245021,
+    "passed": 3245021,
+    "failed": 0
+  },
+  "numerical_tolerance": 2e-07,
+  "maximum_absolute_float_error": 0.0,
+  "limitations": [
+    "The audit verifies saved artifacts and deterministic summaries; it does not independently establish a global causal mechanism.",
+    "For nonbaseline counterfactuals, only the three saved endpoint margins are available; full-trajectory margin quantiles are not recomputed.",
+    "Solved-plan age-bin membership is declared by frozen metadata but not independently reconstructed; role, other matching keys, reciprocity, and map caps are checked.",
+    "Case-level raw hidden states are not retained here, so no new hidden-state inference or intervention is performed."
+  ],
+  "errors": []
+}

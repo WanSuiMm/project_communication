@@ -1,0 +1,24 @@
+{
+  "centralized_fields": {
+    "counting_note": [
+      "Counts include repeated flips of a cell; transition opportunities are selected pixels times adjacent-step pairs."
+    ],
+    "observation_note": [
+      "Pooled cells and cell-times are descriptive; maps are the reporting units."
+    ],
+    "population": [
+      "named fixed mask intersected with changed, valid, non-source primary cells"
+    ],
+    "schema_version": [
+      "audit-195-200-metrics-v1"
+    ],
+    "scope": [
+      "Paired correctness and continuous margin summaries on saved maps. Maps are the reporting units; cells, cell-times, checkpoints, interpolations and permutations are not independent replicates."
+    ]
+  },
+  "copy_rule": "All retained scientific values round-trip exactly. Repeated metadata prose is centralized here; per-map rows use lossless column arrays.",
+  "roundtrip_checked": true,
+  "cases": 492,
+  "updates": 96,
+  "plans": 16
+}
