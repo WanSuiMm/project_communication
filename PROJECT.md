@@ -1,5 +1,39 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Latest completed diagnostic (2026-10-03): original Streaming seed4
+zero-training behavior audit, protocol new/frontier_audit/PROTOCOL.md.
+Recorded every macro step0..256 on the historical32 maps per size32/64.
+One selected checkpoint, no optimizer/backward, new model, training or altered
+operator. Completed in31.813 seconds; all six complete historical endpoint
+payloads replay exactly (5628 integer leaves,2636 floating leaves, max error0).
+At size32, all6856 pixels correct at64 remain correct at128 and256; at size64,
+18827/19084 (98.65%) remain correct at256. Endpoint retention is not perfect
+trajectory monotonicity: across0..256,186/8303 (2.24%) ever-correct pixels
+regress at size32, and2768/33328 (8.31%) at size64. Matched map/time/exact-BFS
+distance one-step frontier acquisition differences average+30.92/+22.44 pp
+over eligible maps, descriptive only. This supports investigating a retained
+correctness/acquisition behavior in this checkpoint, not a flood-fill rule,
+causal handoff, invariant latent closure, training basin or seed reliability.
+Canonical public outputs: evidence/frontier_audit_seed4/RESULTS.md,
+summary.json, DIAGNOSIS.md, behavior_curves.png and acquisition_maps.png.
+Independent CPU validation at evidence/frontier_audit_seed4/validation.json
+passed45 source bindings,64 map/BFS checks,2240 transitions,123296 frontier
+strata and192 paired aggregates. Public DIAGNOSIS.md records interpretation
+and the additional saved-trace within-interval count. Compact matched-stratum
+CSVs preserve the integer frontier counts and independently reproduce effects.
+FRONTIER_AUDIT_PUBLICATION_MANIFEST.json binds public evidence and all45
+executed sources; metadata copies omit machine identifiers. Original local
+run runs/frontier_audit_20261003_seed4_01 and its analyses were preserved;
+large traces/behavior JSON and checkpoints remain local.
+Five synthetic CPU metric checks passed before the single CUDA audit.
+Original evidence/checkpoint preserved; earlier architecture verdicts unchanged.
+Commands from repository root, new output names required:
+
+    python new/frontier_audit/check_metrics.py
+    python new/frontier_audit/audit.py --out runs/NEW_SEED4_FRONTIER_AUDIT
+    python new/frontier_audit/validate.py --run runs/NEW_SEED4_FRONTIER_AUDIT --out analyses/NEW_SEED4_FRONTIER_VALIDATION
+    python tools/export_frontier_audit.py --verify-only
+
 Latest completed experiment (2026-10-03): exactly nested stationary-sidecar
 development screen, protocol new/stationary_sidecar/PROTOCOL.md.
 All12 arms completed300 updates in1676.281 seconds (27.94 minutes).

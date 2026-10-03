@@ -1,5 +1,59 @@
 # Context for incremental scientific review
 
+## Current diagnostic: original seed4 retained correctness and local acquisition
+
+- Execution: COMPLETE,31.813 seconds, zero training. Same original Streaming
+  seed4 checkpoint;32 historical evaluation maps at each size32/64. Every
+  macro step0..256 saved. Model replication n=1, selected successful checkpoint,
+  maps reused. There is no new architecture qualification or intervention.
+- Replay: six complete historical T64/128/256 records exactly reproduce,
+  including5628 integer leaves and2636 float leaves, maximum error0.
+- Endpoint retention: all changed pixels correct at64 remain correct at256
+  at6856/6856 (100%) for size32 and18827/19084 (98.65%) for size64.
+  Wrong-at64 to correct-at256 acquisitions are1446/13275 respectively.
+- Every-step qualification:186/8303 (2.24%) ever-correct pixels regress at
+  size32;2768/33328 (8.31%) at size64. Endpoint retention is not per-step
+  monotonicity. One of the size32 correct-at64 pixels briefly errs then recovers.
+  Terminal-stable means correct at EVERY subsequent step through256 only.
+- Distance censoring:392/8695 and10860/44188 changed pixels never become paired
+  correct through256. Final wrong counts393/12086 include transiently correct
+  pixels. Primary-band success does not equal full-component completion.
+- Frontier: wrong pixels with a currently correct open one-hop neighbor versus
+  wrong pixels without one, matched within map/time/exact source BFS distance.
+  Acquisition t->t+1 at starts0,8,...,248. Both groups required; within-map
+  weight nf*nn/(nf+nn), then equal-map mean. Eligible maps31/32 and32/32;
+  common strata1081/5801; differences+30.92/+22.44 percentage points.
+- Interpretation: mostly retained paired output correctness and local acquisition
+  in this checkpoint. Shared latent propagation may cause both the neighbor
+  and target outputs; a macro step can cross two hops. No causal handoff,
+  flood-fill, invariant latent closure, bounded state, basin, seed reliability,
+  fresh-map confirmation, resolution scaling law or3D claim is established.
+  Earlier architecture no-go decisions and the latest sidecar verdict remain.
+
+| Concept | Exact symbol | Source |
+|---|---|---|
+| Every-step original/flipped predictions and replay gate | trace, main | new/frontier_audit/audit.py |
+| First/suffix time, loss, matched open-neighbor acquisition | analyze_trace, _frontier_interval | new/frontier_audit/metrics.py |
+| Compact behavior report and fixed map0 figures | build_summary, save_report | new/frontier_audit/report.py |
+| Independent full saved-trace CPU accounting and source/BFS checks | main, times, bfs | new/frontier_audit/validate.py |
+| Synthetic metric fixtures | run_checks | new/frontier_audit/check_metrics.py |
+| Sanitized copies and public CSV arithmetic | main, verify | tools/export_frontier_audit.py |
+
+Read [results](evidence/frontier_audit_seed4/RESULTS.md),
+[diagnosis](evidence/frontier_audit_seed4/DIAGNOSIS.md),
+[summary](evidence/frontier_audit_seed4/summary.json),
+[protocol](new/frontier_audit/PROTOCOL.md),
+[validation](evidence/frontier_audit_seed4/validation.json), and
+[publication bindings](FRONTIER_AUDIT_PUBLICATION_MANIFEST.json).
+Public summary drops only redundant per-map transition rows. Matched integer
+count CSVs reproduce frontier effects; per-map first/stable summaries and
+exact-distance timing/censor profiles remain public. Full traces and large
+behavior JSON remain local, bound by provenance. The full saved-trace check
+was performed locally; public arithmetic verification does not replace it.
+Run `python tools/export_frontier_audit.py --verify-only` from repository root
+without checkpoints. Full trajectory replay requires local checkpoint/source
+artifacts excluded from GitHub. No training or model inference for publication.
+
 ## Current experiment: exactly nested stationary sidecar is a no-go
 
 - Execution: COMPLETE,12 arms x300 updates,1676.281 seconds. Formal status:

@@ -1,0 +1,50 @@
+{
+  "review_base": "2e550abfeb1bf53e1348dae7f5653fa6ccd8e47b",
+  "training": false,
+  "model_replications": 1,
+  "original_private_manifest_sha256": "be28efbfdc6a1906d9c0cf478ef4e1301f3dede3b189ea77ef4397de0b02b02c",
+  "original_private_completion_sha256": "e1308ddadaddeb5c3005cd9d23af6e8df097df58ac539b52207de49a01c5a107",
+  "original_summary_sha256": "35c0df199aae3d36f4f731c753dd7cbb6d6211d1f734f182dce2655357b10dc9",
+  "original_report_sha256": "b05facfaff01537cbf5957ba6bf98640534e8e0324fc5eb673f4f30b1f8d89e7",
+  "original_diagnosis_sha256": "0d195a963a1e8a131eefc80972dc801d279f2430450627bbbd929370ab40bd6d",
+  "local_artifacts_sha256": {
+    "acquisition_maps.png": "38ba69435c86dbe1ab087f0d9fdaaec9a742c14dc4edeb40b4c4303703265c79",
+    "behavior_curves.png": "51d1cd9cab2e9d69ffba7b666692bad5385bf61c7db8cd030ef09f7eae2f2757",
+    "behavior_size32.json": "1d2b67597b757e6d5406fa4060815fcb0f0c0f6f37304d74c4ee701d58900440",
+    "behavior_size64.json": "ea8a53a6e940973ddcf137719588f5029556633ab2e6e81c8ae0e71da5056934",
+    "evaluations.json": "6178481bde99a6eb72f35e38034d193ad082ba2a904fbfb2d6d42257fbb01641",
+    "manifest.json": "be28efbfdc6a1906d9c0cf478ef4e1301f3dede3b189ea77ef4397de0b02b02c",
+    "replay_validation.json": "d030a355d7e07a730528ac3675f14e0e62e96ef3b8dcfdec4a72878fee3c8400",
+    "RESULTS.md": "b05facfaff01537cbf5957ba6bf98640534e8e0324fc5eb673f4f30b1f8d89e7",
+    "summary.json": "35c0df199aae3d36f4f731c753dd7cbb6d6211d1f734f182dce2655357b10dc9",
+    "trace_size32.npz": "b159ebdbd73c93711e2a53acd8ef20898aa45d4ef87c6c5a9109a702125e8272",
+    "trace_size64.npz": "4095fe2d05ced0fed2e59cdfa42cb8dd72cb2adefcf3f7f5ab91e2db1504bb25"
+  },
+  "byte_identical_copies_sha256": {
+    "replay_validation.json": "d030a355d7e07a730528ac3675f14e0e62e96ef3b8dcfdec4a72878fee3c8400",
+    "behavior_curves.png": "51d1cd9cab2e9d69ffba7b666692bad5385bf61c7db8cd030ef09f7eae2f2757",
+    "acquisition_maps.png": "38ba69435c86dbe1ab087f0d9fdaaec9a742c14dc4edeb40b4c4303703265c79",
+    "validation.json": "a5a2b116cfc25560cb9a7f448483370cd03e56fba736402b02592bace3eaf92e",
+    "within_interval.json": "0ab33ab8c1b66c7d924c517e9112cef336568896099e1b66588ad48320e41059",
+    "cpu_validation.json": "eaa30e89b6e6ea2a453c59ecbedba95e6429290dcd991ab040994b070e8bb055"
+  },
+  "sanitized_copies": [
+    "manifest.json",
+    "completion.json"
+  ],
+  "summary_transformation": "Only redundant per-map transition rows removed; all other fields unchanged.",
+  "report_transformation": "Route local validation/artifact references to public copies and add reproduction commands; metrics unchanged.",
+  "diagnosis_transformation": "Relative local run links changed to public siblings; text and metrics unchanged.",
+  "matched_csv_scope": "Only strata with both groups; exact integer counts and weights copied from local behavior JSON.",
+  "validation_scope": "Full saved-trace validation refers to original local run hashes; publication checker verifies public counts and bindings.",
+  "excluded": [
+    "checkpoints",
+    "source snapshots",
+    "full traces",
+    "full behavioral JSON",
+    "full evaluation payloads",
+    "private manifest/completion originals",
+    "launch metadata",
+    "logs"
+  ]
+}

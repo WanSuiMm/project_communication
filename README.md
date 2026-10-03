@@ -15,7 +15,21 @@ general rejection of stationary memory or failure mechanism follows.
 [compact analysis](evidence/stationary_sidecar_init2345/analysis.json), and
 [frozen protocol](new/stationary_sidecar/PROTOCOL.md).
 
-Latest diagnostic: a **zero-training operator audit of Streaming seed4**.
+Latest diagnostic: a **zero-training behavior audit of original Streaming
+seed4**. All six full historical endpoints replay exactly. On32 maps per
+size32/64, pixels correct at64 are retained at256 at **100% / 98.65%**.
+Every-step traces also reveal regressions: **2.24% / 8.31%** of ever-correct
+pixels regress at least once. Matching map, time and exact BFS distance gives
+one-step frontier acquisition differences of **+30.92 / +22.44 pp** (equal-map
+means). This selected checkpoint exhibits mostly retained correctness and
+local acquisition, but the association does not identify causal handoff,
+flood-fill, latent closure or training reliability. The horizon ends at256;
+maps are reused, model n=1, and earlier architecture no-go decisions remain.
+[Behavior report](evidence/frontier_audit_seed4/RESULTS.md),
+[diagnosis](evidence/frontier_audit_seed4/DIAGNOSIS.md), and
+[compact summary](evidence/frontier_audit_seed4/summary.json).
+
+The preceding diagnostic was a **zero-training operator audit of Streaming seed4**.
 All six historical size/horizon evaluations replay exactly. Replacing fixed
 streaming by identity or removing direct Laplacian inputs in both F/Q reduces
 primary pooled paired correctness from **85.92 / 99.35 / 100%** at
@@ -117,22 +131,24 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `723dd4aae6dc082ee998dd647b9df9a49b58962f`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `2e550abfeb1bf53e1348dae7f5653fa6ccd8e47b`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [Current Sidecar report](evidence/stationary_sidecar_init2345/RESULTS.md),
-   [compact analysis](evidence/stationary_sidecar_init2345/analysis.json), and
-   [saved-result validation](evidence/stationary_sidecar_init2345/validation.json).
-2. [Frozen protocol](new/stationary_sidecar/PROTOCOL.md),
-   [exact nested cell](new/stationary_sidecar/sidecar_cells.py),
-   [training and gates](new/stationary_sidecar/run.py),
-   [saved arithmetic analysis](new/stationary_sidecar/analyze.py),
-   [GPT_CONTEXT.md](GPT_CONTEXT.md), and [ARCHITECTURE.md](ARCHITECTURE.md).
-3. [Distance/rollout curves](evidence/stationary_sidecar_init2345/curves.csv),
-   [paired contrasts](evidence/stationary_sidecar_init2345/paired_effects.csv),
-   [raw arms](evidence/stationary_sidecar_init2345/raw/), and
-   [publication bindings](STATIONARY_SIDECAR_PUBLICATION_MANIFEST.json).
-   Raw records are secondary to the summaries above.
-4. [RESULTS.md](RESULTS.md), the preceding
+1. [Current behavior report](evidence/frontier_audit_seed4/RESULTS.md),
+   [diagnosis](evidence/frontier_audit_seed4/DIAGNOSIS.md), and
+   [compact summary](evidence/frontier_audit_seed4/summary.json). The report
+   includes the distance/acquisition figures; full arrays remain local.
+2. [Frozen behavior protocol](new/frontier_audit/PROTOCOL.md),
+   [trajectory/replay runner](new/frontier_audit/audit.py),
+   [per-map metrics](new/frontier_audit/metrics.py), and [GPT_CONTEXT.md](GPT_CONTEXT.md).
+3. [Full local-trace validation record](evidence/frontier_audit_seed4/validation.json),
+   [public arithmetic validation](evidence/frontier_audit_seed4/publication_validation.json),
+   [size32 matched counts](evidence/frontier_audit_seed4/frontier_matches_size32.csv),
+   [size64 matched counts](evidence/frontier_audit_seed4/frontier_matches_size64.csv),
+   [provenance](evidence/frontier_audit_seed4/provenance.json), and
+   [publication bindings](FRONTIER_AUDIT_PUBLICATION_MANIFEST.json).
+   Recompute exported effects with `python tools/export_frontier_audit.py --verify-only`.
+4. [RESULTS.md](RESULTS.md), the latest training screen's
+   [Sidecar report](evidence/stationary_sidecar_init2345/RESULTS.md), the preceding
    [seed4 operator audit](evidence/stream_path_audit_seed4/RESULTS.md),
    [Persistent Roles report](evidence/persistent_roles_init2345/RESULTS.md),
    [Local Interface report](evidence/local_interface_init2345/RESULTS.md),

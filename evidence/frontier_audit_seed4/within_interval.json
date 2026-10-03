@@ -1,0 +1,57 @@
+{
+  "scope": "Saved-trace descriptive accounting of within-interval relapse, supplement to the frozen audit; no inference or training.",
+  "sizes": {
+    "32": {
+      "correct_at64": 6856,
+      "correct_at64_ever_lost_before_or_at256": 1,
+      "step64plus_unique_regressed_pixels": 89,
+      "step64plus_loss_events": 89,
+      "step64plus_ever_correct_pixels": 8303,
+      "step64plus_net_accuracy_drop_steps": 9,
+      "first_correct_summary": {
+        "pixels": 8695,
+        "observed": 8303,
+        "censored": 392,
+        "sum_observed_steps": 302219,
+        "median_observed_step": 22.0,
+        "min_observed_step": 1,
+        "max_observed_step": 256
+      },
+      "terminal_stable_summary": {
+        "pixels": 8695,
+        "observed": 8302,
+        "censored": 393,
+        "sum_observed_steps": 302334,
+        "median_observed_step": 22.0,
+        "min_observed_step": 1,
+        "max_observed_step": 256
+      }
+    },
+    "64": {
+      "correct_at64": 19084,
+      "correct_at64_ever_lost_before_or_at256": 265,
+      "step64plus_unique_regressed_pixels": 1561,
+      "step64plus_loss_events": 1632,
+      "step64plus_ever_correct_pixels": 32514,
+      "step64plus_net_accuracy_drop_steps": 0,
+      "first_correct_summary": {
+        "pixels": 44188,
+        "observed": 33328,
+        "censored": 10860,
+        "sum_observed_steps": 2363099,
+        "median_observed_step": 48.0,
+        "min_observed_step": 1,
+        "max_observed_step": 256
+      },
+      "terminal_stable_summary": {
+        "pixels": 44188,
+        "observed": 32102,
+        "censored": 12086,
+        "sum_observed_steps": 2318703,
+        "median_observed_step": 49.0,
+        "min_observed_step": 1,
+        "max_observed_step": 256
+      }
+    }
+  }
+}

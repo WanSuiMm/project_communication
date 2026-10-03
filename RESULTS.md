@@ -1,5 +1,37 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
+## Latest diagnostic: selected seed4 retains correctness while acquiring regions
+
+**COMPLETE, zero training,31.813 seconds.** Original Streaming seed4,
+historical32 maps per size32/64, every macro step0..256. All six full historical
+T64/128/256 evaluation payloads replay exactly. Model n=1; this is descriptive
+behavior, not a new architecture gate.
+
+| Changed-component behavior | size32 | size64 |
+|---|---:|---:|
+| Correct-at64 retention at256 | 6856/6856 (100%) | 18827/19084 (98.65%) |
+| Wrong at64, correct at256 | 1446 | 13275 |
+| Ever-correct pixels with any one-step regression | 186/8303 (2.24%) | 2768/33328 (8.31%) |
+| Never correct through256 | 392/8695 | 10860/44188 |
+| Matched frontier one-step acquisition difference | +30.92 pp | +22.44 pp |
+
+The frontier comparison matches map, time and exact BFS distance, weights
+common strata within each map, then averages eligible maps equally. This
+association does not establish neighbor causal handoff or flood-fill. Endpoint
+retention also hides short regressions; terminal stability ends at256. The
+maps are reused and the checkpoint selected. Earlier no-go verdicts remain.
+
+[Report and figures](evidence/frontier_audit_seed4/RESULTS.md),
+[diagnosis](evidence/frontier_audit_seed4/DIAGNOSIS.md),
+[summary](evidence/frontier_audit_seed4/summary.json), and
+[full saved-trace validation](evidence/frontier_audit_seed4/validation.json)
+preserve the negative and censored observations. The local CPU validation
+checked45 source bindings,64 maps/BFS,2240 transitions,123296 frontier strata
+and192 paired aggregates. Public matched CSVs are independently reproducible
+by `python tools/export_frontier_audit.py --verify-only`.
+[Bindings](FRONTIER_AUDIT_PUBLICATION_MANIFEST.json) distinguish compact and
+sanitized copies from untouched local evidence. No new model rollout for upload.
+
 ## Latest experiment: stationary sidecar does not improve reach+hold
 
 **COMPLETE, DEVELOPMENT_NO_GO.** All12 arms completed300 updates in
