@@ -1,111 +1,112 @@
-# Incremental review: seed4 schedule, initialization and rollback follow-ups
+# Incremental review: detached warm-start of original StreamingCell
 
-- Review base: `ba433ecc28a7454db853cac6d6c258076a14f6fc`.
-- Evidence head: `ff51756bb8fc20f773a6adcc957c0132a9d62f27`.
-- This following handoff-only commit changes review metadata, not code or evidence.
+- Review base: `91be5bcb957ea9c33399e06201ada65cc3132732`.
+- Evidence head: `f296f67909116aacbcfc8aa60122cc6053297510`.
+- The following handoff-only commit changes reader metadata, not code or evidence.
 
-Three separate questions, unchanged original StreamingCell and K8 recipe:
-A varies batch schedule, B perturbs starting parameters, C rolls back local
-state in the existing selected checkpoint. A/B completed all 13 arms x300
-updates in31.11 minutes. C completed with zero training. No new GPU training
-or inference was performed to prepare this upload.
+The completed 2D screen asks whether older detached on-policy starting states
+make the existing solve-and-preserve phenotype easier to learn. Original
+StreamingCell and K8 are unchanged. Eight arms completed300 updates each in
+1629.375 seconds (27.16 minutes). Decision: **DEVELOPMENT_NOT_QUALIFIED**.
 
 ## Minimal reading order
 
-1. [Current results](evidence/seed4_followup_20261003/RESULTS.md),
-   [interpretation](evidence/seed4_followup_20261003/INTERPRETATION.md), and
-   [compact all-arm aggregate](evidence/seed4_followup_20261003/summary.json).
-   Inspect reach/hold/dynamics/frontier separately before the full gate.
-2. [Frozen protocol](new/seed4_followup/PROTOCOL.md),
-   [training/control runner](new/seed4_followup/train.py),
-   [phenotype metrics/gate](new/seed4_followup/phenotype.py), and
-   [local rollback runner](new/seed4_followup/causal.py).
-   [GPT_CONTEXT.md](GPT_CONTEXT.md) maps concepts to exact source symbols.
-3. [Compact record of full local training validation](evidence/seed4_followup_20261003/training/validation.json),
-   [C validation](evidence/seed4_followup_20261003/causal/validation.json),
-   [public arithmetic](evidence/seed4_followup_20261003/publication_validation.json),
-   [provenance](evidence/seed4_followup_20261003/provenance.json), and
-   [publication bindings](SEED4_FOLLOWUP_PUBLICATION_MANIFEST.json).
-4. [Reproduction notes](evidence/seed4_followup_20261003/REPRODUCTION.md).
-   Verify hashes and exported arithmetic without a model/GPU using
-   `python tools/export_seed4_followup.py --verify-only`.
+1. [Current results and all-arm partial metrics](evidence/warmstart_20261003/RESULTS.md)
+   and [compact aggregate](evidence/warmstart_20261003/summary.json).
+2. [Frozen protocol and runtime amendment](new/warmstart/PROTOCOL.md),
+   [training helper](new/warmstart/training.py),
+   [paired runner](new/warmstart/run.py), and
+   [unchanged phenotype](new/seed4_followup/phenotype.py).
+   [GPT_CONTEXT.md](GPT_CONTEXT.md) maps exact source symbols.
+3. [Saved-artifact validation](evidence/warmstart_20261003/validation/local_validation.json),
+   [public arithmetic](evidence/warmstart_20261003/publication_validation.json),
+   [provenance](evidence/warmstart_20261003/provenance.json), and
+   [publication bindings](WARMSTART_PUBLICATION_MANIFEST.json).
+4. [Reproduction notes](evidence/warmstart_20261003/REPRODUCTION.md).
+   Verify without a model/GPU with
+   `python tools/export_warmstart.py --verify-only`.
 
-Individual training summaries retain every gate, denominator, map/censor
-profile and transition. Raw arm records, frontier CSVs and C event records
-are secondary; do not open them first. Checkpoints and full Boolean traces
-remain local with their hashes bound. A/B retraining needs three public
-reference inputs restored by the documented helper; exact C replay needs
-the original excluded checkpoint/source archives.
+Complete arm summaries retain all gates and map/distance profiles. Raw records,
+matched-frontier CSVs and training-stage turnover rows are secondary; do not
+open them first. Checkpoints, NPZ traces, source snapshots, full diagnostic
+JSON and private execution receipts remain local, with hashes bound.
 
-## Changed evidence and claim boundaries
+## Intervention and primary result
 
-The historical training control exactly reproduces initial/final parameter
-hashes and all six full historical endpoints. It also passes the new full
-phenotype on fresh32-map banks at each size32/64. The gate requires reach,
-hold, retention, coverage growth, low every-step regression and matched-frontier
-acquisition at their frozen thresholds; endpoint retention alone cannot pass.
+Four paired initialization seeds2/3/4/5 share one fixed training bank10002 and
+historical batch schedule20002. Both variants compute the same no-grad prefix
+for the last four examples. Baseline discards it and invokes the untouched
+historical K8 helper; warmstart keeps the detached prefix state, with the first
+four examples fresh. Both use64 trained suffix steps and eight K8 task losses.
+Frozen prefix ages32/64/128/192 share seed60002; no state crosses optimizer
+updates. Older supervised state ages and detached encoder history are part of
+this intervention, so it does not isolate a pure credit-assignment effect.
 
-| Screen | Independent unit | Full phenotype passes | Frozen criterion | Verdict |
-|---|---|---:|---:|---|
-| A: same initialization, new schedules | 4 schedules | 0/4 | >=3/4 | NOT_QUALIFIED |
-| B: global L2 epsilon=.01 | 4 directions | 0/4 | >=3/4 | NOT_QUALIFIED |
-| B: global L2 epsilon=.05 | Same paired directions | 0/4 | >=3/4 | NOT_QUALIFIED |
+Fresh primary evaluation uses32 maps per size32/64 at seeds60032/60064.
+All four historical baseline initial/final parameters and all24 saved
+size-by-horizon records exactly match their published originals. Baseline
+seed4 also passes the fresh full phenotype, qualifying the control.
 
-All 12 A/B arms pass both matched-frontier gates. Their other failures vary.
-Schedule20032 passes hold/retention/growth but fails reach and per-step
-regression. Direction70003/.05 passes size32 reach+hold but fails parts of
-size64 dynamics and regression. These partial behaviors are retained;
-full-gate failure does not mean nothing was learned. A/B are conditional on
-one starting solution, bank and training recipe. B perturbs originally zero
-output blocks too; it does not preserve the zero-output initialization
-manifold. Four paired directions are not eight independent replicates.
-No certified basin radius, monotone radial boundary or architecture reliability
-estimate follows.
+| Initialization | Baseline full phenotype | Warmstart full phenotype |
+|---:|---|---|
+| 2 | Fail | Fail |
+| 3 | Fail | Fail |
+| 4 | Pass | Fail |
+| 5 | Fail | Fail |
 
-C qualifies its implementation/event population:93/257 events across31
-eligible maps at size32/64, with full replay and numerical controls passing.
-Its frozen primary is **NO_PRIMARY_THRESHOLD_SIGNAL**: step1 native-minus-sender
-is+14.52/+7.00pp and wrong-sham-minus-sender is+3.76/+0.44pp. Required joint
-thresholds are>=10pp and>=5pp at BOTH sizes. Step4 secondary contrasts are
-larger (+33.53/+28.60pp and+20.18/+15.33pp) and do not rescue the primary.
-The miss is not a statistical null test. C is one selected checkpoint on
-historical maps, equal-map averaged after within-map event averaging.
-Whole-cell W/Z temporal rollback and norm-matched sham do not identify an
-edge-specific message, unique sender, semantic handoff or flood-fill algorithm.
+The frozen positive criterion required warmstart>=3/4 AND at least two more
+passes than baseline, with qualified controls. Actual passes are1/4 versus0/4.
+Independent unit: paired initialization, n=4 conditional on one bank/schedule.
+No pixel/time-step significance, population reliability or3D claim follows.
 
-## Validation and unchanged material
+Partial changes are nonuniform. Warmstart seed2 improves some output
+retention, coverage growth and open-grid BA, but misses the full gate.
+Warmstart seed4 loses reach and retention; its size32 strict pooled
+T64/T128/T256 is46.96/40.75/1.49%, compared with85.12/99.84/100% baseline.
+The report retains these partial metrics; they cannot rescue the full gate.
+The negative decision applies to this recipe, not all warm-start methods.
 
-The full local training review passes383/383 checks, including56 current
-source hashes and56 run snapshots, all13 CPU checkpoint parameter hashes,
-reconstructed initialization/radius identities, train/fresh/historical banks,
-five schedules, six exact control replays, Boolean-trace metrics and every
-phenotype gate. Floating metric comparisons allow2e-7 for FP32 versus NumPy
-arithmetic; pass booleans and thresholds must match. Human-readable reason
-strings are excluded from numeric comparison because they embed formatted floats.
+## Validation, exploratory diagnostics and unchanged evidence
 
-The C saved-event review verifies55 source bindings, published-reference and
-checkpoint hashes,350 event geometries, paired logits, numerical controls and
-equal-map contrasts. The narrower public checker verifies all13 summaries,
-125459 matched CSV strata and350 C events, plus source/tool/evidence hashes.
-The staged-file privacy/link/binding check passes; frozen scientific records
-are preserved, and metadata copies omit machine/process fields.
+Saved-artifact CPU validation passes583 checks:70 current source/reference
+bindings and70 snapshots,8 final plus32 stage checkpoints,24 exact saved
+historical records,8 recomputed fresh phenotype gates from16 Boolean trace
+files,32 stage summaries,4096 integer turnover identities and384 finite
+recorded RMS values. Numeric phenotype comparisons allow2e-7 for FP32/NumPy
+roundoff; counts, denominators, thresholds and gate booleans match exactly.
+Historical saved replay records require exact numeric equality and recorded
+maximum error0.
 
-The compact training validation copy omits duplicate metric profiles and
-successful-check detail payloads, retains check names/verdicts, provenance,
-checkpoints/traces and gate values, and binds the complete local report SHA.
-Public arithmetic does not replace the full local trace/checkpoint review.
+The first publication-checker attempt is preserved locally. Its false failures
+came from comparing formatted floating reason strings and confusing
+start-intersection-end retention with total endpoint correctness. The checker
+was corrected; experimental outputs and frozen gates were unchanged.
 
-All earlier architecture no-go verdicts, original cell/training code, old
-checkpoints and frozen evidence remain unchanged. This follow-up establishes
-conditional sensitivity and partial behavior, not a general rejection of NCA
-or an explanation of short-BPTT credit assignment. No new architecture or
-follow-up experiment is proposed in this delivery.
+Stage diagnostics at updates0/100/200/300 use16 separate size32 maps(seed61032)
+for128 paired steps. These are exploratory. Their raw Boolean trajectories
+were not saved: recorded accounting, denominators, checkpoint bindings and
+RMS finiteness are verified, but full stage survival cannot be independently
+replayed from raw traces. This does not establish an order parameter,
+computational phase transition, attractor or latent continuation closure.
+
+Public arithmetic verifies8 full gate summaries,114952 matched strata,
+32 stage snapshots and4128 turnover rows (including32 initial rows), together
+with all source/tool/evidence hashes. An isolated checkout of the staged
+standalone repository passes both public verification and the focused CPU
+qualification without private run archives. No GPU training or inference was
+performed to prepare publication.
+
+Before formal training, the user explicitly removed the runtime limit.
+Preflight01's failed former timing gate remains recorded. CPU02/preflight02
+qualified the amended source, including the sticky prefix-finiteness
+synchronization check. Scientific conditions stayed fixed. All earlier
+architecture decisions and evidence remain unchanged.
 
 ## Concrete reviewer questions
 
-1. Are the fresh phenotype conjunction, denominators/censoring and partial
-   outcomes preserved without interpreting0/4 as absence of all learned behavior?
-2. Do A's schedule unit and B's paired direction unit, including perturbations
-   of zero output blocks, support only the stated conditional conclusions?
-3. Are C's event selection, equal-map effects, sham limitations and failed
-   one-step primary kept distinct from its larger four-step secondary effects?
+1. Which frozen gate components explain each paired failure, especially the
+   different seed2 and seed4 changes?
+2. Does this screen support only the insufficiency of the sampled age-exposure
+   recipe, rather than a general claim about warm-start or continuation learning?
+3. What descriptive training-stage behavior is supported by the saved summaries,
+   and which proposed phase/latent-state mechanisms remain unidentified?
