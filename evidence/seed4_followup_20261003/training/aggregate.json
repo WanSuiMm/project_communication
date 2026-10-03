@@ -1,0 +1,125 @@
+{
+  "complete": true,
+  "identities_verified": true,
+  "updates_per_arm": 300,
+  "expected_arms": 13,
+  "completed_arms": 13,
+  "arm_statuses": [
+    {
+      "name": "control",
+      "experiment": "control",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "A_schedule20012",
+      "experiment": "A",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "B_direction70002_eps01",
+      "experiment": "B",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "B_direction70002_eps05",
+      "experiment": "B",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "A_schedule20022",
+      "experiment": "A",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "B_direction70003_eps05",
+      "experiment": "B",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "B_direction70003_eps01",
+      "experiment": "B",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "A_schedule20032",
+      "experiment": "A",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "B_direction70004_eps01",
+      "experiment": "B",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "B_direction70004_eps05",
+      "experiment": "B",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "A_schedule20042",
+      "experiment": "A",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "B_direction70005_eps05",
+      "experiment": "B",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    },
+    {
+      "name": "B_direction70005_eps01",
+      "experiment": "B",
+      "status": "COMPLETE",
+      "completed_updates": 300
+    }
+  ],
+  "decision": "SCREEN_COMPLETE",
+  "phenotype_pass": {
+    "control": true,
+    "A_schedule20012": false,
+    "B_direction70002_eps01": false,
+    "B_direction70002_eps05": false,
+    "A_schedule20022": false,
+    "B_direction70003_eps05": false,
+    "B_direction70003_eps01": false,
+    "A_schedule20032": false,
+    "B_direction70004_eps01": false,
+    "B_direction70004_eps05": false,
+    "A_schedule20042": false,
+    "B_direction70005_eps05": false,
+    "B_direction70005_eps01": false
+  },
+  "control_fresh_qualification": "QUALIFIED",
+  "A": {
+    "completed_schedules": 4,
+    "passes": 0,
+    "unit": "schedule",
+    "decision": "NOT_QUALIFIED"
+  },
+  "B": {
+    "0.01": {
+      "completed_directions": 4,
+      "passes": 0,
+      "unit": "paired_direction",
+      "decision": "NOT_QUALIFIED"
+    },
+    "0.05": {
+      "completed_directions": 4,
+      "passes": 0,
+      "unit": "paired_direction",
+      "decision": "NOT_QUALIFIED"
+    }
+  },
+  "scope": "Selected initialization, fixed train bank and recipe; no basin theorem or architecture reliability claim."
+}

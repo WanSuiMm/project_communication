@@ -1,6 +1,21 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-Latest experiment: **Stationary Sidecar — DEVELOPMENT_NO_GO**. All12 arms
+Latest follow-up: **original seed4 reproduces, full phenotype does not reproduce
+in the sampled A/B interventions**. All13 arms completed300 updates in31.11
+minutes. The control exactly matches historical initial/final parameters and
+all six endpoint records, and passes the new phenotype on fresh32-map banks
+at sizes32/64. A passes0/4 new schedules; B passes0/4 directions at each of
+two paired radii (.01/.05). All 12 A/B arms pass both matched-frontier
+gates, but none meets the full reach/hold/retention/coverage/relapse gate.
+Some arms have partial long-rollout behavior. This is conditional schedule
+and directional sensitivity, not a basin-radius theorem or general NCA verdict.
+The independent C rollback audit misses its one-step joint threshold; larger
+four-step effects remain secondary, without identifying a unique handoff law.
+[Current results](evidence/seed4_followup_20261003/RESULTS.md),
+[interpretation](evidence/seed4_followup_20261003/INTERPRETATION.md), and
+[compact aggregate](evidence/seed4_followup_20261003/summary.json).
+
+Preceding architecture experiment: **Stationary Sidecar — DEVELOPMENT_NO_GO**. All12 arms
 completed300 updates in27.94 minutes. Four original Streaming controls exactly
 reproduce historical final parameter hashes and full evaluations. Reach+hold
 is **stream1/4, persistent H0/4, stateless0/4**. Both side branches preserve
@@ -15,7 +30,7 @@ general rejection of stationary memory or failure mechanism follows.
 [compact analysis](evidence/stationary_sidecar_init2345/analysis.json), and
 [frozen protocol](new/stationary_sidecar/PROTOCOL.md).
 
-Latest diagnostic: a **zero-training behavior audit of original Streaming
+Preceding descriptive diagnostic: a **zero-training behavior audit of original Streaming
 seed4**. All six full historical endpoints replay exactly. On32 maps per
 size32/64, pixels correct at64 are retained at256 at **100% / 98.65%**.
 Every-step traces also reveal regressions: **2.24% / 8.31%** of ever-correct
@@ -131,9 +146,29 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `2e550abfeb1bf53e1348dae7f5653fa6ccd8e47b`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `ba433ecc28a7454db853cac6d6c258076a14f6fc`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [Current behavior report](evidence/frontier_audit_seed4/RESULTS.md),
+1. [Latest A/B/C results](evidence/seed4_followup_20261003/RESULTS.md),
+   [interpretation](evidence/seed4_followup_20261003/INTERPRETATION.md), and
+   [compact aggregate](evidence/seed4_followup_20261003/summary.json).
+2. [Frozen follow-up protocol](new/seed4_followup/PROTOCOL.md),
+   [training runner](new/seed4_followup/train.py),
+   [phenotype evaluator](new/seed4_followup/phenotype.py),
+   [rollback runner](new/seed4_followup/causal.py), and [GPT_CONTEXT.md](GPT_CONTEXT.md).
+3. [Compact record of full local training validation](evidence/seed4_followup_20261003/training/validation.json),
+   [C validation](evidence/seed4_followup_20261003/causal/validation.json),
+   [public arithmetic](evidence/seed4_followup_20261003/publication_validation.json),
+   [provenance](evidence/seed4_followup_20261003/provenance.json), and
+   [bindings](SEED4_FOLLOWUP_PUBLICATION_MANIFEST.json).
+4. [Reproduction notes](evidence/seed4_followup_20261003/REPRODUCTION.md).
+   Verify without a checkpoint/GPU using
+   `python tools/export_seed4_followup.py --verify-only`. Individual model
+   summaries, raw records, matched CSVs and C events are secondary; full
+   trajectories, checkpoints, logs and machine receipts remain local.
+
+Previous context, if needed:
+
+1. [Previous behavior report](evidence/frontier_audit_seed4/RESULTS.md),
    [diagnosis](evidence/frontier_audit_seed4/DIAGNOSIS.md), and
    [compact summary](evidence/frontier_audit_seed4/summary.json). The report
    includes the distance/acquisition figures; full arrays remain local.

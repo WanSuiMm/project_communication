@@ -1,0 +1,33 @@
+{
+  "complete": true,
+  "identities_verified": true,
+  "updates_per_arm": 300,
+  "expected_arms": 13,
+  "completed_arms": 3,
+  "arm_statuses": [
+    {
+      "name": "control",
+      "experiment": "control",
+      "status": "COMPLETE",
+      "completed_updates": 3
+    },
+    {
+      "name": "A_schedule20012",
+      "experiment": "A",
+      "status": "COMPLETE",
+      "completed_updates": 3
+    },
+    {
+      "name": "B_direction70002_eps05",
+      "experiment": "B",
+      "status": "COMPLETE",
+      "completed_updates": 3
+    }
+  ],
+  "decision": "PREFLIGHT_PASSED",
+  "worst_update_seconds": 0.4375,
+  "estimated_formal_seconds": 2263.212500000005,
+  "measured_full_endpoint_seconds": 11.140000000000327,
+  "memory_gate": true,
+  "gradient_entry_gate": true
+}

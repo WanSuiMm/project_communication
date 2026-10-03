@@ -1,6 +1,56 @@
 # Context for incremental scientific review
 
-## Current diagnostic: original seed4 retained correctness and local acquisition
+## Current follow-up: independent A/B/C on original Streaming seed4
+
+- A/B execution COMPLETE,13 arms x300 updates,1866.672 seconds. Same5033
+  parameter StreamingCell/W24/Z8, K8,64-step forward, eight losses, fixed
+  512-map bank10002. Only A schedules or B starting parameters change.
+- Control: initial/final parameter hashes and full six historical endpoints
+  exactly reproduce; fresh32-map banks at seeds50032/50064 qualify. Fresh
+  data are shared across arms and separate from the old40032/40064 maps.
+- A: fixed seed4 initialization; four independent schedules20012/22/32/42,
+  full phenotype0/4. B: four CPU Gaussian directions70002..5, paired global
+  L2 radii.01/.05; full phenotype0/4 at each radius. Noise includes originally
+  zero output weights/biases. B does not preserve the zero-output manifold.
+- Gate: size32/T64 strict16<d<32 mean/pooled>=.80 and BA>=.85; hold at128/256;
+  each-size all-changed64->256 retention>=.95, coverage gain>=.05,
+  ever-regressed/ever-correct<=.15, and matched frontier>=.05 with coverage
+  minima. Retention alone cannot qualify a small stalled solved region.
+- All 12 A/B arms pass both matched-frontier gates but fail the conjunction.
+  A20032 passes hold/retention/gain, fails reach and per-step regression;
+  B70003/.05 passes reach+hold at32, fails parts of64 dynamics and regression.
+  The sampled radius pattern is not monotone. No basin radius or reliability
+  estimate follows from four schedules/directions conditional on one bank.
+- C: old trained seed4,93/257 selected events across31 maps each at32/64,
+  full replay/controls PASS. Step1 native-minus-sender14.52/7.00pp and
+  wrong-sham-minus-sender3.76/.44pp miss the frozen joint threshold.
+  Step4 secondary effects33.53/28.60pp and20.18/15.33pp remain secondary.
+  Whole-cell W/Z rollback is local temporal-state sensitivity, not an edge
+  message knockout or unique sender/flood-fill law. The threshold miss is
+  not a statistical null test. C n=1 selected checkpoint, historical maps.
+- Earlier architecture no-go decisions unchanged. Publication uses saved
+  evidence, CPU checkpoint/trace validation and arithmetic; no new GPU work.
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Original cell and masked streaming | StreamingCell.step, stream | new/streaming_carry/stream_cells.py |
+| Fixed init and paired Gaussian rays | initial_model | new/seed4_followup/initialization.py |
+| Training/control replay and A/B decisions | arms, train_one, control_replay, aggregate | new/seed4_followup/train.py |
+| Fresh traces, censoring, retained/acquired sets, all gates | evaluate, summarize_from_traces, predicate | new/seed4_followup/phenotype.py |
+| Selected local rollback, matched sham, homogeneous-time copies | select_events, event_batches, run_event_outcomes, aggregate | new/seed4_followup/causal.py |
+| Full saved-evidence CPU validation | main | tools/validate_seed4_followup_training.py, tools/validate_seed4_followup_causal.py |
+| Sanitized delivery and public arithmetic | main, verify | tools/export_seed4_followup.py |
+
+Begin with [results](evidence/seed4_followup_20261003/RESULTS.md),
+[interpretation](evidence/seed4_followup_20261003/INTERPRETATION.md),
+[summary](evidence/seed4_followup_20261003/summary.json), and
+[protocol](new/seed4_followup/PROTOCOL.md). Individual summaries retain all
+checks/denominators/profiles. Raw arm JSON, matched CSVs and C events are
+secondary. Full Boolean traces and checkpoints remain local, bound in
+[provenance](evidence/seed4_followup_20261003/provenance.json). Public arithmetic
+does not replace full local trace/checkpoint validation.
+
+## Preceding descriptive diagnostic: original seed4 retained correctness and local acquisition
 
 - Execution: COMPLETE,31.813 seconds, zero training. Same original Streaming
   seed4 checkpoint;32 historical evaluation maps at each size32/64. Every

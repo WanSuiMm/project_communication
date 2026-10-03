@@ -1,6 +1,27 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest diagnostic: selected seed4 retains correctness while acquiring regions
+## Latest follow-up: full seed4 behavior is not reproduced by sampled A/B changes
+
+**COMPLETE,13 arms x300 updates,31.11 minutes.** Historical control exactly
+reproduces initial/final parameters and six endpoint records and qualifies
+on fresh32-map banks at both sizes. A full phenotype0/4 schedules; B0/4
+directions at each of two paired radii (.01/.05). All 12 A/B arms pass
+both matched-frontier gates but fail the complete behavior gate. Partial
+reach/hold outcomes and the failed stability criteria are preserved.
+
+C is an independent zero-training selected-checkpoint temporal rollback audit:
+350 events,31 maps at each size. Its one-step joint threshold is not met;
+four-step secondary effects are larger and do not rescue the primary.
+Neither A/B nor C establishes a basin radius, unique semantic handoff or
+general failure of cellular computation. Earlier architecture verdicts stand.
+
+[Canonical report](evidence/seed4_followup_20261003/RESULTS.md),
+[interpretation](evidence/seed4_followup_20261003/INTERPRETATION.md),
+[all-arm aggregate](evidence/seed4_followup_20261003/summary.json),
+[frozen protocol](new/seed4_followup/PROTOCOL.md), and
+[publication bindings](SEED4_FOLLOWUP_PUBLICATION_MANIFEST.json).
+
+## Preceding descriptive diagnostic: selected seed4 retains correctness while acquiring regions
 
 **COMPLETE, zero training,31.813 seconds.** Original Streaming seed4,
 historical32 maps per size32/64, every macro step0..256. All six full historical

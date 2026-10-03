@@ -1,6 +1,35 @@
 # Tensor and operator map
 
-## Current architecture: exactly nested stationary sidecar
+## Current follow-up: original StreamingCell unchanged
+
+The A/B/C follow-ups keep W[B,24,H,W], four six-channel carrier lanes, and
+stationary Z[B,8,H,W],5033 parameters. One macro-step is
+
+```math
+I=T_M(W),\qquad W'=I+0.1F_\theta(I,Z,L_M(W),L_M(Z),X),
+\qquad Z'=Z+0.5Q_\theta(W',Z,L_M(W'),L_M(Z),X).
+```
+
+Encoder3->24, F67->40->24, Q67->16->8 and pointwise readout8->1 are unchanged.
+The macro-step has a two-hop upper radius. Only fixed transport T_M is a
+masked port permutation; learned recurrence has no losslessness/stability
+guarantee. A changes only batch schedules. B changes starting parameters
+along paired global Gaussian rays. Forward64/loss8/detach8 remains fixed.
+
+C restores both W/Z at q to their own preceding macro-step, separately for
+original/flipped source worlds. A different wrong neighbor r receives its
+own rollback direction scaled per block/world to q's norm. Each event and
+condition uses an independent full-map clone at the same snapshot time.
+Only that site may differ initially; p/input/parameters stay fixed. Off-cone
+s receives q's delta at Manhattan distance>2 and must leave next-step p logits
+unchanged. This is a whole-cell state intervention, not an edge-message mask.
+
+Source: StreamingCell/stream in new/streaming_carry/stream_cells.py;
+initial_model, training, phenotype and causal helpers under new/seed4_followup/.
+[Frozen protocol](new/seed4_followup/PROTOCOL.md) and
+[current evidence](evidence/seed4_followup_20261003/RESULTS.md).
+
+## Preceding architecture experiment: exactly nested stationary sidecar
 
 Keep original W[B,24,height,width], Z[B,8,height,width] and add H[B,12,height,width].
 W has four six-channel carrier lanes, Z/H remain stationary. G67->32->12

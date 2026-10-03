@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "gpu_execution": false,
+  "training": false,
+  "source_bindings": 55,
+  "events": 350,
+  "sizes": {
+    "32": {
+      "events": 93,
+      "maps": 31,
+      "contrasts": {
+        "1": {
+          "native_minus_sender": 0.14516129032258066,
+          "sham_minus_sender": 0.03763440860215054
+        },
+        "4": {
+          "native_minus_sender": 0.3353302611367127,
+          "sham_minus_sender": 0.20184331797235022
+        }
+      }
+    },
+    "64": {
+      "events": 257,
+      "maps": 31,
+      "contrasts": {
+        "1": {
+          "native_minus_sender": 0.07003444584089744,
+          "sham_minus_sender": 0.004390681003584224
+        },
+        "4": {
+          "native_minus_sender": 0.2860082569759989,
+          "sham_minus_sender": 0.15325140809011778
+        }
+      }
+    }
+  },
+  "primary_signal_thresholds_met": false,
+  "saved_artifact_sha256": {
+    "manifest.json": "4dbf3ab17e2739e2609b5df27a13e8e06518610c85c19d5b8cc8f9e9cca361d2",
+    "status.json": "3dce2b8fd319acd94b3630fd4973b5dc56129731657ee3123f499837284ae4d1",
+    "compact_summary.json": "e5843229256338950e191199ea2818c48e43f0127d4cd085a6a718eedf4bfd56",
+    "events.json": "71329ff98016912b4e5f51048300f140557ad13f996373629c830552d1925281",
+    "replaychecks.json": "14973f4aecc2c514fa0240a3b2b7febabc638feae44a4d48d30405f6bc1144df"
+  },
+  "validation_source_sha256": "b0d66bc05cad2db34c2797098c2e84e2fa4bd0c30825565c27cfb9337158aad7"
+}

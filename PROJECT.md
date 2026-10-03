@@ -1,6 +1,51 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Latest completed diagnostic (2026-10-03): original Streaming seed4
+Latest completed follow-up (2026-10-03): three independent original-seed4
+follow-ups, frozen at new/seed4_followup/PROTOCOL.md. A changes only four
+batch schedules at fixed initialization/bank; B probes four parameter-space
+directions at two paired radii with fixed training; C uses the old trained
+checkpoint for local temporal-state rollback versus a norm-matched wrong
+neighbor and off-cone/no-op controls. Architecture and K8 training unchanged.
+Training has one historical replay control plus4 A and8 B arms, each300
+updates; one local GPU,40-minute cap. Fresh paired correctness/acquisition
+phenotype is measured on32 maps per size32/64 at new seeds50032/50064.
+C is a separate zero-training five-minute audit of the historical maps.
+Focused CPU qualification passed56 source bindings; three-update CUDA smoke
+passed gradient/memory gates and timed a full fresh256-step evaluation at
+11.14 seconds. Conservative formal estimate2263.21 seconds (37.72 minutes),
+below the40-minute cap. A/B COMPLETE13/13 arms,300 updates each in1866.672
+seconds (31.11 minutes). Historical control initial/final hashes and fullsix
+endpoint records match exactly; fresh control phenotype QUALIFIED. A0/4
+schedules pass the full phenotype; B0/4 directions at each paired radius.
+All 12 A/B arms pass both matched-frontier gates but fail other full-gate checks.
+Run: runs/seed4_followup_20261003_training01. Publication starts at
+evidence/seed4_followup_20261003/RESULTS.md and summary.json. No basin,
+population reliability or new architecture qualification follows.
+C completed in29.89 seconds at runs/seed4_followup_20261003_causal01.
+Six complete historical endpoints replay exactly. Selected93/257 events at
+size32/64, each31 eligible maps; frozen population minima passed. Primary
+NO_PRIMARY_THRESHOLD_SIGNAL: one-step native-minus-sender effects+14.52/
++7.00pp and wrong-sham-minus-sender+3.76/+0.44pp; thresholds not met at both
+sizes. Four-step secondary effects are+33.53/+28.60pp and+20.18/+15.33pp
+respectively; these do not rescue the failed primary. CPU saved-result
+validation passed55 source bindings, published-reference/checkpoint hashes,
+350 event geometries, paired logits, controls and independent equal-map
+contrasts at analyses/seed4_followup_20261003_causal01/validation_bound.json.
+This is selected local temporal-state sensitivity, not unique semantic handoff.
+Training saved-result review passes383/383 checks:56 source/snapshot bindings,
+13 CPU checkpoint hashes, all bank/schedule/initialization identities and
+Boolean-trace metrics/gates. Public verification passes125459 matched strata
+and350 C events. [Public reproduction notes](evidence/seed4_followup_20261003/REPRODUCTION.md)
+cover A/B on a fresh clone; exact C replay requires the original local checkpoint.
+Commands from repository root, new output names required:
+
+    python new/seed4_followup/check.py --out analyses/NEW_FOLLOWUP_CPU.json
+    python new/seed4_followup/train.py --preflight --qualification analyses/NEW_FOLLOWUP_CPU.json --out runs/NEW_FOLLOWUP_PREFLIGHT
+    python new/seed4_followup/causal.py --out runs/NEW_FOLLOWUP_CAUSAL
+    python tools/validate_seed4_followup_causal.py --run runs/NEW_FOLLOWUP_CAUSAL --out analyses/NEW_FOLLOWUP_CAUSAL_VALIDATION.json
+    pwsh -File tools/launch_seed4_followup.ps1 -RunName NEW_FOLLOWUP_TRAINING -Preflight runs/NEW_FOLLOWUP_PREFLIGHT
+
+Preceding descriptive diagnostic (2026-10-03): original Streaming seed4
 zero-training behavior audit, protocol new/frontier_audit/PROTOCOL.md.
 Recorded every macro step0..256 on the historical32 maps per size32/64.
 One selected checkpoint, no optimizer/backward, new model, training or altered

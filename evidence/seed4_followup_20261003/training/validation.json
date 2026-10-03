@@ -1,0 +1,4610 @@
+{
+  "aggregate": {
+    "A": {
+      "completed_schedules": 4,
+      "decision": "NOT_QUALIFIED",
+      "independent_unit": "schedule",
+      "passes": 0,
+      "schedule_passes": {
+        "A_schedule20012": false,
+        "A_schedule20022": false,
+        "A_schedule20032": false,
+        "A_schedule20042": false
+      }
+    },
+    "B": {
+      "0.01": {
+        "completed_directions": 4,
+        "decision": "NOT_QUALIFIED",
+        "direction_passes": {
+          "70002": false,
+          "70003": false,
+          "70004": false,
+          "70005": false
+        },
+        "independent_unit": "paired direction",
+        "passes": 0
+      },
+      "0.05": {
+        "completed_directions": 4,
+        "decision": "NOT_QUALIFIED",
+        "direction_passes": {
+          "70002": false,
+          "70003": false,
+          "70004": false,
+          "70005": false
+        },
+        "independent_unit": "paired direction",
+        "passes": 0
+      }
+    },
+    "complete": true,
+    "control_fresh_qualification": "QUALIFIED",
+    "scope": "Selected initialization, fixed training bank and recipe; no basin theorem or architecture reliability claim."
+  },
+  "arms": [
+    {
+      "checkpoint": {
+        "file_sha256": "669fd156c084251dcd350fd1d656747e3a329ca073411a79f7ec18d3cc0f4380",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "6b4e2ceddddea98b16250fd5218ee0abd54dabe6e315d7d632aea8880a54c0c3",
+        "state_sha_match": true
+      },
+      "direction_seed": null,
+      "epsilon": 0.0,
+      "experiment": "control",
+      "final_parameter_sha256": "6b4e2ceddddea98b16250fd5218ee0abd54dabe6e315d7d632aea8880a54c0c3",
+      "initial_parameter_sha256": "dfae347d1e08f43ac02bacc1f6facbad5644f30b7fc060a6ebd29612d92ebf8a",
+      "matched_frontier_csv": {
+        "sha256": "c25983f29c6b7b4f2ed00de7aceeb952ea8bcacc2290f3404441c74787b39ef7",
+        "sizes": {
+          "32": {
+            "common_strata": 1088,
+            "csv_rows": 1088,
+            "eligible_maps": 30,
+            "mean_map_weighted_difference": 0.32582921995925546
+          },
+          "64": {
+            "common_strata": 6520,
+            "csv_rows": 6520,
+            "eligible_maps": 31,
+            "mean_map_weighted_difference": 0.23236484812762465
+          }
+        }
+      },
+      "name": "control",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.01188308871323318
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.014449208781505574
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.06539666338295991
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.09472959007922832
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.019255077963929668
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.019446162311553494
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.06590686746459251
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.09576300378918357
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9738533580697702
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.97214319389682
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": true,
+            "threshold": ">=0.80",
+            "value": 0.9340931325354075
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": true,
+            "threshold": ">=0.80",
+            "value": 0.9042369962108164
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.16115273775216143
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": true,
+            "threshold": ">=0.95",
+            "value": 1.0
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 1088
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 30
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": true,
+            "threshold": "<=0.15",
+            "value": 0.02679127725856698
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.32582921995925546
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.2784995425434583
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": true,
+            "threshold": ">=0.95",
+            "value": 0.9809154301892727
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 6520
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 31
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": true,
+            "threshold": "<=0.15",
+            "value": 0.12642563198118753
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.23236484812762465
+          }
+        },
+        "failed_checks": [],
+        "matches_saved": true,
+        "pass": true,
+        "saved_pass": true
+      },
+      "schedule_seed": 20002,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "87c3e34013fb778c869a647d1a3bb51f31af1a8180e56525ab37708ad21285c3",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "8d59d5881794ecfa217eda9d693bf69720eb044e0a49944603021e0a5b6fcbcb",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "6858fd5519d80b80d58f2effeb169cd84068f60a57718e04a973af3c4b2abf9b",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "6e3b45653d5b5e6578d5bd64535861990fcd50086bb74ea809bef5447c9c6322",
+        "state_sha_match": true
+      },
+      "direction_seed": null,
+      "epsilon": 0.0,
+      "experiment": "A",
+      "final_parameter_sha256": "6e3b45653d5b5e6578d5bd64535861990fcd50086bb74ea809bef5447c9c6322",
+      "initial_parameter_sha256": "dfae347d1e08f43ac02bacc1f6facbad5644f30b7fc060a6ebd29612d92ebf8a",
+      "matched_frontier_csv": {
+        "sha256": "4c7ef4965635d0c093f3c95b25c6e499ead0e09f9d8624908ecb6a99bafda1ad",
+        "sizes": {
+          "32": {
+            "common_strata": 1289,
+            "csv_rows": 1289,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.2489978598320578
+          },
+          "64": {
+            "common_strata": 10937,
+            "csv_rows": 10937,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.15921833728906884
+          }
+        }
+      },
+      "name": "A_schedule20012",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.014122222994997546
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.014303731321726465
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.10694958599123972
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.1515673441267654
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.01635098675012936
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.01640254642683292
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.11722642399917016
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.16672407853944196
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": false,
+            "threshold": ">=0.85",
+            "value": 0.8197623997172427
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": false,
+            "threshold": ">=0.85",
+            "value": 0.8268965320044341
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.3505597573325035
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.31484671029968997
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.08783861671469742
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.5805604203152365
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 1289
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.7667329357190192
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.2489978598320578
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": 0.00889752973467517
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.5289045314562253
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 10937
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.6680399837903552
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.15921833728906884
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_map_mean",
+          "reach_size32_T64_strict_pooled",
+          "reach_size32_T64_original_ba",
+          "reach_size32_T64_flipped_ba",
+          "hold_size32_T128_strict_mean_map_coverage_drop",
+          "hold_size32_T128_strict_pooled_coverage_drop",
+          "hold_size32_T256_strict_mean_map_coverage_drop",
+          "hold_size32_T256_strict_pooled_coverage_drop",
+          "size32_all_changed_retention64_to256",
+          "size32_all_changed_coverage_gain64_to256",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_all_changed_coverage_gain64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20012,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "c8d1e4acefe22f11454ea965377a507bdebd89599c8af46bcb82621380a0dc0b",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "a6d7b3afa72424f7597e1d89fd49c2427ac2fd6a10f3112cbd2e952eb643558f",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "9f90bdb043f51a2d146d2bca8da6a23a42ca91d0e2312fd364ecb257889f72b4",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "2e2928f84dbab9dbc49f837fbeaf60447eeaf22c607ee91d95e6514cff571248",
+        "state_sha_match": true
+      },
+      "direction_seed": null,
+      "epsilon": 0.0,
+      "experiment": "A",
+      "final_parameter_sha256": "2e2928f84dbab9dbc49f837fbeaf60447eeaf22c607ee91d95e6514cff571248",
+      "initial_parameter_sha256": "dfae347d1e08f43ac02bacc1f6facbad5644f30b7fc060a6ebd29612d92ebf8a",
+      "matched_frontier_csv": {
+        "sha256": "b4874a5c0647fd4f8001d3ad466a819d1b3c470452f020c0e77d39e7e3346c12",
+        "sizes": {
+          "32": {
+            "common_strata": 1532,
+            "csv_rows": 1532,
+            "eligible_maps": 29,
+            "mean_map_weighted_difference": 0.18617454238288594
+          },
+          "64": {
+            "common_strata": 3768,
+            "csv_rows": 3768,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.10151659601864904
+          }
+        }
+      },
+      "name": "A_schedule20022",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.08526882006192538
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.06556072512284228
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.18586218493180184
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.18945918015845675
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.10830084671932871
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.09613708746397176
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.27944841637569395
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.32965897347571477
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.945234063784175
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9385230601404966
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": true,
+            "threshold": ">=0.80",
+            "value": 0.8167074844869876
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.7946951429555632
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.15400576368876084
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.5963648834019204
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 1532
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 29
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.43366763996445346
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.18617454238288594
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.1660109789569991
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.01567779429652656
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 3768
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.9925766283524904
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.10151659601864904
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_pooled",
+          "hold_size32_T128_original_ba_drop",
+          "hold_size32_T128_flipped_ba_drop",
+          "hold_size32_T128_strict_mean_map_coverage_drop",
+          "hold_size32_T128_strict_pooled_coverage_drop",
+          "hold_size32_T256_original_ba_drop",
+          "hold_size32_T256_flipped_ba_drop",
+          "hold_size32_T256_strict_mean_map_coverage_drop",
+          "hold_size32_T256_strict_pooled_coverage_drop",
+          "size32_all_changed_retention64_to256",
+          "size32_all_changed_coverage_gain64_to256",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_all_changed_coverage_gain64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20022,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "16494033511a97b189081babfdb1b330f9c6404b036ba2ca5a027436a2a5128b",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "04b2984fe7a907d11e3630b9e27ef3bc6f1d042b02cc9f337cbb3add8fabc48a",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "b9cff7205903353d4a00833ebd4f7d78512896f08c2fcb6d3203db74b8c4860a",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "4e3e59a4e869ad701b73e843e4b160d955c5136024e270981fcee44e03308c8c",
+        "state_sha_match": true
+      },
+      "direction_seed": null,
+      "epsilon": 0.0,
+      "experiment": "A",
+      "final_parameter_sha256": "4e3e59a4e869ad701b73e843e4b160d955c5136024e270981fcee44e03308c8c",
+      "initial_parameter_sha256": "dfae347d1e08f43ac02bacc1f6facbad5644f30b7fc060a6ebd29612d92ebf8a",
+      "matched_frontier_csv": {
+        "sha256": "6b37c1edf089546c26d5e6da6373abf00e46ce2843f69210d2d8e444c5c03c4e",
+        "sizes": {
+          "32": {
+            "common_strata": 1798,
+            "csv_rows": 1798,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.2121268543801918
+          },
+          "64": {
+            "common_strata": 11688,
+            "csv_rows": 11688,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.1624085728072836
+          }
+        }
+      },
+      "name": "A_schedule20032",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.03161644745565728
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.028124841792037003
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.32390295944795366
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.37754047537030655
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.03737527460649026
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.033600361369373166
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.32566806417199734
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.37995177402686875
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9589093345140309
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9608192814877696
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.6743319358280027
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.6200482259731313
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.2781556195965418
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": true,
+            "threshold": ">=0.95",
+            "value": 1.0
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 1798
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.3723712835387962
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.2121268543801918
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.45763952424519666
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": true,
+            "threshold": ">=0.95",
+            "value": 0.9989790058069045
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 11688
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.403922549101314
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.1624085728072836
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_map_mean",
+          "reach_size32_T64_strict_pooled",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20032,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "ada2478f601d68b076e4c0dd7e227ce0d8d2d31c1a60f23997b2442c8e90f971",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "2b3b19722324c476bc0dde4ed4c70111cff85c50e86d3ff4d3ca1f6cbf8cda2a",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "05d079f6add76dc92f9bc579bb6a1778322d81af3cac6680d6a794fdeb006ddd",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "efcdf426312e164533d67a021f8c849898295e3e366748f0094f0fe8a90c2e8c",
+        "state_sha_match": true
+      },
+      "direction_seed": null,
+      "epsilon": 0.0,
+      "experiment": "A",
+      "final_parameter_sha256": "efcdf426312e164533d67a021f8c849898295e3e366748f0094f0fe8a90c2e8c",
+      "initial_parameter_sha256": "dfae347d1e08f43ac02bacc1f6facbad5644f30b7fc060a6ebd29612d92ebf8a",
+      "matched_frontier_csv": {
+        "sha256": "6d56d39318daea3165027548b3443abaf96772705b26aa2ceb49111d99986fb3",
+        "sizes": {
+          "32": {
+            "common_strata": 1649,
+            "csv_rows": 1649,
+            "eligible_maps": 30,
+            "mean_map_weighted_difference": 0.2767369641857525
+          },
+          "64": {
+            "common_strata": 12757,
+            "csv_rows": 12757,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.18737408642127096
+          }
+        }
+      },
+      "name": "A_schedule20042",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.014070797497594878
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.0061112626250181545
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.1281133162472926
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.09300723389596965
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.02326353425327432
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.006319521802145234
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.1864033403577734
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.1605235962797107
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9191757421215971
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9350226891406754
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": true,
+            "threshold": ">=0.80",
+            "value": 0.8018309373163388
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.7165001722356183
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.018443804034582234
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.8179226069246436
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 1649
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 30
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.427986906710311
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.2767369641857525
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.17090576395242452
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.726775956284153
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 12757
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.5208751287751451
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.18737408642127096
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_pooled",
+          "hold_size32_T128_strict_mean_map_coverage_drop",
+          "hold_size32_T128_strict_pooled_coverage_drop",
+          "hold_size32_T256_strict_mean_map_coverage_drop",
+          "hold_size32_T256_strict_pooled_coverage_drop",
+          "size32_all_changed_retention64_to256",
+          "size32_all_changed_coverage_gain64_to256",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20042,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "04309fb2975503b2191c5a5e825e4770050c1b3939027a0b0e02d13ce751a1eb",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "f8cbf466d4477501e311b3b9ff95c20473383a412f7680f7baf2e32f4c140ad1",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "251515457376c2b71188f72ffa7b51d6b9e5b1ab10107478df51a82feafee629",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "2d787af98d5b769386f1547c0187e0167ac954808c84927c49807ed2dab65b03",
+        "state_sha_match": true
+      },
+      "direction_seed": 70002,
+      "epsilon": 0.01,
+      "experiment": "B",
+      "final_parameter_sha256": "2d787af98d5b769386f1547c0187e0167ac954808c84927c49807ed2dab65b03",
+      "initial_parameter_sha256": "54409f69e55ec490d9b9de0039ff87e9abd4e6cbdabd25b3e053cedffdb3b501",
+      "matched_frontier_csv": {
+        "sha256": "03c9ea80f9f5def772f2fdc4d5a9f511093a1fd0653cbea702caefedea575b39",
+        "sizes": {
+          "32": {
+            "common_strata": 2004,
+            "csv_rows": 2004,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.1426301097677576
+          },
+          "64": {
+            "common_strata": 4250,
+            "csv_rows": 4250,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.17758240577411133
+          }
+        }
+      },
+      "name": "B_direction70002_eps01",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.10743694081194244
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.08440292257900905
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.1413598449408512
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.150878401653462
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.27950176492824674
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.2825207976864118
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.47979832559295094
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.49534963830520157
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9192989909880362
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9341914781712746
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.758138038313781
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.679986221150534
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.41775216138328525
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.2487349163098482
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 2004
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.8551675977653631
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.1426301097677576
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.15860018298261663
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.004879448909299655
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 4250
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.9982974226501498
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.17758240577411133
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_map_mean",
+          "reach_size32_T64_strict_pooled",
+          "hold_size32_T128_original_ba_drop",
+          "hold_size32_T128_flipped_ba_drop",
+          "hold_size32_T128_strict_mean_map_coverage_drop",
+          "hold_size32_T128_strict_pooled_coverage_drop",
+          "hold_size32_T256_original_ba_drop",
+          "hold_size32_T256_flipped_ba_drop",
+          "hold_size32_T256_strict_mean_map_coverage_drop",
+          "hold_size32_T256_strict_pooled_coverage_drop",
+          "size32_all_changed_retention64_to256",
+          "size32_all_changed_coverage_gain64_to256",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_all_changed_coverage_gain64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20002,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "ce835ab4b2f25c532fc2ee796a7e63257539615c12557cef50a93e8193a0b54e",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "cca692c5ba5cee233f17c56cf071396ad1a384bddaf57481b1615bcba2782f8c",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "5226b9155e61ad56c03a12d4fa043321e263f205aad098e0a0a84339088db143",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "f71c443fecddba220341f33aa74e2ab24d2a656cd439ee02f7c66eb1bbc64f15",
+        "state_sha_match": true
+      },
+      "direction_seed": 70002,
+      "epsilon": 0.05,
+      "experiment": "B",
+      "final_parameter_sha256": "f71c443fecddba220341f33aa74e2ab24d2a656cd439ee02f7c66eb1bbc64f15",
+      "initial_parameter_sha256": "5c9a6951f197f9ae5438488849213ba12c490884c29dbee20cedf46a80560ecb",
+      "matched_frontier_csv": {
+        "sha256": "2ee2d38326de71b52dd533527b7d651983a14b0e3d90829626400b13f3e62908",
+        "sizes": {
+          "32": {
+            "common_strata": 942,
+            "csv_rows": 942,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.09533514155263274
+          },
+          "64": {
+            "common_strata": 3688,
+            "csv_rows": 3688,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.09585367234935899
+          }
+        }
+      },
+      "name": "B_direction70002_eps05",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.029283088325889772
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.01915782651998932
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.05515426082873866
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": 0.04340337581811919
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.26209584494044724
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.2355106534083593
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.1709935043275566
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.09989665862900449
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": false,
+            "threshold": ">=0.85",
+            "value": 0.7856141876366091
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": false,
+            "threshold": ">=0.85",
+            "value": 0.7811231689903637
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.17737648305096088
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.10299689975887014
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.08368876080691642
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.012244897959183673
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 942
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.9983040067839729
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.09533514155263274
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.04535681610247026
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.0
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 3688
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 1.0
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.09585367234935899
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_map_mean",
+          "reach_size32_T64_strict_pooled",
+          "reach_size32_T64_original_ba",
+          "reach_size32_T64_flipped_ba",
+          "hold_size32_T128_strict_mean_map_coverage_drop",
+          "hold_size32_T256_original_ba_drop",
+          "hold_size32_T256_flipped_ba_drop",
+          "hold_size32_T256_strict_mean_map_coverage_drop",
+          "hold_size32_T256_strict_pooled_coverage_drop",
+          "size32_all_changed_retention64_to256",
+          "size32_all_changed_coverage_gain64_to256",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_all_changed_coverage_gain64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20002,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "d3bddd655146185e93c85d83a5f3a49c6869597c4a55ef1ecbf293fcfb819f70",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "26e31a94b1bee11b851f1c09c40fd73e7a27a60124836dc060d9c1b90065e741",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "f5d8cbc4969e7e8b9fabb78030b79d63f33b207f08ffb2c02ec6dbed1285900e",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "e1084b2b57ff687c99af92ce681c1413da09d562cb07561a8b16cd43cb109686",
+        "state_sha_match": true
+      },
+      "direction_seed": 70003,
+      "epsilon": 0.01,
+      "experiment": "B",
+      "final_parameter_sha256": "e1084b2b57ff687c99af92ce681c1413da09d562cb07561a8b16cd43cb109686",
+      "initial_parameter_sha256": "46752755964631db9611c2c8e0d24b94a2bdaa8e4afbac7da657ace13806c9bc",
+      "matched_frontier_csv": {
+        "sha256": "cb0e6fc35de395dbaac7b7fb8692741c1a6f570f94435db45af00a54d946239b",
+        "sizes": {
+          "32": {
+            "common_strata": 1529,
+            "csv_rows": 1529,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.06414311633399135
+          },
+          "64": {
+            "common_strata": 6265,
+            "csv_rows": 6265,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.10028614608292998
+          }
+        }
+      },
+      "name": "B_direction70003_eps01",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.10402090514452722
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.11591136521503442
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.2948352282931459
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.2741991043747847
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.31119831780203633
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.3130185715096393
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.44443345717619587
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.4057871167757492
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": false,
+            "threshold": ">=0.85",
+            "value": 0.8453723965247237
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": false,
+            "threshold": ">=0.85",
+            "value": 0.8464878908901269
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.4629934311335415
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.4264553909748536
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.3143515850144092
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.060950413223140494
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 1529
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.9715189873417721
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.06414311633399135
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.31715462031107045
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.016036330092953948
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 6265
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.9922996515679442
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.10028614608292998
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_map_mean",
+          "reach_size32_T64_strict_pooled",
+          "reach_size32_T64_original_ba",
+          "reach_size32_T64_flipped_ba",
+          "hold_size32_T128_original_ba_drop",
+          "hold_size32_T128_flipped_ba_drop",
+          "hold_size32_T128_strict_mean_map_coverage_drop",
+          "hold_size32_T128_strict_pooled_coverage_drop",
+          "hold_size32_T256_original_ba_drop",
+          "hold_size32_T256_flipped_ba_drop",
+          "hold_size32_T256_strict_mean_map_coverage_drop",
+          "hold_size32_T256_strict_pooled_coverage_drop",
+          "size32_all_changed_retention64_to256",
+          "size32_all_changed_coverage_gain64_to256",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_all_changed_coverage_gain64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20002,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "9a74fd5068dbae12eae17f19c4f371bf1e205f5c1b3d9df34a477c445b0e1b90",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "ff8589c4651392b77093de1f71282938023eb9ecc78c6e7bd0f837714d810ac2",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "34ecfbefe050e3c0d9374eb1f9f2b49fb1382498f00032178bd09c490038702b",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "afb53c08fbdff85ebb03aa6f252f083ec7141a2f85d6161be0a0cbff9edaeaf2",
+        "state_sha_match": true
+      },
+      "direction_seed": 70003,
+      "epsilon": 0.05,
+      "experiment": "B",
+      "final_parameter_sha256": "afb53c08fbdff85ebb03aa6f252f083ec7141a2f85d6161be0a0cbff9edaeaf2",
+      "initial_parameter_sha256": "60dfb17ddada2a8ffede744f6a2a135d1f5c59069479917bd2ccc90cce4f57ff",
+      "matched_frontier_csv": {
+        "sha256": "3dc7a02e94ea997ce69da859b98c541a118356912c8cb4016d63a4deb7e2d90d",
+        "sizes": {
+          "32": {
+            "common_strata": 2105,
+            "csv_rows": 2105,
+            "eligible_maps": 29,
+            "mean_map_weighted_difference": 0.3112804878863384
+          },
+          "64": {
+            "common_strata": 16429,
+            "csv_rows": 16429,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.13936967871509087
+          }
+        }
+      },
+      "name": "B_direction70003_eps05",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.014407922419645058
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.013493260492425163
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.10439037649383243
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.1360661384774372
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.02277193519828835
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.02256194204590556
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.10591195130733277
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": -0.13916637960730283
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9714099287084221
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9695881625882943
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": true,
+            "threshold": ">=0.80",
+            "value": 0.8940880486926672
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": true,
+            "threshold": ">=0.80",
+            "value": 0.8608336203926972
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.18386167146974064
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": true,
+            "threshold": ">=0.95",
+            "value": 1.0
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 2105
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 29
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.26811332127787824
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.3112804878863384
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.07122598353156451
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.5310142218067704
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 16429
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.7133119172608321
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.13936967871509087
+          }
+        },
+        "failed_checks": [
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_all_changed_coverage_gain64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20002,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "b4c9f6cfcbef302aed6a24c6e68211622bd88a31dab6a10e92bdaa1fb5b6a1c5",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "8b161f541927ac4000c658dbc85abb49bd40426bae8df1d4615fe89805aaa10d",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "78f503f485a26b0d262c93aef684ed202352335ca8235df8d3a6be06f8291d29",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "fa68532e8279f8546840000e58afc7baa8b250bbf39e70bd731909f272c29de2",
+        "state_sha_match": true
+      },
+      "direction_seed": 70004,
+      "epsilon": 0.01,
+      "experiment": "B",
+      "final_parameter_sha256": "fa68532e8279f8546840000e58afc7baa8b250bbf39e70bd731909f272c29de2",
+      "initial_parameter_sha256": "b14ee73cbf7563396d47cc80be79fb2d957cc6a7d5e4cfec98afa60f02e8450a",
+      "matched_frontier_csv": {
+        "sha256": "edc9ae864af13e9cef91cb88b6f2d5edc2fae0ddcf144015260a67b6228243c6",
+        "sizes": {
+          "32": {
+            "common_strata": 526,
+            "csv_rows": 526,
+            "eligible_maps": 30,
+            "mean_map_weighted_difference": 0.20399691722017543
+          },
+          "64": {
+            "common_strata": 1856,
+            "csv_rows": 1856,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.11479602291831123
+          }
+        }
+      },
+      "name": "B_direction70004_eps01",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.02340231273802129
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.002019175949007801
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.06200576988183326
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.06097140888735786
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.030008221318723716
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.006537393867807162
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.08186935417840724
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.08508439545297963
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.901265749865901
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.8967260785237101
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.6152026875117406
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.5614881157423355
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.07550432276657065
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.838738537239991
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 526
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 30
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.42430188679245284
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.20399691722017543
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.06907593778591033
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.0
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 1856
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.9998490566037735
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.11479602291831123
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_map_mean",
+          "reach_size32_T64_strict_pooled",
+          "hold_size32_T128_strict_mean_map_coverage_drop",
+          "hold_size32_T128_strict_pooled_coverage_drop",
+          "hold_size32_T256_flipped_ba_drop",
+          "hold_size32_T256_strict_mean_map_coverage_drop",
+          "hold_size32_T256_strict_pooled_coverage_drop",
+          "size32_all_changed_retention64_to256",
+          "size32_all_changed_coverage_gain64_to256",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_all_changed_coverage_gain64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20002,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "17fad0b07f6587a4d3765f2c21ccb1c04491a2ab1f51a7c91452072ceceaf169",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "a3c8824bfeae45db3ac6f875dd5d3492af894fabce057f304212ffa472c00534",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "24c70995f6cfc61e964865dd8d25808c0215620de2cbbdd7423ba298ded5e431",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "bf383044f13b8d820e1fc3b978dc6c882e51ee8a97cac4093a1620db9563b8cc",
+        "state_sha_match": true
+      },
+      "direction_seed": 70004,
+      "epsilon": 0.05,
+      "experiment": "B",
+      "final_parameter_sha256": "bf383044f13b8d820e1fc3b978dc6c882e51ee8a97cac4093a1620db9563b8cc",
+      "initial_parameter_sha256": "6327be071da543c47f89190cd09b0273061ec62e801ba1f95d01f2c223e79573",
+      "matched_frontier_csv": {
+        "sha256": "91361d963d98f8d5e8aa78f79f0e59e918188c00f2a5198a5d32fd615eb7f9a8",
+        "sizes": {
+          "32": {
+            "common_strata": 888,
+            "csv_rows": 888,
+            "eligible_maps": 31,
+            "mean_map_weighted_difference": 0.33255510528261994
+          },
+          "64": {
+            "common_strata": 4511,
+            "csv_rows": 4511,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.10889384643070793
+          }
+        }
+      },
+      "name": "B_direction70004_eps05",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": -0.00037086563335131384
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.005516183315781742
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": 0.02956440351858247
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": 0.047192559421288305
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.005739773385356917
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.013590779317524726
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": 0.044792139576535384
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.07750602824664143
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9279423874577593
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": true,
+            "threshold": ">=0.85",
+            "value": 0.9416466702350683
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.7461554843953776
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.6913537719600413
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.05636887608069163
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.8582185491276401
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 888
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 31
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.3406948559116617
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.33255510528261994
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.17630375114364136
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.0131529966497084
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 4511
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.9854060646843589
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.10889384643070793
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_map_mean",
+          "reach_size32_T64_strict_pooled",
+          "hold_size32_T256_strict_pooled_coverage_drop",
+          "size32_all_changed_retention64_to256",
+          "size32_all_changed_coverage_gain64_to256",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_all_changed_coverage_gain64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20002,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "164d4c1de51c91c5a5ff706270c263c7c7d7ebf2e983898142786cf926ce1b54",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "107addc8c2b2ef4a059f04d05430aa3ea0f24ae83270f5afce4b89def06d24ef",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "90a2dc12044728d85b621e4f116ae19953d6b67bdd24619b2e8f8026618e9db0",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "6178b306887e75363600ee3b50fd35969d0018fcc2908c0f3d44635f32de4562",
+        "state_sha_match": true
+      },
+      "direction_seed": 70005,
+      "epsilon": 0.01,
+      "experiment": "B",
+      "final_parameter_sha256": "6178b306887e75363600ee3b50fd35969d0018fcc2908c0f3d44635f32de4562",
+      "initial_parameter_sha256": "b1341a6ccae2f60126bb587ccefa6d37591b4bc49d75d2c3a0c6d97f6a805124",
+      "matched_frontier_csv": {
+        "sha256": "d7b235596e9fed689d057e1094bb795aef2b550c93bec70204028ea9cf845a6e",
+        "sizes": {
+          "32": {
+            "common_strata": 2853,
+            "csv_rows": 2853,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.24895930811304573
+          },
+          "64": {
+            "common_strata": 19902,
+            "csv_rows": 19902,
+            "eligible_maps": 31,
+            "mean_map_weighted_difference": 0.27794406579028574
+          }
+        }
+      },
+      "name": "B_direction70005_eps01",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.014856164129464333
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.015078812995377167
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.06964109992380496
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.1002411298656562
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.012474946992459102
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": true,
+            "threshold": "<=0.03",
+            "value": 0.010329222100216029
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": 0.030740338448813076
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": true,
+            "threshold": "<=0.05",
+            "value": 0.04615914571133309
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": false,
+            "threshold": ">=0.85",
+            "value": 0.8174190116303146
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": false,
+            "threshold": ">=0.85",
+            "value": 0.8204972024078045
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.2657867796159917
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.2497416465725112
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.05821325648414985
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.7440476190476191
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 2853
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.8551750526114406
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.24895930811304573
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.07715004574565418
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.5280223501523874
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 19902
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 31
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.921539190897598
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.27794406579028574
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_map_mean",
+          "reach_size32_T64_strict_pooled",
+          "reach_size32_T64_original_ba",
+          "reach_size32_T64_flipped_ba",
+          "hold_size32_T128_strict_mean_map_coverage_drop",
+          "hold_size32_T128_strict_pooled_coverage_drop",
+          "size32_all_changed_retention64_to256",
+          "size32_all_changed_coverage_gain64_to256",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_all_changed_coverage_gain64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20002,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "22d5adc3985771b90590512fca38a82ed1616a6d1b17e29f9a481b20570894c7",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "98b572ffbfa7ec60f1b48ccaabaa6a2ee8af383a419c838125e700ae5409bea8",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    },
+    {
+      "checkpoint": {
+        "file_sha256": "2ccc68fb1e767ce0ef8980bf70489346c8f0dab420d9ce45bbe2b00fe59db945",
+        "file_sha_match": true,
+        "parameter_count": 5033,
+        "state_parameter_sha256": "c29e75d8dfa71f4a0738f5c3f5877cc103032ab64a8f1b410219ff8e14bd8c0a",
+        "state_sha_match": true
+      },
+      "direction_seed": 70005,
+      "epsilon": 0.05,
+      "experiment": "B",
+      "final_parameter_sha256": "c29e75d8dfa71f4a0738f5c3f5877cc103032ab64a8f1b410219ff8e14bd8c0a",
+      "initial_parameter_sha256": "f3cb49ed0b3858ce4d746836365bd6898250df37561fa374e66f4e1c0ece9b17",
+      "matched_frontier_csv": {
+        "sha256": "a735a727214730f9f66464036ea00621ec64f17ea53ae144266c7b65550c7e92",
+        "sizes": {
+          "32": {
+            "common_strata": 1245,
+            "csv_rows": 1245,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.09286313968827374
+          },
+          "64": {
+            "common_strata": 3440,
+            "csv_rows": 3440,
+            "eligible_maps": 32,
+            "mean_map_weighted_difference": 0.10144370420336629
+          }
+        }
+      },
+      "name": "B_direction70005_eps05",
+      "phenotype_gate": {
+        "checks": {
+          "hold_size32_T128_flipped_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.17977160901464107
+          },
+          "hold_size32_T128_original_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.14527668297598972
+          },
+          "hold_size32_T128_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.4458450974802067
+          },
+          "hold_size32_T128_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.3499827764381674
+          },
+          "hold_size32_T256_flipped_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.2509425291619325
+          },
+          "hold_size32_T256_original_ba_drop": {
+            "pass": false,
+            "threshold": "<=0.03",
+            "value": 0.23268285892877427
+          },
+          "hold_size32_T256_strict_mean_map_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.49202735335121267
+          },
+          "hold_size32_T256_strict_pooled_coverage_drop": {
+            "pass": false,
+            "threshold": "<=0.05",
+            "value": 0.38856355494316225
+          },
+          "reach_size32_T64_flipped_ba": {
+            "pass": false,
+            "threshold": ">=0.85",
+            "value": 0.8338110921287338
+          },
+          "reach_size32_T64_original_ba": {
+            "pass": false,
+            "threshold": ">=0.85",
+            "value": 0.8318102318449756
+          },
+          "reach_size32_T64_strict_map_mean": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.505017549429644
+          },
+          "reach_size32_T64_strict_pooled": {
+            "pass": false,
+            "threshold": ">=0.80",
+            "value": 0.40682053048570443
+          },
+          "size32_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.3497406340057637
+          },
+          "size32_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.017168772270813086
+          },
+          "size32_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 1245
+          },
+          "size32_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size32_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.9916992952231793
+          },
+          "size32_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.09286313968827374
+          },
+          "size64_all_changed_coverage_gain64_to256": {
+            "pass": false,
+            "threshold": ">=0.05",
+            "value": -0.2285224153705398
+          },
+          "size64_all_changed_retention64_to256": {
+            "pass": false,
+            "threshold": ">=0.95",
+            "value": 0.045932009167303285
+          },
+          "size64_common_frontier_strata": {
+            "pass": true,
+            "threshold": ">=100",
+            "value": 3440
+          },
+          "size64_eligible_frontier_maps": {
+            "pass": true,
+            "threshold": ">=16",
+            "value": 32
+          },
+          "size64_ever_regressed_over_ever_correct": {
+            "pass": false,
+            "threshold": "<=0.15",
+            "value": 0.9774623573415172
+          },
+          "size64_matched_frontier_effect": {
+            "pass": true,
+            "threshold": ">=0.05",
+            "value": 0.10144370420336629
+          }
+        },
+        "failed_checks": [
+          "reach_size32_T64_strict_map_mean",
+          "reach_size32_T64_strict_pooled",
+          "reach_size32_T64_original_ba",
+          "reach_size32_T64_flipped_ba",
+          "hold_size32_T128_original_ba_drop",
+          "hold_size32_T128_flipped_ba_drop",
+          "hold_size32_T128_strict_mean_map_coverage_drop",
+          "hold_size32_T128_strict_pooled_coverage_drop",
+          "hold_size32_T256_original_ba_drop",
+          "hold_size32_T256_flipped_ba_drop",
+          "hold_size32_T256_strict_mean_map_coverage_drop",
+          "hold_size32_T256_strict_pooled_coverage_drop",
+          "size32_all_changed_retention64_to256",
+          "size32_all_changed_coverage_gain64_to256",
+          "size32_ever_regressed_over_ever_correct",
+          "size64_all_changed_retention64_to256",
+          "size64_all_changed_coverage_gain64_to256",
+          "size64_ever_regressed_over_ever_correct"
+        ],
+        "matches_saved": true,
+        "pass": false,
+        "saved_pass": false
+      },
+      "schedule_seed": 20002,
+      "status": "COMPLETE",
+      "traces": {
+        "32": {
+          "dtype": "bool",
+          "file_sha256": "1b5cd92917bb65113cd2a0376f502cca2123bf8dc555b7f772c9c38a35f3b25f",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            32,
+            32
+          ]
+        },
+        "64": {
+          "dtype": "bool",
+          "file_sha256": "cc394b0fdd48ae94f1b89ae912714a7913f879c0d2bde9483302d66d9b55e71a",
+          "paired_equals_branch_conjunction": true,
+          "shape": [
+            257,
+            32,
+            64,
+            64
+          ]
+        }
+      },
+      "updates": 300
+    }
+  ],
+  "check_counts": {
+    "failed": 0,
+    "passed": 383,
+    "total": 383
+  },
+  "checks": [
+    {
+      "name": "training run completed 13/13",
+      "pass": true
+    },
+    {
+      "name": "training aggregate complete 13/13 at 300 updates",
+      "pass": true
+    },
+    {
+      "name": "training aggregate identity flag",
+      "pass": true
+    },
+    {
+      "name": "protocol and launch metadata",
+      "pass": true
+    },
+    {
+      "name": "frozen source manifest has 56 entries",
+      "pass": true
+    },
+    {
+      "name": "source current:BPTT_PHASE2_PUBLICATION_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:BPTT_PHASE2_PUBLICATION_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "name": "source current:DIRECT_CARRY_PUBLICATION_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:DIRECT_CARRY_PUBLICATION_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "name": "source current:FRONTIER_AUDIT_PUBLICATION_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:FRONTIER_AUDIT_PUBLICATION_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "name": "source current:STREAMING_CARRY_PUBLICATION_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:STREAMING_CARRY_PUBLICATION_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "name": "source current:evidence/short_bptt_phase2_init2345/manifest.json",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:evidence/short_bptt_phase2_init2345/manifest.json",
+      "pass": true
+    },
+    {
+      "name": "source current:evidence/short_bptt_phase2_init2345/raw/additive_K8_seed2.json",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:evidence/short_bptt_phase2_init2345/raw/additive_K8_seed2.json",
+      "pass": true
+    },
+    {
+      "name": "source current:evidence/short_bptt_phase2_init2345/raw/additive_K8_seed3.json",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:evidence/short_bptt_phase2_init2345/raw/additive_K8_seed3.json",
+      "pass": true
+    },
+    {
+      "name": "source current:evidence/short_bptt_phase2_init2345/raw/additive_K8_seed4.json",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:evidence/short_bptt_phase2_init2345/raw/additive_K8_seed4.json",
+      "pass": true
+    },
+    {
+      "name": "source current:evidence/short_bptt_phase2_init2345/raw/additive_K8_seed5.json",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:evidence/short_bptt_phase2_init2345/raw/additive_K8_seed5.json",
+      "pass": true
+    },
+    {
+      "name": "source current:evidence/streaming_carry_init2345/raw/stream_K8_seed4.json",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:evidence/streaming_carry_init2345/raw/stream_K8_seed4.json",
+      "pass": true
+    },
+    {
+      "name": "source current:new/direct_spatial_carry/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/direct_spatial_carry/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source current:new/direct_spatial_carry/carry_cells.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/direct_spatial_carry/carry_cells.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/direct_spatial_carry/check.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/direct_spatial_carry/check.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/direct_spatial_carry/run.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/direct_spatial_carry/run.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/frontier_audit/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/frontier_audit/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source current:new/frontier_audit/audit.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/frontier_audit/audit.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/frontier_audit/check_metrics.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/frontier_audit/check_metrics.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/frontier_audit/metrics.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/frontier_audit/metrics.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/frontier_audit/report.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/frontier_audit/report.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/frontier_audit/validate.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/frontier_audit/validate.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/masked_medium/masked_cells.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/masked_medium/masked_cells.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/nca_inertial_wind_tunnel/cells.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/nca_inertial_wind_tunnel/cells.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/nca_inertial_wind_tunnel/tasks.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/nca_inertial_wind_tunnel/tasks.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/seed4_followup/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/seed4_followup/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source current:new/seed4_followup/causal.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/seed4_followup/causal.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/seed4_followup/check.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/seed4_followup/check.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/seed4_followup/check_causal.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/seed4_followup/check_causal.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/seed4_followup/check_phenotype.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/seed4_followup/check_phenotype.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/seed4_followup/check_training.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/seed4_followup/check_training.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/seed4_followup/initialization.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/seed4_followup/initialization.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/seed4_followup/phenotype.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/seed4_followup/phenotype.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/seed4_followup/train.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/seed4_followup/train.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/short_bptt/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/short_bptt/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source current:new/short_bptt/check.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/short_bptt/check.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/short_bptt/run.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/short_bptt/run.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/short_bptt/training.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/short_bptt/training.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/short_bptt_phase2/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/short_bptt_phase2/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source current:new/short_bptt_phase2/check.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/short_bptt_phase2/check.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/short_bptt_phase2/run.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/short_bptt_phase2/run.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/short_bptt_phase2/training.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/short_bptt_phase2/training.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/stream_path_audit/audit.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/stream_path_audit/audit.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/stream_path_audit/operators.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/stream_path_audit/operators.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/streaming_carry/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/streaming_carry/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source current:new/streaming_carry/check.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/streaming_carry/check.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/streaming_carry/run.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/streaming_carry/run.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/streaming_carry/stream_cells.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/streaming_carry/stream_cells.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/workspace_revision/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/workspace_revision/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "source current:new/workspace_revision/check.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/workspace_revision/check.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/workspace_revision/revision_cells.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/workspace_revision/revision_cells.py",
+      "pass": true
+    },
+    {
+      "name": "source current:new/workspace_revision/run_revision.py",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:new/workspace_revision/run_revision.py",
+      "pass": true
+    },
+    {
+      "name": "source current:tools/launch_bptt_phase2.ps1",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:tools/launch_bptt_phase2.ps1",
+      "pass": true
+    },
+    {
+      "name": "source current:tools/launch_direct_carry.ps1",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:tools/launch_direct_carry.ps1",
+      "pass": true
+    },
+    {
+      "name": "source current:tools/launch_revision.ps1",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:tools/launch_revision.ps1",
+      "pass": true
+    },
+    {
+      "name": "source current:tools/launch_seed4_followup.ps1",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:tools/launch_seed4_followup.ps1",
+      "pass": true
+    },
+    {
+      "name": "source current:tools/launch_short_bptt.ps1",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:tools/launch_short_bptt.ps1",
+      "pass": true
+    },
+    {
+      "name": "source current:tools/launch_streaming_carry.ps1",
+      "pass": true
+    },
+    {
+      "name": "source snapshot:tools/launch_streaming_carry.ps1",
+      "pass": true
+    },
+    {
+      "name": "source snapshot contains exactly the frozen manifest files",
+      "pass": true
+    },
+    {
+      "name": "CPU qualification hash/status binding",
+      "pass": true
+    },
+    {
+      "name": "CPU qualification source bindings equal training run bindings",
+      "pass": true
+    },
+    {
+      "name": "CPU training, phenotype, and causal qualification checks passed",
+      "pass": true
+    },
+    {
+      "name": "preflight three-file binding hashes",
+      "pass": true
+    },
+    {
+      "name": "preflight passed and is source-bound to formal run",
+      "pass": true
+    },
+    {
+      "name": "preflight and formal run share the same CPU qualification receipt",
+      "pass": true
+    },
+    {
+      "name": "historical reference hash binding",
+      "pass": true
+    },
+    {
+      "name": "historical/fresh data seeds remain disjoint and recorded",
+      "pass": true
+    },
+    {
+      "name": "fresh evaluation bank identities",
+      "pass": true
+    },
+    {
+      "name": "historical evaluation bank identities",
+      "pass": true
+    },
+    {
+      "name": "training bank identity",
+      "pass": true
+    },
+    {
+      "name": "schedule 20002 regenerated 300x8 rows",
+      "pass": true
+    },
+    {
+      "name": "schedule 20002 file hash",
+      "pass": true
+    },
+    {
+      "name": "schedule 20012 regenerated 300x8 rows",
+      "pass": true
+    },
+    {
+      "name": "schedule 20012 file hash",
+      "pass": true
+    },
+    {
+      "name": "schedule 20022 regenerated 300x8 rows",
+      "pass": true
+    },
+    {
+      "name": "schedule 20022 file hash",
+      "pass": true
+    },
+    {
+      "name": "schedule 20032 regenerated 300x8 rows",
+      "pass": true
+    },
+    {
+      "name": "schedule 20032 file hash",
+      "pass": true
+    },
+    {
+      "name": "schedule 20042 regenerated 300x8 rows",
+      "pass": true
+    },
+    {
+      "name": "schedule 20042 file hash",
+      "pass": true
+    },
+    {
+      "name": "control schedule exactly replays historical schedule 20002",
+      "pass": true
+    },
+    {
+      "name": "formal manifest lists exact 13 unique protocol arms",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:control",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:A_schedule20012",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:A_schedule20022",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:A_schedule20032",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:A_schedule20042",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:B_direction70002_eps01",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:B_direction70002_eps05",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:B_direction70003_eps01",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:B_direction70003_eps05",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:B_direction70004_eps01",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:B_direction70004_eps05",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:B_direction70005_eps01",
+      "pass": true
+    },
+    {
+      "name": "manifest arm specification:B_direction70005_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:control",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:control",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:control",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:A_schedule20012",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:A_schedule20012",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:A_schedule20012",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:A_schedule20022",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:A_schedule20022",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:A_schedule20022",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:A_schedule20032",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:A_schedule20032",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:A_schedule20032",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:A_schedule20042",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:A_schedule20042",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:A_schedule20042",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:B_direction70002_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:B_direction70002_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:B_direction70002_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:B_direction70002_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:B_direction70002_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:B_direction70002_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:B_direction70003_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:B_direction70003_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:B_direction70003_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:B_direction70003_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:B_direction70003_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:B_direction70003_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:B_direction70004_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:B_direction70004_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:B_direction70004_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:B_direction70004_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:B_direction70004_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:B_direction70004_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:B_direction70005_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:B_direction70005_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:B_direction70005_eps01",
+      "pass": true
+    },
+    {
+      "name": "arm record specification:B_direction70005_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm trained exactly 300 updates:B_direction70005_eps05",
+      "pass": true
+    },
+    {
+      "name": "arm training bank/schedule binding:B_direction70005_eps05",
+      "pass": true
+    },
+    {
+      "name": "all 13 expected arm records are present",
+      "pass": true
+    },
+    {
+      "name": "control: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "control: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: global L2 radius and originally-zero perturbation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: global L2 radius and originally-zero perturbation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: global L2 radius and originally-zero perturbation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: global L2 radius and originally-zero perturbation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: global L2 radius and originally-zero perturbation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: global L2 radius and originally-zero perturbation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: global L2 radius and originally-zero perturbation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: reconstructed CPU initial parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: initialization ray metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: global L2 radius and originally-zero perturbation",
+      "pass": true
+    },
+    {
+      "name": "paired B direction has both radii:70002",
+      "pass": true
+    },
+    {
+      "name": "paired B direction has both radii:70003",
+      "pass": true
+    },
+    {
+      "name": "paired B direction has both radii:70004",
+      "pass": true
+    },
+    {
+      "name": "paired B direction has both radii:70005",
+      "pass": true
+    },
+    {
+      "name": "control starting and final parameter hashes exactly match historical run",
+      "pass": true
+    },
+    {
+      "name": "control full six historical size x horizon records exactly equal reference",
+      "pass": true
+    },
+    {
+      "name": "control historical replay record itself passed exact checks",
+      "pass": true
+    },
+    {
+      "name": "control: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "control: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "control: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "control: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "control: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "control: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "control: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "control: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "control: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "control: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "control: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20012: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20022: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20032: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "A_schedule20042: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps01: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "B_direction70002_eps05: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps01: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "B_direction70003_eps05: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps01: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "B_direction70004_eps05: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps01: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: saved phenotype summary SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: raw-trace metrics match saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: independent phenotype gate matches saved summary",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: independent phenotype gate matches arm record",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: matched frontier CSV integer counts and weighted recomputation",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: size32 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: size64 CSV map denominators/effects match Boolean traces",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: checkpoint file SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: checkpoint state parameter SHA256",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: state parameter count",
+      "pass": true
+    },
+    {
+      "name": "B_direction70005_eps05: checkpoint metadata",
+      "pass": true
+    },
+    {
+      "name": "independent phenotype gates equal saved aggregate arm outcomes",
+      "pass": true
+    },
+    {
+      "name": "saved aggregate control_fresh_qualification decision matches independent model-unit recount",
+      "pass": true
+    },
+    {
+      "name": "saved aggregate A decision matches independent model-unit recount",
+      "pass": true
+    },
+    {
+      "name": "saved aggregate B decision matches independent model-unit recount",
+      "pass": true
+    },
+    {
+      "name": "saved aggregate decision is complete screen",
+      "pass": true
+    }
+  ],
+  "failures": [],
+  "output_files": {
+    "arm_metrics.csv": {
+      "rows": 13,
+      "sha256": "70c86ad6c15b76bbbf1dc10e50221b5f10422ddea9b1faecf34ee57b80e6ab62"
+    }
+  },
+  "provenance": {
+    "cpu_qualification": {
+      "checks": {
+        "causal": "PASS",
+        "phenotype": "PASS",
+        "training": "PASS"
+      },
+      "path": "analyses/seed4_followup_20261003_cpu01.json",
+      "sha256": "b2cab6536cf9a988e34560e3d729113c3fe939f106800daf286387db794d1442",
+      "status": "PASS"
+    },
+    "directions": {
+      "70002": {
+        "epsilon01_present": true,
+        "epsilon05_present": true,
+        "initial_sha256": [
+          "54409f69e55ec490d9b9de0039ff87e9abd4e6cbdabd25b3e053cedffdb3b501",
+          "5c9a6951f197f9ae5438488849213ba12c490884c29dbee20cedf46a80560ecb"
+        ],
+        "relative_l2": [
+          0.01000000012675457,
+          0.0499999989130245
+        ]
+      },
+      "70003": {
+        "epsilon01_present": true,
+        "epsilon05_present": true,
+        "initial_sha256": [
+          "46752755964631db9611c2c8e0d24b94a2bdaa8e4afbac7da657ace13806c9bc",
+          "60dfb17ddada2a8ffede744f6a2a135d1f5c59069479917bd2ccc90cce4f57ff"
+        ],
+        "relative_l2": [
+          0.010000000492920597,
+          0.05000000366913632
+        ]
+      },
+      "70004": {
+        "epsilon01_present": true,
+        "epsilon05_present": true,
+        "initial_sha256": [
+          "b14ee73cbf7563396d47cc80be79fb2d957cc6a7d5e4cfec98afa60f02e8450a",
+          "6327be071da543c47f89190cd09b0273061ec62e801ba1f95d01f2c223e79573"
+        ],
+        "relative_l2": [
+          0.010000000487922885,
+          0.05000000193181236
+        ]
+      },
+      "70005": {
+        "epsilon01_present": true,
+        "epsilon05_present": true,
+        "initial_sha256": [
+          "b1341a6ccae2f60126bb587ccefa6d37591b4bc49d75d2c3a0c6d97f6a805124",
+          "f3cb49ed0b3858ce4d746836365bd6898250df37561fa374e66f4e1c0ece9b17"
+        ],
+        "relative_l2": [
+          0.010000000409273813,
+          0.050000000012382737
+        ]
+      }
+    },
+    "preflight": {
+      "decision": "PREFLIGHT_PASSED",
+      "file_sha256": {
+        "aggregate.json": "8c712bb39462f559d4c6dec88d83e01f91ae568e44740f6503c44f4fef87dbc1",
+        "manifest.json": "44107ac91d7b058335519000cbec34f94d9122a79c624dc1fbc091266110a94d",
+        "status.json": "336679f53af37b1ca53418324d6fa1ddca9598c4dac7c65bb7aaa09307c21e82"
+      },
+      "run_id": "seed4_followup_20261003_preflight01",
+      "status": "PREFLIGHT_PASSED"
+    },
+    "sources": {
+      "all_current_and_snapshot_hashes_match": true,
+      "count": 56,
+      "files": [
+        {
+          "current_matches": true,
+          "expected_sha256": "9281168c0dcec7a75987f461074580d203c4f958797b28aced65004f6d120dfd",
+          "path": "BPTT_PHASE2_PUBLICATION_MANIFEST.json",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "bba5b527e93485c0a526a8b670b1164f9480d25b9d672ec1dd6a4bdc60aa4dbb",
+          "path": "DIRECT_CARRY_PUBLICATION_MANIFEST.json",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "f636dd190aaa5a521fd3523a57e6e81ecd96609df2d1cf5e80bc28ddcda5ce8e",
+          "path": "FRONTIER_AUDIT_PUBLICATION_MANIFEST.json",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "4f88ed48810d3fd1d6e4f8f7749d88ee265a133c1aa434ab2d650a4c6b0c66de",
+          "path": "STREAMING_CARRY_PUBLICATION_MANIFEST.json",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "2d471eb833895497eec35c0dfc2bd6192675ad780fd019272b9b23aec4f68cdf",
+          "path": "evidence/short_bptt_phase2_init2345/manifest.json",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "273122c6ef7c1070cca212f9f7fe6562911eb276dcafb2a0a29afd78340080fc",
+          "path": "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed2.json",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "22a08fff5ccfb52a398e3f7ac29abdde868cc02a21208cb821537717ba78d891",
+          "path": "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed3.json",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "c350f665a3a8eb0c68ec08994368c0a7595c1b6a4c8c1df39a29b367bbdc0a7e",
+          "path": "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed4.json",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "212671c5895f9abb8c3d5a2630456d41207ea2e01bc11bef32c0b9948da81f26",
+          "path": "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed5.json",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "402dfa34d2215417242cfbfc736b25c722012e9c0171f1381e8ab2233d20f45b",
+          "path": "evidence/streaming_carry_init2345/raw/stream_K8_seed4.json",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "a4d9cceabc8f5fdbf104eea1f654b580a96d718de45facb5d346b8427aaa126f",
+          "path": "new/direct_spatial_carry/PROTOCOL.md",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "214b5d5a6c1b791ef6f4767f93470ca57bd3eec7134f941a4139a38d95ef19d7",
+          "path": "new/direct_spatial_carry/carry_cells.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "593f9c49ac0f202ce1829f577f58eebeb001dde7c631874bf53e4948b8e795b4",
+          "path": "new/direct_spatial_carry/check.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "7f874533d65d580574177d04a68a2795c275295479f7341aced5626b2f1f750e",
+          "path": "new/direct_spatial_carry/run.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "3065084f4525b213e7add869d85a29d13ca858fa5b2c9ded8f24fefb41219960",
+          "path": "new/frontier_audit/PROTOCOL.md",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "98398be9ab7849b2af219b188848507a4973bb237c9315fe554c378b73427d01",
+          "path": "new/frontier_audit/audit.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "9ab95d3dd543f456fb61ac985d05d86250a2807d40d37fae5d86116eae46a013",
+          "path": "new/frontier_audit/check_metrics.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "88b2654ea73c8a7912ed13c5a6dcbf139dbd29684bec834936c9bb876e7d7e66",
+          "path": "new/frontier_audit/metrics.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "3d7484eccf9763f920c640e1990c8b2891e7aad5b110e4b418ac2da58c4e98f6",
+          "path": "new/frontier_audit/report.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "e5543c0c655a61010d131bca94d655a528706afee6576083a5ef918a3041c899",
+          "path": "new/frontier_audit/validate.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+          "path": "new/masked_medium/masked_cells.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+          "path": "new/nca_inertial_wind_tunnel/cells.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+          "path": "new/nca_inertial_wind_tunnel/tasks.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "40dd593cc5e2b7ef9bcc9e56248ce262b67fe9fb22cf979cccf17699c8a9a31f",
+          "path": "new/seed4_followup/PROTOCOL.md",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "1a9944992c73a58fca94ef95e7998633a23f63d66900c361247122a8c52078f6",
+          "path": "new/seed4_followup/causal.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "3e8f290c8dda509ecb69abeaf64d23152ad9ee91e30eaaf6f2fdec6fd82c84ee",
+          "path": "new/seed4_followup/check.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "6e31f8831062febbc61461b76f7fbcfe3a6a9b83de5b12bf766ca2b1b2527034",
+          "path": "new/seed4_followup/check_causal.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "8ee3776215c5f621e43daff08de3217c17412798a3b1badbdeed0f17af3dd9da",
+          "path": "new/seed4_followup/check_phenotype.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "a558bd8cd17b1c49110a5b8c404d6bc0250b3cbd72b1741f7f80e76b46268e23",
+          "path": "new/seed4_followup/check_training.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "84c272f7d209a1036197f0766622cf7094777509250323d87a828807e8db6fb7",
+          "path": "new/seed4_followup/initialization.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "9a6f870845d1b928b5e28a50d1e6ccb81b28abc1633346d29c6f1e5a50db72af",
+          "path": "new/seed4_followup/phenotype.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "863a6e314dcfd2fe056d8d0e573aa955713a2712328df71d92700321ad1f33f8",
+          "path": "new/seed4_followup/train.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "f20d0dfbc8fd2ee21ea973a7562ed7f435fc4da824da67376165659d50818158",
+          "path": "new/short_bptt/PROTOCOL.md",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "d2e839fef75a2fba8b0f7e759cf140714fe186221543438c20b0eacbb41453c4",
+          "path": "new/short_bptt/check.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "dae5e6ed365842777aea0fc199867aa8913b346a2382ab7aa736985bde8ad9d9",
+          "path": "new/short_bptt/run.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+          "path": "new/short_bptt/training.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "80a13c66a6ec03e1da247e18f04d867d954fe7f33d6f7b6e719376cba6c711da",
+          "path": "new/short_bptt_phase2/PROTOCOL.md",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "a9aec169d3a8c7ea110d6a260fee8ac6d95e9f7d8016269823a93df73f751e77",
+          "path": "new/short_bptt_phase2/check.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "12b3c4b0a7f12cb77ea81f8a5a92170f55bb9a5c320fbbb3d1af91e0ac8669ce",
+          "path": "new/short_bptt_phase2/run.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "7e0c95c7088933ef88402f04359103c16ffe3cf8dd09fab6f2352fbaef4f25cb",
+          "path": "new/short_bptt_phase2/training.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "b26fc2d15218fa6a88cf4621daf83bf2c34c002f7b60aece54744a586ebd9185",
+          "path": "new/stream_path_audit/audit.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "6fd66289ab52bceec5c1428a0e7d31e8a860cc4f1c95520dbcfc8e7308bf41d8",
+          "path": "new/stream_path_audit/operators.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "e14978715194afa06d0b9f1c5a26b49b45d650f0275de285ca92e8e9611a38d2",
+          "path": "new/streaming_carry/PROTOCOL.md",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "653dd97f2dd21100ac6c3376ea14ee8e8df5be9b800487ea56f4df6dffe9bcf4",
+          "path": "new/streaming_carry/check.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "c2410ed7bf07363ad8d02e44cd6ed41b2defef1b6733d32042176c729c2559cb",
+          "path": "new/streaming_carry/run.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "88152e1243d519590a6aa22b66ba2e84eda9b59831c2722f254c1b440fbc7dfb",
+          "path": "new/streaming_carry/stream_cells.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+          "path": "new/workspace_revision/PROTOCOL.md",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+          "path": "new/workspace_revision/check.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+          "path": "new/workspace_revision/revision_cells.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+          "path": "new/workspace_revision/run_revision.py",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "dace8dd7e5b50a9139cde6e48e90f4107372a81f3b987d35f47478a2e32df08a",
+          "path": "tools/launch_bptt_phase2.ps1",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "c80e7e8b4e358507efd28d350149245c144834fe46f38305db2eee7139e031b3",
+          "path": "tools/launch_direct_carry.ps1",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9",
+          "path": "tools/launch_revision.ps1",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "fb933814f1c00c759af4fea59cab08953b7862831fac1ffb3668eee9f665e91f",
+          "path": "tools/launch_seed4_followup.ps1",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "0a7859d1e34f970fdbc38cd93c29ba07019ec2d4d9e352bc64f8a8dc6bec7942",
+          "path": "tools/launch_short_bptt.ps1",
+          "snapshot_matches": true
+        },
+        {
+          "current_matches": true,
+          "expected_sha256": "c5f4cde9af9bdfd59c2565ab1cf9c1f6f8f63d737baf9d4cb5ade87f20e98a89",
+          "path": "tools/launch_streaming_carry.ps1",
+          "snapshot_matches": true
+        }
+      ],
+      "snapshot_count": 56
+    }
+  },
+  "run_id": "seed4_followup_20261003_training01",
+  "schema": "seed4-followup-training-saved-result-review-v1",
+  "status": "PASS",
+  "training_status": {
+    "completed_arms": 13,
+    "elapsed_seconds": 1866.6719999999996,
+    "finished_utc": "2026-10-03T07:07:15.630287+00:00",
+    "status": "COMPLETE"
+  },
+  "validation_mode": "CPU saved-artifact review; no model inference or training",
+  "detail_policy": "Compact copy: check names/verdicts, provenance, checkpoints/traces, gates and CSV counts retained. Duplicate metric profiles and successful-check detail payloads omitted; published arm summaries retain the profiles. The complete local validation report SHA is in provenance.json."
+}

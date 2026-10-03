@@ -1,0 +1,1972 @@
+{
+  "review_base": "ba433ecc28a7454db853cac6d6c258076a14f6fc",
+  "execution_status": "COMPLETE",
+  "training_elapsed_seconds": 1866.6719999999996,
+  "A": {
+    "completed_schedules": 4,
+    "passes": 0,
+    "unit": "schedule",
+    "decision": "NOT_QUALIFIED"
+  },
+  "B": {
+    "0.01": {
+      "completed_directions": 4,
+      "passes": 0,
+      "unit": "paired_direction",
+      "decision": "NOT_QUALIFIED"
+    },
+    "0.05": {
+      "completed_directions": 4,
+      "passes": 0,
+      "unit": "paired_direction",
+      "decision": "NOT_QUALIFIED"
+    }
+  },
+  "control_fresh_qualification": "QUALIFIED",
+  "arms": [
+    {
+      "name": "control",
+      "experiment": "control",
+      "schedule_seed": 20002,
+      "direction_seed": null,
+      "epsilon": 0.0,
+      "reach": true,
+      "hold": true,
+      "dynamics": true,
+      "frontier": true,
+      "full_phenotype": true,
+      "T64_strict_map_mean": 0.9340931325354075,
+      "T64_strict_pooled": 0.9042369962108164,
+      "T64_ba_original": 0.9721431732177734,
+      "T64_ba_flipped": 0.973853349685669,
+      "failed_checks": [],
+      "size32_ever_regressed_ratio": 0.02679127725856698,
+      "size32_retention64_to256": 1.0,
+      "size32_coverage_gain64_to256": 0.16115273775216143,
+      "size32_frontier_effect": 0.32582921995925546,
+      "size64_ever_regressed_ratio": 0.12642563198118753,
+      "size64_retention64_to256": 0.9809154301892727,
+      "size64_coverage_gain64_to256": 0.2784995425434583,
+      "size64_frontier_effect": 0.23236484812762465
+    },
+    {
+      "name": "A_schedule20012",
+      "experiment": "A",
+      "schedule_seed": 20012,
+      "direction_seed": null,
+      "epsilon": 0.0,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.3505597573325035,
+      "T64_strict_pooled": 0.31484671029968997,
+      "T64_ba_original": 0.8268965482711792,
+      "T64_ba_flipped": 0.8197624087333679,
+      "failed_checks": [
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T128_strict_pooled_coverage_drop",
+        "hold_size32_T256_strict_mean_map_coverage_drop",
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_flipped_ba",
+        "reach_size32_T64_original_ba",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.7667329357190192,
+      "size32_retention64_to256": 0.5805604203152365,
+      "size32_coverage_gain64_to256": -0.08783861671469742,
+      "size32_frontier_effect": 0.2489978598320578,
+      "size64_ever_regressed_ratio": 0.6680399837903552,
+      "size64_retention64_to256": 0.5289045314562253,
+      "size64_coverage_gain64_to256": 0.00889752973467517,
+      "size64_frontier_effect": 0.15921833728906884
+    },
+    {
+      "name": "B_direction70002_eps01",
+      "experiment": "B",
+      "schedule_seed": 20002,
+      "direction_seed": 70002,
+      "epsilon": 0.01,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.758138038313781,
+      "T64_strict_pooled": 0.679986221150534,
+      "T64_ba_original": 0.9341914653778076,
+      "T64_ba_flipped": 0.9192990064620972,
+      "failed_checks": [
+        "hold_size32_T128_flipped_ba_drop",
+        "hold_size32_T128_original_ba_drop",
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T128_strict_pooled_coverage_drop",
+        "hold_size32_T256_flipped_ba_drop",
+        "hold_size32_T256_original_ba_drop",
+        "hold_size32_T256_strict_mean_map_coverage_drop",
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.8551675977653631,
+      "size32_retention64_to256": 0.2487349163098482,
+      "size32_coverage_gain64_to256": -0.41775216138328525,
+      "size32_frontier_effect": 0.1426301097677576,
+      "size64_ever_regressed_ratio": 0.9982974226501498,
+      "size64_retention64_to256": 0.004879448909299655,
+      "size64_coverage_gain64_to256": -0.15860018298261663,
+      "size64_frontier_effect": 0.17758240577411133
+    },
+    {
+      "name": "B_direction70002_eps05",
+      "experiment": "B",
+      "schedule_seed": 20002,
+      "direction_seed": 70002,
+      "epsilon": 0.05,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.17737648305096088,
+      "T64_strict_pooled": 0.10299689975887014,
+      "T64_ba_original": 0.781123161315918,
+      "T64_ba_flipped": 0.7856141924858093,
+      "failed_checks": [
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T256_flipped_ba_drop",
+        "hold_size32_T256_original_ba_drop",
+        "hold_size32_T256_strict_mean_map_coverage_drop",
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_flipped_ba",
+        "reach_size32_T64_original_ba",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.9983040067839729,
+      "size32_retention64_to256": 0.012244897959183673,
+      "size32_coverage_gain64_to256": -0.08368876080691642,
+      "size32_frontier_effect": 0.09533514155263274,
+      "size64_ever_regressed_ratio": 1.0,
+      "size64_retention64_to256": 0.0,
+      "size64_coverage_gain64_to256": -0.04535681610247026,
+      "size64_frontier_effect": 0.09585367234935899
+    },
+    {
+      "name": "A_schedule20022",
+      "experiment": "A",
+      "schedule_seed": 20022,
+      "direction_seed": null,
+      "epsilon": 0.0,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.8167074844869876,
+      "T64_strict_pooled": 0.7946951429555632,
+      "T64_ba_original": 0.9385230541229248,
+      "T64_ba_flipped": 0.9452340602874756,
+      "failed_checks": [
+        "hold_size32_T128_flipped_ba_drop",
+        "hold_size32_T128_original_ba_drop",
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T128_strict_pooled_coverage_drop",
+        "hold_size32_T256_flipped_ba_drop",
+        "hold_size32_T256_original_ba_drop",
+        "hold_size32_T256_strict_mean_map_coverage_drop",
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.43366763996445346,
+      "size32_retention64_to256": 0.5963648834019204,
+      "size32_coverage_gain64_to256": -0.15400576368876084,
+      "size32_frontier_effect": 0.18617454238288594,
+      "size64_ever_regressed_ratio": 0.9925766283524904,
+      "size64_retention64_to256": 0.01567779429652656,
+      "size64_coverage_gain64_to256": -0.1660109789569991,
+      "size64_frontier_effect": 0.10151659601864904
+    },
+    {
+      "name": "B_direction70003_eps05",
+      "experiment": "B",
+      "schedule_seed": 20002,
+      "direction_seed": 70003,
+      "epsilon": 0.05,
+      "reach": true,
+      "hold": true,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.8940880486926672,
+      "T64_strict_pooled": 0.8608336203926972,
+      "T64_ba_original": 0.9695881605148315,
+      "T64_ba_flipped": 0.9714099168777466,
+      "failed_checks": [
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.26811332127787824,
+      "size32_retention64_to256": 1.0,
+      "size32_coverage_gain64_to256": 0.18386167146974064,
+      "size32_frontier_effect": 0.3112804878863384,
+      "size64_ever_regressed_ratio": 0.7133119172608321,
+      "size64_retention64_to256": 0.5310142218067704,
+      "size64_coverage_gain64_to256": -0.07122598353156451,
+      "size64_frontier_effect": 0.13936967871509087
+    },
+    {
+      "name": "B_direction70003_eps01",
+      "experiment": "B",
+      "schedule_seed": 20002,
+      "direction_seed": 70003,
+      "epsilon": 0.01,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.4629934311335415,
+      "T64_strict_pooled": 0.4264553909748536,
+      "T64_ba_original": 0.8464878797531128,
+      "T64_ba_flipped": 0.8453723788261414,
+      "failed_checks": [
+        "hold_size32_T128_flipped_ba_drop",
+        "hold_size32_T128_original_ba_drop",
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T128_strict_pooled_coverage_drop",
+        "hold_size32_T256_flipped_ba_drop",
+        "hold_size32_T256_original_ba_drop",
+        "hold_size32_T256_strict_mean_map_coverage_drop",
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_flipped_ba",
+        "reach_size32_T64_original_ba",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.9715189873417721,
+      "size32_retention64_to256": 0.060950413223140494,
+      "size32_coverage_gain64_to256": -0.3143515850144092,
+      "size32_frontier_effect": 0.06414311633399135,
+      "size64_ever_regressed_ratio": 0.9922996515679442,
+      "size64_retention64_to256": 0.016036330092953948,
+      "size64_coverage_gain64_to256": -0.31715462031107045,
+      "size64_frontier_effect": 0.10028614608292998
+    },
+    {
+      "name": "A_schedule20032",
+      "experiment": "A",
+      "schedule_seed": 20032,
+      "direction_seed": null,
+      "epsilon": 0.0,
+      "reach": false,
+      "hold": true,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.6743319358280027,
+      "T64_strict_pooled": 0.6200482259731313,
+      "T64_ba_original": 0.9608193039894104,
+      "T64_ba_flipped": 0.9589093327522278,
+      "failed_checks": [
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.3723712835387962,
+      "size32_retention64_to256": 1.0,
+      "size32_coverage_gain64_to256": 0.2781556195965418,
+      "size32_frontier_effect": 0.2121268543801918,
+      "size64_ever_regressed_ratio": 0.403922549101314,
+      "size64_retention64_to256": 0.9989790058069045,
+      "size64_coverage_gain64_to256": 0.45763952424519666,
+      "size64_frontier_effect": 0.1624085728072836
+    },
+    {
+      "name": "B_direction70004_eps01",
+      "experiment": "B",
+      "schedule_seed": 20002,
+      "direction_seed": 70004,
+      "epsilon": 0.01,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.6152026875117406,
+      "T64_strict_pooled": 0.5614881157423355,
+      "T64_ba_original": 0.8967260718345642,
+      "T64_ba_flipped": 0.9012657403945923,
+      "failed_checks": [
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T128_strict_pooled_coverage_drop",
+        "hold_size32_T256_flipped_ba_drop",
+        "hold_size32_T256_strict_mean_map_coverage_drop",
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.42430188679245284,
+      "size32_retention64_to256": 0.838738537239991,
+      "size32_coverage_gain64_to256": -0.07550432276657065,
+      "size32_frontier_effect": 0.20399691722017543,
+      "size64_ever_regressed_ratio": 0.9998490566037735,
+      "size64_retention64_to256": 0.0,
+      "size64_coverage_gain64_to256": -0.06907593778591033,
+      "size64_frontier_effect": 0.11479602291831123
+    },
+    {
+      "name": "B_direction70004_eps05",
+      "experiment": "B",
+      "schedule_seed": 20002,
+      "direction_seed": 70004,
+      "epsilon": 0.05,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.7461554843953776,
+      "T64_strict_pooled": 0.6913537719600413,
+      "T64_ba_original": 0.9416466951370239,
+      "T64_ba_flipped": 0.9279423952102661,
+      "failed_checks": [
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.3406948559116617,
+      "size32_retention64_to256": 0.8582185491276401,
+      "size32_coverage_gain64_to256": -0.05636887608069163,
+      "size32_frontier_effect": 0.33255510528261994,
+      "size64_ever_regressed_ratio": 0.9854060646843589,
+      "size64_retention64_to256": 0.0131529966497084,
+      "size64_coverage_gain64_to256": -0.17630375114364136,
+      "size64_frontier_effect": 0.10889384643070793
+    },
+    {
+      "name": "A_schedule20042",
+      "experiment": "A",
+      "schedule_seed": 20042,
+      "direction_seed": null,
+      "epsilon": 0.0,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.8018309373163388,
+      "T64_strict_pooled": 0.7165001722356183,
+      "T64_ba_original": 0.9350227117538452,
+      "T64_ba_flipped": 0.9191757440567017,
+      "failed_checks": [
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T128_strict_pooled_coverage_drop",
+        "hold_size32_T256_strict_mean_map_coverage_drop",
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.427986906710311,
+      "size32_retention64_to256": 0.8179226069246436,
+      "size32_coverage_gain64_to256": -0.018443804034582234,
+      "size32_frontier_effect": 0.2767369641857525,
+      "size64_ever_regressed_ratio": 0.5208751287751451,
+      "size64_retention64_to256": 0.726775956284153,
+      "size64_coverage_gain64_to256": 0.17090576395242452,
+      "size64_frontier_effect": 0.18737408642127096
+    },
+    {
+      "name": "B_direction70005_eps05",
+      "experiment": "B",
+      "schedule_seed": 20002,
+      "direction_seed": 70005,
+      "epsilon": 0.05,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.505017549429644,
+      "T64_strict_pooled": 0.40682053048570443,
+      "T64_ba_original": 0.8318102359771729,
+      "T64_ba_flipped": 0.8338110446929932,
+      "failed_checks": [
+        "hold_size32_T128_flipped_ba_drop",
+        "hold_size32_T128_original_ba_drop",
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T128_strict_pooled_coverage_drop",
+        "hold_size32_T256_flipped_ba_drop",
+        "hold_size32_T256_original_ba_drop",
+        "hold_size32_T256_strict_mean_map_coverage_drop",
+        "hold_size32_T256_strict_pooled_coverage_drop",
+        "reach_size32_T64_flipped_ba",
+        "reach_size32_T64_original_ba",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.9916992952231793,
+      "size32_retention64_to256": 0.017168772270813086,
+      "size32_coverage_gain64_to256": -0.3497406340057637,
+      "size32_frontier_effect": 0.09286313968827374,
+      "size64_ever_regressed_ratio": 0.9774623573415172,
+      "size64_retention64_to256": 0.045932009167303285,
+      "size64_coverage_gain64_to256": -0.2285224153705398,
+      "size64_frontier_effect": 0.10144370420336629
+    },
+    {
+      "name": "B_direction70005_eps01",
+      "experiment": "B",
+      "schedule_seed": 20002,
+      "direction_seed": 70005,
+      "epsilon": 0.01,
+      "reach": false,
+      "hold": false,
+      "dynamics": false,
+      "frontier": true,
+      "full_phenotype": false,
+      "T64_strict_map_mean": 0.2657867796159917,
+      "T64_strict_pooled": 0.2497416465725112,
+      "T64_ba_original": 0.8204971551895142,
+      "T64_ba_flipped": 0.8174190521240234,
+      "failed_checks": [
+        "hold_size32_T128_strict_mean_map_coverage_drop",
+        "hold_size32_T128_strict_pooled_coverage_drop",
+        "reach_size32_T64_flipped_ba",
+        "reach_size32_T64_original_ba",
+        "reach_size32_T64_strict_map_mean",
+        "reach_size32_T64_strict_pooled",
+        "size32_all_changed_coverage_gain64_to256",
+        "size32_all_changed_retention64_to256",
+        "size32_ever_regressed_over_ever_correct",
+        "size64_all_changed_coverage_gain64_to256",
+        "size64_all_changed_retention64_to256",
+        "size64_ever_regressed_over_ever_correct"
+      ],
+      "size32_ever_regressed_ratio": 0.8551750526114406,
+      "size32_retention64_to256": 0.7440476190476191,
+      "size32_coverage_gain64_to256": -0.05821325648414985,
+      "size32_frontier_effect": 0.24895930811304573,
+      "size64_ever_regressed_ratio": 0.921539190897598,
+      "size64_retention64_to256": 0.5280223501523874,
+      "size64_coverage_gain64_to256": -0.07715004574565418,
+      "size64_frontier_effect": 0.27794406579028574
+    }
+  ],
+  "causal": {
+    "status": "COMPLETE",
+    "training": false,
+    "event_counts": {
+      "32": {
+        "events": 93,
+        "eligible_maps": 31,
+        "events_by_time": {
+          "16": 31,
+          "32": 41,
+          "64": 18,
+          "128": 3
+        }
+      },
+      "64": {
+        "events": 257,
+        "eligible_maps": 31,
+        "events_by_time": {
+          "16": 41,
+          "32": 109,
+          "64": 73,
+          "128": 34
+        }
+      }
+    },
+    "sizes": {
+      "32": {
+        "size": 32,
+        "event_count": 93,
+        "eligible_map_count": 31,
+        "per_map": [
+          {
+            "map_index": 0,
+            "events": 3,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.6666666666666666,
+                "wrong_neighbor_sham_acquisition": 0.6666666666666666,
+                "native_minus_sender": 0.33333333333333337,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 1,
+            "events": 4,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.75,
+                "noop_acquisition": 0.75,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.25,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 2,
+            "events": 7,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.2857142857142857,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.7142857142857143,
+                "sham_minus_sender": 0.7142857142857143
+              }
+            }
+          },
+          {
+            "map_index": 3,
+            "events": 2,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 1.0,
+                "sham_minus_sender": 1.0
+              }
+            }
+          },
+          {
+            "map_index": 4,
+            "events": 3,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.3333333333333333,
+                "noop_acquisition": 0.3333333333333333,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+                "native_minus_sender": 0.3333333333333333,
+                "sham_minus_sender": 0.3333333333333333
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 5,
+            "events": 1,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 6,
+            "events": 2,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 8,
+            "events": 5,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.2,
+                "noop_acquisition": 0.2,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.2,
+                "native_minus_sender": 0.2,
+                "sham_minus_sender": 0.2
+              }
+            }
+          },
+          {
+            "map_index": 9,
+            "events": 4,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.75,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.25,
+                "sham_minus_sender": 0.25
+              }
+            }
+          },
+          {
+            "map_index": 10,
+            "events": 3,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.3333333333333333,
+                "noop_acquisition": 0.3333333333333333,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.3333333333333333,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.6666666666666666,
+                "noop_acquisition": 0.6666666666666666,
+                "sender_rollback_acquisition": 0.3333333333333333,
+                "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+                "native_minus_sender": 0.3333333333333333,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 11,
+            "events": 2,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 1.0,
+                "sham_minus_sender": 1.0
+              }
+            }
+          },
+          {
+            "map_index": 12,
+            "events": 4,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.25,
+                "wrong_neighbor_sham_acquisition": 0.75,
+                "native_minus_sender": 0.75,
+                "sham_minus_sender": 0.5
+              }
+            }
+          },
+          {
+            "map_index": 13,
+            "events": 1,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 14,
+            "events": 2,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 15,
+            "events": 1,
+            "horizons": {
+              "1": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 1.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 16,
+            "events": 3,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.3333333333333333,
+                "noop_acquisition": 0.3333333333333333,
+                "sender_rollback_acquisition": 0.3333333333333333,
+                "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 17,
+            "events": 5,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.8,
+                "noop_acquisition": 0.8,
+                "sender_rollback_acquisition": 0.2,
+                "wrong_neighbor_sham_acquisition": 0.4,
+                "native_minus_sender": 0.6000000000000001,
+                "sham_minus_sender": 0.2
+              }
+            }
+          },
+          {
+            "map_index": 18,
+            "events": 4,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.25,
+                "wrong_neighbor_sham_acquisition": 0.25,
+                "native_minus_sender": 0.25,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 19,
+            "events": 2,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 20,
+            "events": 6,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.8333333333333334,
+                "noop_acquisition": 0.8333333333333334,
+                "sender_rollback_acquisition": 0.6666666666666666,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.16666666666666674,
+                "sham_minus_sender": -0.16666666666666663
+              }
+            }
+          },
+          {
+            "map_index": 21,
+            "events": 3,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.3333333333333333,
+                "noop_acquisition": 0.3333333333333333,
+                "sender_rollback_acquisition": 0.3333333333333333,
+                "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.6666666666666666,
+                "wrong_neighbor_sham_acquisition": 0.6666666666666666,
+                "native_minus_sender": 0.33333333333333337,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 22,
+            "events": 7,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.7142857142857143,
+                "noop_acquisition": 0.7142857142857143,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.14285714285714285,
+                "native_minus_sender": 0.7142857142857143,
+                "sham_minus_sender": 0.14285714285714285
+              }
+            }
+          },
+          {
+            "map_index": 23,
+            "events": 1,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 24,
+            "events": 2,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.5
+              }
+            }
+          },
+          {
+            "map_index": 25,
+            "events": 4,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.25,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.25
+              }
+            }
+          },
+          {
+            "map_index": 26,
+            "events": 1,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 27,
+            "events": 3,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.3333333333333333,
+                "noop_acquisition": 0.3333333333333333,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+                "native_minus_sender": 0.3333333333333333,
+                "sham_minus_sender": 0.3333333333333333
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.6666666666666666,
+                "wrong_neighbor_sham_acquisition": 0.6666666666666666,
+                "native_minus_sender": 0.33333333333333337,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 28,
+            "events": 2,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 29,
+            "events": 3,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.3333333333333333,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.6666666666666667,
+                "sham_minus_sender": 0.6666666666666667
+              }
+            }
+          },
+          {
+            "map_index": 30,
+            "events": 2,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.5
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 31,
+            "events": 1,
+            "horizons": {
+              "1": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 1.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 1.0,
+                "sham_minus_sender": 1.0
+              }
+            }
+          }
+        ],
+        "horizons": {
+          "1": {
+            "native_acquisition": 0.15591397849462368,
+            "noop_acquisition": 0.15591397849462368,
+            "sender_rollback_acquisition": 0.01075268817204301,
+            "wrong_neighbor_sham_acquisition": 0.04838709677419355,
+            "native_minus_sender_rollback": 0.14516129032258066,
+            "sham_minus_sender_rollback": 0.03763440860215053
+          },
+          "4": {
+            "native_acquisition": 0.8483102918586789,
+            "noop_acquisition": 0.8483102918586789,
+            "sender_rollback_acquisition": 0.5129800307219662,
+            "wrong_neighbor_sham_acquisition": 0.7148233486943164,
+            "native_minus_sender_rollback": 0.33533026113671277,
+            "sham_minus_sender_rollback": 0.20184331797235025
+          }
+        }
+      },
+      "64": {
+        "size": 64,
+        "event_count": 257,
+        "eligible_map_count": 31,
+        "per_map": [
+          {
+            "map_index": 0,
+            "events": 9,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.4444444444444444,
+                "noop_acquisition": 0.4444444444444444,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.2222222222222222,
+                "native_minus_sender": 0.4444444444444444,
+                "sham_minus_sender": 0.2222222222222222
+              },
+              "4": {
+                "native_acquisition": 0.7777777777777778,
+                "noop_acquisition": 0.7777777777777778,
+                "sender_rollback_acquisition": 0.6666666666666666,
+                "wrong_neighbor_sham_acquisition": 0.7777777777777778,
+                "native_minus_sender": 0.11111111111111116,
+                "sham_minus_sender": 0.11111111111111116
+              }
+            }
+          },
+          {
+            "map_index": 1,
+            "events": 9,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.3333333333333333,
+                "noop_acquisition": 0.3333333333333333,
+                "sender_rollback_acquisition": 0.3333333333333333,
+                "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.5555555555555556,
+                "noop_acquisition": 0.5555555555555556,
+                "sender_rollback_acquisition": 0.4444444444444444,
+                "wrong_neighbor_sham_acquisition": 0.4444444444444444,
+                "native_minus_sender": 0.11111111111111116,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 2,
+            "events": 4,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 0.75,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.25
+              }
+            }
+          },
+          {
+            "map_index": 3,
+            "events": 2,
+            "horizons": {
+              "1": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 4,
+            "events": 10,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.3,
+                "noop_acquisition": 0.3,
+                "sender_rollback_acquisition": 0.1,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.19999999999999998,
+                "sham_minus_sender": -0.1
+              },
+              "4": {
+                "native_acquisition": 0.9,
+                "noop_acquisition": 0.9,
+                "sender_rollback_acquisition": 0.7,
+                "wrong_neighbor_sham_acquisition": 0.7,
+                "native_minus_sender": 0.20000000000000007,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 5,
+            "events": 5,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.4,
+                "noop_acquisition": 0.4,
+                "sender_rollback_acquisition": 0.4,
+                "wrong_neighbor_sham_acquisition": 0.4,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 1.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 6,
+            "events": 10,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.2,
+                "noop_acquisition": 0.2,
+                "sender_rollback_acquisition": 0.1,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.1,
+                "sham_minus_sender": -0.1
+              },
+              "4": {
+                "native_acquisition": 0.9,
+                "noop_acquisition": 0.9,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 0.6,
+                "native_minus_sender": 0.4,
+                "sham_minus_sender": 0.09999999999999998
+              }
+            }
+          },
+          {
+            "map_index": 7,
+            "events": 9,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.2222222222222222,
+                "noop_acquisition": 0.2222222222222222,
+                "sender_rollback_acquisition": 0.2222222222222222,
+                "wrong_neighbor_sham_acquisition": 0.1111111111111111,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": -0.1111111111111111
+              },
+              "4": {
+                "native_acquisition": 0.6666666666666666,
+                "noop_acquisition": 0.6666666666666666,
+                "sender_rollback_acquisition": 0.4444444444444444,
+                "wrong_neighbor_sham_acquisition": 0.5555555555555556,
+                "native_minus_sender": 0.2222222222222222,
+                "sham_minus_sender": 0.11111111111111116
+              }
+            }
+          },
+          {
+            "map_index": 9,
+            "events": 7,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.14285714285714285,
+                "noop_acquisition": 0.14285714285714285,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.14285714285714285,
+                "native_minus_sender": 0.14285714285714285,
+                "sham_minus_sender": 0.14285714285714285
+              },
+              "4": {
+                "native_acquisition": 0.7142857142857143,
+                "noop_acquisition": 0.7142857142857143,
+                "sender_rollback_acquisition": 0.42857142857142855,
+                "wrong_neighbor_sham_acquisition": 0.5714285714285714,
+                "native_minus_sender": 0.28571428571428575,
+                "sham_minus_sender": 0.14285714285714285
+              }
+            }
+          },
+          {
+            "map_index": 10,
+            "events": 13,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.07692307692307693,
+                "noop_acquisition": 0.07692307692307693,
+                "sender_rollback_acquisition": 0.07692307692307693,
+                "wrong_neighbor_sham_acquisition": 0.07692307692307693,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.6153846153846154,
+                "noop_acquisition": 0.6153846153846154,
+                "sender_rollback_acquisition": 0.46153846153846156,
+                "wrong_neighbor_sham_acquisition": 0.46153846153846156,
+                "native_minus_sender": 0.15384615384615385,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 11,
+            "events": 1,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 1.0,
+                "sham_minus_sender": 1.0
+              }
+            }
+          },
+          {
+            "map_index": 12,
+            "events": 14,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.21428571428571427,
+                "noop_acquisition": 0.21428571428571427,
+                "sender_rollback_acquisition": 0.07142857142857142,
+                "wrong_neighbor_sham_acquisition": 0.07142857142857142,
+                "native_minus_sender": 0.14285714285714285,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.7142857142857143,
+                "noop_acquisition": 0.7142857142857143,
+                "sender_rollback_acquisition": 0.42857142857142855,
+                "wrong_neighbor_sham_acquisition": 0.5714285714285714,
+                "native_minus_sender": 0.28571428571428575,
+                "sham_minus_sender": 0.14285714285714285
+              }
+            }
+          },
+          {
+            "map_index": 13,
+            "events": 11,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.2727272727272727,
+                "noop_acquisition": 0.2727272727272727,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.09090909090909091,
+                "native_minus_sender": 0.2727272727272727,
+                "sham_minus_sender": 0.09090909090909091
+              }
+            }
+          },
+          {
+            "map_index": 14,
+            "events": 8,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.125,
+                "noop_acquisition": 0.125,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.125,
+                "native_minus_sender": 0.125,
+                "sham_minus_sender": 0.125
+              },
+              "4": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.375,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.125,
+                "sham_minus_sender": 0.125
+              }
+            }
+          },
+          {
+            "map_index": 15,
+            "events": 10,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.2,
+                "noop_acquisition": 0.2,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.1,
+                "native_minus_sender": 0.2,
+                "sham_minus_sender": 0.1
+              },
+              "4": {
+                "native_acquisition": 0.9,
+                "noop_acquisition": 0.9,
+                "sender_rollback_acquisition": 0.4,
+                "wrong_neighbor_sham_acquisition": 0.8,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.4
+              }
+            }
+          },
+          {
+            "map_index": 16,
+            "events": 8,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.375,
+                "noop_acquisition": 0.375,
+                "sender_rollback_acquisition": 0.125,
+                "wrong_neighbor_sham_acquisition": 0.375,
+                "native_minus_sender": 0.25,
+                "sham_minus_sender": 0.25
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.875,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.125,
+                "sham_minus_sender": 0.125
+              }
+            }
+          },
+          {
+            "map_index": 17,
+            "events": 8,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.25,
+                "noop_acquisition": 0.25,
+                "sender_rollback_acquisition": 0.25,
+                "wrong_neighbor_sham_acquisition": 0.25,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.625,
+                "noop_acquisition": 0.625,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.125,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 18,
+            "events": 6,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.6666666666666666,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.33333333333333337,
+                "sham_minus_sender": 0.33333333333333337
+              }
+            }
+          },
+          {
+            "map_index": 19,
+            "events": 4,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.25,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.25
+              }
+            }
+          },
+          {
+            "map_index": 20,
+            "events": 6,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.16666666666666666,
+                "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+                "native_minus_sender": 0.8333333333333334,
+                "sham_minus_sender": 0.16666666666666666
+              }
+            }
+          },
+          {
+            "map_index": 21,
+            "events": 8,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.25,
+                "noop_acquisition": 0.25,
+                "sender_rollback_acquisition": 0.125,
+                "wrong_neighbor_sham_acquisition": 0.125,
+                "native_minus_sender": 0.125,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.875,
+                "noop_acquisition": 0.875,
+                "sender_rollback_acquisition": 0.375,
+                "wrong_neighbor_sham_acquisition": 0.625,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.25
+              }
+            }
+          },
+          {
+            "map_index": 22,
+            "events": 8,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.25,
+                "noop_acquisition": 0.25,
+                "sender_rollback_acquisition": 0.25,
+                "wrong_neighbor_sham_acquisition": 0.25,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.5,
+                "noop_acquisition": 0.5,
+                "sender_rollback_acquisition": 0.25,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.25,
+                "sham_minus_sender": 0.25
+              }
+            }
+          },
+          {
+            "map_index": 23,
+            "events": 10,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.1,
+                "noop_acquisition": 0.1,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.1,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.8,
+                "noop_acquisition": 0.8,
+                "sender_rollback_acquisition": 0.3,
+                "wrong_neighbor_sham_acquisition": 0.4,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.10000000000000003
+              }
+            }
+          },
+          {
+            "map_index": 24,
+            "events": 14,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.42857142857142855,
+                "noop_acquisition": 0.42857142857142855,
+                "sender_rollback_acquisition": 0.35714285714285715,
+                "wrong_neighbor_sham_acquisition": 0.35714285714285715,
+                "native_minus_sender": 0.0714285714285714,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 25,
+            "events": 16,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.125,
+                "noop_acquisition": 0.125,
+                "sender_rollback_acquisition": 0.25,
+                "wrong_neighbor_sham_acquisition": 0.125,
+                "native_minus_sender": -0.125,
+                "sham_minus_sender": -0.125
+              },
+              "4": {
+                "native_acquisition": 0.625,
+                "noop_acquisition": 0.625,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 0.625,
+                "native_minus_sender": 0.125,
+                "sham_minus_sender": 0.125
+              }
+            }
+          },
+          {
+            "map_index": 26,
+            "events": 4,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.75,
+                "noop_acquisition": 0.75,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.25,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 1.0,
+                "noop_acquisition": 1.0,
+                "sender_rollback_acquisition": 0.5,
+                "wrong_neighbor_sham_acquisition": 1.0,
+                "native_minus_sender": 0.5,
+                "sham_minus_sender": 0.5
+              }
+            }
+          },
+          {
+            "map_index": 27,
+            "events": 7,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.7142857142857143,
+                "noop_acquisition": 0.7142857142857143,
+                "sender_rollback_acquisition": 0.42857142857142855,
+                "wrong_neighbor_sham_acquisition": 0.5714285714285714,
+                "native_minus_sender": 0.28571428571428575,
+                "sham_minus_sender": 0.14285714285714285
+              }
+            }
+          },
+          {
+            "map_index": 28,
+            "events": 11,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.2727272727272727,
+                "noop_acquisition": 0.2727272727272727,
+                "sender_rollback_acquisition": 0.18181818181818182,
+                "wrong_neighbor_sham_acquisition": 0.18181818181818182,
+                "native_minus_sender": 0.09090909090909088,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.6363636363636364,
+                "noop_acquisition": 0.6363636363636364,
+                "sender_rollback_acquisition": 0.6363636363636364,
+                "wrong_neighbor_sham_acquisition": 0.5454545454545454,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": -0.09090909090909094
+              }
+            }
+          },
+          {
+            "map_index": 29,
+            "events": 8,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.25,
+                "noop_acquisition": 0.25,
+                "sender_rollback_acquisition": 0.125,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.125,
+                "sham_minus_sender": -0.125
+              },
+              "4": {
+                "native_acquisition": 0.625,
+                "noop_acquisition": 0.625,
+                "sender_rollback_acquisition": 0.375,
+                "wrong_neighbor_sham_acquisition": 0.5,
+                "native_minus_sender": 0.25,
+                "sham_minus_sender": 0.125
+              }
+            }
+          },
+          {
+            "map_index": 30,
+            "events": 10,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.0,
+                "noop_acquisition": 0.0,
+                "sender_rollback_acquisition": 0.0,
+                "wrong_neighbor_sham_acquisition": 0.0,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              },
+              "4": {
+                "native_acquisition": 0.6,
+                "noop_acquisition": 0.6,
+                "sender_rollback_acquisition": 0.3,
+                "wrong_neighbor_sham_acquisition": 0.3,
+                "native_minus_sender": 0.3,
+                "sham_minus_sender": 0.0
+              }
+            }
+          },
+          {
+            "map_index": 31,
+            "events": 7,
+            "horizons": {
+              "1": {
+                "native_acquisition": 0.2857142857142857,
+                "noop_acquisition": 0.2857142857142857,
+                "sender_rollback_acquisition": 0.2857142857142857,
+                "wrong_neighbor_sham_acquisition": 0.14285714285714285,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": -0.14285714285714285
+              },
+              "4": {
+                "native_acquisition": 0.7142857142857143,
+                "noop_acquisition": 0.7142857142857143,
+                "sender_rollback_acquisition": 0.7142857142857143,
+                "wrong_neighbor_sham_acquisition": 0.7142857142857143,
+                "native_minus_sender": 0.0,
+                "sham_minus_sender": 0.0
+              }
+            }
+          }
+        ],
+        "horizons": {
+          "1": {
+            "native_acquisition": 0.227984112661532,
+            "noop_acquisition": 0.227984112661532,
+            "sender_rollback_acquisition": 0.15794966682063455,
+            "wrong_neighbor_sham_acquisition": 0.1623403478242188,
+            "native_minus_sender_rollback": 0.07003444584089745,
+            "sham_minus_sender_rollback": 0.00439068100358423
+          },
+          "4": {
+            "native_acquisition": 0.7471028971028973,
+            "noop_acquisition": 0.7471028971028973,
+            "sender_rollback_acquisition": 0.4610946401268982,
+            "wrong_neighbor_sham_acquisition": 0.6143460482170161,
+            "native_minus_sender_rollback": 0.28600825697599896,
+            "sham_minus_sender_rollback": 0.1532514080901178
+          }
+        }
+      }
+    },
+    "primary_signal_thresholds_met": false,
+    "primary_signal_definition": "Both sizes: native\u2212sender >=0.10 and sham\u2212sender >=0.05 at step 1 after qualification.",
+    "scientific_status": "NO_PRIMARY_THRESHOLD_SIGNAL",
+    "replay": {
+      "status": "PASS",
+      "size_horizon_records": 6,
+      "integer_leaves": 5628,
+      "float_leaves": 2636,
+      "maximum_absolute_error": 0.0,
+      "comparison": "stream_path_audit.compare_tree with frozen stream_path_audit.evaluate/phase2 score"
+    },
+    "parameters_unchanged": true,
+    "checkpoint_unchanged": true,
+    "interpretation": "Selected-checkpoint local temporal W/Z intervention; not direct edge-message knockout, causal flood fill, unique-edge proof or semantic attribution.",
+    "elapsed_seconds": 29.890000000000327,
+    "model_replications": 1
+  },
+  "scope": "Conditional selected initialization, one bank/recipe; four schedules and four paired directions, one selected C checkpoint."
+}

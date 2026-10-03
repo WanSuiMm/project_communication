@@ -1,0 +1,1458 @@
+{
+  "status": "COMPLETE",
+  "training": false,
+  "event_counts": {
+    "32": {
+      "events": 93,
+      "eligible_maps": 31,
+      "events_by_time": {
+        "16": 31,
+        "32": 41,
+        "64": 18,
+        "128": 3
+      }
+    },
+    "64": {
+      "events": 257,
+      "eligible_maps": 31,
+      "events_by_time": {
+        "16": 41,
+        "32": 109,
+        "64": 73,
+        "128": 34
+      }
+    }
+  },
+  "sizes": {
+    "32": {
+      "size": 32,
+      "event_count": 93,
+      "eligible_map_count": 31,
+      "per_map": [
+        {
+          "map_index": 0,
+          "events": 3,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.6666666666666666,
+              "wrong_neighbor_sham_acquisition": 0.6666666666666666,
+              "native_minus_sender": 0.33333333333333337,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 1,
+          "events": 4,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.75,
+              "noop_acquisition": 0.75,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.25,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 2,
+          "events": 7,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.2857142857142857,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.7142857142857143,
+              "sham_minus_sender": 0.7142857142857143
+            }
+          }
+        },
+        {
+          "map_index": 3,
+          "events": 2,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 1.0,
+              "sham_minus_sender": 1.0
+            }
+          }
+        },
+        {
+          "map_index": 4,
+          "events": 3,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.3333333333333333,
+              "noop_acquisition": 0.3333333333333333,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+              "native_minus_sender": 0.3333333333333333,
+              "sham_minus_sender": 0.3333333333333333
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 5,
+          "events": 1,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 6,
+          "events": 2,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 8,
+          "events": 5,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.2,
+              "noop_acquisition": 0.2,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.2,
+              "native_minus_sender": 0.2,
+              "sham_minus_sender": 0.2
+            }
+          }
+        },
+        {
+          "map_index": 9,
+          "events": 4,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.75,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.25,
+              "sham_minus_sender": 0.25
+            }
+          }
+        },
+        {
+          "map_index": 10,
+          "events": 3,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.3333333333333333,
+              "noop_acquisition": 0.3333333333333333,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.3333333333333333,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.6666666666666666,
+              "noop_acquisition": 0.6666666666666666,
+              "sender_rollback_acquisition": 0.3333333333333333,
+              "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+              "native_minus_sender": 0.3333333333333333,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 11,
+          "events": 2,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 1.0,
+              "sham_minus_sender": 1.0
+            }
+          }
+        },
+        {
+          "map_index": 12,
+          "events": 4,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.25,
+              "wrong_neighbor_sham_acquisition": 0.75,
+              "native_minus_sender": 0.75,
+              "sham_minus_sender": 0.5
+            }
+          }
+        },
+        {
+          "map_index": 13,
+          "events": 1,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 14,
+          "events": 2,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 15,
+          "events": 1,
+          "horizons": {
+            "1": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 1.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 16,
+          "events": 3,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.3333333333333333,
+              "noop_acquisition": 0.3333333333333333,
+              "sender_rollback_acquisition": 0.3333333333333333,
+              "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 17,
+          "events": 5,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.8,
+              "noop_acquisition": 0.8,
+              "sender_rollback_acquisition": 0.2,
+              "wrong_neighbor_sham_acquisition": 0.4,
+              "native_minus_sender": 0.6000000000000001,
+              "sham_minus_sender": 0.2
+            }
+          }
+        },
+        {
+          "map_index": 18,
+          "events": 4,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.25,
+              "wrong_neighbor_sham_acquisition": 0.25,
+              "native_minus_sender": 0.25,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 19,
+          "events": 2,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 20,
+          "events": 6,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.8333333333333334,
+              "noop_acquisition": 0.8333333333333334,
+              "sender_rollback_acquisition": 0.6666666666666666,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.16666666666666674,
+              "sham_minus_sender": -0.16666666666666663
+            }
+          }
+        },
+        {
+          "map_index": 21,
+          "events": 3,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.3333333333333333,
+              "noop_acquisition": 0.3333333333333333,
+              "sender_rollback_acquisition": 0.3333333333333333,
+              "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.6666666666666666,
+              "wrong_neighbor_sham_acquisition": 0.6666666666666666,
+              "native_minus_sender": 0.33333333333333337,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 22,
+          "events": 7,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.7142857142857143,
+              "noop_acquisition": 0.7142857142857143,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.14285714285714285,
+              "native_minus_sender": 0.7142857142857143,
+              "sham_minus_sender": 0.14285714285714285
+            }
+          }
+        },
+        {
+          "map_index": 23,
+          "events": 1,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 24,
+          "events": 2,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.5
+            }
+          }
+        },
+        {
+          "map_index": 25,
+          "events": 4,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.25,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.25
+            }
+          }
+        },
+        {
+          "map_index": 26,
+          "events": 1,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 27,
+          "events": 3,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.3333333333333333,
+              "noop_acquisition": 0.3333333333333333,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+              "native_minus_sender": 0.3333333333333333,
+              "sham_minus_sender": 0.3333333333333333
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.6666666666666666,
+              "wrong_neighbor_sham_acquisition": 0.6666666666666666,
+              "native_minus_sender": 0.33333333333333337,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 28,
+          "events": 2,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 29,
+          "events": 3,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.3333333333333333,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.6666666666666667,
+              "sham_minus_sender": 0.6666666666666667
+            }
+          }
+        },
+        {
+          "map_index": 30,
+          "events": 2,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.5
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 31,
+          "events": 1,
+          "horizons": {
+            "1": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 1.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 1.0,
+              "sham_minus_sender": 1.0
+            }
+          }
+        }
+      ],
+      "horizons": {
+        "1": {
+          "native_acquisition": 0.15591397849462368,
+          "noop_acquisition": 0.15591397849462368,
+          "sender_rollback_acquisition": 0.01075268817204301,
+          "wrong_neighbor_sham_acquisition": 0.04838709677419355,
+          "native_minus_sender_rollback": 0.14516129032258066,
+          "sham_minus_sender_rollback": 0.03763440860215053
+        },
+        "4": {
+          "native_acquisition": 0.8483102918586789,
+          "noop_acquisition": 0.8483102918586789,
+          "sender_rollback_acquisition": 0.5129800307219662,
+          "wrong_neighbor_sham_acquisition": 0.7148233486943164,
+          "native_minus_sender_rollback": 0.33533026113671277,
+          "sham_minus_sender_rollback": 0.20184331797235025
+        }
+      }
+    },
+    "64": {
+      "size": 64,
+      "event_count": 257,
+      "eligible_map_count": 31,
+      "per_map": [
+        {
+          "map_index": 0,
+          "events": 9,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.4444444444444444,
+              "noop_acquisition": 0.4444444444444444,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.2222222222222222,
+              "native_minus_sender": 0.4444444444444444,
+              "sham_minus_sender": 0.2222222222222222
+            },
+            "4": {
+              "native_acquisition": 0.7777777777777778,
+              "noop_acquisition": 0.7777777777777778,
+              "sender_rollback_acquisition": 0.6666666666666666,
+              "wrong_neighbor_sham_acquisition": 0.7777777777777778,
+              "native_minus_sender": 0.11111111111111116,
+              "sham_minus_sender": 0.11111111111111116
+            }
+          }
+        },
+        {
+          "map_index": 1,
+          "events": 9,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.3333333333333333,
+              "noop_acquisition": 0.3333333333333333,
+              "sender_rollback_acquisition": 0.3333333333333333,
+              "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.5555555555555556,
+              "noop_acquisition": 0.5555555555555556,
+              "sender_rollback_acquisition": 0.4444444444444444,
+              "wrong_neighbor_sham_acquisition": 0.4444444444444444,
+              "native_minus_sender": 0.11111111111111116,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 2,
+          "events": 4,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 0.75,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.25
+            }
+          }
+        },
+        {
+          "map_index": 3,
+          "events": 2,
+          "horizons": {
+            "1": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 4,
+          "events": 10,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.3,
+              "noop_acquisition": 0.3,
+              "sender_rollback_acquisition": 0.1,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.19999999999999998,
+              "sham_minus_sender": -0.1
+            },
+            "4": {
+              "native_acquisition": 0.9,
+              "noop_acquisition": 0.9,
+              "sender_rollback_acquisition": 0.7,
+              "wrong_neighbor_sham_acquisition": 0.7,
+              "native_minus_sender": 0.20000000000000007,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 5,
+          "events": 5,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.4,
+              "noop_acquisition": 0.4,
+              "sender_rollback_acquisition": 0.4,
+              "wrong_neighbor_sham_acquisition": 0.4,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 1.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 6,
+          "events": 10,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.2,
+              "noop_acquisition": 0.2,
+              "sender_rollback_acquisition": 0.1,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.1,
+              "sham_minus_sender": -0.1
+            },
+            "4": {
+              "native_acquisition": 0.9,
+              "noop_acquisition": 0.9,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 0.6,
+              "native_minus_sender": 0.4,
+              "sham_minus_sender": 0.09999999999999998
+            }
+          }
+        },
+        {
+          "map_index": 7,
+          "events": 9,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.2222222222222222,
+              "noop_acquisition": 0.2222222222222222,
+              "sender_rollback_acquisition": 0.2222222222222222,
+              "wrong_neighbor_sham_acquisition": 0.1111111111111111,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": -0.1111111111111111
+            },
+            "4": {
+              "native_acquisition": 0.6666666666666666,
+              "noop_acquisition": 0.6666666666666666,
+              "sender_rollback_acquisition": 0.4444444444444444,
+              "wrong_neighbor_sham_acquisition": 0.5555555555555556,
+              "native_minus_sender": 0.2222222222222222,
+              "sham_minus_sender": 0.11111111111111116
+            }
+          }
+        },
+        {
+          "map_index": 9,
+          "events": 7,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.14285714285714285,
+              "noop_acquisition": 0.14285714285714285,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.14285714285714285,
+              "native_minus_sender": 0.14285714285714285,
+              "sham_minus_sender": 0.14285714285714285
+            },
+            "4": {
+              "native_acquisition": 0.7142857142857143,
+              "noop_acquisition": 0.7142857142857143,
+              "sender_rollback_acquisition": 0.42857142857142855,
+              "wrong_neighbor_sham_acquisition": 0.5714285714285714,
+              "native_minus_sender": 0.28571428571428575,
+              "sham_minus_sender": 0.14285714285714285
+            }
+          }
+        },
+        {
+          "map_index": 10,
+          "events": 13,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.07692307692307693,
+              "noop_acquisition": 0.07692307692307693,
+              "sender_rollback_acquisition": 0.07692307692307693,
+              "wrong_neighbor_sham_acquisition": 0.07692307692307693,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.6153846153846154,
+              "noop_acquisition": 0.6153846153846154,
+              "sender_rollback_acquisition": 0.46153846153846156,
+              "wrong_neighbor_sham_acquisition": 0.46153846153846156,
+              "native_minus_sender": 0.15384615384615385,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 11,
+          "events": 1,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 1.0,
+              "sham_minus_sender": 1.0
+            }
+          }
+        },
+        {
+          "map_index": 12,
+          "events": 14,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.21428571428571427,
+              "noop_acquisition": 0.21428571428571427,
+              "sender_rollback_acquisition": 0.07142857142857142,
+              "wrong_neighbor_sham_acquisition": 0.07142857142857142,
+              "native_minus_sender": 0.14285714285714285,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.7142857142857143,
+              "noop_acquisition": 0.7142857142857143,
+              "sender_rollback_acquisition": 0.42857142857142855,
+              "wrong_neighbor_sham_acquisition": 0.5714285714285714,
+              "native_minus_sender": 0.28571428571428575,
+              "sham_minus_sender": 0.14285714285714285
+            }
+          }
+        },
+        {
+          "map_index": 13,
+          "events": 11,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.2727272727272727,
+              "noop_acquisition": 0.2727272727272727,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.09090909090909091,
+              "native_minus_sender": 0.2727272727272727,
+              "sham_minus_sender": 0.09090909090909091
+            }
+          }
+        },
+        {
+          "map_index": 14,
+          "events": 8,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.125,
+              "noop_acquisition": 0.125,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.125,
+              "native_minus_sender": 0.125,
+              "sham_minus_sender": 0.125
+            },
+            "4": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.375,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.125,
+              "sham_minus_sender": 0.125
+            }
+          }
+        },
+        {
+          "map_index": 15,
+          "events": 10,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.2,
+              "noop_acquisition": 0.2,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.1,
+              "native_minus_sender": 0.2,
+              "sham_minus_sender": 0.1
+            },
+            "4": {
+              "native_acquisition": 0.9,
+              "noop_acquisition": 0.9,
+              "sender_rollback_acquisition": 0.4,
+              "wrong_neighbor_sham_acquisition": 0.8,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.4
+            }
+          }
+        },
+        {
+          "map_index": 16,
+          "events": 8,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.375,
+              "noop_acquisition": 0.375,
+              "sender_rollback_acquisition": 0.125,
+              "wrong_neighbor_sham_acquisition": 0.375,
+              "native_minus_sender": 0.25,
+              "sham_minus_sender": 0.25
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.875,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.125,
+              "sham_minus_sender": 0.125
+            }
+          }
+        },
+        {
+          "map_index": 17,
+          "events": 8,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.25,
+              "noop_acquisition": 0.25,
+              "sender_rollback_acquisition": 0.25,
+              "wrong_neighbor_sham_acquisition": 0.25,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.625,
+              "noop_acquisition": 0.625,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.125,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 18,
+          "events": 6,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.6666666666666666,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.33333333333333337,
+              "sham_minus_sender": 0.33333333333333337
+            }
+          }
+        },
+        {
+          "map_index": 19,
+          "events": 4,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.25,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.25
+            }
+          }
+        },
+        {
+          "map_index": 20,
+          "events": 6,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.16666666666666666,
+              "wrong_neighbor_sham_acquisition": 0.3333333333333333,
+              "native_minus_sender": 0.8333333333333334,
+              "sham_minus_sender": 0.16666666666666666
+            }
+          }
+        },
+        {
+          "map_index": 21,
+          "events": 8,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.25,
+              "noop_acquisition": 0.25,
+              "sender_rollback_acquisition": 0.125,
+              "wrong_neighbor_sham_acquisition": 0.125,
+              "native_minus_sender": 0.125,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.875,
+              "noop_acquisition": 0.875,
+              "sender_rollback_acquisition": 0.375,
+              "wrong_neighbor_sham_acquisition": 0.625,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.25
+            }
+          }
+        },
+        {
+          "map_index": 22,
+          "events": 8,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.25,
+              "noop_acquisition": 0.25,
+              "sender_rollback_acquisition": 0.25,
+              "wrong_neighbor_sham_acquisition": 0.25,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.5,
+              "noop_acquisition": 0.5,
+              "sender_rollback_acquisition": 0.25,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.25,
+              "sham_minus_sender": 0.25
+            }
+          }
+        },
+        {
+          "map_index": 23,
+          "events": 10,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.1,
+              "noop_acquisition": 0.1,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.1,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.8,
+              "noop_acquisition": 0.8,
+              "sender_rollback_acquisition": 0.3,
+              "wrong_neighbor_sham_acquisition": 0.4,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.10000000000000003
+            }
+          }
+        },
+        {
+          "map_index": 24,
+          "events": 14,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.42857142857142855,
+              "noop_acquisition": 0.42857142857142855,
+              "sender_rollback_acquisition": 0.35714285714285715,
+              "wrong_neighbor_sham_acquisition": 0.35714285714285715,
+              "native_minus_sender": 0.0714285714285714,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 25,
+          "events": 16,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.125,
+              "noop_acquisition": 0.125,
+              "sender_rollback_acquisition": 0.25,
+              "wrong_neighbor_sham_acquisition": 0.125,
+              "native_minus_sender": -0.125,
+              "sham_minus_sender": -0.125
+            },
+            "4": {
+              "native_acquisition": 0.625,
+              "noop_acquisition": 0.625,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 0.625,
+              "native_minus_sender": 0.125,
+              "sham_minus_sender": 0.125
+            }
+          }
+        },
+        {
+          "map_index": 26,
+          "events": 4,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.75,
+              "noop_acquisition": 0.75,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.25,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 1.0,
+              "noop_acquisition": 1.0,
+              "sender_rollback_acquisition": 0.5,
+              "wrong_neighbor_sham_acquisition": 1.0,
+              "native_minus_sender": 0.5,
+              "sham_minus_sender": 0.5
+            }
+          }
+        },
+        {
+          "map_index": 27,
+          "events": 7,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.7142857142857143,
+              "noop_acquisition": 0.7142857142857143,
+              "sender_rollback_acquisition": 0.42857142857142855,
+              "wrong_neighbor_sham_acquisition": 0.5714285714285714,
+              "native_minus_sender": 0.28571428571428575,
+              "sham_minus_sender": 0.14285714285714285
+            }
+          }
+        },
+        {
+          "map_index": 28,
+          "events": 11,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.2727272727272727,
+              "noop_acquisition": 0.2727272727272727,
+              "sender_rollback_acquisition": 0.18181818181818182,
+              "wrong_neighbor_sham_acquisition": 0.18181818181818182,
+              "native_minus_sender": 0.09090909090909088,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.6363636363636364,
+              "noop_acquisition": 0.6363636363636364,
+              "sender_rollback_acquisition": 0.6363636363636364,
+              "wrong_neighbor_sham_acquisition": 0.5454545454545454,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": -0.09090909090909094
+            }
+          }
+        },
+        {
+          "map_index": 29,
+          "events": 8,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.25,
+              "noop_acquisition": 0.25,
+              "sender_rollback_acquisition": 0.125,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.125,
+              "sham_minus_sender": -0.125
+            },
+            "4": {
+              "native_acquisition": 0.625,
+              "noop_acquisition": 0.625,
+              "sender_rollback_acquisition": 0.375,
+              "wrong_neighbor_sham_acquisition": 0.5,
+              "native_minus_sender": 0.25,
+              "sham_minus_sender": 0.125
+            }
+          }
+        },
+        {
+          "map_index": 30,
+          "events": 10,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.0,
+              "noop_acquisition": 0.0,
+              "sender_rollback_acquisition": 0.0,
+              "wrong_neighbor_sham_acquisition": 0.0,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            },
+            "4": {
+              "native_acquisition": 0.6,
+              "noop_acquisition": 0.6,
+              "sender_rollback_acquisition": 0.3,
+              "wrong_neighbor_sham_acquisition": 0.3,
+              "native_minus_sender": 0.3,
+              "sham_minus_sender": 0.0
+            }
+          }
+        },
+        {
+          "map_index": 31,
+          "events": 7,
+          "horizons": {
+            "1": {
+              "native_acquisition": 0.2857142857142857,
+              "noop_acquisition": 0.2857142857142857,
+              "sender_rollback_acquisition": 0.2857142857142857,
+              "wrong_neighbor_sham_acquisition": 0.14285714285714285,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": -0.14285714285714285
+            },
+            "4": {
+              "native_acquisition": 0.7142857142857143,
+              "noop_acquisition": 0.7142857142857143,
+              "sender_rollback_acquisition": 0.7142857142857143,
+              "wrong_neighbor_sham_acquisition": 0.7142857142857143,
+              "native_minus_sender": 0.0,
+              "sham_minus_sender": 0.0
+            }
+          }
+        }
+      ],
+      "horizons": {
+        "1": {
+          "native_acquisition": 0.227984112661532,
+          "noop_acquisition": 0.227984112661532,
+          "sender_rollback_acquisition": 0.15794966682063455,
+          "wrong_neighbor_sham_acquisition": 0.1623403478242188,
+          "native_minus_sender_rollback": 0.07003444584089745,
+          "sham_minus_sender_rollback": 0.00439068100358423
+        },
+        "4": {
+          "native_acquisition": 0.7471028971028973,
+          "noop_acquisition": 0.7471028971028973,
+          "sender_rollback_acquisition": 0.4610946401268982,
+          "wrong_neighbor_sham_acquisition": 0.6143460482170161,
+          "native_minus_sender_rollback": 0.28600825697599896,
+          "sham_minus_sender_rollback": 0.1532514080901178
+        }
+      }
+    }
+  },
+  "primary_signal_thresholds_met": false,
+  "primary_signal_definition": "Both sizes: native\u2212sender >=0.10 and sham\u2212sender >=0.05 at step 1 after qualification.",
+  "scientific_status": "NO_PRIMARY_THRESHOLD_SIGNAL",
+  "replay": {
+    "status": "PASS",
+    "size_horizon_records": 6,
+    "integer_leaves": 5628,
+    "float_leaves": 2636,
+    "maximum_absolute_error": 0.0,
+    "comparison": "stream_path_audit.compare_tree with frozen stream_path_audit.evaluate/phase2 score"
+  },
+  "parameters_unchanged": true,
+  "checkpoint_unchanged": true,
+  "interpretation": "Selected-checkpoint local temporal W/Z intervention; not direct edge-message knockout, causal flood fill, unique-edge proof or semantic attribution.",
+  "elapsed_seconds": 29.890000000000327,
+  "model_replications": 1
+}
