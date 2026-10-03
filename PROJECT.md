@@ -1,6 +1,57 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Latest completed experiment (2026-10-03): detached warm-start training-state
+Latest completed experiment (2026-10-03): historical seed4 dense
+update100--200 transition audit, new/transition_100_200/PROTOCOL.md
+(seed4_dense_transition_v1). Original architecture and original K8 helper,
+bank10002/schedule20002/init4 unchanged. Replay300 updates to verify exact
+historical anchors0/100/200/300 and all six final historical endpoints;
+save100,105,...,200 plus0/300. After training, audit22 checkpoints on fixed
+16-map size32/64 banks61032/61064, paired rollout0..256. Preserve raw Boolean
+traces, signed margins, state RMS, exact turnover and censoring-aware survival.
+This is one selected training trajectory; no latent commitment, type closure,
+causal handoff or physical phase transition is established by a profile change.
+CPU01 passed67 source bindings, four historical reference checkpoint hashes
+and five hand-computed metric fixtures. CUDA preflight01 passed three updates,
+six finite/nonzero gradient groups and both full256-step paired smoke audits;
+peak allocated110959616 bytes, estimated formal357.03 seconds (descriptive).
+Formal dispatch verified the first optimizer update. No runtime limit,
+watchdog or continuing monitor. Run: runs/transition_20261003_seed4_dense01.
+Independent post-dispatch CPU receipt at
+analyses/transition_20261003_dispatch_bindings01.json additionally verifies
+both historical evaluation-bank hashes, both saved audit banks, three prior
+stage-summary checkpoint bindings and the recorded historical GPU model;
+this supplements evidence without modifying the frozen running source.
+COMPLETE300 updates,44 audits in353.141 seconds; training112.687 seconds.
+Process ended with empty stderr and successful launch-session exit. Anchors
+0/100/200/300 and all six complete historical endpoint payloads replay
+exactly (5628 integer,2636 floating leaves, maximum error0). Size32 shows
+noisy improvement, a marked collapse at180, then strong preservation at200:
+195->200 strict T12885.65%->97.55%, first-exit64->1285.15%->0.032%, continuous
+survival64->25694.53%->99.97%. Only200 passes the descriptive screen inside
+the dense window;205/210 were not observed. Persistent three-checkpoint
+onset is therefore unestablished; no new architecture qualification follows.
+Canonical public entry: evidence/transition_20261003/RESULTS.md and summary.json.
+Saved-artifact CPU validation passes 451 checks: 67 live source and 67 snapshot
+hashes, 23 checkpoints, 44 raw trace hashes and behavior recomputations, all
+historical anchors/endpoints and three prior stage summaries. Counts match
+exactly; maximum numeric error is 6.38e-8 within 2e-7. The first validator report
+is retained locally: an absent-field lookup in the older public manifest and
+a check-status serialization collision were corrected by cheap binding
+finalization. All 44 metric recomputations come from the first full pass;
+experimental outputs are unchanged. Recorded RMS/BCE are finite but cannot
+be recomputed without hidden-state/logit arrays.
+Full trajectory/checkpoint data stay local. Canonical executed commands:
+
+    python -X utf8 -B new/transition_100_200/check.py --out analyses/NEW_TRANSITION_CPU.json
+    python -X utf8 -u -B new/transition_100_200/run.py --preflight --qualification analyses/NEW_TRANSITION_CPU.json --out runs/NEW_TRANSITION_PREFLIGHT
+    pwsh -File tools/launch_transition_100_200.ps1 -RunName NEW_TRANSITION_RUN -Preflight runs/NEW_TRANSITION_PREFLIGHT
+
+For a fresh clone without original checkpoint archives, use the explicitly
+declared public-reference adapter described in
+evidence/transition_20261003/REPRODUCTION.md. It checks published parameter
+hashes and public stage counts, not unavailable original checkpoint bytes.
+
+Preceding completed experiment (2026-10-03): detached warm-start training-state
 distribution control for the ORIGINAL StreamingCell, frozen at
 new/warmstart/PROTOCOL.md (detached_warmstart_v1_nocap). Four paired
 initializations2/3/4/5, baseline versus warmstart, eight arms300 updates each.

@@ -1,0 +1,84 @@
+{
+  "schema_version": "transition-run-metadata-v1",
+  "protocol": "seed4_dense_transition_v1",
+  "execution_status": "COMPLETE",
+  "completed_updates": 300,
+  "completed_audits": 44,
+  "selected_training_runs": 1,
+  "seed": 4,
+  "train_seed": 10002,
+  "schedule_seed": 20002,
+  "gradient_horizon": 8,
+  "forward_steps": 64,
+  "audit_banks": {
+    "32": {
+      "maps": 16,
+      "seed": 61032,
+      "tensor_sha256": "67cdd639f4703ed9d5ffa456bf05aa820c3064271f26b35625f072ec988e30f2"
+    },
+    "64": {
+      "maps": 16,
+      "seed": 61064,
+      "tensor_sha256": "d9f8fd09af083496c7675dda2e8af2fd4441646e58984d956aef28c4057a2e39"
+    }
+  },
+  "dense_audit_updates": [
+    100,
+    105,
+    110,
+    115,
+    120,
+    125,
+    130,
+    135,
+    140,
+    145,
+    150,
+    155,
+    160,
+    165,
+    170,
+    175,
+    180,
+    185,
+    190,
+    195,
+    200
+  ],
+  "separate_control_update": 300,
+  "profile_sizes": [
+    32,
+    64
+  ],
+  "strict_endpoint_steps": [
+    64,
+    128,
+    256
+  ],
+  "reference_validation": {
+    "historical_replay_status": "PASS",
+    "baseline_anchor_parameter_sha256": {
+      "0": "dfae347d1e08f43ac02bacc1f6facbad5644f30b7fc060a6ebd29612d92ebf8a",
+      "100": "a17a4e7d3c39aaad828d032c08cc0fe3e6d955c82a9a755d9803cccf07c6be89",
+      "200": "95c29b189257a70d050a10ce7da961fcc264864f2b61b128e497b2c2b2b26478",
+      "300": "6b4e2ceddddea98b16250fd5218ee0abd54dabe6e315d7d632aea8880a54c0c3"
+    },
+    "reference_record_sha256": "53a089d2be5622f8aadd72c8a2e55d68144c2fd1863c0aa844482c8ab001c9de",
+    "historical_replay_payload_sha256": "6814f8be22040b63d9dc8e28e293aa3db3ff1d5c63520c35098afb63821c1c2f",
+    "public_replay_file_byte_verification": false,
+    "public_replay_limitation": "The original local execution verified its private historical checkpoint file bindings. A public clone cannot verify those unavailable file bytes; the public replay wrapper checks published parameter hashes against the public stage payloads instead."
+  },
+  "preflight": {
+    "passed": true,
+    "updates": 3,
+    "audited_banks": [
+      32,
+      64
+    ],
+    "map_count_per_bank": 16,
+    "all_six_parameter_groups_finite_and_nonzero_gradient": true
+  },
+  "validation_artifact_sha256": "7ff2819cd4ccb1446068f4d02f517d86c641a55320610eaad56bc356826313a0",
+  "source_base_commit": "e142f224ad03f9bde9894dfcf80cf41411744f6e",
+  "machine_and_dispatch_receipts": "omitted"
+}

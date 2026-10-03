@@ -1,0 +1,361 @@
+{
+  "schema_version": "transition-checkpoint-public-v1",
+  "update": 190,
+  "size": 32,
+  "parameter_sha256": "12653a1fe3bb2afefd82bfa5c94eb368ebaa685fdf0626a564e906b00fd91b8b",
+  "trace_sha256": "0c73f490f9efd053d6e8436651dabb9766c2b2e00011cb3d7330d1b82ed97481",
+  "audit_bank_sha256": "67cdd639f4703ed9d5ffa456bf05aa820c3064271f26b35625f072ec988e30f2",
+  "steps": 256,
+  "finite": true,
+  "light_cone": true,
+  "strict_endpoint_profiles": {
+    "64": {
+      "strict_coverage": {
+        "equal_map_mean": 0.25438976338890207,
+        "pooled_rate": 0.24312267657992565
+      },
+      "original_BA_equal_map": 0.895002007484436,
+      "flipped_BA_equal_map": 0.9030700922012329,
+      "original_BCE_balanced": 0.440763920545578,
+      "flipped_BCE_balanced": 0.42944201827049255,
+      "paired_margin_quantiles": [
+        -5.683706283569336,
+        -5.584110260009766,
+        0.40285342931747437,
+        2.695021486282349,
+        4.257302761077881
+      ]
+    },
+    "128": {
+      "strict_coverage": {
+        "equal_map_mean": 0.6245000903803396,
+        "pooled_rate": 0.5747211895910781
+      },
+      "original_BA_equal_map": 0.9386450052261353,
+      "flipped_BA_equal_map": 0.9422374963760376,
+      "original_BCE_balanced": 0.366361141204834,
+      "flipped_BCE_balanced": 0.4015842080116272,
+      "paired_margin_quantiles": [
+        -9.865235328674316,
+        -9.614029121398925,
+        1.6080516576766968,
+        4.592420864105226,
+        6.901529312133789
+      ]
+    },
+    "256": {
+      "strict_coverage": {
+        "equal_map_mean": 0.9407842304203469,
+        "pooled_rate": 0.9048327137546468
+      },
+      "original_BA_equal_map": 0.9763745069503784,
+      "flipped_BA_equal_map": 0.9696434736251831,
+      "original_BCE_balanced": 0.23544979095458984,
+      "flipped_BCE_balanced": 0.35602718591690063,
+      "paired_margin_quantiles": [
+        -17.02745819091797,
+        -8.646732902526855,
+        4.412774085998535,
+        7.755718231201172,
+        12.206344604492188
+      ]
+    }
+  },
+  "screen": {
+    "update": 190,
+    "size": 32,
+    "checks": {
+      "strict128_pooled": false,
+      "strict128_equal_map": false,
+      "g64_128": true,
+      "first_exit64_128": false,
+      "survival64_256": false
+    },
+    "descriptive_screen": false,
+    "prespecified_primary_screen": true,
+    "size64_is_secondary_projection": false
+  },
+  "all_changed_transition_profiles": {
+    "64_128": {
+      "from_step": 64,
+      "to_step": 128,
+      "available": true,
+      "acquisition": {
+        "equal_map_mean": 0.5368232691513348,
+        "equal_map_eligible_maps": 16,
+        "pooled_numerator": 600,
+        "pooled_denominator": 1704,
+        "pooled_rate": 0.352112676056338
+      },
+      "endpoint_destruction": {
+        "equal_map_mean": 0.020490157280465215,
+        "equal_map_eligible_maps": 16,
+        "pooled_numerator": 50,
+        "pooled_denominator": 2389,
+        "pooled_rate": 0.020929259104227712
+      },
+      "first_exit": {
+        "equal_map_mean": 0.055255157016708925,
+        "equal_map_eligible_maps": 16,
+        "pooled_numerator": 134,
+        "pooled_denominator": 2389,
+        "pooled_rate": 0.05609041439933026
+      },
+      "continuous_survival": {
+        "equal_map_mean": 0.9447448429832911,
+        "equal_map_eligible_maps": 16,
+        "pooled_numerator": 2255,
+        "pooled_denominator": 2389,
+        "pooled_rate": 0.9439095856006697
+      },
+      "net_gain": {
+        "equal_map_mean": 0.13113453015167542,
+        "equal_map_eligible_maps": 16,
+        "pooled_numerator": 550,
+        "pooled_denominator": 4093,
+        "pooled_rate": 0.13437576349865624
+      },
+      "net_gain_weighting": "pooled_rate is weighted by each map's selected pixel count; equal_map_mean averages map rates",
+      "identity": {
+        "pooled_net_change": 550,
+        "pooled_acquired_minus_endpoint_destroyed": 550,
+        "accounting_error": 0
+      }
+    },
+    "64_256": {
+      "from_step": 64,
+      "to_step": 256,
+      "available": true,
+      "acquisition": {
+        "equal_map_mean": 0.8141749922861321,
+        "equal_map_eligible_maps": 16,
+        "pooled_numerator": 1112,
+        "pooled_denominator": 1704,
+        "pooled_rate": 0.6525821596244131
+      },
+      "endpoint_destruction": {
+        "equal_map_mean": 0.0009144232815492658,
+        "equal_map_eligible_maps": 16,
+        "pooled_numerator": 3,
+        "pooled_denominator": 2389,
+        "pooled_rate": 0.0012557555462536626
+      },
+      "first_exit": {
+        "equal_map_mean": 0.055255157016708925,
+        "equal_map_eligible_maps": 16,
+        "pooled_numerator": 134,
+        "pooled_denominator": 2389,
+        "pooled_rate": 0.05609041439933026
+      },
+      "continuous_survival": {
+        "equal_map_mean": 0.9447448429832911,
+        "equal_map_eligible_maps": 16,
+        "pooled_numerator": 2255,
+        "pooled_denominator": 2389,
+        "pooled_rate": 0.9439095856006697
+      },
+      "net_gain": {
+        "equal_map_mean": 0.249823521892597,
+        "equal_map_eligible_maps": 16,
+        "pooled_numerator": 1109,
+        "pooled_denominator": 4093,
+        "pooled_rate": 0.2709504031272905
+      },
+      "net_gain_weighting": "pooled_rate is weighted by each map's selected pixel count; equal_map_mean averages map rates",
+      "identity": {
+        "pooled_net_change": 1109,
+        "pooled_acquired_minus_endpoint_destroyed": 1109,
+        "accounting_error": 0
+      }
+    }
+  },
+  "primary_cohort_timing_and_retention": {
+    "cohort": "changed, non-source cells with 16 < BFS distance < 32",
+    "first_acquisition": {
+      "definition": "first observed correct step within the finite trace",
+      "equal_map_mean_of_map_medians": 93.36666666666666,
+      "equal_map_eligible_maps": 15,
+      "pooled_ever_correct": 1250,
+      "pooled_median_first_correct_time": 91.0,
+      "pooled_never_correct": 95
+    },
+    "fixed_lag_first_correct_survival": {
+      "definition": "first-correct spell remains continuously correct through lag k; only first_time <= T-k is eligible. Never-correct cells are excluded and late first-correct cells are right-censored. This is not a latent commitment claim.",
+      "lags": [
+        {
+          "lag": 8,
+          "uninterrupted_survival": {
+            "equal_map_mean": 0.4503780029279437,
+            "equal_map_eligible_maps": 15,
+            "pooled_numerator": 731,
+            "pooled_denominator": 1246,
+            "pooled_rate": 0.586677367576244
+          },
+          "exclusions": {
+            "never_correct_pooled": 95,
+            "right_censored_pooled": 4,
+            "eligible_pooled": 1246
+          }
+        },
+        {
+          "lag": 16,
+          "uninterrupted_survival": {
+            "equal_map_mean": 0.44292049983214277,
+            "equal_map_eligible_maps": 15,
+            "pooled_numerator": 722,
+            "pooled_denominator": 1243,
+            "pooled_rate": 0.580852775543041
+          },
+          "exclusions": {
+            "never_correct_pooled": 95,
+            "right_censored_pooled": 7,
+            "eligible_pooled": 1243
+          }
+        },
+        {
+          "lag": 32,
+          "uninterrupted_survival": {
+            "equal_map_mean": 0.4307750217227159,
+            "equal_map_eligible_maps": 15,
+            "pooled_numerator": 689,
+            "pooled_denominator": 1224,
+            "pooled_rate": 0.5629084967320261
+          },
+          "exclusions": {
+            "never_correct_pooled": 95,
+            "right_censored_pooled": 26,
+            "eligible_pooled": 1224
+          }
+        },
+        {
+          "lag": 64,
+          "uninterrupted_survival": {
+            "equal_map_mean": 0.4060355108141389,
+            "equal_map_eligible_maps": 15,
+            "pooled_numerator": 618,
+            "pooled_denominator": 1176,
+            "pooled_rate": 0.5255102040816326
+          },
+          "exclusions": {
+            "never_correct_pooled": 95,
+            "right_censored_pooled": 74,
+            "eligible_pooled": 1176
+          }
+        },
+        {
+          "lag": 128,
+          "uninterrupted_survival": {
+            "equal_map_mean": 0.36485264957040686,
+            "equal_map_eligible_maps": 15,
+            "pooled_numerator": 399,
+            "pooled_denominator": 881,
+            "pooled_rate": 0.452894438138479
+          },
+          "exclusions": {
+            "never_correct_pooled": 95,
+            "right_censored_pooled": 369,
+            "eligible_pooled": 881
+          }
+        }
+      ]
+    },
+    "finite_horizon_lags": {
+      "definition": "finite-trace description only; stable time is undefined for final-wrong cells",
+      "lag_final_correct": {
+        "definition": "cellwise stable_time - first_correct_time, conditioned on correctness at T",
+        "equal_map_mean_of_map_medians": 3.933333333333333,
+        "equal_map_eligible_maps": 15,
+        "pooled_n": 1217,
+        "pooled_median": 0.0
+      },
+      "equal_map": {
+        "first_correct_median_ever_correct_mean": 93.36666666666666,
+        "first_correct_eligible_maps": 15,
+        "first_correct_median_final_correct_mean": 93.56666666666666,
+        "stable_time_median_final_correct_mean": 106.9,
+        "final_correct_eligible_maps": 15
+      },
+      "pooled": {
+        "selected_pixels": 1345,
+        "never_correct": 95,
+        "final_wrong": 128,
+        "final_correct": 1217,
+        "final_correct_conditioned_ineligible": 0,
+        "ineligible_stable_time_final_wrong": 128,
+        "first_correct_median_ever_correct": 91.0,
+        "first_correct_median_final_correct": 91.0,
+        "stable_time_median_final_correct": 115.0
+      }
+    },
+    "age_hazard": {
+      "1": {
+        "equal_map_mean": 0.7484514270709847,
+        "equal_map_eligible_maps": 15,
+        "pooled_numerator": 4401,
+        "pooled_denominator": 5829,
+        "pooled_rate": 0.755018013381369
+      },
+      "2_4": {
+        "equal_map_mean": 0.0025928106528868206,
+        "equal_map_eligible_maps": 15,
+        "pooled_numerator": 7,
+        "pooled_denominator": 4269,
+        "pooled_rate": 0.0016397282736003748
+      },
+      "5_8": {
+        "equal_map_mean": 0.003463543802820885,
+        "equal_map_eligible_maps": 15,
+        "pooled_numerator": 17,
+        "pooled_denominator": 5623,
+        "pooled_rate": 0.0030232971723279387
+      },
+      "9_16": {
+        "equal_map_mean": 0.0025742751215385483,
+        "equal_map_eligible_maps": 15,
+        "pooled_numerator": 33,
+        "pooled_denominator": 11013,
+        "pooled_rate": 0.0029964587305911197
+      },
+      "17_32": {
+        "equal_map_mean": 0.001802668393770351,
+        "equal_map_eligible_maps": 15,
+        "pooled_numerator": 52,
+        "pooled_denominator": 21030,
+        "pooled_rate": 0.0024726581074655256
+      },
+      "33_64": {
+        "equal_map_mean": 0.0013342692813284325,
+        "equal_map_eligible_maps": 15,
+        "pooled_numerator": 72,
+        "pooled_denominator": 38258,
+        "pooled_rate": 0.0018819593287678394
+      },
+      "65_128": {
+        "equal_map_mean": 0.00036608783627334356,
+        "equal_map_eligible_maps": 15,
+        "pooled_numerator": 29,
+        "pooled_denominator": 61127,
+        "pooled_rate": 0.000474422104798207
+      },
+      "129_inf": {
+        "equal_map_mean": 6.946672952178329e-05,
+        "equal_map_eligible_maps": 15,
+        "pooled_numerator": 3,
+        "pooled_denominator": 33569,
+        "pooled_rate": 8.936816705889362e-05
+      }
+    },
+    "distance_stratified_map_counts_are_in_csv": true
+  },
+  "age_hazard_definition": "cell-step next-update loss hazard; age is the current consecutive correct-run length and resets after regression",
+  "fixed_lag_definition": "first-correct spell remains continuously correct through lag k; only first_time <= T-k is eligible. Never-correct cells are excluded and late first-correct cells are right-censored. This is not a latent commitment claim.",
+  "finite_horizon_definition": "finite-trace description only; stable time is undefined for final-wrong cells",
+  "age_spell_note": "Age hazard uses each current correct run, including reacquisitions; fixed-lag survival separately follows the first-correct spell.",
+  "scope_note": "Descriptive map-level summaries. Maps are the reporting units; cells and cell-times are not independent. Finite-trace stability is descriptive and does not establish latent commitment.",
+  "omitted_redundant_or_stepwise_arrays": [
+    "map-level arrays (retained in CSV files)",
+    "coverage at each macro step",
+    "step accounting at each macro step",
+    "per-step state RMS"
+  ]
+}

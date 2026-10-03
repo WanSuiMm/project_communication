@@ -1,6 +1,60 @@
 # Context for incremental scientific review
 
-## Current screen: detached on-policy warm-start of original StreamingCell
+## Current diagnostic: historical seed4 dense update100--200 replay
+
+- Protocol: seed4_dense_transition_v1,2D only. Execution COMPLETE300 updates,
+  44 audits,353.141 seconds; training112.687 seconds. One selected seed4
+  initialization, one fixed bank10002 and schedule20002; checkpoints/maps/
+  cells/times are not independent training replications.
+- Original5033-parameter W24/Z8 StreamingCell, two-hop macro clock and
+  original K8 backward_trajectory are unchanged. No test forwards during
+  training. Save0,100,105,...,200,300; audit21 dense checkpoints plus300 control.
+- Exact initial/final and100/200 anchors; six complete historical endpoints
+  replay with5628 integer and2636 floating leaves, maximum error0. Frozen
+  source and independent input/reference bindings are retained.
+- Fixed16-map banks: size32 seed61032 (same earlier stage bank), size64
+  seed61064 (secondary scale description). Paired original/source-flipped
+  rollout0..256; raw Boolean traces and signed margins are now preserved.
+- G is endpoint wrong64->correct128 conditional on wrong64; endpoint D is
+  correct64->wrong128 conditional on correct64. First-exit D includes any
+  intermediate wrong step. Exact netgain=(1-q64)*G-q64*D uses shared counts.
+- Size32 update195->200: strict pooled T12885.65%->97.55%; first-exit
+  D64->1285.15%->0.032%; continuous survival64->25694.53%->99.97%.
+  Update180 shows a substantial temporary collapse. Retention is already
+  good on the then-correct subset at120/125, so this is not a demonstrated
+  single monotone onset of preservation.
+- Primary descriptive screen requires strict T128 equal-map AND pooled>=.80,
+  G64->128>=.20, first-exit64->128<=.01 and continuous survival64->256>=.95.
+  Only200 passes inside100--200;300 control also passes. Three consecutive
+  five-update checkpoints are required for persistent onset.205/210 are
+  unobserved, so operational_onset=null is inconclusive about persistence,
+  not a failed architecture qualification.
+- Terminal-stable minus first-correct lag is final-correct-conditioned and
+  finite-horizon. Its median is already0 at120 and remains0 at180 despite
+  the collapse (only94/1345 strict pixels final-correct). At2001345/1345
+  are final-correct. It cannot identify latent commitment by itself.
+- No contextual transplantation, causal handoff, infinite-horizon invariant,
+  physical phase transition, seed-population reliability or3D experiment
+  is supplied. Earlier multi-seed and warm-start negative decisions remain.
+- Canonical entry: evidence/transition_20261003/RESULTS.md and summary.json.
+  Detailed counts are secondary; raw NPZ/checkpoints remain local. Publication
+  performs saved-artifact CPU checks only, without new training/GPU inference.
+- Fresh-clone CPU/reference reproduction: tools/replay_transition_public.py.
+  Public mode compares new weights to published parameter hashes and actual
+  public stage JSON bytes. It explicitly does not reverify unavailable
+  original checkpoint file bytes; the executed run used the private archive.
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Frozen historical K8 loss/detach cadence | backward_trajectory | new/short_bptt/training.py |
+| Dense replay, fixed offline paired trajectories, screen | main, collect, report | new/transition_100_200/run.py |
+| Exact turnover, first exit, first-entry survival, current-run-age hazard | summarize, _interval_summary, _fixed_lag_summary, _age_hazard | new/transition_100_200/metrics.py |
+| Finite-horizon terminal lag and its exclusions | _finite_horizon_summary | new/transition_100_200/metrics.py |
+| Independent saved-result validation | main | tools/validate_transition_results.py |
+| Public-reference reproduction adapter | main | tools/replay_transition_public.py |
+| Allowlisted public evidence and CPU verification | main | tools/export_transition_evidence.py |
+
+## Preceding screen: detached on-policy warm-start of original StreamingCell
 
 - Protocol: detached_warmstart_v1_nocap. 2D only; execution COMPLETE,8 arms x300
   updates,1629.375 seconds. Decision DEVELOPMENT_NOT_QUALIFIED.

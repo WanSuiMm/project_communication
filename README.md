@@ -1,6 +1,23 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-Latest 2D screen: **detached warm-start — DEVELOPMENT_NOT_QUALIFIED**. All eight
+Latest diagnostic: **historical seed4 dense update100--200 replay completed**.
+One unchanged K8 training trajectory exactly reproduces the historical
+parameters at0/100/200/300 and all six final historical endpoint payloads.
+The21 checkpoints100,105,...,200 plus300 control give44 paired256-step
+audits on fixed16-map size32/64 banks. Total execution353.141 seconds.
+The curve improves unevenly, with a marked regression atupdate180. Between
+195 and200, size32 strict paired T128 coverage rises85.65%->97.55%,
+first-exit destruction64->128 falls5.15%->0.032%, and continuous survival
+64->256 rises94.53%->99.97%. Only200 meets the frozen descriptive screen
+within the dense window;205/210 were not sampled, so the three-consecutive
+checkpoint onset remains unestablished. This is a finite-window behavioral
+change in one selected run, not proof of latent commitment or a phase transition.
+[Latest results](evidence/transition_20261003/RESULTS.md),
+[compact profiles](evidence/transition_20261003/summary.json),
+[frozen protocol](new/transition_100_200/PROTOCOL.md), and
+[reproduction notes](evidence/transition_20261003/REPRODUCTION.md).
+
+Preceding 2D screen: **detached warm-start — DEVELOPMENT_NOT_QUALIFIED**. All eight
 paired arms completed300 updates in27.16 minutes. The four historical baseline
 replays pass exactly, and baseline seed4 qualifies on the new evaluation banks.
 Full phenotype passes are **baseline1/4 versus warmstart0/4**. Same original
@@ -160,23 +177,25 @@ update differs. [Full interpretation](evidence/workspace_revision_paired01/INTER
 
 ## Start here
 
-For incremental review from `91be5bcb957ea9c33399e06201ada65cc3132732`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
+For incremental review from `e142f224ad03f9bde9894dfcf80cf41411744f6e`, begin with [GPT_HANDOFF.md](GPT_HANDOFF.md).
 
-1. [Latest warm-start results](evidence/warmstart_20261003/RESULTS.md) and
-   [compact all-arm aggregate](evidence/warmstart_20261003/summary.json).
-2. [Frozen protocol](new/warmstart/PROTOCOL.md),
-   [training helper](new/warmstart/training.py),
-   [runner](new/warmstart/run.py),
-   [unchanged full phenotype](new/seed4_followup/phenotype.py), and [GPT_CONTEXT.md](GPT_CONTEXT.md).
-3. [Saved-artifact validation](evidence/warmstart_20261003/validation/local_validation.json),
-   [public arithmetic](evidence/warmstart_20261003/publication_validation.json),
-   [provenance](evidence/warmstart_20261003/provenance.json), and
-   [bindings](WARMSTART_PUBLICATION_MANIFEST.json).
-4. [Reproduction notes](evidence/warmstart_20261003/REPRODUCTION.md).
+1. [Latest dense-checkpoint results](evidence/transition_20261003/RESULTS.md) and
+   [compact profiles](evidence/transition_20261003/summary.json).
+2. [Frozen protocol](new/transition_100_200/PROTOCOL.md),
+   [unchanged K8 helper](new/short_bptt/training.py),
+   [executed runner](new/transition_100_200/run.py),
+   [trace metrics](new/transition_100_200/metrics.py), and [GPT_CONTEXT.md](GPT_CONTEXT.md).
+3. [Saved-artifact validation](evidence/transition_20261003/validation/local_validation.json),
+   [publication bindings](TRANSITION_PUBLICATION_MANIFEST.json), and
+   [reference provenance](evidence/transition_20261003/input_provenance.json).
+4. [Reproduction notes](evidence/transition_20261003/REPRODUCTION.md).
    Verify without a checkpoint/GPU using
-   `python tools/export_warmstart.py --verify-only`. Individual model
-   summaries, raw records, matched CSVs and stage diagnostics are secondary; full
-   trajectories, checkpoints, logs and machine receipts remain local.
+   `python tools/export_transition_evidence.py --verify-only` or run the focused
+   metric fixtures with `python new/transition_100_200/check_metrics.py`.
+   Public-reference CPU qualification uses
+   `python tools/replay_transition_public.py --check --out analyses/NEW_PUBLIC_TRANSITION_CPU.json`.
+   Per-checkpoint map counts and profiles are secondary; full NPZ trajectories,
+   checkpoints, logs and machine receipts remain local, with hashes bound.
 
 Previous context, if needed:
 

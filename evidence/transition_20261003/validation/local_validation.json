@@ -1,0 +1,3244 @@
+{
+  "schema_version": "transition-dense-saved-validation-v1",
+  "status": "PASS",
+  "scope": "Saved artifacts only; CPU validation; no model forward, training, GPU execution, or new inference.",
+  "run": "runs/transition_20261003_seed4_dense01",
+  "validator": "tools/validate_transition_results.py",
+  "validator_sha256": "6bb486507a28acd910b4a805e1e0edc77d8a200a7ff22fbc520c9ecb7f52fd1f",
+  "checks": {
+    "run_completion": {
+      "status": "PASS",
+      "updates": 300,
+      "audit_rows": 44,
+      "aggregate_complete": true,
+      "run_status": "COMPLETE",
+      "serialization_repair": "The first report used status as both check status and run-status detail; the saved COMPLETE value replaced PASS in the JSON field."
+    },
+    "source_and_snapshot_bindings": {
+      "status": "PASS",
+      "manifest_source_bindings": 67,
+      "live_source_hashes_checked": 67,
+      "snapshot_hashes_checked": 67,
+      "snapshot_file_count": 67,
+      "dispatch_source_manifest_exact": true
+    },
+    "checkpoint_hashes_and_anchors": {
+      "status": "PASS",
+      "saved_checkpoints": 23,
+      "checkpoint_files": 23,
+      "file_hashes_checked": 23,
+      "parameter_hashes_recomputed": 23,
+      "reference_anchor_updates": [
+        0,
+        100,
+        200,
+        300
+      ],
+      "exact_anchor_tensor_sets": 4,
+      "parameter_tensor_arrays_checked": 276,
+      "nonfinite_parameter_tensors": 0,
+      "reference_record_sha256_matches": true
+    },
+    "audit_banks_regenerated": {
+      "status": "PASS",
+      "sizes_checked": [
+        32,
+        64
+      ],
+      "maps_per_size": 16,
+      "generator": "frozen source snapshot CPU bank()",
+      "bank_hash_checks": {
+        "32": {
+          "tensor_hash_matches_manifest_and_regeneration": true,
+          "npz_content_matches_regeneration": true,
+          "file_hash_matches_dispatch_binding": true
+        },
+        "64": {
+          "tensor_hash_matches_manifest_and_regeneration": true,
+          "npz_content_matches_regeneration": true,
+          "file_hash_matches_dispatch_binding": true
+        }
+      },
+      "historical_evaluation_bindings_match": true,
+      "size32_stage_bank_matches_warmstart_reference": true,
+      "size32_stage_bank_matches_public_replay_reference": true,
+      "repair_note": "The first full pass also queried the older streaming-carry manifest, which has no stage_diagnostic_data_sha256 field. The prior warmstart manifest and public transition replay_reference manifest both carry the matching hash."
+    },
+    "training_input_bindings": {
+      "status": "PASS",
+      "schedule_file_hash_matches_all_bindings": true,
+      "generated_training_data_hash_matches_reference": true
+    },
+    "historical_replay_exact": {
+      "status": "PASS",
+      "endpoint_payloads": 6,
+      "integer_leaves": 5628,
+      "float_leaves": 2636,
+      "maximum_absolute_error": 0.0,
+      "exact_zero_error": true
+    },
+    "audit_artifact_set": {
+      "status": "PASS",
+      "expected_records": 44,
+      "audit_json_count": 44,
+      "raw_npz_count": 44
+    },
+    "audit_raw_hash_u100_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u100_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u100_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u100_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u100_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u100_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 5.251940571326941e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u100_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u100_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u100_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22226,
+      "null_leaves": 8410,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u100_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u100_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u100_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u100_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u100_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u100_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u100_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.207018539619355e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u100_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u100_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u100_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28284,
+      "null_leaves": 2352,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u100_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u105_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u105_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u105_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u105_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u105_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u105_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.793053054452656e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u105_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u105_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u105_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22266,
+      "null_leaves": 8370,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u105_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u105_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u105_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u105_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u105_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u105_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u105_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 5.327208663086225e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u105_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u105_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u105_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 27869,
+      "null_leaves": 2767,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u105_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u110_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u110_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u110_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u110_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u110_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u110_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 5.4916124536674715e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u110_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u110_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u110_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22555,
+      "null_leaves": 8081,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u110_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u110_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u110_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u110_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u110_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u110_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u110_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 5.592452989588992e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u110_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u110_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u110_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28195,
+      "null_leaves": 2441,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u110_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u115_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u115_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u115_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u115_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u115_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u115_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.318184609886089e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u115_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u115_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u115_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22581,
+      "null_leaves": 8055,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u115_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u115_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u115_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u115_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u115_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u115_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u115_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.690200878203598e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u115_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u115_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u115_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28369,
+      "null_leaves": 2267,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u115_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u120_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u120_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u120_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u120_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u120_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u120_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 2.513865104969426e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u120_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u120_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u120_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22599,
+      "null_leaves": 8037,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u120_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u120_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u120_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u120_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u120_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u120_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u120_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.8358002380233245e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u120_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u120_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u120_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28384,
+      "null_leaves": 2252,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u120_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u125_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u125_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u125_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u125_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u125_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u125_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.701141853580282e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u125_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u125_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u125_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22637,
+      "null_leaves": 7999,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u125_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u125_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u125_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u125_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u125_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u125_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u125_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.8110995298777937e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u125_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u125_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u125_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28452,
+      "null_leaves": 2184,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u125_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u130_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u130_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u130_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u130_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u130_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u130_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 5.200687436257567e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u130_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u130_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u130_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22600,
+      "null_leaves": 8036,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u130_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u130_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u130_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u130_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u130_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u130_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u130_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.4983021640909726e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u130_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u130_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u130_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28502,
+      "null_leaves": 2134,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u130_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u135_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u135_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u135_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u135_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u135_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u135_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.827590566718442e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u135_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u135_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u135_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22653,
+      "null_leaves": 7983,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u135_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u135_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u135_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u135_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u135_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u135_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u135_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 1.8355946762582676e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u135_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u135_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u135_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28500,
+      "null_leaves": 2136,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u135_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u140_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u140_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u140_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u140_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u140_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u140_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.388164609459011e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u140_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u140_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u140_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22629,
+      "null_leaves": 8007,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u140_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u140_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u140_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u140_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u140_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u140_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u140_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.359798566611062e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u140_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u140_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u140_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28500,
+      "null_leaves": 2136,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u140_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u145_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u145_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u145_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u145_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u145_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u145_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 2.0895343566529334e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u145_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u145_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u145_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22676,
+      "null_leaves": 7960,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u145_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u145_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u145_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u145_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u145_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u145_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u145_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.387539098704707e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u145_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u145_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u145_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28505,
+      "null_leaves": 2131,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u145_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u150_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u150_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u150_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u150_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u150_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u150_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 2.8974618038191124e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u150_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u150_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u150_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22675,
+      "null_leaves": 7961,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u150_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u150_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u150_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u150_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u150_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u150_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u150_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.832009887183574e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u150_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u150_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u150_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28481,
+      "null_leaves": 2155,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u150_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u155_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u155_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u155_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u155_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u155_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u155_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.1191757843274104e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u155_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u155_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u155_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22667,
+      "null_leaves": 7969,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u155_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u155_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u155_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u155_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u155_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u155_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u155_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.3470085087093935e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u155_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u155_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u155_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28471,
+      "null_leaves": 2165,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u155_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u160_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u160_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u160_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u160_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u160_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u160_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 5.884516085519209e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u160_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u160_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u160_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22751,
+      "null_leaves": 7885,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u160_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u160_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u160_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u160_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u160_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u160_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u160_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.1975644737846096e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u160_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u160_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u160_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28529,
+      "null_leaves": 2107,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u160_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u165_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u165_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u165_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u165_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u165_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u165_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 5.412381165470492e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u165_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u165_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u165_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22764,
+      "null_leaves": 7872,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u165_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u165_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u165_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u165_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u165_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u165_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u165_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.6699491778868776e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u165_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u165_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u165_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28592,
+      "null_leaves": 2044,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u165_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u170_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u170_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u170_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u170_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u170_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u170_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.8319355244453845e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u170_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u170_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u170_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22771,
+      "null_leaves": 7865,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u170_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u170_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u170_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u170_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u170_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u170_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u170_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.6499235351049606e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u170_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u170_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u170_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28570,
+      "null_leaves": 2066,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u170_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u175_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u175_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u175_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u175_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u175_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u175_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.049881374701414e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u175_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u175_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u175_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22763,
+      "null_leaves": 7873,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u175_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u175_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u175_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u175_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u175_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u175_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u175_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.9142822094717644e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u175_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u175_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u175_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28577,
+      "null_leaves": 2059,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u175_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u180_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u180_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u180_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u180_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u180_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u180_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.964123001549581e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u180_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u180_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u180_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22256,
+      "null_leaves": 8380,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u180_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u180_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u180_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u180_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u180_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u180_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u180_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.564977846259865e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u180_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u180_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u180_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28256,
+      "null_leaves": 2380,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u180_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u185_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u185_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u185_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u185_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u185_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u185_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 2.601438309213222e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u185_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u185_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u185_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22675,
+      "null_leaves": 7961,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u185_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u185_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u185_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u185_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u185_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u185_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u185_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.956113763832093e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u185_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u185_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u185_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28612,
+      "null_leaves": 2024,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u185_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u190_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u190_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u190_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u190_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u190_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u190_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.309919038851916e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u190_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u190_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u190_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22805,
+      "null_leaves": 7831,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u190_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u190_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u190_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u190_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u190_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u190_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u190_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 4.8402505781197647e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u190_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u190_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u190_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28640,
+      "null_leaves": 1996,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u190_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u195_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u195_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u195_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u195_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u195_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u195_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 6.211613423623419e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u195_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u195_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u195_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22784,
+      "null_leaves": 7852,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u195_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u195_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u195_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u195_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u195_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u195_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u195_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 6.381793515863876e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u195_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u195_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u195_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28681,
+      "null_leaves": 1955,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u195_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u200_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u200_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u200_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u200_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u200_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u200_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.230309930657427e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u200_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u200_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u200_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22811,
+      "null_leaves": 7825,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u200_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u200_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u200_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u200_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u200_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u200_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u200_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.359750033737896e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u200_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u200_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u200_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28700,
+      "null_leaves": 1936,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u200_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u300_size32": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u300_size32": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u300_size32": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        32,
+        32
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u300_size32": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 4210688,
+      "margin_values": 4210688,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u300_size32": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u300_size32": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.6309028894621065e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u300_size32": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u300_size32": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u300_size32": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 22831,
+      "null_leaves": 7805,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u300_size32": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "audit_raw_hash_u300_size64": {
+      "status": "PASS",
+      "sha256_matches": true
+    },
+    "audit_bank_binding_u300_size64": {
+      "status": "PASS",
+      "tensor_hash_matches": true
+    },
+    "audit_schema_u300_size64": {
+      "status": "PASS",
+      "fields": 8,
+      "shape": [
+        257,
+        16,
+        64,
+        64
+      ],
+      "boolean_dtypes": true
+    },
+    "audit_trace_invariants_u300_size64": {
+      "status": "PASS",
+      "paired_boolean_mismatches": 0,
+      "bank_geometry_exact": true,
+      "source_derived_exact": true,
+      "finite_margin_values": 16842752,
+      "margin_values": 16842752,
+      "positive_margin_wrong_pairs": 0,
+      "negative_margin_right_pairs": 0,
+      "zero_margin_values": 0
+    },
+    "audit_light_cone_u300_size64": {
+      "status": "PASS",
+      "paired_correct_outside_two_hop_cone": 0
+    },
+    "audit_endpoint_recompute_u300_size64": {
+      "status": "PASS",
+      "endpoint_count": 4,
+      "max_absolute_error": 3.362969591691467e-08,
+      "bce_recorded_finite": true,
+      "bce_scalars_checked": 8
+    },
+    "audit_state_rms_finite_u300_size64": {
+      "status": "PASS",
+      "recorded_steps": 257,
+      "expected_steps": 257,
+      "values_checked": 1028,
+      "raw_states_saved": false
+    },
+    "audit_row_flags_u300_size64": {
+      "status": "PASS",
+      "finite_flag": true,
+      "steps": 256,
+      "light_cone_flag": true
+    },
+    "audit_behavior_recompute_u300_size64": {
+      "status": "PASS",
+      "integer_leaves": 110750,
+      "float_leaves": 28733,
+      "null_leaves": 1903,
+      "boolean_leaves": 12,
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "mismatch_count": 0
+    },
+    "audit_profile_recompute_u300_size64": {
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "mismatch_count": 0
+    },
+    "summary_checkpoint_rows": {
+      "status": "PASS",
+      "checkpoint_rows": 44,
+      "expected": 44,
+      "mismatches": 0
+    },
+    "profiles_and_operational_onset": {
+      "status": "PASS",
+      "profile_rows": 44,
+      "primary_dense_profiles": 21,
+      "primary_dense_passes": 1,
+      "saved_onset": null,
+      "derived_onset": null,
+      "u300_control_rows": 2,
+      "u300_excluded_from_dense_search": true
+    },
+    "historical_stage_pure_trace_replay": {
+      "status": "PASS",
+      "checkpoints": [
+        {
+          "update": 100,
+          "status": "PASS",
+          "reference_sha256_matches_dispatch": true,
+          "exact_replay": true,
+          "integer_leaves": 2481,
+          "float_leaves": 822,
+          "maximum_absolute_error": 0.0,
+          "runner_wrapper_matches": true
+        },
+        {
+          "update": 200,
+          "status": "PASS",
+          "reference_sha256_matches_dispatch": true,
+          "exact_replay": true,
+          "integer_leaves": 2481,
+          "float_leaves": 826,
+          "maximum_absolute_error": 0.0,
+          "runner_wrapper_matches": true
+        },
+        {
+          "update": 300,
+          "status": "PASS",
+          "reference_sha256_matches_dispatch": true,
+          "exact_replay": true,
+          "integer_leaves": 2481,
+          "float_leaves": 826,
+          "maximum_absolute_error": 0.0,
+          "runner_wrapper_matches": true
+        }
+      ],
+      "trace_steps": 129
+    },
+    "postdispatch_bindings": {
+      "status": "PASS",
+      "training_false": true,
+      "manifest_hash_matches": true,
+      "reference_manifest_hash_matches": true,
+      "source_hashes_match": true,
+      "dispatch_validator_source_hash_independently_bound": true,
+      "dispatch_validator_source_hash_matches": true,
+      "historical_evaluation_data_bindings_match": true
+    }
+  },
+  "counters": {
+    "audit_records_expected": 44,
+    "audit_records_processed": 44,
+    "raw_npz_sha256_checked": 44,
+    "source_bindings": 67,
+    "source_snapshots": 67,
+    "saved_checkpoints": 23,
+    "historical_replay_integer_leaves": 5628,
+    "historical_replay_float_leaves": 2636,
+    "historical_replay_maximum_absolute_error": 0.0,
+    "metric_comparison_leaves": {
+      "integer_leaves": 4943321,
+      "float_leaves": 1153826,
+      "boolean_leaves": 1144,
+      "null_leaves": 224984,
+      "string_leaves": 2737
+    },
+    "metric_comparison_maximum_absolute_error": 6.381793515863876e-08,
+    "metric_comparison_tolerance": 2e-07,
+    "state_rms_records_checked": 11308,
+    "state_rms_scalars_checked": 45232,
+    "endpoint_payloads_recomputed": 176,
+    "recorded_bce_scalars_checked_finite_only": 352,
+    "paired_margin_values_scanned": 463175680,
+    "paired_boolean_mismatches": 0,
+    "two_hop_cone_violations": 0,
+    "stage_replay_integer_leaves": 7443,
+    "stage_replay_float_leaves": 2474
+  },
+  "limitations": [
+    "State-RMS scalars are checked for finite, nonnegative values and all 257 recorded steps; hidden-state tensors were not saved, so RMS values cannot be independently recomputed.",
+    "Original and flipped BCE scalars are checked for finite nonnegative values; logits were not saved, so BCE cannot be recomputed.",
+    "The saved paired signed margin is checked for finiteness, sign consistency, and endpoint quantiles; separate original/flipped logits were not saved, so the margin construction itself cannot be rebuilt.",
+    "The two-hop cone check verifies paired correctness outside the cone; raw logits and hidden states were not saved, so logit-difference bounds outside the cone cannot be independently checked."
+  ],
+  "failed_checks": [],
+  "prior_attempt": {
+    "artifact": "analyses/transition_20261003_validation01_attempt01_failed.json",
+    "sha256": "67784ff5eb461ca34736b0141683cba06d5f3001da3f8a0415f83ccbd226a874",
+    "status": "FAIL",
+    "failed_checks": [
+      "audit_banks_regenerated"
+    ],
+    "reason": "Validator schema assumption: the older streaming-carry evidence manifest omits the stage-bank hash field; bank artifacts themselves matched regeneration."
+  },
+  "finalization": {
+    "mode": "cheap_reference_and_dispatch_binding_recheck_only",
+    "full_44_audit_metric_recomputations_reused": true,
+    "full_44_audit_metric_recomputations_rerun": false,
+    "first_full_pass_validator_sha256": "6bb486507a28acd910b4a805e1e0edc77d8a200a7ff22fbc520c9ecb7f52fd1f",
+    "finalizer_validator_sha256": "d3ffabfc73ea658ef181faba38795a0ba0f86c5882845b6d666f2273f39a24a3",
+    "rechecked": [
+      "both CPU-regenerated audit banks",
+      "warmstart and public replay-reference stage hash",
+      "dispatch manifest/source/reference/script/evaluation-data bindings"
+    ],
+    "bank_schema_failure_corrected": true,
+    "dispatch_script_hash_verified": true
+  }
+}

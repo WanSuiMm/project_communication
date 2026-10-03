@@ -1,0 +1,869 @@
+{
+  "schema_version": "transition-input-provenance-v1",
+  "run_relative_name": "runs/transition_20261003_seed4_dense01",
+  "source_base_commit": "e142f224ad03f9bde9894dfcf80cf41411744f6e",
+  "frozen_execution_source_sha256": {
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "new/workspace_revision/PROTOCOL.md": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "tools/launch_revision.ps1": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9",
+    "new/short_bptt/PROTOCOL.md": "f20d0dfbc8fd2ee21ea973a7562ed7f435fc4da824da67376165659d50818158",
+    "new/short_bptt/training.py": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+    "new/short_bptt/check.py": "d2e839fef75a2fba8b0f7e759cf140714fe186221543438c20b0eacbb41453c4",
+    "new/short_bptt/run.py": "dae5e6ed365842777aea0fc199867aa8913b346a2382ab7aa736985bde8ad9d9",
+    "tools/launch_short_bptt.ps1": "0a7859d1e34f970fdbc38cd93c29ba07019ec2d4d9e352bc64f8a8dc6bec7942",
+    "new/short_bptt_phase2/PROTOCOL.md": "80a13c66a6ec03e1da247e18f04d867d954fe7f33d6f7b6e719376cba6c711da",
+    "new/short_bptt_phase2/training.py": "7e0c95c7088933ef88402f04359103c16ffe3cf8dd09fab6f2352fbaef4f25cb",
+    "new/short_bptt_phase2/check.py": "a9aec169d3a8c7ea110d6a260fee8ac6d95e9f7d8016269823a93df73f751e77",
+    "new/short_bptt_phase2/run.py": "12b3c4b0a7f12cb77ea81f8a5a92170f55bb9a5c320fbbb3d1af91e0ac8669ce",
+    "tools/launch_bptt_phase2.ps1": "dace8dd7e5b50a9139cde6e48e90f4107372a81f3b987d35f47478a2e32df08a",
+    "new/direct_spatial_carry/carry_cells.py": "214b5d5a6c1b791ef6f4767f93470ca57bd3eec7134f941a4139a38d95ef19d7",
+    "new/direct_spatial_carry/run.py": "7f874533d65d580574177d04a68a2795c275295479f7341aced5626b2f1f750e",
+    "new/direct_spatial_carry/check.py": "593f9c49ac0f202ce1829f577f58eebeb001dde7c631874bf53e4948b8e795b4",
+    "new/direct_spatial_carry/PROTOCOL.md": "a4d9cceabc8f5fdbf104eea1f654b580a96d718de45facb5d346b8427aaa126f",
+    "tools/launch_direct_carry.ps1": "c80e7e8b4e358507efd28d350149245c144834fe46f38305db2eee7139e031b3",
+    "BPTT_PHASE2_PUBLICATION_MANIFEST.json": "9281168c0dcec7a75987f461074580d203c4f958797b28aced65004f6d120dfd",
+    "evidence/short_bptt_phase2_init2345/manifest.json": "2d471eb833895497eec35c0dfc2bd6192675ad780fd019272b9b23aec4f68cdf",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed2.json": "273122c6ef7c1070cca212f9f7fe6562911eb276dcafb2a0a29afd78340080fc",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed3.json": "22a08fff5ccfb52a398e3f7ac29abdde868cc02a21208cb821537717ba78d891",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed4.json": "c350f665a3a8eb0c68ec08994368c0a7595c1b6a4c8c1df39a29b367bbdc0a7e",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed5.json": "212671c5895f9abb8c3d5a2630456d41207ea2e01bc11bef32c0b9948da81f26",
+    "new/streaming_carry/stream_cells.py": "88152e1243d519590a6aa22b66ba2e84eda9b59831c2722f254c1b440fbc7dfb",
+    "new/streaming_carry/run.py": "c2410ed7bf07363ad8d02e44cd6ed41b2defef1b6733d32042176c729c2559cb",
+    "new/streaming_carry/check.py": "653dd97f2dd21100ac6c3376ea14ee8e8df5be9b800487ea56f4df6dffe9bcf4",
+    "new/streaming_carry/PROTOCOL.md": "e14978715194afa06d0b9f1c5a26b49b45d650f0275de285ca92e8e9611a38d2",
+    "tools/launch_streaming_carry.ps1": "c5f4cde9af9bdfd59c2565ab1cf9c1f6f8f63d737baf9d4cb5ade87f20e98a89",
+    "DIRECT_CARRY_PUBLICATION_MANIFEST.json": "bba5b527e93485c0a526a8b670b1164f9480d25b9d672ec1dd6a4bdc60aa4dbb",
+    "new/frontier_audit/PROTOCOL.md": "3065084f4525b213e7add869d85a29d13ca858fa5b2c9ded8f24fefb41219960",
+    "new/frontier_audit/audit.py": "98398be9ab7849b2af219b188848507a4973bb237c9315fe554c378b73427d01",
+    "new/frontier_audit/metrics.py": "88b2654ea73c8a7912ed13c5a6dcbf139dbd29684bec834936c9bb876e7d7e66",
+    "new/frontier_audit/check_metrics.py": "9ab95d3dd543f456fb61ac985d05d86250a2807d40d37fae5d86116eae46a013",
+    "new/frontier_audit/report.py": "3d7484eccf9763f920c640e1990c8b2891e7aad5b110e4b418ac2da58c4e98f6",
+    "new/frontier_audit/validate.py": "e5543c0c655a61010d131bca94d655a528706afee6576083a5ef918a3041c899",
+    "STREAMING_CARRY_PUBLICATION_MANIFEST.json": "4f88ed48810d3fd1d6e4f8f7749d88ee265a133c1aa434ab2d650a4c6b0c66de",
+    "evidence/streaming_carry_init2345/raw/stream_K8_seed4.json": "402dfa34d2215417242cfbfc736b25c722012e9c0171f1381e8ab2233d20f45b",
+    "new/stream_path_audit/audit.py": "b26fc2d15218fa6a88cf4621daf83bf2c34c002f7b60aece54744a586ebd9185",
+    "new/stream_path_audit/operators.py": "6fd66289ab52bceec5c1428a0e7d31e8a860cc4f1c95520dbcfc8e7308bf41d8",
+    "FRONTIER_AUDIT_PUBLICATION_MANIFEST.json": "f636dd190aaa5a521fd3523a57e6e81ecd96609df2d1cf5e80bc28ddcda5ce8e",
+    "new/seed4_followup/PROTOCOL.md": "40dd593cc5e2b7ef9bcc9e56248ce262b67fe9fb22cf979cccf17699c8a9a31f",
+    "new/seed4_followup/causal.py": "1a9944992c73a58fca94ef95e7998633a23f63d66900c361247122a8c52078f6",
+    "new/seed4_followup/check.py": "3e8f290c8dda509ecb69abeaf64d23152ad9ee91e30eaaf6f2fdec6fd82c84ee",
+    "new/seed4_followup/check_causal.py": "6e31f8831062febbc61461b76f7fbcfe3a6a9b83de5b12bf766ca2b1b2527034",
+    "new/seed4_followup/check_phenotype.py": "8ee3776215c5f621e43daff08de3217c17412798a3b1badbdeed0f17af3dd9da",
+    "new/seed4_followup/check_training.py": "a558bd8cd17b1c49110a5b8c404d6bc0250b3cbd72b1741f7f80e76b46268e23",
+    "new/seed4_followup/initialization.py": "84c272f7d209a1036197f0766622cf7094777509250323d87a828807e8db6fb7",
+    "new/seed4_followup/phenotype.py": "9a6f870845d1b928b5e28a50d1e6ccb81b28abc1633346d29c6f1e5a50db72af",
+    "new/seed4_followup/train.py": "863a6e314dcfd2fe056d8d0e573aa955713a2712328df71d92700321ad1f33f8",
+    "tools/launch_seed4_followup.ps1": "fb933814f1c00c759af4fea59cab08953b7862831fac1ffb3668eee9f665e91f",
+    "SEED4_FOLLOWUP_PUBLICATION_MANIFEST.json": "0a8c81c9a7ea20f48e993a3d9cd910a03597972fcc87bebf0264f113fcdca2c0",
+    "WARMSTART_PUBLICATION_MANIFEST.json": "e025a5eae4c04e02b3e5e70b8079c018406ef7311fb76bfde919de447bfd3927",
+    "evidence/streaming_carry_init2345/manifest.json": "65eed082c34c7bc07c70007b6e6a5b13088f452b742c27bc995b430b24ef2976",
+    "evidence/streaming_carry_init2345/schedule.json": "b46f2ae3545b8210d137908430fa96b027764ea0841f4f2b49c2dc50cbb3c263",
+    "new/transition_100_200/PROTOCOL.md": "f425f5c4899a2a48b5d675433e664e6dea860875720847b20ff59fd89b642e1e",
+    "new/transition_100_200/check.py": "16a9d5cf11cc1d34cf542f92d83f5062ffea6cbf2cfda26c41c30620562054ba",
+    "new/transition_100_200/check_metrics.py": "1df732dbf7cd589b9443f3a265422474ea7db17c493724aa45e917ef7270aca2",
+    "new/transition_100_200/metrics.py": "4bbfe4bc9c4ddde79b294ec1cbfdf4732fbdc5f989ff627285aad878f1314705",
+    "new/transition_100_200/run.py": "d406aedd5ba63728242f0ba611f190d35931bb82d422bb1fecb6ee91d5b2a75a",
+    "new/warmstart/diagnostics.py": "fec9b027b863fd7624c5113c1861110dea271cb51e9414224ee97f7439c134f3",
+    "tools/launch_transition_100_200.ps1": "0addf956f4f17d7f6324c1965b5abeb14d2bd2b54825b7bf7d1409551aa78661"
+  },
+  "excluded_raw_artifacts": [
+    {
+      "relative_name": "checkpoints/u100_size32.json",
+      "sha256": "1755970bcab74976532b569784df0c7e2fc563ba53feced1a18fa9eea1b0cb10",
+      "bytes": 6090737,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u100_size64.json",
+      "sha256": "65956066aac00004eb50016a259caef69d844145436cf42ee6e9533dcf30028b",
+      "bytes": 6223251,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u105_size32.json",
+      "sha256": "954cca150118471f0c85c67c789f8d8dd101f68be97180f7613c38d458ecc70d",
+      "bytes": 6072479,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u105_size64.json",
+      "sha256": "11b735686871fc041aec0c1dc27ff819810caa74a25ad2dc03b5d4b3cb3aac6e",
+      "bytes": 6125172,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u110_size32.json",
+      "sha256": "b5ad8070dfecb719fa02798f3f7231d1fc1ea19b6eb61bbb71298489efc0102f",
+      "bytes": 6120596,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u110_size64.json",
+      "sha256": "58100615288720d514d3df57b878840a9b833501ef4684973f83e7042e5b77a1",
+      "bytes": 6210389,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u115_size32.json",
+      "sha256": "0997b927371b85a54439ef83e43d3df141186dd8e22a2cf3601b7eeb9a3be4e9",
+      "bytes": 6144232,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u115_size64.json",
+      "sha256": "82e8f146afd486d4ba5762b9df276ec95ae04ea858c421cf90c89c22461141a2",
+      "bytes": 6238431,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u120_size32.json",
+      "sha256": "196a3521d36da7d05a714d72017e7642b8fef4180dc2db23bbbb2fa8d33e2551",
+      "bytes": 6138703,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u120_size64.json",
+      "sha256": "73cb8a82f41a6065196b6d8e224c64c7713b7627c56092caa406a7993ef5f0cc",
+      "bytes": 6230488,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u125_size32.json",
+      "sha256": "bd4d391b4676d1fcc6d7f505c980c886972a2946bd48bc973097f75813036c9c",
+      "bytes": 6125682,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u125_size64.json",
+      "sha256": "00eef7626b74c18e0695eb23851bb3c4286b534254aca090431ac6797d985e1f",
+      "bytes": 6220340,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u130_size32.json",
+      "sha256": "a19726f5ba994e892d29fda0800961edc49759e0fb02ee523ccc7887b6d72d85",
+      "bytes": 6128141,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u130_size64.json",
+      "sha256": "c0e38d51b04df59c16608e6767a5c9c15b256553ee8cc6367d654c4fd4ac1435",
+      "bytes": 6206541,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u135_size32.json",
+      "sha256": "c3c5afcae5412a6ae953bea2df5a6a3d09347f87304850c4f0be679c531adf8f",
+      "bytes": 6128268,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u135_size64.json",
+      "sha256": "273a3f354ce173db3505ad1656f2a49cc2ecebedc475735c9d3244af442afd21",
+      "bytes": 6195727,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u140_size32.json",
+      "sha256": "6674d40656220dc151969066ba8db294d8a2d9caa88ba15d0afdd99b76430d50",
+      "bytes": 6137221,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u140_size64.json",
+      "sha256": "23630015fe92c9119d6c37f2deaae31a03482d4392335500796be7748c2c055b",
+      "bytes": 6212146,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u145_size32.json",
+      "sha256": "466d16fb7aec138a32591e68d73171378b1e9f0f76fec53467fc0e47f1dda3d0",
+      "bytes": 6117143,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u145_size64.json",
+      "sha256": "9e662a85ce6ec348aebe73c862719a9351a892d0bb55a24e2beaef944cd2d0fa",
+      "bytes": 6206120,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u150_size32.json",
+      "sha256": "4fb53ce54056d6756e391b8cbb3e8a4473dd184e4b8adcc70c090d8fe964fa3b",
+      "bytes": 6116966,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u150_size64.json",
+      "sha256": "0ebe18477d72ac596f324d42de9718638bb6d60c90bd03e0c8321746b44dce65",
+      "bytes": 6200566,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u155_size32.json",
+      "sha256": "92826ad22b999d53ad68c632da125601210f80f812c61b09d260218b4becffbc",
+      "bytes": 6111219,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u155_size64.json",
+      "sha256": "a10ab289f3c846b28f96abb298891bdaa57037e3be1e30c0093531dbf569d8ba",
+      "bytes": 6185779,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u160_size32.json",
+      "sha256": "613ad57128ac34d9a84f14464b29e126bd9ed70082a5311c9be1c44d1e154e88",
+      "bytes": 6119049,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u160_size64.json",
+      "sha256": "a0b27e7ef8dc495c6d70622a5a3714f3c49e18ee5d0405ef7c284eb36431b49c",
+      "bytes": 6182554,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u165_size32.json",
+      "sha256": "2166896fa7ee29b77953cd7197f1b930d43098bf98bb3739a0ae6094d1899573",
+      "bytes": 6120261,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u165_size64.json",
+      "sha256": "27cef74e40f36c7c6b45fa8bfe0d083c38b1f5725c1eac51294ade02be57ec58",
+      "bytes": 6170448,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u170_size32.json",
+      "sha256": "6c3da93b050c8e4dcbebe3f15e3e2da677f4caf83c5dc413ccf54e29b296f669",
+      "bytes": 6115990,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u170_size64.json",
+      "sha256": "9df2f903ce150bf9037c2794335023303229cc53770dc7f3b8f7f55ccdab6525",
+      "bytes": 6161598,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u175_size32.json",
+      "sha256": "5ccf993342ecf864105875286afd15e7fdeb2e045600fdee8c87f7e8f494e2dc",
+      "bytes": 6113647,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u175_size64.json",
+      "sha256": "f2ba5624a23ac81bc71189af0af6135ceb379195921658bffcd937bae938afd6",
+      "bytes": 6157659,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u180_size32.json",
+      "sha256": "f452c2f9e683b5472c4bcce3f5c5b3120073121fde72adb1152848fbcd8848e4",
+      "bytes": 6070326,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u180_size64.json",
+      "sha256": "7c3c68533c342605d7654b772bec93461796bf3b13174a90cd57ae5c5090d754",
+      "bytes": 6136251,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u185_size32.json",
+      "sha256": "9b96f8922ca410f16fb2663ef158690b04c2621c9f57ecf1886f012c51534dd1",
+      "bytes": 6099685,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u185_size64.json",
+      "sha256": "55f37c2428872486d1700315748c12534d16e56bd8b57cd9f79add3b6464654d",
+      "bytes": 6197726,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u190_size32.json",
+      "sha256": "c9189053c0b17eb74aa52ad162aeb7308470b23414519ed23817e0372a05bc0b",
+      "bytes": 6152365,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u190_size64.json",
+      "sha256": "eee2417996777adcb02c6ffbab9c3a43b3930638de50a7328832631892674393",
+      "bytes": 6241236,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u195_size32.json",
+      "sha256": "9e76d22e83bd7b6bf73537b3b6d7369a51ced3a7d4213a96d462b524ace3c84e",
+      "bytes": 6102582,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u195_size64.json",
+      "sha256": "20fb7a94a0bb0b8fe0ed73096893d5ccf87596adb1fa2a21f19457edb1fc32e4",
+      "bytes": 6167330,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u200_size32.json",
+      "sha256": "2f9894e7a789e54f9d517a5329044439db76a1dd49b55e7cb57fee5ca56f4bf0",
+      "bytes": 6075515,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u200_size64.json",
+      "sha256": "e44587f482320214b366d33625fcc37eadfc1dea646766c0c57f8dbf6818e478",
+      "bytes": 6132241,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u300_size32.json",
+      "sha256": "705c1a11dc575522f2dbedf1f3b2dd8079b5286f0981e1222521b35863158e91",
+      "bytes": 6058949,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u300_size64.json",
+      "sha256": "5bb6e17df7b423e2fcf38d06096f8bd70a9da3965c05ed1d10974bfed7f84d09",
+      "bytes": 6128009,
+      "class": "raw per-checkpoint JSON with stepwise arrays; sanitized summary exported",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u000.pt",
+      "sha256": "b1b645d3891edcdb9ef3aa39d1e6a0e833da7455641d151653fe8ceacc763832",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u100.pt",
+      "sha256": "7a7acbd7deee4b6d8890764e4aa2d960f8df9982af65005a389243040c4e9387",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u100_size32.npz",
+      "sha256": "d92c8186e140146173972c737e29b5a9657e1cb1fd8228b962710a93beb2482f",
+      "bytes": 12204583,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u100_size64.npz",
+      "sha256": "fbace66e81bf74a362f238962a529f908fa89c5d7a042356c557b3ab91ff3744",
+      "bytes": 55125289,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u105.pt",
+      "sha256": "1ab486ae2361a27d988dafa9e6fc31770a13e82a0da29d5770b32d60685d5118",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u105_size32.npz",
+      "sha256": "352d89746739edffab8da3032d1c89cda81057ebfa52f5da88b18c62be1b3e46",
+      "bytes": 12092831,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u105_size64.npz",
+      "sha256": "11ddc4cb54b4979bc60bc558ec6bac34bce1452624b76c8ae48e0de0cfef0e1a",
+      "bytes": 53826680,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u110.pt",
+      "sha256": "ed72f8ef173e82dd7ddf1e119cf6041f572f6f2223ad23f4a2f95cff8ee3bbdd",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u110_size32.npz",
+      "sha256": "5de2baee6ed25d66ccd1739bdc9b7aeacc87a40b1a10fcd2d0577ba60f234798",
+      "bytes": 12149252,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u110_size64.npz",
+      "sha256": "cd7fc8545667cd3b2470b406e88493d776aa8f5050dceaaf8b9b26cf8fac0dcf",
+      "bytes": 52001401,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u115.pt",
+      "sha256": "84f3c8e276111ce010cdcdb7e20c7c784d425d6f31aec58cc2b8cdfb1c110e32",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u115_size32.npz",
+      "sha256": "878df9f58c7e8b21464e82fc7289186255beedf4c2a89616c827ff83fe62c2fb",
+      "bytes": 11872622,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u115_size64.npz",
+      "sha256": "f54280b3cc0d9a4c726df3bf5e8d3b66e8ad90dc7c2a128405063d6cb8fa1b20",
+      "bytes": 51587301,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u120.pt",
+      "sha256": "c5185e23d082fde8a9e3f16c83e40dfbc109bf3840f259fc21a86eca24078505",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u120_size32.npz",
+      "sha256": "274a208acdbd53c610f89d338ed8496a3380848b4eca4f76fe3ce2a3896ed6ad",
+      "bytes": 11754512,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u120_size64.npz",
+      "sha256": "cd1523ca301f8d257e50b7190cff3d88cb121cd136552dd633d6f0b578d365c2",
+      "bytes": 51327284,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u125.pt",
+      "sha256": "86efe64989e0e1bf0530f81997c198388172525339c23f54f08589de2b146be8",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u125_size32.npz",
+      "sha256": "2b38aeede55b287f2a1d85a50c1f330a4db7527eda7cc53585fb17a1cba52fc0",
+      "bytes": 11781606,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u125_size64.npz",
+      "sha256": "8ef52f0139751d5e969ed9e3cc5054e87dfd04a3015cba88bd3bca190a102035",
+      "bytes": 51914083,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u130.pt",
+      "sha256": "c977171a4a59e7bc8b2b3debc907bf4b74ecb1d48c2772fa4935929f04ad7930",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u130_size32.npz",
+      "sha256": "1bba76587a20f46ce3fc5ca5e6bc3e5848ef46f4d576f78683d0403c8c5ff8a4",
+      "bytes": 11753313,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u130_size64.npz",
+      "sha256": "6704f9f302c637c501fb91b8c2dae6f52980144e97e51db974935ccd79c52bcf",
+      "bytes": 51179038,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u135.pt",
+      "sha256": "1918cd9dd1ee99f3c4ea5391ed3cb28245ac23448e4adfcb58fb2360fb8e1221",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u135_size32.npz",
+      "sha256": "dab865cc1a7c2f47ce7c0a18f611084d067a03b5c78fe0fcb156e202d82687a9",
+      "bytes": 11886934,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u135_size64.npz",
+      "sha256": "8bee039e237c17f680a14ce9974d378d9db35096cd2264218d65fb70e2368e94",
+      "bytes": 52165991,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u140.pt",
+      "sha256": "66b3e49e6d67f625e97b9949db3ead78c02b184355e08b7c61db8681362265ad",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u140_size32.npz",
+      "sha256": "05b81aee39752cb5ac7b7f3585f0ed7b727afa9589cd548e1e0bb11011fac65d",
+      "bytes": 11774617,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u140_size64.npz",
+      "sha256": "63a82a5dc1a53ecea03f140cfa0a7d144e2c195e174cc0d79c13240b598cb627",
+      "bytes": 52030887,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u145.pt",
+      "sha256": "c41e26527adc522a141fa09b8550a2ea19da18ea3423ebf4d8b87f0b1b2f7203",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u145_size32.npz",
+      "sha256": "d46f2bfe5e088ed93247c77a6a7d132fdc58c6acf93458f35399fd130f225aec",
+      "bytes": 11697700,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u145_size64.npz",
+      "sha256": "7be6aa2d3b3ad7bcc7fbb1e61bfe703a40d85e898fa8408b4c76d09499f5276a",
+      "bytes": 52030870,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u150.pt",
+      "sha256": "acc52dbba9cf24bed7ea00dcf63d146479f3a1d6ee6b85bfc70c39809c5c6e98",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u150_size32.npz",
+      "sha256": "5b73072cb70acd332e77e02ef84589841c7b90c6edc0810ee37cf7ffb179ec97",
+      "bytes": 11596070,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u150_size64.npz",
+      "sha256": "b4c5dc8e3b3c1cb0663b7ce5d418ee07551b893cf6f38c42b99705bda9a81ccf",
+      "bytes": 51261729,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u155.pt",
+      "sha256": "58413aede5dde78d8697136b4de7f83f17e08e7cdc1eda4e4ab4517d281f6f6d",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u155_size32.npz",
+      "sha256": "6c8396eeeed99f4262b1af759360df9e3f08f50d1fe7c2ada4a08abfdfbdf367",
+      "bytes": 11680775,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u155_size64.npz",
+      "sha256": "f8f53dbbdb91afa937893b4ec2f877b0d0ea6995417283fc112ddfc66045664e",
+      "bytes": 51381068,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u160.pt",
+      "sha256": "f57bc8d93587c683d25b91a342d8f30fc101510033eb33abb4264359debd82b8",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u160_size32.npz",
+      "sha256": "86c8244e737528eba43eccd81268aaa0b16591791670c10ab128ebaee9408050",
+      "bytes": 11666591,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u160_size64.npz",
+      "sha256": "bfba0493fccceb7b88870510946158203dfe64b3d94185b8a70b0001fae3b2e6",
+      "bytes": 51633415,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u165.pt",
+      "sha256": "7f7f41a5e52648444393800b75aabe4f95efe6184f7466eda3c8b6d11c4bdbb6",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u165_size32.npz",
+      "sha256": "4bde07dd4df32977ed059e82ebc02f2873d05efa4d1dd0ac29a1b9023bb1b33b",
+      "bytes": 11626521,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u165_size64.npz",
+      "sha256": "c5f1a36cbad323020bebf73b54d98eb8ddbef0e041e278c7274f66c9721b8818",
+      "bytes": 51642181,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u170.pt",
+      "sha256": "760c8d31a40b63cdc341458aaf537307f342cc66c31e0473cb67ed8ad5be46bf",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u170_size32.npz",
+      "sha256": "75db2634d27d79f4ce69179140844cef35c17c433294fc3a014dab074c52d4c8",
+      "bytes": 11594021,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u170_size64.npz",
+      "sha256": "2b9c03d3929dc68258cbe320902506372b50e9636f6fabf2e61a4b3c31373fd1",
+      "bytes": 51343462,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u175.pt",
+      "sha256": "f57a38a8a1deaef6a8116d6cc0433116ec54b4d123cb84f2dfd7ec6a93c5613e",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u175_size32.npz",
+      "sha256": "40bdccc13aec72bdfb2a64ec761fa7638297be371e300b59701c9652192a69e7",
+      "bytes": 11434948,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u175_size64.npz",
+      "sha256": "7eef36d45ed371b9d191a3e2ef828dd89deee7d1c183329606a294744c67a206",
+      "bytes": 50711308,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u180.pt",
+      "sha256": "7052ae78b0b6026a0f05dfbf5f9d8d35f606dbc3adf63a35f3e569abee8c6ec0",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u180_size32.npz",
+      "sha256": "1587084c44897a7dec0544fcaa333180a02e2ae01ababb8bc804e49b46339ed2",
+      "bytes": 11802169,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u180_size64.npz",
+      "sha256": "47c18b289397aff7818a54d561e62778aa622a300ee43f58c7961712b3aef586",
+      "bytes": 52720092,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u185.pt",
+      "sha256": "1d285f2366e958da314f5a13a6b8af40bbcdb7a1c7433ddb3d40702c2a7e8954",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u185_size32.npz",
+      "sha256": "8ef5391937f9361eb83918451812196bb1b4576b902f278382ca4372606c1def",
+      "bytes": 11732186,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u185_size64.npz",
+      "sha256": "04210aee7663f8d23732f4cf4f0eb9b1d234883fd07b663c2b7125159e211c8a",
+      "bytes": 51893153,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u190.pt",
+      "sha256": "26dcf678a5fbc84cf8536cfbfba23556986adcc9a041dae8b4298aa41d22845e",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u190_size32.npz",
+      "sha256": "0c73f490f9efd053d6e8436651dabb9766c2b2e00011cb3d7330d1b82ed97481",
+      "bytes": 11910505,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u190_size64.npz",
+      "sha256": "fe0582daa7399e104e121c90c3fb173c198e1de26f6adb8b9af73b05e8ec5c83",
+      "bytes": 52441844,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u195.pt",
+      "sha256": "710bf4a6dd4b938fa31c8b3be20fec78fbeb16b49201811d783e9ec16eea9945",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u195_size32.npz",
+      "sha256": "cd9ee7cec7e4e91ba524a6e04beed20fef3b7bb9122466b529eae2de84944c2e",
+      "bytes": 11583119,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u195_size64.npz",
+      "sha256": "c9d3a044a6051d8e2e13ad8508872ab68a75bf049fe47f62dc09d297ebe89859",
+      "bytes": 51463494,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u200.pt",
+      "sha256": "5f1ddf6516900ffd66840a75b6f7d881553cf14fab6b56460faa853b4f9408e9",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u200_size32.npz",
+      "sha256": "a26b86eda5ce5077297443f1839e99890b130aa5677452c0a68fc3710b640652",
+      "bytes": 11466370,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u200_size64.npz",
+      "sha256": "28a1a73e3257e3c11e4f74da6260f4795713df6afaac17a02eff15ef08bfb047",
+      "bytes": 51214764,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u300.pt",
+      "sha256": "4e6c076eb92368e7c7ec623a2407ee968915d435225e1dd65e7a2265a9524535",
+      "bytes": 23746,
+      "class": "model checkpoint",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u300_size32.npz",
+      "sha256": "83b4438fb0550ec69b9a079669558f39b4493fb2d6a8fc71eed995bc968c0192",
+      "bytes": 11425289,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "checkpoints/u300_size64.npz",
+      "sha256": "0dbe25d0cc0d71cabc92882c4832f4bf1b30fa2da739e2617792ebb9e0279727",
+      "bytes": 51288946,
+      "class": "raw trace archive",
+      "published": false
+    },
+    {
+      "relative_name": "bank_size32.npz",
+      "sha256": "ae89fe86381ecd096773bdd190d85d896093e6923fe275842839883c53438935",
+      "bytes": 13501,
+      "class": "fixed audit bank tensor archive",
+      "published": false
+    },
+    {
+      "relative_name": "bank_size64.npz",
+      "sha256": "5c27ce45cca976bd56e262a6e4e0fd3d3a4454e0e0418118ea5cf02e2dd9a13e",
+      "bytes": 31186,
+      "class": "fixed audit bank tensor archive",
+      "published": false
+    }
+  ],
+  "private_run_manifest_content": "omitted; its hash is recorded in the root publication manifest",
+  "dispatch_receipts_and_machine_identifiers": "omitted"
+}
