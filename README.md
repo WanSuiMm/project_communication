@@ -1,7 +1,17 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-Latest diagnostics: **update-zero learning geometry and continuation formation; zero training.** The
-initialization audit covers historical seeds 2/3/4/5 and previously inspected
+## Latest result: conditional seed4 bootstrap-path screen
+
+`seed4_bootstrap_path_v1`: COMPLETE, 23 arms × 300 updates, 3,068.407 s.
+This publication supplies data and code for independent review.
+
+1. [All-arm table](evidence/bootstrap_path_20261004/RESULTS.md), [aggregate](evidence/bootstrap_path_20261004/summary.json), and [six first-step measurements](evidence/bootstrap_path_20261004/first_step_summary.json).
+2. [Frozen protocol](new/bootstrap_path/PROTOCOL.md) and [source map](GPT_CONTEXT.md).
+3. Per-arm `arms/` JSON, `training/` curves, `frontier/` CSV, and `traces/` NPZ under `evidence/bootstrap_path_20261004/`; large raw arrays are secondary. [Validation](evidence/bootstrap_path_20261004/validation.json) and [reproduction](evidence/bootstrap_path_20261004/REPRODUCTION.md) describe checks and archive requirements.
+
+## Previous diagnostic: update-zero geometry and continuation formation
+
+The initialization audit covers historical seeds 2/3/4/5 and previously inspected
 16-map primary plus 8-map consistency banks per size at 32/64; historical
 parameter hashes match, and the CPU audit took 30.31 seconds. Seed 4 has the
 best raw lane balance and measured available source-flip pair separation at

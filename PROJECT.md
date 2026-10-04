@@ -1,5 +1,26 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Latest completed experiment (2026-10-04): seed4 early-bootstrap versus
+training-path sensitivity, new/bootstrap_path/PROTOCOL.md
+(`seed4_bootstrap_path_v1`). Formal run: runs/bootstrap_20261004_seed4_01.
+COMPLETE23/23 arms x300 updates in3068.407 seconds. Historical H, two selected schedules,
+first1/3/8 prefix/suffix crosses, same-donor pre-180 replacements and two exact
+batch-multiset row swaps. Original cell, K8 training, AdamW, banks and complete
+phenotype thresholds remain unchanged; optimizer state is never reset at a
+splice. No runtime cap, watchdog or continuous monitoring. Historical H and
+both S controls reproduce their archived results exactly. CPU/CUDA preflight
+checks pass. Publication is data and code for independent analysis:
+evidence/bootstrap_path_20261004/RESULTS.md, summary.json, first_step_summary.json,
+all23 arm summaries/curves, frontier CSVs,46 Boolean trace NPZs and six
+first-step array files. Configuration and validation are in the same directory.
+No new mechanism interpretation is supplied. Checkpoints and machine records
+remain local. Public hashes: BOOTSTRAP_PATH_PUBLICATION_MANIFEST.json.
+Canonical commands from repository root, new output names required:
+
+    python -X utf8 -B new/bootstrap_path/check.py --out analyses/NEW_BOOTSTRAP_CPU.json
+    python -X utf8 -u -B new/bootstrap_path/run.py --preflight --qualification analyses/NEW_BOOTSTRAP_CPU.json --out runs/NEW_BOOTSTRAP_PREFLIGHT
+    pwsh -File tools/launch_bootstrap_path.ps1 -RunName NEW_BOOTSTRAP_RUN -Preflight runs/NEW_BOOTSTRAP_PREFLIGHT
+
 Latest saved-artifact diagnostic (2026-10-04): continuation-formation proxies,
 new/formation_gate/PROTOCOL.md. CPU8.86 seconds,44 saved trace records, no
 training or inference. At all21 dense checkpoints100..200 plus300 control,

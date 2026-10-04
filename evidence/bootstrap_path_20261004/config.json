@@ -1,0 +1,328 @@
+{
+  "protocol": "seed4_bootstrap_path_v1",
+  "seed": 4,
+  "expected_formal_arms": 23,
+  "updates_per_arm": 300,
+  "arms": [
+    {
+      "name": "H",
+      "kind": "historical_control",
+      "alternate_seed": null,
+      "k": null,
+      "edited_updates": []
+    },
+    {
+      "name": "S20012",
+      "kind": "alternate_control",
+      "alternate_seed": 20012,
+      "k": null,
+      "edited_updates": []
+    },
+    {
+      "name": "S20012_replace_early1",
+      "kind": "replace_early",
+      "alternate_seed": 20012,
+      "k": 1,
+      "edited_updates": [
+        1
+      ]
+    },
+    {
+      "name": "S20012_preserve_early1",
+      "kind": "preserve_early",
+      "alternate_seed": 20012,
+      "k": 1,
+      "edited_updates": [
+        1
+      ]
+    },
+    {
+      "name": "S20012_replace_late1",
+      "kind": "replace_late",
+      "alternate_seed": 20012,
+      "k": 1,
+      "edited_updates": [
+        180
+      ]
+    },
+    {
+      "name": "S20012_replace_early3",
+      "kind": "replace_early",
+      "alternate_seed": 20012,
+      "k": 3,
+      "edited_updates": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "S20012_preserve_early3",
+      "kind": "preserve_early",
+      "alternate_seed": 20012,
+      "k": 3,
+      "edited_updates": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "S20012_replace_late3",
+      "kind": "replace_late",
+      "alternate_seed": 20012,
+      "k": 3,
+      "edited_updates": [
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "name": "S20012_replace_early8",
+      "kind": "replace_early",
+      "alternate_seed": 20012,
+      "k": 8,
+      "edited_updates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "S20012_preserve_early8",
+      "kind": "preserve_early",
+      "alternate_seed": 20012,
+      "k": 8,
+      "edited_updates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "S20012_replace_late8",
+      "kind": "replace_late",
+      "alternate_seed": 20012,
+      "k": 8,
+      "edited_updates": [
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "name": "S20022",
+      "kind": "alternate_control",
+      "alternate_seed": 20022,
+      "k": null,
+      "edited_updates": []
+    },
+    {
+      "name": "S20022_replace_early1",
+      "kind": "replace_early",
+      "alternate_seed": 20022,
+      "k": 1,
+      "edited_updates": [
+        1
+      ]
+    },
+    {
+      "name": "S20022_preserve_early1",
+      "kind": "preserve_early",
+      "alternate_seed": 20022,
+      "k": 1,
+      "edited_updates": [
+        1
+      ]
+    },
+    {
+      "name": "S20022_replace_late1",
+      "kind": "replace_late",
+      "alternate_seed": 20022,
+      "k": 1,
+      "edited_updates": [
+        180
+      ]
+    },
+    {
+      "name": "S20022_replace_early3",
+      "kind": "replace_early",
+      "alternate_seed": 20022,
+      "k": 3,
+      "edited_updates": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "S20022_preserve_early3",
+      "kind": "preserve_early",
+      "alternate_seed": 20022,
+      "k": 3,
+      "edited_updates": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "S20022_replace_late3",
+      "kind": "replace_late",
+      "alternate_seed": 20022,
+      "k": 3,
+      "edited_updates": [
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "name": "S20022_replace_early8",
+      "kind": "replace_early",
+      "alternate_seed": 20022,
+      "k": 8,
+      "edited_updates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "S20022_preserve_early8",
+      "kind": "preserve_early",
+      "alternate_seed": 20022,
+      "k": 8,
+      "edited_updates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "S20022_replace_late8",
+      "kind": "replace_late",
+      "alternate_seed": 20022,
+      "k": 8,
+      "edited_updates": [
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "name": "H_swap_early8",
+      "kind": "multiset_order_swap",
+      "alternate_seed": null,
+      "k": 8,
+      "edited_updates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "name": "H_swap_late8",
+      "kind": "multiset_order_swap",
+      "alternate_seed": null,
+      "k": 8,
+      "edited_updates": [
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180
+      ]
+    }
+  ],
+  "torch": "2.5.1",
+  "numpy": "1.26.4",
+  "threads": 2,
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_norm": 1.0
+  },
+  "gradient_horizon": 8,
+  "forward_steps": 64,
+  "loss_times": [
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64
+  ],
+  "optimizer_reset_at_splice": false,
+  "test_maps_reused": true,
+  "runtime_limit_enforced": false
+}

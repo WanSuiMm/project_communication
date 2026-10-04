@@ -1,6 +1,20 @@
 # Context for incremental scientific review
 
-## Current diagnostic: update-zero geometry and continuation formation
+## Latest result: conditional seed4 bootstrap-path screen
+
+- Run: `seed4_bootstrap_path_v1`, COMPLETE, 23 arms × 300 updates, 3,068.407 s.
+- Inputs: init4, unchanged historical StreamingCell/AdamW/K8; H20002 and S20012/S20022; prefix lengths1/3/8. Paired source-flip evaluation uses32 maps each at spatial sizes32/64, seeds50032/50064, reused from the earlier screen.
+- Publication is data and code, without a new mechanism analysis. All arms, failures, denominators, training curves, frontier CSVs and Boolean NPZ traces are retained. First-step cases: init2/3/4/5 on H plus init4 on both S first batches; gradient and actual parameter-delta spectra are separate fields.
+- Read [table](evidence/bootstrap_path_20261004/RESULTS.md), [aggregate](evidence/bootstrap_path_20261004/summary.json), [first-step data](evidence/bootstrap_path_20261004/first_step_summary.json), then [protocol](new/bootstrap_path/PROTOCOL.md) and [validation](evidence/bootstrap_path_20261004/validation.json). `traces/` arrays are secondary, not the starting point. Full local reference requirements are in [reproduction](evidence/bootstrap_path_20261004/REPRODUCTION.md).
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Provenance and training loop | `source_hashes`, `actual_first_steps`, `train_one`, `aggregate` | [run.py](new/bootstrap_path/run.py) |
+| Frozen schedules and intervention construction | `suite`, `check_suite` | [schedules.py](new/bootstrap_path/schedules.py) |
+| Actual first-step gradient and AdamW audit | `audit_first_step` | [first_step.py](new/bootstrap_path/first_step.py) |
+| Full phenotype evaluation | `evaluate`, `predicate` | [phenotype.py](new/seed4_followup/phenotype.py) |
+
+## Previous diagnostic: update-zero geometry and continuation formation
 
 - Scope: two zero-training diagnostics in 2D. Initial geometry uses the four
   exact historical update-zero checkpoints (seeds 2/3/4/5) and fixed primary

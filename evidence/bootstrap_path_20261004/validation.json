@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "validated_arms": 23,
+  "trace_banks": 46,
+  "checks": [
+    "source/snapshot hashes",
+    "control replays",
+    "300-update identities",
+    "endpoint coverage and paired conjunction",
+    "retention counts",
+    "every-step regression",
+    "open-grid BA",
+    "frontier integer arithmetic",
+    "all frozen gate decisions"
+  ],
+  "scope": "Saved evidence arithmetic only; no new model inference or training."
+}
