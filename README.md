@@ -1,6 +1,34 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: serial training-state and second-task qualification
+## Latest result: continuation-interface audit
+
+`continuation_interface_v1`: **COMPLETE**, 50 transfer cells, 439 seconds.
+The common native Full qualification passes for S1/S2, and the gauge control
+passes. Raw S1↔S2 off-diagonal transfer fails while raw S1→F1 passes. Under the
+frozen 100-coefficient linear alignment, S2→S1 and S2→F2 pass while S1→S2
+still fails. This selected-checkpoint audit does not establish a common
+algorithm. Restricted off-diagonal alignment qualification is **0/20**, and
+matched short-observable flags are **0/6**; these remain separate from transfer
+proxy passes. No model training or optimizer steps were run.
+
+Read in this order:
+
+1. [Results](evidence/continuation_interface_20261004/RESULTS.md),
+   [summary](evidence/continuation_interface_20261004/summary.json),
+   [validation](evidence/continuation_interface_20261004/validation.json),
+   [configuration](evidence/continuation_interface_20261004/config.json), and
+   [reproduction notes](evidence/continuation_interface_20261004/REPRODUCTION.md).
+2. [Selection](evidence/continuation_interface_20261004/selection.json),
+   [alignment validation](evidence/continuation_interface_20261004/alignment/validation.json),
+   [short-objective comparisons](evidence/continuation_interface_20261004/phase0/comparisons.json),
+   [cross-consumer decomposition](evidence/continuation_interface_20261004/cross/decomposition.json),
+   and [gradient metadata](evidence/continuation_interface_20261004/gradients/metadata.json).
+3. Frozen [protocol](new/continuation_interface/PROTOCOL.md) and the
+   [source map](GPT_CONTEXT.md). Full per-cell records and larger arrays are
+   secondary. Verify the published snapshot from the repository root with
+   `python -X utf8 -B tools/export_continuation_interface.py --verify-only`.
+
+## Previous result: serial training-state and second-task qualification
 
 `trajectory_qualification_v1`: **COMPLETE**, 48/48 arms across the three stages
 (8 + 32 + 8; 6,610.797 seconds). Stage 1 selected `shadow_joint` as a

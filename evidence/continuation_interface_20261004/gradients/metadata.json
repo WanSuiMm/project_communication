@@ -1,0 +1,999 @@
+{
+  "schema": "continuation_gradient_audit_v1",
+  "training_updates": 0,
+  "forward_steps": 64,
+  "loss_every": 8,
+  "gradient_horizons": {
+    "k8": 8,
+    "full64": 64
+  },
+  "forward_loss_tolerance": 1e-06,
+  "device_type": "cuda",
+  "batch_indices": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    [
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ]
+  ],
+  "parameter_names": [
+    "encoder.bias",
+    "encoder.weight",
+    "f_in.bias",
+    "f_in.weight",
+    "f_out.bias",
+    "f_out.weight",
+    "q_in.bias",
+    "q_in.weight",
+    "q_out.bias",
+    "q_out.weight",
+    "readout.bias",
+    "readout.weight"
+  ],
+  "parameter_shapes": [
+    [
+      24
+    ],
+    [
+      24,
+      3,
+      1,
+      1
+    ],
+    [
+      40
+    ],
+    [
+      40,
+      67,
+      1,
+      1
+    ],
+    [
+      24
+    ],
+    [
+      24,
+      40,
+      1,
+      1
+    ],
+    [
+      16
+    ],
+    [
+      16,
+      67,
+      1,
+      1
+    ],
+    [
+      8
+    ],
+    [
+      8,
+      16,
+      1,
+      1
+    ],
+    [
+      1
+    ],
+    [
+      1,
+      8,
+      1,
+      1
+    ]
+  ],
+  "direction_pair": {
+    "source_id": "S1",
+    "target_id": "F1",
+    "parameter_distance": 5.457944413519489,
+    "unit_vector_defined": true,
+    "same_init_required": true
+  },
+  "models": {
+    "S1": {
+      "parameter_sha256_before": "d257ce0d14aa6e36a6cbcc60f5c1cb68f5a5664b3914ba5275565a844627d9a5",
+      "parameter_sha256_after": "d257ce0d14aa6e36a6cbcc60f5c1cb68f5a5664b3914ba5275565a844627d9a5",
+      "batch_gradients": [
+        {
+          "batch_index": 0,
+          "forward_loss": {
+            "k8": 0.2788867950439453,
+            "full64": 0.2788867950439453,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.36363122921219104,
+            "group_norms": {
+              "encoder": 0.0043666971079125245,
+              "f_in/f_out": 0.034728069473601096,
+              "q_in/q_out": 0.3024318676804698,
+              "readout": 0.19884046222204455
+            },
+            "dot_with_unit_direction": 0.012151700991396192
+          },
+          "full64": {
+            "norm": 0.7724176418812511,
+            "group_norms": {
+              "encoder": 0.11678028868431342,
+              "f_in/f_out": 0.4071259611040714,
+              "q_in/q_out": 0.6145748943119179,
+              "readout": 0.1988404605224549
+            },
+            "dot_with_unit_direction": -0.01912367843986587
+          },
+          "cosine_k8_full64": 0.642408100532856,
+          "norm_ratio_k8_over_full64": 0.47077022778319,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 1,
+          "forward_loss": {
+            "k8": 0.25248682498931885,
+            "full64": 0.25248682498931885,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.2680887735831578,
+            "group_norms": {
+              "encoder": 0.00693619776554463,
+              "f_in/f_out": 0.013147343381633926,
+              "q_in/q_out": 0.19558199443544172,
+              "readout": 0.18275204649070045
+            },
+            "dot_with_unit_direction": 0.0059792663464619455
+          },
+          "full64": {
+            "norm": 0.551958548541151,
+            "group_norms": {
+              "encoder": 0.22070875529142378,
+              "f_in/f_out": 0.1696570139225251,
+              "q_in/q_out": 0.44018640892684885,
+              "readout": 0.18275203875290036
+            },
+            "dot_with_unit_direction": -0.00717646501950726
+          },
+          "cosine_k8_full64": 0.5467419110235783,
+          "norm_ratio_k8_over_full64": 0.48570454120463824,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 2,
+          "forward_loss": {
+            "k8": 0.2722727060317993,
+            "full64": 0.2722727060317993,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.30999278720521956,
+            "group_norms": {
+              "encoder": 0.004665110350674163,
+              "f_in/f_out": 0.02200462473921212,
+              "q_in/q_out": 0.24450175878973368,
+              "readout": 0.18923121122978084
+            },
+            "dot_with_unit_direction": 0.009957780734203874
+          },
+          "full64": {
+            "norm": 0.6375916062343361,
+            "group_norms": {
+              "encoder": 0.1829425050580499,
+              "f_in/f_out": 0.2409891749665749,
+              "q_in/q_out": 0.5283662235161621,
+              "readout": 0.18923120139069208
+            },
+            "dot_with_unit_direction": -0.003735385503986416
+          },
+          "cosine_k8_full64": 0.6049382980462904,
+          "norm_ratio_k8_over_full64": 0.48619333155287325,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 3,
+          "forward_loss": {
+            "k8": 0.2633529007434845,
+            "full64": 0.2633529007434845,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.3142597648668288,
+            "group_norms": {
+              "encoder": 0.00391033289798225,
+              "f_in/f_out": 0.026859441445627255,
+              "q_in/q_out": 0.2472577037544352,
+              "readout": 0.1920575628557603
+            },
+            "dot_with_unit_direction": 0.008667187024538583
+          },
+          "full64": {
+            "norm": 0.6739395609346944,
+            "group_norms": {
+              "encoder": 0.16429917123048396,
+              "f_in/f_out": 0.3038166351738681,
+              "q_in/q_out": 0.5459026052395972,
+              "readout": 0.19205757446680938
+            },
+            "dot_with_unit_direction": -0.01119587295965213
+          },
+          "cosine_k8_full64": 0.702557661068384,
+          "norm_ratio_k8_over_full64": 0.46630259311529115,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        }
+      ],
+      "mean_gradient": {
+        "k8": {
+          "norm": 0.31042281714612635,
+          "group_norms": {
+            "encoder": 0.004495055344156624,
+            "f_in/f_out": 0.023558047267165007,
+            "q_in/q_out": 0.24553427355816293,
+            "readout": 0.18841459285207607
+          },
+          "dot_with_unit_direction": 0.00918898377415015
+        },
+        "full64": {
+          "norm": 0.6081319761816306,
+          "group_norms": {
+            "encoder": 0.10992057102212918,
+            "f_in/f_out": 0.27105195503900853,
+            "q_in/q_out": 0.4987712381398931,
+            "readout": 0.18841459124673374
+          },
+          "dot_with_unit_direction": -0.010307850480752912
+        }
+      },
+      "mean_gradient_cosine_k8_full64": 0.668381923588075,
+      "mean_gradient_norm_ratio_k8_over_full64": 0.5104530419453103,
+      "gradient_files": [
+        "S1_batch00.npz",
+        "S1_batch01.npz",
+        "S1_batch02.npz",
+        "S1_batch03.npz",
+        "S1_mean_gradients.npz"
+      ]
+    },
+    "S2": {
+      "parameter_sha256_before": "c69353d8d2fa9d1fda480c1bf701d8b1536ce5a697052f22b7353dd5eef08b30",
+      "parameter_sha256_after": "c69353d8d2fa9d1fda480c1bf701d8b1536ce5a697052f22b7353dd5eef08b30",
+      "batch_gradients": [
+        {
+          "batch_index": 0,
+          "forward_loss": {
+            "k8": 0.27774181962013245,
+            "full64": 0.27774181962013245,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.3460938974280385,
+            "group_norms": {
+              "encoder": 0.006455873001957215,
+              "f_in/f_out": 0.015272202604259462,
+              "q_in/q_out": 0.2054724513060762,
+              "readout": 0.27800564584662457
+            },
+            "dot_with_unit_direction": -0.0020332303908231412
+          },
+          "full64": {
+            "norm": 1.5753197635894813,
+            "group_norms": {
+              "encoder": 0.04449514569614481,
+              "f_in/f_out": 0.11686632171337925,
+              "q_in/q_out": 1.5455444520311992,
+              "readout": 0.27800566398881765
+            },
+            "dot_with_unit_direction": -0.011147002150608766
+          },
+          "cosine_k8_full64": 0.6570750969667998,
+          "norm_ratio_k8_over_full64": 0.21969755311101932,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 1,
+          "forward_loss": {
+            "k8": 0.26050740480422974,
+            "full64": 0.26050740480422974,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.24110643093672107,
+            "group_norms": {
+              "encoder": 0.008092161187129741,
+              "f_in/f_out": 0.01764656333389534,
+              "q_in/q_out": 0.12330581376580807,
+              "readout": 0.2062791871721915
+            },
+            "dot_with_unit_direction": -0.0016332342489252668
+          },
+          "full64": {
+            "norm": 1.1345439146875522,
+            "group_norms": {
+              "encoder": 0.034765518285634484,
+              "f_in/f_out": 0.07897750207791489,
+              "q_in/q_out": 1.1122916427206864,
+              "readout": 0.20627920106529526
+            },
+            "dot_with_unit_direction": -0.00811329402018924
+          },
+          "cosine_k8_full64": 0.5295004024692843,
+          "norm_ratio_k8_over_full64": 0.21251396954794877,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 2,
+          "forward_loss": {
+            "k8": 0.277177095413208,
+            "full64": 0.277177095413208,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.33786760382705816,
+            "group_norms": {
+              "encoder": 0.005495057331338556,
+              "f_in/f_out": 0.016141817312516762,
+              "q_in/q_out": 0.2030227125699036,
+              "readout": 0.2695283695186295
+            },
+            "dot_with_unit_direction": -0.0017929422747933466
+          },
+          "full64": {
+            "norm": 1.5582866000963698,
+            "group_norms": {
+              "encoder": 0.05375606097051705,
+              "f_in/f_out": 0.22758185996766236,
+              "q_in/q_out": 1.5168811315588442,
+              "readout": 0.26952837268691743
+            },
+            "dot_with_unit_direction": -0.010761239288945318
+          },
+          "cosine_k8_full64": 0.6627631781959135,
+          "norm_ratio_k8_over_full64": 0.21681993787674442,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 3,
+          "forward_loss": {
+            "k8": 0.2570444643497467,
+            "full64": 0.2570444643497467,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.24696136753985878,
+            "group_norms": {
+              "encoder": 0.00902880302533254,
+              "f_in/f_out": 0.013069725956898955,
+              "q_in/q_out": 0.15642732496594966,
+              "readout": 0.19044178123640756
+            },
+            "dot_with_unit_direction": -0.0017620246277996504
+          },
+          "full64": {
+            "norm": 1.2321426405085982,
+            "group_norms": {
+              "encoder": 0.04567991018814848,
+              "f_in/f_out": 0.10324976508267321,
+              "q_in/q_out": 1.2120892062507234,
+              "readout": 0.19044178760337102
+            },
+            "dot_with_unit_direction": -0.008127920067934998
+          },
+          "cosine_k8_full64": 0.6174914619135372,
+          "norm_ratio_k8_over_full64": 0.20043244947510233,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        }
+      ],
+      "mean_gradient": {
+        "k8": {
+          "norm": 0.2910726111803665,
+          "group_norms": {
+            "encoder": 0.00715602163594584,
+            "f_in/f_out": 0.012513876602221188,
+            "q_in/q_out": 0.17002290495701236,
+            "readout": 0.23581278806728403
+          },
+          "dot_with_unit_direction": -0.0018053578855853512
+        },
+        "full64": {
+          "norm": 1.369723815941331,
+          "group_norms": {
+            "encoder": 0.034570441172005285,
+            "f_in/f_out": 0.10763933826567888,
+            "q_in/q_out": 1.3445275428807963,
+            "readout": 0.23581279830982316
+          },
+          "dot_with_unit_direction": -0.009537363881919579
+        }
+      },
+      "mean_gradient_cosine_k8_full64": 0.6260706719570396,
+      "mean_gradient_norm_ratio_k8_over_full64": 0.21250459968116223,
+      "gradient_files": [
+        "S2_batch00.npz",
+        "S2_batch01.npz",
+        "S2_batch02.npz",
+        "S2_batch03.npz",
+        "S2_mean_gradients.npz"
+      ]
+    },
+    "F1": {
+      "parameter_sha256_before": "8353d0754d67011f2e01cb3f4c5760427e4ddece3ab53cae2015269056dd4ef0",
+      "parameter_sha256_after": "8353d0754d67011f2e01cb3f4c5760427e4ddece3ab53cae2015269056dd4ef0",
+      "batch_gradients": [
+        {
+          "batch_index": 0,
+          "forward_loss": {
+            "k8": 0.3901044726371765,
+            "full64": 0.3901044726371765,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.5786145464045754,
+            "group_norms": {
+              "encoder": 0.003209281684599503,
+              "f_in/f_out": 0.025770693377718583,
+              "q_in/q_out": 0.34567382525467744,
+              "readout": 0.46328174118852544
+            },
+            "dot_with_unit_direction": -0.0005750025507941245
+          },
+          "full64": {
+            "norm": 66.50378453191958,
+            "group_norms": {
+              "encoder": 10.480656927673147,
+              "f_in/f_out": 25.318109897262165,
+              "q_in/q_out": 60.59445410815007,
+              "readout": 0.4632817693945427
+            },
+            "dot_with_unit_direction": 2.077399321084626
+          },
+          "cosine_k8_full64": -0.0887733645775471,
+          "norm_ratio_k8_over_full64": 0.008700475476352176,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 1,
+          "forward_loss": {
+            "k8": 0.20433291792869568,
+            "full64": 0.20433291792869568,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.11480598408010279,
+            "group_norms": {
+              "encoder": 0.00340951001519782,
+              "f_in/f_out": 0.021998645727630835,
+              "q_in/q_out": 0.05997226796722803,
+              "readout": 0.0953319247842729
+            },
+            "dot_with_unit_direction": -0.0013719600754626392
+          },
+          "full64": {
+            "norm": 5.849974067962756,
+            "group_norms": {
+              "encoder": 0.927596232146531,
+              "f_in/f_out": 2.6511269096162335,
+              "q_in/q_out": 5.130711428087821,
+              "readout": 0.09533192928909646
+            },
+            "dot_with_unit_direction": 0.008668180884632365
+          },
+          "cosine_k8_full64": 0.001332916656907562,
+          "norm_ratio_k8_over_full64": 0.01962504153801895,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 2,
+          "forward_loss": {
+            "k8": 0.1987931877374649,
+            "full64": 0.1987931877374649,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.18055588960327187,
+            "group_norms": {
+              "encoder": 0.003291771041474043,
+              "f_in/f_out": 0.01096285097995383,
+              "q_in/q_out": 0.10800077292609077,
+              "readout": 0.14424022483204094
+            },
+            "dot_with_unit_direction": 0.000480172880335897
+          },
+          "full64": {
+            "norm": 22.618324369156824,
+            "group_norms": {
+              "encoder": 3.032154509114407,
+              "f_in/f_out": 9.442666608951063,
+              "q_in/q_out": 20.327564496793844,
+              "readout": 0.14424022371578843
+            },
+            "dot_with_unit_direction": -0.011152503621545462
+          },
+          "cosine_k8_full64": 0.24679377453043805,
+          "norm_ratio_k8_over_full64": 0.007982726158507326,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 3,
+          "forward_loss": {
+            "k8": 0.21002264320850372,
+            "full64": 0.21002264320850372,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.22946175080663608,
+            "group_norms": {
+              "encoder": 0.0038581747529591614,
+              "f_in/f_out": 0.023237558470015914,
+              "q_in/q_out": 0.15226582756198082,
+              "readout": 0.17003806398580318
+            },
+            "dot_with_unit_direction": 0.0007197199208077158
+          },
+          "full64": {
+            "norm": 23.018430755838857,
+            "group_norms": {
+              "encoder": 3.7857027115155226,
+              "f_in/f_out": 9.845752047536381,
+              "q_in/q_out": 20.45846678313237,
+              "readout": 0.17003806419377887
+            },
+            "dot_with_unit_direction": 0.3715534842440652
+          },
+          "cosine_k8_full64": -0.17088913029982375,
+          "norm_ratio_k8_over_full64": 0.009968609643315099,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        }
+      ],
+      "mean_gradient": {
+        "k8": {
+          "norm": 0.1658566691609387,
+          "group_norms": {
+            "encoder": 0.003350085635499192,
+            "f_in/f_out": 0.01784345290855988,
+            "q_in/q_out": 0.1249868066288281,
+            "readout": 0.10750405103261845
+          },
+          "dot_with_unit_direction": -0.00018676745627828665
+        },
+        "full64": {
+          "norm": 18.550485146320813,
+          "group_norms": {
+            "encoder": 3.12970249686806,
+            "f_in/f_out": 6.98153261812133,
+            "q_in/q_out": 16.898878857030326,
+            "readout": 0.10750405800877012
+          },
+          "dot_with_unit_direction": 0.6116171206479446
+        }
+      },
+      "mean_gradient_cosine_k8_full64": -0.09924347435701783,
+      "mean_gradient_norm_ratio_k8_over_full64": 0.008940826498752441,
+      "gradient_files": [
+        "F1_batch00.npz",
+        "F1_batch01.npz",
+        "F1_batch02.npz",
+        "F1_batch03.npz",
+        "F1_mean_gradients.npz"
+      ]
+    },
+    "F2": {
+      "parameter_sha256_before": "0fc4fc5e3425e1c5a05952b5713160b1f94c95ff164dc04caf5fe81b3baa9b46",
+      "parameter_sha256_after": "0fc4fc5e3425e1c5a05952b5713160b1f94c95ff164dc04caf5fe81b3baa9b46",
+      "batch_gradients": [
+        {
+          "batch_index": 0,
+          "forward_loss": {
+            "k8": 0.3778182864189148,
+            "full64": 0.3778182864189148,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.6293867826037938,
+            "group_norms": {
+              "encoder": 0.009963363717434571,
+              "f_in/f_out": 0.04667951082967028,
+              "q_in/q_out": 0.605961172321299,
+              "readout": 0.16328053897353778
+            },
+            "dot_with_unit_direction": -0.01473127311218406
+          },
+          "full64": {
+            "norm": 21.79579995594872,
+            "group_norms": {
+              "encoder": 10.751683400688052,
+              "f_in/f_out": 11.295760184017874,
+              "q_in/q_out": 15.22620573558202,
+              "readout": 0.16328053769152254
+            },
+            "dot_with_unit_direction": -0.1723738961128451
+          },
+          "cosine_k8_full64": 0.15889158709082127,
+          "norm_ratio_k8_over_full64": 0.028876516754413294,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 1,
+          "forward_loss": {
+            "k8": 0.26088210940361023,
+            "full64": 0.26088210940361023,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.6309622844965593,
+            "group_norms": {
+              "encoder": 0.006697791321935954,
+              "f_in/f_out": 0.03660058453415738,
+              "q_in/q_out": 0.626333355118407,
+              "readout": 0.06659932076532195
+            },
+            "dot_with_unit_direction": -0.014547561802937295
+          },
+          "full64": {
+            "norm": 16.0781961951748,
+            "group_norms": {
+              "encoder": 8.134144712925398,
+              "f_in/f_out": 9.893344369772633,
+              "q_in/q_out": 9.71912467209319,
+              "readout": 0.06659931770539655
+            },
+            "dot_with_unit_direction": -0.12637686619085645
+          },
+          "cosine_k8_full64": 0.023377548857262162,
+          "norm_ratio_k8_over_full64": 0.03924335023887296,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 2,
+          "forward_loss": {
+            "k8": 0.3258267045021057,
+            "full64": 0.3258267045021057,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.524907920242427,
+            "group_norms": {
+              "encoder": 0.004398942395145953,
+              "f_in/f_out": 0.03929390176817931,
+              "q_in/q_out": 0.5039862828791237,
+              "readout": 0.14128973774676948
+            },
+            "dot_with_unit_direction": -0.01129837500981787
+          },
+          "full64": {
+            "norm": 11.39587550554081,
+            "group_norms": {
+              "encoder": 4.452232728750681,
+              "f_in/f_out": 5.433219285354382,
+              "q_in/q_out": 8.972389184244339,
+              "readout": 0.14128973966531452
+            },
+            "dot_with_unit_direction": -0.09379161033072418
+          },
+          "cosine_k8_full64": 0.2855369244024582,
+          "norm_ratio_k8_over_full64": 0.046061219253159674,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 3,
+          "forward_loss": {
+            "k8": 0.28311336040496826,
+            "full64": 0.28311336040496826,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.6330666753032691,
+            "group_norms": {
+              "encoder": 0.00773862910590544,
+              "f_in/f_out": 0.03342774369353777,
+              "q_in/q_out": 0.6248623664563219,
+              "readout": 0.09561975704455879
+            },
+            "dot_with_unit_direction": -0.013704003594519718
+          },
+          "full64": {
+            "norm": 17.859966128449855,
+            "group_norms": {
+              "encoder": 8.953040085399625,
+              "f_in/f_out": 9.768926943903082,
+              "q_in/q_out": 11.974154941707155,
+              "readout": 0.09561974313966597
+            },
+            "dot_with_unit_direction": -0.13031589072163866
+          },
+          "cosine_k8_full64": 0.02719471947973649,
+          "norm_ratio_k8_over_full64": 0.03544612967069584,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        }
+      ],
+      "mean_gradient": {
+        "k8": {
+          "norm": 0.5844836797699539,
+          "group_norms": {
+            "encoder": 0.005524976700285835,
+            "f_in/f_out": 0.0370591125017937,
+            "q_in/q_out": 0.5725092053775113,
+            "readout": 0.11158171215964245
+          },
+          "dot_with_unit_direction": -0.01357030337986474
+        },
+        "full64": {
+          "norm": 16.382655663440612,
+          "group_norms": {
+            "encoder": 7.86483457019161,
+            "f_in/f_out": 8.993378346093307,
+            "q_in/q_out": 11.209035606004091,
+            "readout": 0.11158170877991566
+          },
+          "dot_with_unit_direction": -0.1307145658390163
+        }
+      },
+      "mean_gradient_cosine_k8_full64": 0.09375384754013719,
+      "mean_gradient_norm_ratio_k8_over_full64": 0.03567698008048124,
+      "gradient_files": [
+        "F2_batch00.npz",
+        "F2_batch01.npz",
+        "F2_batch02.npz",
+        "F2_batch03.npz",
+        "F2_mean_gradients.npz"
+      ]
+    },
+    "F3": {
+      "parameter_sha256_before": "2de4b9c94d9016a1b1c17cac343ff39305ec48c428ad26b685189375d7a228ee",
+      "parameter_sha256_after": "2de4b9c94d9016a1b1c17cac343ff39305ec48c428ad26b685189375d7a228ee",
+      "batch_gradients": [
+        {
+          "batch_index": 0,
+          "forward_loss": {
+            "k8": 0.3310154974460602,
+            "full64": 0.3310154974460602,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.22882545109174024,
+            "group_norms": {
+              "encoder": 0.005977314801261145,
+              "f_in/f_out": 0.018156629829809628,
+              "q_in/q_out": 0.22010166577375725,
+              "readout": 0.059589867359690754
+            },
+            "dot_with_unit_direction": 0.0053165188795962675
+          },
+          "full64": {
+            "norm": 2.7946806064886935,
+            "group_norms": {
+              "encoder": 1.2629545092141543,
+              "f_in/f_out": 1.7594787650168169,
+              "q_in/q_out": 1.7651824618000012,
+              "readout": 0.05958986447568044
+            },
+            "dot_with_unit_direction": 0.0011179852659100676
+          },
+          "cosine_k8_full64": 0.1729267151097626,
+          "norm_ratio_k8_over_full64": 0.08187892761714988,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 1,
+          "forward_loss": {
+            "k8": 0.2608250379562378,
+            "full64": 0.2608250379562378,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.32823918678960995,
+            "group_norms": {
+              "encoder": 0.002736709296498105,
+              "f_in/f_out": 0.021028634702485765,
+              "q_in/q_out": 0.31043580486824873,
+              "readout": 0.10450302265907406
+            },
+            "dot_with_unit_direction": 0.0003571262171243427
+          },
+          "full64": {
+            "norm": 2.8606645352378672,
+            "group_norms": {
+              "encoder": 1.5519766602548366,
+              "f_in/f_out": 1.1446823788352845,
+              "q_in/q_out": 2.1103439051573156,
+              "readout": 0.10450302742642723
+            },
+            "dot_with_unit_direction": -0.0249285055493762
+          },
+          "cosine_k8_full64": 0.5567004379728743,
+          "norm_ratio_k8_over_full64": 0.11474228548868157,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 2,
+          "forward_loss": {
+            "k8": 0.3422278165817261,
+            "full64": 0.3422278165817261,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.34502633669238897,
+            "group_norms": {
+              "encoder": 0.005969840212449782,
+              "f_in/f_out": 0.021545984941817076,
+              "q_in/q_out": 0.3360588499591643,
+              "readout": 0.07488493784612815
+            },
+            "dot_with_unit_direction": -0.0013458613938427872
+          },
+          "full64": {
+            "norm": 9.416674029384232,
+            "group_norms": {
+              "encoder": 5.533078685673213,
+              "f_in/f_out": 5.2595130009242546,
+              "q_in/q_out": 5.512776548457074,
+              "readout": 0.07488493652726796
+            },
+            "dot_with_unit_direction": -0.25404228665800666
+          },
+          "cosine_k8_full64": 0.36542543026241736,
+          "norm_ratio_k8_over_full64": 0.036639936310395006,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        },
+        {
+          "batch_index": 3,
+          "forward_loss": {
+            "k8": 0.28831538558006287,
+            "full64": 0.28831538558006287,
+            "absolute_difference": 0.0
+          },
+          "k8": {
+            "norm": 0.3471250030624616,
+            "group_norms": {
+              "encoder": 0.003144726799035436,
+              "f_in/f_out": 0.024362196301970108,
+              "q_in/q_out": 0.33086279756105896,
+              "readout": 0.10208903479751072
+            },
+            "dot_with_unit_direction": -0.0007246195685804335
+          },
+          "full64": {
+            "norm": 9.613083083963138,
+            "group_norms": {
+              "encoder": 6.5420798331955945,
+              "f_in/f_out": 4.766750359368695,
+              "q_in/q_out": 5.184614419116137,
+              "readout": 0.1020890387122411
+            },
+            "dot_with_unit_direction": -0.11521927563436693
+          },
+          "cosine_k8_full64": 0.24277209076136327,
+          "norm_ratio_k8_over_full64": 0.03610964349632502,
+          "backward_calls": {
+            "k8": 8,
+            "full64": 1
+          }
+        }
+      ],
+      "mean_gradient": {
+        "k8": {
+          "norm": 0.2255714338194683,
+          "group_norms": {
+            "encoder": 0.0027262665102267877,
+            "f_in/f_out": 0.0174553224309811,
+            "q_in/q_out": 0.2110088407360559,
+            "readout": 0.07775358561727078
+          },
+          "dot_with_unit_direction": 0.0009007910335743456
+        },
+        "full64": {
+          "norm": 3.2355578381045427,
+          "group_norms": {
+            "encoder": 1.5561387121618437,
+            "f_in/f_out": 1.5986211187437847,
+            "q_in/q_out": 2.3421425513209,
+            "readout": 0.07775358660159737
+          },
+          "dot_with_unit_direction": -0.0982680206439599
+        }
+      },
+      "mean_gradient_cosine_k8_full64": 0.47277180010290126,
+      "mean_gradient_norm_ratio_k8_over_full64": 0.06971639671000682,
+      "gradient_files": [
+        "F3_batch00.npz",
+        "F3_batch01.npz",
+        "F3_batch02.npz",
+        "F3_batch03.npz",
+        "F3_mean_gradients.npz"
+      ]
+    }
+  },
+  "parameters_unchanged": true
+}

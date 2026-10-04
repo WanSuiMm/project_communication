@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "permutation": [
+    6,
+    2,
+    7,
+    4,
+    0,
+    3,
+    5,
+    1
+  ],
+  "max_normalized_discrepancy": {
+    "native_W": 1.249120214197319e-05,
+    "native_Z": 7.140270099625923e-06,
+    "native_logits": 9.306022548116744e-06,
+    "aligned_W": 4.2873028860412887e-07,
+    "aligned_Z": 4.322756410601869e-07,
+    "aligned_logits": 5.190153160583577e-07
+  },
+  "paired_agreement": {
+    "native": {
+      "numerator": 458745,
+      "denominator": 458745,
+      "value": 1.0
+    },
+    "aligned": {
+      "numerator": 344505,
+      "denominator": 344505,
+      "value": 1.0
+    },
+    "raw": {
+      "numerator": 341149,
+      "denominator": 344505,
+      "value": 0.9902584868144149
+    }
+  },
+  "steps": 256,
+  "raw_failure_required": false
+}

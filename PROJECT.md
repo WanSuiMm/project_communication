@@ -1,6 +1,31 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Completed serial suite (2026-10-04): `trajectory_qualification_v1`. Formal
+Completed zero-training audit (2026-10-04): `continuation_interface_v1`,
+output `runs/continuation_interface_20261004_01`; formal run `COMPLETE`, 50
+transfer cells in 439 seconds. Common native Full qualification passes for
+S1/S2, and the exact gauge control passes. Raw S1↔S2 off-diagonal transfer
+fails while S1→F1 passes. With the frozen 100-coefficient linear alignment,
+S2→S1 and S2→F2 pass while the reverse S1→S2 direction fails. This is a
+selected-checkpoint interface audit; it does not establish a common algorithm.
+No model training or optimizer steps were run. Restricted off-diagonal alignment
+qualification is 0/20 and matched short-observable flags are 0/6, separate from
+the transfer proxies; all flags remain in the raw data.
+
+Public reading route: [results](evidence/continuation_interface_20261004/RESULTS.md),
+[summary](evidence/continuation_interface_20261004/summary.json),
+[validation](evidence/continuation_interface_20261004/validation.json),
+[configuration](evidence/continuation_interface_20261004/config.json), and
+[reproduction notes](evidence/continuation_interface_20261004/REPRODUCTION.md);
+then `selection.json`, `alignment/validation.json`, `phase0/comparisons.json`,
+`cross/decomposition.json`, and `gradients/metadata.json` in that evidence
+directory. Full per-cell records and larger arrays are secondary. The frozen
+protocol is [new/continuation_interface/PROTOCOL.md](new/continuation_interface/PROTOCOL.md);
+code entry points are `run.py`, `alignment.py`, `metrics.py`, `gradients.py`,
+and `check.py` in `new/continuation_interface/`. Verify the public snapshot
+from the repository root with
+`python -X utf8 -B tools/export_continuation_interface.py --verify-only`.
+
+Previous completed suite (2026-10-04): `trajectory_qualification_v1`. Formal
 execution is `COMPLETE`, 48/48 arms (stage 1: 8/8, stage 2: 32/32, stage 3:
 8/8; 6,610.797 seconds). Stage 1 selected the conditional update-3 donor
 recipe `shadow_joint`. Stage 2 has 1/16 baseline and 1/16 treatment Full

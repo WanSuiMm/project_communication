@@ -1,6 +1,39 @@
 # Context for incremental scientific review
 
-## Latest completed suite: serial training-state and second-task qualification
+## Latest completed audit: continuation interface
+
+- Run: `continuation_interface_v1`, `COMPLETE`, 50 transfer cells, 439 seconds;
+  no model training or optimizer steps. Common native Full qualification is
+  true for S1/S2, and the gauge control passes.
+- Raw S1↔S2 off-diagonal transfer fails; raw S1→F1 passes. With the frozen
+  100-coefficient linear alignment, S2→S1 and S2→F2 pass, while S1→S2 fails.
+  This is a selected-checkpoint interface result, not proof of a common
+  algorithm. Restricted off-diagonal alignment qualification is **0/20**;
+  matched short-observable flags are **0/6**. Transfer proxies and these
+  qualification tests remain separate.
+- Start with [results](evidence/continuation_interface_20261004/RESULTS.md),
+  [summary](evidence/continuation_interface_20261004/summary.json),
+  [validation](evidence/continuation_interface_20261004/validation.json),
+  [configuration](evidence/continuation_interface_20261004/config.json), and
+  [reproduction notes](evidence/continuation_interface_20261004/REPRODUCTION.md).
+  Then read [selection](evidence/continuation_interface_20261004/selection.json),
+  [alignment validation](evidence/continuation_interface_20261004/alignment/validation.json),
+  [phase-0 comparisons](evidence/continuation_interface_20261004/phase0/comparisons.json),
+  [cross decomposition](evidence/continuation_interface_20261004/cross/decomposition.json),
+  and [gradient metadata](evidence/continuation_interface_20261004/gradients/metadata.json).
+  Full records and larger arrays are secondary. Verify from the repository root
+  with `python -X utf8 -B tools/export_continuation_interface.py --verify-only`.
+- Frozen protocol: [PROTOCOL.md](new/continuation_interface/PROTOCOL.md).
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Run orchestration and saved evidence | `run`, `source_hashes` | [run.py](new/continuation_interface/run.py) |
+| Restricted linear state alignment and gauge control | `fit_alignment`, `apply_alignment`, `exact_gauge_clone` | [alignment.py](new/continuation_interface/alignment.py) |
+| Handoff summaries and matrix decomposition | `summarize_handoff`, `decompose` | [metrics.py](new/continuation_interface/metrics.py) |
+| K8/full64 gradient diagnostics | `audit_gradients` | [gradients.py](new/continuation_interface/gradients.py) |
+| CPU/GPU qualification checks | `check` | [check.py](new/continuation_interface/check.py) |
+
+## Previous completed suite: serial training-state and second-task qualification
 
 - Protocol: `trajectory_qualification_v1`; formal execution `COMPLETE`,
   48/48 arms (stage 1: 8/8, stage 2: 32/32, stage 3: 8/8), 6,610.797 seconds.

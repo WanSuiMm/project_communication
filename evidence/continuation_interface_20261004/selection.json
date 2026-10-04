@@ -1,0 +1,23 @@
+{
+  "models": [
+    "S1",
+    "S2",
+    "F1",
+    "F2",
+    "F3"
+  ],
+  "F2_source": "B31001",
+  "F3_source": "B31008",
+  "selection_times": [
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64
+  ],
+  "new_long_outcomes_used": false,
+  "rule": "F2 nearest S1 probability MSE; F3 nearest S2 excluding F2; seed tie-break"
+}
