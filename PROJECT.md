@@ -1,5 +1,24 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Latest completed suite (2026-10-04): `w_medium_qualification_v1`, defined in
+[new/w_medium/PROTOCOL.md](new/w_medium/PROTOCOL.md). Formal execution is
+**COMPLETE**, 36/36 intervention cells in 570.406 seconds, with zero training
+or optimizer updates. Stage 1 qualified W replication and enabled the controls
+at both sizes. Native Full is true for S1 and false for F1; the historical
+localization episode predicate qualifies at both sizes. On fixed fresh
+128-map banks, SF keep-continuous is 1.0000/0.9899 and sustained progress is
+0.5726/0.5925. Read the canonical public package under
+`evidence/w_medium_20261004/`: `RESULTS.md`, `summary.json`,
+`validation.json`, `config.json`, `REPRODUCTION.md`, then `metrics.csv` and
+`w_medium.png`. Per-arm proxy flags and support counts remain in the evidence.
+Verify the published snapshot from the repository root with
+`python -X utf8 -B tools/export_w_medium.py --verify-only`.
+
+Canonical new-suite commands from the repository root:
+
+    python -X utf8 -B new/w_medium/check.py --out analyses/NEW_W_MEDIUM_CHECK.json
+    pwsh -File tools/launch_w_medium.ps1 -RunName NEW_W_MEDIUM_RUN -Qualification analyses/NEW_W_MEDIUM_CHECK.json
+
 Completed zero-training audit (2026-10-04):
 `output_preserving_state_factorization_v1`, 16/16 intervention cells in
 74.172 seconds. Fixed S1/F1 update300 producers, F1-only consumer, T64 handoff,

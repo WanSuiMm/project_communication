@@ -1,0 +1,14 @@
+{
+  "kind": "spatial_scramble",
+  "seed": 97039,
+  "connectivity": 4,
+  "gather_convention": "destination i reads source source_indices[map,i]",
+  "unchanged_cells_are_identity": true,
+  "permutation_shared_by_original_and_flip": true,
+  "permutation_shared_by_all_24_channels": true,
+  "nontrivial_component_count": 128,
+  "arrays": {
+    "path": "transforms/SF_spatial_size32.npz",
+    "sha256": "86182bc3fdf39f281cc0a03894cdad2a6a639966ead7e2e673dd1e6ce094ae53"
+  }
+}

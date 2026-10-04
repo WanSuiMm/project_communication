@@ -1,0 +1,562 @@
+{
+  "F1_size32_T64.npz": {
+    "original_sha256": "c59f1e19d08ac11e9f8f82e833e464b0427218dd161f49d1d90a82c1daee55f4",
+    "tensor_sha256": "d6d27e6b58908ad3b6fbadb409017c02075ef5f8711b0351a069a40b8600dc9c",
+    "arrays": {
+      "W": {
+        "shape": [
+          256,
+          24,
+          32,
+          32
+        ],
+        "dtype": "float32"
+      },
+      "Z": {
+        "shape": [
+          256,
+          8,
+          32,
+          32
+        ],
+        "dtype": "float32"
+      }
+    },
+    "cue_order": "all_original_maps_then_all_flipped_maps",
+    "maps_per_chunk": 32,
+    "chunks": [
+      {
+        "path": "states/F1_size32_T64/maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": null,
+        "time": null,
+        "sha256": "9cf664fc08f045b116ddc4ee523451ce5a144ac0c9fa3297a20adc89a4e61d21"
+      },
+      {
+        "path": "states/F1_size32_T64/maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": null,
+        "time": null,
+        "sha256": "ea079d5fe2fc8d0de0df8e2ffdc612b35eb1fa71f3c89b517e7356831d0af3c6"
+      },
+      {
+        "path": "states/F1_size32_T64/maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": null,
+        "time": null,
+        "sha256": "4f0a54ded237d0d5e245633f2303702e066bf6ede4ef2417467d93ba55dcf8e4"
+      },
+      {
+        "path": "states/F1_size32_T64/maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": null,
+        "time": null,
+        "sha256": "68a230b85d3ba5cc381bb8e400609fec05d833586cfd770655a4ae120381dbe0"
+      }
+    ]
+  },
+  "F1_size64_T64.npz": {
+    "original_sha256": "257d9cde238ae7dff52e0aae39f945b0317a774102abda84751faee47b9a84e9",
+    "tensor_sha256": "a409f9bce7899d58180bd75b24461dfe8ca16b93dcbb12efa6edacb6cb515f19",
+    "arrays": {
+      "W": {
+        "shape": [
+          256,
+          24,
+          64,
+          64
+        ],
+        "dtype": "float32"
+      },
+      "Z": {
+        "shape": [
+          256,
+          8,
+          64,
+          64
+        ],
+        "dtype": "float32"
+      }
+    },
+    "cue_order": "all_original_maps_then_all_flipped_maps",
+    "maps_per_chunk": 32,
+    "chunks": [
+      {
+        "path": "states/F1_size64_T64/maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": null,
+        "time": null,
+        "sha256": "8301046c4b3efbdb8e612a0cd8f1f1a0fecaa9e8af4f5713ce62871eb4737aaa"
+      },
+      {
+        "path": "states/F1_size64_T64/maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": null,
+        "time": null,
+        "sha256": "1b523bb618dc48afdff20183d1b5e3a6e99eb12f5a0368da1f35cc6d5107fee3"
+      },
+      {
+        "path": "states/F1_size64_T64/maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": null,
+        "time": null,
+        "sha256": "161bb803ac689348729ec3d2a885de577c2af933fec0a4c8a42855209f043b32"
+      },
+      {
+        "path": "states/F1_size64_T64/maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": null,
+        "time": null,
+        "sha256": "d0ff9e83a720182c125775727264ff92d23dd14e3f959a94d854947d8e047506"
+      }
+    ]
+  },
+  "S1_size32_donor_times.npz": {
+    "original_sha256": "f10ad88bbaa5a9c13071fd7cad1f1e80b0276b197175ff5c9432c95952cca887",
+    "tensor_sha256": "4b38936be1753fd3a29e47db215e46540c93039d19f843702c5b1036f1d0032a",
+    "arrays": {
+      "W": {
+        "shape": [
+          4,
+          256,
+          24,
+          32,
+          32
+        ],
+        "dtype": "float32"
+      },
+      "times": {
+        "shape": [
+          4
+        ],
+        "dtype": "int32"
+      }
+    },
+    "cue_order": "all_original_maps_then_all_flipped_maps",
+    "maps_per_chunk": 32,
+    "chunks": [
+      {
+        "path": "states/S1_size32_donor_times/T32_maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": 0,
+        "time": 32,
+        "sha256": "80b1e1f598cbc09861b0288823386f4ced23502dcd07878931a22be5c5649d63"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T32_maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": 0,
+        "time": 32,
+        "sha256": "ac885f29a24d9dbe2121f0c9bfb8f62499c1c7885ef4a0d6cb95328b5bfc443a"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T32_maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": 0,
+        "time": 32,
+        "sha256": "3ad8bb5b08b5e95c4439eb390199b19a9039d65741e614d7dec9f32b1ea8e7ce"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T32_maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": 0,
+        "time": 32,
+        "sha256": "f8048658e7e9a0b4bb3d1de98877c3d590121430f9df4d1a13fa73f1d9b63d59"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T48_maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": 1,
+        "time": 48,
+        "sha256": "c6440991543716ee3e96a08b672992ed35c90f652ee2636f9b6f6ad5326a4714"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T48_maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": 1,
+        "time": 48,
+        "sha256": "52b7a6757148c04de02704603fba78b20fd2273e4084af206f7c256c1d89e573"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T48_maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": 1,
+        "time": 48,
+        "sha256": "0437c31925deb31e19d9f90649c4f6f163d7d5c59af60492dbf8f933c1fb2014"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T48_maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": 1,
+        "time": 48,
+        "sha256": "37f4c7913a8ffc8a84ca969cc78ba2df2b7547d58ff7a77840f8150c2adea9d4"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T80_maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": 2,
+        "time": 80,
+        "sha256": "47985f520c934568ac2b749f6994f4fc2784c3260d7383fe79afb7af5bc9cfa3"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T80_maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": 2,
+        "time": 80,
+        "sha256": "4b361ebff895084d9519d37f2c9bbe5be5867c60822878a3452824f2fbf0f753"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T80_maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": 2,
+        "time": 80,
+        "sha256": "54be8841ffd4e0a9696936444f7e2dcc4c13e615bdcfab4f0e70f61a46e729ac"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T80_maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": 2,
+        "time": 80,
+        "sha256": "a78acc4c8921e76efdb12eb9d190fd7f43bdc0aba91ccd241733d23c70edeb31"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T96_maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": 3,
+        "time": 96,
+        "sha256": "3e62b712317507f22ec7e77957d5727efe2bb3b7c14f7b901105258f4ca2a875"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T96_maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": 3,
+        "time": 96,
+        "sha256": "12064bded6c21197d0f33cb0173644a23faa28d6b61147307b2b055163b7404b"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T96_maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": 3,
+        "time": 96,
+        "sha256": "1f471b1f6c385fcb5ec1712b7cfd5e3e7e25995754096d5bc9b4a17303f7a8d4"
+      },
+      {
+        "path": "states/S1_size32_donor_times/T96_maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": 3,
+        "time": 96,
+        "sha256": "59a3d8a3f6f2dc29ecbe010f9d95159fa61ad133064c456b0ed6f9221be82e05"
+      }
+    ],
+    "times": [
+      32,
+      48,
+      80,
+      96
+    ]
+  },
+  "S1_size32_T64.npz": {
+    "original_sha256": "0e8b331050592fb60f62c1cf93f70d282f0fc6392805fc7ef107b33813a26ae3",
+    "tensor_sha256": "46b108f9697d43571da5d0a8172f9bfa7a43c669f74205cf9a641f8e16a2860c",
+    "arrays": {
+      "W": {
+        "shape": [
+          256,
+          24,
+          32,
+          32
+        ],
+        "dtype": "float32"
+      },
+      "Z": {
+        "shape": [
+          256,
+          8,
+          32,
+          32
+        ],
+        "dtype": "float32"
+      }
+    },
+    "cue_order": "all_original_maps_then_all_flipped_maps",
+    "maps_per_chunk": 32,
+    "chunks": [
+      {
+        "path": "states/S1_size32_T64/maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": null,
+        "time": null,
+        "sha256": "9eb3f05a281ed872b60c242a7e93dbd1f7ff8b40904df4896a94a9230905d5fb"
+      },
+      {
+        "path": "states/S1_size32_T64/maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": null,
+        "time": null,
+        "sha256": "5bfef1e4b2374531161375299190ebb1ac60fc4b9d52389299813f40f0a7b2a3"
+      },
+      {
+        "path": "states/S1_size32_T64/maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": null,
+        "time": null,
+        "sha256": "f0c6dd53c6d2950044f6824198babf51a5815bc6c59fff5373ecbc279091d0bf"
+      },
+      {
+        "path": "states/S1_size32_T64/maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": null,
+        "time": null,
+        "sha256": "01919117655fa6060b615dec9d7c560a386da7d47297d50add4575728e2f43f7"
+      }
+    ]
+  },
+  "S1_size64_donor_times.npz": {
+    "original_sha256": "2216e98d7a36ea2c4722dfc8a0ec682beec1d6381c065bf055b43f0dceebc505",
+    "tensor_sha256": "2a63b03f771eee055242cd28119b4a79159591a445d0e3abaceaa31634ba6d54",
+    "arrays": {
+      "W": {
+        "shape": [
+          4,
+          256,
+          24,
+          64,
+          64
+        ],
+        "dtype": "float32"
+      },
+      "times": {
+        "shape": [
+          4
+        ],
+        "dtype": "int32"
+      }
+    },
+    "cue_order": "all_original_maps_then_all_flipped_maps",
+    "maps_per_chunk": 32,
+    "chunks": [
+      {
+        "path": "states/S1_size64_donor_times/T32_maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": 0,
+        "time": 32,
+        "sha256": "a7aad8e879940616c98d02f85b6e332cd040a5f944e4d5669f41caa553eb980b"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T32_maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": 0,
+        "time": 32,
+        "sha256": "8291142f8d167dc4ece3803beb2a948ec9c543297185f6a9f43f277ae8bcbf55"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T32_maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": 0,
+        "time": 32,
+        "sha256": "481f973e89ccba3e367fb74c50eca57a6f0a3b73d2d2d3b64da1df05f712f72e"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T32_maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": 0,
+        "time": 32,
+        "sha256": "bff591426e6b6c74fed6bed756e621da36e147169ce93fd9cb9efb3a461f6497"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T48_maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": 1,
+        "time": 48,
+        "sha256": "a41826fdd774829e3f7be2ecf1aa9be5d8af4de3d55fa99873175648bf49d433"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T48_maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": 1,
+        "time": 48,
+        "sha256": "47b65f9fd9de2350ea1ca25864b869dc94e66fd867cfa9b413f6d74a79bf5494"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T48_maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": 1,
+        "time": 48,
+        "sha256": "9b20f546e300bed92f608755639ae9a84c6366341789dfa911b7914c350a0721"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T48_maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": 1,
+        "time": 48,
+        "sha256": "4eefb5849300ebb32acac64b1ca5b90a1dd93daa41dcb96189add5793492976c"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T80_maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": 2,
+        "time": 80,
+        "sha256": "80fd9dcc7c18cc8f6c2aa9856daa2a9fa45fe38759a09679f6382985c2f3ff73"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T80_maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": 2,
+        "time": 80,
+        "sha256": "1199feceaa4974ad1c7cabb9059df87a6d6b57335f318c9612c7e423f21b68a4"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T80_maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": 2,
+        "time": 80,
+        "sha256": "83306e13907b161ebd832d57a05b2ce9987ce6ba38938434bd31efc5bd63743b"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T80_maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": 2,
+        "time": 80,
+        "sha256": "9d583385ad9d383b2c20906c2d9ba20bfc69ff8f76acca32e0b2ca8917ad596b"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T96_maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": 3,
+        "time": 96,
+        "sha256": "734796bd033047d273d577a3e5530208e33c55e967bb5919a7905be26a9f0ca5"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T96_maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": 3,
+        "time": 96,
+        "sha256": "ec65d383bf5641cd5086c95ba37ab8623429d698b3f01f7c929df3265f540478"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T96_maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": 3,
+        "time": 96,
+        "sha256": "7d09abd306bf6eaca6858af09f05f91c43984cde6060a8226c9f4db06078e78e"
+      },
+      {
+        "path": "states/S1_size64_donor_times/T96_maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": 3,
+        "time": 96,
+        "sha256": "89347c4729c61864b0957a260a312a27af4723c1e7a24d5335755659f6362299"
+      }
+    ],
+    "times": [
+      32,
+      48,
+      80,
+      96
+    ]
+  },
+  "S1_size64_T64.npz": {
+    "original_sha256": "d24075a7bfb3b3329a4b7622cc6fc62459b8e1fc029a51174fdc6436ab4c879c",
+    "tensor_sha256": "62e971adf2b86cf3dfdaaba39cd7a8cb0f5da24ec2658caf3e5bd8cac59a32d9",
+    "arrays": {
+      "W": {
+        "shape": [
+          256,
+          24,
+          64,
+          64
+        ],
+        "dtype": "float32"
+      },
+      "Z": {
+        "shape": [
+          256,
+          8,
+          64,
+          64
+        ],
+        "dtype": "float32"
+      }
+    },
+    "cue_order": "all_original_maps_then_all_flipped_maps",
+    "maps_per_chunk": 32,
+    "chunks": [
+      {
+        "path": "states/S1_size64_T64/maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": null,
+        "time": null,
+        "sha256": "5f91525500ef16cab8c916d2c83b2c34717b88a94bd06a9e74182fd5376ef029"
+      },
+      {
+        "path": "states/S1_size64_T64/maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": null,
+        "time": null,
+        "sha256": "7ae6495d2843b0bbe2e401f33b18a69a9fb276e289beb5c2db7786104f8d881a"
+      },
+      {
+        "path": "states/S1_size64_T64/maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": null,
+        "time": null,
+        "sha256": "61ad74e9082ef83d7058cc04f89ae3c276a6b1d42d7134433ae5915d88c02de9"
+      },
+      {
+        "path": "states/S1_size64_T64/maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": null,
+        "time": null,
+        "sha256": "a8bcebe0b0a4765d9162e92c9de6a96eeaa932476f4b360766b6fbb6d3e7099c"
+      }
+    ]
+  }
+}

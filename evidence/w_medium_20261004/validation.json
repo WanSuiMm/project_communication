@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "scope": "Saved-data arithmetic, exact trace/logit comparisons and hashes; no model execution.",
+  "intervention_cells": 36,
+  "metric_csv_rows": 1260,
+  "npz_files": 182,
+  "lossless_state_chunks": 48,
+  "fixed_cohorts_counts_gates_recomputed": true,
+  "paired_map_bootstrap_recomputed": true,
+  "FF_native_suffix_exact": true,
+  "actual_W_output_neutrality_recomputed": true,
+  "all_six_gauge_suffixes_and_endpoint_logits_exact": true,
+  "state_captures_reconstructed_tensor_hashes_exact": true,
+  "native_full_flags_recorded": {
+    "S1": true,
+    "F1": false
+  },
+  "stage1_gate": {
+    "pass": true,
+    "checks": {
+      "SS_rescue_size32": true,
+      "SF_rescue_size32": true,
+      "SF_exact_output_size32": true,
+      "SS_rescue_size64": true,
+      "SF_rescue_size64": true,
+      "SF_exact_output_size64": true
+    },
+    "native_full_flags_descriptive": {
+      "S1": true,
+      "F1": false
+    },
+    "historical_localization_episode_qualified": {
+      "32": true,
+      "64": true
+    },
+    "status": "QUALIFIED_W_REPLICATION_CONTROLS_ENABLED"
+  },
+  "cohort_support": {
+    "32": {
+      "keep_continuous64_256": 1.0,
+      "keep_valid_maps": 118,
+      "keep_cells": 20620,
+      "prog_sustained241_256": 0.5726280436607892,
+      "prog_valid_maps": 33,
+      "prog_cells": 3573,
+      "ff_prog_sustained241_256": 0.0,
+      "prog_gain_vs_ff": 0.5726280436607892
+    },
+    "64": {
+      "keep_continuous64_256": 0.9899445214979196,
+      "keep_valid_maps": 39,
+      "keep_cells": 2884,
+      "prog_sustained241_256": 0.5925118667054151,
+      "prog_valid_maps": 123,
+      "prog_cells": 103230,
+      "ff_prog_sustained241_256": 0.0,
+      "prog_gain_vs_ff": 0.5925118667054151
+    }
+  },
+  "training_updates": 0,
+  "elapsed_seconds": 570.406
+}

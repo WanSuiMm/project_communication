@@ -1,0 +1,93 @@
+{
+  "protocol": "w_medium_qualification_v1",
+  "stage1": [
+    "FF",
+    "SF",
+    "FS",
+    "SS"
+  ],
+  "stage2": [
+    "SF_norm_F",
+    "FF_norm_S",
+    "SF_payload",
+    "SF_payload_gauge",
+    "SF_lane",
+    "SF_lane_gauge",
+    "SF_spatial",
+    "SF_spatial_gauge",
+    "SF_cue_swap",
+    "SF_time32",
+    "SF_time48",
+    "SF_time80",
+    "SF_time96",
+    "SF_norm_F_cue_swap"
+  ],
+  "banks": {
+    "32": {
+      "size": 32,
+      "count": 128,
+      "seed": 97032,
+      "data_sha256": "1b474bb50ea9be02c8a8c5b6d79f6a6f8be363439c48c7d5c6b60feea146ec75",
+      "file_sha256": "7dccebdde9711ccfbf725e2e09744634469d9ac411cd0c18740f64920d15d310",
+      "cross_role_collisions": 0
+    },
+    "64": {
+      "size": 64,
+      "count": 128,
+      "seed": 97064,
+      "data_sha256": "29b2d46599665a4e71beaf3d8f0bcae4d81ebcc5d7e107724e3470598adf2a0b",
+      "file_sha256": "3c17eff5bdd3335de0f8bfe31f58c129d4004b203fa5f3215c0c359eb7593337",
+      "cross_role_collisions": 0
+    }
+  },
+  "models": {
+    "S1": {
+      "id": "S1",
+      "name": "H",
+      "path": "runs/bootstrap_20261004_seed4_01/checkpoints/H_u300.pt",
+      "sha256": "6a698ae9b11586016f33c4fa890acd11a0bde15778ef826f8f6e5840171e4be2",
+      "parameter_sha256": "6b4e2ceddddea98b16250fd5218ee0abd54dabe6e315d7d632aea8880a54c0c3",
+      "prior_class": "success"
+    },
+    "F1": {
+      "id": "F1",
+      "name": "H_swap_early8",
+      "path": "runs/bootstrap_20261004_seed4_01/checkpoints/H_swap_early8_u300.pt",
+      "sha256": "39456e95f131ede3cfab934dcd73b51e6f961ac35b6723b170dfad8c9c4b9a44",
+      "parameter_sha256": "29261c7c67ed2be023b88b6fff5c77c6de616df11dde3417393de4b9307e93c8",
+      "prior_class": "failure"
+    }
+  },
+  "consumer": "F1",
+  "handoff": 64,
+  "last_step": 256,
+  "batch_maps": 8,
+  "donor_times": [
+    32,
+    48,
+    80,
+    96
+  ],
+  "payload_permutation": [
+    2,
+    5,
+    0,
+    4,
+    1,
+    3
+  ],
+  "lane_permutation": [
+    1,
+    2,
+    3,
+    0
+  ],
+  "training_updates": 0,
+  "runtime_limit_enforced": false,
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  }
+}

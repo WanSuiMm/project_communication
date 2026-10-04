@@ -1,6 +1,45 @@
 # Context for incremental scientific review
 
-## Latest completed audit: output-preserving state factorization
+## Latest completed audit: W medium qualification
+
+- `w_medium_qualification_v1`: **COMPLETE**, 36/36 cells in 570.406 seconds,
+  zero training or optimizer updates. Stage 1 is
+  `QUALIFIED_W_REPLICATION_CONTROLS_ENABLED` at both sizes. Native Full is true
+  for S1 and false for F1; the historical localization episode predicate
+  qualifies at sizes 32 and 64.
+- On the fixed fresh 128-map banks, SF passes the frozen rescue proxy at both
+  sizes: keep-continuous 1.0000/0.9899 and sustained progress 0.5726/0.5925.
+  RMS-normalized SF also passes while reverse FF normalization fails. Raw
+  payload permutation fails progress (0.0053/0.0134), while its exact
+  consumer-gauged control reproduces SF; raw lane permutation passes at both
+  sizes. Spatial scrambling retains progress (0.9966/0.9147), but the size-64
+  keep-continuous value 0.9029 misses the 0.95 threshold, so that proxy fails.
+  Cue swaps fail at both sizes; donor times 48/80/96 pass at both sizes and
+  time 32 fails the keep gate. The control outcomes are conditional
+  compatibility sensitivities, not an exclusive mechanism classifier or proof
+  that W is solely for execution and Z solely for the answer. Preserve native
+  Full, localization, and every arm's proxy flags as separate fields.
+- Start with [results](evidence/w_medium_20261004/RESULTS.md),
+  [summary](evidence/w_medium_20261004/summary.json),
+  [validation](evidence/w_medium_20261004/validation.json),
+  [configuration](evidence/w_medium_20261004/config.json), and
+  [reproduction](evidence/w_medium_20261004/REPRODUCTION.md); then inspect
+  [metrics](evidence/w_medium_20261004/metrics.csv) and
+  [figure](evidence/w_medium_20261004/w_medium.png). Raw per-arm records are
+  secondary. Frozen [protocol](new/w_medium/PROTOCOL.md).
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Suite, native states, handoff and stage gate | `run`, `stage1_gate`, `handoff`, `transform_states`, `report` | [run.py](new/w_medium/run.py) |
+| Exact consumer-coordinate gauge | `ConjugatedConsumer` | [run.py](new/w_medium/run.py) |
+| W amplitude, payload, lane, spatial and cue transforms | `norm_match`, `channel_permute`, `lane_permute`, `spatial_scramble`, `cue_swap` | [transforms.py](new/w_medium/transforms.py) |
+| Fixed cohorts and rescue proxy | `cohorts`, `summarize`, `rescue_gate` | [metrics.py](new/state_factorization/metrics.py) |
+| Selected-checkpoint continuation suffix | `suffix` | [run.py](new/state_factorization/run.py) |
+
+- Verify the published snapshot from the repository root with
+  `python -X utf8 -B tools/export_w_medium.py --verify-only`.
+
+## Previous completed audit: output-preserving state factorization
 
 - `output_preserving_state_factorization_v1`: **COMPLETE**, 16/16 intervention
   cells in 74.172 seconds, zero training or optimizer updates. The primary

@@ -1,6 +1,41 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: output-preserving state factorization
+## Latest result: W medium qualification
+
+`w_medium_qualification_v1`: **COMPLETE**, 36/36 intervention cells in
+570.406 seconds, with zero training or optimizer updates. Stage 1 is
+`QUALIFIED_W_REPLICATION_CONTROLS_ENABLED` at sizes 32 and 64; native Full is
+true for S1 and false for F1, and the historical localization episode predicate
+qualifies at both sizes. On fixed fresh 128-map banks, SF passes the frozen
+rescue proxy at both sizes: keep-continuous is 1.0000/0.9899 and sustained
+progress is 0.5726/0.5925.
+
+The fixed-consumer controls remain distinct. RMS-normalized SF passes at both
+sizes while the reverse FF normalization fails. Raw payload permutation fails
+progress (0.0053/0.0134), while its exact consumer-gauged control reproduces
+SF; raw lane permutation passes at both sizes. Spatial scrambling preserves
+progress (0.9966/0.9147), but its size-64 keep-continuous value of 0.9029 is
+below the 0.95 gate, so that rescue proxy fails. Cue swaps fail at both sizes;
+donor times 48, 80, and 96 pass at both sizes, while time 32 fails the keep
+gate. These selected-checkpoint sensitivity results do not classify an
+exclusive mechanism, establish a learned algorithm, or prove that W is solely
+for execution and Z solely for the answer. Native Full, localization, and
+per-arm rescue flags are reported separately.
+
+Start with [results](evidence/w_medium_20261004/RESULTS.md),
+[summary](evidence/w_medium_20261004/summary.json),
+[validation](evidence/w_medium_20261004/validation.json),
+[configuration](evidence/w_medium_20261004/config.json), and
+[reproduction notes](evidence/w_medium_20261004/REPRODUCTION.md); then inspect
+the [metrics](evidence/w_medium_20261004/metrics.csv) and
+[figure](evidence/w_medium_20261004/w_medium.png). Raw per-arm records are
+secondary. The frozen [protocol](new/w_medium/PROTOCOL.md) and exact code map in
+[GPT_CONTEXT.md](GPT_CONTEXT.md) define the procedure. Verify the published
+snapshot from the repository root with:
+
+    python -X utf8 -B tools/export_w_medium.py --verify-only
+
+## Previous result: output-preserving state factorization
 
 `output_preserving_state_factorization_v1`: **COMPLETE**, 16/16 intervention
 cells in 74.172 seconds, with zero training or optimizer updates. The primary

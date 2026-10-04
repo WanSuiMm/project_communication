@@ -1,0 +1,4395 @@
+{
+  "protocol": "w_medium_qualification_v1",
+  "status": "COMPLETE",
+  "training_updates": 0,
+  "completed_cells": 36,
+  "maximum_cells": 36,
+  "stage1_gate": {
+    "pass": true,
+    "checks": {
+      "SS_rescue_size32": true,
+      "SF_rescue_size32": true,
+      "SF_exact_output_size32": true,
+      "SS_rescue_size64": true,
+      "SF_rescue_size64": true,
+      "SF_exact_output_size64": true
+    },
+    "native_full_flags_descriptive": {
+      "S1": true,
+      "F1": false
+    },
+    "historical_localization_episode_qualified": {
+      "32": true,
+      "64": true
+    },
+    "status": "QUALIFIED_W_REPLICATION_CONTROLS_ENABLED"
+  },
+  "native_full_flags": {
+    "S1": true,
+    "F1": false
+  },
+  "skipped_cells": 0,
+  "parameters_unchanged": true,
+  "elapsed_seconds": 570.406,
+  "claim_boundary": "Selected pair, finite conditional W sensitivity; no exclusive state roles, pure phase, carrier loss or training reliability.",
+  "primary_size": 32,
+  "confirmation_size": 64,
+  "arms": {
+    "FF": {
+      "32": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.00048496605237633366,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.0,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.0
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 10,
+          "denominator": 20620,
+          "value": 0.00048496605237633366
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_delayed_sustained": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 3028,
+              "denominator": 35581,
+              "value": 0.08510159916809533
+            },
+            "map_mean": 0.10847711232237518,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 10,
+              "denominator": 35581,
+              "value": 0.000281048874399258
+            },
+            "map_mean": 0.00012440286624203822,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.9996165350103535,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              -1.0,
+              -0.9988496050310606
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97132,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.6764454615233515,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.8022422321765049,
+              -0.5552269900351428
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97132,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.6764454615233515,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.8022422321765049,
+              -0.5552269900351428
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97132,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.0,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.0,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.0
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 0,
+          "denominator": 2884,
+          "value": 0.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_delayed_sustained": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 0,
+              "denominator": 190220,
+              "value": 0.0
+            },
+            "map_mean": 0.0,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 0,
+              "denominator": 190220,
+              "value": 0.0
+            },
+            "map_mean": 0.0,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.9743589743589743,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -1.0,
+              -0.9230769230769231
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97164,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.7508613002068844,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.8001685710968522,
+              -0.7012270416081066
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97164,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.7508613002068844,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.8001685710968522,
+              -0.7012270416081066
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97164,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 1.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.5726280436607892,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5726280436607892
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20620,
+          "denominator": 20620,
+          "value": 1.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 2046,
+          "denominator": 3573,
+          "value": 0.5726280436607892
+        },
+        "prog_delayed_sustained": {
+          "numerator": 2046,
+          "denominator": 3573,
+          "value": 0.5726280436607892
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 30106,
+              "denominator": 35581,
+              "value": 0.8461257412664063
+            },
+            "map_mean": 0.9076919407888904,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 33957,
+              "denominator": 35581,
+              "value": 0.9543576627975605
+            },
+            "map_mean": 0.9737005290585435,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97133,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97133,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97133,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9899445214979196,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.5925118667054151,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5925118667054151
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2855,
+          "denominator": 2884,
+          "value": 0.9899445214979196
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 61165,
+          "denominator": 103230,
+          "value": 0.5925118667054151
+        },
+        "prog_delayed_sustained": {
+          "numerator": 61165,
+          "denominator": 103230,
+          "value": 0.5925118667054151
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 109832,
+              "denominator": 190220,
+              "value": 0.5773945957312585
+            },
+            "map_mean": 0.6490744852728445,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 148582,
+              "denominator": 190220,
+              "value": 0.7811060876879403
+            },
+            "map_mean": 0.8384746677410084,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97165,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97165,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97165,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "FS": {
+      "32": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.036760426770126094,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.0,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.0
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 758,
+          "denominator": 20620,
+          "value": 0.036760426770126094
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_delayed_sustained": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 25537,
+              "denominator": 35581,
+              "value": 0.7177145105533852
+            },
+            "map_mean": 0.8098943516580974,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 5330,
+              "denominator": 35581,
+              "value": 0.14979905005480454
+            },
+            "map_mean": 0.18964265604412753,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 793,
+              "denominator": 35581,
+              "value": 0.02228717573986116
+            },
+            "map_mean": 0.034132077564065506,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.9612566935061015,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              -0.9873830663522155,
+              -0.9284291089180583
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97134,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.6764454615233515,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.8018916001323004,
+              -0.5540777799349604
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97134,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.6764454615233515,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.8018916001323004,
+              -0.5540777799349604
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97134,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": false,
+        "exact_FF_output": false,
+        "max_absolute_logit_error_vs_FF": 13.130245208740234,
+        "open_decision_disagreements_vs_FF": 19382,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.0,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.0,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.0
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 0,
+          "denominator": 2884,
+          "value": 0.0
+        },
+        "prog_immediate": {
+          "numerator": 28,
+          "denominator": 103230,
+          "value": 0.0002712389809164003
+        },
+        "prog_sustained": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_delayed_sustained": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 85676,
+              "denominator": 190220,
+              "value": 0.45040479444853326
+            },
+            "map_mean": 0.5164928818585359,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 3060,
+              "denominator": 190220,
+              "value": 0.016086636526127643
+            },
+            "map_mean": 0.018154973302119116,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 0,
+              "denominator": 190220,
+              "value": 0.0
+            },
+            "map_mean": 0.0,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.9743589743589743,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -1.0,
+              -0.9230769230769231
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97166,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.7508613002068844,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.8016992314373416,
+              -0.6978763485465388
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97166,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.7508613002068844,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.8016992314373416,
+              -0.6978763485465388
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97166,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": false,
+        "exact_FF_output": false,
+        "max_absolute_logit_error_vs_FF": 15.442121505737305,
+        "open_decision_disagreements_vs_FF": 426453,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SS": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9940834141610088,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.7576266442765184,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.7576266442765184
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20498,
+          "denominator": 20620,
+          "value": 0.9940834141610088
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 2707,
+          "denominator": 3573,
+          "value": 0.7576266442765184
+        },
+        "prog_delayed_sustained": {
+          "numerator": 2707,
+          "denominator": 3573,
+          "value": 0.7576266442765184
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 25537,
+              "denominator": 35581,
+              "value": 0.7177145105533852
+            },
+            "map_mean": 0.8098943516580974,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 30725,
+              "denominator": 35581,
+              "value": 0.8635226665917203
+            },
+            "map_mean": 0.9186501916797345,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 34590,
+              "denominator": 35581,
+              "value": 0.9721480565470335
+            },
+            "map_mean": 0.9829689096149516,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.006958419274077839,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              -0.010363370675640322,
+              -0.004104826005891306
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97135,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.19312347432706103,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.10793192062925207,
+              0.29570407215514166
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97135,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.19312347432706103,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.10793192062925207,
+              0.29570407215514166
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97135,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": false,
+        "exact_FF_output": false,
+        "max_absolute_logit_error_vs_FF": 13.130245208740234,
+        "open_decision_disagreements_vs_FF": 19382,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9812760055478502,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.7794148987697375,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.7794148987697375
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2830,
+          "denominator": 2884,
+          "value": 0.9812760055478502
+        },
+        "prog_immediate": {
+          "numerator": 28,
+          "denominator": 103230,
+          "value": 0.0002712389809164003
+        },
+        "prog_sustained": {
+          "numerator": 80459,
+          "denominator": 103230,
+          "value": 0.7794148987697375
+        },
+        "prog_delayed_sustained": {
+          "numerator": 80459,
+          "denominator": 103230,
+          "value": 0.7794148987697375
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 85676,
+              "denominator": 190220,
+              "value": 0.45040479444853326
+            },
+            "map_mean": 0.5164928818585359,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 122352,
+              "denominator": 190220,
+              "value": 0.6432131216486174
+            },
+            "map_mean": 0.7147772345356032,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 167521,
+              "denominator": 190220,
+              "value": 0.880669750814846
+            },
+            "map_mean": 0.9165429956182758,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.030219763311879665,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -0.08379886080504922,
+              -0.00022550384000824685
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97167,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.13535629251504944,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.10919174657643396,
+              0.1628947746982636
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97167,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.13535629251504944,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.10919174657643396,
+              0.1628947746982636
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97167,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": false,
+        "exact_FF_output": false,
+        "max_absolute_logit_error_vs_FF": 15.442121505737305,
+        "open_decision_disagreements_vs_FF": 426453,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF_norm_F": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 1.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.6565910999160369,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.6565910999160369
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20620,
+          "denominator": 20620,
+          "value": 1.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 2346,
+          "denominator": 3573,
+          "value": 0.6565910999160369
+        },
+        "prog_delayed_sustained": {
+          "numerator": 2346,
+          "denominator": 3573,
+          "value": 0.6565910999160369
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 30475,
+              "denominator": 35581,
+              "value": 0.8564964447317388
+            },
+            "map_mean": 0.9138192018997059,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 34265,
+              "denominator": 35581,
+              "value": 0.9630139681290576
+            },
+            "map_mean": 0.9782596452845115,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97136,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.11154885967588958,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.04346917275804543,
+              0.19635753219445193
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97136,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.11154885967588958,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.04346917275804543,
+              0.19635753219445193
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97136,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9899445214979196,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.6493654945267848,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.6493654945267848
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2855,
+          "denominator": 2884,
+          "value": 0.9899445214979196
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 67034,
+          "denominator": 103230,
+          "value": 0.6493654945267848
+        },
+        "prog_delayed_sustained": {
+          "numerator": 67034,
+          "denominator": 103230,
+          "value": 0.6493654945267848
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 112179,
+              "denominator": 190220,
+              "value": 0.5897329408053832
+            },
+            "map_mean": 0.6607272881728163,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 155608,
+              "denominator": 190220,
+              "value": 0.8180422668489118
+            },
+            "map_mean": 0.8666738432898478,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97168,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.04038245464885831,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.028980175963476375,
+              0.05360741532332175
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97168,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.04038245464885831,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.028980175963476375,
+              0.05360741532332175
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97168,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "FF_norm_S": {
+      "32": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.024393792434529583,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.0,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.0
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 503,
+          "denominator": 20620,
+          "value": 0.024393792434529583
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_delayed_sustained": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 5487,
+              "denominator": 35581,
+              "value": 0.1542115173828729
+            },
+            "map_mean": 0.18651823113782692,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 529,
+              "denominator": 35581,
+              "value": 0.014867485455720749
+            },
+            "map_mean": 0.024053428581568746,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.9727012188319244,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              -0.9939497149982968,
+              -0.9432918953053279
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97137,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.6764454615233515,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.7953305941785029,
+              -0.5491191236434303
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97137,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.6764454615233515,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.7953305941785029,
+              -0.5491191236434303
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97137,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.0,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.0,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.0
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 0,
+          "denominator": 2884,
+          "value": 0.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_delayed_sustained": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 0,
+              "denominator": 190220,
+              "value": 0.0
+            },
+            "map_mean": 0.0,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 0,
+              "denominator": 190220,
+              "value": 0.0
+            },
+            "map_mean": 0.0,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.9743589743589743,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -1.0,
+              -0.9230769230769231
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97169,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.7508613002068844,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.8030383772758736,
+              -0.6986754848948453
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97169,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.7508613002068844,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.8030383772758736,
+              -0.6986754848948453
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97169,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF_payload": {
+      "32": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.8633365664403492,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.005317660229499021,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.005317660229499021
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 17802,
+          "denominator": 20620,
+          "value": 0.8633365664403492
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 19,
+          "denominator": 3573,
+          "value": 0.005317660229499021
+        },
+        "prog_delayed_sustained": {
+          "numerator": 19,
+          "denominator": 3573,
+          "value": 0.005317660229499021
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 22376,
+              "denominator": 35581,
+              "value": 0.6288749613557798
+            },
+            "map_mean": 0.7293703307375641,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 23290,
+              "denominator": 35581,
+              "value": 0.654562828475872
+            },
+            "map_mean": 0.745440163918303,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.12290955540186539,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              -0.14519895014444192,
+              -0.10160406254729867
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97138,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.6612348759775954,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.7784831540958003,
+              -0.5365360593326011
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97138,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.6612348759775954,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.7784831540958003,
+              -0.5365360593326011
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97138,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.6560332871012483,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.013377894023055314,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.013377894023055314
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 1892,
+          "denominator": 2884,
+          "value": 0.6560332871012483
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 1381,
+          "denominator": 103230,
+          "value": 0.013377894023055314
+        },
+        "prog_delayed_sustained": {
+          "numerator": 1381,
+          "denominator": 103230,
+          "value": 0.013377894023055314
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 49323,
+              "denominator": 190220,
+              "value": 0.2592945011039849
+            },
+            "map_mean": 0.3029134278050902,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 17027,
+              "denominator": 190220,
+              "value": 0.089512143833456
+            },
+            "map_mean": 0.11034658949584905,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.37378629264668184,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -0.5076065849019051,
+              -0.240762740983212
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97170,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.7254493903072949,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.7763067055419646,
+              -0.671659268822233
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97170,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.7254493903072949,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.7763067055419646,
+              -0.671659268822233
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97170,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF_payload_gauge": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 1.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.5726280436607892,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5726280436607892
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20620,
+          "denominator": 20620,
+          "value": 1.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 2046,
+          "denominator": 3573,
+          "value": 0.5726280436607892
+        },
+        "prog_delayed_sustained": {
+          "numerator": 2046,
+          "denominator": 3573,
+          "value": 0.5726280436607892
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 30106,
+              "denominator": 35581,
+              "value": 0.8461257412664063
+            },
+            "map_mean": 0.9076919407888904,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 33957,
+              "denominator": 35581,
+              "value": 0.9543576627975605
+            },
+            "map_mean": 0.9737005290585435,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97139,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97139,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97139,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": true
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9899445214979196,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.5925118667054151,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5925118667054151
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2855,
+          "denominator": 2884,
+          "value": 0.9899445214979196
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 61165,
+          "denominator": 103230,
+          "value": 0.5925118667054151
+        },
+        "prog_delayed_sustained": {
+          "numerator": 61165,
+          "denominator": 103230,
+          "value": 0.5925118667054151
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 109832,
+              "denominator": 190220,
+              "value": 0.5773945957312585
+            },
+            "map_mean": 0.6490744852728445,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 148582,
+              "denominator": 190220,
+              "value": 0.7811060876879403
+            },
+            "map_mean": 0.8384746677410084,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97171,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97171,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97171,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": true
+      }
+    },
+    "SF_lane": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9999030067895247,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.5183319339490624,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5183319339490624
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20618,
+          "denominator": 20620,
+          "value": 0.9999030067895247
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 1852,
+          "denominator": 3573,
+          "value": 0.5183319339490624
+        },
+        "prog_delayed_sustained": {
+          "numerator": 1852,
+          "denominator": 3573,
+          "value": 0.5183319339490624
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 29167,
+              "denominator": 35581,
+              "value": 0.8197352519603159
+            },
+            "map_mean": 0.8873094836195109,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 33764,
+              "denominator": 35581,
+              "value": 0.9489334195216548
+            },
+            "map_mean": 0.970674227643544,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.00015019045427819053,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              -0.00042524669581000434,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97140,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.08810152138809332,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.1647769803184786,
+              -0.031958790087135036
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97140,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.08810152138809332,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.1647769803184786,
+              -0.031958790087135036
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97140,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9889042995839112,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.5678484936549453,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5678484936549453
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2852,
+          "denominator": 2884,
+          "value": 0.9889042995839112
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 58619,
+          "denominator": 103230,
+          "value": 0.5678484936549453
+        },
+        "prog_delayed_sustained": {
+          "numerator": 58619,
+          "denominator": 103230,
+          "value": 0.5678484936549453
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 96777,
+              "denominator": 190220,
+              "value": 0.5087635369572074
+            },
+            "map_mean": 0.5792068810433986,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 146793,
+              "denominator": 190220,
+              "value": 0.7717011880979918
+            },
+            "map_mean": 0.8311269792570577,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.0036434363357440293,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -0.010930309007232087,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97172,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.022281948016918775,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.03386036417868615,
+              -0.012601960272984549
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97172,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.022281948016918775,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.03386036417868615,
+              -0.012601960272984549
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97172,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF_lane_gauge": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 1.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.5726280436607892,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5726280436607892
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20620,
+          "denominator": 20620,
+          "value": 1.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 2046,
+          "denominator": 3573,
+          "value": 0.5726280436607892
+        },
+        "prog_delayed_sustained": {
+          "numerator": 2046,
+          "denominator": 3573,
+          "value": 0.5726280436607892
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 30106,
+              "denominator": 35581,
+              "value": 0.8461257412664063
+            },
+            "map_mean": 0.9076919407888904,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 33957,
+              "denominator": 35581,
+              "value": 0.9543576627975605
+            },
+            "map_mean": 0.9737005290585435,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97141,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97141,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97141,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": true
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9899445214979196,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.5925118667054151,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5925118667054151
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2855,
+          "denominator": 2884,
+          "value": 0.9899445214979196
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 61165,
+          "denominator": 103230,
+          "value": 0.5925118667054151
+        },
+        "prog_delayed_sustained": {
+          "numerator": 61165,
+          "denominator": 103230,
+          "value": 0.5925118667054151
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 109832,
+              "denominator": 190220,
+              "value": 0.5773945957312585
+            },
+            "map_mean": 0.6490744852728445,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 148582,
+              "denominator": 190220,
+              "value": 0.7811060876879403
+            },
+            "map_mean": 0.8384746677410084,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97173,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97173,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97173,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": true
+      }
+    },
+    "SF_spatial": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 1.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.9966414777497901,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.9966414777497901
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20620,
+          "denominator": 20620,
+          "value": 1.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 3561,
+          "denominator": 3573,
+          "value": 0.9966414777497901
+        },
+        "prog_delayed_sustained": {
+          "numerator": 3561,
+          "denominator": 3573,
+          "value": 0.9966414777497901
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 35162,
+              "denominator": 35581,
+              "value": 0.9882240521626711
+            },
+            "map_mean": 0.9885667987084383,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 35319,
+              "denominator": 35581,
+              "value": 0.9926365194907394
+            },
+            "map_mean": 0.9921875,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97142,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.2932515081736183,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.17713521163121407,
+              0.41109706845466126
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97142,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.2932515081736183,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.17713521163121407,
+              0.41109706845466126
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97142,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9029126213592233,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.9146856533953308,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.9146856533953308
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2604,
+          "denominator": 2884,
+          "value": 0.9029126213592233
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 94423,
+          "denominator": 103230,
+          "value": 0.9146856533953308
+        },
+        "prog_delayed_sustained": {
+          "numerator": 94423,
+          "denominator": 103230,
+          "value": 0.9146856533953308
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 167420,
+              "denominator": 190220,
+              "value": 0.8801387866680686
+            },
+            "map_mean": 0.8997832026868426,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 178744,
+              "denominator": 190220,
+              "value": 0.9396698559562612
+            },
+            "map_mean": 0.953125,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.02698056801195815,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -0.07837760147177188,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97174,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.20035821198823753,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.1571560503970793,
+              0.24626033998480332
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97174,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.20035821198823753,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.1571560503970793,
+              0.24626033998480332
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97174,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF_spatial_gauge": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 1.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.5726280436607892,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5726280436607892
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20620,
+          "denominator": 20620,
+          "value": 1.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 2046,
+          "denominator": 3573,
+          "value": 0.5726280436607892
+        },
+        "prog_delayed_sustained": {
+          "numerator": 2046,
+          "denominator": 3573,
+          "value": 0.5726280436607892
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 30106,
+              "denominator": 35581,
+              "value": 0.8461257412664063
+            },
+            "map_mean": 0.9076919407888904,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 33957,
+              "denominator": 35581,
+              "value": 0.9543576627975605
+            },
+            "map_mean": 0.9737005290585435,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97143,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97143,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97143,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": true
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9899445214979196,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.5925118667054151,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5925118667054151
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2855,
+          "denominator": 2884,
+          "value": 0.9899445214979196
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 61165,
+          "denominator": 103230,
+          "value": 0.5925118667054151
+        },
+        "prog_delayed_sustained": {
+          "numerator": 61165,
+          "denominator": 103230,
+          "value": 0.5925118667054151
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 109832,
+              "denominator": 190220,
+              "value": 0.5773945957312585
+            },
+            "map_mean": 0.6490744852728445,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 148582,
+              "denominator": 190220,
+              "value": 0.7811060876879403
+            },
+            "map_mean": 0.8384746677410084,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97175,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97175,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97175,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": true
+      }
+    },
+    "SF_cue_swap": {
+      "32": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.0,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.0
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 0,
+          "denominator": 20620,
+          "value": 0.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_delayed_sustained": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 8009,
+              "denominator": 35581,
+              "value": 0.22509204350636575
+            },
+            "map_mean": 0.2874563751900669,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 0,
+              "denominator": 35581,
+              "value": 0.0
+            },
+            "map_mean": 0.0,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -1.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              -1.0,
+              -1.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97144,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.6764454615233515,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.8007946251360727,
+              -0.5520047714037086
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97144,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.6764454615233515,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.8007946251360727,
+              -0.5520047714037086
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97144,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.0,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.0,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.0
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 0,
+          "denominator": 2884,
+          "value": 0.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_delayed_sustained": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 75,
+              "denominator": 190220,
+              "value": 0.0003942803070129324
+            },
+            "map_mean": 0.0010256030121727523,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 0,
+              "denominator": 190220,
+              "value": 0.0
+            },
+            "map_mean": 0.0,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.9743589743589743,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -1.0,
+              -0.9230769230769231
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97176,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.7508613002068844,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.800626039610204,
+              -0.6991566943960115
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97176,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.7508613002068844,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.800626039610204,
+              -0.6991566943960115
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97176,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF_time32": {
+      "32": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.001988360814742968,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.30170724881052335,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.30170724881052335
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 41,
+          "denominator": 20620,
+          "value": 0.001988360814742968
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 1078,
+          "denominator": 3573,
+          "value": 0.30170724881052335
+        },
+        "prog_delayed_sustained": {
+          "numerator": 1078,
+          "denominator": 3573,
+          "value": 0.30170724881052335
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 5739,
+              "denominator": 35581,
+              "value": 0.1612939490177342
+            },
+            "map_mean": 0.15998010930623566,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 3107,
+              "denominator": 35581,
+              "value": 0.08732188527584947
+            },
+            "map_mean": 0.08076675835971164,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.9775394097427996,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              -1.0,
+              -0.9495673817707715
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97145,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.3960762266225606,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.5268399462633524,
+              -0.27044953284205303
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97145,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.3960762266225606,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.5268399462633524,
+              -0.27044953284205303
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97145,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.11511789181692095,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.5573186089315122,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5573186089315122
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 332,
+          "denominator": 2884,
+          "value": 0.11511789181692095
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 57532,
+          "denominator": 103230,
+          "value": 0.5573186089315122
+        },
+        "prog_delayed_sustained": {
+          "numerator": 57532,
+          "denominator": 103230,
+          "value": 0.5573186089315122
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 90260,
+              "denominator": 190220,
+              "value": 0.4745032068131637
+            },
+            "map_mean": 0.5320369418391109,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 133578,
+              "denominator": 190220,
+              "value": 0.7022289980023131
+            },
+            "map_mean": 0.7323843420737466,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.5476190476190477,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -0.7014652014652015,
+              -0.38461538461538464
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97177,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.08604831759645701,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.13927683564880056,
+              -0.039964017579612855
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97177,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.08604831759645701,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.13927683564880056,
+              -0.039964017579612855
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97177,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF_time48": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 1.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.651273439686538,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.651273439686538
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20620,
+          "denominator": 20620,
+          "value": 1.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 2327,
+          "denominator": 3573,
+          "value": 0.651273439686538
+        },
+        "prog_delayed_sustained": {
+          "numerator": 2327,
+          "denominator": 3573,
+          "value": 0.651273439686538
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 29554,
+              "denominator": 35581,
+              "value": 0.8306118433995672
+            },
+            "map_mean": 0.896653340002276,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 34220,
+              "denominator": 35581,
+              "value": 0.961749248194261
+            },
+            "map_mean": 0.9775525051130036,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97146,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.09964831459080024,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.033239974995414714,
+              0.18490602559366626
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97146,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.09964831459080024,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              0.033239974995414714,
+              0.18490602559366626
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97146,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9701803051317615,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.6010171461784365,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.6010171461784365
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2798,
+          "denominator": 2884,
+          "value": 0.9701803051317615
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 62043,
+          "denominator": 103230,
+          "value": 0.6010171461784365
+        },
+        "prog_delayed_sustained": {
+          "numerator": 62043,
+          "denominator": 103230,
+          "value": 0.6010171461784365
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 103822,
+              "denominator": 190220,
+              "value": 0.5457996004626222
+            },
+            "map_mean": 0.6163576767837253,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 150174,
+              "denominator": 190220,
+              "value": 0.7894753443381348
+            },
+            "map_mean": 0.8456216328779635,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.05292861322912859,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -0.12557209456095073,
+              -0.005959214914438797
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97178,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": 0.0056199492897011025,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.0020537169483222277,
+              0.009431270876065939
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97178,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": 0.0056199492897011025,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              0.0020537169483222277,
+              0.009431270876065939
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97178,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF_time80": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 1.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.5328855303666387,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5328855303666387
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20620,
+          "denominator": 20620,
+          "value": 1.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 1904,
+          "denominator": 3573,
+          "value": 0.5328855303666387
+        },
+        "prog_delayed_sustained": {
+          "numerator": 1904,
+          "denominator": 3573,
+          "value": 0.5328855303666387
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 30600,
+              "denominator": 35581,
+              "value": 0.8600095556617295
+            },
+            "map_mean": 0.9166040367020867,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 33749,
+              "denominator": 35581,
+              "value": 0.9485118462100559
+            },
+            "map_mean": 0.97056409691032,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97147,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.053137757913155864,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.09723243107264144,
+              -0.0173294645304079
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97147,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.053137757913155864,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.09723243107264144,
+              -0.0173294645304079
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97147,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9899445214979196,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.5885110917368982,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5885110917368982
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2855,
+          "denominator": 2884,
+          "value": 0.9899445214979196
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 60752,
+          "denominator": 103230,
+          "value": 0.5885110917368982
+        },
+        "prog_delayed_sustained": {
+          "numerator": 60752,
+          "denominator": 103230,
+          "value": 0.5885110917368982
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 114870,
+              "denominator": 190220,
+              "value": 0.6038797182210073
+            },
+            "map_mean": 0.6748149155602028,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 147914,
+              "denominator": 190220,
+              "value": 0.7775943644201451
+            },
+            "map_mean": 0.8364469523595573,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97179,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.002105632172754746,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.006117463424464346,
+              0.0012132962233786535
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97179,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.002105632172754746,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.006117463424464346,
+              0.0012132962233786535
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97179,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF_time96": {
+      "32": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 1.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.5191715645116148,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5191715645116148
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 20620,
+          "denominator": 20620,
+          "value": 1.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 1855,
+          "denominator": 3573,
+          "value": 0.5191715645116148
+        },
+        "prog_delayed_sustained": {
+          "numerator": 1855,
+          "denominator": 3573,
+          "value": 0.5191715645116148
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 30996,
+              "denominator": 35581,
+              "value": 0.8711390910879402
+            },
+            "map_mean": 0.9237029724006836,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 33629,
+              "denominator": 35581,
+              "value": 0.9451392597172649
+            },
+            "map_mean": 0.9687294969905691,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97148,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.08196301354513397,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.15672330749641084,
+              -0.026151973644863095
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97148,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.08196301354513397,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.15672330749641084,
+              -0.026151973644863095
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97148,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": true,
+          "status": "PASS",
+          "checks": {
+            "keep_continuous_ge_0_95": true,
+            "prog_sustained_ge_0_10": true,
+            "prog_sustained_gain_vs_ff_ge_0_10": true,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.9899445214979196,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.5911072362685266,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.5911072362685266
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 2855,
+          "denominator": 2884,
+          "value": 0.9899445214979196
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 61020,
+          "denominator": 103230,
+          "value": 0.5911072362685266
+        },
+        "prog_delayed_sustained": {
+          "numerator": 61020,
+          "denominator": 103230,
+          "value": 0.5911072362685266
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 116715,
+              "denominator": 190220,
+              "value": 0.6135790137735254
+            },
+            "map_mean": 0.6832569412577504,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 148213,
+              "denominator": 190220,
+              "value": 0.7791662285774367
+            },
+            "map_mean": 0.8375070646519631,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": 0.0,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97180,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.0012755070294652928,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.0060067262646341995,
+              0.0035967580815305187
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97180,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.0012755070294652928,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.0060067262646341995,
+              0.0035967580815305187
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97180,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    },
+    "SF_norm_F_cue_swap": {
+      "32": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.0,
+            "keep_valid_maps": 118,
+            "keep_cells": 20620,
+            "prog_sustained241_256": 0.0,
+            "prog_valid_maps": 33,
+            "prog_cells": 3573,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.0
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 0,
+          "denominator": 20620,
+          "value": 0.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "prog_delayed_sustained": {
+          "numerator": 0,
+          "denominator": 3573,
+          "value": 0.0
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 27030,
+              "denominator": 35581,
+              "value": 0.7596751075011945
+            },
+            "map_mean": 0.8127212628081799,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 8333,
+              "denominator": 35581,
+              "value": 0.2341980270369017
+            },
+            "map_mean": 0.29768716561147984,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 0,
+              "denominator": 35581,
+              "value": 0.0
+            },
+            "map_mean": 0.0,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -1.0,
+            "eligible_maps": 118,
+            "bootstrap_95_interval": [
+              -1.0,
+              -1.0
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97149,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.6764454615233515,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.7925880495950671,
+              -0.5485701525588673
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97149,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.6764454615233515,
+            "eligible_maps": 33,
+            "bootstrap_95_interval": [
+              -0.7925880495950671,
+              -0.5485701525588673
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97149,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      },
+      "64": {
+        "rescue_proxy": {
+          "pass": false,
+          "status": "FAIL",
+          "checks": {
+            "keep_continuous_ge_0_95": false,
+            "prog_sustained_ge_0_10": false,
+            "prog_sustained_gain_vs_ff_ge_0_10": false,
+            "keep_support_ge_16_maps_and_100_cells": true,
+            "prog_support_ge_16_maps_and_100_cells": true
+          },
+          "observed": {
+            "keep_continuous64_256": 0.0,
+            "keep_valid_maps": 39,
+            "keep_cells": 2884,
+            "prog_sustained241_256": 0.0,
+            "prog_valid_maps": 123,
+            "prog_cells": 103230,
+            "ff_prog_sustained241_256": 0.0,
+            "prog_gain_vs_ff": 0.0
+          },
+          "thresholds": {
+            "keep_continuous64_256_min": 0.95,
+            "prog_sustained241_256_min": 0.1,
+            "prog_sustained_gain_vs_ff_min": 0.1,
+            "keep_and_prog_min_valid_maps": 16,
+            "keep_and_prog_min_cells": 100
+          },
+          "interpretation": "finite conditional proxy, not mechanism proof"
+        },
+        "keep_continuous": {
+          "numerator": 0,
+          "denominator": 2884,
+          "value": 0.0
+        },
+        "prog_immediate": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_sustained": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "prog_delayed_sustained": {
+          "numerator": 0,
+          "denominator": 103230,
+          "value": 0.0
+        },
+        "all_changed": {
+          "coverage64": {
+            "pooled": {
+              "numerator": 3759,
+              "denominator": 190220,
+              "value": 0.019761328987488173
+            },
+            "map_mean": 0.028325083567770918,
+            "valid_maps": 128
+          },
+          "coverage128": {
+            "pooled": {
+              "numerator": 169,
+              "denominator": 190220,
+              "value": 0.000888444958469141
+            },
+            "map_mean": 0.001384732530979033,
+            "valid_maps": 128
+          },
+          "coverage256": {
+            "pooled": {
+              "numerator": 0,
+              "denominator": 190220,
+              "value": 0.0
+            },
+            "map_mean": 0.0,
+            "valid_maps": 128
+          }
+        },
+        "contrast_vs_SF": {
+          "keep.continuous64_256": {
+            "map_mean_delta": -0.9743589743589743,
+            "eligible_maps": 39,
+            "bootstrap_95_interval": [
+              -1.0,
+              -0.9230769230769231
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97181,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.sustained241_256": {
+            "map_mean_delta": -0.7508613002068844,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.79919934425761,
+              -0.7005088140052669
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97181,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          },
+          "prog.delayed_sustained": {
+            "map_mean_delta": -0.7508613002068844,
+            "eligible_maps": 123,
+            "bootstrap_95_interval": [
+              -0.79919934425761,
+              -0.7005088140052669
+            ],
+            "bootstrap_replicates": 2000,
+            "bootstrap_seed": 97181,
+            "interpretation": "descriptive paired map interval; not seed reliability or mechanistic significance"
+          }
+        },
+        "readout_neutral_arm": true,
+        "exact_FF_output": true,
+        "max_absolute_logit_error_vs_FF": 0.0,
+        "open_decision_disagreements_vs_FF": 0,
+        "exact_gauge_equivalence_to_SF": null
+      }
+    }
+  }
+}
