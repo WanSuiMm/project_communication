@@ -1,39 +1,44 @@
-# Incremental data delivery: seed4 bootstrap-path screen
+# Incremental data delivery: serial trajectory qualification
 
-- Review base: `bd1b80ba5946e4a6d79852cd1f83669f076b339e`.
-- Evidence head: `0ee1e81d0581fc76195ac62bc29f1afe99c49e9f`.
-- This later handoff commit changes navigation only. This delivery supplies
-  data and code for independent analysis, without a new mechanism discussion.
+- Review base: `62189a05815e0e5620a9fb9e288d9923e68b742f`.
+- Evidence head: `77266893bb1c26eb29cf2d72ee2233297dcc6dfe`.
+- This later handoff commit changes navigation only. The delivery supplies
+  code and recorded data for independent analysis; prior architecture claims
+  remain unchanged.
 
 ## Read first
 
-1. [All23-arm table](evidence/bootstrap_path_20261004/RESULTS.md),
-   [aggregate](evidence/bootstrap_path_20261004/summary.json),
-   [six first-step cases](evidence/bootstrap_path_20261004/first_step_summary.json).
-2. [Run configuration](evidence/bootstrap_path_20261004/config.json),
-   [frozen protocol](new/bootstrap_path/PROTOCOL.md), and [source map](GPT_CONTEXT.md).
-3. [Per-arm summaries](evidence/bootstrap_path_20261004/arms),
-   [training curves](evidence/bootstrap_path_20261004/training),
-   [frontier counts](evidence/bootstrap_path_20261004/frontier).
-   [46 Boolean NPZ banks](evidence/bootstrap_path_20261004/traces) and
-   [first-step arrays](evidence/bootstrap_path_20261004/first_step_arrays)
-   are secondary raw data; do not start with the binary files.
+1. [Suite table](evidence/trajectory_qualification_20261004/RESULTS.md),
+   [summary](evidence/trajectory_qualification_20261004/summary.json), and
+   [validation](evidence/trajectory_qualification_20261004/validation.json).
+2. Stage summaries: [state cross](evidence/trajectory_qualification_20261004/stage1_state_cross/summary.json),
+   [fresh recipe](evidence/trajectory_qualification_20261004/stage2_fresh_recipe/summary.json),
+   [distance task](evidence/trajectory_qualification_20261004/stage3_distance/summary.json).
+3. [Frozen suite protocol](new/trajectory_qualification/PROTOCOL.md),
+   [distance protocol](new/trajectory_qualification/DISTANCE_PROTOCOL.md),
+   [source map](GPT_CONTEXT.md), and
+   [reproduction notes](evidence/trajectory_qualification_20261004/REPRODUCTION.md).
 
-## Data scope and verification
+## Recorded outcomes and scope
 
-COMPLETE23/23 arms x300 updates in3068.407 seconds. Original init4 cell,
-optimizer and K8 recipe; H20002, selected S20012/S20022; prefix lengths1/3/8,
-pre-180 replacements and exact-multiset row swaps. Evaluation is paired at
-sizes32/64 on the reused32-map banks50032/50064. All failed arms and frozen
-gate denominators remain in the data. Existing architecture claims are unchanged.
+COMPLETE: 48/48 arms (8 + 32 + 8), 6,610.797 seconds. Stage 1 reproduces
+four native controls and selects the conditional `shadow_joint` recipe.
+Stage 2 records 1/16 Full passes for both baseline and treatment, with no
+discordant pairs: `NO_RELIABILITY_QUALIFICATION`. Stage 3 records 0/8
+short-task qualifications: `SECOND_TASK_TRAINING_UNQUALIFIED`.
 
-[Validation](evidence/bootstrap_path_20261004/validation.json) checks all46
-saved trace banks, source snapshots, control replays and count arithmetic.
-[Publication hashes](BOOTSTRAP_PATH_PUBLICATION_MANIFEST.json) identify
-byte-identical summaries/arrays and allowlisted training metadata.
-No model inference or new training was run for this upload.
+All failed arms, gate denominators and training curves are retained.
+The 96 NPZ trace banks and 40 frontier CSVs are secondary raw evidence;
+start with the summaries. The distance task is a distinct proxy, and its
+unqualified training does not establish an architecture impossibility.
 
-From repository root: `python -X utf8 -B tools/export_bootstrap_path.py --verify-only`.
-[Reproduction notes](evidence/bootstrap_path_20261004/REPRODUCTION.md) describe
-the excluded reference archives needed by the frozen training runner.
-Checkpoints, machine manifests, PIDs and logs were not uploaded.
+Reviewer questions: what does the conditional state cross identify; does
+the fresh-pair result support reliability; and what remains untested when
+the second-task training gate is unqualified?
+
+No training or model inference was run for this upload. Checkpoints and
+machine launch records remain local. [Publication hashes](TRAJECTORY_QUALIFICATION_PUBLICATION_MANIFEST.json)
+bind the public files and record the sole portable launcher adaptation.
+Verify from repository root:
+
+    python -X utf8 -B tools/export_trajectory_qualification.py --verify-only
