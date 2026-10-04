@@ -13,9 +13,11 @@
   measured available relative source-flip separation at K8 endpoint64 across
   all four banks. Centered lane balance and cross-lane correlation do not
   uniformly favor seed4; seed3 has the highest paired kernel-label alignment,
-  while seed5 has the highest initial Q-feature effective rank. Bias affects
-  relative normalization, and these are random task features rather than the
-  state Jacobian or a learned continuation quotient. On the first historical
+  while seed5 has the highest initial Q-feature effective rank. Other spectral
+  rankings vary by bank/window. Available separation is normalized by hidden
+  state norms and is not accuracy or an invariant information measure. These
+  are random task features rather than the state Jacobian or a learned
+  continuation quotient. On the first historical
   training batch, encoder, F, Q-in and readout.weight task gradients are exactly
   zero. Balanced-loss bias gradients are about 2e-7 from FP32 cancellation;
   Q-out weight is the only appreciable group-level gradient and is rank one up
@@ -58,7 +60,7 @@ Canonical entry: [integrated results](evidence/seed4_learning_geometry_20261004/
 command is `python -X utf8 -B tools/export_learning_geometry.py --verify-only`;
 it checks the exported snapshot without NPZ files or checkpoints. Full replay
 requires original archives excluded from GitHub, so a fresh clone cannot
-recreate the source runs. See the two [frozen protocols](new/initial_geometry/PROTOCOL.md)
+recreate the source runs. See the [initial geometry protocol](new/initial_geometry/PROTOCOL.md)
 and [formation protocol](new/formation_gate/PROTOCOL.md) for definitions and
 dependencies, and the [initial geometry](evidence/initial_geometry_20261004/REPRODUCTION.md)
 and [formation](evidence/formation_gate_20261004/REPRODUCTION.md) notes for

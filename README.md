@@ -20,8 +20,7 @@ positive and 3 false positives at the same update, then misses 200 when asked
 to predict the next saved update. Early continuous measures and ordinary T64
 output coverage both rank 200 highest. This retrospective single-trajectory
 result does not show independent predictive value or a formed closure
-mechanism. No latent
-`pi`, abstract transition, or independent consumer was measured; the
+mechanism. No latent `pi`, abstract transition, or independent consumer was measured; the
 conditional execution theorem remains unchanged. The second bank was already
 inspected and supplies consistency checking, not fresh confirmation.
 

@@ -1,68 +1,87 @@
-# Incremental review: joint195/200 causal audit
+# Incremental review: initial geometry and continuation formation
 
-- Review base: `d52bf4729605f9adf55c8579c47a4cf593c78a4f`.
-- Evidence head: `dc4dbafcb6a969ed404ef055f2eec026f2f9e13c`.
-- The following handoff-only commit changes reader metadata, not code or evidence.
+- Review base: `483e86773c890aecca2a8109f80fe24c683b02a6`.
+- Evidence head: `5db6d8184777cf617ea469fcbce9d056b3381259`.
+- The later handoff/entry-clarification commit changes reader metadata only.
 
-COMPLETE492 conditions in14.76 minutes, zero new training, original StreamingCell.
-All four primary historical replay controls match exactly. One selected training
-trajectory;16 primary and8 confirmation maps per size32/64. Maps are the reporting
-unit; these are not independent training replications. All counterfactuals are finite.
+Two completed2D CPU diagnostics, zero new training. Initialization uses four
+exact historical update0 checkpoints and previously inspected maps. Formation
+reads44 saved trajectories from one selected historical seed4 run, with no
+new inference. Existing architecture and warm-start negative results stand.
 
 ## Minimal reading order
 
-1. [Results](evidence/joint195_200_20261003/RESULTS.md) and
-   [interpretation](evidence/joint195_200_20261003/INTERPRETATION.md).
-2. [All492 profiles](evidence/joint195_200_20261003/profiles.csv),
-   [full factorial/all24 orders](evidence/joint195_200_20261003/factorial.json).
-3. [Frozen protocol](new/audit_195_200/PROTOCOL.md),
-   [source map](GPT_CONTEXT.md), [schema](evidence/joint195_200_20261003/SCHEMA.md).
-4. [Saved-artifact validation](evidence/joint195_200_20261003/validation/local_validation.json),
-   [publication manifest](JOINT195_PUBLICATION_MANIFEST.json), and
-   [reproduction](evidence/joint195_200_20261003/REPRODUCTION.md).
+1. [Combined results](evidence/seed4_learning_geometry_20261004/RESULTS.md).
+2. [Initialization report](evidence/initial_geometry_20261004/RESULTS.md) and
+   [formation report](evidence/formation_gate_20261004/RESULTS.md), then
+   [interpretation](evidence/formation_gate_20261004/INTERPRETATION.md).
+3. [Initial profiles](evidence/initial_geometry_20261004/profiles.csv),
+   [formation profiles](evidence/formation_gate_20261004/profiles.csv), and
+   [source/metric map](GPT_CONTEXT.md). Large per-map tables and the complete
+   scalar/spectral summaries are secondary; do not open them first.
+4. [Initialization protocol](new/initial_geometry/PROTOCOL.md),
+   [formation protocol](new/formation_gate/PROTOCOL.md),
+   [publication bindings](LEARNING_GEOMETRY_PUBLICATION_MANIFEST.json), and
+   the two [initialization](evidence/initial_geometry_20261004/REPRODUCTION.md)/
+   [formation](evidence/formation_gate_20261004/REPRODUCTION.md) reproduction notes.
 
-Open compact reports first. Individual cases, update probes and plans are secondary.
-Raw checkpoint/state/trace arrays and large duplicate summaries remain local;
-all492 compact conditions and negative results are public with original hashes.
+## New decision-relevant evidence
 
-## Changed conclusions
+- Seed4 has more balanced RAW lane RMS and greater measured available relative
+  source-flip feature separation at K8 endpoint64. Centered balance and spectral
+  rankings vary. Seed3 has better paired kernel-label alignment on all four
+  inspected banks; initial Q-feature effective rank is highest for seed5.
+  There is no consistent initialization advantage or causal success criterion.
+- Initial state-Jacobian isometry is shared by all seeds. The first historical
+  batch gives zero encoder/F/Q-in/readout-weight task gradients; Q-out weight
+  has the appreciable gradient, rank one up to FP32 roundoff. Balanced-loss bias
+  gradients are near-zero cancellation. Full-history and K8 tangents differ.
+- Early retention/progress, measured with rollout t<=64, passes at TRAINING
+  updates140/145/190/200. The long screen passes only200 in the dense window.
+  Same-checkpoint classification: TP1/FP3/TN17/FN0. Forecasting the next saved
+  training update (+5): TP0/FP3/TN16/FN1. Checkpoint300 is a nonadjacent control.
+- At175 the early survival/G/new-state survival are .9291/.2751/.9204;
+  at180 .4907/.0617/.4071; at195 .9377/.3324/.9520;
+  at200 .9996/.3762/.9970. They describe changing short-rollout behavior.
+  The margin-reserve heuristic does not forecast the175->180 optimizer change.
+- All four early continuous quantities rank200 highest in this selected dense
+  scan, but ordinary T64 output coverage also does. No incremental prediction
+  beyond an output-only baseline, prospective training forecast or latent
+  continuation representation has been demonstrated.
 
-- Primary32 strict T256 with fixed R195: S200/D195=1.000,
-  S195/D200=.93333. Shared solved-cohort survival is1.000 versus.93620.
-  Pre64 state production matters conditionally; continuation still affects timing.
-- E/F/Q effects are coadapted. Q200 reduces strict T128 in the195 E/F background
-  (.90773 to.89035), but improves it in the200 E/F background (.95735 to.98780).
-  Full16 coalitions and24 orders prevent a standalone Q ranking.
-- Primary32 interpolation lambda.4 to.5 removes a failure concentrated on map10.
-  Independent32 baseline195 already has long survival1.000. The sharp sampled
-  curve is not a population-wide computational phase transition.
-- Sparse W swaps and Q/LW pulses affect size64 frontier acquisition at128,
-  with recovery by256 and mixed spatial spillover. Null-readout perturbations
-  can affect future trajectories despite preserved immediate logits.
-- Solved states have nonzero learned updates. No zero-residual commitment
-  mechanism or universal downstream-equivalent state class is established.
+## Validation and reproduction boundary
 
-## Validation and unchanged claims
+Original initialization measurement took30.31 CPU seconds. Historical parameter,
+training-bank, schedule and source hashes match; analytic tangent checks against
+autograd have maximum error4.77e-7. Publication independently recomputes304
+paired feature Gram spectra/alignments from saved arrays, max spectrum error
+4.44e-16, without repeating inference. Public per-map grouping checks pass.
 
-Offline CPU validation recomputes all492 saved conditions and1940 cohort records,
-checks80 live/snapshot source bindings,12 input hashes,16 plans, and full factorial
-order accounting. Counts and checked numeric values match exactly. Five CPU
-fixtures and public arithmetic/hash verification pass. Earlier validator reports
-remain local; repaired scope/parser/comparator issues changed no experiment data.
+Formation analysis took8.86 CPU seconds, checking all44 raw archive bindings and
+matching prior long rates. Publication verifies880 per-map rate/count records,
+both confusion tables and all published hashes. It launches no model execution.
 
-Public reproduction checks published parameter/bank hashes against a recreated
-dense archive; excluded original checkpoint bytes cannot be verified from a clone.
-Its CPU binding mode was tested against the existing local archive. No fresh GPU
-training or inference was launched for publication.
+From a fresh clone, standard-library public verification is:
 
-Earlier architecture and warm-start no-go decisions remain unchanged. This is2D
-only, finite horizon, one selected trajectory. It does not establish infinite
-closure, a unique mechanism, improved training reliability or a new architecture gate.
+    python -X utf8 -B tools/export_learning_geometry.py --verify-only
+
+Full remeasurement needs excluded original feature/input/checkpoint/trajectory
+archives. Public verification is not exact model reproduction. Raw arrays and
+machine receipts remain local. No new reliability,3D or architecture gate claim.
+
+## What remains unestablished
+
+The particular seed4 quotient/closure mechanism remains a low-confidence
+candidate. These diagnostics did not construct pi, an abstract transition F,
+a raw-domain certificate, or an independent consumer contract. Short behavior
+and signed margin are not independent hidden-mechanism evidence. The conditional
+execution implication remains intact; no training-discovery theorem is supplied.
 
 ## Reviewer questions
 
-1. How strongly does the cross cube separate conditional state-production
-   sensitivity from continuation-rule effects without identifying latent type?
-2. Do factorial contrasts support coadaptation rather than an intrinsically bad Q?
-3. Which mechanism claims survive map10 concentration, confirmation32 ceilings,
-   sparse off-manifold swaps and transient pulse recovery?
+1. Which initialization findings survive centering, scale and payload-coordinate
+   dependence, without implying a success probability from four reused seeds?
+2. Do any reported formation quantities add information beyond current output
+   behavior? What could be identified from these saved arrays alone?
+3. Is downgrading the specific closure mechanism interpretation supported,
+   while preserving the conditional execution argument and earlier negatives?
