@@ -1,6 +1,41 @@
 # Context for incremental scientific review
 
-## Latest completed audit: W medium qualification
+## Latest completed audit: binary-carrier causal compression
+
+- `binary_carrier_causal_compression_v1`: **COMPLETE**, 24/24 cells in
+  473.469 seconds. The W replication anchors qualify; all three combined
+  primary gates (`bit_once`, `bit_repeat8`, `source_once`) fail at both sizes.
+  One local linear decoder was fit to fixed calibration centroids; there were
+  zero recurrent updates and no template optimization.
+- The oracle-only centroid arm has sustained progress 0.9967/0.6390 and
+  keep-continuous 0.1193/0.0896 at sizes 32/64, so it misses the keep gate at
+  both sizes. Per the frozen protocol this rejects the tested centroid and
+  consumer combination; it does not establish universal bit-code insufficiency.
+  Conclusions remain limited to this selected producer/consumer and finite
+  projected continuation, with no quotient, architecture, or BPTT guarantee.
+- Read [results](evidence/binary_carrier_20261005/RESULTS.md),
+  [summary](evidence/binary_carrier_20261005/summary.json),
+  [validation](evidence/binary_carrier_20261005/validation.json), and
+  [configuration](evidence/binary_carrier_20261005/config.json), followed by
+  [decoder fit](evidence/binary_carrier_20261005/decoder/fit.json),
+  [decoder probes](evidence/binary_carrier_20261005/decoder/probes.json), and
+  [metrics](evidence/binary_carrier_20261005/metrics.csv). Raw arrays and
+  per-map records are secondary. Frozen
+  [protocol](new/binary_carrier/PROTOCOL.md).
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Fit weighted local W decoder and fixed centroids | `fit`, `_weighted_centroid` | [decoder.py](new/binary_carrier/decoder.py) |
+| Decode bits and form projected W/source-only states | `predict`, `apply`, `source_only` | [decoder.py](new/binary_carrier/decoder.py) |
+| Restart arms, repeated projected consumer, and causal gates | `states_for`, `ProjectedConsumer`, `compression_gate`, `run` | [run.py](new/binary_carrier/run.py) |
+| Decoder probes and arm measurements | `probe`, `finish_report` | [run.py](new/binary_carrier/run.py) |
+| Frozen cohorts, metrics and anchor rescue gate | `cohorts`, `summarize`, `rescue_gate` | [metrics.py](new/state_factorization/metrics.py) |
+| Saved-data snapshot verification | `build`, `verify`, `--verify-only` | [exporter](tools/export_binary_carrier.py) |
+
+- Verify the public snapshot from the repository root with
+  `python -X utf8 -B tools/export_binary_carrier.py --verify-only`.
+
+## Previous completed audit: W medium qualification
 
 - `w_medium_qualification_v1`: **COMPLETE**, 36/36 cells in 570.406 seconds,
   zero training or optimizer updates. Stage 1 is

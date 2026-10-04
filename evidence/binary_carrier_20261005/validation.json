@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "scope": "Saved arrays and arithmetic only; no model execution or decoder refitting.",
+  "measurement_cells": 24,
+  "metric_rows": 840,
+  "npz_files": 117,
+  "state_chunks": 8,
+  "fixed_cohorts_counts_gates_recomputed": true,
+  "decoder_probe_XOR_recomputed": true,
+  "class_centroids_recomputed": true,
+  "FF_native_suffix_exact": true,
+  "W_immediate_neutrality_recomputed": true,
+  "repeated_projection_times_and_template_bits_checked": true,
+  "T64_projection_records_reconstructed": true,
+  "all_state_tensor_hashes_exact": true,
+  "anchor": {
+    "pass": true,
+    "checks": {
+      "SS_rescue_size32": true,
+      "SF_rescue_size32": true,
+      "SF_exact_output_size32": true,
+      "SS_rescue_size64": true,
+      "SF_rescue_size64": true,
+      "SF_exact_output_size64": true
+    },
+    "native_full_flags_descriptive": {
+      "S1": true,
+      "F1": false
+    },
+    "historical_localization_episode_qualified": {
+      "32": true,
+      "64": true
+    },
+    "status": "QUALIFIED_W_REPLICATION_CONTROLS_ENABLED"
+  },
+  "combined_gates": {
+    "bit_once": {
+      "pass": false,
+      "status": "FAIL"
+    },
+    "bit_repeat8": {
+      "pass": false,
+      "status": "FAIL"
+    },
+    "source_once": {
+      "pass": false,
+      "status": "FAIL"
+    }
+  },
+  "support": {
+    "32": {
+      "keep_continuous64_256": 1.0,
+      "keep_valid_maps": 110,
+      "keep_cells": 20762,
+      "prog_sustained241_256": 0.6793464386009701,
+      "prog_valid_maps": 26,
+      "prog_cells": 3917,
+      "ff_prog_sustained241_256": 0.0,
+      "prog_gain_vs_ff": 0.6793464386009701
+    },
+    "64": {
+      "keep_continuous64_256": 0.9890003235198964,
+      "keep_valid_maps": 29,
+      "keep_cells": 3091,
+      "prog_sustained241_256": 0.6403585827871252,
+      "prog_valid_maps": 109,
+      "prog_cells": 88794,
+      "ff_prog_sustained241_256": 0.0,
+      "prog_gain_vs_ff": 0.6403585827871252
+    }
+  },
+  "recurrent_training_updates": 0,
+  "decoder_fits": 1,
+  "elapsed_seconds": 473.469
+}

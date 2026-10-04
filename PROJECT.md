@@ -1,6 +1,32 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Latest completed suite (2026-10-04): `w_medium_qualification_v1`, defined in
+Latest completed audit (2026-10-05): `binary_carrier_causal_compression_v1`,
+defined in [new/binary_carrier/PROTOCOL.md](new/binary_carrier/PROTOCOL.md).
+Formal execution is **COMPLETE**, 24/24 cells in 473.469 seconds. The W
+replication anchors qualify, but all three combined primary gates
+(`bit_once`, `bit_repeat8`, `source_once`) fail at both sizes. One local linear
+decoder was fit on calibration W; class-centroid templates are fixed. Recurrent updates and template
+optimization are zero.
+
+The oracle-only centroid arm has sustained progress 0.9967/0.6390 and
+keep-continuous 0.1193/0.0896 at sizes 32/64, missing the keep gate at both
+sizes. This rejects the tested centroid/consumer combination under the frozen
+protocol, not all possible binary codes. The results concern a selected
+producer, consumer and finite projected continuation.
+
+Read the public package under `evidence/binary_carrier_20261005/` in this order:
+`RESULTS.md`, `summary.json`, `validation.json`, `config.json`, then
+`decoder/fit.json`, `decoder/probes.json`, and `metrics.csv`. Raw arrays and
+per-map records are secondary. Verify the saved-data snapshot from the
+repository root with
+`python -X utf8 -B tools/export_binary_carrier.py --verify-only`.
+
+For a new run with fresh output names, use these repository-root commands:
+
+    python -X utf8 -B new/binary_carrier/check.py --out analyses/NEW_BINARY_CHECK.json
+    pwsh -File tools/launch_binary_carrier.ps1 -RunName NEW_BINARY_RUN -Qualification analyses/NEW_BINARY_CHECK.json
+
+Previous completed suite (2026-10-04): `w_medium_qualification_v1`, defined in
 [new/w_medium/PROTOCOL.md](new/w_medium/PROTOCOL.md). Formal execution is
 **COMPLETE**, 36/36 intervention cells in 570.406 seconds, with zero training
 or optimizer updates. Stage 1 qualified W replication and enabled the controls

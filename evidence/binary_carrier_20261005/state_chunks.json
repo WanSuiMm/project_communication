@@ -1,0 +1,122 @@
+{
+  "F1_size64_T64.npz": {
+    "original_sha256": "8a49be8c015e78375ea24a38f013b73fe8f702bff5060c69ae553c170c1bf57f",
+    "tensor_sha256": "a9965ccdc644a981517bd9d469a38431d59482afba58ccee26c234148b5f50b6",
+    "arrays": {
+      "W": {
+        "shape": [
+          256,
+          24,
+          64,
+          64
+        ],
+        "dtype": "float32"
+      },
+      "Z": {
+        "shape": [
+          256,
+          8,
+          64,
+          64
+        ],
+        "dtype": "float32"
+      }
+    },
+    "cue_order": "all_original_maps_then_all_flipped_maps",
+    "maps_per_chunk": 32,
+    "chunks": [
+      {
+        "path": "states/F1_size64_T64/maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": null,
+        "time": null,
+        "sha256": "1e1f67f37aff45b5f22636ca33c0e373144240289c6a8ce9c8921396ef19802a"
+      },
+      {
+        "path": "states/F1_size64_T64/maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": null,
+        "time": null,
+        "sha256": "48ef9b4167e56e2c2c6cae314fa39e6954d44bf97c05c00494e4e525774d743c"
+      },
+      {
+        "path": "states/F1_size64_T64/maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": null,
+        "time": null,
+        "sha256": "82be4551ce79abff5bca22b982ceb716b104c41ab4b8d44b51cb000685fd8049"
+      },
+      {
+        "path": "states/F1_size64_T64/maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": null,
+        "time": null,
+        "sha256": "de0cc3f1f9fabb9631e23585c87735a3bc0fc4acdb4baa95ca142dfc51baff45"
+      }
+    ]
+  },
+  "S1_size64_T64.npz": {
+    "original_sha256": "fab5f22c147e0cf05dc5b146343232ffdd26ac8e570e166a2b4e9a91c54a4f57",
+    "tensor_sha256": "4fc07ae81bf51f40b50d6e084d89d07b6a342800f701617a2b01ccf01f1c7205",
+    "arrays": {
+      "W": {
+        "shape": [
+          256,
+          24,
+          64,
+          64
+        ],
+        "dtype": "float32"
+      },
+      "Z": {
+        "shape": [
+          256,
+          8,
+          64,
+          64
+        ],
+        "dtype": "float32"
+      }
+    },
+    "cue_order": "all_original_maps_then_all_flipped_maps",
+    "maps_per_chunk": 32,
+    "chunks": [
+      {
+        "path": "states/S1_size64_T64/maps000_031.npz",
+        "map_start": 0,
+        "map_stop": 32,
+        "time_index": null,
+        "time": null,
+        "sha256": "2f01299c6e6d3e63f2f007cdbb46a38766f2c93032eabaffb990f837ad31fd4d"
+      },
+      {
+        "path": "states/S1_size64_T64/maps032_063.npz",
+        "map_start": 32,
+        "map_stop": 64,
+        "time_index": null,
+        "time": null,
+        "sha256": "f8fe8c289980fcf302f1edf354150f3c2008e9967f797a5f52ab342ea3eccbd8"
+      },
+      {
+        "path": "states/S1_size64_T64/maps064_095.npz",
+        "map_start": 64,
+        "map_stop": 96,
+        "time_index": null,
+        "time": null,
+        "sha256": "d87741c6ab60a6020e047b21168d04565b59db8293168f7d386f8a21ac298c3b"
+      },
+      {
+        "path": "states/S1_size64_T64/maps096_127.npz",
+        "map_start": 96,
+        "map_stop": 128,
+        "time_index": null,
+        "time": null,
+        "sha256": "4b133939fb70e878088aecf44b37f7c7ea242cb737c36f064e0917cd091ce31f"
+      }
+    ]
+  }
+}

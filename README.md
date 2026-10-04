@@ -1,6 +1,36 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: W medium qualification
+## Latest result: binary-carrier causal compression
+
+`binary_carrier_causal_compression_v1`: **COMPLETE**, 24/24 cells in
+473.469 seconds. The W replication anchors qualify, but all three combined
+primary gates (`bit_once`, `bit_repeat8`, and `source_once`) fail at both
+sizes. The run fits one local linear decoder, uses fixed calibration centroids,
+and makes zero recurrent updates; the full keep/progress table is in the
+results report.
+
+The oracle-only centroid arm has sustained progress of 0.9967/0.6390 but
+keep-continuous of 0.1193/0.0896, so it misses the keep requirement at both
+sizes. Under the frozen protocol this is evidence against the tested
+centroid/consumer combination, not a universal bit-code impossibility claim.
+The run concerns this selected producer, consumer, and finite projected
+continuation; it does not establish a quotient, architecture, or BPTT guarantee.
+
+Start with [results](evidence/binary_carrier_20261005/RESULTS.md),
+[summary](evidence/binary_carrier_20261005/summary.json),
+[validation](evidence/binary_carrier_20261005/validation.json), and
+[configuration](evidence/binary_carrier_20261005/config.json); then read
+[decoder fit](evidence/binary_carrier_20261005/decoder/fit.json),
+[decoder probes](evidence/binary_carrier_20261005/decoder/probes.json), and
+[metrics](evidence/binary_carrier_20261005/metrics.csv). Raw arrays and
+per-map records are secondary. The frozen
+[protocol](new/binary_carrier/PROTOCOL.md) and code map in
+[GPT_CONTEXT.md](GPT_CONTEXT.md) define the procedure. Verify the saved-data
+snapshot from the repository root with:
+
+    python -X utf8 -B tools/export_binary_carrier.py --verify-only
+
+## Previous result: W medium qualification
 
 `w_medium_qualification_v1`: **COMPLETE**, 36/36 intervention cells in
 570.406 seconds, with zero training or optimizer updates. Stage 1 is
