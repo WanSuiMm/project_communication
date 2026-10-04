@@ -1,6 +1,53 @@
 # Context for incremental scientific review
 
-## Latest result: conditional seed4 bootstrap-path screen
+## Latest completed suite: serial training-state and second-task qualification
+
+- Protocol: `trajectory_qualification_v1`; formal execution `COMPLETE`,
+  48/48 arms (stage 1: 8/8, stage 2: 32/32, stage 3: 8/8), 6,610.797 seconds.
+- Stage 1 is one conditional update-3 donor-state family on the selected H/S
+  suffixes. The native controls exactly reproduce their saved endpoints; the
+  frozen selector chose `shadow_joint`. This selects the whole donor package,
+  not a parameter-only or moment-only mechanism.
+- Stage 2 tests that selected recipe on 16 fresh initialization/schedule pairs.
+  Baseline and treatment each pass the unchanged Full gate on 1/16 pairs;
+  there are 0 treatment-only and 0 baseline-only passes (1 both-pass and 15
+  both-fail ties; paired delta 0, exact two-sided p=1). Decision:
+  `NO_RELIABILITY_QUALIFICATION`.
+- Stage 3 is the independent multi-source geodesic-distance task using the
+  unchanged StreamingCell and 300-update recipe. No arm met the size-32 T64
+  short-task gate (mean-map MAE <=2 cells), so the decision is
+  `SECOND_TASK_TRAINING_UNQUALIFIED`; 0/8 arms pass the full distance proxy.
+  This second-task proxy is separate from the original paired-source-flip Full
+  gate.
+- Across the suite, the original cell and K8 credit window stay fixed. Stage 1
+  is conditional on one selected update-3 donor package and two suffixes;
+  stage 2 uses 16 independent fresh pairs; stage 3 tests a distinct task. These
+  records do not establish a suffix-independent component mechanism, recipe
+  reliability, geometric basin volume, or the original task gate on stage 3.
+- Start with [suite results](evidence/trajectory_qualification_20261004/RESULTS.md),
+  [suite summary](evidence/trajectory_qualification_20261004/summary.json),
+  and [validation](evidence/trajectory_qualification_20261004/validation.json).
+  Then read the [stage 1 results](evidence/trajectory_qualification_20261004/stage1_state_cross/RESULTS.md)
+  and [summary](evidence/trajectory_qualification_20261004/stage1_state_cross/summary.json),
+  the [stage 2 results](evidence/trajectory_qualification_20261004/stage2_fresh_recipe/RESULTS.md)
+  and [summary](evidence/trajectory_qualification_20261004/stage2_fresh_recipe/summary.json),
+  and the [stage 3 results](evidence/trajectory_qualification_20261004/stage3_distance/RESULTS.md)
+  and [summary](evidence/trajectory_qualification_20261004/stage3_distance/summary.json).
+  Raw arm records, curves, and traces are secondary; checkpoints remain local. The frozen
+  [suite protocol](new/trajectory_qualification/PROTOCOL.md),
+  [distance protocol](new/trajectory_qualification/DISTANCE_PROTOCOL.md), and
+  [reproduction notes](evidence/trajectory_qualification_20261004/REPRODUCTION.md)
+  define the procedure and public artifact limits.
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Suite orchestration and provenance | `run`, `source_hashes`, `reference_hashes` | [run.py](new/trajectory_qualification/run.py) |
+| Stage 1 cross and recipe selector | `run_stage`, `select_recipe`, `specs` | [state_cross.py](new/trajectory_qualification/state_cross.py) |
+| Stage 2 paired outcomes and reliability test | `run_stage`, `_paired_summary`, `wilson_interval`, `exact_two_sided_binomial_p` | [fresh_recipe.py](new/trajectory_qualification/fresh_recipe.py) |
+| Stage 3 distance gate and evaluation | `run_stage`, `_gate`, `evaluate_distance`, `backward_distance` | [distance_task.py](new/trajectory_qualification/distance_task.py) |
+| Shared original update path and replay checks | `train_updates`, `load_state`, `compare_replay` | [common.py](new/trajectory_qualification/common.py) |
+
+## Previous result: conditional seed4 bootstrap-path screen
 
 - Run: `seed4_bootstrap_path_v1`, COMPLETE, 23 arms × 300 updates, 3,068.407 s.
 - Inputs: init4, unchanged historical StreamingCell/AdamW/K8; H20002 and S20012/S20022; prefix lengths1/3/8. Paired source-flip evaluation uses32 maps each at spatial sizes32/64, seeds50032/50064, reused from the earlier screen.

@@ -1,6 +1,28 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Latest completed experiment (2026-10-04): seed4 early-bootstrap versus
+Completed serial suite (2026-10-04): `trajectory_qualification_v1`. Formal
+execution is `COMPLETE`, 48/48 arms (stage 1: 8/8, stage 2: 32/32, stage 3:
+8/8; 6,610.797 seconds). Stage 1 selected the conditional update-3 donor
+recipe `shadow_joint`. Stage 2 has 1/16 baseline and 1/16 treatment Full
+passes and is `NO_RELIABILITY_QUALIFICATION`. Stage 3 is
+`SECOND_TASK_TRAINING_UNQUALIFIED`: 0/8 arms met the size-32 T64 short-task
+training gate, and 0/8 passed the separate distance-task proxy. The original
+cell and K8 credit window are unchanged; stage 3 is not the original Full gate.
+
+Canonical public entries: [suite results](evidence/trajectory_qualification_20261004/RESULTS.md),
+[suite summary](evidence/trajectory_qualification_20261004/summary.json),
+[validation](evidence/trajectory_qualification_20261004/validation.json),
+and [reproduction notes](evidence/trajectory_qualification_20261004/REPRODUCTION.md).
+Read the stage results and summaries under `stage1_state_cross/`,
+`stage2_fresh_recipe/`, and `stage3_distance/`; the frozen definitions are in
+`new/trajectory_qualification/PROTOCOL.md` and
+`new/trajectory_qualification/DISTANCE_PROTOCOL.md`. A stage 1 rerun requires
+the preserved update-3 checkpoints. Verify the published snapshot from the
+repository root with:
+
+    python -X utf8 -B tools/export_trajectory_qualification.py --verify-only
+
+Preceding completed experiment (2026-10-04): seed4 early-bootstrap versus
 training-path sensitivity, new/bootstrap_path/PROTOCOL.md
 (`seed4_bootstrap_path_v1`). Formal run: runs/bootstrap_20261004_seed4_01.
 COMPLETE23/23 arms x300 updates in3068.407 seconds. Historical H, two selected schedules,

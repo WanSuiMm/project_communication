@@ -1,0 +1,127 @@
+{
+  "protocol": "fresh_recipe_stage2_v1",
+  "selection": {
+    "recipe": "shadow_joint",
+    "moment_candidate_eligible": false,
+    "parameter_candidate_eligible": false,
+    "priority": [
+      "shadow_moments",
+      "shadow_parameters",
+      "shadow_joint"
+    ],
+    "criterion": "Rescue native-S failure on S suffix and preserve native-S pass on H suffix.",
+    "claim_boundary": "Conditional donor-state recipe selection; no suffix-independent component mechanism.",
+    "lookup": {
+      "thetaH_mH_suffixH": true,
+      "thetaH_mH_suffixS": true,
+      "thetaS_mS_suffixH": true,
+      "thetaS_mS_suffixS": false,
+      "thetaH_mS_suffixH": false,
+      "thetaH_mS_suffixS": false,
+      "thetaS_mH_suffixH": false,
+      "thetaS_mH_suffixS": false
+    }
+  },
+  "recipe_components_imported": {
+    "parameters": true,
+    "adam_moments": true
+  },
+  "pair_count": 16,
+  "initialization_seeds": [
+    31001,
+    31002,
+    31003,
+    31004,
+    31005,
+    31006,
+    31007,
+    31008,
+    31009,
+    31010,
+    31011,
+    31012,
+    31013,
+    31014,
+    31015,
+    31016
+  ],
+  "schedule_seeds": [
+    32001,
+    32002,
+    32003,
+    32004,
+    32005,
+    32006,
+    32007,
+    32008,
+    32009,
+    32010,
+    32011,
+    32012,
+    32013,
+    32014,
+    32015,
+    32016
+  ],
+  "training_bank": {
+    "size": 32,
+    "count": 512,
+    "seed": 10002,
+    "device": "cuda"
+  },
+  "evaluation_banks": [
+    {
+      "size": 32,
+      "count": 32,
+      "seed": 83032,
+      "device": "cpu"
+    },
+    {
+      "size": 64,
+      "count": 32,
+      "seed": 83064,
+      "device": "cpu"
+    }
+  ],
+  "fixed_shadow_prefix_indices": [
+    [
+      251,
+      401,
+      201,
+      11,
+      157,
+      401,
+      441,
+      44
+    ],
+    [
+      157,
+      58,
+      243,
+      245,
+      48,
+      355,
+      0,
+      385
+    ],
+    [
+      17,
+      487,
+      39,
+      457,
+      380,
+      133,
+      377,
+      409
+    ]
+  ],
+  "data_sha256": {
+    "training_bank": "5ff2af1eb77781ed766ff3c8ba1b4477cebb8b345873a715d9808b7cecdd5fee",
+    "evaluation_banks": {
+      "32": "6c7fd48e7762447210b9bd2578611c624f0b4a38d2babc9005d3339302533d41",
+      "64": "531c7d6fb7d1c9c79674e6381ae1ec720ff9c8d8684f16483f8564bf7f334291"
+    }
+  },
+  "common_sha256": "5abad75997cc204b3b26e4d7c5cd44b5245c97060e458af2a1912a761850bac4",
+  "runner_sha256": "f5244683a7a1d31264c20630a9f688e8bf55a58afb16e21fa5fffa642507a0d1"
+}

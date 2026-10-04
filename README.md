@@ -1,6 +1,34 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: conditional seed4 bootstrap-path screen
+## Latest result: serial training-state and second-task qualification
+
+`trajectory_qualification_v1`: **COMPLETE**, 48/48 arms across the three stages
+(8 + 32 + 8; 6,610.797 seconds). Stage 1 selected `shadow_joint` as a
+conditional update-3 donor-state recipe. Stage 2 recorded 1/16 Full passes for
+both baseline and treatment, with no reliability qualification. Stage 3 was
+`SECOND_TASK_TRAINING_UNQUALIFIED`: 0/8 arms met the size-32 T64 short-task
+training gate, and 0/8 passed the full distance-task proxy. The original
+StreamingCell and K8 credit window remain fixed; stage 3 is a separate task
+proxy, not the original Full gate. This is a data release for independent
+review, without new mechanism analysis.
+
+Read in this order:
+
+1. [Suite results](evidence/trajectory_qualification_20261004/RESULTS.md),
+   [summary](evidence/trajectory_qualification_20261004/summary.json), and
+   [validation](evidence/trajectory_qualification_20261004/validation.json).
+2. Stage 1 [results](evidence/trajectory_qualification_20261004/stage1_state_cross/RESULTS.md)
+   and [summary](evidence/trajectory_qualification_20261004/stage1_state_cross/summary.json);
+   stage 2 [results](evidence/trajectory_qualification_20261004/stage2_fresh_recipe/RESULTS.md)
+   and [summary](evidence/trajectory_qualification_20261004/stage2_fresh_recipe/summary.json);
+   stage 3 [results](evidence/trajectory_qualification_20261004/stage3_distance/RESULTS.md)
+   and [summary](evidence/trajectory_qualification_20261004/stage3_distance/summary.json).
+3. Frozen [suite protocol](new/trajectory_qualification/PROTOCOL.md),
+   [distance-task protocol](new/trajectory_qualification/DISTANCE_PROTOCOL.md),
+   [reproduction notes](evidence/trajectory_qualification_20261004/REPRODUCTION.md),
+   and the [source map](GPT_CONTEXT.md).
+
+## Previous result: conditional seed4 bootstrap-path screen
 
 `seed4_bootstrap_path_v1`: COMPLETE, 23 arms × 300 updates, 3,068.407 s.
 This publication supplies data and code for independent review.

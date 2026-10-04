@@ -1,0 +1,301 @@
+{
+  "protocol": "fresh_recipe_stage2_v1",
+  "status": "COMPLETE",
+  "selection": {
+    "recipe": "shadow_joint",
+    "moment_candidate_eligible": false,
+    "parameter_candidate_eligible": false,
+    "priority": [
+      "shadow_moments",
+      "shadow_parameters",
+      "shadow_joint"
+    ],
+    "criterion": "Rescue native-S failure on S suffix and preserve native-S pass on H suffix.",
+    "claim_boundary": "Conditional donor-state recipe selection; no suffix-independent component mechanism.",
+    "lookup": {
+      "thetaH_mH_suffixH": true,
+      "thetaH_mH_suffixS": true,
+      "thetaS_mS_suffixH": true,
+      "thetaS_mS_suffixS": false,
+      "thetaH_mS_suffixH": false,
+      "thetaH_mS_suffixS": false,
+      "thetaS_mH_suffixH": false,
+      "thetaS_mH_suffixS": false
+    }
+  },
+  "recipe_components_imported": {
+    "parameters": true,
+    "adam_moments": true
+  },
+  "primary_unit": "fresh initialization plus independently sampled 300-update batch schedule",
+  "primary_paired_result": {
+    "n_pairs": 16,
+    "baseline_passes": 1,
+    "treatment_passes": 1,
+    "baseline_pass_rate": 0.0625,
+    "treatment_pass_rate": 0.0625,
+    "baseline_pass_rate_wilson_95": {
+      "successes": 1,
+      "trials": 16,
+      "lower": 0.01111934476464252,
+      "upper": 0.28328737570298945
+    },
+    "treatment_pass_rate_wilson_95": {
+      "successes": 1,
+      "trials": 16,
+      "lower": 0.01111934476464252,
+      "upper": 0.28328737570298945
+    },
+    "delta_treatment_minus_baseline": 0.0,
+    "minimum_net_pairs_for_delta_threshold": 4,
+    "discordant_pairs": 0,
+    "treatment_only_passes": 0,
+    "baseline_only_passes": 0,
+    "net_discordant_wins": 0,
+    "ties_both_pass": 1,
+    "ties_both_fail": 15,
+    "exact_two_sided_mcnemar_binomial_p": 1.0,
+    "qualification_thresholds": {
+      "delta_at_least": 0.25,
+      "p_at_most": 0.05
+    },
+    "verdict": "NO_RELIABILITY_QUALIFICATION"
+  },
+  "secondary_continuous_means": {
+    "32": {
+      "retention64_to256": {
+        "baseline_mean": 0.44614685769130374,
+        "treatment_mean": 0.5086452076579293,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": 0.062498349966625566
+      },
+      "ever_regressed_fraction": {
+        "baseline_mean": 0.693010011040445,
+        "treatment_mean": 0.6105982382978238,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.08241177274262124
+      },
+      "frontier_effect": {
+        "baseline_mean": 0.10382071915429668,
+        "treatment_mean": 0.07757204267350674,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.026248676480789934
+      },
+      "coverage_t64": {
+        "baseline_mean": 0.36673875432525954,
+        "treatment_mean": 0.37440888119953863,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": 0.007670126874279093
+      },
+      "coverage_t128": {
+        "baseline_mean": 0.28967704728950405,
+        "treatment_mean": 0.28785322952710496,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.0018238177623990937
+      },
+      "coverage_t256": {
+        "baseline_mean": 0.2693771626297578,
+        "treatment_mean": 0.25320790080738176,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.016169261822376046
+      },
+      "strict_mean_t64": {
+        "baseline_mean": 0.30589668500282047,
+        "treatment_mean": 0.2664836092123784,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.039413075790442065
+      },
+      "strict_mean_t128": {
+        "baseline_mean": 0.24556449522271126,
+        "treatment_mean": 0.19918359689600856,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.046380898326702696
+      },
+      "strict_mean_t256": {
+        "baseline_mean": 0.22928715995931478,
+        "treatment_mean": 0.19666478344776772,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.03262237651154706
+      }
+    },
+    "64": {
+      "retention64_to256": {
+        "baseline_mean": 0.44293314193427497,
+        "treatment_mean": 0.5198501806462706,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 15,
+        "treatment_minus_baseline": 0.07691703871199568
+      },
+      "ever_regressed_fraction": {
+        "baseline_mean": 0.6792089403234359,
+        "treatment_mean": 0.6130411203262279,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.066167819997208
+      },
+      "frontier_effect": {
+        "baseline_mean": 0.12280818358648692,
+        "treatment_mean": 0.07603801913885365,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.04677016444763327
+      },
+      "coverage_t64": {
+        "baseline_mean": 0.17949398154194418,
+        "treatment_mean": 0.19884718775847807,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": 0.019353206216533886
+      },
+      "coverage_t128": {
+        "baseline_mean": 0.18744014191807062,
+        "treatment_mean": 0.1895977536894345,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": 0.0021576117713638654
+      },
+      "coverage_t256": {
+        "baseline_mean": 0.19786361063950197,
+        "treatment_mean": 0.16996430281659483,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.027899307822907143
+      },
+      "strict_mean_t64": {
+        "baseline_mean": 0.28598903598927217,
+        "treatment_mean": 0.3054155788694073,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": 0.019426542880135123
+      },
+      "strict_mean_t128": {
+        "baseline_mean": 0.25697722106711113,
+        "treatment_mean": 0.2705299273206276,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": 0.013552706253516456
+      },
+      "strict_mean_t256": {
+        "baseline_mean": 0.24749251241224823,
+        "treatment_mean": 0.2465607328003442,
+        "baseline_valid_pairs": 16,
+        "treatment_valid_pairs": 16,
+        "treatment_minus_baseline": -0.0009317796119040211
+      }
+    }
+  },
+  "per_pair_passes": [
+    {
+      "pair_id": "init31001_schedule32001",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31002_schedule32002",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31003_schedule32003",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31004_schedule32004",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31005_schedule32005",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31006_schedule32006",
+      "baseline_pass": true,
+      "treatment_pass": true,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31007_schedule32007",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31008_schedule32008",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31009_schedule32009",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31010_schedule32010",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31011_schedule32011",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31012_schedule32012",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31013_schedule32013",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31014_schedule32014",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31015_schedule32015",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    },
+    {
+      "pair_id": "init31016_schedule32016",
+      "baseline_pass": false,
+      "treatment_pass": false,
+      "treatment_minus_baseline": 0
+    }
+  ],
+  "artifact_routes": {
+    "schedules": "schedules.json",
+    "per_arm_training_curves_and_pair_audits": "perarm.json",
+    "full_evaluation_summaries_traces_and_frontiers": "<pair_id>/evaluation/<arm>/",
+    "checkpoints": "<pair_id>/checkpoints/"
+  },
+  "claim_boundary": "Reliability qualification for the selected recipe and frozen protocol only; no geometric basin-volume estimate or universal architecture claim."
+}

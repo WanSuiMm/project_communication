@@ -1,0 +1,86 @@
+{
+  "protocol": "u3_state_cross_v1",
+  "expected_arms": 8,
+  "start_update": 3,
+  "end_update": 300,
+  "initialization_seed": 4,
+  "optimizer": {
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "step_counter_preserved": true,
+  "arms": [
+    {
+      "name": "thetaH_mH_suffixH",
+      "theta": "H",
+      "moments": "H",
+      "suffix": "H",
+      "native_reference": "H"
+    },
+    {
+      "name": "thetaH_mH_suffixS",
+      "theta": "H",
+      "moments": "H",
+      "suffix": "S",
+      "native_reference": "S20022_preserve_early3"
+    },
+    {
+      "name": "thetaS_mS_suffixH",
+      "theta": "S",
+      "moments": "S",
+      "suffix": "H",
+      "native_reference": "S20022_replace_early3"
+    },
+    {
+      "name": "thetaS_mS_suffixS",
+      "theta": "S",
+      "moments": "S",
+      "suffix": "S",
+      "native_reference": "S20022"
+    },
+    {
+      "name": "thetaH_mS_suffixH",
+      "theta": "H",
+      "moments": "S",
+      "suffix": "H",
+      "native_reference": null
+    },
+    {
+      "name": "thetaH_mS_suffixS",
+      "theta": "H",
+      "moments": "S",
+      "suffix": "S",
+      "native_reference": null
+    },
+    {
+      "name": "thetaS_mH_suffixH",
+      "theta": "S",
+      "moments": "H",
+      "suffix": "H",
+      "native_reference": null
+    },
+    {
+      "name": "thetaS_mH_suffixS",
+      "theta": "S",
+      "moments": "H",
+      "suffix": "S",
+      "native_reference": null
+    }
+  ],
+  "reference_checkpoint_sha256": {
+    "H": "ad79713990183ccfed1e175562413c97b6c0ba5653c3133a4e0f7ff39b4b9c1c",
+    "S": "f8e12859619a4e95dae0adf0bc492e13e79196dc8da4186dc2d836547537f8e3"
+  },
+  "train_data_sha256": "5ff2af1eb77781ed766ff3c8ba1b4477cebb8b345873a715d9808b7cecdd5fee",
+  "evaluation_data_sha256": {
+    "32": "a4f1e4d2dc55bbb5bacd9e916de767ce0582f3bb325c25147c0e0a165e92e446",
+    "64": "8225e12ab6cf5087c92cd8d3b0032c541416b2efbce79ecbaef88f5386275cec"
+  },
+  "evaluation_banks_reused": true,
+  "runtime_limit_enforced": false
+}

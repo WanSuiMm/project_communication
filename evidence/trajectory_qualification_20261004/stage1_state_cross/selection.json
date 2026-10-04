@@ -1,0 +1,22 @@
+{
+  "recipe": "shadow_joint",
+  "moment_candidate_eligible": false,
+  "parameter_candidate_eligible": false,
+  "priority": [
+    "shadow_moments",
+    "shadow_parameters",
+    "shadow_joint"
+  ],
+  "criterion": "Rescue native-S failure on S suffix and preserve native-S pass on H suffix.",
+  "claim_boundary": "Conditional donor-state recipe selection; no suffix-independent component mechanism.",
+  "lookup": {
+    "thetaH_mH_suffixH": true,
+    "thetaH_mH_suffixS": true,
+    "thetaS_mS_suffixH": true,
+    "thetaS_mS_suffixS": false,
+    "thetaH_mS_suffixH": false,
+    "thetaH_mS_suffixS": false,
+    "thetaS_mH_suffixH": false,
+    "thetaS_mH_suffixS": false
+  }
+}

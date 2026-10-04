@@ -1,0 +1,108 @@
+{
+  "task": "streaming_multisource_geodesic_distance_v1",
+  "architecture": "unchanged StreamingCell(streaming=True)",
+  "model": {
+    "workspace_channels": 24,
+    "latent_channels": 8,
+    "parameter_count": 5033
+  },
+  "train": {
+    "size": 32,
+    "maps": 512,
+    "data_seed": 81032,
+    "init_seeds": [
+      41001,
+      41002,
+      41003,
+      41004,
+      41005,
+      41006,
+      41007,
+      41008
+    ],
+    "schedule_seeds": [
+      42001,
+      42002,
+      42003,
+      42004,
+      42005,
+      42006,
+      42007,
+      42008
+    ],
+    "updates": 300,
+    "batch_size": 8,
+    "sampling": "with replacement",
+    "forward_steps": 64,
+    "loss_steps": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "gradient_horizon": 8,
+    "both_state_tensors_detached_at_each_loss_step": true,
+    "loss": "per-map masked MSE on distance/32; average maps equally and eight checkpoints equally"
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "clip_norm": 1.0
+  },
+  "evaluation": {
+    "maps_per_size": 32,
+    "seeds": {
+      "32": 82032,
+      "64": 82064
+    },
+    "sizes": [
+      32,
+      64
+    ],
+    "steps": 256,
+    "reported_checkpoints": [
+      0,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "full_correctness_trace_steps": [
+      0,
+      256
+    ],
+    "target_scale": 32.0,
+    "within1_cell_definition": "absolute raw prediction error <= 1 cell",
+    "band": "strict d>32; eligible map has at least one band cell"
+  },
+  "gate": {
+    "size32_mean_map_mae_T64_le_cells": 2.0,
+    "both_sizes_mean_map_mae_T256_le_T64_plus_cells": 0.25,
+    "both_sizes_pooled_correct64_to_correct256_retention_ge": 0.95,
+    "size64_d_gt_32_mean_eligible_map_mae_gain_ge_cells": 0.5,
+    "size64_d_gt_32_mean_eligible_map_coverage_gain_ge": 0.05,
+    "size64_d_gt_32_min_eligible_maps": 16,
+    "empty_groups_fail": true
+  },
+  "claim_boundary": "Independent baseline-only task test. It estimates existence/frequency of this behavior on another task; no weight transfer and no qualification of the original paired-flip Full gate.",
+  "train_data_sha256": "da6e6961a0ea9929de8137886b48e8faaa974342f6677feb5d6e1e998833d097",
+  "evaluation_data_sha256": {
+    "32": "9ef4923f8bc86978e647c51f75d5d5420d216865d8a168a71be9d3088d021c21",
+    "64": "20b1025ad0e111ce2a9309663755439054fd31e15568e0c8cb9ce7abea4ffb0d"
+  },
+  "torch_version": "2.5.1",
+  "numpy_version": "1.26.4",
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "run_id": "trajectory_20261004_serial01",
+  "execution": {
+    "stage_arms": {
+      "1": 8,
+      "2": 32,
+      "3": 8
+    },
+    "status": "COMPLETE"
+  },
+  "bindings": {
+    "source_files": 63,
+    "snapshots_match": 63,
+    "live_sources_match_except_approved_launcher": 62,
+    "approved_portable_launcher_adapter": true,
+    "reference_files_match": 10,
+    "schedule_plans_match": 26,
+    "qualification_matches": true
+  },
+  "stage1": {
+    "native_controls_replayed": 4,
+    "selected_recipe": "shadow_joint"
+  },
+  "stage2": {
+    "pairs": 16,
+    "baseline_full_passes": 1,
+    "treatment_full_passes": 1,
+    "treatment_only": 0,
+    "baseline_only": 0,
+    "paired_delta": 0.0,
+    "exact_two_sided_p": 1.0,
+    "verdict": "NO_RELIABILITY_QUALIFICATION"
+  },
+  "paired_trace_validation": {
+    "arms": 40,
+    "size_traces": 80,
+    "per_trace": "Boolean equality, (257,32,n,n) shape, endpoint coverage, retention and regression match saved metadata"
+  },
+  "cpu_evaluation_banks_regenerated": 4,
+  "training_curves": {
+    "stage1_suffix_curves": 8,
+    "stage2_full_curves": 32,
+    "stage3_full_curves": 8,
+    "cadence": {
+      "backward_calls": 8,
+      "interior_detach_boundaries": 7,
+      "forward_steps": 64,
+      "loss_count": 8
+    }
+  },
+  "stage3": {
+    "status": "SECOND_TASK_TRAINING_UNQUALIFIED",
+    "gate_passes": 0,
+    "oracle_max_distance_cells": {
+      "32": 75,
+      "64": 125
+    },
+    "mae_source": "saved evaluation summaries; Boolean traces cannot independently verify MAE"
+  },
+  "scope": "Saved-artifact CPU validation only; no training, inference, or frontier reanalysis. Scientific failure labels are retained and do not imply architecture impossibility."
+}
