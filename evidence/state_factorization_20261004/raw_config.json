@@ -1,0 +1,67 @@
+{
+  "protocol": "output_preserving_state_factorization_v1",
+  "arms": [
+    "FF",
+    "F-span",
+    "F-null",
+    "FS",
+    "SF",
+    "S-span",
+    "S-null",
+    "SS"
+  ],
+  "banks": {
+    "32": {
+      "size": 32,
+      "count": 32,
+      "seed": 96032,
+      "data_sha256": "e5eead705426bf19fc03e03320ba720216cc376f8b2d90b11805503b9aea7e07",
+      "file_sha256": "43fef51ec69b095281faacf5b4c9c922894a6c0588d174ffd4c772aa8a9fc843",
+      "cross_role_collisions": 0
+    },
+    "64": {
+      "size": 64,
+      "count": 32,
+      "seed": 96064,
+      "data_sha256": "703d9943541de3a348a5d1a177b336fa6e97e4dad1479b53fca520590189def2",
+      "file_sha256": "be4c42bfd2e7db517727cabdb2d7bbe0d5c6e7c5d90003eff9682841d04e6318",
+      "cross_role_collisions": 0
+    }
+  },
+  "models": {
+    "S1": {
+      "id": "S1",
+      "name": "H",
+      "path": "runs/bootstrap_20261004_seed4_01/checkpoints/H_u300.pt",
+      "sha256": "6a698ae9b11586016f33c4fa890acd11a0bde15778ef826f8f6e5840171e4be2",
+      "parameter_sha256": "6b4e2ceddddea98b16250fd5218ee0abd54dabe6e315d7d632aea8880a54c0c3",
+      "prior_class": "success"
+    },
+    "F1": {
+      "id": "F1",
+      "name": "H_swap_early8",
+      "path": "runs/bootstrap_20261004_seed4_01/checkpoints/H_swap_early8_u300.pt",
+      "sha256": "39456e95f131ede3cfab934dcd73b51e6f961ac35b6723b170dfad8c9c4b9a44",
+      "parameter_sha256": "29261c7c67ed2be023b88b6fff5c77c6de616df11dde3417393de4b9307e93c8",
+      "prior_class": "failure"
+    }
+  },
+  "consumer": "F1",
+  "handoff": 64,
+  "last_step": 256,
+  "primary_size": 32,
+  "confirmation_size": 64,
+  "batch_maps": 8,
+  "cues": [
+    "original",
+    "flipped"
+  ],
+  "training_updates": 0,
+  "runtime_limit_enforced": false,
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  }
+}

@@ -1,5 +1,30 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Completed zero-training audit (2026-10-04):
+`output_preserving_state_factorization_v1`, 16/16 intervention cells in
+74.172 seconds. Fixed S1/F1 update300 producers, F1-only consumer, T64 handoff,
+and eight W/Z/readout-span/readout-null combinations on fresh 32-map banks at
+sizes 32 and 64. On fixed shared-solved cells, SF continuous preservation is
+1.000 at both sizes; fixed shared-unsolved sustained progress is 0.5152/0.6730.
+The primary episode is
+`LOCALIZATION_EPISODE_UNQUALIFIED`; confirmation is `UNQUALIFIED`. SS rescue
+fails the frozen support gate because the progress cohort has 6 valid maps at
+size 32 and the keep cohort has 9 at size 64 (minimum 16). The finite
+selected-checkpoint intervention does not establish encoded information, a
+consistency relation, or population reliability.
+
+Public route: [results](evidence/state_factorization_20261004/RESULTS.md),
+[summary](evidence/state_factorization_20261004/summary.json),
+[validation](evidence/state_factorization_20261004/validation.json),
+[configuration](evidence/state_factorization_20261004/config.json), and
+[reproduction notes](evidence/state_factorization_20261004/REPRODUCTION.md);
+then metrics CSV and figure in the same directory. Raw outputs are secondary.
+The frozen [protocol](new/state_factorization/PROTOCOL.md) and exact source
+symbols are mapped in [GPT_CONTEXT.md](GPT_CONTEXT.md). Verify the published
+snapshot from the repository root with:
+
+    python -X utf8 -B tools/export_state_factorization.py --verify-only
+
 Completed zero-training audit (2026-10-04): `credit_locality_formation_v1`,
 output `runs/credit_formation_20261004_01`; 7/7 checkpoints in 138.5 seconds.
 The verdict is `CREDIT_SYNCHRONY_NOT_SUPPORTED`: at size 32, preservation and

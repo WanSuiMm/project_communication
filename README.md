@@ -1,6 +1,34 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: credit-locality formation audit
+## Latest result: output-preserving state factorization
+
+`output_preserving_state_factorization_v1`: **COMPLETE**, 16/16 intervention
+cells in 74.172 seconds, with zero training or optimizer updates. The primary
+episode is `LOCALIZATION_EPISODE_UNQUALIFIED`; confirmation is `UNQUALIFIED`.
+On the fixed shared-solved cohort, SF continuous preservation is 1.000 at both
+sizes; on the fixed shared-unsolved cohort, its sustained progress is 0.5152
+at size 32 and 0.6730 at size 64. The SS rescue proxy
+is unqualified at both sizes: its progress cohort has only 6 valid maps at size
+32, and its keep cohort has only 9 at size 64, below the frozen 16-map support
+minimum. This is a selected-checkpoint finite state-localization intervention;
+it does not establish encoded task information, a consistency relation, or
+population reliability.
+
+Start with [results](evidence/state_factorization_20261004/RESULTS.md),
+[summary](evidence/state_factorization_20261004/summary.json),
+[validation](evidence/state_factorization_20261004/validation.json),
+[configuration](evidence/state_factorization_20261004/config.json), and
+[reproduction notes](evidence/state_factorization_20261004/REPRODUCTION.md);
+then inspect the [metrics](evidence/state_factorization_20261004/metrics.csv)
+and [figure](evidence/state_factorization_20261004/state_factorization.png).
+Raw outputs and per-arm records are secondary. The frozen
+[protocol](new/state_factorization/PROTOCOL.md) and code map in
+[GPT_CONTEXT.md](GPT_CONTEXT.md) define the procedure. Verify the published
+snapshot from the repository root with:
+
+    python -X utf8 -B tools/export_state_factorization.py --verify-only
+
+## Previous result: credit-locality formation audit
 
 `credit_locality_formation_v1`: **COMPLETE**, 7/7 checkpoints, 138.5 seconds,
 with zero training or optimizer updates. The frozen verdict is

@@ -1,6 +1,32 @@
 # Context for incremental scientific review
 
-## Latest completed audit: credit-locality formation
+## Latest completed audit: output-preserving state factorization
+
+- `output_preserving_state_factorization_v1`: **COMPLETE**, 16/16 intervention
+  cells in 74.172 seconds, zero training or optimizer updates. The primary
+  episode is `LOCALIZATION_EPISODE_UNQUALIFIED`; confirmation is `UNQUALIFIED`.
+- On the fixed shared-solved cohort, SF has keep-continuous 1.000 at sizes 32
+  and 64; on the fixed shared-unsolved cohort, sustained progress is 0.5152
+  and 0.6730. The SS rescue proxy is unqualified at both sizes:
+  size 32 has only 6 valid progress maps, and size 64 has only 9 valid keep
+  maps, below the frozen minimum of 16. Other listed rescue thresholds pass.
+  This is finite selected-checkpoint state-localization evidence; it establishes
+  no encoded-information, consistency-relation, or population-reliability claim.
+- Read [results](evidence/state_factorization_20261004/RESULTS.md),
+  [summary](evidence/state_factorization_20261004/summary.json),
+  [validation](evidence/state_factorization_20261004/validation.json),
+  [configuration](evidence/state_factorization_20261004/config.json), and
+  [reproduction](evidence/state_factorization_20261004/REPRODUCTION.md) first;
+  then inspect [metrics](evidence/state_factorization_20261004/metrics.csv)
+  and the [figure](evidence/state_factorization_20261004/state_factorization.png).
+  Raw and per-arm files are secondary. Frozen [protocol](new/state_factorization/PROTOCOL.md).
+- Symbols: `projections`, `arm_states`, `handoff_diagnostics`, and `suffix` in
+  [run.py](new/state_factorization/run.py); `cohorts`, `summarize`, and
+  `rescue_gate` in [metrics.py](new/state_factorization/metrics.py).
+- Verify the published snapshot from the repository root with
+  `python -X utf8 -B tools/export_state_factorization.py --verify-only`.
+
+## Previous completed audit: credit-locality formation
 
 - `credit_locality_formation_v1`: **COMPLETE**, 7/7 checkpoints in 138.5 seconds,
   zero training or optimizer updates; verdict `CREDIT_SYNCHRONY_NOT_SUPPORTED`.

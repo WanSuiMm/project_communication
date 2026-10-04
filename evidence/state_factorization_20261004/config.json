@@ -1,0 +1,140 @@
+{
+  "protocol": "output_preserving_state_factorization_v1",
+  "arms": [
+    "FF",
+    "F-span",
+    "F-null",
+    "FS",
+    "SF",
+    "S-span",
+    "S-null",
+    "SS"
+  ],
+  "banks": {
+    "32": {
+      "size": 32,
+      "count": 32,
+      "seed": 96032,
+      "data_sha256": "e5eead705426bf19fc03e03320ba720216cc376f8b2d90b11805503b9aea7e07",
+      "file_sha256": "43fef51ec69b095281faacf5b4c9c922894a6c0588d174ffd4c772aa8a9fc843",
+      "cross_role_collisions": 0
+    },
+    "64": {
+      "size": 64,
+      "count": 32,
+      "seed": 96064,
+      "data_sha256": "703d9943541de3a348a5d1a177b336fa6e97e4dad1479b53fca520590189def2",
+      "file_sha256": "be4c42bfd2e7db517727cabdb2d7bbe0d5c6e7c5d90003eff9682841d04e6318",
+      "cross_role_collisions": 0
+    }
+  },
+  "models": {
+    "S1": {
+      "id": "S1",
+      "name": "H",
+      "path": "runs/bootstrap_20261004_seed4_01/checkpoints/H_u300.pt",
+      "sha256": "6a698ae9b11586016f33c4fa890acd11a0bde15778ef826f8f6e5840171e4be2",
+      "parameter_sha256": "6b4e2ceddddea98b16250fd5218ee0abd54dabe6e315d7d632aea8880a54c0c3",
+      "prior_class": "success"
+    },
+    "F1": {
+      "id": "F1",
+      "name": "H_swap_early8",
+      "path": "runs/bootstrap_20261004_seed4_01/checkpoints/H_swap_early8_u300.pt",
+      "sha256": "39456e95f131ede3cfab934dcd73b51e6f961ac35b6723b170dfad8c9c4b9a44",
+      "parameter_sha256": "29261c7c67ed2be023b88b6fff5c77c6de616df11dde3417393de4b9307e93c8",
+      "prior_class": "failure"
+    }
+  },
+  "consumer": "F1",
+  "handoff": 64,
+  "last_step": 256,
+  "primary_size": 32,
+  "confirmation_size": 64,
+  "batch_maps": 8,
+  "cues": [
+    "original",
+    "flipped"
+  ],
+  "training_updates": 0,
+  "runtime_limit_enforced": false,
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  },
+  "source_sha256": {
+    "new/bootstrap_path/check.py": "1738e507b790d712454fef7559e0e896950fc4678a301df9dbc65572af35621b",
+    "new/bootstrap_path/check_first_step.py": "cfcf9fab4a162bf31f83da265880877932368997a84bc36cf2f052a468065a67",
+    "new/bootstrap_path/first_step.py": "77d30fa752881152f25432c82901711836fc5964cea39fa6fcdad381e0aa6826",
+    "new/bootstrap_path/run.py": "895eaec95049f3e6755396698683f126845c33efd8eb8e1509ab78d84d840ae7",
+    "new/bootstrap_path/schedules.py": "ba7d2dfdb74b83bdd7adfeb05c4d1e7dca937667c3b8679f5ba520fb19599adb",
+    "new/continuation_interface/PROTOCOL.md": "1946062d551d1010234f74482603e9dd04a8afae9c5e475bd1773fc635d92245",
+    "new/continuation_interface/alignment.py": "65e3809d76d5a7269c858de76c1a6f1e3b73864998a14eb7e42df5de08f04f65",
+    "new/continuation_interface/check.py": "c98a6ae097e3e721c37177d69ecd1b7b2af402c2d08c6ff85e40212a70b13bde",
+    "new/continuation_interface/gradients.py": "0a48bd68f8faaeca9092987e3f4e18f81d1b4ccd37242ec2b8481ad5eec42c37",
+    "new/continuation_interface/metrics.py": "a3dbe13293ba49b6ab81c7d40bb370f3fd467f105158f68d6d0e9cdd5634215f",
+    "new/continuation_interface/run.py": "20efe59e121f9ce7bde37b0e6d7f35e5f52e050c2fde2aa6a9a0fe02c9a785af",
+    "new/direct_spatial_carry/carry_cells.py": "214b5d5a6c1b791ef6f4767f93470ca57bd3eec7134f941a4139a38d95ef19d7",
+    "new/direct_spatial_carry/check.py": "593f9c49ac0f202ce1829f577f58eebeb001dde7c631874bf53e4948b8e795b4",
+    "new/direct_spatial_carry/run.py": "7f874533d65d580574177d04a68a2795c275295479f7341aced5626b2f1f750e",
+    "new/frontier_audit/audit.py": "98398be9ab7849b2af219b188848507a4973bb237c9315fe554c378b73427d01",
+    "new/frontier_audit/check_metrics.py": "9ab95d3dd543f456fb61ac985d05d86250a2807d40d37fae5d86116eae46a013",
+    "new/frontier_audit/metrics.py": "88b2654ea73c8a7912ed13c5a6dcbf139dbd29684bec834936c9bb876e7d7e66",
+    "new/frontier_audit/report.py": "3d7484eccf9763f920c640e1990c8b2891e7aad5b110e4b418ac2da58c4e98f6",
+    "new/frontier_audit/validate.py": "e5543c0c655a61010d131bca94d655a528706afee6576083a5ef918a3041c899",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "new/seed4_followup/phenotype.py": "9a6f870845d1b928b5e28a50d1e6ccb81b28abc1633346d29c6f1e5a50db72af",
+    "new/short_bptt/check.py": "d2e839fef75a2fba8b0f7e759cf140714fe186221543438c20b0eacbb41453c4",
+    "new/short_bptt/run.py": "dae5e6ed365842777aea0fc199867aa8913b346a2382ab7aa736985bde8ad9d9",
+    "new/short_bptt/training.py": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+    "new/short_bptt_phase2/check.py": "a9aec169d3a8c7ea110d6a260fee8ac6d95e9f7d8016269823a93df73f751e77",
+    "new/short_bptt_phase2/run.py": "12b3c4b0a7f12cb77ea81f8a5a92170f55bb9a5c320fbbb3d1af91e0ac8669ce",
+    "new/short_bptt_phase2/training.py": "7e0c95c7088933ef88402f04359103c16ffe3cf8dd09fab6f2352fbaef4f25cb",
+    "new/state_factorization/PROTOCOL.md": "f39e5c41f1528abe71e0989b4134f733994e39f41f7e618ea8e74f80f46a5739",
+    "new/state_factorization/check.py": "5f987c063be52dcd63fadc951f283042dab0e99b2fcf6f3322f29c97de5ae32e",
+    "new/state_factorization/check_metrics.py": "54f446046b153ab188143f7093e5466513150fd14fa3e4feb29c0115c1052a5e",
+    "new/state_factorization/metrics.py": "1b6d3fbabc9fb3c650e13bc8b51c7898f116b3370327277b4c7b94a66af08091",
+    "new/state_factorization/run.py": "54604f8f5b0ce04079b120ca4ec01a79ab5b02ecdeb70683157a9927ef0f06a4",
+    "new/stream_path_audit/audit.py": "b26fc2d15218fa6a88cf4621daf83bf2c34c002f7b60aece54744a586ebd9185",
+    "new/stream_path_audit/operators.py": "6fd66289ab52bceec5c1428a0e7d31e8a860cc4f1c95520dbcfc8e7308bf41d8",
+    "new/streaming_carry/check.py": "653dd97f2dd21100ac6c3376ea14ee8e8df5be9b800487ea56f4df6dffe9bcf4",
+    "new/streaming_carry/run.py": "c2410ed7bf07363ad8d02e44cd6ed41b2defef1b6733d32042176c729c2559cb",
+    "new/streaming_carry/stream_cells.py": "88152e1243d519590a6aa22b66ba2e84eda9b59831c2722f254c1b440fbc7dfb",
+    "new/trajectory_qualification/common.py": "5abad75997cc204b3b26e4d7c5cd44b5245c97060e458af2a1912a761850bac4",
+    "new/trajectory_qualification/distance_task.py": "8582520a69f5db3944db047043d237b95eb626ad243faeb9b375c28c6cf4f703",
+    "new/trajectory_qualification/fresh_recipe.py": "f5244683a7a1d31264c20630a9f688e8bf55a58afb16e21fa5fffa642507a0d1",
+    "new/trajectory_qualification/integration_check.py": "a8436723c1ea04784828c89071e1ff2942d56e68629e1a4c57536ee67fae0601",
+    "new/trajectory_qualification/run.py": "fb07050859862b875a37ec0867d2b44922a48337f8826b14bc65f3478c6ad736",
+    "new/trajectory_qualification/state_cross.py": "a8c92aedb7a5821e907ffc61b5bab1185b925bff020f78c32063b84c2c13df77",
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "tools/launch_continuation_interface.ps1": "aa84584efc1649cb2c926b01555f27e7232dd7859c7c482231ffb09e9412203b",
+    "tools/launch_state_factorization.ps1": "a670fbce9eaf5aaf515827177edb1165845090a85c1690f5d729b5a06540749b"
+  },
+  "snapshot_sha256": {
+    "S1": {
+      "32": "d339e2d5a74a98de8682bf68daf3e216ddc2db352392e7c67986b6b49b2900da",
+      "64": "1ff4a8462e9d761101632886bd928616b7aadd4f7808381a48abb504aec102a3"
+    },
+    "F1": {
+      "32": "0ebd614ff14aebc2ef751f6302038e6e55eb492f97e09712b60cb83e5f589dde",
+      "64": "c9649beb88e75c2e068194b01bb992fa051bbae9a5c637a75ef0a499a720ce01"
+    }
+  },
+  "snapshot_cue_order": "all_original_maps_then_all_flipped_maps",
+  "excluded_bank_sha256": {
+    "evidence/continuation_interface_20261004/banks/fit.npz": "53977671cefef21eec9fcfcc7ae8349820ad1a01ec94e1fcb63824b0c26f37c4",
+    "evidence/continuation_interface_20261004/banks/short.npz": "3d76b3ffe42f12c4436785b6c5ff61ac1e9eedff87600ef16c50bb575dd4a52b",
+    "evidence/continuation_interface_20261004/banks/test32.npz": "c40722ab85f5c6b64efd04878de59d3f44bd38612f9cb3c3d12e945b056cefec",
+    "evidence/continuation_interface_20261004/banks/test64.npz": "35ca659b63f25f309affc1b9b63809a26c934e3b399ba3698032046ecf86a045",
+    "evidence/continuation_interface_20261004/banks/train.npz": "a36ae3b9a54640937e439d4c73e6b4067c5d198d4a49c1865c4b826123ddf9f3",
+    "evidence/continuation_interface_20261004/banks/validation.npz": "cb7b1d35c352e9bff67bec746a82c6ba4a2a39bef047488a7f298b2cbce0dce0"
+  },
+  "started_utc": "2026-10-04T13:34:26.768531+00:00",
+  "finished_utc": "2026-10-04T13:35:41.168592+00:00"
+}

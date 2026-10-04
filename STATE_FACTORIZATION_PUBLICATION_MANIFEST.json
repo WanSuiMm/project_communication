@@ -1,0 +1,499 @@
+{
+  "protocol": "state_factorization_publication_v1",
+  "run_id": "state_factorization_20261004_01",
+  "source_sha256": {
+    "new/bootstrap_path/check.py": "1738e507b790d712454fef7559e0e896950fc4678a301df9dbc65572af35621b",
+    "new/bootstrap_path/check_first_step.py": "cfcf9fab4a162bf31f83da265880877932368997a84bc36cf2f052a468065a67",
+    "new/bootstrap_path/first_step.py": "77d30fa752881152f25432c82901711836fc5964cea39fa6fcdad381e0aa6826",
+    "new/bootstrap_path/run.py": "895eaec95049f3e6755396698683f126845c33efd8eb8e1509ab78d84d840ae7",
+    "new/bootstrap_path/schedules.py": "ba7d2dfdb74b83bdd7adfeb05c4d1e7dca937667c3b8679f5ba520fb19599adb",
+    "new/continuation_interface/PROTOCOL.md": "1946062d551d1010234f74482603e9dd04a8afae9c5e475bd1773fc635d92245",
+    "new/continuation_interface/alignment.py": "65e3809d76d5a7269c858de76c1a6f1e3b73864998a14eb7e42df5de08f04f65",
+    "new/continuation_interface/check.py": "c98a6ae097e3e721c37177d69ecd1b7b2af402c2d08c6ff85e40212a70b13bde",
+    "new/continuation_interface/gradients.py": "0a48bd68f8faaeca9092987e3f4e18f81d1b4ccd37242ec2b8481ad5eec42c37",
+    "new/continuation_interface/metrics.py": "a3dbe13293ba49b6ab81c7d40bb370f3fd467f105158f68d6d0e9cdd5634215f",
+    "new/continuation_interface/run.py": "20efe59e121f9ce7bde37b0e6d7f35e5f52e050c2fde2aa6a9a0fe02c9a785af",
+    "new/direct_spatial_carry/carry_cells.py": "214b5d5a6c1b791ef6f4767f93470ca57bd3eec7134f941a4139a38d95ef19d7",
+    "new/direct_spatial_carry/check.py": "593f9c49ac0f202ce1829f577f58eebeb001dde7c631874bf53e4948b8e795b4",
+    "new/direct_spatial_carry/run.py": "7f874533d65d580574177d04a68a2795c275295479f7341aced5626b2f1f750e",
+    "new/frontier_audit/audit.py": "98398be9ab7849b2af219b188848507a4973bb237c9315fe554c378b73427d01",
+    "new/frontier_audit/check_metrics.py": "9ab95d3dd543f456fb61ac985d05d86250a2807d40d37fae5d86116eae46a013",
+    "new/frontier_audit/metrics.py": "88b2654ea73c8a7912ed13c5a6dcbf139dbd29684bec834936c9bb876e7d7e66",
+    "new/frontier_audit/report.py": "3d7484eccf9763f920c640e1990c8b2891e7aad5b110e4b418ac2da58c4e98f6",
+    "new/frontier_audit/validate.py": "e5543c0c655a61010d131bca94d655a528706afee6576083a5ef918a3041c899",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "new/seed4_followup/phenotype.py": "9a6f870845d1b928b5e28a50d1e6ccb81b28abc1633346d29c6f1e5a50db72af",
+    "new/short_bptt/check.py": "d2e839fef75a2fba8b0f7e759cf140714fe186221543438c20b0eacbb41453c4",
+    "new/short_bptt/run.py": "dae5e6ed365842777aea0fc199867aa8913b346a2382ab7aa736985bde8ad9d9",
+    "new/short_bptt/training.py": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+    "new/short_bptt_phase2/check.py": "a9aec169d3a8c7ea110d6a260fee8ac6d95e9f7d8016269823a93df73f751e77",
+    "new/short_bptt_phase2/run.py": "12b3c4b0a7f12cb77ea81f8a5a92170f55bb9a5c320fbbb3d1af91e0ac8669ce",
+    "new/short_bptt_phase2/training.py": "7e0c95c7088933ef88402f04359103c16ffe3cf8dd09fab6f2352fbaef4f25cb",
+    "new/state_factorization/PROTOCOL.md": "f39e5c41f1528abe71e0989b4134f733994e39f41f7e618ea8e74f80f46a5739",
+    "new/state_factorization/check.py": "5f987c063be52dcd63fadc951f283042dab0e99b2fcf6f3322f29c97de5ae32e",
+    "new/state_factorization/check_metrics.py": "54f446046b153ab188143f7093e5466513150fd14fa3e4feb29c0115c1052a5e",
+    "new/state_factorization/metrics.py": "1b6d3fbabc9fb3c650e13bc8b51c7898f116b3370327277b4c7b94a66af08091",
+    "new/state_factorization/run.py": "54604f8f5b0ce04079b120ca4ec01a79ab5b02ecdeb70683157a9927ef0f06a4",
+    "new/stream_path_audit/audit.py": "b26fc2d15218fa6a88cf4621daf83bf2c34c002f7b60aece54744a586ebd9185",
+    "new/stream_path_audit/operators.py": "6fd66289ab52bceec5c1428a0e7d31e8a860cc4f1c95520dbcfc8e7308bf41d8",
+    "new/streaming_carry/check.py": "653dd97f2dd21100ac6c3376ea14ee8e8df5be9b800487ea56f4df6dffe9bcf4",
+    "new/streaming_carry/run.py": "c2410ed7bf07363ad8d02e44cd6ed41b2defef1b6733d32042176c729c2559cb",
+    "new/streaming_carry/stream_cells.py": "88152e1243d519590a6aa22b66ba2e84eda9b59831c2722f254c1b440fbc7dfb",
+    "new/trajectory_qualification/common.py": "5abad75997cc204b3b26e4d7c5cd44b5245c97060e458af2a1912a761850bac4",
+    "new/trajectory_qualification/distance_task.py": "8582520a69f5db3944db047043d237b95eb626ad243faeb9b375c28c6cf4f703",
+    "new/trajectory_qualification/fresh_recipe.py": "f5244683a7a1d31264c20630a9f688e8bf55a58afb16e21fa5fffa642507a0d1",
+    "new/trajectory_qualification/integration_check.py": "a8436723c1ea04784828c89071e1ff2942d56e68629e1a4c57536ee67fae0601",
+    "new/trajectory_qualification/run.py": "fb07050859862b875a37ec0867d2b44922a48337f8826b14bc65f3478c6ad736",
+    "new/trajectory_qualification/state_cross.py": "a8c92aedb7a5821e907ffc61b5bab1185b925bff020f78c32063b84c2c13df77",
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "tools/launch_continuation_interface.ps1": "aa84584efc1649cb2c926b01555f27e7232dd7859c7c482231ffb09e9412203b",
+    "tools/launch_state_factorization.ps1": "a670fbce9eaf5aaf515827177edb1165845090a85c1690f5d729b5a06540749b"
+  },
+  "publication_tools_sha256": {
+    "tools/export_state_factorization.py": "347e73455c98e931c4003a4cccf2ee4c1f27115c76528078e3373e5d4fe18daa",
+    "tools/export_continuation_interface.py": "e8ebe5f3cda1b588b513552e22c2c4a7e268dac19d49b0725b318c362a270216"
+  },
+  "published_sha256": {
+    "evidence/state_factorization_20261004/config.json": "1d55049e96f9aeb778ad412613a1575abd6f9b845708021ea752c02c40d87883",
+    "evidence/state_factorization_20261004/metrics.csv": "ede9faafc02824f0e1c03e1899b29931bbc0c26ecede7a623f93600e664eede5",
+    "evidence/state_factorization_20261004/projection_size32.npz": "4da98b351227e5537d9d0d0b795a8a135f19a29bea09a583525c03d444c94f5c",
+    "evidence/state_factorization_20261004/projection_size64.npz": "5e59bac953604a49745832b6912054c941c56d1a96cbc6d0b028123249c48d61",
+    "evidence/state_factorization_20261004/raw_config.json": "5def90b7a2683e949d8a9eda9610f61fd3514251398bf5e30c687d580e20736a",
+    "evidence/state_factorization_20261004/raw_RESULTS.md": "80b7719c2eebd2c065a2527ae1cd12fa50a07ae969b3f543aefe1961ca8dc3ad",
+    "evidence/state_factorization_20261004/raw_summary.json": "33115cf1fc33f84c655649026eec649a43a0198ccedab90ebc405bce61e79432",
+    "evidence/state_factorization_20261004/REPRODUCTION.md": "f90ac38edb47064aa13b9ab44062cdea06ed2cf5c6b07e34eff73120103f0148",
+    "evidence/state_factorization_20261004/RESULTS.md": "6782bf4c98cdb8ba9aa5a9c47287b8c2b9b54e99e6ae68a3b0cdf5f55bcb0848",
+    "evidence/state_factorization_20261004/state_factorization.pdf": "215ec3b9f1a5976a1efd7ad844ebf7731f597a83596b5b5183f93fb2a3cd4f3b",
+    "evidence/state_factorization_20261004/state_factorization.png": "4adeccd12c4e18ef06d9ec171c021268a5f82737a09bbc7a80044c25dcfc9184",
+    "evidence/state_factorization_20261004/summary.json": "a2c6cde4d9b8fb316ab6a6f278f201f4c092ebc3c8e9d3eb0fb513cf63d3616d",
+    "evidence/state_factorization_20261004/validation.json": "66d90aba047177bd73984a7cdc267e20026412fc9c80465598e0c40c176dba5e",
+    "evidence/state_factorization_20261004/arms/F-null.json": "ec4a6fd75e03297f069fab06ee21b9d38b49b36e5a8f37df165880a4d957d718",
+    "evidence/state_factorization_20261004/arms/F-null_size32_logits.npz": "76ca50ee1c30c6001679c10317c148f0e441e9c50f469a9a637b656b5e803d3b",
+    "evidence/state_factorization_20261004/arms/F-null_size32_norms.npz": "caa4cbdd4434b3c9f79334d3f8febd2d223fe38980e93b14b73d58d7cdfa1c72",
+    "evidence/state_factorization_20261004/arms/F-null_size32_trace.npz": "5985747d4391250d79e9d42dce30f9dfc9ad0a172d136264d55d057f9632e9de",
+    "evidence/state_factorization_20261004/arms/F-null_size64_logits.npz": "130c653de385e68f05dcb87fb593f0187bb40e7cbb653a00c616a7095473f250",
+    "evidence/state_factorization_20261004/arms/F-null_size64_norms.npz": "0ae3d7e5ab8eb9ac40158f002732e133549a5371affd99065d69b6aea03dd727",
+    "evidence/state_factorization_20261004/arms/F-null_size64_trace.npz": "dbd72a3037762edf8d9eec73bd3516d656dc9575860fd067b4bd74a37a55e10a",
+    "evidence/state_factorization_20261004/arms/F-span.json": "b34d07c75a19616c7425d4bb2ebac34771d1ef577f7e82c9e2d1c2f120d9def2",
+    "evidence/state_factorization_20261004/arms/F-span_size32_logits.npz": "09ec73738a993d9154231e6b17a7903a9e61100e8d13856dd2ed1397d099d951",
+    "evidence/state_factorization_20261004/arms/F-span_size32_norms.npz": "567a7dd0452165e022e69c84cd21d6f93785b7a282ab09ec5690a569eb90746d",
+    "evidence/state_factorization_20261004/arms/F-span_size32_trace.npz": "0332d8f548fbbbac957107b9b7590371b137a926ef5a03d9528c6ff25cf4f5a0",
+    "evidence/state_factorization_20261004/arms/F-span_size64_logits.npz": "23c95e0fed439c89525213835d0759da9205f53d39a2b4d15e61b80ff0fb3af3",
+    "evidence/state_factorization_20261004/arms/F-span_size64_norms.npz": "a5bb89f08a7fda8cb9d72df01ee4678314eb811d2f7ccf9b8fce40b49388f800",
+    "evidence/state_factorization_20261004/arms/F-span_size64_trace.npz": "ef7969c0c798857a33d712b651ca6fd9b8694b69641dbac12ec10ce255b8c283",
+    "evidence/state_factorization_20261004/arms/FF.json": "5db4180ed9673714419b1047d299ce05fbf19cf6e4d56dbf31c87b59401c4be2",
+    "evidence/state_factorization_20261004/arms/FF_size32_logits.npz": "cdad2256feb63fe83dea2e26cc0b8221120c0b5153a4014fd4ef1547a20c5d7b",
+    "evidence/state_factorization_20261004/arms/FF_size32_norms.npz": "7d79de6d46b81cbb9f046eabbccf6c5c11939f11c1253e4548d005e2643fcc77",
+    "evidence/state_factorization_20261004/arms/FF_size32_trace.npz": "a8e015bad7ec8ce3e83cae2b3e1546b8df604e4ad80e89b09e00e666512fddfa",
+    "evidence/state_factorization_20261004/arms/FF_size64_logits.npz": "52ca2771146c1b3c89d2ad383f5216cb4e0eab5136ed9a6e1130c37917c833ae",
+    "evidence/state_factorization_20261004/arms/FF_size64_norms.npz": "f39de6c1651ea33a16dcb3f32e886c72f7d98965c4a2bf7d1338886b541ff86f",
+    "evidence/state_factorization_20261004/arms/FF_size64_trace.npz": "c7e68214f9089a897ffdd06c420cb2a57e409b065d57bfdd3a7bb4aa1d62b6aa",
+    "evidence/state_factorization_20261004/arms/FS.json": "18329c31d439d13dbe67523791e9603a329c55bb3aa09e27ae18e976c4cc9aad",
+    "evidence/state_factorization_20261004/arms/FS_size32_logits.npz": "5c6fbc5102b8b6afe827e9a9adada5a9282a0bdcec8d49fb60f7c57610e4583e",
+    "evidence/state_factorization_20261004/arms/FS_size32_norms.npz": "1aa88a50ffd6a0cd47df04dbe36f02b837719fcb2135225b36f9bb7e866f84b4",
+    "evidence/state_factorization_20261004/arms/FS_size32_trace.npz": "df4a6ec427357c5fe94a9fb85f3ac9b2dd686cc37e0fa52b2feea5e8d64b005b",
+    "evidence/state_factorization_20261004/arms/FS_size64_logits.npz": "4bd3a0c23d8730fd29ced09afa7e00a0935520042bb9a16fa5d13c678cdfd50a",
+    "evidence/state_factorization_20261004/arms/FS_size64_norms.npz": "e37a3b05602997b3bfe5d3d45afbd991836d0a492a83a762173b772660782159",
+    "evidence/state_factorization_20261004/arms/FS_size64_trace.npz": "5cd6223638a87e8fc24736d9cc763dcbf9ff8ce817ce241c98b8a6d09b22c9fb",
+    "evidence/state_factorization_20261004/arms/S-null.json": "9269f2d64cf1e811c8d5cd456b874946064937130004d65dda5b02e373706c69",
+    "evidence/state_factorization_20261004/arms/S-null_size32_logits.npz": "e6044429eefd98b485edb02f78f2eec3da261180a5ce78cd87c938b7a5c4dbe9",
+    "evidence/state_factorization_20261004/arms/S-null_size32_norms.npz": "8f3972963f4a2263fec060fb956bdbf516854e247357e9727bc961ceb630093c",
+    "evidence/state_factorization_20261004/arms/S-null_size32_trace.npz": "16c3eced7d257e07d4c05dae40bd8a970f109816de5f44dd196f8a4c14823b45",
+    "evidence/state_factorization_20261004/arms/S-null_size64_logits.npz": "76da41f4c042504f511bde17749cb5934bfb8058d96236c3a2a97846ff91f2db",
+    "evidence/state_factorization_20261004/arms/S-null_size64_norms.npz": "bacb5a60c62665a1fc244541e296c70516b5f849e07e55cbd6eb1a27796f4047",
+    "evidence/state_factorization_20261004/arms/S-null_size64_trace.npz": "4aac1b3db0903a3e3aa6818d96d37d90ef66069c11181295b9cf2fdec5a0787a",
+    "evidence/state_factorization_20261004/arms/S-span.json": "ba5fba81b1bfd3bf9c4ce299acd590169368867dd75966e04837d54ebae94884",
+    "evidence/state_factorization_20261004/arms/S-span_size32_logits.npz": "415499cd2c62d4f985fc77e3943fd301bf331def1ae3bb4ced843e42cd4ec4dd",
+    "evidence/state_factorization_20261004/arms/S-span_size32_norms.npz": "f8fb792b278016addb597c95744c82856ee248ab369f48245aa564b37fb82038",
+    "evidence/state_factorization_20261004/arms/S-span_size32_trace.npz": "90a7beb1dbc80cee9bb2f819d2272704d0be43cc3a277dccb494748ff98a1f30",
+    "evidence/state_factorization_20261004/arms/S-span_size64_logits.npz": "03c7f00c0519c38541c5ad3c5dc0254f2518f20f696af16194354217352bfa6a",
+    "evidence/state_factorization_20261004/arms/S-span_size64_norms.npz": "2dda30591952d852afed046de89a00097315a9513deb0c78acf3b33c0c82a689",
+    "evidence/state_factorization_20261004/arms/S-span_size64_trace.npz": "a75442fe388cfc0911dd7aad82c828ef790f6572c6b9cdf0f503acbecb90376d",
+    "evidence/state_factorization_20261004/arms/SF.json": "9723935f65607ecb1639603b7b8c341ee8877b9297b15aba845e52b1762b383a",
+    "evidence/state_factorization_20261004/arms/SF_size32_logits.npz": "381b40b0e92f5327c167c91e2206e056d922dce6af26a3e1efa7eea79df9d525",
+    "evidence/state_factorization_20261004/arms/SF_size32_norms.npz": "30a198c698e811e13a600a51c5543bd6b6e22ae4ea246dc3df8dea0c30a8005a",
+    "evidence/state_factorization_20261004/arms/SF_size32_trace.npz": "ade80f72e1b33bf223de5fb3772de51e5c6628b77bba0c0f338e56d8e838c090",
+    "evidence/state_factorization_20261004/arms/SF_size64_logits.npz": "6b85b9ae962ad469e0d5fb18c0703f8768e78e6465df5f2e09185dae9fd6e307",
+    "evidence/state_factorization_20261004/arms/SF_size64_norms.npz": "8f162a116af0d779272aa77f84e795c86ce69bbd71c47a12d56d6521a97a5325",
+    "evidence/state_factorization_20261004/arms/SF_size64_trace.npz": "548e949fbb29c7f72322a72faa085616d77403cd2c687dbf29e3fd9e58e9eaae",
+    "evidence/state_factorization_20261004/arms/SS.json": "575005975c57b5c7ea6d6f8568d4d788b2fe2006ea7f3604a3bf99d07a36ce5e",
+    "evidence/state_factorization_20261004/arms/SS_size32_logits.npz": "6edb3ee59904f671600975fe021db72d36b4e9220ff3548ede6db2f34457f063",
+    "evidence/state_factorization_20261004/arms/SS_size32_norms.npz": "09f1faafe08dd84001213d5c134de5242811f74f03890afac72a5a8a9d8af1f6",
+    "evidence/state_factorization_20261004/arms/SS_size32_trace.npz": "9cfea9a39fa0f96d1d24eaa1dd112f8dbcf3cf14cb7d55df18c761db09ae5bff",
+    "evidence/state_factorization_20261004/arms/SS_size64_logits.npz": "cceee3a2437c70f174ed0c6b62864d0bd38f6ed5fac0888dd1b4b9a811c47271",
+    "evidence/state_factorization_20261004/arms/SS_size64_norms.npz": "f5f0a77bdfc17be067e8cdc0aa3c7dc2c8e41bfd913f1ceb8afb5b589fbca069",
+    "evidence/state_factorization_20261004/arms/SS_size64_trace.npz": "aec59f15455bcb3b945c53990d712926a3c5d7e28e7b88f369ae440d170551ef",
+    "evidence/state_factorization_20261004/banks/test32.npz": "43fef51ec69b095281faacf5b4c9c922894a6c0588d174ffd4c772aa8a9fc843",
+    "evidence/state_factorization_20261004/banks/test64.npz": "be4c42bfd2e7db517727cabdb2d7bbe0d5c6e7c5d90003eff9682841d04e6318",
+    "evidence/state_factorization_20261004/cohorts/size32.npz": "dffd4323b2f654439fb35f46ad95b2f8615fff6c462d39173fa5d47e6f2ad4dc",
+    "evidence/state_factorization_20261004/cohorts/size64.npz": "bdac168051acb4396a8e8310305ed66d771bf55b975a063586fe43560f508b05",
+    "evidence/state_factorization_20261004/native/F1_frontier.csv": "d93f63784aba489516f8e231f5d2bc0d48baa794c0179c5411801a3c93b420da",
+    "evidence/state_factorization_20261004/native/F1_phenotype.json": "9f6e50d4b8d39171fe747638c62c930ac8ec4181bc5f4bbcfc3ebfbd98136a8b",
+    "evidence/state_factorization_20261004/native/F1_size32_logits.npz": "cdad2256feb63fe83dea2e26cc0b8221120c0b5153a4014fd4ef1547a20c5d7b",
+    "evidence/state_factorization_20261004/native/F1_size32_trace.npz": "faaab43785ddf6c166c997370e55243e7144ea50086a5865cd52e852811a064b",
+    "evidence/state_factorization_20261004/native/F1_size64_logits.npz": "52ca2771146c1b3c89d2ad383f5216cb4e0eab5136ed9a6e1130c37917c833ae",
+    "evidence/state_factorization_20261004/native/F1_size64_trace.npz": "a78c5a43612e01026b64709653cfe83f2433a3f3d6b7bde9b03565cdac607d90",
+    "evidence/state_factorization_20261004/native/S1_frontier.csv": "f723fda2b9428b5c7d22d6c4a5a37c92ce71ecbbcc58fecacc238ba5cbbeae80",
+    "evidence/state_factorization_20261004/native/S1_phenotype.json": "91344af3d8efdf4ede2b355fc30c037d357488a1e950794bcfb5a76fed90863c",
+    "evidence/state_factorization_20261004/native/S1_size32_logits.npz": "69ceb69e046cb9140f369e875d2a316767ef328e63944619669f01e897e1543e",
+    "evidence/state_factorization_20261004/native/S1_size32_trace.npz": "09702661a58ed833afd7261f6161313b5265474169c82209c111dd40498d6431",
+    "evidence/state_factorization_20261004/native/S1_size64_logits.npz": "09e7ac09959b0a36248325ca0b32b3f3cd6acc4e8679fa13dc64bcccfbc3a19b",
+    "evidence/state_factorization_20261004/native/S1_size64_trace.npz": "84b03ec110a9427597a4fcbb8100684858eb400c816fedb12283886151b852a3",
+    "evidence/state_factorization_20261004/states/F1_size32_T64.npz": "2efade7379ea510f9833b957f964c9a80dfe67327f704b6f47c15d75308f2f30",
+    "evidence/state_factorization_20261004/states/F1_size64_T64.npz": "7c53d09de9999209e84d3ae7534ad42401b182a27b59149c1ad077e69247ebba",
+    "evidence/state_factorization_20261004/states/S1_size32_T64.npz": "7346aa25011a38307190f178710787e49d3905daefd04ceaadf2de31d2132e4b",
+    "evidence/state_factorization_20261004/states/S1_size64_T64.npz": "65b184beb3db372fd8051bdc7e089f988c571ffe7b7bf69e00bfb2d78509d57a"
+  },
+  "raw_artifact_bindings": {
+    "config.json": {
+      "sha256": "5def90b7a2683e949d8a9eda9610f61fd3514251398bf5e30c687d580e20736a",
+      "public_path": "evidence/state_factorization_20261004/raw_config.json"
+    },
+    "metrics.csv": {
+      "sha256": "ede9faafc02824f0e1c03e1899b29931bbc0c26ecede7a623f93600e664eede5",
+      "public_path": "evidence/state_factorization_20261004/metrics.csv"
+    },
+    "projection_size32.npz": {
+      "sha256": "4da98b351227e5537d9d0d0b795a8a135f19a29bea09a583525c03d444c94f5c",
+      "public_path": "evidence/state_factorization_20261004/projection_size32.npz"
+    },
+    "projection_size64.npz": {
+      "sha256": "5e59bac953604a49745832b6912054c941c56d1a96cbc6d0b028123249c48d61",
+      "public_path": "evidence/state_factorization_20261004/projection_size64.npz"
+    },
+    "RESULTS.md": {
+      "sha256": "80b7719c2eebd2c065a2527ae1cd12fa50a07ae969b3f543aefe1961ca8dc3ad",
+      "public_path": "evidence/state_factorization_20261004/raw_RESULTS.md"
+    },
+    "state_factorization.pdf": {
+      "sha256": "215ec3b9f1a5976a1efd7ad844ebf7731f597a83596b5b5183f93fb2a3cd4f3b",
+      "public_path": "evidence/state_factorization_20261004/state_factorization.pdf"
+    },
+    "state_factorization.png": {
+      "sha256": "4adeccd12c4e18ef06d9ec171c021268a5f82737a09bbc7a80044c25dcfc9184",
+      "public_path": "evidence/state_factorization_20261004/state_factorization.png"
+    },
+    "summary.json": {
+      "sha256": "33115cf1fc33f84c655649026eec649a43a0198ccedab90ebc405bce61e79432",
+      "public_path": "evidence/state_factorization_20261004/raw_summary.json"
+    },
+    "arms/F-null.json": {
+      "sha256": "ec4a6fd75e03297f069fab06ee21b9d38b49b36e5a8f37df165880a4d957d718",
+      "public_path": "evidence/state_factorization_20261004/arms/F-null.json"
+    },
+    "arms/F-null_size32_logits.npz": {
+      "sha256": "76ca50ee1c30c6001679c10317c148f0e441e9c50f469a9a637b656b5e803d3b",
+      "public_path": "evidence/state_factorization_20261004/arms/F-null_size32_logits.npz"
+    },
+    "arms/F-null_size32_norms.npz": {
+      "sha256": "caa4cbdd4434b3c9f79334d3f8febd2d223fe38980e93b14b73d58d7cdfa1c72",
+      "public_path": "evidence/state_factorization_20261004/arms/F-null_size32_norms.npz"
+    },
+    "arms/F-null_size32_trace.npz": {
+      "sha256": "5985747d4391250d79e9d42dce30f9dfc9ad0a172d136264d55d057f9632e9de",
+      "public_path": "evidence/state_factorization_20261004/arms/F-null_size32_trace.npz"
+    },
+    "arms/F-null_size64_logits.npz": {
+      "sha256": "130c653de385e68f05dcb87fb593f0187bb40e7cbb653a00c616a7095473f250",
+      "public_path": "evidence/state_factorization_20261004/arms/F-null_size64_logits.npz"
+    },
+    "arms/F-null_size64_norms.npz": {
+      "sha256": "0ae3d7e5ab8eb9ac40158f002732e133549a5371affd99065d69b6aea03dd727",
+      "public_path": "evidence/state_factorization_20261004/arms/F-null_size64_norms.npz"
+    },
+    "arms/F-null_size64_trace.npz": {
+      "sha256": "dbd72a3037762edf8d9eec73bd3516d656dc9575860fd067b4bd74a37a55e10a",
+      "public_path": "evidence/state_factorization_20261004/arms/F-null_size64_trace.npz"
+    },
+    "arms/F-span.json": {
+      "sha256": "b34d07c75a19616c7425d4bb2ebac34771d1ef577f7e82c9e2d1c2f120d9def2",
+      "public_path": "evidence/state_factorization_20261004/arms/F-span.json"
+    },
+    "arms/F-span_size32_logits.npz": {
+      "sha256": "09ec73738a993d9154231e6b17a7903a9e61100e8d13856dd2ed1397d099d951",
+      "public_path": "evidence/state_factorization_20261004/arms/F-span_size32_logits.npz"
+    },
+    "arms/F-span_size32_norms.npz": {
+      "sha256": "567a7dd0452165e022e69c84cd21d6f93785b7a282ab09ec5690a569eb90746d",
+      "public_path": "evidence/state_factorization_20261004/arms/F-span_size32_norms.npz"
+    },
+    "arms/F-span_size32_trace.npz": {
+      "sha256": "0332d8f548fbbbac957107b9b7590371b137a926ef5a03d9528c6ff25cf4f5a0",
+      "public_path": "evidence/state_factorization_20261004/arms/F-span_size32_trace.npz"
+    },
+    "arms/F-span_size64_logits.npz": {
+      "sha256": "23c95e0fed439c89525213835d0759da9205f53d39a2b4d15e61b80ff0fb3af3",
+      "public_path": "evidence/state_factorization_20261004/arms/F-span_size64_logits.npz"
+    },
+    "arms/F-span_size64_norms.npz": {
+      "sha256": "a5bb89f08a7fda8cb9d72df01ee4678314eb811d2f7ccf9b8fce40b49388f800",
+      "public_path": "evidence/state_factorization_20261004/arms/F-span_size64_norms.npz"
+    },
+    "arms/F-span_size64_trace.npz": {
+      "sha256": "ef7969c0c798857a33d712b651ca6fd9b8694b69641dbac12ec10ce255b8c283",
+      "public_path": "evidence/state_factorization_20261004/arms/F-span_size64_trace.npz"
+    },
+    "arms/FF.json": {
+      "sha256": "5db4180ed9673714419b1047d299ce05fbf19cf6e4d56dbf31c87b59401c4be2",
+      "public_path": "evidence/state_factorization_20261004/arms/FF.json"
+    },
+    "arms/FF_size32_logits.npz": {
+      "sha256": "cdad2256feb63fe83dea2e26cc0b8221120c0b5153a4014fd4ef1547a20c5d7b",
+      "public_path": "evidence/state_factorization_20261004/arms/FF_size32_logits.npz"
+    },
+    "arms/FF_size32_norms.npz": {
+      "sha256": "7d79de6d46b81cbb9f046eabbccf6c5c11939f11c1253e4548d005e2643fcc77",
+      "public_path": "evidence/state_factorization_20261004/arms/FF_size32_norms.npz"
+    },
+    "arms/FF_size32_trace.npz": {
+      "sha256": "a8e015bad7ec8ce3e83cae2b3e1546b8df604e4ad80e89b09e00e666512fddfa",
+      "public_path": "evidence/state_factorization_20261004/arms/FF_size32_trace.npz"
+    },
+    "arms/FF_size64_logits.npz": {
+      "sha256": "52ca2771146c1b3c89d2ad383f5216cb4e0eab5136ed9a6e1130c37917c833ae",
+      "public_path": "evidence/state_factorization_20261004/arms/FF_size64_logits.npz"
+    },
+    "arms/FF_size64_norms.npz": {
+      "sha256": "f39de6c1651ea33a16dcb3f32e886c72f7d98965c4a2bf7d1338886b541ff86f",
+      "public_path": "evidence/state_factorization_20261004/arms/FF_size64_norms.npz"
+    },
+    "arms/FF_size64_trace.npz": {
+      "sha256": "c7e68214f9089a897ffdd06c420cb2a57e409b065d57bfdd3a7bb4aa1d62b6aa",
+      "public_path": "evidence/state_factorization_20261004/arms/FF_size64_trace.npz"
+    },
+    "arms/FS.json": {
+      "sha256": "18329c31d439d13dbe67523791e9603a329c55bb3aa09e27ae18e976c4cc9aad",
+      "public_path": "evidence/state_factorization_20261004/arms/FS.json"
+    },
+    "arms/FS_size32_logits.npz": {
+      "sha256": "5c6fbc5102b8b6afe827e9a9adada5a9282a0bdcec8d49fb60f7c57610e4583e",
+      "public_path": "evidence/state_factorization_20261004/arms/FS_size32_logits.npz"
+    },
+    "arms/FS_size32_norms.npz": {
+      "sha256": "1aa88a50ffd6a0cd47df04dbe36f02b837719fcb2135225b36f9bb7e866f84b4",
+      "public_path": "evidence/state_factorization_20261004/arms/FS_size32_norms.npz"
+    },
+    "arms/FS_size32_trace.npz": {
+      "sha256": "df4a6ec427357c5fe94a9fb85f3ac9b2dd686cc37e0fa52b2feea5e8d64b005b",
+      "public_path": "evidence/state_factorization_20261004/arms/FS_size32_trace.npz"
+    },
+    "arms/FS_size64_logits.npz": {
+      "sha256": "4bd3a0c23d8730fd29ced09afa7e00a0935520042bb9a16fa5d13c678cdfd50a",
+      "public_path": "evidence/state_factorization_20261004/arms/FS_size64_logits.npz"
+    },
+    "arms/FS_size64_norms.npz": {
+      "sha256": "e37a3b05602997b3bfe5d3d45afbd991836d0a492a83a762173b772660782159",
+      "public_path": "evidence/state_factorization_20261004/arms/FS_size64_norms.npz"
+    },
+    "arms/FS_size64_trace.npz": {
+      "sha256": "5cd6223638a87e8fc24736d9cc763dcbf9ff8ce817ce241c98b8a6d09b22c9fb",
+      "public_path": "evidence/state_factorization_20261004/arms/FS_size64_trace.npz"
+    },
+    "arms/S-null.json": {
+      "sha256": "9269f2d64cf1e811c8d5cd456b874946064937130004d65dda5b02e373706c69",
+      "public_path": "evidence/state_factorization_20261004/arms/S-null.json"
+    },
+    "arms/S-null_size32_logits.npz": {
+      "sha256": "e6044429eefd98b485edb02f78f2eec3da261180a5ce78cd87c938b7a5c4dbe9",
+      "public_path": "evidence/state_factorization_20261004/arms/S-null_size32_logits.npz"
+    },
+    "arms/S-null_size32_norms.npz": {
+      "sha256": "8f3972963f4a2263fec060fb956bdbf516854e247357e9727bc961ceb630093c",
+      "public_path": "evidence/state_factorization_20261004/arms/S-null_size32_norms.npz"
+    },
+    "arms/S-null_size32_trace.npz": {
+      "sha256": "16c3eced7d257e07d4c05dae40bd8a970f109816de5f44dd196f8a4c14823b45",
+      "public_path": "evidence/state_factorization_20261004/arms/S-null_size32_trace.npz"
+    },
+    "arms/S-null_size64_logits.npz": {
+      "sha256": "76da41f4c042504f511bde17749cb5934bfb8058d96236c3a2a97846ff91f2db",
+      "public_path": "evidence/state_factorization_20261004/arms/S-null_size64_logits.npz"
+    },
+    "arms/S-null_size64_norms.npz": {
+      "sha256": "bacb5a60c62665a1fc244541e296c70516b5f849e07e55cbd6eb1a27796f4047",
+      "public_path": "evidence/state_factorization_20261004/arms/S-null_size64_norms.npz"
+    },
+    "arms/S-null_size64_trace.npz": {
+      "sha256": "4aac1b3db0903a3e3aa6818d96d37d90ef66069c11181295b9cf2fdec5a0787a",
+      "public_path": "evidence/state_factorization_20261004/arms/S-null_size64_trace.npz"
+    },
+    "arms/S-span.json": {
+      "sha256": "ba5fba81b1bfd3bf9c4ce299acd590169368867dd75966e04837d54ebae94884",
+      "public_path": "evidence/state_factorization_20261004/arms/S-span.json"
+    },
+    "arms/S-span_size32_logits.npz": {
+      "sha256": "415499cd2c62d4f985fc77e3943fd301bf331def1ae3bb4ced843e42cd4ec4dd",
+      "public_path": "evidence/state_factorization_20261004/arms/S-span_size32_logits.npz"
+    },
+    "arms/S-span_size32_norms.npz": {
+      "sha256": "f8fb792b278016addb597c95744c82856ee248ab369f48245aa564b37fb82038",
+      "public_path": "evidence/state_factorization_20261004/arms/S-span_size32_norms.npz"
+    },
+    "arms/S-span_size32_trace.npz": {
+      "sha256": "90a7beb1dbc80cee9bb2f819d2272704d0be43cc3a277dccb494748ff98a1f30",
+      "public_path": "evidence/state_factorization_20261004/arms/S-span_size32_trace.npz"
+    },
+    "arms/S-span_size64_logits.npz": {
+      "sha256": "03c7f00c0519c38541c5ad3c5dc0254f2518f20f696af16194354217352bfa6a",
+      "public_path": "evidence/state_factorization_20261004/arms/S-span_size64_logits.npz"
+    },
+    "arms/S-span_size64_norms.npz": {
+      "sha256": "2dda30591952d852afed046de89a00097315a9513deb0c78acf3b33c0c82a689",
+      "public_path": "evidence/state_factorization_20261004/arms/S-span_size64_norms.npz"
+    },
+    "arms/S-span_size64_trace.npz": {
+      "sha256": "a75442fe388cfc0911dd7aad82c828ef790f6572c6b9cdf0f503acbecb90376d",
+      "public_path": "evidence/state_factorization_20261004/arms/S-span_size64_trace.npz"
+    },
+    "arms/SF.json": {
+      "sha256": "9723935f65607ecb1639603b7b8c341ee8877b9297b15aba845e52b1762b383a",
+      "public_path": "evidence/state_factorization_20261004/arms/SF.json"
+    },
+    "arms/SF_size32_logits.npz": {
+      "sha256": "381b40b0e92f5327c167c91e2206e056d922dce6af26a3e1efa7eea79df9d525",
+      "public_path": "evidence/state_factorization_20261004/arms/SF_size32_logits.npz"
+    },
+    "arms/SF_size32_norms.npz": {
+      "sha256": "30a198c698e811e13a600a51c5543bd6b6e22ae4ea246dc3df8dea0c30a8005a",
+      "public_path": "evidence/state_factorization_20261004/arms/SF_size32_norms.npz"
+    },
+    "arms/SF_size32_trace.npz": {
+      "sha256": "ade80f72e1b33bf223de5fb3772de51e5c6628b77bba0c0f338e56d8e838c090",
+      "public_path": "evidence/state_factorization_20261004/arms/SF_size32_trace.npz"
+    },
+    "arms/SF_size64_logits.npz": {
+      "sha256": "6b85b9ae962ad469e0d5fb18c0703f8768e78e6465df5f2e09185dae9fd6e307",
+      "public_path": "evidence/state_factorization_20261004/arms/SF_size64_logits.npz"
+    },
+    "arms/SF_size64_norms.npz": {
+      "sha256": "8f162a116af0d779272aa77f84e795c86ce69bbd71c47a12d56d6521a97a5325",
+      "public_path": "evidence/state_factorization_20261004/arms/SF_size64_norms.npz"
+    },
+    "arms/SF_size64_trace.npz": {
+      "sha256": "548e949fbb29c7f72322a72faa085616d77403cd2c687dbf29e3fd9e58e9eaae",
+      "public_path": "evidence/state_factorization_20261004/arms/SF_size64_trace.npz"
+    },
+    "arms/SS.json": {
+      "sha256": "575005975c57b5c7ea6d6f8568d4d788b2fe2006ea7f3604a3bf99d07a36ce5e",
+      "public_path": "evidence/state_factorization_20261004/arms/SS.json"
+    },
+    "arms/SS_size32_logits.npz": {
+      "sha256": "6edb3ee59904f671600975fe021db72d36b4e9220ff3548ede6db2f34457f063",
+      "public_path": "evidence/state_factorization_20261004/arms/SS_size32_logits.npz"
+    },
+    "arms/SS_size32_norms.npz": {
+      "sha256": "09f1faafe08dd84001213d5c134de5242811f74f03890afac72a5a8a9d8af1f6",
+      "public_path": "evidence/state_factorization_20261004/arms/SS_size32_norms.npz"
+    },
+    "arms/SS_size32_trace.npz": {
+      "sha256": "9cfea9a39fa0f96d1d24eaa1dd112f8dbcf3cf14cb7d55df18c761db09ae5bff",
+      "public_path": "evidence/state_factorization_20261004/arms/SS_size32_trace.npz"
+    },
+    "arms/SS_size64_logits.npz": {
+      "sha256": "cceee3a2437c70f174ed0c6b62864d0bd38f6ed5fac0888dd1b4b9a811c47271",
+      "public_path": "evidence/state_factorization_20261004/arms/SS_size64_logits.npz"
+    },
+    "arms/SS_size64_norms.npz": {
+      "sha256": "f5f0a77bdfc17be067e8cdc0aa3c7dc2c8e41bfd913f1ceb8afb5b589fbca069",
+      "public_path": "evidence/state_factorization_20261004/arms/SS_size64_norms.npz"
+    },
+    "arms/SS_size64_trace.npz": {
+      "sha256": "aec59f15455bcb3b945c53990d712926a3c5d7e28e7b88f369ae440d170551ef",
+      "public_path": "evidence/state_factorization_20261004/arms/SS_size64_trace.npz"
+    },
+    "banks/test32.npz": {
+      "sha256": "43fef51ec69b095281faacf5b4c9c922894a6c0588d174ffd4c772aa8a9fc843",
+      "public_path": "evidence/state_factorization_20261004/banks/test32.npz"
+    },
+    "banks/test64.npz": {
+      "sha256": "be4c42bfd2e7db517727cabdb2d7bbe0d5c6e7c5d90003eff9682841d04e6318",
+      "public_path": "evidence/state_factorization_20261004/banks/test64.npz"
+    },
+    "cohorts/size32.npz": {
+      "sha256": "dffd4323b2f654439fb35f46ad95b2f8615fff6c462d39173fa5d47e6f2ad4dc",
+      "public_path": "evidence/state_factorization_20261004/cohorts/size32.npz"
+    },
+    "cohorts/size64.npz": {
+      "sha256": "bdac168051acb4396a8e8310305ed66d771bf55b975a063586fe43560f508b05",
+      "public_path": "evidence/state_factorization_20261004/cohorts/size64.npz"
+    },
+    "native/F1_frontier.csv": {
+      "sha256": "d93f63784aba489516f8e231f5d2bc0d48baa794c0179c5411801a3c93b420da",
+      "public_path": "evidence/state_factorization_20261004/native/F1_frontier.csv"
+    },
+    "native/F1_phenotype.json": {
+      "sha256": "9f6e50d4b8d39171fe747638c62c930ac8ec4181bc5f4bbcfc3ebfbd98136a8b",
+      "public_path": "evidence/state_factorization_20261004/native/F1_phenotype.json"
+    },
+    "native/F1_size32_logits.npz": {
+      "sha256": "cdad2256feb63fe83dea2e26cc0b8221120c0b5153a4014fd4ef1547a20c5d7b",
+      "public_path": "evidence/state_factorization_20261004/native/F1_size32_logits.npz"
+    },
+    "native/F1_size32_trace.npz": {
+      "sha256": "faaab43785ddf6c166c997370e55243e7144ea50086a5865cd52e852811a064b",
+      "public_path": "evidence/state_factorization_20261004/native/F1_size32_trace.npz"
+    },
+    "native/F1_size64_logits.npz": {
+      "sha256": "52ca2771146c1b3c89d2ad383f5216cb4e0eab5136ed9a6e1130c37917c833ae",
+      "public_path": "evidence/state_factorization_20261004/native/F1_size64_logits.npz"
+    },
+    "native/F1_size64_trace.npz": {
+      "sha256": "a78c5a43612e01026b64709653cfe83f2433a3f3d6b7bde9b03565cdac607d90",
+      "public_path": "evidence/state_factorization_20261004/native/F1_size64_trace.npz"
+    },
+    "native/S1_frontier.csv": {
+      "sha256": "f723fda2b9428b5c7d22d6c4a5a37c92ce71ecbbcc58fecacc238ba5cbbeae80",
+      "public_path": "evidence/state_factorization_20261004/native/S1_frontier.csv"
+    },
+    "native/S1_phenotype.json": {
+      "sha256": "91344af3d8efdf4ede2b355fc30c037d357488a1e950794bcfb5a76fed90863c",
+      "public_path": "evidence/state_factorization_20261004/native/S1_phenotype.json"
+    },
+    "native/S1_size32_logits.npz": {
+      "sha256": "69ceb69e046cb9140f369e875d2a316767ef328e63944619669f01e897e1543e",
+      "public_path": "evidence/state_factorization_20261004/native/S1_size32_logits.npz"
+    },
+    "native/S1_size32_trace.npz": {
+      "sha256": "09702661a58ed833afd7261f6161313b5265474169c82209c111dd40498d6431",
+      "public_path": "evidence/state_factorization_20261004/native/S1_size32_trace.npz"
+    },
+    "native/S1_size64_logits.npz": {
+      "sha256": "09e7ac09959b0a36248325ca0b32b3f3cd6acc4e8679fa13dc64bcccfbc3a19b",
+      "public_path": "evidence/state_factorization_20261004/native/S1_size64_logits.npz"
+    },
+    "native/S1_size64_trace.npz": {
+      "sha256": "84b03ec110a9427597a4fcbb8100684858eb400c816fedb12283886151b852a3",
+      "public_path": "evidence/state_factorization_20261004/native/S1_size64_trace.npz"
+    },
+    "states/F1_size32_T64.npz": {
+      "sha256": "2efade7379ea510f9833b957f964c9a80dfe67327f704b6f47c15d75308f2f30",
+      "public_path": "evidence/state_factorization_20261004/states/F1_size32_T64.npz"
+    },
+    "states/F1_size64_T64.npz": {
+      "sha256": "7c53d09de9999209e84d3ae7534ad42401b182a27b59149c1ad077e69247ebba",
+      "public_path": "evidence/state_factorization_20261004/states/F1_size64_T64.npz"
+    },
+    "states/S1_size32_T64.npz": {
+      "sha256": "7346aa25011a38307190f178710787e49d3905daefd04ceaadf2de31d2132e4b",
+      "public_path": "evidence/state_factorization_20261004/states/S1_size32_T64.npz"
+    },
+    "states/S1_size64_T64.npz": {
+      "sha256": "65b184beb3db372fd8051bdc7e089f988c571ffe7b7bf69e00bfb2d78509d57a",
+      "public_path": "evidence/state_factorization_20261004/states/S1_size64_T64.npz"
+    }
+  },
+  "original_manifest_sha256": "16a56173a48b9d748f0d4984d001e9d914ac5df7545954f0f786bf5246d48990",
+  "original_status_sha256": "07e3fd59a7eb018376ca1de2e01238f97fbb0b86700e7cd7ccff2347248a8e58",
+  "excluded": [
+    "model checkpoints",
+    "source snapshots",
+    "machine manifests",
+    "PIDs",
+    "launch receipts",
+    "logs"
+  ]
+}
