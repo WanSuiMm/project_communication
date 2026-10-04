@@ -1,6 +1,32 @@
 # Context for incremental scientific review
 
-## Latest completed audit: continuation interface
+## Latest completed audit: credit-locality formation
+
+- `credit_locality_formation_v1`: **COMPLETE**, 7/7 checkpoints in 138.5 seconds,
+  zero training or optimizer updates; verdict `CREDIT_SYNCHRONY_NOT_SUPPORTED`.
+- At size 32, preservation/progress drop from 0.9471/0.5007 (update 175) to
+  0.4958/0.0432 (180), while overall cosine/`C_parallel` rise from
+  -0.0352/-0.0019 to 0.2243/0.0122. Overall, F, and Q synchrony qualifications
+  fail. Native Full passes are 0/7 checkpoints on the reused held-out banks;
+  update 200 misses strict T64 pooled reach (0.76648 versus 0.80). This is a finite association screen within one saved
+  trajectory, not a causal result or a broad impossibility claim.
+- Read [results](evidence/credit_formation_20261004/RESULTS.md),
+  [summary](evidence/credit_formation_20261004/summary.json),
+  [validation](evidence/credit_formation_20261004/validation.json),
+  [configuration](evidence/credit_formation_20261004/config.json), and
+  [reproduction](evidence/credit_formation_20261004/REPRODUCTION.md) first;
+  then inspect [metrics](evidence/credit_formation_20261004/metrics.csv) and
+  [figure](evidence/credit_formation_20261004/credit_formation.png). Per-update
+  `uXXX/gradients/metadata.json`, `continuation.json`, and `phenotype.json` are
+  secondary. Frozen [protocol](new/credit_formation/PROTOCOL.md).
+- Symbols: `gradients_at`, `backward_record` in [run.py](new/credit_formation/run.py);
+  `summarize_pair`, `formation_verdict` in
+  [credit_metrics.py](new/credit_formation/credit_metrics.py); CPU validation in
+  [check.py](new/credit_formation/check.py).
+- Verify the published snapshot from the repository root with
+  `python -X utf8 -B tools/export_credit_formation.py --verify-only`.
+
+## Previous completed audit: continuation interface
 
 - Run: `continuation_interface_v1`, `COMPLETE`, 50 transfer cells, 439 seconds;
   no model training or optimizer steps. Common native Full qualification is

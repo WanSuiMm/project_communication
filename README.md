@@ -1,6 +1,33 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: continuation-interface audit
+## Latest result: credit-locality formation audit
+
+`credit_locality_formation_v1`: **COMPLETE**, 7/7 checkpoints, 138.5 seconds,
+with zero training or optimizer updates. The frozen verdict is
+**CREDIT_SYNCHRONY_NOT_SUPPORTED**. At size 32, preservation/progress fall from
+0.9471/0.5007 at update 175 to 0.4958/0.0432 at 180, while overall gradient
+cosine and `C_parallel` rise from -0.0352/-0.0019 to 0.2243/0.0122. Overall,
+F and Q synchrony qualifications fail. Native Full passes are 0/7 checkpoints
+on the reused held-out banks; update 200 misses strict T64 pooled reach
+(0.76648 versus 0.80). This is a finite,
+within-trajectory association screen; it establishes neither causality nor a
+broad impossibility result.
+
+Read the public [results](evidence/credit_formation_20261004/RESULTS.md),
+[summary](evidence/credit_formation_20261004/summary.json),
+[validation](evidence/credit_formation_20261004/validation.json),
+[configuration](evidence/credit_formation_20261004/config.json), and
+[reproduction notes](evidence/credit_formation_20261004/REPRODUCTION.md), then
+the [metrics](evidence/credit_formation_20261004/metrics.csv) and
+[figure](evidence/credit_formation_20261004/credit_formation.png). Per-update
+gradient metadata, continuation, and phenotype records are secondary. The
+frozen [protocol](new/credit_formation/PROTOCOL.md) and [source map](GPT_CONTEXT.md)
+define the procedure and code entry points. Verify the published snapshot from
+the repository root with:
+
+    python -X utf8 -B tools/export_credit_formation.py --verify-only
+
+## Previous result: continuation-interface audit
 
 `continuation_interface_v1`: **COMPLETE**, 50 transfer cells, 439 seconds.
 The common native Full qualification passes for S1/S2, and the gauge control

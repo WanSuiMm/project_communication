@@ -1,0 +1,1325 @@
+{
+  "training_updates": 0,
+  "parameters_unchanged": true,
+  "parameter_sha256_before": "821984561850ae3619b5ff6dba156863a3d175c7b9af807155a07cf13bc546bf",
+  "parameter_sha256_after": "821984561850ae3619b5ff6dba156863a3d175c7b9af807155a07cf13bc546bf",
+  "parameter_names": [
+    "encoder.bias",
+    "encoder.weight",
+    "f_in.bias",
+    "f_in.weight",
+    "f_out.bias",
+    "f_out.weight",
+    "q_in.bias",
+    "q_in.weight",
+    "q_out.bias",
+    "q_out.weight",
+    "readout.bias",
+    "readout.weight"
+  ],
+  "parameter_shapes": [
+    [
+      24
+    ],
+    [
+      24,
+      3,
+      1,
+      1
+    ],
+    [
+      40
+    ],
+    [
+      40,
+      67,
+      1,
+      1
+    ],
+    [
+      24
+    ],
+    [
+      24,
+      40,
+      1,
+      1
+    ],
+    [
+      16
+    ],
+    [
+      16,
+      67,
+      1,
+      1
+    ],
+    [
+      8
+    ],
+    [
+      8,
+      16,
+      1,
+      1
+    ],
+    [
+      1
+    ],
+    [
+      1,
+      8,
+      1,
+      1
+    ]
+  ],
+  "batches": [
+    {
+      "batch": 0,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "loss8": 0.4751388728618622,
+      "loss64": 0.4751388728618622,
+      "trajectory_sha256_by_step": [
+        "8c0ef16be91dbab4a7d0fd4557ca0e937e6059f0036fbc2328699f07ce438f26",
+        "eb72111a9eba130bbced00a2ee385e6028d3c6877480fe2043b95b04682a2008",
+        "6b292f8189eb217215a1c76033dd131a67f9125abd707f12a364bfcba247cb48",
+        "dccc1dad3138bc0a2b0aa159b44d94fb998860b615c0965f497b2bb6d6d8d831",
+        "53783a9040181ab93b8003ba70b2575975d440899e04f122776d5a34921c4b5c",
+        "bcb9f1882104deb4df4f983210094a4f0539166623018e768962c238c8b1f8e4",
+        "19f523ad1a49239a2b63c68714ea31b36ea77d0b6c2170dbb95774ec7d103938",
+        "438385a28d5bdec755da40536911fa5e5ff295d4ed9006376c2a181e10708177",
+        "1a74d601a8a9a9c7caee6fe25759e373a8302047da0cb7e24569fab451827117",
+        "cfef25008e988e01001cfceca84ac5c49834a512cbcf1ec2b824390a648b197a",
+        "79629bc40eefb6d1922e4c9ea538a274b70ff9327c0b4f73f34387480a6f3346",
+        "1ff8ec6e7b4a7c1d7c9840ef6005e0c2cdad88e0a215d7a241d6343ccf0e53e4",
+        "7d8377295c0099f4f8a8759e02be9857fcee73ad4a09561dd61e50cde9b0cca3",
+        "c545943876efcde28672f2cf53d197a1f2737ca0e2aae4d03d632a7488a28238",
+        "48ee6cf891ef4869538683e3d8ab68dfad426135c47853590efddc266b135ae9",
+        "ef8437b83939f87f74017ced73b3f9fcc576520b2014a291e9bdc593843f9946",
+        "c4153060bd51940e43b036f3a553153a9fc4ce6ecc0eb6bd6477401be90e85c5",
+        "e76fb3b5afc00a45a618f33c87ca46c5b8d7d83b940bbc320a82270274509adc",
+        "cf230fbcbcd3d57918da943cb83acd1e065d4be410ba1e316974965ee46e3965",
+        "0a98bfada5221b4144d37e7df71a60f5bd5b44a06425ce333bfd1abcf4978e43",
+        "41347fcb03abef66a17b976d81bac0f383d18f50c37b2e1abef757835bea31e3",
+        "9b8e56071694b1708478db39e98959a0450befa3eebca0cd15110931005d38ca",
+        "1be5ad487a7c4ca37b6ef184b21b87bb9e48c9f738a4c69a849db1fb5c7e686f",
+        "87560e688c4c2711624fb905e6dbbc8a55a9a3b9b0a3f424aee35086d61ad347",
+        "40f83466491fd5fdeabf784841022eb8ed440f10b609f1f077550fe11ebab192",
+        "8b007d7643239aee20a8c83a28dbba546daad27c3bb3e8145c84429b42ec2e36",
+        "aa2fa44db690e7d1ddb9f97453831286f9a0132fb3b2f690982bc0ac7ae03e17",
+        "10dcc781bb2a587c0dba4b8377d5cb44c5960bca88e0f92e907e48fd20d002b7",
+        "d53367fb8b634fe8e16cf8844c0721cdbf118d0df17e87ecc8ed681c88f4a8d3",
+        "8414bc5273e485270306e55a510ae9c7a39936d4646a677725dab02321f7001c",
+        "94436b675904b3ca60382a9bb0a643c02a20153a805d6cf96ee515735729c0ff",
+        "5942c240095ca4a1d0c4737064b400e90b9453f5c9a0b1c990cf007b99e810f6",
+        "8c896d95a7b8adbd7f119bd7a0b3080df916d9c87ccd1cc0ca86094cc46b63f6",
+        "f7dac1cee73902c7a3e7da9788a71bbb0f772fbc468293931c52f219b163647f",
+        "a168535c599492ca725590e92bc7b4c9400af9bd3b0a5435c160034c159512d1",
+        "f0726b5bf25588b999ee6a2272af980f1ed3328624784b0b491232b0abc93734",
+        "2af8b95759c1e7dcce152933602fc9fb5f903f578254d10b867b1523aa6703e1",
+        "845dc285370f5cbf49f70f5197a4f3c4f7a7231c73801f84534754c4b89c27df",
+        "f483d8a3fb8c283f36c77f1ba5810737a9524244ed694b12e38a8b3a8298c51c",
+        "85cd49adfd8ed42eaa6b93127eec9e3075a7e0ae03e2e3043204df6638a1e5da",
+        "cb465c34d1c2f660f4a63a0e52efc43e467691e303768adf35ae77d97470033f",
+        "543d2a64fc72906b4e7fd1d41a8c42ebf839e2759f87707024ba808636c34d08",
+        "d2001d09a27fa866dc78f94797a0e31e2c21804dc216493de07f5c43e9a286a0",
+        "3f20c3c525abde8d3e45e2765d25ea847245299bb0bbd5c08ba4b32895f6a258",
+        "25dadb90cc5a2e520edc34512a51dad09d220061b93739e5ce62829414d50969",
+        "c4da5c8296b48aded82ed7016dc1967dbccdb235d659960354dfd0fd4d3355c3",
+        "6ad12fd0239fe4c79ba3e35f822357e0b48288ee29c88bb1c16da29dc4179c12",
+        "6e6c3216c103e2f70b591e0662d69b5a723f821c815f7cf60e1b4b7705b23456",
+        "c9dd30e1668c8f09c72c639ddcab4e1f60925ccf6bc12969eec4f3ea2500324f",
+        "19e323fabf91160545e49ef63da62c666706b84e414006f46dbed6f1802f8f89",
+        "f9562b5a1e55231c4a3072b3672e17f43e9479a766de641159e77593e8550c8c",
+        "d32886589050953cef2028bc2e5a4b71673b6fef3da593bbd8a45c41bdce0640",
+        "095e1181b5fa15425b7ac6f324947213889ea1ce9b023e4230c21ca280b630aa",
+        "da53163c26bcbb885c7ad6d40aae87502df6979f9cd0a3500fb474e2b7ec4967",
+        "07344e833b4f91a315ef00d0dd2f079cc723d4159e56a412159a397dcd713a44",
+        "60e45ee2238e6e653f3c0c69cc244ddb7934ee0595cb6099c61d4e5d71274785",
+        "96344b75ce1b1adaf2d734df3458917da1f3dbb1693f8990fa302f63bfac4287",
+        "07cf8d8d85805df3b3883848914e25d32d70272f5707403ce10e638079f0cdfb",
+        "fb5f5784196cec04fac9daaed416c9521bc5eb3b5a7fceb341c5ec2858f10295",
+        "b1c5250e146dbd6e112b8c4249aebd85430edd4258b1aefab3802490124434ee",
+        "1b8e69ef6ebbaecf84b5af80646b3b0cca5383be3dcb9d9bf53c57550e6050dc",
+        "9116346fbde06a0ee9f779910a72f393e933bc53dcce655d00ba062e8b363b41",
+        "6bce9ff6801e233d15a0dedfec68baa1544722e8ef2e3416aef4f0af5b63d86e",
+        "cb348a733a9191e0909e9e8ef07d68d6cd07b497f74e5df925f39a2cf43ef936",
+        "feed275d3dce2b0f48f7676bb30485417a6957b4747e405b9a79498da83684c6"
+      ],
+      "exact_trajectory_match": true,
+      "metrics": {
+        "overall": {
+          "available": true,
+          "norm8": 0.45125480549604285,
+          "norm64": 1.6298945055360743,
+          "cosine": 0.5927685834670795,
+          "C_parallel": 0.164114714742611,
+          "C_miss": 0.8651143172028841,
+          "norm_ratio": 0.2768613575684302,
+          "dot": 0.435979946414125,
+          "finite": true,
+          "finite8": true,
+          "finite64": true,
+          "finite_difference": true,
+          "zero8": false,
+          "zero64": false,
+          "zero_difference": false,
+          "near_equal_gradient": false
+        },
+        "groups": {
+          "E": {
+            "available": true,
+            "norm8": 0.003239957963155123,
+            "norm64": 0.5799958342366716,
+            "cosine": 0.5778032010790946,
+            "C_parallel": 0.003227709531632302,
+            "C_miss": 0.9967827176886338,
+            "norm_ratio": 0.005586174541096849,
+            "dot": 0.0010857858892832763,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "F": {
+            "available": true,
+            "norm8": 0.013588349135865757,
+            "norm64": 0.6242380965610369,
+            "cosine": 0.14241814202687605,
+            "C_parallel": 0.0031001431149489046,
+            "C_miss": 0.9971326667041507,
+            "norm_ratio": 0.021767894671479913,
+            "dot": 0.001208042691774533,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "Q": {
+            "available": true,
+            "norm8": 0.39316209220611736,
+            "norm64": 1.3717246078169083,
+            "cosine": 0.7135538098069608,
+            "C_parallel": 0.20451795292338742,
+            "C_miss": 0.8204355207436909,
+            "norm_ratio": 0.286618822732817,
+            "dot": 0.38482678846720064,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "R": {
+            "available": true,
+            "norm8": 0.2210414625710271,
+            "norm64": 0.2210414679561159,
+            "cosine": 0.9999999999999979,
+            "C_parallel": 0.9999999756376513,
+            "C_miss": 6.948816225321906e-08,
+            "norm_ratio": 0.9999999756376536,
+            "dot": 0.04885932936586658,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": true
+          },
+          "recurrent": {
+            "available": true,
+            "norm8": 0.3934101820082097,
+            "norm64": 1.6148364525921781,
+            "cosine": 0.6093575003192462,
+            "C_parallel": 0.14845308001553068,
+            "C_miss": 0.8731813491119375,
+            "norm_ratio": 0.24362230700000442,
+            "dot": 0.38712061704825845,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          }
+        },
+        "parameter_names": [
+          "encoder.bias",
+          "encoder.weight",
+          "f_in.bias",
+          "f_in.weight",
+          "f_out.bias",
+          "f_out.weight",
+          "q_in.bias",
+          "q_in.weight",
+          "q_out.bias",
+          "q_out.weight",
+          "readout.bias",
+          "readout.weight"
+        ],
+        "parameter_shapes": [
+          [
+            24
+          ],
+          [
+            24,
+            3,
+            1,
+            1
+          ],
+          [
+            40
+          ],
+          [
+            40,
+            67,
+            1,
+            1
+          ],
+          [
+            24
+          ],
+          [
+            24,
+            40,
+            1,
+            1
+          ],
+          [
+            16
+          ],
+          [
+            16,
+            67,
+            1,
+            1
+          ],
+          [
+            8
+          ],
+          [
+            8,
+            16,
+            1,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1,
+            8,
+            1,
+            1
+          ]
+        ],
+        "aggregation_basis": "metrics computed from each supplied mean-gradient vector pair"
+      }
+    },
+    {
+      "batch": 1,
+      "indices": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "loss8": 0.42129623889923096,
+      "loss64": 0.42129623889923096,
+      "trajectory_sha256_by_step": [
+        "bf9a4bfac262fd8f58c04f5b53bfc2375b63e879f8fd6a029af3d3e5af09df27",
+        "08be0ab886e1b5d7087682f8572f3a0ae8285a092f475b8535b48d4461ab3f89",
+        "f920cc0570a25d906dc4dcdc97b6d3c546d35f0cc6b01849c39e4f476ca5d3a7",
+        "c057f3c5e591da83c921542c8dc1a1d4fc7d2e64faedaa69ccf6280926919762",
+        "74b75ec217c7af98a968feaa6975e5f40b27cc7e1020601debd02bd7356e4e83",
+        "c5fb595b0cc0fe8cefe4d653de14bc5843ee4767faf2beca9363ce355571906c",
+        "c6be46151c6a18ddfec01d9c5ebc99f4e635b401b60292d978ee34a9c8dbed26",
+        "c26817c05e9812e07f571bfff2eb754be0392857af53860ef46c6ecef5d2b27e",
+        "864ae8d6ad828b308e5700b1b77c6a89363d39bec05152a78aa8ba05026a27f4",
+        "1f45100a82b9350dfd7af94e2838841eb0e1ed030d3c057af9e65d64830e2274",
+        "912650bbde3d734913809b40b1e40985c41c6a5179a39fbef9fe3219cc754419",
+        "51ad75f62e2efba947e94020e09c202f6b880c98e486e0d20ba0c9f57da6cc4b",
+        "a70d9b78acfd32666a81fd512cbe6d53df2af2564f19be231b3f8924520c826a",
+        "9dd5d9b90b2eaa24bd1820592e5102b8ceae908a151020e908b66a948c71d66a",
+        "b7f9832b5b198709ea5378a46c21878a565a28f3812dfaba82ca2bc98b611d2c",
+        "e938ecca02d49562563ede715ad7ad4fd2f7e152a90555be9fd869f0c38e171f",
+        "80c848ee39a25f4a952eaaa219a84ec9b96b3e198445fc62975c5fe91735388b",
+        "58a2392644e0dde3b588659a3fbc0a87d4a9160caf2f8bbb9c667481f2a1e09f",
+        "15c696f28a50c6b0701f14726e59ffe2e46b62e3256727ee5a5ecf24e1c7b756",
+        "666eae785efdeb0ce44a18626f44b7e5d70e061469747e37b493257afdd0599c",
+        "2b1cf174fbc9ab4a9f2af52ba0bfc8a20b4482086670af4917b18f01ebada853",
+        "887f276778334aaa08bdb61f8c6796b43c7d741babf90ca1b3dc47f91fb2d726",
+        "aaaf584b169db838040eb55ac6eda5db0dd7f34d2ce6029fa311638c4bf39d1c",
+        "e87b43d51d0ecc9c5449e0d4a65bbca91e609517c29369aadf42d9507dfc75e9",
+        "a4ac401a446a49aaa7a8ce7e9b5fa1f443f8ccc618c5e1143782ba102482f18a",
+        "cbde8be808b767349f15611d74681805235c777d41da18d53a20e1811e60b3c8",
+        "6efa6c4ee56361a82f3f697fd24d0392f92981478c6d46b601d5c0a92d5f83ff",
+        "0807eb78b01c7d42a16ebbe3acdcba7109360085d043e14234a6a38afbf77bad",
+        "1ca904f7eb4d770d4082bb575a9a69adfa3f491e6ae4bf4992b95ee1224dff16",
+        "be737ce30c18ec2d8054d7edd0296343edf53e108d1f82aaa484241df70a4e61",
+        "c0e0f24b803f3a3bfe7a1d5e472725df991cd090095ee2c95eea3b5aa2d908a4",
+        "2e25fc41a257d56dd7439c7cb247706e954b61cd88cc6590508f0ff23eda26f9",
+        "f17a2df1ccf7378d12688743c1b1a4aa19c3fe10849d1209284fe72ff935d4e1",
+        "bd42678e988a6562962723740bd430600cfe56d0c33d220985e00ea31b275f74",
+        "bea4db8f0ab49a2f4f37ef1b14b168a86642a4c5a98b364d3b72b49e30832d37",
+        "493846d59b04804fc0700d30fd2bd6d73bcacee1372b379f3315919bbba64aa7",
+        "1742f418476bd749a6b4def92e340ad102c76b5d706a6b9380997a8997825400",
+        "525439291f7e0751c4ac97cd33430ea4f39122eaebabf5e05bebd892b62c4a9d",
+        "fddf4e14476a5f6786a7f8e5c9e443998e80422ef08cde38b39fa2bdd844111e",
+        "3e837429845622bfb92fb5c498c530a89baf7001ac32658e2238ed6a796b020b",
+        "11c70237b67afe7beecc52bb7a9d2c6353223efe8e90a1a5f4ab413b3e1c9276",
+        "264353b0804705c8f805cea4f44357475676c194808a5f901a2757ec4a6c9216",
+        "9b9421c69c8254322c2852c7248f6f3d84f3e1e46a5b0e6f34ba37a1bbf8c899",
+        "8b3e49b562e15ef7a924dfb6a39c0bcbfb9d2cfcb68e365eb7372e97e6aca897",
+        "0264ccff7654baafa5b8c1931fe98a718ff210828eb322900ab0583b5e6aa10b",
+        "1582022888e774b9e33ed7ea3db03ed1f9d74d8b7b1a50c9f7b2db69e3b0b908",
+        "2136f6bc689c293a09be437c348a28b72758dab19a0be315bc20cd405426a55d",
+        "9bee48a9c35e8edb894921b57f06a7d10f48e026fc1dcb9208119d483c590c48",
+        "13ec899f2ef408d2458caffd70a03880e563b9e3a6f4a19e35d20018f199d057",
+        "8a6f0a5ef3fed89dea4775a7e879e249e22cb9b9d21784aae00014d8a12272b5",
+        "8d480e56565dc20979000ee8c83bb448bfc22ac2212478a94ab56dbbe0667299",
+        "cd6a04b841c6a2628441b3451cf3ed82a78e5b0ecd07f002b1175cb18edfdc3f",
+        "53d6c9e38016cda10098c15e0b97b55e71826fd6542d0c469597ade99e4cf29e",
+        "58aa752166866059690589a1e05a762b47ce140c971158320f43b22a6bd5e11a",
+        "12b095bdc29d6a6cd1516885a2a8dfaf3fdcf37a79ece93b04c01f5374d0cac1",
+        "d3807a8fa69cfaa8ac73e59c2140974009a03d825c668aa2f15aa78b2197ff3a",
+        "7b9738630f1a541bd01fa06f33695963b6d17c022a18cf5126c49500e17d5376",
+        "4f1cb3d8bbe28f0149dfdca63b8ff5ec691cb17662c612e2a2f61dddaf9a175a",
+        "c9d84a4eeee6a17c85f0ebaa1a7bc7cec2a1fb10d38aa6a45f035ec577e69218",
+        "cbb141c01fbe2aee73a589cbd97dc868025bfbef1d74c396fb0c395791539d7f",
+        "96f3f986adfe744215b13653e5be44ac8aa3571c3541743ad51e5bc297aa03d3",
+        "c97614cab59ec49d89dca3a84fa86426432397b1ca9bff4c45cf1a6125e4a10c",
+        "b83fa19fe5f9aa04f4b48ddf0184067a825f48b0b3769dac92df679f56c6b341",
+        "ba44ca22c0b269df23a6b24b81feae4e4e6ce7180f74bb9060a09baad01853e9",
+        "1c65e706f63bd12e3ceebcad0d15fc82ff280469b30dd0d45b9d2f1b67d9bbe7"
+      ],
+      "exact_trajectory_match": true,
+      "metrics": {
+        "overall": {
+          "available": true,
+          "norm8": 0.24042861122506917,
+          "norm64": 1.5816230408056928,
+          "cosine": 0.27952881312450223,
+          "C_parallel": 0.042492251695246085,
+          "C_miss": 0.9685678643659812,
+          "norm_ratio": 0.15201385224041294,
+          "dot": 0.10629570370834297,
+          "finite": true,
+          "finite8": true,
+          "finite64": true,
+          "finite_difference": true,
+          "zero8": false,
+          "zero64": false,
+          "zero_difference": false,
+          "near_equal_gradient": false
+        },
+        "groups": {
+          "E": {
+            "available": true,
+            "norm8": 0.0027090350136862555,
+            "norm64": 0.8316476898975238,
+            "cosine": 0.7329870674902694,
+            "C_parallel": 0.002387654838138284,
+            "C_miss": 0.9976148060152353,
+            "norm_ratio": 0.003257431057158428,
+            "dot": 0.0016513925306888555,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "F": {
+            "available": true,
+            "norm8": 0.009085279734965312,
+            "norm64": 0.6925928108000201,
+            "cosine": 0.07074421236086981,
+            "C_parallel": 0.000928006974525001,
+            "C_miss": 0.9991576763396407,
+            "norm_ratio": 0.013117779441676306,
+            "dot": 0.0004451508414323386,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "Q": {
+            "available": true,
+            "norm8": 0.21800832379670373,
+            "norm64": 1.148921387797464,
+            "cosine": 0.3753307490740121,
+            "C_parallel": 0.07121916986143793,
+            "C_miss": 0.9452866680440166,
+            "norm_ratio": 0.18975042688920246,
+            "dot": 0.09401075390740478,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "R": {
+            "available": true,
+            "norm8": 0.10093763754120202,
+            "norm64": 0.10093763512800849,
+            "cosine": 0.999999999999998,
+            "C_parallel": 1.0000000239077658,
+            "C_miss": 6.52427121416091e-08,
+            "norm_ratio": 1.0000000239077678,
+            "dot": 0.010188406428817002,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": true
+          },
+          "recurrent": {
+            "available": true,
+            "norm8": 0.2182143680494398,
+            "norm64": 1.5783988840030936,
+            "cosine": 0.2790334419669802,
+            "C_parallel": 0.038576501048365734,
+            "C_miss": 0.9705463342574161,
+            "norm_ratio": 0.1382504576384458,
+            "dot": 0.09610729727952598,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          }
+        },
+        "parameter_names": [
+          "encoder.bias",
+          "encoder.weight",
+          "f_in.bias",
+          "f_in.weight",
+          "f_out.bias",
+          "f_out.weight",
+          "q_in.bias",
+          "q_in.weight",
+          "q_out.bias",
+          "q_out.weight",
+          "readout.bias",
+          "readout.weight"
+        ],
+        "parameter_shapes": [
+          [
+            24
+          ],
+          [
+            24,
+            3,
+            1,
+            1
+          ],
+          [
+            40
+          ],
+          [
+            40,
+            67,
+            1,
+            1
+          ],
+          [
+            24
+          ],
+          [
+            24,
+            40,
+            1,
+            1
+          ],
+          [
+            16
+          ],
+          [
+            16,
+            67,
+            1,
+            1
+          ],
+          [
+            8
+          ],
+          [
+            8,
+            16,
+            1,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1,
+            8,
+            1,
+            1
+          ]
+        ],
+        "aggregation_basis": "metrics computed from each supplied mean-gradient vector pair"
+      }
+    },
+    {
+      "batch": 2,
+      "indices": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "loss8": 0.34398186206817627,
+      "loss64": 0.34398186206817627,
+      "trajectory_sha256_by_step": [
+        "6597607e25a569cea509f4f61aa7e1516938e7df1efb1a4fb71fa20a29c2d211",
+        "b2830da2751528d0610f4ac0205c699f8dbd7b0a44141a2fa98d26a486dc2899",
+        "b447314219f34aef8ccf86b9102ab5490ddeee8298fc257a63c0682be2a7efbc",
+        "2f160085797a029afa08d5a6ada0dd06112da791ea3dddc39ea745403b029053",
+        "a9f5dbb1d1b1f8af0d81afbdd0de297175b04b797fc92284795ad177f7d6ac50",
+        "a1611d70ee51ae65c9290702b270f6cbf719ce978a44d62653446ffc32f86888",
+        "bd551a70aa802f227c84d25cd214b2571a1a143772c53e6b6732ead0ec935adb",
+        "f089ea50decc1551cac842dd09ca5845d05ba7836e14604a84d6d441c46ab9d7",
+        "78165a2adebdd7dce52c92d6cecdc3a91b77c3aca4ddf0d371937a72e8588072",
+        "87cb58785a77c296e8033dcf5c7b205f9008c19e6b5661f9365288f60fce2014",
+        "0d817183f85d52731313b81fc56b664c61f3e0e912ac81e058c2e0c1e1ec5252",
+        "c3adcb53c68875d466681062aa9e86c1e81b525689b2168fb17ea9c5329108b1",
+        "203c66b98f43996d9871a9f330249dd9d6050817e2b9a208838ac6eb1d35dcce",
+        "8d83e1a308b83149f7ea4d4cc9765b28d522d6353f6a6aac55fe9a8b3727f308",
+        "7710916a714bf58dd64ba7e5d6d2ab6ee493e6d32026736402f6a91ce325452e",
+        "6e6b5dc2e241ab9f0e395202c61372938e7f42626e9808cbd16c1d232cf0b769",
+        "3fad2d943cda523ba9c3e32e5c7790e807b454642a4592e07342aab1fc05bd99",
+        "809fa53f4a0e1c42476e91b3305df6b0e444d2fa53df0fb15fe9d60f45eaecb2",
+        "64843fe02e5fe6fa08157e96203f647a1df069e14eeb4f53d61453551de3f0e1",
+        "2421c22bf55e02813cb04e80007830eae41306c66e40c321d6f8c571fa4568c4",
+        "0d866c9048d44d36d7b86585469ebf8bbcb614ef51b9e878f67d3bcc79e3e4f9",
+        "f9a833b482c2219656c7b465d196e1242322a0c5394c0ce718485bb466db419b",
+        "77f5e3de1baffe0d9eca0efdb205067a0e38e5ba15179ecc66581c13b31ab9a9",
+        "6ff3de0d0720599cb70f014fa70048a280e941ce5b6e4e6f193174c7fbb89ba4",
+        "642a0b823f9a86d3999027143d3341a590b156d9e4afbb1306bca59d413c9d78",
+        "23ce4488ee29171f930b977c400014e025b1d28003674c923887f8bbb76dcae7",
+        "c560da5e3b79a0609b364d172acc7045e606d37632a6a645a993de8efbeb093d",
+        "a4624214e0d5f8bfd7ab5ffcd776725cd9f98aca943530decd0c7efe86db26da",
+        "1d8c22b7bee62a82cafdf520a2b4e6e6e4b762743777494c8cf78f4a75955133",
+        "e6b09e8585f8f643e9849a203b5ddc23a45462aee19581472b5b56f1040db381",
+        "f361731a9ecac7e92c5514733e1ec999c132926663ed4314a5d618bad6c8c363",
+        "07144c132bf2a37df19f30a59f2f5cee6afc57f3f8067cba6661b36fd478a241",
+        "9d03a6ccee349c093767f6478d6e8ebf79356748a8d528c597429381b7b7e462",
+        "620cc17db4eb431e5f63aea4cec003aa869c7009643124f69d0be9049708d2e8",
+        "bdd119714e7b48623619838cd11221f286e13b523e496aa7302b204635cdcdf5",
+        "cb3247c547ac64efbb139b5fe3e1a334632728844129605cac65e6b8e31cfc81",
+        "7b7eb0aa28c1568429e3be79c69b81e5d67a4776b274d31fbaa0ae71048eede7",
+        "29a03930a34a87fd703a55132c96dbbda0c50cc8d6ac91b126d571396be44fda",
+        "3a09cc19bdb5b628bdaef69b4ab10690e863c494bc0a0148632e56f095edef11",
+        "43d160ce50dfcd9a3e22ef116f758a9155f487a8c1b032ceb7e94a4dcee2e1c5",
+        "aa5eba459f8c14d0a929512e537e60a76bf087dc39bc7543c588176e4ea1ec8d",
+        "809d19feecf03502d491d21fd7442886f4f88f6c98cdacc45f9a81cabf312e02",
+        "ed24b8ae82a884a18d3d17e3b124dbd8e69c07610fc2478a87c8bab318434fd5",
+        "a81a895d65943c9f97f9ad0476b37bb275904e8a9cbf44a73c4a6ac6fa1eaf10",
+        "15e145ded9464c8cd8d84cc6ca4c437ec7cb4c47c0ec6f0240c21a6b11286fd5",
+        "9bf21b8cdc06f4bfc68651574bab42c205f4ea5a87b5598cf57878464f4ef677",
+        "24f8e35388b32daa0e377e9f3e15bd5f39f0b2c78b252a7fd5f6d7674bc94a81",
+        "3be7d18d55cf84d8c219c992b2521eda2bd0bcf36bf3dd59e6a6e80bc4a9f41b",
+        "d8f9fd39c313d416d18db7fbf4215bdbca0446fbc0a6c0e849a612bf12b26412",
+        "262e015ad51150d16a5f6db48ddbc33c8f28d70fdd82c5f2efff872ee39c5fb2",
+        "157c88cfca308b27ecc1c0537af1eedd4cfbd0ea616f65934991ca61c85eb05b",
+        "bd5e35dfd09d381021dae18e999f52afd06b3f2f58c9c7f2bc50078ff86495a2",
+        "6c798fb74e6373d0fe1add785a1a9ff90430cbaa845cfa89a423352d62175196",
+        "9983462910ded463ec6111a9146a0f4ce6c6b1b1eaa51f4660b0561b8d75e6d7",
+        "a3df42d9eb1b280354fde318e6b41e9d001822c41a420e9b60cfa7307795c6a6",
+        "9c2c7ae2c5badef569e71e73a0af1b6ec8a9098f22949d8862b2a056ce75d0e9",
+        "5d0193d56a6221222182c4a72b6b63871131e7be5e2d34a8bca095e4941db600",
+        "53c2d2564e0f23fab5398071c376482eb7dee6dd2759606eb37ff8babea1060c",
+        "ebb66f6f2eacef56d3ec74a47bf85f239dec8b97a692779b6de9522a4df324d8",
+        "8a7aeac91b8c025f0ab8df2679cf7d930df4fef59f00bec54c174ebb21f648d3",
+        "e297c6ff3be29e46776a8cd07f9817605059892eb633104f0e7c176bac920d91",
+        "8b20fb055d6309c95584ee66ee8a1f8bfc9fab78752d882b58ac88f7acefffec",
+        "4a645caae409ff74a15eb85172c282c14ca82ba5d7cf42676bec460506fe456e",
+        "9efa3c8e6df59ea875900632e31ee81f05d00885b336b8e2139d69e216ca3604",
+        "486892f360ee9758e0c7aaf4c74f20c51fae579f3d58c504d4d71cbc6405facb"
+      ],
+      "exact_trajectory_match": true,
+      "metrics": {
+        "overall": {
+          "available": true,
+          "norm8": 0.20524070109373252,
+          "norm64": 0.692008902168208,
+          "cosine": 0.4008545383070797,
+          "C_parallel": 0.11888816201782267,
+          "C_miss": 0.9220560730282508,
+          "norm_ratio": 0.29658679310435265,
+          "dot": 0.0569327255995084,
+          "finite": true,
+          "finite8": true,
+          "finite64": true,
+          "finite_difference": true,
+          "zero8": false,
+          "zero64": false,
+          "zero_difference": false,
+          "near_equal_gradient": false
+        },
+        "groups": {
+          "E": {
+            "available": true,
+            "norm8": 0.002222408470388297,
+            "norm64": 0.2833161486888512,
+            "cosine": 0.31282895741074523,
+            "C_parallel": 0.002453914921369035,
+            "C_miss": 0.9975739084072384,
+            "norm_ratio": 0.007844270369597013,
+            "dot": 0.00019697094132978276,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "F": {
+            "available": true,
+            "norm8": 0.015698338279500977,
+            "norm64": 0.30314560589893824,
+            "cosine": 0.3550468383757776,
+            "C_parallel": 0.018386033857764026,
+            "C_miss": 0.9828069999048936,
+            "norm_ratio": 0.05178481222892752,
+            "dot": 0.0016896261039337792,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "Q": {
+            "available": true,
+            "norm8": 0.1579432202716662,
+            "norm64": 0.5383165555555112,
+            "cosine": 0.44834478598450755,
+            "C_parallel": 0.13154531206518297,
+            "C_miss": 0.9071902676277349,
+            "norm_ratio": 0.29340212304761476,
+            "dot": 0.03811982063289632,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "R": {
+            "available": true,
+            "norm8": 0.13010114385168134,
+            "norm64": 0.13010114607943007,
+            "cosine": 0.9999999999999984,
+            "C_parallel": 0.9999999828767927,
+            "C_miss": 5.7267601570468764e-08,
+            "norm_ratio": 0.9999999828767939,
+            "dot": 0.016926307921348513,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": true
+          },
+          "recurrent": {
+            "available": true,
+            "norm8": 0.1587370081421814,
+            "norm64": 0.6796690462783098,
+            "cosine": 0.3708121729988288,
+            "C_parallel": 0.086603347977734,
+            "C_miss": 0.9387966309893307,
+            "norm_ratio": 0.23355044489871035,
+            "dot": 0.040006417678159885,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          }
+        },
+        "parameter_names": [
+          "encoder.bias",
+          "encoder.weight",
+          "f_in.bias",
+          "f_in.weight",
+          "f_out.bias",
+          "f_out.weight",
+          "q_in.bias",
+          "q_in.weight",
+          "q_out.bias",
+          "q_out.weight",
+          "readout.bias",
+          "readout.weight"
+        ],
+        "parameter_shapes": [
+          [
+            24
+          ],
+          [
+            24,
+            3,
+            1,
+            1
+          ],
+          [
+            40
+          ],
+          [
+            40,
+            67,
+            1,
+            1
+          ],
+          [
+            24
+          ],
+          [
+            24,
+            40,
+            1,
+            1
+          ],
+          [
+            16
+          ],
+          [
+            16,
+            67,
+            1,
+            1
+          ],
+          [
+            8
+          ],
+          [
+            8,
+            16,
+            1,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1,
+            8,
+            1,
+            1
+          ]
+        ],
+        "aggregation_basis": "metrics computed from each supplied mean-gradient vector pair"
+      }
+    },
+    {
+      "batch": 3,
+      "indices": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "loss8": 0.3820638954639435,
+      "loss64": 0.3820638954639435,
+      "trajectory_sha256_by_step": [
+        "8fb461166b58d7d1474c41987270bf00936b4d8e2cd4f1c1e7ece68110f76097",
+        "29c34ec7eb2ac82ddd2384ca7a8ba2e818a5bddf0d99a60005040866b37e5343",
+        "c7aaa29f7db94b0d4800a2cc6463dc2c5337fb9a7e2d71cde4b90d80e2791ebf",
+        "073456c3c23673d363043edc36cd7699a03327339ea017403fb8e3f1b5fa9406",
+        "160113365b03b92435629e6d739a2048427e8d5ffb54473a31535e5f61812aa6",
+        "62c15c6c64c07c815267db37c2d08e5a08abb62454477d4cda65c5e7fe76588e",
+        "7610447204dc58386c65a0d8fc02b8269ea2d00309543463312358bd3c02b0e5",
+        "71660b52e0fc4e0f779d3a18abe9f23c52b1773164ee1595da8566926de25bea",
+        "4e30b1626230f939882f7139f40d702d4bb1948f54d71a68729ad8e89309c284",
+        "eb35c8363123e00501d7caf25c74dcb6043b5d85b3a86a6c7c22d205d129701a",
+        "1d4e553e4c341413159146c89cba02e1fffc77d3e3c447fa6838e59cf86459c1",
+        "c8ce23183c564c34eeea62341a550c181bd2b95bf7e8655a396fa61e28562977",
+        "5de6cf9560225cacd17a4f0e375b978159a83ad8a6bde2d2ed5580b7ff10ec08",
+        "d3551e9ec0d81676279844a96053c1520b908c21ed721a27d36e9b537eef2939",
+        "a06ccc41a53a4f15c23acd3de8e0e422744ca4759e5160c64d801ff8ffec1873",
+        "4d8b53e577e4791993e24afc782c1123d31a6e2994944fbeededd943244521a4",
+        "bef23f85da9fcaa4afdd1f650be1d7747ec41803bce2bc6f3404dbf12c848aa0",
+        "38852920151f926e20d2bd0cdae8cc2516a43a8812e272f1fbd2ae4682bd8e2c",
+        "45707d4dd8617e498daefefe1260c93d890f5ab1914b6b9ec43b86ea1cc66f57",
+        "6f042775bc64b17def2dea2b0443354975983d4c542969243e601eb9e0e18dc5",
+        "767af1d54d36dd722c5839c4e76022aae951348c4daa31b1de18403a24ed5027",
+        "14ec8799a326bce243215e0c82937cb8157d96dac9c50703fc159baf69c202ad",
+        "eaf802525bbfe0b6dffc0ebc1f37f258bd97e6c4f828bcab20e13d897d2c85f5",
+        "711bdb1b3e6e9a4f5532eed5540c07bae9d8ac67533a3b2f526815ecea1fe8ce",
+        "c32cc03cc89803d0ce3f82ea687d91988c2908b42d9d741cc88c06586341cfa4",
+        "374e46a7781f4e1e8c0822c55bc519bd22d0c97d8d169789e942cdb0cc555faf",
+        "88c3157e6cb8ee2b887601f1cc48bd7c700a38e0cba87a7f3da12fc6f0370bd8",
+        "5cdb2565926e0a0e4f18e9ca8b27cf1172822e773324cab2579a023d229af517",
+        "950e25b31e858f03f8e292f403774b2223f50f7b25e12299149767876487f13a",
+        "82eefb3262ae67c2c44558914ad9ce175649dc960a87229f32b94b0772af4e9c",
+        "5d3e7ddabe7b419031c3ee544d965b41d8248f734d187b20c3ee59614534be2b",
+        "1f9d507828064b13b55d226a66088c536a2232f2c4ddbf10566ce04a28429ceb",
+        "495922eaae8db8ae3a463e2472b5c897e459254cd80afdc000c626fdb8221790",
+        "a9bf52b3605250e3e40dbe986cfc46c1d2d33d45afebcd3f6cfb95f3e6359025",
+        "5424d26fcccfb14f3124d101652eee694604e37e5d1081ec1466c1fa086f2a03",
+        "93b2eb2bf037fb0f8eee9e7ba71065866c1934c1c36e855661a33568de28863c",
+        "68231f6f9784676f7c6a49a740c09a5dff3e9272e539d755c0b9dd336e1a183d",
+        "7355dd09808f14bb4d03627d6f238ea747e3b248650d8de115c6c78823a9bcea",
+        "e62c85f26b4fb925ba6d5183b1bfe4dfb73c59f8435c41153e9e6115ac88669c",
+        "d4ff6edb87a71512e28df80b6a22e024d4555506f29ffcb0c72dca94d0da1eec",
+        "01f47d23e62d3cf17daa912c998bd6693ff62d0f9b5583e7d3070c2b06549c14",
+        "bc042c9274c9ca0335782c050870c58e453ef9ed6ca3c33e8a5b8e9e5215a018",
+        "a505cbb17a91689f03bd6c2714da262959870ed15ebc3fbae430b520524fc205",
+        "4e33a1379e2b2f7c34f9d03a7fc893445aa7297317cea24551b428ca4c3546b3",
+        "8956c9014361a349663adde1c96e5088732a1ffcd66892424a372a0f698aff6b",
+        "402c3bf96e0a0bfaca2abea052b631183d868f4f5b906650f76ee056cad078f5",
+        "6cac6a1fcb93203c53f621a3c0e0a57d4753cecb249becb9f4377b05c3eda19d",
+        "e84ba5e101bc2e974abc80702386d81199dad4c3537ad52da442188ba517a720",
+        "53b3cfc9065d1ae00cc7f699e1665a366badecb3cc4d169b1057468316710e31",
+        "f000e4c5217bc5f47f58e3235820ae111f0d5ebed0e7489417406765db70b99c",
+        "fd8a6d322f5e99db022ed86ee72c96acdb069ce26f6a496ad24f63755ee32a73",
+        "8255ba8645109a81e970e01e825977786599fb4ca459c941932581feed9a1dbc",
+        "0d1328f3e2f43afbbb83509b9858fe66536ace5d656ed01feed6eead1b533954",
+        "7d9ea4177394feeaabb83924d90f40062e5a260cfbad44048feef0412e0d6be1",
+        "a0a000c6b0f38a7988a996db79fe5f56296d2c7e2797882613c17026f901839b",
+        "35dba7659f105c99f8affbe26e5388b51b468df3350df7b20cb3b377b7e8770b",
+        "43da338767cd87d775e222ebb74fb8e38d974a4e7487853468adedbb079b1c67",
+        "36963b1a87b7d9456ee1f6b2aecce52d9ba19f403366a5349bb9c4bda761f6b8",
+        "71a7239e6d1e7a06a549e703a95559860c7ecbfcacae48263a7c88b9e84806e1",
+        "cf46002003ba7941b39299d64991f075162b8c82438b6580a2796534097414f7",
+        "2d7b7f01281a13e44bde2f9c59e5a877102844e0d559845471733b56561174b9",
+        "0eca1373f12eed74e6ab3770c030a9bc7e9a9a89ea376b5f79cb5d63bc6dd5e7",
+        "81ab5b1340e6718836e6ad7dfa3316becb47b937cde72c076c71f2c07efda9f5",
+        "0ba80b42a72b6e47301ec70444771ca35d7fd60481fa14e5225d15dc0fd6c202",
+        "1018693993359b48bd33d87cf9985097f46088cd7e2cdc8f80315e1308ae59b3"
+      ],
+      "exact_trajectory_match": true,
+      "metrics": {
+        "overall": {
+          "available": true,
+          "norm8": 0.2778137610892493,
+          "norm64": 1.500091249778895,
+          "cosine": 0.5409557190635024,
+          "C_parallel": 0.10018386742667958,
+          "C_miss": 0.9131979688052543,
+          "norm_ratio": 0.18519790788073562,
+          "dot": 0.22544112781146683,
+          "finite": true,
+          "finite8": true,
+          "finite64": true,
+          "finite_difference": true,
+          "zero8": false,
+          "zero64": false,
+          "zero_difference": false,
+          "near_equal_gradient": false
+        },
+        "groups": {
+          "E": {
+            "available": true,
+            "norm8": 0.0036059962480361825,
+            "norm64": 0.6350089791586545,
+            "cosine": 0.83446473820605,
+            "C_parallel": 0.004738636482079894,
+            "C_miss": 0.9952662830351124,
+            "norm_ratio": 0.0056786539503959335,
+            "dot": 0.0019107907330590684,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "F": {
+            "available": true,
+            "norm8": 0.012026109371541666,
+            "norm64": 0.5039465562320461,
+            "cosine": 0.3315415060464365,
+            "C_parallel": 0.007911859627996296,
+            "C_miss": 0.992343571799804,
+            "norm_ratio": 0.023863858623143667,
+            "dot": 0.0020093127355564843,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "Q": {
+            "available": true,
+            "norm8": 0.26675085918032193,
+            "norm64": 1.2598445890699848,
+            "cosine": 0.641704520830779,
+            "C_parallel": 0.1358701174387457,
+            "C_miss": 0.8792557594514059,
+            "norm_ratio": 0.21173314668695525,
+            "dot": 0.21565419016005602,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          },
+          "R": {
+            "available": true,
+            "norm8": 0.07659526396297235,
+            "norm64": 0.07659526032355463,
+            "cosine": 0.9999999999999973,
+            "C_parallel": 1.0000000475149184,
+            "C_miss": 8.597718782288448e-08,
+            "norm_ratio": 1.0000000475149207,
+            "dot": 0.005866834182795235,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": true
+          },
+          "recurrent": {
+            "available": true,
+            "norm8": 0.26704615965970574,
+            "norm64": 1.4981344811995927,
+            "cosine": 0.5488382331542089,
+            "C_parallel": 0.09783176629169588,
+            "C_miss": 0.9143907302792508,
+            "norm_ratio": 0.1782524619858395,
+            "dot": 0.2195742936286716,
+            "finite": true,
+            "finite8": true,
+            "finite64": true,
+            "finite_difference": true,
+            "zero8": false,
+            "zero64": false,
+            "zero_difference": false,
+            "near_equal_gradient": false
+          }
+        },
+        "parameter_names": [
+          "encoder.bias",
+          "encoder.weight",
+          "f_in.bias",
+          "f_in.weight",
+          "f_out.bias",
+          "f_out.weight",
+          "q_in.bias",
+          "q_in.weight",
+          "q_out.bias",
+          "q_out.weight",
+          "readout.bias",
+          "readout.weight"
+        ],
+        "parameter_shapes": [
+          [
+            24
+          ],
+          [
+            24,
+            3,
+            1,
+            1
+          ],
+          [
+            40
+          ],
+          [
+            40,
+            67,
+            1,
+            1
+          ],
+          [
+            24
+          ],
+          [
+            24,
+            40,
+            1,
+            1
+          ],
+          [
+            16
+          ],
+          [
+            16,
+            67,
+            1,
+            1
+          ],
+          [
+            8
+          ],
+          [
+            8,
+            16,
+            1,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1,
+            8,
+            1,
+            1
+          ]
+        ],
+        "aggregation_basis": "metrics computed from each supplied mean-gradient vector pair"
+      }
+    }
+  ],
+  "mean_metrics": {
+    "overall": {
+      "available": true,
+      "norm8": 0.21905122994024184,
+      "norm64": 1.098619835936122,
+      "cosine": 0.5100562691742355,
+      "C_parallel": 0.10169892208995555,
+      "C_miss": 0.9145258835811171,
+      "norm_ratio": 0.19938765237530118,
+      "dot": 0.12274709481559894,
+      "finite": true,
+      "finite8": true,
+      "finite64": true,
+      "finite_difference": true,
+      "zero8": false,
+      "zero64": false,
+      "zero_difference": false,
+      "near_equal_gradient": false
+    },
+    "groups": {
+      "E": {
+        "available": true,
+        "norm8": 0.0027914957777303135,
+        "norm64": 0.4980623243798493,
+        "cosine": 0.7549787685349731,
+        "C_parallel": 0.004231438399331929,
+        "C_miss": 0.9957753441391779,
+        "norm_ratio": 0.005604711782217376,
+        "dot": 0.001049676332111224,
+        "finite": true,
+        "finite8": true,
+        "finite64": true,
+        "finite_difference": true,
+        "zero8": false,
+        "zero64": false,
+        "zero_difference": false,
+        "near_equal_gradient": false
+      },
+      "F": {
+        "available": true,
+        "norm8": 0.01017295543717862,
+        "norm64": 0.38542940205650195,
+        "cosine": 0.09728923357581763,
+        "C_parallel": 0.0025678348159307437,
+        "C_miss": 0.9977780135197781,
+        "norm_ratio": 0.026393823052677536,
+        "dot": 0.0003814668168985017,
+        "finite": true,
+        "finite8": true,
+        "finite64": true,
+        "finite_difference": true,
+        "zero8": false,
+        "zero64": false,
+        "zero_difference": false,
+        "near_equal_gradient": false
+      },
+      "Q": {
+        "available": true,
+        "norm8": 0.20590607411796788,
+        "norm64": 0.8971448001928213,
+        "cosine": 0.6270915982762144,
+        "C_parallel": 0.14392545003400262,
+        "C_miss": 0.8745428252311902,
+        "norm_ratio": 0.22951264285733247,
+        "dot": 0.11584110318076025,
+        "finite": true,
+        "finite8": true,
+        "finite64": true,
+        "finite_difference": true,
+        "zero8": false,
+        "zero64": false,
+        "zero_difference": false,
+        "near_equal_gradient": false
+      },
+      "R": {
+        "available": true,
+        "norm8": 0.07399221924401729,
+        "norm64": 0.07399221893552897,
+        "cosine": 0.9999999999999971,
+        "C_parallel": 1.0000000041691965,
+        "C_miss": 7.525790105569675e-08,
+        "norm_ratio": 1.0000000041691994,
+        "dot": 0.00547484848582897,
+        "finite": true,
+        "finite8": true,
+        "finite64": true,
+        "finite_difference": true,
+        "zero8": false,
+        "zero64": false,
+        "zero_difference": false,
+        "near_equal_gradient": true
+      },
+      "recurrent": {
+        "available": true,
+        "norm8": 0.20617612090074347,
+        "norm64": 1.096125310103415,
+        "cosine": 0.5189155364697964,
+        "C_parallel": 0.09760562172802764,
+        "C_miss": 0.9166071314277313,
+        "norm_ratio": 0.18809539292664595,
+        "dot": 0.11727224632976997,
+        "finite": true,
+        "finite8": true,
+        "finite64": true,
+        "finite_difference": true,
+        "zero8": false,
+        "zero64": false,
+        "zero_difference": false,
+        "near_equal_gradient": false
+      }
+    },
+    "parameter_names": [
+      "encoder.bias",
+      "encoder.weight",
+      "f_in.bias",
+      "f_in.weight",
+      "f_out.bias",
+      "f_out.weight",
+      "q_in.bias",
+      "q_in.weight",
+      "q_out.bias",
+      "q_out.weight",
+      "readout.bias",
+      "readout.weight"
+    ],
+    "parameter_shapes": [
+      [
+        24
+      ],
+      [
+        24,
+        3,
+        1,
+        1
+      ],
+      [
+        40
+      ],
+      [
+        40,
+        67,
+        1,
+        1
+      ],
+      [
+        24
+      ],
+      [
+        24,
+        40,
+        1,
+        1
+      ],
+      [
+        16
+      ],
+      [
+        16,
+        67,
+        1,
+        1
+      ],
+      [
+        8
+      ],
+      [
+        8,
+        16,
+        1,
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1,
+        8,
+        1,
+        1
+      ]
+    ],
+    "aggregation_basis": "metrics computed from each supplied mean-gradient vector pair"
+  }
+}

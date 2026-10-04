@@ -1,5 +1,23 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Completed zero-training audit (2026-10-04): `credit_locality_formation_v1`,
+output `runs/credit_formation_20261004_01`; 7/7 checkpoints in 138.5 seconds.
+The verdict is `CREDIT_SYNCHRONY_NOT_SUPPORTED`: at size 32, preservation and
+progress collapse between updates 175 and 180, but overall gradient cosine and
+`C_parallel` rise. Overall, F, and Q synchrony qualifications fail. Native Full
+passes are 0/7 checkpoints on the reused held-out banks; update 200 misses
+strict T64 pooled reach (0.76648 versus 0.80). This finite within-trajectory association screen establishes neither
+causality nor broad impossibility. No model training or optimizer updates ran.
+
+Public route: [results](evidence/credit_formation_20261004/RESULTS.md),
+[summary](evidence/credit_formation_20261004/summary.json), validation,
+configuration, reproduction notes, metrics CSV and figure in the same directory.
+Per-update gradient metadata, continuation and phenotype records are secondary.
+The frozen [protocol](new/credit_formation/PROTOCOL.md) and exact source symbols
+are mapped in [GPT_CONTEXT.md](GPT_CONTEXT.md). Verify from repository root:
+
+    python -X utf8 -B tools/export_credit_formation.py --verify-only
+
 Completed zero-training audit (2026-10-04): `continuation_interface_v1`,
 output `runs/continuation_interface_20261004_01`; formal run `COMPLETE`, 50
 transfer cells in 439 seconds. Common native Full qualification passes for
