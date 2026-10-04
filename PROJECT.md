@@ -1,5 +1,37 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Latest saved-artifact diagnostic (2026-10-04): continuation-formation proxies,
+new/formation_gate/PROTOCOL.md. CPU8.86 seconds,44 saved trace records, no
+training or inference. At all21 dense checkpoints100..200 plus300 control,
+predictors use only rollout t<=64 and retain old T128/T256 behavior screen.
+Size32 early survival>=.95/acquisition>=.20 passes140/145/190/200; long screen
+passes only200. Next-update(+5) comparison has0 TP,3 FP,16 TN,1 FN.
+All continuous early observables rank200 highest, as does ordinary T64 output
+coverage; no incremental or prospective mechanism prediction is established.
+No quotient representation or independent consumer closure was measured.
+Local entry: runs/formation_gate_20261004_saved01/RESULTS.md and INTERPRETATION.md.
+Reproduce saved-artifact arithmetic with a new directory:
+
+    python -X utf8 -u -B new/formation_gate/analyze.py --out runs/NEW_FORMATION_GATE
+
+Latest local diagnostic (2026-10-04): update-zero initialization geometry,
+new/initial_geometry/PROTOCOL.md. Zero training, CPU30.31 seconds, exact
+historical initial checkpoints2/3/4/5 and four reused size32/64 map banks.
+Parameter/source/data/schedule bindings pass; analytic full8/full16/K8-detached16
+tangents match autograd within4.77e-7. Seed4 has the most balanced raw lane RMS
+and largest measured available relative source-flip separation at endpoint64,
+but centered lane balance and feature-spectrum rankings differ. Seed3 has
+the best endpoint64 K8 paired kernel-label alignment on all four banks.
+This is mixed exploratory initialization evidence, not a causal success rule.
+Original first-batch task gradients initially open Q-out weight only; encoder,
+F, Q-in and readout weight gradients are zero. Full/K8 tangents are distinct.
+No optimizer step, new training gate or GitHub publication was performed.
+Local entry: runs/initial_geometry_20261004_update0_01/RESULTS.md and summary.json.
+Reproduce with new output names:
+
+    python -X utf8 -u -B new/initial_geometry/audit.py --out runs/NEW_INITIAL_GEOMETRY
+    python -X utf8 -B new/initial_geometry/summarize.py --run runs/NEW_INITIAL_GEOMETRY
+
 Latest completed experiment (2026-10-03): joint historical u195/u200
 zero-training causal audit, new/audit_195_200/PROTOCOL.md (audit195_200_v1).
 Original StreamingCell and checkpoints remain unchanged. The suite records492

@@ -1,0 +1,134 @@
+{
+  "schema": "learning-geometry-publication-v1",
+  "source_sha256": {
+    "new/initial_geometry/audit.py": "2a6c8292e314470c7ca962d7b3b67c123a16de678d2825b5e669445718fc8a76",
+    "new/initial_geometry/PROTOCOL.md": "788c4e13f5d22aeeb71533be3cd603af7954f1eb8e9fb1a75335b0e3243d458f",
+    "new/streaming_carry/stream_cells.py": "88152e1243d519590a6aa22b66ba2e84eda9b59831c2722f254c1b440fbc7dfb",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "new/short_bptt/training.py": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+    "new/formation_gate/analyze.py": "bc024144809ada9eca2c4deaab6abc3786f0a0cb0adf084de4a3ff65703b924e",
+    "new/formation_gate/PROTOCOL.md": "30642b218a14d3ca0a39ca3b52f37e4cbbfef414f2213d0995188c7759502c0e",
+    "new/initial_geometry/summarize.py": "7285729524c33731452958ed60940c3442cc5a493e84b34d714b7c237c41311b",
+    "tools/export_learning_geometry.py": "beb167193a7da6497da11954005c306726780bdf7e56121cfd045c3615b9db02"
+  },
+  "public_evidence_sha256": {
+    "evidence/formation_gate_20261004/formation_profiles.png": "4a24bf125c8093908f08aca9ff7e462e28ecf647a974e19974dc5acb78101f12",
+    "evidence/formation_gate_20261004/INTERPRETATION.md": "72acba69cbf5fa101bab9e255ca72fc5e88bacb798f12bf23e44d0b3f998e333",
+    "evidence/formation_gate_20261004/profiles.csv": "b2349e3e349ca223283e37ff9ac24fa274667b81c46a3bbd1c89d7a0035fc7a4",
+    "evidence/formation_gate_20261004/REPRODUCTION.md": "4562c9363da3b2a481c505d65f22c9679ae0ae478ec04494f987e23072d22938",
+    "evidence/formation_gate_20261004/RESULTS.md": "fb66f15ab87dd55c6c80d0b2e792d1eb03b8714998c90fd83691ef8fec2a8a6c",
+    "evidence/formation_gate_20261004/summary.json": "fbdd4bfd42a198028bb28a86cc16c2727d254d3ba839fcd910528e298c95f845",
+    "evidence/formation_gate_20261004/validation.json": "2c4a0c38ed6f2a16339033f978c6d7fa08257dca724942c59df74401ec6dafc0",
+    "evidence/initial_geometry_20261004/per_map_bands.csv": "e6c47d22c75c18626b5b431292e12eb1046b92c1383b2ae64d65ed735105b18f",
+    "evidence/initial_geometry_20261004/profiles.csv": "cbed4688eb99c80231e3cb959ca03c4e157442e2b9b1ebfede8c8c5f5ed5a210",
+    "evidence/initial_geometry_20261004/REPRODUCTION.md": "2633072ab7325a7ef08a28020ad71d18826dca87401ee4bcdc40f0baed49ef70",
+    "evidence/initial_geometry_20261004/RESULTS.md": "e6e23f487259cef90f6a1b7bbab9265400ae9b143bd76b5cd4570b4790a6a53d",
+    "evidence/initial_geometry_20261004/summary.json": "d054ed3bdcd57af5e448d0938aeb3c57376aeb499a7865a28e6b6cc4464ecd33",
+    "evidence/initial_geometry_20261004/validation.json": "9e8b2e3dc86a12750f8217995141555f41e9b3138827abb1f03d4696ccdbd6c8",
+    "evidence/seed4_learning_geometry_20261004/RESULTS.md": "a1f765154ebf5ccc122070edfebe48832c917305f7f1829d94fa5e9c15d07ee1"
+  },
+  "completed_diagnostics": 2,
+  "publication_execution": "saved-artifact CPU only, no model execution",
+  "input_summary_sha256": {
+    "initial_geometry": "a4b5629d6b51b1d328f8c8cda178bf1d4548149d6bb8cfced5bb48387cebe051",
+    "formation": "fbdd4bfd42a198028bb28a86cc16c2727d254d3ba839fcd910528e298c95f845"
+  },
+  "excluded_input_bindings": {
+    "initial": {
+      "checkpoints": {
+        "2": {
+          "file": "runs/warmstart_20261003_paired01/baseline_seed2_u000.pt",
+          "file_sha256": "014695f396c9d7cf5a97e4a8b76a9a874ce04ea3ff51a50230daf7f6f2e6fead",
+          "initial_parameter_sha256": "571269fe96cb641793abc0cdbe65a47abd92d0d2b163b0e65c8ebc3f4f5962db"
+        },
+        "3": {
+          "file": "runs/warmstart_20261003_paired01/baseline_seed3_u000.pt",
+          "file_sha256": "41a0e30f18dfe772655d6c2cf40e61906bc31a1bac248d1f06b92a6182910564",
+          "initial_parameter_sha256": "682c103c8724cd29cae1ac67b8775295e3583dfc097056b9369a165de4920d58"
+        },
+        "4": {
+          "file": "runs/warmstart_20261003_paired01/baseline_seed4_u000.pt",
+          "file_sha256": "6c5b7d5c022300acb47fef11bcddfaf2d0d4c18270a2a2844af125c2a539db35",
+          "initial_parameter_sha256": "dfae347d1e08f43ac02bacc1f6facbad5644f30b7fc060a6ebd29612d92ebf8a"
+        },
+        "5": {
+          "file": "runs/warmstart_20261003_paired01/baseline_seed5_u000.pt",
+          "file_sha256": "5be7cec3c55c38a27e65c2a2d942945129a4933158a5ab38aace349d5aafd375",
+          "initial_parameter_sha256": "cce0c72f0512ec42468e093491cf6f992594eb9786aed50d1762c5d0406d66cd"
+        }
+      },
+      "banks": {
+        "bank_primary32": {
+          "file": "runs/audit195_200_20261003_joint01/bank_primary32.npz",
+          "sha256": "ae89fe86381ecd096773bdd190d85d896093e6923fe275842839883c53438935"
+        },
+        "bank_primary64": {
+          "file": "runs/audit195_200_20261003_joint01/bank_primary64.npz",
+          "sha256": "5c27ce45cca976bd56e262a6e4e0fd3d3a4454e0e0418118ea5cf02e2dd9a13e"
+        },
+        "bank_confirmation32": {
+          "file": "runs/audit195_200_20261003_joint01/bank_confirmation32.npz",
+          "sha256": "712c904553f2362855f59cb26f29831e09e780573786e5d0d2443448ce77a411"
+        },
+        "bank_confirmation64": {
+          "file": "runs/audit195_200_20261003_joint01/bank_confirmation64.npz",
+          "sha256": "b5c2a92009740bd9ce704dc3defb1b7311ac424c1ac0da301257f9c032e87c20"
+        }
+      }
+    },
+    "formation_traces": {
+      "runs/transition_20261003_seed4_dense01/checkpoints/u100_size32.npz": "d92c8186e140146173972c737e29b5a9657e1cb1fd8228b962710a93beb2482f",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u100_size64.npz": "fbace66e81bf74a362f238962a529f908fa89c5d7a042356c557b3ab91ff3744",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u105_size32.npz": "352d89746739edffab8da3032d1c89cda81057ebfa52f5da88b18c62be1b3e46",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u105_size64.npz": "11ddc4cb54b4979bc60bc558ec6bac34bce1452624b76c8ae48e0de0cfef0e1a",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u110_size32.npz": "5de2baee6ed25d66ccd1739bdc9b7aeacc87a40b1a10fcd2d0577ba60f234798",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u110_size64.npz": "cd7fc8545667cd3b2470b406e88493d776aa8f5050dceaaf8b9b26cf8fac0dcf",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u115_size32.npz": "878df9f58c7e8b21464e82fc7289186255beedf4c2a89616c827ff83fe62c2fb",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u115_size64.npz": "f54280b3cc0d9a4c726df3bf5e8d3b66e8ad90dc7c2a128405063d6cb8fa1b20",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u120_size32.npz": "274a208acdbd53c610f89d338ed8496a3380848b4eca4f76fe3ce2a3896ed6ad",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u120_size64.npz": "cd1523ca301f8d257e50b7190cff3d88cb121cd136552dd633d6f0b578d365c2",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u125_size32.npz": "2b38aeede55b287f2a1d85a50c1f330a4db7527eda7cc53585fb17a1cba52fc0",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u125_size64.npz": "8ef52f0139751d5e969ed9e3cc5054e87dfd04a3015cba88bd3bca190a102035",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u130_size32.npz": "1bba76587a20f46ce3fc5ca5e6bc3e5848ef46f4d576f78683d0403c8c5ff8a4",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u130_size64.npz": "6704f9f302c637c501fb91b8c2dae6f52980144e97e51db974935ccd79c52bcf",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u135_size32.npz": "dab865cc1a7c2f47ce7c0a18f611084d067a03b5c78fe0fcb156e202d82687a9",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u135_size64.npz": "8bee039e237c17f680a14ce9974d378d9db35096cd2264218d65fb70e2368e94",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u140_size32.npz": "05b81aee39752cb5ac7b7f3585f0ed7b727afa9589cd548e1e0bb11011fac65d",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u140_size64.npz": "63a82a5dc1a53ecea03f140cfa0a7d144e2c195e174cc0d79c13240b598cb627",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u145_size32.npz": "d46f2bfe5e088ed93247c77a6a7d132fdc58c6acf93458f35399fd130f225aec",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u145_size64.npz": "7be6aa2d3b3ad7bcc7fbb1e61bfe703a40d85e898fa8408b4c76d09499f5276a",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u150_size32.npz": "5b73072cb70acd332e77e02ef84589841c7b90c6edc0810ee37cf7ffb179ec97",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u150_size64.npz": "b4c5dc8e3b3c1cb0663b7ce5d418ee07551b893cf6f38c42b99705bda9a81ccf",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u155_size32.npz": "6c8396eeeed99f4262b1af759360df9e3f08f50d1fe7c2ada4a08abfdfbdf367",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u155_size64.npz": "f8f53dbbdb91afa937893b4ec2f877b0d0ea6995417283fc112ddfc66045664e",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u160_size32.npz": "86c8244e737528eba43eccd81268aaa0b16591791670c10ab128ebaee9408050",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u160_size64.npz": "bfba0493fccceb7b88870510946158203dfe64b3d94185b8a70b0001fae3b2e6",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u165_size32.npz": "4bde07dd4df32977ed059e82ebc02f2873d05efa4d1dd0ac29a1b9023bb1b33b",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u165_size64.npz": "c5f1a36cbad323020bebf73b54d98eb8ddbef0e041e278c7274f66c9721b8818",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u170_size32.npz": "75db2634d27d79f4ce69179140844cef35c17c433294fc3a014dab074c52d4c8",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u170_size64.npz": "2b9c03d3929dc68258cbe320902506372b50e9636f6fabf2e61a4b3c31373fd1",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u175_size32.npz": "40bdccc13aec72bdfb2a64ec761fa7638297be371e300b59701c9652192a69e7",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u175_size64.npz": "7eef36d45ed371b9d191a3e2ef828dd89deee7d1c183329606a294744c67a206",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u180_size32.npz": "1587084c44897a7dec0544fcaa333180a02e2ae01ababb8bc804e49b46339ed2",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u180_size64.npz": "47c18b289397aff7818a54d561e62778aa622a300ee43f58c7961712b3aef586",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u185_size32.npz": "8ef5391937f9361eb83918451812196bb1b4576b902f278382ca4372606c1def",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u185_size64.npz": "04210aee7663f8d23732f4cf4f0eb9b1d234883fd07b663c2b7125159e211c8a",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u190_size32.npz": "0c73f490f9efd053d6e8436651dabb9766c2b2e00011cb3d7330d1b82ed97481",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u190_size64.npz": "fe0582daa7399e104e121c90c3fb173c198e1de26f6adb8b9af73b05e8ec5c83",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u195_size32.npz": "cd9ee7cec7e4e91ba524a6e04beed20fef3b7bb9122466b529eae2de84944c2e",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u195_size64.npz": "c9d3a044a6051d8e2e13ad8508872ab68a75bf049fe47f62dc09d297ebe89859",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u200_size32.npz": "a26b86eda5ce5077297443f1839e99890b130aa5677452c0a68fc3710b640652",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u200_size64.npz": "28a1a73e3257e3c11e4f74da6260f4795713df6afaac17a02eff15ef08bfb047",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u300_size32.npz": "83b4438fb0550ec69b9a079669558f39b4493fb2d6a8fc71eed995bc968c0192",
+      "runs/transition_20261003_seed4_dense01/checkpoints/u300_size64.npz": "0dbe25d0cc0d71cabc92882c4832f4bf1b30fa2da739e2617792ebb9e0279727"
+    }
+  },
+  "transformations": [
+    "Initial summary: move per_map_bands to CSV; scalar/spectral scientific values unchanged.",
+    "Initial report: replace unavailable NPZ reading route with public per-map CSV.",
+    "Formation summary/profiles/figure/interpretation/report are byte-identical copies.",
+    "Machine receipts, checkpoints and full feature/trajectory arrays are excluded."
+  ]
+}

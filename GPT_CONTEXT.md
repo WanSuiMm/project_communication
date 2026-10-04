@@ -1,6 +1,70 @@
 # Context for incremental scientific review
 
-## Current diagnostic: joint195/200 conditional mechanism audit
+## Current diagnostic: update-zero geometry and continuation formation
+
+- Scope: two zero-training diagnostics in 2D. Initial geometry uses the four
+  exact historical update-zero checkpoints (seeds 2/3/4/5) and fixed primary
+  16 plus diagnostic consistency 8 maps per size at 32/64. All banks were already
+  inspected; the second bank checks consistency and is not fresh confirmation.
+  Parameter hashes match historical records. Tangent/autograd checks pass
+  (maximum absolute error 4.77e-7); no optimizer update occurs. Runtime:
+  30.31 CPU seconds.
+- Initial geometry: seed4 has the most balanced raw lane RMS and largest
+  measured available relative source-flip separation at K8 endpoint64 across
+  all four banks. Centered lane balance and cross-lane correlation do not
+  uniformly favor seed4; seed3 has the highest paired kernel-label alignment,
+  while seed5 has the highest initial Q-feature effective rank. Bias affects
+  relative normalization, and these are random task features rather than the
+  state Jacobian or a learned continuation quotient. On the first historical
+  training batch, encoder, F, Q-in and readout.weight task gradients are exactly
+  zero. Balanced-loss bias gradients are about 2e-7 from FP32 cancellation;
+  Q-out weight is the only appreciable group-level gradient and is rank one up
+  to FP32 roundoff. This is not an AdamW update or a success criterion for
+  initialization.
+- Formation: saved-array CPU analysis of one selected seed4 trajectory, no new
+  forward inference, took 8.86 seconds over 44 arrays. Predictors use t<=64;
+  the long screen uses T128/T256. The early screen
+  (survival32->64>=.95 and G32->64>=.20) passes at updates 140/145/190/200;
+  the frozen long screen passes only at200. Same-update classification is
+  TP1/FP3/TN17/FN0; prediction at the next saved update (+5) is
+  TP0/FP3/TN16/FN1.
+  Every continuous early observable ranks200 highest, but ordinary strict T64
+  output coverage also ranks200 highest (.7063). No held-out prospective
+  training outcome or incremental predictive value is established. The margin
+  reserve at175 is not a certificate for behavior after the optimizer changes
+  at180.
+- Claim boundary: no latent `pi`, abstract transition, quotient defect, or
+  independent consumer contract was measured. The specific seed4 closure
+  mechanism remains unsupported by these diagnostics; the conditional
+  execution theorem is not refuted. Results are descriptive for existing
+  seeds, checkpoints and previously seen maps, not a fresh confirmation or a
+  causal initialization explanation.
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Lane balance and initial task features | `lane_stats`, `feature`, `local_support`, `relational` | `new/initial_geometry/audit.py` |
+| Paired tangent construction and numerical check | `collect`, `tangent_sanity`, `main` | `new/initial_geometry/audit.py` |
+| Saved geometry aggregation | `main` | `new/initial_geometry/summarize.py` |
+| Early continuation proxies and long screen | `predictors`, `long_screen` | `new/formation_gate/analyze.py` |
+| Confusion counts, rankings and saved-array report | `confusion`, `ranking`, `main` | `new/formation_gate/analyze.py` |
+| Published snapshot creation and CPU verification | `build`, `verify`, `--verify-only` | `tools/export_learning_geometry.py` |
+
+Canonical entry: [integrated results](evidence/seed4_learning_geometry_20261004/RESULTS.md),
+[initial geometry](evidence/initial_geometry_20261004/RESULTS.md) and
+[summary](evidence/initial_geometry_20261004/summary.json), then
+[formation results](evidence/formation_gate_20261004/RESULTS.md),
+[interpretation](evidence/formation_gate_20261004/INTERPRETATION.md), and
+[summary](evidence/formation_gate_20261004/summary.json). The public verification
+command is `python -X utf8 -B tools/export_learning_geometry.py --verify-only`;
+it checks the exported snapshot without NPZ files or checkpoints. Full replay
+requires original archives excluded from GitHub, so a fresh clone cannot
+recreate the source runs. See the two [frozen protocols](new/initial_geometry/PROTOCOL.md)
+and [formation protocol](new/formation_gate/PROTOCOL.md) for definitions and
+dependencies, and the [initial geometry](evidence/initial_geometry_20261004/REPRODUCTION.md)
+and [formation](evidence/formation_gate_20261004/REPRODUCTION.md) notes for
+replay dependencies.
+
+## Preceding diagnostic: joint195/200 conditional mechanism audit
 
 - Protocol audit195_200_v1;2D only, zero training. COMPLETE492 conditions in
   885.469 seconds. Four full257-step primary endpoint Boolean and paired-margin

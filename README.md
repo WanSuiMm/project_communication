@@ -1,6 +1,58 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-Latest diagnostic: **joint195/200 zero-training causal audit completed**,492
+Latest diagnostics: **update-zero learning geometry and continuation formation; zero training.** The
+initialization audit covers historical seeds 2/3/4/5 and previously inspected
+16-map primary plus 8-map consistency banks per size at 32/64; historical
+parameter hashes match, and the CPU audit took 30.31 seconds. Seed 4 has the
+best raw lane balance and measured available source-flip pair separation at
+K8 step 64 across the bank types, but centered balance and cross-lane
+correlation are mixed; seed 3 has the highest paired kernel-label alignment.
+At the first historical batch, Q-out weight is the only parameter group with
+appreciable task gradient; it is rank one up to FP32 roundoff. The readout
+weight gradient is exactly zero, while balanced-loss bias gradients are at
+FP32 cancellation scale. These feature statistics do not give a
+successful-initialization criterion.
+
+The saved-trajectory formation analysis recomputes 44 arrays in 8.86 CPU
+seconds. Its early behavior screen passes at updates 140/145/190/200, while
+the long behavior screen passes only at 200. The early screen gives 1 true
+positive and 3 false positives at the same update, then misses 200 when asked
+to predict the next saved update. Early continuous measures and ordinary T64
+output coverage both rank 200 highest. This retrospective single-trajectory
+result does not show independent predictive value or a formed closure
+mechanism. No latent
+`pi`, abstract transition, or independent consumer was measured; the
+conditional execution theorem remains unchanged. The second bank was already
+inspected and supplies consistency checking, not fresh confirmation.
+
+Start here for these diagnostics:
+
+1. [Integrated results](evidence/seed4_learning_geometry_20261004/RESULTS.md).
+2. [Initial geometry results](evidence/initial_geometry_20261004/RESULTS.md),
+   [summary](evidence/initial_geometry_20261004/summary.json),
+   [profiles](evidence/initial_geometry_20261004/profiles.csv), and
+   [validation](evidence/initial_geometry_20261004/validation.json).
+3. [Formation results](evidence/formation_gate_20261004/RESULTS.md),
+   [interpretation](evidence/formation_gate_20261004/INTERPRETATION.md),
+   [summary](evidence/formation_gate_20261004/summary.json),
+   [profiles](evidence/formation_gate_20261004/profiles.csv),
+   [formation figure](evidence/formation_gate_20261004/formation_profiles.png), and
+   [validation](evidence/formation_gate_20261004/validation.json).
+4. [Frozen protocols](new/initial_geometry/PROTOCOL.md) and
+   [formation protocol](new/formation_gate/PROTOCOL.md),
+   [geometry audit](new/initial_geometry/audit.py),
+   [geometry summary](new/initial_geometry/summarize.py),
+   [formation analysis](new/formation_gate/analyze.py),
+   [geometry reproduction](evidence/initial_geometry_20261004/REPRODUCTION.md),
+   [formation reproduction](evidence/formation_gate_20261004/REPRODUCTION.md),
+   and [publication manifest](LEARNING_GEOMETRY_PUBLICATION_MANIFEST.json).
+
+Verify the published snapshot from the repository root with
+`python -X utf8 -B tools/export_learning_geometry.py --verify-only`. This
+check needs no NPZ files or checkpoints. Full replay depends on the original
+archives, which are excluded from GitHub and are not recreated by this command.
+
+Preceding diagnostic: **joint195/200 zero-training causal audit completed**,492
 conditions in14.76 minutes, with all four full historical endpoint traces
 replayed exactly. On the primary size32 bank, the state produced at64 by200
 reaches strict T256 coverage100% even under the195 continuation rule; the
@@ -12,17 +64,10 @@ already performs well on the independent size32 bank. This locates conditional
 state-production/coadaptation sensitivity, without establishing a general
 computational phase transition or a unique local commitment mechanism.
 
-Start here for the update:
-
-1. [Results](evidence/joint195_200_20261003/RESULTS.md) and
-   [interpretation](evidence/joint195_200_20261003/INTERPRETATION.md).
-2. [All492 profiles](evidence/joint195_200_20261003/profiles.csv),
-   [case index](evidence/joint195_200_20261003/case_index.json), and
-   [all-order factorial effects](evidence/joint195_200_20261003/factorial.json).
-3. [Frozen protocol](new/audit_195_200/PROTOCOL.md),
-   [architecture/source map](ARCHITECTURE.md), and
-   [reproduction notes](evidence/joint195_200_20261003/REPRODUCTION.md).
-4. [Incremental handoff](GPT_HANDOFF.md) for a GitHub-connected reviewer.
+Preceding results: [joint195/200 report](evidence/joint195_200_20261003/RESULTS.md),
+[interpretation](evidence/joint195_200_20261003/INTERPRETATION.md), the
+[all492 profiles](evidence/joint195_200_20261003/profiles.csv), and its
+[frozen protocol](new/audit_195_200/PROTOCOL.md).
 
 Preceding diagnostic: **historical seed4 dense update100--200 replay completed**.
 One unchanged K8 training trajectory exactly reproduces the historical

@@ -1,6 +1,22 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest diagnostic: joint195/200 zero-training causal audit
+## Latest diagnostics: initialization geometry and continuation formation
+
+Two completed CPU diagnostics with zero new training. Initialization uses four
+exact historical update0 checkpoints and four reused map banks per seed;
+formation uses44 saved traces from one selected historical training trajectory.
+Seed4 has favorable raw lane balance and relative source-flip separation, but
+no consistent task-tangent advantage. Early retention/progress passes at
+updates140/145/190/200; the long behavior screen passes only200 in the dense
+window. Predicting update u+5 produces0 TP,3 FP,16 TN,1 FN. No latent quotient
+or training-time precursor is identified. Earlier architecture verdicts stand.
+
+[Combined result](evidence/seed4_learning_geometry_20261004/RESULTS.md),
+[initialization evidence](evidence/initial_geometry_20261004/RESULTS.md),
+[formation evidence](evidence/formation_gate_20261004/RESULTS.md),
+[interpretation](evidence/formation_gate_20261004/INTERPRETATION.md).
+
+## Preceding diagnostic: joint195/200 zero-training causal audit
 
 COMPLETE492 conditions,885.469 seconds; four full endpoint traces match
 historical Boolean correctness and margins exactly. All arms remain finite.
