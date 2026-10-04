@@ -1,53 +1,60 @@
-# Incremental data delivery: credit-locality formation audit
+# Incremental data delivery: output-preserving state factorization
 
-- Review base: `152b1902c3b597266f403bf780ca58754d29670b`.
-- Evidence head: `605545952fec89737861bd900c3651febd43ded5`.
-- This later handoff commit changes navigation only. Prior architecture claims
-  remain unchanged; this release supplies code and saved data for independent
-  analysis.
+- Review base: `9244d97c7f47900f1b8d5ed209f47e14528206ab`.
+- Evidence head: `48e70514e1cded9b465cb6bcafa8573c3945134e`.
+- This later commit updates navigation only. Prior experiments and claim
+  boundaries remain unchanged; no model training or additional inference ran
+  to prepare this publication.
 
 ## Read first
 
-1. [Results](evidence/credit_formation_20261004/RESULTS.md),
-   [summary](evidence/credit_formation_20261004/summary.json),
-   [configuration](evidence/credit_formation_20261004/config.json), and
-   [saved-data checks](evidence/credit_formation_20261004/validation.json).
-2. [Metrics](evidence/credit_formation_20261004/metrics.csv) and
-   [figure](evidence/credit_formation_20261004/credit_formation.png).
-   Per-update `uXXX/gradients/metadata.json`, `continuation.json` and
-   `phenotype.json` preserve batch-wise results, cohorts, denominators and gates.
-3. [Frozen protocol](new/credit_formation/PROTOCOL.md),
+1. [Results](evidence/state_factorization_20261004/RESULTS.md),
+   [compact summary](evidence/state_factorization_20261004/summary.json),
+   [validation](evidence/state_factorization_20261004/validation.json), and
+   [configuration](evidence/state_factorization_20261004/config.json).
+2. [Metrics](evidence/state_factorization_20261004/metrics.csv) and
+   [figure](evidence/state_factorization_20261004/state_factorization.png).
+3. [Frozen protocol](new/state_factorization/PROTOCOL.md),
    [source map](GPT_CONTEXT.md), and
-   [reproduction notes](evidence/credit_formation_20261004/REPRODUCTION.md).
+   [reproduction](evidence/state_factorization_20261004/REPRODUCTION.md).
 
-## Recorded outcomes and scope
+Large raw_summary.json and per-arm JSON are secondary; they preserve the
+original records, per-map counts, cohort denominators and all gate checks.
+Do not start with those files or reread prior unchanged experiments.
 
-COMPLETE: 7/7 checkpoints (140,145,175,180,190,195,200), 138.5 seconds.
-No model training or optimizer updates. Frozen verdict:
-**CREDIT_SYNCHRONY_NOT_SUPPORTED**. The size32 behavior episode qualifies:
-preservation/progress drop from0.9471/0.5007 at175 to0.4958/0.0432 at180,
-then recover. At the collapse, overall cosine instead rises
-from-0.0352 to0.2243 and C_parallel from-0.0019 to0.0122.
-Overall/F/Q each fail the predeclared synchrony checks.
+## Recorded outcomes
 
-Native Full passes are **0/7** on these reused held-out banks; update200 misses
-the strict T64 pooled-reach threshold (0.76648 versus0.80). Full qualification
-is secondary and separate from the formation screen. Keep this failure and the
-earlier checkpoint results on their original banks distinct.
+COMPLETE16/16 cells in74.172 seconds. Fixed F1 consumer, native S1/F1 T64
+producers, eight W/Z/span/null combinations, fresh32-map banks at sizes32/64.
+Original/flipped cues define paired correctness. Cohorts are fixed before
+intervention; instantaneous output and future preservation/progress are distinct.
 
-All scientific JSON/CSV, the PNG/PDF figure and **65 NPZ files** are retained:
-35 gradient archives,14 trace banks,14 endpoint-logit banks and2 input banks.
-Validation recomputes the28 gradient pairs, mean vectors, continuation counts
-and frozen screen without model inference. Machine records and checkpoints
-remain local. Prior state-transfer evidence and architecture claims are unchanged.
-This is one selected trajectory on reused banks; it does not establish causal
-direction, population reliability, or a general credit-locality impossibility.
+Native Full is S1=True and F1=False. The primary episode is
+**LOCALIZATION_EPISODE_UNQUALIFIED**, confirmation **UNQUALIFIED**. All16
+rescue proxies remain unqualified: size32 shared-unsolved support is6maps
+(231cells); size64 shared-solved support is9maps (393cells), below the frozen
+minimum16 nonempty maps for BOTH keep/prog. This is a support failure, not a
+claim that all continuous behavior failed. No gate or bank was changed.
 
-Reviewer questions: does the175->180 counterpattern support the proposed
-necessary relation; how should later recovery and module-wise metrics be
-interpreted alongside failed synchrony and native Full qualification?
+On fixed shared-solved cells, SF continuous preservation is1.000 at both
+sizes. On fixed shared-unsolved cells, SF sustained/delayed progress is.5152
+at32 and.6730 at64; FF is0. Immediate SF output is exactly unchanged.
+Null projection checks also pass. These remain finite, selected-checkpoint
+measurements; they do not establish encoded task information, a W/Z
+consistency relation, or population reliability.
 
-[Publication manifest](CREDIT_FORMATION_PUBLICATION_MANIFEST.json)
-binds the source and public data. Verify from repository root:
+All scientific data are retained: **66 NPZ files**,560 metric rows, full
+arm/native JSON, original raw summaries and PNG/PDF figures. Verification
+recomputes cohort masks, all16 count tables/gates, actual output neutrality,
+FF/native suffix equality and source/bank/state hashes without model execution.
+Model checkpoints, machine manifests, launch receipts and logs remain local.
 
-    python -X utf8 -B tools/export_credit_formation.py --verify-only
+Reviewer questions: how do the output-neutral W/null interventions affect
+future behavior on fixed cohorts; what remains inferable when map support is
+unqualified; which further intervention would distinguish state scale/control
+effects from task-specific information? No new architecture claim is proposed.
+
+[Publication manifest](STATE_FACTORIZATION_PUBLICATION_MANIFEST.json).
+From repository root (NumPy only):
+
+    python -X utf8 -B tools/export_state_factorization.py --verify-only
