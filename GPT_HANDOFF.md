@@ -1,52 +1,75 @@
-# Incremental review: C8 read / R2 factorial
+# Incremental review: semantic-write source causal audit
 
-- Review base: `c05895d68ce5f3974ff9c16305308c2ea1b49554`.
-- Evidence head: `c0677d89507000f895e16620b2b1948e234f4308`.
-- This later commit changes only this handoff. Earlier frozen evidence and
-  claims are unchanged. Export performed no new training or model inference.
+- Review base: `606265480e56cc1b88f81f451148c8274601180c`.
+- Evidence head: `27eac03eec20cd7efc17a4a7c01adc0fede69d3d`.
+- This later commit changes only this handoff. Earlier frozen protocols/evidence
+  remain unchanged. Publication performs no new inference, training or updates.
 
 ## Read first
 
-1. [Results](evidence/latent_factorial_20261005/RESULTS.md),
-   [summary](evidence/latent_factorial_20261005/summary.json),
-   [validation](evidence/latent_factorial_20261005/validation.json).
-2. [Configuration](evidence/latent_factorial_20261005/config.json),
-   [128 arm records](evidence/latent_factorial_20261005/perarm.json),
-   [768 metric rows](evidence/latent_factorial_20261005/metrics.csv).
-3. [Frozen protocol](new/latent_factorial/PROTOCOL.md),
+1. [Results](evidence/semantic_write_20261006/RESULTS.md),
+   [summary including all block deltas](evidence/semantic_write_20261006/summary.json),
+   [validation](evidence/semantic_write_20261006/validation.json).
+2. [396 measurement records](evidence/semantic_write_20261006/perunit.json),
+   [configuration](evidence/semantic_write_20261006/config.json),
+   [natural replay](evidence/semantic_write_20261006/replay.json).
+3. [Protocol](new/semantic_write_audit/PROTOCOL.md),
    [code map](GPT_CONTEXT.md),
-   [reproduction](evidence/latent_factorial_20261005/REPRODUCTION.md).
+   [reproduction](evidence/semantic_write_20261006/REPRODUCTION.md).
 
 ## New evidence and boundaries
 
-COMPLETE128/128,32 paired training blocks,4361.047seconds (72m41s) for the
-formal worker, excluding preflight and publication. Native C8, factorized C8,
-native C8+R2 and factorized C8+R2 each have0/32 Full successes. D-A has0 wins,
-0 losses, delta0 and exact two-sided p=1:
-`NO_D_MINUS_A_RELIABILITY_QUALIFICATION`. Secondary Full comparisons likewise
-have no discordances. All-zero outcomes do not prove model equivalence or
-universal failure of sidecars, factorization or latents.
+COMPLETE396/396,33 frozen checkpoints x2 sizes x6 conditions; no training or
+optimizer updates. First8 factorial blocks, all four arms, plus selected C24
+Streaming seed4, on reused32-map evaluation cohorts. The independent primary
+unit is the paired training block(n8), not pixels, maps or rollout steps.
 
-All arms share native effective core tensors and batch schedules within a
-block; C/D also share extension tensors. R2 adds memory, computation and
-parameters together, so the experiment cannot isolate memory necessity.
-Evaluation cohorts are fixed and reused; training blocks are fresh.
+Primary native size32/T256 strict16<d<32 deltas:
 
-All128 used CUDA Graph K8 training. The preflight checked five updates per arm
-against eager K8, with bitwise-equal gradients, parameters and Adam states;
-it is not300-update equivalence. Its passing eight-win statistics entry is
-a synthetic threshold fixture, not the formal endpoint.
+| Block | Source minus natural | Source minus orthogonal |
+|---:|---:|---:|
+|0|0|0|
+|1|0|0|
+|2|0.002893758|0.001653576|
+|3|0|0|
+|4|0|0|
+|5|0.001653576|0.001653576|
+|6|0|0|
+|7|0|0|
+|Mean|0.000568417|0.000413394|
 
-The package retains all numeric measurements losslessly,493.83MiB:128 complete
-curves,256 paired Boolean trace banks,per-map summaries,frontier tables,
-systems data,exact schedules and task banks. Raw data are secondary; start
-with the small summaries above. Four CPU tests and saved-data validation pass.
-Clone-safe verification passed with local run/qualification paths unavailable.
-Checkpoint files and machine records stay local; checkpoint/tensor hashes
-were checked locally during export and their public bindings are verified.
+Only2/8 source-natural differences are positive. Frozen exploratory thresholds
+require both means>=0.05 and positives>=6/8. Verdict:
+`NO_PRIMARY_SOURCE_DRIVER_SIGNAL`. Native source T256 coverage improves0.5820
+to1.0000 but distant coverage changes only0.3217 to0.3223. This rejects the tested
+source-driver intervention; it is not a general semantic-write impossibility.
 
-    python -X utf8 -B tools/export_latent_factorial.py --verify-only
+Oracle solved-cell protection uses distant labels; its gains cannot qualify
+communication or rescue the primary. Protected-source preservation is a
+manipulation check. Removing all Q-nullspace components changes future state,
+so it is an ablation. Selected seed4 qualifies on the common cohort, but has a
+different width and is not a fresh matched replication.
 
-Review questions: which Full components fail; do continuous metrics change
-without meeting Full; what is identifiable when the concurrent native C8
-baseline also has zero Full successes? Preserve the frozen primary verdict.
+All64 factorial natural traces replay exactly. Two seed4 records correctly say
+NEW_COMMON_COHORT_REFERENCE. All396 packed Boolean traces and sampled FP32 margin
+arrays,66 natural signed-write/source arrays, intervention arrays and152064
+per-map endpoint rows are retained. NPZ is byte-exact compressed data; per-map
+CSV uses lossless gzip. Package317.89MiB; raw arrays are secondary.
+
+The completed worker imported75 validated units and computed321 new units.
+All225 imported file hashes match; the science-function AST, model/data/source
+bindings match.1318.938seconds covers this continuation worker only, excluding
+earlier work/preflight/publication. A local transient Windows JSON replacement
+failure interrupted the prior worker; machine records remain local.
+
+Saved-data validation recomputes all endpoint/per-map coverage, retention,
+regression and aggregate values, checks bank/file hashes and natural prefixes.
+It does not rerun logits or signed-write diagnostics. CPU projection/wiring and
+Windows-lock checks, plus natural CUDA replay, were recorded before dispatch.
+Checkpoint files stay local;33 file hashes were checked during export.
+
+    python -X utf8 -B tools/export_semantic_write.py --verify-only
+
+Review questions: what does source preservation fail to change downstream;
+which secondary observations remain interpretable without distant-label
+injection; which narrower hypothesis survives this negative causal screen?
