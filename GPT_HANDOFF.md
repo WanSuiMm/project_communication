@@ -1,74 +1,53 @@
-# Incremental review: binary carrier causal compression
+# Incremental review: native execution-state width ladder
 
-- Review base: `e9a3b23c641c3d946baf8ba440c2823e0a0f6bfc`.
-- Evidence head: `2f1582f14524ea184e3b2b1cba03824a42a5862b`.
-- This later commit adds only this handoff. Earlier frozen experiments and
-  their claim boundaries are unchanged. Publication used saved data only.
+- Review base: `ffe8b22b1130992e8d1685ce31926040653b3cc6`.
+- Evidence head: `e2ffb36a3963f6f0fabf5c7ad2eb1fcc513b2b28`.
+- This later commit changes only this handoff. Earlier frozen evidence and
+  claims are unchanged; no new training or model inference was run for export.
 
 ## Read first
 
-1. [Results](evidence/binary_carrier_20261005/RESULTS.md),
-   [compact summary](evidence/binary_carrier_20261005/summary.json),
-   [validation](evidence/binary_carrier_20261005/validation.json), and
-   [configuration](evidence/binary_carrier_20261005/config.json).
-2. [Decoder fit](evidence/binary_carrier_20261005/decoder/fit.json),
-   [decoder probes](evidence/binary_carrier_20261005/decoder/probes.json),
-   and [metrics](evidence/binary_carrier_20261005/metrics.csv).
-3. [Frozen protocol](new/binary_carrier/PROTOCOL.md),
-   [source map](GPT_CONTEXT.md), and
-   [reproduction notes](evidence/binary_carrier_20261005/REPRODUCTION.md).
+1. [Results](evidence/latent_width_20261005/RESULTS.md),
+   [summary](evidence/latent_width_20261005/summary.json), and
+   [validation](evidence/latent_width_20261005/validation.json).
+2. [Configuration](evidence/latent_width_20261005/config.json),
+   [per-arm records](evidence/latent_width_20261005/perarm.json), and
+   [576 metric rows](evidence/latent_width_20261005/metrics.csv).
+3. [Frozen protocol](new/latent_width/PROTOCOL.md),
+   [runtime amendment](new/latent_runtime/ACCELERATION.md),
+   [exact replay record](evidence/latent_width_20261005/runtime_qualification.json),
+   [code map](GPT_CONTEXT.md), and
+   [reproduction](evidence/latent_width_20261005/REPRODUCTION.md).
 
-No unchanged earlier evidence needs rereading. `raw_summary.json.gz` and the
-full activation/trajectory arrays are secondary.
+Unchanged older files need no rereading. Per-map evaluation JSON, NPZ traces,
+frontier tables and training curves under `block00/`–`block15/` are secondary.
 
-## New data and qualification
+## New evidence and boundaries
 
-COMPLETE, 24/24 cells in 473.469 seconds. Same selected S1/F1 update300
-checkpoints and F1 consumer; T64→256, fresh128 test map pairs at each size.
-One W-only linear decoder was fitted on independent calibration maps; class
-centroids are fixed. There were zero recurrent-model updates.
+COMPLETE, 96/96 planned trajectories across 16 independent initialization and
+schedule blocks. All six arms have 0/16 Full successes: W24, W8, equal-parameter
+W24 capacity control, W16, W4 and exploratory W2 alternating-axis. The frozen
+W8-versus-W24 primary verdict remains `NO_W8_RELIABILITY_QUALIFICATION`:
+0 wins, 0 losses, net0/16, exact two-sided p=1. The concurrent W24 also fails
+Full; these results do not establish intrinsic minimal dimension or reject all
+continuous latents. W2 changes transport as well as width.
 
-SF and SS anchors pass, with adequate fixed keep/prog support at both sizes.
-All three primary compression gates fail at both sizes; retain this verdict.
+13 eager trajectories were imported; 83 used CUDA Graph training. Exact
+300-update block00 replay qualified all six arms' final parameters and Adam
+state/groups. That is a finite runtime check, not an efficacy qualification.
+The 2771.016-second elapsed field covers the accelerated worker only, excluding
+original training, replay qualification and handover preparation.
 
-| Arm | Keep32 | Prog32 | Keep64 | Prog64 |
-|---|---:|---:|---:|---:|
-| SF | 1.0000 | .6793 | .9890 | .6404 |
-| One-shot predicted bit field | .2159 | .4327 | .1527 | .4614 |
-| Every8-step predicted projection | .0064 | .0368 | .0372 | .1280 |
-| Source-only tokens | .0000 | .0000 | .0000 | .0000 |
-| Oracle-only class centroids | .1193 | .9967 | .0896 | .6390 |
+Full numeric measurement data are retained losslessly, about427MiB. All96
+training curves, 192 paired trace banks, frontier tables, per-map summaries,
+systems measurements and batch schedules are present. Checkpoints and machine
+records remain local; checkpoint/parameter hashes remain in the public records.
+CPU-regenerated task banks match runtime tensor hashes exactly. Six CPU tests
+and the saved-data verifier pass; validation.json states what was recomputed.
 
-Oracle progress does not overcome its preservation failure. These results
-reject the tested decoder/centroid/fixed-consumer construction; they do not
-prove universal binary-code insufficiency or identify a unique missing variable.
-Neither the prior W effect nor this result proves a quotient or BPTT guarantee.
+    python -X utf8 -B tools/export_latent_width.py --verify-only
 
-## Complete data, compression and verification
-
-Full numeric data are retained:117 NPZ files,840 metric rows and all per-map
-JSON. The package is about643MiB. The duplicate full summary uses lossless
-gzip; two oversized state captures use eight lossless32-map paired-cue chunks.
-All numeric precision is unchanged. Small entry reports/JSON/CSV are directly
-readable. [State index](evidence/binary_carrier_20261005/state_chunks.json)
-specifies exact reconstruction and tensor hashes.
-
-Runtime projection files contain T72..256; the initial T64 bit fields and norms
-were reconstructed from saved states/templates under `derived/`, explicitly
-separate from runtime measurements. No new inference or fitting was performed.
-The public launcher replaces its local Python path with PATH discovery;
-scientific sources match execution exactly, with both launcher hashes recorded.
-Checkpoints, host/PID records, launch receipts and logs remain local.
-
-From the repository root:
-
-    python -X utf8 -B tools/export_binary_carrier.py --verify-only
-
-Saved-data checks pass: cohorts/counts/gates, centroid/probe/XOR arithmetic,
-FF-native suffixes, W-only immediate outputs, projection clocks/bits, metric
-rows, paired-map bootstrap records and lossless state hashes.
-
-Review questions: what does the low prog-cohort decoder accuracy distinguish
-from overall probe accuracy; which hypotheses survive oracle progress coupled
-with preservation failure; what further claim is warranted by these finite
-interventions? Keep proposed mechanisms separate from the frozen measurements.
+Review questions: which Full components fail across the widths and concurrent
+baseline; does any continuous diagnostic change without meeting Full; which
+conclusions are identifiable from this frozen recipe? Keep those interpretations
+separate from the primary verdict and transport-confounded W2 condition.
