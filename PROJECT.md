@@ -1,5 +1,47 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Completed zero-training audit (2026-10-06): semantic-write source protection,
+protocol [new/semantic_write_audit/PROTOCOL.md](new/semantic_write_audit/PROTOCOL.md).
+Execution is COMPLETE396/396 on the historical local CUDA backend.
+The first detached dispatch exited before its
+first measurement. The second dispatch saved75/396 units, then a transient
+Windows file lock interrupted atomic status-file replacement. Both interrupted
+records remain unchanged. The local writer now retries transient reader locks;
+its Windows lock test passed. The same scientific protocol resumes in a new
+directory after validating and importing all75 completed units byte-identically.
+See [execution repair](new/semantic_write_audit/EXECUTION_FIX.md).
+Take factorial blocks00..07, all four final-u300 arms, plus the selected original
+Streaming seed4 reference. Two existing32-map cohorts (sizes32/64), six conditions,
+396 model/size/condition units; no parameter updates, runtime cap or monitor.
+The primary endpoint is unprotected strict16<d<32 paired coverage atT256 in the
+eight native blocks, comparing source-only negative semantic-write protection
+against natural rollout and a same-norm orthogonal source perturbation. Oracle
+solved-cell protection and full nullspace ablation are auxiliary; protected-cell
+retention is a manipulation check, never evidence for the causal hypothesis.
+Eighteen CPU projection/wiring checks, short CUDA intervention smoke and complete
+natural256-step replay at both actual32-map shapes passed before dispatch.
+Both preflight natural replays have zero mismatched Boolean bits. All64 formal
+factorial natural replays also pass; the selected seed4 reference qualifies on
+the common cohort. Primary source-natural mean delta=0.0005684167,
+source-orthogonal=0.0004133940, positive blocks2/8:
+`NO_PRIMARY_SOURCE_DRIVER_SIGNAL`. Source preservation does not rescue distant
+computation in this intervention. Oracle gains cannot rescue this verdict.
+Continuation worker elapsed1318.938seconds excludes earlier imported-unit work.
+Results remain in `runs/semantic_write_20261006_03/`; public
+[results](evidence/semantic_write_20261006/RESULTS.md),
+[summary](evidence/semantic_write_20261006/summary.json) and
+[validation](evidence/semantic_write_20261006/validation.json) retain this negative
+conclusion without changing previous frozen verdicts.
+
+Repository-root entry commands:
+
+    python -X utf8 -B new/semantic_write_audit/run.py --check --out analyses/NEW_SEMANTIC_CHECK.json
+    python -X utf8 -u -B new/semantic_write_audit/run.py --out runs/NEW_SEMANTIC_RUN --qualification analyses/NEW_SEMANTIC_CHECK.json
+
+Validated continuation of an interrupted run:
+
+    python -X utf8 -u -B new/semantic_write_audit/run.py --out runs/NEW_SEMANTIC_RUN --qualification analyses/NEW_SEMANTIC_CHECK.json --resume-from runs/INTERRUPTED_SEMANTIC_RUN
+
 Completed experiment (2026-10-05): C8 read parameterization / R2 factorial,
 protocol [new/latent_factorial/PROTOCOL.md](new/latent_factorial/PROTOCOL.md).
 Four arms (native, factorized, native_r2, factorized_r2) share copied native

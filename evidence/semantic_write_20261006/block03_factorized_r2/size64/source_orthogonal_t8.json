@@ -1,0 +1,85 @@
+{
+  "protocol": "semantic_write_source_causal_v1",
+  "model": "block03_factorized_r2",
+  "size": 64,
+  "condition": "source_orthogonal_t8",
+  "endpoints": {
+    "strict_far": {
+      "pixels": 9094,
+      "coverage": {
+        "64": 0.01286562568726633,
+        "128": 0.14372113481416318,
+        "256": 0.11656036947437871
+      },
+      "retention_own64_to256": 0.3504273504273504,
+      "retention_natural64_to256": 0.3504273504273504,
+      "gained_vs_natural64": 1019,
+      "lost_vs_natural64": 76,
+      "ever_regressed_fraction": 0.7959537572254335
+    },
+    "off_source": {
+      "pixels": 41922,
+      "coverage": {
+        "64": 0.13360526692428795,
+        "128": 0.1866800248079767,
+        "256": 0.10168885072277085
+      },
+      "retention_own64_to256": 0.4238528834136761,
+      "retention_natural64_to256": 0.4238528834136761,
+      "gained_vs_natural64": 1889,
+      "lost_vs_natural64": 3227,
+      "ever_regressed_fraction": 0.7256598240469209
+    },
+    "source": {
+      "pixels": 32,
+      "coverage": {
+        "64": 0.96875,
+        "128": 0.9375,
+        "256": 0.40625
+      },
+      "retention_own64_to256": 0.3870967741935484,
+      "retention_natural64_to256": 0.3870967741935484,
+      "gained_vs_natural64": 1,
+      "lost_vs_natural64": 19,
+      "ever_regressed_fraction": 0.875
+    },
+    "all_changed": {
+      "pixels": 41954,
+      "coverage": {
+        "64": 0.13424226533822758,
+        "128": 0.18725270534394814,
+        "256": 0.10192115173761739
+      },
+      "retention_own64_to256": 0.4236505681818182,
+      "retention_natural64_to256": 0.4236505681818182,
+      "gained_vs_natural64": 1890,
+      "lost_vs_natural64": 3246,
+      "ever_regressed_fraction": 0.726009362200117
+    }
+  },
+  "logit_accounting_max_absolute_error": 0.0,
+  "arrays_sha256": "8541c88a9e5a3c6791f0feda3d03190b0014940cbe68928e0c9e9c74d2068099",
+  "diagnostic_groups": [
+    "source",
+    "paired_solved",
+    "frontier_wrong",
+    "nonfrontier_wrong"
+  ],
+  "sampled_margin_layout": "time x changed pixels in flattened map,row,column order",
+  "source_array_layout": "time x world(original,flip) x map",
+  "diagnostic_columns": [
+    "count",
+    "sum_margin",
+    "sum_proposed_delta",
+    "negative_count",
+    "proposed_crossing_count",
+    "negative_write_mass",
+    "positive_write_mass",
+    "sum_parallel_energy",
+    "sum_nullspace_energy"
+  ],
+  "intervention_columns": [
+    "active_branch_cells",
+    "removed_Q_squared_norm"
+  ]
+}

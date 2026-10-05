@@ -1,0 +1,85 @@
+{
+  "protocol": "semantic_write_source_causal_v1",
+  "model": "block03_native",
+  "size": 64,
+  "condition": "oracle_solved_t8",
+  "endpoints": {
+    "strict_far": {
+      "pixels": 9094,
+      "coverage": {
+        "64": 0.16274466681328348,
+        "128": 0.3623268088849791,
+        "256": 0.5675170442049703
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 1.0,
+      "gained_vs_natural64": 5134,
+      "lost_vs_natural64": 0,
+      "ever_regressed_fraction": 0.0
+    },
+    "off_source": {
+      "pixels": 41922,
+      "coverage": {
+        "64": 0.21420733743619103,
+        "128": 0.27937598397023045,
+        "256": 0.3413959257669004
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 0.9995610184372257,
+      "gained_vs_natural64": 12035,
+      "lost_vs_natural64": 1,
+      "ever_regressed_fraction": 0.11904430203399276
+    },
+    "source": {
+      "pixels": 32,
+      "coverage": {
+        "64": 1.0,
+        "128": 1.0,
+        "256": 1.0
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 1.0,
+      "gained_vs_natural64": 17,
+      "lost_vs_natural64": 0,
+      "ever_regressed_fraction": 0.75
+    },
+    "all_changed": {
+      "pixels": 41954,
+      "coverage": {
+        "64": 0.21480669304476332,
+        "128": 0.2799256328359632,
+        "256": 0.3418982695332984
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 0.9995638901003053,
+      "gained_vs_natural64": 12052,
+      "lost_vs_natural64": 1,
+      "ever_regressed_fraction": 0.12044759521823742
+    }
+  },
+  "logit_accounting_max_absolute_error": 0.0,
+  "arrays_sha256": "3b8f7b81e3178c4a6f343666c469cdff6205b6fd7c8ad331b9f8066849af4832",
+  "diagnostic_groups": [
+    "source",
+    "paired_solved",
+    "frontier_wrong",
+    "nonfrontier_wrong"
+  ],
+  "sampled_margin_layout": "time x changed pixels in flattened map,row,column order",
+  "source_array_layout": "time x world(original,flip) x map",
+  "diagnostic_columns": [
+    "count",
+    "sum_margin",
+    "sum_proposed_delta",
+    "negative_count",
+    "proposed_crossing_count",
+    "negative_write_mass",
+    "positive_write_mass",
+    "sum_parallel_energy",
+    "sum_nullspace_energy"
+  ],
+  "intervention_columns": [
+    "active_branch_cells",
+    "removed_Q_squared_norm"
+  ]
+}

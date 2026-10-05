@@ -1,0 +1,85 @@
+{
+  "protocol": "semantic_write_source_causal_v1",
+  "model": "block05_factorized",
+  "size": 64,
+  "condition": "oracle_solved_t8",
+  "endpoints": {
+    "strict_far": {
+      "pixels": 9094,
+      "coverage": {
+        "64": 0.24389707499450186,
+        "128": 0.32252034308335165,
+        "256": 0.37409280844512866
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 0.9993074792243767,
+      "gained_vs_natural64": 1959,
+      "lost_vs_natural64": 1,
+      "ever_regressed_fraction": 0.0
+    },
+    "off_source": {
+      "pixels": 41922,
+      "coverage": {
+        "64": 0.21602022804255522,
+        "128": 0.24116215829397453,
+        "256": 0.2570010972758933
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 0.999246193276044,
+      "gained_vs_natural64": 4146,
+      "lost_vs_natural64": 5,
+      "ever_regressed_fraction": 0.23993319725366488
+    },
+    "source": {
+      "pixels": 32,
+      "coverage": {
+        "64": 1.0,
+        "128": 1.0,
+        "256": 1.0
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 1.0,
+      "gained_vs_natural64": 9,
+      "lost_vs_natural64": 0,
+      "ever_regressed_fraction": 0.96875
+    },
+    "all_changed": {
+      "pixels": 41954,
+      "coverage": {
+        "64": 0.21661820088668543,
+        "128": 0.24174095437860513,
+        "256": 0.2575678123659246
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 0.9992487980769231,
+      "gained_vs_natural64": 4155,
+      "lost_vs_natural64": 5,
+      "ever_regressed_fraction": 0.24209065679925995
+    }
+  },
+  "logit_accounting_max_absolute_error": 0.0,
+  "arrays_sha256": "6e5dff098900f7acbde4e67c71fb1895974bac3e6de3dfda3c51ec7668512432",
+  "diagnostic_groups": [
+    "source",
+    "paired_solved",
+    "frontier_wrong",
+    "nonfrontier_wrong"
+  ],
+  "sampled_margin_layout": "time x changed pixels in flattened map,row,column order",
+  "source_array_layout": "time x world(original,flip) x map",
+  "diagnostic_columns": [
+    "count",
+    "sum_margin",
+    "sum_proposed_delta",
+    "negative_count",
+    "proposed_crossing_count",
+    "negative_write_mass",
+    "positive_write_mass",
+    "sum_parallel_energy",
+    "sum_nullspace_energy"
+  ],
+  "intervention_columns": [
+    "active_branch_cells",
+    "removed_Q_squared_norm"
+  ]
+}

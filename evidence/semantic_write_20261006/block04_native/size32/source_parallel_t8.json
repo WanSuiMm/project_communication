@@ -1,0 +1,85 @@
+{
+  "protocol": "semantic_write_source_causal_v1",
+  "model": "block04_native",
+  "size": 32,
+  "condition": "source_parallel_t8",
+  "endpoints": {
+    "strict_far": {
+      "pixels": 2419,
+      "coverage": {
+        "64": 0.09342703596527491,
+        "128": 0.08846630839189748,
+        "256": 0.05084745762711865
+      },
+      "retention_own64_to256": 0.19469026548672566,
+      "retention_natural64_to256": 0.19469026548672566,
+      "gained_vs_natural64": 79,
+      "lost_vs_natural64": 182,
+      "ever_regressed_fraction": 0.9647058823529412
+    },
+    "off_source": {
+      "pixels": 7742,
+      "coverage": {
+        "64": 0.36980108499095843,
+        "128": 0.3318264014466546,
+        "256": 0.28364763626969774
+      },
+      "retention_own64_to256": 0.6255675864477821,
+      "retention_natural64_to256": 0.6240227434257285,
+      "gained_vs_natural64": 440,
+      "lost_vs_natural64": 1058,
+      "ever_regressed_fraction": 0.7693673695893452
+    },
+    "source": {
+      "pixels": 32,
+      "coverage": {
+        "64": 1.0,
+        "128": 1.0,
+        "256": 1.0
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 1.0,
+      "gained_vs_natural64": 5,
+      "lost_vs_natural64": 0,
+      "ever_regressed_fraction": 0.28125
+    },
+    "all_changed": {
+      "pixels": 7774,
+      "coverage": {
+        "64": 0.372395163365063,
+        "128": 0.3345767944430152,
+        "256": 0.2865963467970157
+      },
+      "retention_own64_to256": 0.629706390328152,
+      "retention_natural64_to256": 0.6275959169306582,
+      "gained_vs_natural64": 445,
+      "lost_vs_natural64": 1058,
+      "ever_regressed_fraction": 0.7659246197928147
+    }
+  },
+  "logit_accounting_max_absolute_error": 0.0,
+  "arrays_sha256": "bf58f67fc1a9ca76813ea78d9315862f2d4087b00d18861e51c3c53a995f1410",
+  "diagnostic_groups": [
+    "source",
+    "paired_solved",
+    "frontier_wrong",
+    "nonfrontier_wrong"
+  ],
+  "sampled_margin_layout": "time x changed pixels in flattened map,row,column order",
+  "source_array_layout": "time x world(original,flip) x map",
+  "diagnostic_columns": [
+    "count",
+    "sum_margin",
+    "sum_proposed_delta",
+    "negative_count",
+    "proposed_crossing_count",
+    "negative_write_mass",
+    "positive_write_mass",
+    "sum_parallel_energy",
+    "sum_nullspace_energy"
+  ],
+  "intervention_columns": [
+    "active_branch_cells",
+    "removed_Q_squared_norm"
+  ]
+}

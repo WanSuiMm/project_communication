@@ -1,6 +1,39 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: C8 read / R2 factorial qualification
+## Latest result: semantic-write source causal audit
+
+`semantic_write_source_causal_v1`: **COMPLETE**,396/396 frozen-checkpoint
+measurements, no training or optimizer updates. Protecting correct input sources
+against negative semantic writes did not materially improve unprotected distant
+computation: native size32/T256 mean deltas are+0.0005684 against natural and
++0.0004134 against the norm-matched orthogonal control, positive in2/8 blocks.
+Frozen verdict: `NO_PRIMARY_SOURCE_DRIVER_SIGNAL`. This rejects the tested
+source-driver intervention, not all semantic-write or continuation mechanisms.
+
+1. [Results](evidence/semantic_write_20261006/RESULTS.md),
+   [summary including all eight block deltas](evidence/semantic_write_20261006/summary.json),
+   [saved-data validation](evidence/semantic_write_20261006/validation.json).
+2. [396 unit records](evidence/semantic_write_20261006/perunit.json),
+   [configuration and checkpoint hashes](evidence/semantic_write_20261006/config.json),
+   [natural replay records](evidence/semantic_write_20261006/replay.json).
+3. [Frozen protocol](new/semantic_write_audit/PROTOCOL.md),
+   [execution repair](new/semantic_write_audit/EXECUTION_FIX.md),
+   [reproduction and array layouts](evidence/semantic_write_20261006/REPRODUCTION.md).
+
+All396 packed traces, FP32 sampled margins, natural write diagnostics and
+per-map CSVs are retained losslessly. Per-map files sit beside each condition's
+NPZ/JSON under `evidence/semantic_write_20261006/blockXX_ARM/sizeSIZE/` (and
+`historical_seed4/`), with suffix `_per_map.csv.gz`; raw arrays are secondary.
+Oracle gating uses distant ground truth; its gains cannot qualify learned
+communication. Protected-source retention is a manipulation check. The selected
+C24 seed4 reference qualifies on this common cohort, without being width-matched.
+The1318.938-second timing covers the continuation worker only:75 validated units
+were imported,321 newly computed. Earlier interrupted work and preflight are
+excluded. Machine records and checkpoint files stay local.
+
+    python -X utf8 -B tools/export_semantic_write.py --verify-only
+
+## Previous result: C8 read / R2 factorial qualification
 
 `latent_read_sidecar_factorial_v1`: **COMPLETE**, 128/128 trajectories in
 4361.047 seconds (72m41s), 32 fresh paired training blocks. Native C8,

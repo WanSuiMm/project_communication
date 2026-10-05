@@ -1,0 +1,85 @@
+{
+  "protocol": "semantic_write_source_causal_v1",
+  "model": "block06_factorized_r2",
+  "size": 64,
+  "condition": "oracle_solved_t8",
+  "endpoints": {
+    "strict_far": {
+      "pixels": 9094,
+      "coverage": {
+        "64": 0.0005498130635583901,
+        "128": 0.0005498130635583901,
+        "256": 0.06234880140752144
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": null,
+      "gained_vs_natural64": 567,
+      "lost_vs_natural64": 0,
+      "ever_regressed_fraction": 0.0
+    },
+    "off_source": {
+      "pixels": 41922,
+      "coverage": {
+        "64": 0.030962263250799104,
+        "128": 0.03160631649253375,
+        "256": 0.10960832021373026
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 1.0,
+      "gained_vs_natural64": 4485,
+      "lost_vs_natural64": 0,
+      "ever_regressed_fraction": 0.1584898041590955
+    },
+    "source": {
+      "pixels": 32,
+      "coverage": {
+        "64": 0.875,
+        "128": 0.875,
+        "256": 0.875
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 1.0,
+      "gained_vs_natural64": 26,
+      "lost_vs_natural64": 0,
+      "ever_regressed_fraction": 0.125
+    },
+    "all_changed": {
+      "pixels": 41954,
+      "coverage": {
+        "64": 0.03160604471564094,
+        "128": 0.032249606712113264,
+        "256": 0.11019211517376173
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 1.0,
+      "gained_vs_natural64": 4511,
+      "lost_vs_natural64": 0,
+      "ever_regressed_fraction": 0.15827482447342026
+    }
+  },
+  "logit_accounting_max_absolute_error": 0.0,
+  "arrays_sha256": "58d54a166d7370aefa44ab2a98d2f47bfddc90271e5be6aca0ae773a13bab5e1",
+  "diagnostic_groups": [
+    "source",
+    "paired_solved",
+    "frontier_wrong",
+    "nonfrontier_wrong"
+  ],
+  "sampled_margin_layout": "time x changed pixels in flattened map,row,column order",
+  "source_array_layout": "time x world(original,flip) x map",
+  "diagnostic_columns": [
+    "count",
+    "sum_margin",
+    "sum_proposed_delta",
+    "negative_count",
+    "proposed_crossing_count",
+    "negative_write_mass",
+    "positive_write_mass",
+    "sum_parallel_energy",
+    "sum_nullspace_energy"
+  ],
+  "intervention_columns": [
+    "active_branch_cells",
+    "removed_Q_squared_norm"
+  ]
+}

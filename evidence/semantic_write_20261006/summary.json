@@ -1,0 +1,1387 @@
+{
+  "protocol": "semantic_write_source_causal_v1",
+  "status": "COMPLETE",
+  "completed_units": 396,
+  "training": false,
+  "optimizer_updates": 0,
+  "primary": {
+    "native_blocks": 8,
+    "size": 32,
+    "metric": "strict16<d<32 paired coverage atT256",
+    "source_minus_natural_mean": 0.000568416701116169,
+    "source_minus_orthogonal_mean": 0.00041339396444811834,
+    "positive_blocks": 2,
+    "per_block": [
+      {
+        "block": 0,
+        "source_minus_natural": 0.0,
+        "source_minus_orthogonal": 0.0
+      },
+      {
+        "block": 1,
+        "source_minus_natural": 0.0,
+        "source_minus_orthogonal": 0.0
+      },
+      {
+        "block": 2,
+        "source_minus_natural": 0.0028937577511368717,
+        "source_minus_orthogonal": 0.0016535758577924664
+      },
+      {
+        "block": 3,
+        "source_minus_natural": 0.0,
+        "source_minus_orthogonal": 0.0
+      },
+      {
+        "block": 4,
+        "source_minus_natural": 0.0,
+        "source_minus_orthogonal": 0.0
+      },
+      {
+        "block": 5,
+        "source_minus_natural": 0.0016535758577924803,
+        "source_minus_orthogonal": 0.0016535758577924803
+      },
+      {
+        "block": 6,
+        "source_minus_natural": 0.0,
+        "source_minus_orthogonal": 0.0
+      },
+      {
+        "block": 7,
+        "source_minus_natural": 0.0,
+        "source_minus_orthogonal": 0.0
+      }
+    ],
+    "verdict": "NO_PRIMARY_SOURCE_DRIVER_SIGNAL"
+  },
+  "historical_reference_qualified_on_common_cohort": true,
+  "grouped": [
+    {
+      "arm": "native",
+      "size": 32,
+      "condition": "natural",
+      "models": 8,
+      "strict256": {
+        "mean": 0.32172385283174865,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.4346260656161198,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.58203125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7663706448025627,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 32,
+      "condition": "source_parallel_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.32229226953286483,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.4391145698785843,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7734226264295085,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 32,
+      "condition": "source_parallel_t64",
+      "models": 8,
+      "strict256": {
+        "mean": 0.32172385283174865,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.436159907000775,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.84375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7695248982778234,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 32,
+      "condition": "source_orthogonal_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.3218788755684167,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.43491668819426504,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.58203125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7665318760282898,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 32,
+      "condition": "oracle_solved_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.6539892517569244,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.786311676569362,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 1.0,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 32,
+      "condition": "nullspace_zero_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.17770773046713517,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.38333118057349524,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.6640625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7488315646957029,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 64,
+      "condition": "natural",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1782493952056301,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.12196161919755737,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.4765625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7590259650222646,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 64,
+      "condition": "source_parallel_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.17966516384429293,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.12377749153189256,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.9609375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7675882513400144,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 64,
+      "condition": "source_parallel_t64",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1782493952056301,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.12210474214016508,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.546875,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7600483861728677,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 64,
+      "condition": "source_orthogonal_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1784830657576424,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.12211070559610707,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.45703125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7586346004027598,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 64,
+      "condition": "oracle_solved_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.5211678029469979,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.47807833595725396,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.9609375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.9990600969607557,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native",
+      "size": 64,
+      "condition": "nullspace_zero_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.10339234660215527,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.09941081055293163,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.4609375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.676468367916104,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 32,
+      "condition": "natural",
+      "models": 8,
+      "strict256": {
+        "mean": 0.17589913187267464,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.27647894600878326,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.4453125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.49267614551139344,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 32,
+      "condition": "source_parallel_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.17595080611823066,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.27899767501937484,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.49901073327860057,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 32,
+      "condition": "source_parallel_t64",
+      "models": 8,
+      "strict256": {
+        "mean": 0.17595080611823066,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.27747997933350554,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.90234375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.4952756839229442,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 32,
+      "condition": "source_orthogonal_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.17589913187267464,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.2769310255747869,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.43359375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.4938705071917399,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 32,
+      "condition": "oracle_solved_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.7199255890863994,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.8247222939808835,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 1.0,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 32,
+      "condition": "nullspace_zero_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.13962381149235223,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.26354624128132265,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.48828125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.5035317785404501,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 64,
+      "condition": "natural",
+      "models": 8,
+      "strict256": {
+        "mean": 0.14772102485155048,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.11374994036544059,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.43359375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.49582653623908807,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 64,
+      "condition": "source_parallel_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1479546954035628,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.11427472448833548,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.9921875,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.4989317531417839,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 64,
+      "condition": "source_parallel_t64",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1477485155047284,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.11381255665283144,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.79296875,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.4966831471172547,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 64,
+      "condition": "source_orthogonal_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.14770727952496152,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.11370819617384666,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.36328125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.4955690710190831,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 64,
+      "condition": "oracle_solved_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.8058335166043545,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.7978060445589428,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.9921875,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.9997684115221428,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized",
+      "size": 64,
+      "condition": "nullspace_zero_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.13206509786672532,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.09291660703210725,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.33984375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.4148351319213013,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 32,
+      "condition": "natural",
+      "models": 8,
+      "strict256": {
+        "mean": 0.18943778420835056,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.2946428571428571,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.41015625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.6566396878190374,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 32,
+      "condition": "source_parallel_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1896961554361306,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.29658034099715835,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.90625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.6608953840793426,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 32,
+      "condition": "source_parallel_t64",
+      "models": 8,
+      "strict256": {
+        "mean": 0.18948945845390658,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.2953209764918626,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.73828125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.6583286965189266,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 32,
+      "condition": "source_orthogonal_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1895411326994626,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.2949980625161457,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.40625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.6569029878860815,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 32,
+      "condition": "oracle_solved_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.5300227366680447,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.6581794110049083,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.90625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 1.0,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 32,
+      "condition": "nullspace_zero_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1572447292269533,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.32167075691035907,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.5,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7324353045855125,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 64,
+      "condition": "natural",
+      "models": 8,
+      "strict256": {
+        "mean": 0.14477952496151308,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.11213086207719097,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.453125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7113963986434363,
+        "defined_models": 7
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 64,
+      "condition": "source_parallel_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.14546679129096107,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.11304028910834407,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.8515625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7175851621677785,
+        "defined_models": 7
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 64,
+      "condition": "source_parallel_t64",
+      "models": 8,
+      "strict256": {
+        "mean": 0.144807015614691,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.11236641858689948,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.58984375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7142604953982293,
+        "defined_models": 7
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 64,
+      "condition": "source_orthogonal_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1446008357158566,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.11210104479748104,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.453125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.7118882556769918,
+        "defined_models": 7
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 64,
+      "condition": "oracle_solved_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.3991230481636243,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.35042757979104056,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.8515625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.9983670073534,
+        "defined_models": 7
+      }
+    },
+    {
+      "arm": "native_r2",
+      "size": 64,
+      "condition": "nullspace_zero_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.11506212887618208,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.09173882448356471,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.4140625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.6848717027854248,
+        "defined_models": 7
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 32,
+      "condition": "natural",
+      "models": 8,
+      "strict256": {
+        "mean": 0.19775733774286894,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.25952596228364766,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.390625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.4708890033749977,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 32,
+      "condition": "source_parallel_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.19817073170731705,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.26336863859467835,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.4824381932531116,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 32,
+      "condition": "source_parallel_t64",
+      "models": 8,
+      "strict256": {
+        "mean": 0.19775733774286894,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.2605431413071558,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.7890625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.47271446213094853,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 32,
+      "condition": "source_orthogonal_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1982224059528731,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.2602202273314389,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.36328125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.4729089312618148,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 32,
+      "condition": "oracle_solved_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.6715068210004134,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.7815971325238956,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.9993947156397004,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 32,
+      "condition": "nullspace_zero_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.05746176105828855,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.13015047791268405,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.28125,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.28278291049144866,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 64,
+      "condition": "natural",
+      "models": 8,
+      "strict256": {
+        "mean": 0.16200241917747965,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.10986474881923573,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.40234375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.5149589856235282,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 64,
+      "condition": "source_parallel_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.16241477897514844,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.11027622727923286,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.984375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.5192838051438761,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 64,
+      "condition": "source_parallel_t64",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1620161645040686,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.10995718238633653,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.65625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.5170968796488149,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 64,
+      "condition": "source_orthogonal_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.1620574004838355,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.10991245646677163,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.3515625,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.5154283656236761,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 64,
+      "condition": "oracle_solved_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.5941417418077855,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.54962788034922,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.984375,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.9997879385299768,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "factorized_r2",
+      "size": 64,
+      "condition": "nullspace_zero_t8",
+      "models": 8,
+      "strict256": {
+        "mean": 0.06665108862986585,
+        "defined_models": 8
+      },
+      "offsource256": {
+        "mean": 0.05616979151758026,
+        "defined_models": 8
+      },
+      "source256": {
+        "mean": 0.296875,
+        "defined_models": 8
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.3186372166408675,
+        "defined_models": 8
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 32,
+      "condition": "natural",
+      "models": 1,
+      "strict256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.9564711960733661,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 1.0,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 32,
+      "condition": "source_parallel_t8",
+      "models": 1,
+      "strict256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.9564711960733661,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 1.0,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 32,
+      "condition": "source_parallel_t64",
+      "models": 1,
+      "strict256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.9564711960733661,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 1.0,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 32,
+      "condition": "source_orthogonal_t8",
+      "models": 1,
+      "strict256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.9564711960733661,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 1.0,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 32,
+      "condition": "oracle_solved_t8",
+      "models": 1,
+      "strict256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.9566003616636528,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 1.0,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 32,
+      "condition": "nullspace_zero_t8",
+      "models": 1,
+      "strict256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.9448462929475587,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 1.0,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 1.0,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 64,
+      "condition": "natural",
+      "models": 1,
+      "strict256": {
+        "mean": 0.9543655157246537,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.7579313964028433,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 0.9375,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.9978593272171253,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 64,
+      "condition": "source_parallel_t8",
+      "models": 1,
+      "strict256": {
+        "mean": 0.9543655157246537,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.7579313964028433,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 0.96875,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.9978593272171253,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 64,
+      "condition": "source_parallel_t64",
+      "models": 1,
+      "strict256": {
+        "mean": 0.9543655157246537,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.7579313964028433,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 0.9375,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.9978593272171253,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 64,
+      "condition": "source_orthogonal_t8",
+      "models": 1,
+      "strict256": {
+        "mean": 0.9543655157246537,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.7579313964028433,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 0.9375,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.9978593272171253,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 64,
+      "condition": "oracle_solved_t8",
+      "models": 1,
+      "strict256": {
+        "mean": 0.9982405981966131,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.8085492104384333,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 0.96875,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 1.0,
+        "defined_models": 1
+      }
+    },
+    {
+      "arm": "historical_seed4",
+      "size": 64,
+      "condition": "nullspace_zero_t8",
+      "models": 1,
+      "strict256": {
+        "mean": 0.9543655157246537,
+        "defined_models": 1
+      },
+      "offsource256": {
+        "mean": 0.6758265349935595,
+        "defined_models": 1
+      },
+      "source256": {
+        "mean": 0.9375,
+        "defined_models": 1
+      },
+      "offsource_retention_natural64": {
+        "mean": 0.9978593272171253,
+        "defined_models": 1
+      }
+    }
+  ],
+  "claim_boundary": "Exploratory source perturbation, not training reliability or upstream Q root-cause proof; protected/oracle retention is not evidence.",
+  "elapsed_seconds": 1318.9219999999987,
+  "timing_scope": "Current continuation worker only; imported units were computed in interrupted source run",
+  "imported_units": 75,
+  "newly_computed_units": 321,
+  "json_replacement_retry_count": 7
+}

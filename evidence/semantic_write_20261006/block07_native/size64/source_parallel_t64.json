@@ -1,0 +1,85 @@
+{
+  "protocol": "semantic_write_source_causal_v1",
+  "model": "block07_native",
+  "size": 64,
+  "condition": "source_parallel_t64",
+  "endpoints": {
+    "strict_far": {
+      "pixels": 9094,
+      "coverage": {
+        "64": 0.0890697162964592,
+        "128": 0.11590059379810864,
+        "256": 0.1391027050802727
+      },
+      "retention_own64_to256": 0.9679012345679012,
+      "retention_natural64_to256": 0.9679012345679012,
+      "gained_vs_natural64": 481,
+      "lost_vs_natural64": 26,
+      "ever_regressed_fraction": 0.20785219399538107
+    },
+    "off_source": {
+      "pixels": 41922,
+      "coverage": {
+        "64": 0.15774533657745338,
+        "128": 0.16852726492056677,
+        "256": 0.17534945851820047
+      },
+      "retention_own64_to256": 0.9727808861333737,
+      "retention_natural64_to256": 0.9727808861333737,
+      "gained_vs_natural64": 918,
+      "lost_vs_natural64": 180,
+      "ever_regressed_fraction": 0.4250032022543871
+    },
+    "source": {
+      "pixels": 32,
+      "coverage": {
+        "64": 1.0,
+        "128": 1.0,
+        "256": 1.0
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 1.0,
+      "gained_vs_natural64": 0,
+      "lost_vs_natural64": 0,
+      "ever_regressed_fraction": 0.90625
+    },
+    "all_changed": {
+      "pixels": 41954,
+      "coverage": {
+        "64": 0.15838775802068933,
+        "128": 0.16916146255422607,
+        "256": 0.17597845259093292
+      },
+      "retention_own64_to256": 0.9729119638826185,
+      "retention_natural64_to256": 0.9729119638826185,
+      "gained_vs_natural64": 918,
+      "lost_vs_natural64": 180,
+      "ever_regressed_fraction": 0.4269677254751882
+    }
+  },
+  "logit_accounting_max_absolute_error": 0.0,
+  "arrays_sha256": "db1e290d60abc858db90e424fc12f803184769ddd0e27b86b83e2b50196b442e",
+  "diagnostic_groups": [
+    "source",
+    "paired_solved",
+    "frontier_wrong",
+    "nonfrontier_wrong"
+  ],
+  "sampled_margin_layout": "time x changed pixels in flattened map,row,column order",
+  "source_array_layout": "time x world(original,flip) x map",
+  "diagnostic_columns": [
+    "count",
+    "sum_margin",
+    "sum_proposed_delta",
+    "negative_count",
+    "proposed_crossing_count",
+    "negative_write_mass",
+    "positive_write_mass",
+    "sum_parallel_energy",
+    "sum_nullspace_energy"
+  ],
+  "intervention_columns": [
+    "active_branch_cells",
+    "removed_Q_squared_norm"
+  ]
+}

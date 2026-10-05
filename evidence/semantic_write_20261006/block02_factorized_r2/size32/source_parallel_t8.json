@@ -1,0 +1,85 @@
+{
+  "protocol": "semantic_write_source_causal_v1",
+  "model": "block02_factorized_r2",
+  "size": 32,
+  "condition": "source_parallel_t8",
+  "endpoints": {
+    "strict_far": {
+      "pixels": 2419,
+      "coverage": {
+        "64": 0.6159570070276974,
+        "128": 0.8486978090119884,
+        "256": 0.7999173212071103
+      },
+      "retention_own64_to256": 0.8275167785234899,
+      "retention_natural64_to256": 0.8275167785234899,
+      "gained_vs_natural64": 702,
+      "lost_vs_natural64": 257,
+      "ever_regressed_fraction": 0.18863049095607234
+    },
+    "off_source": {
+      "pixels": 7742,
+      "coverage": {
+        "64": 0.7012399896667528,
+        "128": 0.7293980883492638,
+        "256": 0.6676569361921983
+      },
+      "retention_own64_to256": 0.7482040891508566,
+      "retention_natural64_to256": 0.748616746587975,
+      "gained_vs_natural64": 1110,
+      "lost_vs_natural64": 1363,
+      "ever_regressed_fraction": 0.38920201720557696
+    },
+    "source": {
+      "pixels": 32,
+      "coverage": {
+        "64": 1.0,
+        "128": 1.0,
+        "256": 1.0
+      },
+      "retention_own64_to256": 1.0,
+      "retention_natural64_to256": 1.0,
+      "gained_vs_natural64": 2,
+      "lost_vs_natural64": 0,
+      "ever_regressed_fraction": 0.90625
+    },
+    "all_changed": {
+      "pixels": 7774,
+      "coverage": {
+        "64": 0.702469771031644,
+        "128": 0.7305119629534346,
+        "256": 0.6690249549781322
+      },
+      "retention_own64_to256": 0.7496795458707196,
+      "retention_natural64_to256": 0.75,
+      "gained_vs_natural64": 1112,
+      "lost_vs_natural64": 1363,
+      "ever_regressed_fraction": 0.39164452317685267
+    }
+  },
+  "logit_accounting_max_absolute_error": 0.0,
+  "arrays_sha256": "7a0cf5ce9ce15019e3642c858a17dd32f4095ddb959e2b3a365235d5b8b819c2",
+  "diagnostic_groups": [
+    "source",
+    "paired_solved",
+    "frontier_wrong",
+    "nonfrontier_wrong"
+  ],
+  "sampled_margin_layout": "time x changed pixels in flattened map,row,column order",
+  "source_array_layout": "time x world(original,flip) x map",
+  "diagnostic_columns": [
+    "count",
+    "sum_margin",
+    "sum_proposed_delta",
+    "negative_count",
+    "proposed_crossing_count",
+    "negative_write_mass",
+    "positive_write_mass",
+    "sum_parallel_energy",
+    "sum_nullspace_energy"
+  ],
+  "intervention_columns": [
+    "active_branch_cells",
+    "removed_Q_squared_norm"
+  ]
+}

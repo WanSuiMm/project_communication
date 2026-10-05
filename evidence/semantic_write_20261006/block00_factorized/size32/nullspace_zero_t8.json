@@ -1,0 +1,85 @@
+{
+  "protocol": "semantic_write_source_causal_v1",
+  "model": "block00_factorized",
+  "size": 32,
+  "condition": "nullspace_zero_t8",
+  "endpoints": {
+    "strict_far": {
+      "pixels": 2419,
+      "coverage": {
+        "64": 0.06655642827614716,
+        "128": 0.011575031004547334,
+        "256": 0.0037205456800330715
+      },
+      "retention_own64_to256": 0.0,
+      "retention_natural64_to256": 0.0,
+      "gained_vs_natural64": 9,
+      "lost_vs_natural64": 381,
+      "ever_regressed_fraction": 0.991362763915547
+    },
+    "off_source": {
+      "pixels": 7742,
+      "coverage": {
+        "64": 0.1869026091449238,
+        "128": 0.011624903125807285,
+        "256": 0.0019374838543012142
+      },
+      "retention_own64_to256": 0.0,
+      "retention_natural64_to256": 0.0,
+      "gained_vs_natural64": 15,
+      "lost_vs_natural64": 3655,
+      "ever_regressed_fraction": 0.9974015590645613
+    },
+    "source": {
+      "pixels": 32,
+      "coverage": {
+        "64": 0.4375,
+        "128": 0.0,
+        "256": 0.0
+      },
+      "retention_own64_to256": 0.0,
+      "retention_natural64_to256": 0.0,
+      "gained_vs_natural64": 0,
+      "lost_vs_natural64": 30,
+      "ever_regressed_fraction": 1.0
+    },
+    "all_changed": {
+      "pixels": 7774,
+      "coverage": {
+        "64": 0.18793413943915616,
+        "128": 0.011577051710830975,
+        "256": 0.0019295086184718292
+      },
+      "retention_own64_to256": 0.0,
+      "retention_natural64_to256": 0.0,
+      "gained_vs_natural64": 15,
+      "lost_vs_natural64": 3685,
+      "ever_regressed_fraction": 0.9974180734856007
+    }
+  },
+  "logit_accounting_max_absolute_error": 0.0,
+  "arrays_sha256": "4d59120dba50616ebf8b53de9cf2c5ed66d79ea5a0ec494d25a1390532b1b1ef",
+  "diagnostic_groups": [
+    "source",
+    "paired_solved",
+    "frontier_wrong",
+    "nonfrontier_wrong"
+  ],
+  "sampled_margin_layout": "time x changed pixels in flattened map,row,column order",
+  "source_array_layout": "time x world(original,flip) x map",
+  "diagnostic_columns": [
+    "count",
+    "sum_margin",
+    "sum_proposed_delta",
+    "negative_count",
+    "proposed_crossing_count",
+    "negative_write_mass",
+    "positive_write_mass",
+    "sum_parallel_energy",
+    "sum_nullspace_energy"
+  ],
+  "intervention_columns": [
+    "active_branch_cells",
+    "removed_Q_squared_norm"
+  ]
+}

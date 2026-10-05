@@ -1,6 +1,51 @@
 # Context for incremental scientific review
 
-## Latest completed experiment: C8 read / R2 factorial
+## Latest completed audit: semantic-write source protection
+
+- `semantic_write_source_causal_v1`, COMPLETE396/396, zero training/optimizer
+  updates. First8 paired factorial blocks, all four arms, plus the selected
+  original C24 Streaming seed4 reference; same reused32-map cohorts at sizes32/64.
+- Frozen primary: native arm, size32, strict16<d<32 paired T256 coverage,
+  averaged equally over eight paired training blocks. Source-only protection
+  versus natural:+0.0005684167; versus norm-matched source orthogonal:+0.0004133940;
+  positive source-natural in2/8. Required both means>=.05 and>=6/8 positives.
+  Verdict `NO_PRIMARY_SOURCE_DRIVER_SIGNAL`; no secondary condition can rescue it.
+- Native source T256 coverage rises0.5820 to1.0000, while distant coverage
+  changes0.3217 to0.3223. Preserving source predictions did not rescue downstream
+  computation under this intervention. Oracle solved-cell protection uses labels
+  at distant cells; its substantial gains are not proof of learned communication.
+  Full Q-nullspace removal changes future dynamics and is an ablation.
+- All64 factorial natural traces replay exactly at every integer time; selected
+  seed4 uses the new common cohort and qualifies (size32 strictT256=1, retention=1).
+  It is a selected reference with a different width, not a fresh replication.
+- Completed75 imported units had science-function AST and data/checkpoint/source
+  bindings checked, plus225 byte-identical artifact checks;321 units computed by
+  the continuation worker. Its1318.938seconds excludes earlier work/preflight.
+  Initial dispatch interruption and transient Windows status-file replacement
+  failure are documented engineering records, not scientific efficacy failures.
+- Read [results](evidence/semantic_write_20261006/RESULTS.md),
+  [summary with per-block deltas](evidence/semantic_write_20261006/summary.json),
+  [validation](evidence/semantic_write_20261006/validation.json), then
+  [per-unit endpoints](evidence/semantic_write_20261006/perunit.json),
+  [configuration](evidence/semantic_write_20261006/config.json) and
+  [reproduction](evidence/semantic_write_20261006/REPRODUCTION.md).
+  All396 NPZ traces/arrays and per-map CSVs are retained; inspect them second.
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Readout projection, source/oracle/nullspace operators | `parallel`, `intervention` | [run.py](new/semantic_write_audit/run.py) |
+| Q hook, paired rollout, signed-write accounting | `step_with_intervention`, `trace`, `write_diagnostics` | [run.py](new/semantic_write_audit/run.py) |
+| Common-reference retention and frozen primary | `summarize`, `aggregate` | [run.py](new/semantic_write_audit/run.py) |
+| Source/data/hash-bound recovery | `safe_write`, `import_completed` | [run.py](new/semantic_write_audit/run.py) |
+| Projection and real-cell wiring checks | `run_checks` | [checks.py](new/semantic_write_audit/checks.py) |
+| Windows transient reader-lock check | `check` | [check_io.py](new/semantic_write_audit/check_io.py) |
+| CPU-only saved-data export/verification | `validate_saved`, `build`, `verify` | [exporter](tools/export_semantic_write.py) |
+
+Verify: `python -X utf8 -B tools/export_semantic_write.py --verify-only`.
+This recomputes all endpoint/per-map counts from saved paired traces, not model
+logits or signed-write diagnostics. Checkpoint hashes are public; files stay local.
+
+## Previous completed experiment: C8 read / R2 factorial
 
 - Protocol: `latent_read_sidecar_factorial_v1`; execution **COMPLETE**, 128/128
   trajectories, 32 paired initialization/schedule blocks; Full success counts
