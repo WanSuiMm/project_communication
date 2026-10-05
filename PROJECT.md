@@ -1,6 +1,34 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Latest completed audit (2026-10-05): `binary_carrier_causal_compression_v1`,
+Completed experiment (2026-10-05): native execution-state width qualification,
+protocol [new/latent_width/PROTOCOL.md](new/latent_width/PROTOCOL.md), execution
+amendment [new/latent_runtime/ACCELERATION.md](new/latent_runtime/ACCELERATION.md).
+All 96 planned arms completed across 16 blocks. W24, W8, the parameter-matched
+W24 control, W16, W4 and exploratory W2 alternating-axis each have 0/16 Full
+passes. The frozen W8-versus-W24 primary verdict is
+`NO_W8_RELIABILITY_QUALIFICATION` (0 wins, 0 losses, net 0/16, exact two-sided
+`p=1`); the concurrent W24 arm is also 0/16. This result is limited to the
+frozen native-width recipe and does not establish universal impossibility.
+
+Runtime provenance: 13 completed eager arms were imported and 83 ran with CUDA
+Graph acceleration. Exact 300-update block00 replay passed for all six arms,
+with bitwise-equal final parameters and Adam state/groups. That finite check
+qualifies the runtime path only. The 2771.016-second elapsed field excludes the
+original eager run and separate replay qualification, so it is not end-to-end
+time for all 96 trajectories.
+
+Read the public package in this order: [results](evidence/latent_width_20261005/RESULTS.md),
+[summary](evidence/latent_width_20261005/summary.json),
+[validation](evidence/latent_width_20261005/validation.json),
+[configuration](evidence/latent_width_20261005/config.json), and
+[reproduction](evidence/latent_width_20261005/REPRODUCTION.md), then
+[per-arm results](evidence/latent_width_20261005/perarm.json) and
+[metrics](evidence/latent_width_20261005/metrics.csv). Full losslessly
+compressed per-block evaluation arrays, summaries, frontier CSVs and curves
+are in `block00/`–`block15/`; frozen plans are in `plans.json.gz`. Verify the
+saved snapshot with `python -X utf8 -B tools/export_latent_width.py --verify-only`.
+
+Previous completed audit (2026-10-05): `binary_carrier_causal_compression_v1`,
 defined in [new/binary_carrier/PROTOCOL.md](new/binary_carrier/PROTOCOL.md).
 Formal execution is **COMPLETE**, 24/24 cells in 473.469 seconds. The W
 replication anchors qualify, but all three combined primary gates

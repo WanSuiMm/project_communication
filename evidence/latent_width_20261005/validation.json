@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "Saved data, arithmetic and hashes; no model inference or optimizer updates.",
+  "completed_arms": 96,
+  "training_blocks": 16,
+  "metric_rows": 576,
+  "trace_banks": 192,
+  "curves": 96,
+  "curve_updates_total": 28800,
+  "paired_traces_exact": true,
+  "coverage_retention_regression_counts_recomputed": true,
+  "full_predicates_recomputed_from_saved_metrics": true,
+  "paired_statistics_recomputed": true,
+  "plans_banks_and_curves_checked": true,
+  "execution_backends": {
+    "eager_imported": 13,
+    "cuda_graph_k8": 83
+  },
+  "primary_verdict": "NO_W8_RELIABILITY_QUALIFICATION",
+  "runtime_exact300_all6": true,
+  "not_recomputed": [
+    "model logits or balanced accuracies",
+    "matched-frontier strata from scratch",
+    "new training or CUDA equivalence replay"
+  ]
+}

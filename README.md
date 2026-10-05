@@ -1,6 +1,41 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: binary-carrier causal compression
+## Latest result: native execution-state width qualification
+
+`native_latent_width_v1`: **COMPLETE**, 96/96 planned arms across 16 blocks.
+All six arms recorded 0/16 Full passes: W24, W8, the parameter-matched W24
+control, W16, W4, and exploratory W2 alternating-axis. The frozen W8-versus-W24
+primary contrast has 0 wins, 0 losses, net gain 0/16, and exact two-sided
+`p=1`; the verdict is `NO_W8_RELIABILITY_QUALIFICATION`. Concurrent W24 also
+records 0/16. This is a negative result for the frozen native-width recipe,
+not a universal impossibility claim about latent widths, architectures, or
+BPTT.
+
+Runtime provenance: all six block00 arms passed exact 300-update CUDA Graph
+replay against the eager reference, including bitwise-equal final parameters
+and Adam state/groups. The completed aggregate imports 13 eager arms and has
+83 CUDA Graph arms. This finite replay check qualifies the runtime only. The
+reported 2771.016 seconds excludes the original eager run and the separate
+replay qualification, so it is not end-to-end wall time for all 96 arms.
+
+Start with [results](evidence/latent_width_20261005/RESULTS.md),
+[summary](evidence/latent_width_20261005/summary.json),
+[validation](evidence/latent_width_20261005/validation.json),
+[configuration](evidence/latent_width_20261005/config.json), and
+[reproduction notes](evidence/latent_width_20261005/REPRODUCTION.md); then
+inspect [per-arm results](evidence/latent_width_20261005/perarm.json) and
+[metrics](evidence/latent_width_20261005/metrics.csv). Losslessly compressed
+per-block evaluation arrays, summary records, frontier CSVs and curves are
+under `block00/` through `block15/`; `plans.json.gz` contains the frozen block
+plans. W2 alternates its transport axis and is not a width-only contrast.
+The frozen [protocol](new/latent_width/PROTOCOL.md),
+[execution amendment](new/latent_runtime/ACCELERATION.md), and code map in
+[GPT_CONTEXT.md](GPT_CONTEXT.md) define the procedure. Verify the saved-data
+snapshot from the repository root with:
+
+    python -X utf8 -B tools/export_latent_width.py --verify-only
+
+## Previous result: binary-carrier causal compression
 
 `binary_carrier_causal_compression_v1`: **COMPLETE**, 24/24 cells in
 473.469 seconds. The W replication anchors qualify, but all three combined

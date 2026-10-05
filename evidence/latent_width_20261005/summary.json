@@ -1,0 +1,702 @@
+{
+  "protocol": "native_latent_width_v1",
+  "status": "COMPLETE",
+  "expected_arms": 96,
+  "completed_arms": 96,
+  "primary": {
+    "baseline": "w24",
+    "arm": "w8",
+    "blocks": 16,
+    "baseline_successes": 0,
+    "arm_successes": 0,
+    "wins": 0,
+    "losses": 0,
+    "net_gain": 0,
+    "delta": 0.0,
+    "exact_two_sided_p": 1.0,
+    "baseline_wilson95": {
+      "successes": 0,
+      "trials": 16,
+      "lower": 0.0,
+      "upper": 0.1936076805344365
+    },
+    "arm_wilson95": {
+      "successes": 0,
+      "trials": 16,
+      "lower": 0.0,
+      "upper": 0.1936076805344365
+    },
+    "qualification_threshold_met": false,
+    "per_block": [
+      {
+        "block": 0,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 1,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 2,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 3,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 4,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 5,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 6,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 7,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 8,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 9,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 10,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 11,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 12,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 13,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 14,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 15,
+        "baseline_pass": false,
+        "arm_pass": false
+      }
+    ],
+    "width_family_holm_p": 1.0,
+    "transport_confounded": false
+  },
+  "primary_verdict": "NO_W8_RELIABILITY_QUALIFICATION",
+  "secondary_width_contrasts": {
+    "w8": {
+      "baseline": "w24",
+      "arm": "w8",
+      "blocks": 16,
+      "baseline_successes": 0,
+      "arm_successes": 0,
+      "wins": 0,
+      "losses": 0,
+      "net_gain": 0,
+      "delta": 0.0,
+      "exact_two_sided_p": 1.0,
+      "baseline_wilson95": {
+        "successes": 0,
+        "trials": 16,
+        "lower": 0.0,
+        "upper": 0.1936076805344365
+      },
+      "arm_wilson95": {
+        "successes": 0,
+        "trials": 16,
+        "lower": 0.0,
+        "upper": 0.1936076805344365
+      },
+      "qualification_threshold_met": false,
+      "per_block": [
+        {
+          "block": 0,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 1,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 2,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 3,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 4,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 5,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 6,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 7,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 8,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 9,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 10,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 11,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 12,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 13,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 14,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 15,
+          "baseline_pass": false,
+          "arm_pass": false
+        }
+      ],
+      "width_family_holm_p": 1.0,
+      "transport_confounded": false
+    },
+    "w16": {
+      "baseline": "w24",
+      "arm": "w16",
+      "blocks": 16,
+      "baseline_successes": 0,
+      "arm_successes": 0,
+      "wins": 0,
+      "losses": 0,
+      "net_gain": 0,
+      "delta": 0.0,
+      "exact_two_sided_p": 1.0,
+      "baseline_wilson95": {
+        "successes": 0,
+        "trials": 16,
+        "lower": 0.0,
+        "upper": 0.1936076805344365
+      },
+      "arm_wilson95": {
+        "successes": 0,
+        "trials": 16,
+        "lower": 0.0,
+        "upper": 0.1936076805344365
+      },
+      "qualification_threshold_met": false,
+      "per_block": [
+        {
+          "block": 0,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 1,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 2,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 3,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 4,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 5,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 6,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 7,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 8,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 9,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 10,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 11,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 12,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 13,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 14,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 15,
+          "baseline_pass": false,
+          "arm_pass": false
+        }
+      ],
+      "width_family_holm_p": 1.0,
+      "transport_confounded": false
+    },
+    "w4": {
+      "baseline": "w24",
+      "arm": "w4",
+      "blocks": 16,
+      "baseline_successes": 0,
+      "arm_successes": 0,
+      "wins": 0,
+      "losses": 0,
+      "net_gain": 0,
+      "delta": 0.0,
+      "exact_two_sided_p": 1.0,
+      "baseline_wilson95": {
+        "successes": 0,
+        "trials": 16,
+        "lower": 0.0,
+        "upper": 0.1936076805344365
+      },
+      "arm_wilson95": {
+        "successes": 0,
+        "trials": 16,
+        "lower": 0.0,
+        "upper": 0.1936076805344365
+      },
+      "qualification_threshold_met": false,
+      "per_block": [
+        {
+          "block": 0,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 1,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 2,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 3,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 4,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 5,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 6,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 7,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 8,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 9,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 10,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 11,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 12,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 13,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 14,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 15,
+          "baseline_pass": false,
+          "arm_pass": false
+        }
+      ],
+      "width_family_holm_p": 1.0,
+      "transport_confounded": false
+    },
+    "w2_alternating": {
+      "baseline": "w24",
+      "arm": "w2_alternating",
+      "blocks": 16,
+      "baseline_successes": 0,
+      "arm_successes": 0,
+      "wins": 0,
+      "losses": 0,
+      "net_gain": 0,
+      "delta": 0.0,
+      "exact_two_sided_p": 1.0,
+      "baseline_wilson95": {
+        "successes": 0,
+        "trials": 16,
+        "lower": 0.0,
+        "upper": 0.1936076805344365
+      },
+      "arm_wilson95": {
+        "successes": 0,
+        "trials": 16,
+        "lower": 0.0,
+        "upper": 0.1936076805344365
+      },
+      "qualification_threshold_met": false,
+      "per_block": [
+        {
+          "block": 0,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 1,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 2,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 3,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 4,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 5,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 6,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 7,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 8,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 9,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 10,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 11,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 12,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 13,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 14,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 15,
+          "baseline_pass": false,
+          "arm_pass": false
+        }
+      ],
+      "width_family_holm_p": 1.0,
+      "transport_confounded": true
+    }
+  },
+  "capacity_diagnostic": {
+    "baseline": "w24_capacity",
+    "arm": "w8",
+    "blocks": 16,
+    "baseline_successes": 0,
+    "arm_successes": 0,
+    "wins": 0,
+    "losses": 0,
+    "net_gain": 0,
+    "delta": 0.0,
+    "exact_two_sided_p": 1.0,
+    "baseline_wilson95": {
+      "successes": 0,
+      "trials": 16,
+      "lower": 0.0,
+      "upper": 0.1936076805344365
+    },
+    "arm_wilson95": {
+      "successes": 0,
+      "trials": 16,
+      "lower": 0.0,
+      "upper": 0.1936076805344365
+    },
+    "qualification_threshold_met": false,
+    "per_block": [
+      {
+        "block": 0,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 1,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 2,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 3,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 4,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 5,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 6,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 7,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 8,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 9,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 10,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 11,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 12,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 13,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 14,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 15,
+        "baseline_pass": false,
+        "arm_pass": false
+      }
+    ]
+  },
+  "counts": {
+    "w24": {
+      "successes": 0,
+      "trials": 16,
+      "parameters": 5033
+    },
+    "w8": {
+      "successes": 0,
+      "trials": 16,
+      "parameters": 2521
+    },
+    "w24_capacity": {
+      "successes": 0,
+      "trials": 16,
+      "parameters": 2521
+    },
+    "w16": {
+      "successes": 0,
+      "trials": 16,
+      "parameters": 3777
+    },
+    "w4": {
+      "successes": 0,
+      "trials": 16,
+      "parameters": 1893
+    },
+    "w2_alternating": {
+      "successes": 0,
+      "trials": 16,
+      "parameters": 1579
+    }
+  },
+  "claim_boundary": "Frozen single-task native width recipe; W2 changes transport; no minimal-dimensionality or universal BPTT claim.",
+  "execution_amendment": "local_cuda_graph_k8_v1",
+  "original_run": "runs/latent_width_20261005_01",
+  "imported_completed_arms": 13,
+  "new_completed_arms": 83,
+  "finished_utc": "2026-10-05T05:10:51.059523+00:00",
+  "elapsed_seconds": 2771.016,
+  "runtime_limit_enforced": false,
+  "qualification_scope": "finite block00 replay, not universal guarantee"
+}

@@ -1,6 +1,43 @@
 # Context for incremental scientific review
 
-## Latest completed audit: binary-carrier causal compression
+## Latest completed audit: native execution-state width qualification
+
+- `native_latent_width_v1`: **COMPLETE**, 96/96 planned arms across 16 blocks.
+  All six arms have 0/16 Full passes. The frozen W8-versus-W24 primary contrast
+  is 0 wins, 0 losses, net gain 0/16, exact two-sided `p=1`, with verdict
+  `NO_W8_RELIABILITY_QUALIFICATION`; concurrent W24 is also 0/16. This rejects
+  qualification for the frozen single-task width recipe, not all latent widths
+  or architectures. W2 alternates axes and is exploratory because its
+  transport changes.
+- Runtime provenance is 13 imported eager arms plus 83 CUDA Graph arms. All six
+  block00 arms passed exact 300-update replay with bitwise-equal final
+  parameters and Adam state/groups. This is a finite runtime check, not an
+  efficacy result or a universal replay guarantee. The 2771.016-second field
+  excludes the original eager run and separate replay qualification; it is not
+  end-to-end time for the 96-arm study.
+- Read [results](evidence/latent_width_20261005/RESULTS.md),
+  [summary](evidence/latent_width_20261005/summary.json),
+  [validation](evidence/latent_width_20261005/validation.json),
+  [configuration](evidence/latent_width_20261005/config.json), and
+  [reproduction](evidence/latent_width_20261005/REPRODUCTION.md); then inspect
+  [per-arm results](evidence/latent_width_20261005/perarm.json) and
+  [metrics](evidence/latent_width_20261005/metrics.csv). The full lossless
+  compressed per-block data are in `block00/`–`block15/` and `plans.json.gz`.
+  Frozen [protocol](new/latent_width/PROTOCOL.md) and
+  [runtime amendment](new/latent_runtime/ACCELERATION.md).
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Carrier arms and alternating-axis W2 transport | `make_model`, `TwoPhaseStreamingCell`, `phase_transport` | [cells.py](new/latent_width/cells.py) |
+| Frozen arms, pairing, aggregate verdict and report | `ARM_NAMES`, `model_for`, `aggregate`, `report` | [run.py](new/latent_width/run.py) |
+| CUDA Graph K8 training loop | `CapturedK8`, `train_graph_updates` | [runtime.py](new/latent_runtime/runtime.py) |
+| Eager import verification and accelerated suite | `verify_import`, `run` | [accelerated.py](new/latent_runtime/accelerated.py) |
+| Published snapshot verification | `--verify-only` | [exporter](tools/export_latent_width.py) |
+
+- Verify the saved-data snapshot from the repository root with
+  `python -X utf8 -B tools/export_latent_width.py --verify-only`.
+
+## Previous completed audit: binary-carrier causal compression
 
 - `binary_carrier_causal_compression_v1`: **COMPLETE**, 24/24 cells in
   473.469 seconds. The W replication anchors qualify; all three combined
