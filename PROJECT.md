@@ -1,5 +1,35 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Completed experiment (2026-10-05): C8 read parameterization / R2 factorial,
+protocol [new/latent_factorial/PROTOCOL.md](new/latent_factorial/PROTOCOL.md).
+Four arms (native, factorized, native_r2, factorized_r2) share copied native
+C8/Z8 core tensors within each of 32 fresh paired training blocks: 128
+trajectories, 300 updates each, original K8 credit and unchanged Full gate.
+The primary contrast is factorized_r2 minus native; qualification requires
+net gain >=8/32 and exact paired two-sided p<=.05. Sidecar effects bundle
+memory, extra computation and parameters. No runtime cap or recurring monitor.
+Execution is **COMPLETE**,128/128 in4361.047seconds. Each of the four arms
+records0/32 Full passes; D-A has0 wins/0 losses, delta0 and exact two-sided p=1,
+with verdict `NO_D_MINUS_A_RELIABILITY_QUALIFICATION`. This preserves the
+negative frozen-recipe result without claiming model equivalence or universal
+latent/sidecar failure. Combined qualification passed: nontrivial initial-state matching, four CPU
+checks, five actual-shape eager/graph updates per arm with bitwise-equal
+losses/gradients/parameters/Adam states, and the three-state evaluation trace.
+All128 trajectories used the captured K8 runtime. The short five-update
+qualification is not a full300 equivalence claim. Raw results remain locally
+in `runs/latent_factorial_20261005_01/`. Start with the public
+[results](evidence/latent_factorial_20261005/RESULTS.md),
+[summary](evidence/latent_factorial_20261005/summary.json),
+[validation](evidence/latent_factorial_20261005/validation.json), then
+[per-arm records](evidence/latent_factorial_20261005/perarm.json) and
+[reproduction](evidence/latent_factorial_20261005/REPRODUCTION.md).
+
+Repository-root entry commands:
+
+    python -X utf8 -B new/latent_factorial/run.py --check --out analyses/NEW_FACTORIAL_CHECK.json
+    pwsh -File tools/launch_latent_factorial.ps1 -RunName NEW_FACTORIAL_RUN -Qualification analyses/NEW_FACTORIAL_CHECK.json
+    python -X utf8 -B tools/export_latent_factorial.py --verify-only
+
 Completed experiment (2026-10-05): native execution-state width qualification,
 protocol [new/latent_width/PROTOCOL.md](new/latent_width/PROTOCOL.md), execution
 amendment [new/latent_runtime/ACCELERATION.md](new/latent_runtime/ACCELERATION.md).

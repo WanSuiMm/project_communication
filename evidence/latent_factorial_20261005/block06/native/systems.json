@@ -1,0 +1,38 @@
+{
+  "32": {
+    "batch": 8,
+    "forward_steps": 64,
+    "warmups": 2,
+    "repeats": 5,
+    "forward64_ms": [
+      98.19340515136719,
+      96.63897705078125,
+      97.69369506835938,
+      95.21558380126953,
+      98.01299285888672
+    ],
+    "median_forward64_ms": 97.69369506835938,
+    "median_step_ms": 1.5264639854431152,
+    "learned_persistent_bytes": 524288,
+    "clock_global_bits": 0,
+    "incremental_peak_cuda_bytes": 5832704
+  },
+  "64": {
+    "batch": 8,
+    "forward_steps": 64,
+    "warmups": 2,
+    "repeats": 5,
+    "forward64_ms": [
+      97.8524169921875,
+      98.47398376464844,
+      100.35404968261719,
+      97.79609680175781,
+      97.6885757446289
+    ],
+    "median_forward64_ms": 97.8524169921875,
+    "median_step_ms": 1.5289440155029297,
+    "learned_persistent_bytes": 2097152,
+    "clock_global_bits": 0,
+    "incremental_peak_cuda_bytes": 23199744
+  }
+}

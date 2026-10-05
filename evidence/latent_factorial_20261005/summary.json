@@ -1,0 +1,622 @@
+{
+  "protocol": "latent_read_sidecar_factorial_v1",
+  "status": "COMPLETE",
+  "expected_arms": 128,
+  "completed_arms": 128,
+  "primary": {
+    "baseline": "native",
+    "arm": "factorized_r2",
+    "blocks": 32,
+    "wins": 0,
+    "losses": 0,
+    "net_gain": 0,
+    "delta": 0.0,
+    "exact_two_sided_p": 1.0,
+    "qualification_threshold_met": false,
+    "per_block": [
+      {
+        "block": 0,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 1,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 2,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 3,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 4,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 5,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 6,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 7,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 8,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 9,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 10,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 11,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 12,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 13,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 14,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 15,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 16,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 17,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 18,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 19,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 20,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 21,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 22,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 23,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 24,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 25,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 26,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 27,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 28,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 29,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 30,
+        "baseline_pass": false,
+        "arm_pass": false
+      },
+      {
+        "block": 31,
+        "baseline_pass": false,
+        "arm_pass": false
+      }
+    ]
+  },
+  "primary_verdict": "NO_D_MINUS_A_RELIABILITY_QUALIFICATION",
+  "secondary": {
+    "factorized": {
+      "baseline": "native",
+      "arm": "factorized",
+      "blocks": 32,
+      "wins": 0,
+      "losses": 0,
+      "net_gain": 0,
+      "delta": 0.0,
+      "exact_two_sided_p": 1.0,
+      "qualification_threshold_met": false,
+      "per_block": [
+        {
+          "block": 0,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 1,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 2,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 3,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 4,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 5,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 6,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 7,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 8,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 9,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 10,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 11,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 12,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 13,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 14,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 15,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 16,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 17,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 18,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 19,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 20,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 21,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 22,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 23,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 24,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 25,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 26,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 27,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 28,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 29,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 30,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 31,
+          "baseline_pass": false,
+          "arm_pass": false
+        }
+      ],
+      "secondary_holm_p": 1.0
+    },
+    "native_r2": {
+      "baseline": "native",
+      "arm": "native_r2",
+      "blocks": 32,
+      "wins": 0,
+      "losses": 0,
+      "net_gain": 0,
+      "delta": 0.0,
+      "exact_two_sided_p": 1.0,
+      "qualification_threshold_met": false,
+      "per_block": [
+        {
+          "block": 0,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 1,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 2,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 3,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 4,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 5,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 6,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 7,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 8,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 9,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 10,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 11,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 12,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 13,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 14,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 15,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 16,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 17,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 18,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 19,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 20,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 21,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 22,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 23,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 24,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 25,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 26,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 27,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 28,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 29,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 30,
+          "baseline_pass": false,
+          "arm_pass": false
+        },
+        {
+          "block": 31,
+          "baseline_pass": false,
+          "arm_pass": false
+        }
+      ],
+      "secondary_holm_p": 1.0
+    }
+  },
+  "interaction": {
+    "mean_D_minus_C_minus_B_plus_A": 0.0,
+    "descriptive_t95": [
+      0.0,
+      0.0
+    ],
+    "per_block": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "confirmatory": false
+  },
+  "counts": {
+    "native": {
+      "successes": 0,
+      "trials": 32,
+      "parameters": 2521,
+      "wilson95": {
+        "successes": 0,
+        "trials": 32,
+        "lower": 0.0,
+        "upper": 0.1071791982550706
+      }
+    },
+    "factorized": {
+      "successes": 0,
+      "trials": 32,
+      "parameters": 2649,
+      "wilson95": {
+        "successes": 0,
+        "trials": 32,
+        "lower": 0.0,
+        "upper": 0.1071791982550706
+      }
+    },
+    "native_r2": {
+      "successes": 0,
+      "trials": 32,
+      "parameters": 3275,
+      "wilson95": {
+        "successes": 0,
+        "trials": 32,
+        "lower": 0.0,
+        "upper": 0.1071791982550706
+      }
+    },
+    "factorized_r2": {
+      "successes": 0,
+      "trials": 32,
+      "parameters": 3403,
+      "wilson95": {
+        "successes": 0,
+        "trials": 32,
+        "lower": 0.0,
+        "upper": 0.1071791982550706
+      }
+    }
+  },
+  "claim_boundary": "One frozen task/evaluation cohort, fresh paired training blocks; parameterization and R2 bundle, not memory necessity or universal short-credit sufficiency.",
+  "finished_utc": "2026-10-05T07:41:28.553333+00:00",
+  "elapsed_seconds": 4361.0470000000005,
+  "runtime_limit_enforced": false
+}

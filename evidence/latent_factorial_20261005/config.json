@@ -1,0 +1,876 @@
+{
+  "protocol": "latent_read_sidecar_factorial_v1",
+  "arms": {
+    "native": {
+      "arm": "native",
+      "architecture": "latent_factorial_streaming_cell",
+      "input_channels": 3,
+      "workspace_channels": 8,
+      "latent_channels": 8,
+      "workspace_hidden": 40,
+      "candidate_hidden": 16,
+      "workspace_input_channels": 35,
+      "candidate_input_channels": 35,
+      "communication_phases_per_macro_step": 2,
+      "transport_operator": "masked port permutation with blocked-link bounce-back",
+      "workspace_update": "C_new = T(C) + eta * F(T(C),Z,L(C),L(Z),X)",
+      "latent_update": "Z_new = Z + alpha * Q",
+      "alpha": 0.5,
+      "eta": 0.1,
+      "candidate_output_activation": null,
+      "learned_gates": false,
+      "readout": "Conv2d(Z, 1, kernel_size=1)",
+      "initialization": {
+        "workspace": "Conv2d(X, 8, kernel_size=1), default PyTorch init",
+        "latent": "zeros",
+        "F_last_layer": "zero initialized",
+        "Q_last_layer": "zero initialized",
+        "readout_weights": "default PyTorch init",
+        "readout_bias": "zero initialized"
+      },
+      "parameter_count": 2521,
+      "stability_guarantee": false,
+      "streaming": true,
+      "carrier_lanes": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "payload_channels_per_lane": 2,
+      "stationary_state": "Z",
+      "transport_parameters": 0,
+      "force_perception_clock": "L(W),L(Z) before stream; first feature is incoming T(W)",
+      "pure_transport_isometry": true,
+      "full_update_lossless": false,
+      "initialization_seeds": {
+        "core_seed": 97999,
+        "r2_extension_seed_offset": null,
+        "r2_extension_seed": null
+      },
+      "geometry": {
+        "spatial_dimensions": 2,
+        "directions": [
+          "N",
+          "E",
+          "S",
+          "W"
+        ],
+        "mask": "x[:, :1]",
+        "transport": "masked port permutation with blocked-link bounce-back",
+        "carrier_lanes": 4,
+        "payload_channels_per_lane": 2
+      },
+      "clocks": {
+        "transport": "T(C) once per macro-step",
+        "F": "L(C), L(Z) are pre-stream; T(C) is the leading F feature",
+        "Q": "uses C_new and L(C_new); Z and L(Z) are current-step values",
+        "R2": null
+      },
+      "state_shapes": {
+        "C": "[B, 8, H, W]",
+        "Z": "[B, 8, H, W]"
+      },
+      "feature_shapes": {
+        "F_input": 35,
+        "Q_input": 35,
+        "G_input": null,
+        "G_hidden": null,
+        "G_output": null
+      },
+      "factorization": {
+        "enabled": false,
+        "input_blocks": {
+          "C": [
+            0,
+            8
+          ],
+          "L(C)": [
+            16,
+            24
+          ]
+        },
+        "effective_weight": "B_C @ U on C; B_L @ U on L(C)",
+        "basis_parameters": [],
+        "basis_initialization": null,
+        "basis_applied_after_transport": true
+      },
+      "r2_sidecar": {
+        "enabled": false,
+        "update": "R_plus = R + 0.1 * G_out(tanh(G_in(C,R,Z,L(C),L(Z),X)))",
+        "G_out_initialization": null,
+        "transport": null,
+        "readout_input": "Z only"
+      },
+      "parameter_shapes": {
+        "encoder.weight": [
+          8,
+          3,
+          1,
+          1
+        ],
+        "encoder.bias": [
+          8
+        ],
+        "f_in.weight": [
+          40,
+          35,
+          1,
+          1
+        ],
+        "f_in.bias": [
+          40
+        ],
+        "f_out.weight": [
+          8,
+          40,
+          1,
+          1
+        ],
+        "f_out.bias": [
+          8
+        ],
+        "q_in.weight": [
+          16,
+          35,
+          1,
+          1
+        ],
+        "q_in.bias": [
+          16
+        ],
+        "q_out.weight": [
+          8,
+          16,
+          1,
+          1
+        ],
+        "q_out.bias": [
+          8
+        ],
+        "readout.weight": [
+          1,
+          8,
+          1,
+          1
+        ],
+        "readout.bias": [
+          1
+        ]
+      }
+    },
+    "factorized": {
+      "arm": "factorized",
+      "architecture": "latent_factorial_streaming_cell",
+      "input_channels": 3,
+      "workspace_channels": 8,
+      "latent_channels": 8,
+      "workspace_hidden": 40,
+      "candidate_hidden": 16,
+      "workspace_input_channels": 35,
+      "candidate_input_channels": 35,
+      "communication_phases_per_macro_step": 2,
+      "transport_operator": "masked port permutation with blocked-link bounce-back",
+      "workspace_update": "C_new = T(C) + eta * F(T(C),Z,L(C),L(Z),X)",
+      "latent_update": "Z_new = Z + alpha * Q",
+      "alpha": 0.5,
+      "eta": 0.1,
+      "candidate_output_activation": null,
+      "learned_gates": false,
+      "readout": "Conv2d(Z, 1, kernel_size=1)",
+      "initialization": {
+        "workspace": "Conv2d(X, 8, kernel_size=1), default PyTorch init",
+        "latent": "zeros",
+        "F_last_layer": "zero initialized",
+        "Q_last_layer": "zero initialized",
+        "readout_weights": "default PyTorch init",
+        "readout_bias": "zero initialized"
+      },
+      "parameter_count": 2649,
+      "stability_guarantee": false,
+      "streaming": true,
+      "carrier_lanes": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "payload_channels_per_lane": 2,
+      "stationary_state": "Z",
+      "transport_parameters": 0,
+      "force_perception_clock": "L(W),L(Z) before stream; first feature is incoming T(W)",
+      "pure_transport_isometry": true,
+      "full_update_lossless": false,
+      "initialization_seeds": {
+        "core_seed": 97999,
+        "r2_extension_seed_offset": null,
+        "r2_extension_seed": null
+      },
+      "geometry": {
+        "spatial_dimensions": 2,
+        "directions": [
+          "N",
+          "E",
+          "S",
+          "W"
+        ],
+        "mask": "x[:, :1]",
+        "transport": "masked port permutation with blocked-link bounce-back",
+        "carrier_lanes": 4,
+        "payload_channels_per_lane": 2
+      },
+      "clocks": {
+        "transport": "T(C) once per macro-step",
+        "F": "L(C), L(Z) are pre-stream; T(C) is the leading F feature",
+        "Q": "uses C_new and L(C_new); Z and L(Z) are current-step values",
+        "R2": null
+      },
+      "state_shapes": {
+        "C": "[B, 8, H, W]",
+        "Z": "[B, 8, H, W]"
+      },
+      "feature_shapes": {
+        "F_input": 35,
+        "Q_input": 35,
+        "G_input": null,
+        "G_hidden": null,
+        "G_output": null
+      },
+      "factorization": {
+        "enabled": true,
+        "input_blocks": {
+          "C": [
+            0,
+            8
+          ],
+          "L(C)": [
+            16,
+            24
+          ]
+        },
+        "effective_weight": "B_C @ U on C; B_L @ U on L(C)",
+        "basis_parameters": [
+          "f_in.U",
+          "q_in.U"
+        ],
+        "basis_initialization": "U_F = U_Q = I_8",
+        "basis_applied_after_transport": true
+      },
+      "r2_sidecar": {
+        "enabled": false,
+        "update": "R_plus = R + 0.1 * G_out(tanh(G_in(C,R,Z,L(C),L(Z),X)))",
+        "G_out_initialization": null,
+        "transport": null,
+        "readout_input": "Z only"
+      },
+      "parameter_shapes": {
+        "encoder.weight": [
+          8,
+          3,
+          1,
+          1
+        ],
+        "encoder.bias": [
+          8
+        ],
+        "f_in.weight": [
+          40,
+          35,
+          1,
+          1
+        ],
+        "f_in.bias": [
+          40
+        ],
+        "f_in.U": [
+          8,
+          8
+        ],
+        "f_out.weight": [
+          8,
+          40,
+          1,
+          1
+        ],
+        "f_out.bias": [
+          8
+        ],
+        "q_in.weight": [
+          16,
+          35,
+          1,
+          1
+        ],
+        "q_in.bias": [
+          16
+        ],
+        "q_in.U": [
+          8,
+          8
+        ],
+        "q_out.weight": [
+          8,
+          16,
+          1,
+          1
+        ],
+        "q_out.bias": [
+          8
+        ],
+        "readout.weight": [
+          1,
+          8,
+          1,
+          1
+        ],
+        "readout.bias": [
+          1
+        ]
+      }
+    },
+    "native_r2": {
+      "arm": "native_r2",
+      "architecture": "latent_factorial_streaming_cell",
+      "input_channels": 3,
+      "workspace_channels": 8,
+      "latent_channels": 8,
+      "workspace_hidden": 40,
+      "candidate_hidden": 16,
+      "workspace_input_channels": 37,
+      "candidate_input_channels": 37,
+      "communication_phases_per_macro_step": 2,
+      "transport_operator": "masked port permutation with blocked-link bounce-back",
+      "workspace_update": "C_new = T(C) + eta * F(T(C),Z,L(C),L(Z),X,R_plus)",
+      "latent_update": "Z_new = Z + alpha * Q",
+      "alpha": 0.5,
+      "eta": 0.1,
+      "candidate_output_activation": null,
+      "learned_gates": false,
+      "readout": "Conv2d(Z, 1, kernel_size=1)",
+      "initialization": {
+        "workspace": "Conv2d(X, 8, kernel_size=1), default PyTorch init",
+        "latent": "zeros",
+        "F_last_layer": "zero initialized",
+        "Q_last_layer": "zero initialized",
+        "readout_weights": "default PyTorch init",
+        "readout_bias": "zero initialized"
+      },
+      "parameter_count": 3275,
+      "stability_guarantee": false,
+      "streaming": true,
+      "carrier_lanes": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "payload_channels_per_lane": 2,
+      "stationary_state": "Z and R",
+      "transport_parameters": 0,
+      "force_perception_clock": "L(W),L(Z) before stream; first feature is incoming T(W)",
+      "pure_transport_isometry": true,
+      "full_update_lossless": false,
+      "initialization_seeds": {
+        "core_seed": 97999,
+        "r2_extension_seed_offset": 104729,
+        "r2_extension_seed": 202728
+      },
+      "geometry": {
+        "spatial_dimensions": 2,
+        "directions": [
+          "N",
+          "E",
+          "S",
+          "W"
+        ],
+        "mask": "x[:, :1]",
+        "transport": "masked port permutation with blocked-link bounce-back",
+        "carrier_lanes": 4,
+        "payload_channels_per_lane": 2
+      },
+      "clocks": {
+        "transport": "T(C) once per macro-step",
+        "F": "L(C), L(Z) are pre-stream; T(C) is the leading F feature",
+        "Q": "uses C_new and L(C_new); Z and L(Z) are current-step values",
+        "R2": "R_plus is computed before F from C,R,Z,L(C),L(Z),X; R_plus is then held as R for the next macro-step"
+      },
+      "state_shapes": {
+        "C": "[B, 8, H, W]",
+        "Z": "[B, 8, H, W]",
+        "R": "[B, 2, H, W]"
+      },
+      "feature_shapes": {
+        "F_input": 37,
+        "Q_input": 37,
+        "G_input": 37,
+        "G_hidden": 16,
+        "G_output": 2
+      },
+      "factorization": {
+        "enabled": false,
+        "input_blocks": {
+          "C": [
+            0,
+            8
+          ],
+          "L(C)": [
+            16,
+            24
+          ]
+        },
+        "effective_weight": "B_C @ U on C; B_L @ U on L(C)",
+        "basis_parameters": [],
+        "basis_initialization": null,
+        "basis_applied_after_transport": true
+      },
+      "r2_sidecar": {
+        "enabled": true,
+        "update": "R_plus = R + 0.1 * G_out(tanh(G_in(C,R,Z,L(C),L(Z),X)))",
+        "G_out_initialization": "zero weight and bias",
+        "transport": "none",
+        "readout_input": "Z only"
+      },
+      "parameter_shapes": {
+        "encoder.weight": [
+          8,
+          3,
+          1,
+          1
+        ],
+        "encoder.bias": [
+          8
+        ],
+        "f_in.weight": [
+          40,
+          37,
+          1,
+          1
+        ],
+        "f_in.bias": [
+          40
+        ],
+        "f_out.weight": [
+          8,
+          40,
+          1,
+          1
+        ],
+        "f_out.bias": [
+          8
+        ],
+        "q_in.weight": [
+          16,
+          37,
+          1,
+          1
+        ],
+        "q_in.bias": [
+          16
+        ],
+        "q_out.weight": [
+          8,
+          16,
+          1,
+          1
+        ],
+        "q_out.bias": [
+          8
+        ],
+        "readout.weight": [
+          1,
+          8,
+          1,
+          1
+        ],
+        "readout.bias": [
+          1
+        ],
+        "g_in.weight": [
+          16,
+          37,
+          1,
+          1
+        ],
+        "g_in.bias": [
+          16
+        ],
+        "g_out.weight": [
+          2,
+          16,
+          1,
+          1
+        ],
+        "g_out.bias": [
+          2
+        ]
+      }
+    },
+    "factorized_r2": {
+      "arm": "factorized_r2",
+      "architecture": "latent_factorial_streaming_cell",
+      "input_channels": 3,
+      "workspace_channels": 8,
+      "latent_channels": 8,
+      "workspace_hidden": 40,
+      "candidate_hidden": 16,
+      "workspace_input_channels": 37,
+      "candidate_input_channels": 37,
+      "communication_phases_per_macro_step": 2,
+      "transport_operator": "masked port permutation with blocked-link bounce-back",
+      "workspace_update": "C_new = T(C) + eta * F(T(C),Z,L(C),L(Z),X,R_plus)",
+      "latent_update": "Z_new = Z + alpha * Q",
+      "alpha": 0.5,
+      "eta": 0.1,
+      "candidate_output_activation": null,
+      "learned_gates": false,
+      "readout": "Conv2d(Z, 1, kernel_size=1)",
+      "initialization": {
+        "workspace": "Conv2d(X, 8, kernel_size=1), default PyTorch init",
+        "latent": "zeros",
+        "F_last_layer": "zero initialized",
+        "Q_last_layer": "zero initialized",
+        "readout_weights": "default PyTorch init",
+        "readout_bias": "zero initialized"
+      },
+      "parameter_count": 3403,
+      "stability_guarantee": false,
+      "streaming": true,
+      "carrier_lanes": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "payload_channels_per_lane": 2,
+      "stationary_state": "Z and R",
+      "transport_parameters": 0,
+      "force_perception_clock": "L(W),L(Z) before stream; first feature is incoming T(W)",
+      "pure_transport_isometry": true,
+      "full_update_lossless": false,
+      "initialization_seeds": {
+        "core_seed": 97999,
+        "r2_extension_seed_offset": 104729,
+        "r2_extension_seed": 202728
+      },
+      "geometry": {
+        "spatial_dimensions": 2,
+        "directions": [
+          "N",
+          "E",
+          "S",
+          "W"
+        ],
+        "mask": "x[:, :1]",
+        "transport": "masked port permutation with blocked-link bounce-back",
+        "carrier_lanes": 4,
+        "payload_channels_per_lane": 2
+      },
+      "clocks": {
+        "transport": "T(C) once per macro-step",
+        "F": "L(C), L(Z) are pre-stream; T(C) is the leading F feature",
+        "Q": "uses C_new and L(C_new); Z and L(Z) are current-step values",
+        "R2": "R_plus is computed before F from C,R,Z,L(C),L(Z),X; R_plus is then held as R for the next macro-step"
+      },
+      "state_shapes": {
+        "C": "[B, 8, H, W]",
+        "Z": "[B, 8, H, W]",
+        "R": "[B, 2, H, W]"
+      },
+      "feature_shapes": {
+        "F_input": 37,
+        "Q_input": 37,
+        "G_input": 37,
+        "G_hidden": 16,
+        "G_output": 2
+      },
+      "factorization": {
+        "enabled": true,
+        "input_blocks": {
+          "C": [
+            0,
+            8
+          ],
+          "L(C)": [
+            16,
+            24
+          ]
+        },
+        "effective_weight": "B_C @ U on C; B_L @ U on L(C)",
+        "basis_parameters": [
+          "f_in.U",
+          "q_in.U"
+        ],
+        "basis_initialization": "U_F = U_Q = I_8",
+        "basis_applied_after_transport": true
+      },
+      "r2_sidecar": {
+        "enabled": true,
+        "update": "R_plus = R + 0.1 * G_out(tanh(G_in(C,R,Z,L(C),L(Z),X)))",
+        "G_out_initialization": "zero weight and bias",
+        "transport": "none",
+        "readout_input": "Z only"
+      },
+      "parameter_shapes": {
+        "encoder.weight": [
+          8,
+          3,
+          1,
+          1
+        ],
+        "encoder.bias": [
+          8
+        ],
+        "f_in.weight": [
+          40,
+          37,
+          1,
+          1
+        ],
+        "f_in.bias": [
+          40
+        ],
+        "f_in.U": [
+          8,
+          8
+        ],
+        "f_out.weight": [
+          8,
+          40,
+          1,
+          1
+        ],
+        "f_out.bias": [
+          8
+        ],
+        "q_in.weight": [
+          16,
+          37,
+          1,
+          1
+        ],
+        "q_in.bias": [
+          16
+        ],
+        "q_in.U": [
+          8,
+          8
+        ],
+        "q_out.weight": [
+          8,
+          16,
+          1,
+          1
+        ],
+        "q_out.bias": [
+          8
+        ],
+        "readout.weight": [
+          1,
+          8,
+          1,
+          1
+        ],
+        "readout.bias": [
+          1
+        ],
+        "g_in.weight": [
+          16,
+          37,
+          1,
+          1
+        ],
+        "g_in.bias": [
+          16
+        ],
+        "g_out.weight": [
+          2,
+          16,
+          1,
+          1
+        ],
+        "g_out.bias": [
+          2
+        ]
+      }
+    }
+  },
+  "initialization_seeds": [
+    94001,
+    94002,
+    94003,
+    94004,
+    94005,
+    94006,
+    94007,
+    94008,
+    94009,
+    94010,
+    94011,
+    94012,
+    94013,
+    94014,
+    94015,
+    94016,
+    94017,
+    94018,
+    94019,
+    94020,
+    94021,
+    94022,
+    94023,
+    94024,
+    94025,
+    94026,
+    94027,
+    94028,
+    94029,
+    94030,
+    94031,
+    94032
+  ],
+  "schedule_seeds": [
+    95001,
+    95002,
+    95003,
+    95004,
+    95005,
+    95006,
+    95007,
+    95008,
+    95009,
+    95010,
+    95011,
+    95012,
+    95013,
+    95014,
+    95015,
+    95016,
+    95017,
+    95018,
+    95019,
+    95020,
+    95021,
+    95022,
+    95023,
+    95024,
+    95025,
+    95026,
+    95027,
+    95028,
+    95029,
+    95030,
+    95031,
+    95032
+  ],
+  "train_bank_seed": 10002,
+  "train_maps": 512,
+  "eval_bank_seeds": {
+    "32": 99332,
+    "64": 99364
+  },
+  "eval_maps_each_size": 32,
+  "updates": 300,
+  "batch": 8,
+  "credit_horizon": 8,
+  "training_forward_horizon": 64,
+  "eval_horizons": [
+    64,
+    128,
+    256
+  ],
+  "optimizer": {
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "U_weight_decay": 0.0,
+  "gradient_clip": 1.0,
+  "primary": "factorized_r2 minus native",
+  "primary_net_gain_threshold": 8,
+  "primary_exact_p_threshold": 0.05,
+  "runtime": "cuda_graph_k8",
+  "runtime_limit_enforced": false,
+  "source_sha256": {
+    "BPTT_PHASE2_PUBLICATION_MANIFEST.json": "9281168c0dcec7a75987f461074580d203c4f958797b28aced65004f6d120dfd",
+    "DIRECT_CARRY_PUBLICATION_MANIFEST.json": "bba5b527e93485c0a526a8b670b1164f9480d25b9d672ec1dd6a4bdc60aa4dbb",
+    "STREAMING_CARRY_PUBLICATION_MANIFEST.json": "4f88ed48810d3fd1d6e4f8f7749d88ee265a133c1aa434ab2d650a4c6b0c66de",
+    "evidence/short_bptt_phase2_init2345/manifest.json": "2d471eb833895497eec35c0dfc2bd6192675ad780fd019272b9b23aec4f68cdf",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed2.json": "273122c6ef7c1070cca212f9f7fe6562911eb276dcafb2a0a29afd78340080fc",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed3.json": "22a08fff5ccfb52a398e3f7ac29abdde868cc02a21208cb821537717ba78d891",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed4.json": "c350f665a3a8eb0c68ec08994368c0a7595c1b6a4c8c1df39a29b367bbdc0a7e",
+    "evidence/short_bptt_phase2_init2345/raw/additive_K8_seed5.json": "212671c5895f9abb8c3d5a2630456d41207ea2e01bc11bef32c0b9948da81f26",
+    "new/direct_spatial_carry/PROTOCOL.md": "a4d9cceabc8f5fdbf104eea1f654b580a96d718de45facb5d346b8427aaa126f",
+    "new/direct_spatial_carry/carry_cells.py": "214b5d5a6c1b791ef6f4767f93470ca57bd3eec7134f941a4139a38d95ef19d7",
+    "new/direct_spatial_carry/check.py": "593f9c49ac0f202ce1829f577f58eebeb001dde7c631874bf53e4948b8e795b4",
+    "new/direct_spatial_carry/run.py": "7f874533d65d580574177d04a68a2795c275295479f7341aced5626b2f1f750e",
+    "new/frontier_audit/audit.py": "98398be9ab7849b2af219b188848507a4973bb237c9315fe554c378b73427d01",
+    "new/frontier_audit/metrics.py": "88b2654ea73c8a7912ed13c5a6dcbf139dbd29684bec834936c9bb876e7d7e66",
+    "new/frontier_audit/report.py": "3d7484eccf9763f920c640e1990c8b2891e7aad5b110e4b418ac2da58c4e98f6",
+    "new/latent_factorial/PROTOCOL.md": "4c1a26457ae68f59e5d4dc97634ddd5b23d187b5f2d584b8ec00da56426b37dd",
+    "new/latent_factorial/cells.py": "a9346ac536c1af48a3684df852ace8d04277cdbae1e07550466d399c91a459a5",
+    "new/latent_factorial/run.py": "50e334410449332b7e19d7d7f80630129c42a0d3fa7d908fdb7e0c904be6dbd2",
+    "new/latent_factorial/runtime.py": "93272fbfa03ccdc240e809da3abbbabb071c6aaa6582bc53d00fe89ac4d56ed8",
+    "new/latent_factorial/test_cells.py": "e6a1c9e70deb5d4c88dc3c63ba0f44f483a79b61e562fa652d0fd821e0a8ed66",
+    "new/latent_width/PROTOCOL.md": "1d7c7423bfea6a9a0f64a4197671518077d45f2d7ccdcc1db4fc01557860a03d",
+    "new/latent_width/cells.py": "3444902f6e137447cf43ccd6715d869fd43c4960c66f73be11dd7873a6579150",
+    "new/latent_width/run.py": "55586196a706f2c0541411bc03dfc9ddab59c2b353c16ed864647195ad787bc7",
+    "new/latent_width/test_cells.py": "ad467b371c4b77f1f6e10adb2d9b38cdbab28fbc93e4cfdedcc637e2f52bffab",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "new/seed4_followup/phenotype.py": "9a6f870845d1b928b5e28a50d1e6ccb81b28abc1633346d29c6f1e5a50db72af",
+    "new/short_bptt/PROTOCOL.md": "f20d0dfbc8fd2ee21ea973a7562ed7f435fc4da824da67376165659d50818158",
+    "new/short_bptt/check.py": "d2e839fef75a2fba8b0f7e759cf140714fe186221543438c20b0eacbb41453c4",
+    "new/short_bptt/run.py": "dae5e6ed365842777aea0fc199867aa8913b346a2382ab7aa736985bde8ad9d9",
+    "new/short_bptt/training.py": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+    "new/short_bptt_phase2/PROTOCOL.md": "80a13c66a6ec03e1da247e18f04d867d954fe7f33d6f7b6e719376cba6c711da",
+    "new/short_bptt_phase2/check.py": "a9aec169d3a8c7ea110d6a260fee8ac6d95e9f7d8016269823a93df73f751e77",
+    "new/short_bptt_phase2/run.py": "12b3c4b0a7f12cb77ea81f8a5a92170f55bb9a5c320fbbb3d1af91e0ac8669ce",
+    "new/short_bptt_phase2/training.py": "7e0c95c7088933ef88402f04359103c16ffe3cf8dd09fab6f2352fbaef4f25cb",
+    "new/stream_path_audit/audit.py": "b26fc2d15218fa6a88cf4621daf83bf2c34c002f7b60aece54744a586ebd9185",
+    "new/stream_path_audit/operators.py": "6fd66289ab52bceec5c1428a0e7d31e8a860cc4f1c95520dbcfc8e7308bf41d8",
+    "new/streaming_carry/PROTOCOL.md": "e14978715194afa06d0b9f1c5a26b49b45d650f0275de285ca92e8e9611a38d2",
+    "new/streaming_carry/check.py": "653dd97f2dd21100ac6c3376ea14ee8e8df5be9b800487ea56f4df6dffe9bcf4",
+    "new/streaming_carry/run.py": "c2410ed7bf07363ad8d02e44cd6ed41b2defef1b6733d32042176c729c2559cb",
+    "new/streaming_carry/stream_cells.py": "88152e1243d519590a6aa22b66ba2e84eda9b59831c2722f254c1b440fbc7dfb",
+    "new/trajectory_qualification/common.py": "5abad75997cc204b3b26e4d7c5cd44b5245c97060e458af2a1912a761850bac4",
+    "new/trajectory_qualification/fresh_recipe.py": "f5244683a7a1d31264c20630a9f688e8bf55a58afb16e21fa5fffa642507a0d1",
+    "new/workspace_revision/PROTOCOL.md": "87f1d7ecb5772fc6cafa1060c5f468955ea16639c8f7e78d44cc29c6ec45e469",
+    "new/workspace_revision/check.py": "623233b55a5ac836f91126375e4fa3b1be4d9526fe325624cb65a87fae84e7f7",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "tools/launch_bptt_phase2.ps1": "dace8dd7e5b50a9139cde6e48e90f4107372a81f3b987d35f47478a2e32df08a",
+    "tools/launch_direct_carry.ps1": "c80e7e8b4e358507efd28d350149245c144834fe46f38305db2eee7139e031b3",
+    "tools/launch_latent_factorial.ps1": "298f8055e4130a323748753a731b0b0595bd4bc9847fa8c16ea81e88676a0f67",
+    "tools/launch_latent_width.ps1": "fe7086a528fab2392070727f30c5a881d0a053ca4d231863d5a680d42a8f70c3",
+    "tools/launch_revision.ps1": "5272cb470536a3e7ecca2af8803bda9196fd5b17ff39484abced06ff069d2ef9",
+    "tools/launch_short_bptt.ps1": "0a7859d1e34f970fdbc38cd93c29ba07019ec2d4d9e352bc64f8a8dc6bec7942",
+    "tools/launch_streaming_carry.ps1": "c5f4cde9af9bdfd59c2565ab1cf9c1f6f8f63d737baf9d4cb5ade87f20e98a89"
+  },
+  "data_sha256": {
+    "train": "5ff2af1eb77781ed766ff3c8ba1b4477cebb8b345873a715d9808b7cecdd5fee",
+    "evaluation32": "e9df257d6ce56ce4fa6828a69efce8de08decf0951ac5e39e886681a2b77ddfc",
+    "evaluation64": "42e61200f750b0c8c07b64d83b3519e31794e24a09ab0d4633f8373890dd130a"
+  },
+  "schedule_plan_sha256": "e24a69ae1646063370d2ee039a080852b44bf077007de5b4f9bd9086c3c8000a",
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  },
+  "torch": "2.5.1",
+  "numpy": "1.26.4",
+  "started_utc": "2026-10-05T06:28:49.350194+00:00",
+  "git_review_base": "c05895d68ce5f3974ff9c16305308c2ea1b49554",
+  "qualification_sha256": "25a9beb4e8025837d82e1470a3ead9de2a60057d29f83bf45dd8d10e56c59b1a",
+  "finished_utc": "2026-10-05T07:41:28.553333+00:00",
+  "execution_elapsed_seconds": 4361.0470000000005,
+  "elapsed_scope": "Complete formal 128-arm run only, from run start to completion; excludes the five-update-per-arm preflight and preparation before run start.",
+  "arm_metadata_example_seed": 97999,
+  "checkpoint_delivery": "Initial/final parameter hashes and checkpoint hashes are retained in perarm.json and the publication manifest; checkpoint files stay local."
+}

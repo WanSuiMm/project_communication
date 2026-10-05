@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "scope": "Saved artifacts, hashes, CPU banks and arithmetic only; no inference, training or optimizer updates.",
+  "completed_arms": 128,
+  "training_blocks": 32,
+  "metric_rows": 768,
+  "trace_banks": 256,
+  "curves": 128,
+  "curve_updates_total": 38400,
+  "paired_trace_identity_exact": true,
+  "coverage_retention_regression_counts_recomputed": true,
+  "full_predicates_recomputed_from_saved_metrics": true,
+  "aggregate_exact_match_from_frozen_runner": true,
+  "plans_banks_curves_and_checkpoints_checked": true,
+  "runtime_backends": {
+    "cuda_graph_k8": 128
+  },
+  "elapsed_seconds": 4361.0470000000005,
+  "primary_verdict": "NO_D_MINUS_A_RELIABILITY_QUALIFICATION",
+  "formal_full_successes": {
+    "native": 0,
+    "factorized": 0,
+    "native_r2": 0,
+    "factorized_r2": 0
+  },
+  "runtime_qualification_scope": "Five actual-shape updates each arm; short replay, not full300 equivalence.",
+  "synthetic_preflight_statistics_are_not_formal_endpoint": true,
+  "checkpoint_tensor_bindings": 128,
+  "matched_frontier_strata_not_recomputed": true,
+  "checkpoint_files_and_tensor_hashes_verified_locally_during_export": true,
+  "checkpoint_hash_records_crosschecked_against_public_perarm_rows": true
+}

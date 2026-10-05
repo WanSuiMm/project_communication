@@ -1,6 +1,58 @@
 # Context for incremental scientific review
 
-## Latest completed audit: native execution-state width qualification
+## Latest completed experiment: C8 read / R2 factorial
+
+- Protocol: `latent_read_sidecar_factorial_v1`; execution **COMPLETE**, 128/128
+  trajectories, 32 paired initialization/schedule blocks; Full success counts
+  native=0/32, factorized=0/32, native_r2=0/32, factorized_r2=0/32.
+- Primary D-A: wins0, losses0, delta0, exact paired two-sided p=1;
+  `NO_D_MINUS_A_RELIABILITY_QUALIFICATION`. B-A and C-A likewise have no
+  discordances. Binary interaction contrasts are all zero; their degenerate
+  descriptive interval is not a population equivalence guarantee. Inspect
+  continuous diagnostics separately; do not replace the frozen primary.
+- Same effective native C8/Z8 core tensors and schedules within each block.
+  B/D factor only C/L(C) read blocks as B@U, with independent F/Q U8 initialized
+  to identity and no U weight decay. C/D append a stationary self-conditioned
+  R2 writer, zero-initialized output head, and normally initialized pre-tanh
+  F/Q R input columns. No R transport or direct R readout; readout remains Z.
+  R2 bundles memory, extra parameters and computation, so it cannot isolate
+  memory necessity. Z also retains potential readout-nullspace memory.
+- Original K8 balanced-loss training: batch8,64 forward steps, losses every8,
+  eight backwards with detaches, one AdamW update,300 updates; unchanged Full
+  evaluator and fixed32-map evaluation banks at sizes32/64, through T256.
+  Blocks are fresh; evaluation cohorts were reused from the width experiment.
+- All128 use CUDA Graph arithmetic. Preflight checked five updates per arm
+  against the original eager K8 helper, including loss/gradient/clip/parameter
+  and Adam-state equality. It recorded the first nonzero U/G_out gradients,
+  not all G-layer entry times or 300-update runtime equivalence. Formal worker
+  elapsed4361.047seconds excludes preflight and publication.
+- Read [results](evidence/latent_factorial_20261005/RESULTS.md),
+  [summary](evidence/latent_factorial_20261005/summary.json),
+  [validation](evidence/latent_factorial_20261005/validation.json), then
+  [configuration](evidence/latent_factorial_20261005/config.json),
+  [per-arm records](evidence/latent_factorial_20261005/perarm.json) and
+  [metrics](evidence/latent_factorial_20261005/metrics.csv). Complete per-map
+  records, paired Boolean traces, frontier CSVs, curves and plans are secondary.
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+| Matched core construction and branch-specific factorized read | `make_model`, `FactorizedInput.effective_weight` | [cells.py](new/latent_factorial/cells.py) |
+| R writer, feature clocks and additive Z update | `LatentFactorialCell.step`, `metadata` | [cells.py](new/latent_factorial/cells.py) |
+| Optimizer groups, block pairing and verdict | `optimizer_for`, `paired`, `aggregate`, `run` | [run.py](new/latent_factorial/run.py) |
+| Captured K8 arithmetic and all-state finite checks | `math_backward`, `CapturedK8`, `train_graph_updates` | [runtime.py](new/latent_factorial/runtime.py) |
+| Initial matching and CPU gradient plumbing | `LatentFactorialCellTests` | [tests](new/latent_factorial/test_cells.py) |
+| Unchanged Full predicate and trace interface | `predicate`, `evaluate`, `_load_audit` | [phenotype.py](new/seed4_followup/phenotype.py) |
+| Saved-data export and verification | `build`, `checks`, `verify` | [exporter](tools/export_latent_factorial.py) |
+
+Frozen [protocol](new/latent_factorial/PROTOCOL.md),
+[reproduction](evidence/latent_factorial_20261005/REPRODUCTION.md).
+Verify from repository root:
+`python -X utf8 -B tools/export_latent_factorial.py --verify-only`.
+Saved-data validation does not rerun model logits, optimization or the CUDA
+qualification. This negative frozen recipe result is not a universal BPTT,
+latent-width or cellular-computation impossibility claim.
+
+## Previous completed audit: native execution-state width qualification
 
 - `native_latent_width_v1`: **COMPLETE**, 96/96 planned arms across 16 blocks.
   All six arms have 0/16 Full passes. The frozen W8-versus-W24 primary contrast

@@ -1,6 +1,38 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: native execution-state width qualification
+## Latest result: C8 read / R2 factorial qualification
+
+`latent_read_sidecar_factorial_v1`: **COMPLETE**, 128/128 trajectories in
+4361.047 seconds (72m41s), 32 fresh paired training blocks. Native C8,
+factorized C8, native C8+R2 and factorized C8+R2 each have **0/32 Full passes**.
+The frozen primary D-A contrast has 0 wins, 0 losses, delta0 and exact paired
+two-sided p=1: `NO_D_MINUS_A_RELIABILITY_QUALIFICATION`. This recipe did not
+improve Full reliability. All-zero outcomes do not establish equivalence of
+the models or impossibility of other latent/sidecar designs.
+
+Start here for the new evidence:
+
+1. [Results](evidence/latent_factorial_20261005/RESULTS.md),
+   [summary](evidence/latent_factorial_20261005/summary.json) and
+   [validation](evidence/latent_factorial_20261005/validation.json).
+2. [Configuration](evidence/latent_factorial_20261005/config.json),
+   [per-arm records](evidence/latent_factorial_20261005/perarm.json) and
+   [768 metric rows](evidence/latent_factorial_20261005/metrics.csv).
+3. [Frozen protocol](new/latent_factorial/PROTOCOL.md),
+   [code map](GPT_CONTEXT.md),
+   [runtime qualification](evidence/latent_factorial_20261005/runtime_qualification.json)
+   and [reproduction](evidence/latent_factorial_20261005/REPRODUCTION.md).
+
+All128 used CUDA Graph K8 training. The preflight checked five actual-shape
+updates per arm with bitwise-equal eager/graph gradients, parameters and Adam
+states; this is a short runtime check, not a 300-update equivalence claim.
+The elapsed field includes the formal worker's training/evaluation/systems
+work and excludes preflight and publication. Full numeric results are retained
+under `block00/`–`block31/`; raw arrays and compressed tables are secondary.
+
+    python -X utf8 -B tools/export_latent_factorial.py --verify-only
+
+## Previous result: native execution-state width qualification
 
 `native_latent_width_v1`: **COMPLETE**, 96/96 planned arms across 16 blocks.
 All six arms recorded 0/16 Full passes: W24, W8, the parameter-matched W24
