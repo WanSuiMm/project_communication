@@ -1,81 +1,75 @@
-# Incremental review: completed Hybrid Writer v0 experiment
+# Incremental review: fixed HardClip-v1 calibration and completed result
 
-- Review base: `283ebe5ae584c53e26f588d8230808349a66472d`.
-- Prior implementation evidence: `7373aa4d1f3c64bd1e84af108b9cc2ac617eab46`.
-- Result evidence head: `ecdc145e55bd5a21a1f719c84791f82357b714f4`.
-- Execution: `COMPLETE`,32/32 trajectories and416/416 checkpoint evaluations.
-- Frozen verdict: `NO_PRIMARY_RELIABILITY_QUALIFICATION`.
-- This later handoff commit changes only review metadata; the evidence head stays stable.
+- Review base: `64aa8680d23446bd6375259213767e3e6c997274`.
+- Result evidence head: `0ce156ff8c5e6ddc307c3a8e665e26d208532f9e`.
+- Execution: COMPLETE, 16/16 trajectories, 208/208 predeclared checkpoints,
+  3658.782 seconds (about61 minutes), no runtime limit.
+- Formal verdict: `NO_HARDCLIP_RELIABILITY_QUALIFICATION`.
+- This handoff changes review metadata only; the result evidence head stays stable.
 
 ## Read first
 
-1. [Frozen final report](evidence/hybrid_writer_20261006/RESULTS.md),
-   [aggregate](evidence/hybrid_writer_20261006/summary.json), and
-   [32-row formal metrics](evidence/hybrid_writer_20261006/final_metrics.csv).
-2. [Formation plot](evidence/hybrid_writer_20261006/reach_retention_trajectory.png),
-   [checkpoint metrics](evidence/hybrid_writer_20261006/metrics.csv), and
-   [dense records](evidence/hybrid_writer_20261006/dense.json).
-3. [Saved-data validation](evidence/hybrid_writer_20261006/validation.json),
-   [reproduction and artifact map](evidence/hybrid_writer_20261006/REPRODUCTION.md),
-   [publication manifest](HYBRID_WRITER_PUBLICATION_MANIFEST.json).
-4. Refer back to the unchanged [protocol](new/hybrid_writer/PROTOCOL.md),
-   [writer](new/hybrid_writer/cells.py), [runner](new/hybrid_writer/run.py), and
-   [reporter](new/hybrid_writer/reporting.py) only as needed.
+1. [Results](evidence/hardclip_v1_20261006/RESULTS.md),
+   [aggregate](evidence/hardclip_v1_20261006/summary.json),
+   [16-row final metrics](evidence/hardclip_v1_20261006/final_metrics.csv).
+2. [Training dose summary](evidence/hardclip_v1_20261006/dose_summary.json),
+   [lane/block dose table](evidence/hardclip_v1_20261006/training_dose.csv),
+   [calibration result](evidence/hardclip_v1_20261006/calibration/RESULTS.md).
+3. [Validation](evidence/hardclip_v1_20261006/validation.json),
+   [reproduction](evidence/hardclip_v1_20261006/REPRODUCTION.md),
+   [publication manifest](HARDCLIP_V1_PUBLICATION_MANIFEST.json).
+4. [Frozen protocol](new/hardclip_v1/PROTOCOL.md),
+   [supplied primitive](new/hardclip_v1/primitive.py),
+   [cell](new/hardclip_v1/cells.py), [dose observer](new/hardclip_v1/dose.py),
+   [runner](new/hardclip_v1/run.py), [reporter](new/hardclip_v1/reporting.py).
 
-Large packed arrays and full gzip JSON/CSV files are secondary evidence.
-Earlier audit state packages need not be reread for this result update.
+All416 packed traces,208 summaries and evaluation dose records,16 training
+curves, banks, schedules, frontier CSVs and full calibration RMS samples are
+secondary evidence. JSON/CSV compression is lossless. Model/optimizer contents
+and private machine records stay local; hashes retain their provenance.
 
-## New decision-relevant evidence
+## Changed evidence
 
-At the fixed u300 endpoint, joint readiness is neural1/8, budget0/8,
-hybrid0/8 and affine_hybrid0/8. Candidate-only/reference-only outcomes are
-0/1 for budget minus neural,0/0 for hybrid minus budget, and0/1 for hybrid
-minus neural. All three exact and Holm-adjusted p-values are1; none meets
-the predeclared net-gain and multiplicity requirements. Affine minus Hybrid
-is a descriptive capacity comparison, not a fourth primary test.
+Prior Hybrid v0 changed small-signal gain, radial amplitude encoding and
+write bound together. This experiment clips only above-cap writes, with a raw
+inactive branch, true autodiff and no learned controller. Other scientific
+modules and fixed K8/reset64x4/u300 recipe remain unchanged. The8 new paired
+seeds were not selected by task performance.
 
-The predeclared u0,u25,...,u300 grid yields the same ever-ready counts.
-Neural has one trajectory first-ready before300 and no later readiness loss;
-the other arms have zero first-ready trajectories, so readiness-loss rates
-are undefined. Dense results never replace the final endpoint with a peak.
+Outcome-blind calibration used ALL8 prior neural u300 models on the SAME16
+training maps, cold64 steps. No labels/readout/task outcomes selected caps.
+All lanes have1% cumulative RMS removal and9.82%–10.06% triggers, passing
+the<=20% gate. Fixed actual-write caps N/E/S/W are0.3964515924,0.4826018810,
+0.4742255211,0.5157895088.
 
-Execution took8864.187seconds, about2h28m. All scientific records are retained:
-832 packed paired trace banks,416 full per-checkpoint summaries,416 writer
-telemetry files,32 training curves,32 final frontier CSVs, three numeric banks,
-all schedules and aggregates. Large text records use lossless gzip; NPZ files
-are unchanged.416 local checkpoint file hashes and58 source snapshot/current
-hashes were verified. Model/optimizer contents and private machine records
-remain local. The package is about411MiB.
+At u300 fresh Neural and HardClip are both joint-ready0/8, with
+candidate-only/reference-only0/0, net gain0 and exact paired p=1.
+Old Full and checkpoint-grid ever-ready are also0/8 in each arm. Readiness-loss
+ratios remain null, since no saved point first becomes ready.
 
-Publication verification recomputed R/S/continuous survival at all416 checkpoints
-from saved Boolean traces, checked original/flipped AND and bitpack roundtrips,
-and checked the final paired aggregate and checkpoint grid. No model inference,
-training, optimizer update or new causal intervention was performed. Old Full
-and frontier remain saved evaluator outputs, not regenerated measurements.
+The key limitation is training dose: HardClip blocks0,1,4,5,6 never
+trigger clipping. Only block2(E),3(N),7(N) are active. Their whole-training
+lane trigger fractions are about5.41%,27.32%,15.14%; RMS removal fractions
+are about0.30%,4.73%,1.59%. A sparse calibration tail on old checkpoints
+does not guarantee a sparse or nonzero intervention on fresh trajectories.
+No threshold was retuned to rescue the result.
 
-## Changed and unchanged claims
+## Claim boundary and reviewer focus
 
-The efficacy-pending label is replaced by a completed formal negative result:
-this fixed lane-write-budget/table recipe did not qualify a reliability gain
-under its frozen K8 protocol. No training code, evaluation bank, gate, schedule,
-checkpoint selection policy or historical evidence was changed for publication.
+This recipe did not qualify a reliability gain. The5 zero-dose blocks limit
+a mechanistic rejection of unusually large writes. Do not promote the negative
+to a general failure of amplitude control, Hybrid/NCA or continuation theory.
+Neither a state-construction mechanism nor another architecture is proved.
+Earlier audits and claim boundaries stay unchanged.
 
-The result does not isolate why formation failed: the budget contrast bundles
-radial bounds with regulation. It supplies no general rejection of Hybrid/NCA,
-no proof of semantic closure or recurrent stability, and no3D or general BPTT
-claim. Earlier block7 continuation evidence and previous formal negatives stay
-unchanged.
+Scientific source matches the run snapshot. The public launcher only replaces
+a private executable path with Python environment discovery; original tested
+and sanitized source hashes are distinguished in the publication. The saved-data
+check needs no training or inference:
 
-## Reviewer questions
+    python -X utf8 -B tools/export_hardclip_v1.py --verify-only
 
-1. Do the final block table and formation curves suggest no readiness formation,
-   or formation below the joint thresholds? Keep this descriptive and distinguish
-   reach, retention and their support denominators.
-2. Do the secondary lane-gate/write telemetry records reveal a consistent pattern
-   worth testing, without treating a correlation as a causal diagnosis?
-3. Does any proposed next intervention address a specific observed deficit rather
-   than reinterpret this negative qualification as a positive result?
-
-CPU-only verification from repository root:
-
-    python -X utf8 -B tools/export_hybrid_writer.py --verify-only
+For review, separate formal readiness from continuous reach/retention metrics,
+and calibration dose from actual fresh-training/evaluation dose. Any next
+hypothesis should address a measured failure rather than reinterpret this
+negative as a positive architectural result.
