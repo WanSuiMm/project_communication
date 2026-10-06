@@ -1,6 +1,39 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: matched reset64x4 versus continuous256 training
+## Latest: selected block7 formation/collapse continuation audit
+
+COMPLETE32/32 producer-consumer matrix units and12/12 same-state single-step
+units,90.97seconds. No training, optimizer update or fitted state alignment.
+Eight native diagonals replay all Boolean bits exactly. This evaluates one
+selected training trajectory, not 44 independent success trials.
+
+Fixed R275, source-paired all-changed coverage atT256:
+
+|Producer toT64|Consumer toT256|size32|size64|
+|---:|---:|---:|---:|
+|275|275|.950144|.840536|
+|275|300|.970374|.933684|
+|300|275|.489719|.111351|
+|300|300|.425492|.059384|
+
+G300 preserves u275-correct cells continuously at.999731/.999708 and makes
+more sustained progress. Its one-step destruction on u275 states is below
+.0003 at all tested times/sizes. G275 only partly improves u300-produced states.
+The distinction points to cold-prefix state formation (encoder plus64 updates),
+without identifying a unique module or excluding representation compatibility.
+Hybrid was not run. Earlier formal u300 negative qualification is unchanged.
+
+[Results](evidence/block7_collapse_20261006/RESULTS.md),
+[summary](evidence/block7_collapse_20261006/summary.json),
+[matrix summaries](evidence/block7_collapse_20261006/matrix_summary.csv),
+[single-step summaries](evidence/block7_collapse_20261006/single_step_summary.csv),
+[validation](evidence/block7_collapse_20261006/validation.json),
+[protocol](new/collapse_audit/PROTOCOL.md).
+Secondary: [provenance](evidence/block7_collapse_20261006/provenance.json),
+[full matrix](evidence/block7_collapse_20261006/matrix.json.gz),
+[full single-step records](evidence/block7_collapse_20261006/single_step.json.gz).
+
+## Previous: matched reset64x4 versus continuous256 training
 
 COMPLETE16/16 trajectories, eight fresh paired blocks,208 saved checkpoint
 records;3439.86seconds. Architecture unchanged(C24/Z8,5033 parameters).

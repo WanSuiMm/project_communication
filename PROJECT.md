@@ -1,5 +1,37 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Completed zero-training audit (2026-10-06): block7/reset formation and
+collapse, [protocol](new/collapse_audit/PROTOCOL.md). The four existing u225,
+u250,u275,u300 checkpoints hand off full (C,Z) states at T64 in a4x4
+producer/consumer matrix on the same32-map size32/64 banks. Three fixed readout
+views separate immediate readout switching from later recurrent effects.
+Also apply G275/G300 for one step to the SAME u275 states at t64,128,192,
+observed with R275. Total32 matrix and12 single-step units. Eight native
+diagonals must exactly reproduce saved Boolean traces. No model training,
+optimizer updates, state alignment, or Hybrid implementation in this audit.
+Small two-map CUDA handoff smoke passed with zero differing bits. The local run
+is `block7_collapse_audit_20261006_01`; its machine/session receipts remain local.
+No time cap, watchdog, recurring monitoring or change to frozen prior evidence.
+The audit completed32/32 matrix and12/12 single-step units in90.97seconds;
+all eight native replay diagonals have zero differing bits. Under fixed R275,
+u275 states continued by G300 achieve T256 paired coverage.970374(size32) and
+.933684(size64), versus.950144/.840536 under G275. G275 only partially improves
+u300-produced states (.489719/.111351 versus G300's.425492/.059384).
+The result points to deficient cold-prefix state formation rather than loss
+of continuation on already-successful states; it does not isolate encoder
+versus recurrent writes or prove a unique contract. See the new
+[results](evidence/block7_collapse_20261006/RESULTS.md) and
+[raw report](evidence/block7_collapse_20261006/frozen_RESULTS.md). Hybrid is not run.
+
+Repository-root entry commands:
+
+    python -X utf8 -B new/collapse_audit/check_metrics.py
+    python -X utf8 -u -B new/collapse_audit/run.py --out runs/NEW_COLLAPSE_AUDIT
+    python -X utf8 -B tools/export_block7_collapse.py --verify-only
+
+Re-running GPU inference requires the original local checkpoints referenced
+by published hashes. Saved public-data verification needs no checkpoints.
+
 Completed experiment (2026-10-06): continuous execution-state coverage,
 protocol [new/continuous_coverage/PROTOCOL.md](new/continuous_coverage/PROTOCOL.md).
 Original C24/Z8 StreamingCell, eight fresh paired initialization/schedule blocks,

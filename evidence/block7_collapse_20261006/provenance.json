@@ -1,0 +1,66 @@
+{
+  "protocol": "block7_collapse_continuation_v1",
+  "source_sha256": {
+    "new/streaming_carry/stream_cells.py": "88152e1243d519590a6aa22b66ba2e84eda9b59831c2722f254c1b440fbc7dfb",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/collapse_audit/check_metrics.py": "84cb17dbb1ef315c54086905c84c5ede04d5402d229c5a6f2ff0779d70f035eb",
+    "new/collapse_audit/metrics.py": "34014e3ad1a4326c131d6d698d4ca0f72eab393d32f4cf45602535f59d3483ee",
+    "new/collapse_audit/PROTOCOL.md": "baa7e409fa45e8b7d35085d65209b13d82a239ddf0e8b55cb01e7944431c7f54",
+    "new/collapse_audit/run.py": "b6a825cb1e158afe7aa660dbe509fd32e69b1abf4b586dc19b35030feb93b26f"
+  },
+  "input_sha256": {
+    "new/streaming_carry/stream_cells.py": "88152e1243d519590a6aa22b66ba2e84eda9b59831c2722f254c1b440fbc7dfb",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "evidence/continuous_coverage_20261006/banks/evaluation32.npz": "6541d48b4eb4851b23a1a2f13ff71d7829aed145c41573ae6583ec284ecb3221",
+    "evidence/continuous_coverage_20261006/banks/evaluation64.npz": "c4cd8760c21044e949c738d62242d539ec910e740474082bd5f2fcbd9f333771",
+    "evidence/continuous_coverage_20261006/block07/reset64x4/evaluation/u225/size32_traces.npz": "871b4d91a79f34bd3670675c99fbb76ff01113316b460dea8c57bddddb2f2a8a",
+    "evidence/continuous_coverage_20261006/block07/reset64x4/evaluation/u225/size64_traces.npz": "f5ba4e44533d38cce1b1cf6d69fd544f6e678af6ec1c5f6d5ecdbb5bc5723e73",
+    "evidence/continuous_coverage_20261006/block07/reset64x4/evaluation/u250/size32_traces.npz": "abb8b8820e6c1abe96babdba5e0d5099c598bcd979467719913eb4e1ca435405",
+    "evidence/continuous_coverage_20261006/block07/reset64x4/evaluation/u250/size64_traces.npz": "1dd643d947093b3e7fd7257fa3d3a68e8b97e90dcd08e5af35e4ee0e6675b2c3",
+    "evidence/continuous_coverage_20261006/block07/reset64x4/evaluation/u275/size32_traces.npz": "ace7fd06b52f31bc86e7245b460de7fee7df4705b742773a90624ff45395593c",
+    "evidence/continuous_coverage_20261006/block07/reset64x4/evaluation/u275/size64_traces.npz": "772e2a9341826d853eb8dc315ccaaca80ab6171f5b46158d0592400ca4aaf673",
+    "evidence/continuous_coverage_20261006/block07/reset64x4/evaluation/u300/size32_traces.npz": "634f03745ac9af4c76f6b190fb2eed7b3790f251d3cc437cfb889754d51f95cc",
+    "evidence/continuous_coverage_20261006/block07/reset64x4/evaluation/u300/size64_traces.npz": "7f8d3a7aecc9e066f3097774cb7571ac0b81a0c366e502572d085a668a1aed60"
+  },
+  "backend": {
+    "torch": "2.5.1",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  },
+  "review_base": "ebff366c6cc04c2c332b9764f8bf167b104fac12",
+  "runtime_limit_enforced": false,
+  "watchdog_enabled": false,
+  "continuous_monitoring": false,
+  "training_updates": 0,
+  "checkpoints": {
+    "225": {
+      "filename": "u225.pt",
+      "sha256": "7b33fa696cb36ee8dca4545803338eeaa10a99ece2552dd9c36069f322ef56e7",
+      "parameter_sha256": "cf191159157db2bc5c16aba3f99bb82a3ff1ee5378871c469764f073b103540e"
+    },
+    "250": {
+      "filename": "u250.pt",
+      "sha256": "5a8b6ea33bc1c1c135f3f4404fbcbe94e2817e48d760e973231f85e32f7d7215",
+      "parameter_sha256": "e53f7a157a24dd3804ac16ab0d521df069e231139d442b6d83dd62aa52cfcd29"
+    },
+    "275": {
+      "filename": "u275.pt",
+      "sha256": "f6b457d3fa35b69409b054e03113d1e8dce761eb9191c24b6b938213e1527396",
+      "parameter_sha256": "7f26a2062c9a3b1f84f07f1d8d74ab7010ea1e640b58a28ec4eda58fab8f4de9"
+    },
+    "300": {
+      "filename": "u300.pt",
+      "sha256": "e0e17641357afb1b6b0b9fec544aa5605ac9fe590f7d482198fe9fb0361bbfae",
+      "parameter_sha256": "3283635abbcfc019c2cd79864fa9d5e1733550c0d6a8ec9179f798e9cfdc9644"
+    }
+  },
+  "run_id": "block7_collapse_audit_20261006_01",
+  "checkpoint_contents_published": false,
+  "publication_inference_or_training": false
+}

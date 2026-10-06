@@ -1,6 +1,37 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: continuous execution-state coverage
+## Latest result: block7 formation/collapse continuation audit
+
+Why did block7/reset lose its long-rollout behavior between u275 and u300?
+A zero-training audit handed full T64 states between u225/u250/u275/u300 in
+a4x4 producer/consumer matrix on the same32-map size32/64 banks. All32 matrix
+and12 same-state single-step units completed; eight native diagonals replay
+exactly. Three fixed readout views distinguish decoder changes from updates.
+
+Under fixed R275, u275 states continued by G300 attain T256 paired coverage
+**.970374/.933684** at sizes32/64, above G275's.950144/.840536. G300 continuously
+preserves about99.97% of u275's T64-correct cells. G275 only partly improves
+u300-produced states. This points to deficient cold-prefix state formation,
+which includes the encoder AND64 recurrent updates; it does not isolate a
+unique module or establish population reliability. Hybrid has not been run.
+
+1. [Results](evidence/block7_collapse_20261006/RESULTS.md),
+   [summary](evidence/block7_collapse_20261006/summary.json),
+   [saved-data validation](evidence/block7_collapse_20261006/validation.json).
+2. [Matrix summaries](evidence/block7_collapse_20261006/matrix_summary.csv),
+   [single-step summaries](evidence/block7_collapse_20261006/single_step_summary.csv).
+3. [Frozen protocol](new/collapse_audit/PROTOCOL.md),
+   [code map](GPT_CONTEXT.md),
+   [reproduction and array layouts](evidence/block7_collapse_20261006/REPRODUCTION.md).
+
+All44 packed traces and10 numeric state packages are retained losslessly;
+large arrays and gzip raw records are secondary. The previous formal u300
+continuous-coverage verdict remains negative. This selected audit does not
+replace that qualification with a peak checkpoint or redefine the old Full gate.
+
+    python -X utf8 -B tools/export_block7_collapse.py --verify-only
+
+## Previous result: continuous execution-state coverage
 
 Can supervised continuous execution make long cellular computation learnable
 with K8 credit? The unchanged C24/Z8 StreamingCell was trained in eight fresh

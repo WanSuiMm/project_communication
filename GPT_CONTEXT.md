@@ -1,6 +1,49 @@
 # Context for incremental scientific review
 
-## Latest completed experiment: continuous execution-state coverage
+## Latest completed audit: block7 producer/consumer continuation
+
+- Protocol `block7_collapse_continuation_v1`, COMPLETE32 matrix +12 single-step
+  units, zero training, optimizer updates or fitted state alignment. Selected
+  block07/reset64x4 checkpoints225/250/275/300, init96008 and schedule97008.
+  Same saved32-map banks at sizes32/64; one training trajectory is the unit,
+  not pixels, maps, views or checkpoints. Worker90.97seconds.
+- P creates full(C,Z) states from a cold start toT64 in original/flipped worlds.
+  C's recurrent rule continues cloned states192 steps toT256. Three observation
+  views keep R_P, R_C and R275 fixed throughout; readouts do not affect dynamics.
+  Cohorts use PRODUCER native paired correctness at64, never receiver selection.
+- All eight native prefixes and diagonal suffixes match prior original,
+  flipped and AND Boolean bits exactly. Single-step G275 controls match native
+  t+1 bits for states sampled at64/128/192. Parameters remain hash-identical.
+- Under R275, P275/C300 all-changed T256 paired coverage is.970374/.933684
+  (size32/64), with continuous preservation.999731/.999708. P275/C275 coverage
+  is.950144/.840536. P300/C275 improves P300/C300 only partly:
+  .489719/.111351 versus.425492/.059384. G300 can continue successful states;
+  its native failure is not adequately explained as inability to consume them.
+- This supports prioritizing cold-prefix execution-state construction/write
+  interfaces. Production includes the encoder AND64 recurrent steps. No unique
+  producer module, latent decomposition, irreversible domain exit, general
+  closure theorem, phase transition, population reliability or Hybrid result
+  is established. Prior fixed-u300 formal negative verdict stays unchanged.
+- Read [results](evidence/block7_collapse_20261006/RESULTS.md),
+  [summary](evidence/block7_collapse_20261006/summary.json),
+  [validation](evidence/block7_collapse_20261006/validation.json), then
+  [matrix summaries](evidence/block7_collapse_20261006/matrix_summary.csv) and
+  [single-step summaries](evidence/block7_collapse_20261006/single_step_summary.csv).
+  Full gzip JSON and44 packed trajectories plus10 state packages are secondary.
+
+|Concept|Exact symbols|Source|
+|---|---|---|
+|Checkpoint/bank/source binding; fixed local backend|`load_material`, `setup_backend`|[run.py](new/collapse_audit/run.py)|
+|Producer prefix and cloned whole-state handoff|`produce`, `continue_state`, `state_copy`|[run.py](new/collapse_audit/run.py)|
+|Three observation-only readouts|`observe`, `readers`|[run.py](new/collapse_audit/run.py)|
+|Native-prefix/diagonal/single-step replay checks|`compare_bits`, `main`|[run.py](new/collapse_audit/run.py)|
+|Fixed producer cohorts, preservation and progress|`summarize_suffix`, `summarize_step`|[metrics.py](new/collapse_audit/metrics.py)|
+
+Public verification uses saved data only, without model inference:
+
+    python -X utf8 -B tools/export_block7_collapse.py --verify-only
+
+## Previous completed experiment: continuous execution-state coverage
 
 - Protocol `continuous_execution_coverage_v1`; original C24/Z8 StreamingCell,
   5033 parameters; eight fresh paired initialization/schedule blocks,16 trained
