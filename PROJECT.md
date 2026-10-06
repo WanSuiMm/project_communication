@@ -1,5 +1,36 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Hybrid Writer v0 implementation and prelaunch checks (2026-10-06):
+[frozen protocol](new/hybrid_writer/PROTOCOL.md),
+[cells and mechanical write contract](new/hybrid_writer/cells.py),
+[serial runner](new/hybrid_writer/run.py). Four arms are neural, budget,
+hybrid and affine_hybrid, with C24/Z8 and unchanged masked transport/E/Q/readout.
+The bounded writer limits per-lane single-step RMS correction to .1; it does not
+guarantee semantic closure or full recurrent stability. Eight fresh paired blocks,
+300 matched reset64x4 super-updates each, K8; official endpoint stays u300.
+All four actual-shape eager/CUDA Graph checks passed three optimizer updates,
+with zero gradient differences; CPU initialization/transport/budget checks pass.
+Dense checkpoints u0,25,...,300, new shared held-out cohorts, packed paired traces,
+observed ever-ready and fixed-step gate/write telemetry are retained. Formal
+efficacy run was dispatched and verified after tool yield against the saved u25
+checkpoint and Adam steps. Public status is `PENDING_NOT_PUBLISHED`; see
+[historical launch verification](evidence/hybrid_writer_prelaunch_20261006/dispatch.json),
+[validation](evidence/hybrid_writer_prelaunch_20261006/validation.json) and
+[configuration](evidence/hybrid_writer_prelaunch_20261006/config.json).
+The persistent foreground session and original machine receipt remain local.
+Expected duration is about2.3-2.6hours, not a runtime limit or completed result.
+
+Repository-root Hybrid commands:
+
+    python -X utf8 -B new/hybrid_writer/check_cells.py
+    python -X utf8 -u -B new/hybrid_writer/run.py --check --out analyses/NEW_HYBRID_QUALIFICATION.json
+    pwsh -File tools/launch_hybrid_writer.ps1 -RunName NEW_HYBRID_RUN -Qualification analyses/NEW_HYBRID_QUALIFICATION.json
+
+The tool-owned foreground session remains open for the worker's lifetime.
+No runtime cap, watchdog or recurring monitor; dispatch and completed efficacy
+are separate states. Original frozen evidence and the previous negative
+qualification remain unchanged.
+
 Completed zero-training audit (2026-10-06): block7/reset formation and
 collapse, [protocol](new/collapse_audit/PROTOCOL.md). The four existing u225,
 u250,u275,u300 checkpoints hand off full (C,Z) states at T64 in a4x4

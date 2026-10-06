@@ -1,5 +1,42 @@
 # Context for incremental scientific review
 
+## Latest implementation: Hybrid Writer v0, efficacy not published
+
+- Protocol `hybrid_lane_write_budget_v1`; four arms neural/budget/hybrid/
+  affine_hybrid, common C24/Z8 and masked lane permutation. Neural is the
+  unchanged free residual. Bounded arms use delta=.1*a*m/sqrt(.5^2+mean_lane(m^2)).
+  Budget learns four constant coefficients; Hybrid has36 lane-specific hat
+  coefficients at knots0,.5,1, conditioned on incoming/old-L(C) lane magnitudes.
+  Affine replaces only the proposal MLP and is a secondary capacity ablation.
+- Shared E/Q/readout and MLP tensors are copied from a canonical seeded cell.
+  Zero proposals and a=.5 match initial numerical functions and proposal
+  Jacobian. The hard budget is mechanical; semantic closure, full-Jacobian
+  stability and the responsible block7 module remain unproved.
+- Eight fresh paired blocks; reset64x4 on the SAME batch8 per super-update,
+  32 K8 loss/backward windows and one AdamW step;300 updates, checkpoints every25.
+  The fixed-u300 J gate uses the existing strict reach/retention/support limits.
+  Three primary paired comparisons use exact discordant tests and Holm correction;
+  observed ever-ready and write telemetry are secondary, never model selection.
+- [Validation](evidence/hybrid_writer_prelaunch_20261006/validation.json) contains
+  CPU/runtime qualification only. Four actual-shape three-update GPU comparisons
+  have zero gradient differences. A reporting-only source rebinding adds Wilson
+  intervals/error labels without changing model, optimizer, evaluator or runtime.
+  [Dispatch](evidence/hybrid_writer_prelaunch_20261006/dispatch.json) verifies a
+  saved u25 checkpoint after tool yield. It is a historical launch receipt summary,
+  not current progress. Efficacy status: `PENDING_NOT_PUBLISHED`.
+
+|Concept|Symbols|Source|
+|---|---|---|
+|Writer budget and local hat features|`HybridWriterCell._gate`, `_scale_proposal`, `details`|[cells.py](new/hybrid_writer/cells.py)|
+|Copied common initialization|`make_model`|[cells.py](new/hybrid_writer/cells.py)|
+|Schedules, graph checks, dense observations|`check`, `run`, `observed_evaluation`|[run.py](new/hybrid_writer/run.py)|
+|Formal/secondary separation and Holm comparisons|`aggregate`, `report`|[reporting.py](new/hybrid_writer/reporting.py)|
+|Mechanical invariants and baseline parity|`run_checks`|[check_cells.py](new/hybrid_writer/check_cells.py)|
+
+Start with the [protocol](new/hybrid_writer/PROTOCOL.md) and
+[configuration](evidence/hybrid_writer_prelaunch_20261006/config.json).
+No existing scientific conclusion is upgraded by this implementation.
+
 ## Latest completed audit: block7 producer/consumer continuation
 
 - Protocol `block7_collapse_continuation_v1`, COMPLETE32 matrix +12 single-step

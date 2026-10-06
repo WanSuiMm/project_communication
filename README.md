@@ -1,5 +1,31 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
+## Latest code: Hybrid Writer v0; efficacy pending
+
+Can an explicit lane write budget improve cold-start formation under K8?
+The new four-arm experiment keeps C24/Z8 and the existing transport/E/Q/readout,
+and compares neural, budget, hybrid and affine_hybrid. Bounded writers limit
+each lane's single-step RMS correction to .1. The Hybrid table has36 direct
+coefficients on two local magnitude features; it supplies no semantic-closure
+or full-recurrence stability guarantee.
+
+CPU invariants passed. All four actual-shape CUDA Graph/eager checks passed
+three optimizer updates with zero gradient differences. The formal32-trajectory
+run was launched and verified at checkpointu25. **No formal efficacy results
+are included in this code publication.** Fixed u300 is primary; intermediate
+ever-ready is secondary. Earlier negative qualifications remain unchanged.
+
+1. [Incremental handoff](GPT_HANDOFF.md) and [frozen protocol](new/hybrid_writer/PROTOCOL.md).
+2. [Cell and writer](new/hybrid_writer/cells.py), [runner](new/hybrid_writer/run.py),
+   [reporting and paired tests](new/hybrid_writer/reporting.py).
+3. [Prelaunch validation](evidence/hybrid_writer_prelaunch_20261006/validation.json),
+   [configuration](evidence/hybrid_writer_prelaunch_20261006/config.json),
+   [historical launch verification](evidence/hybrid_writer_prelaunch_20261006/dispatch.json).
+
+CPU check from repository root: `python -X utf8 -B new/hybrid_writer/check_cells.py`.
+The formal runner requires the historical local Torch2.5.1 CUDA environment;
+its source, dependencies and commands are in the protocol.
+
 ## Latest result: block7 formation/collapse continuation audit
 
 Why did block7/reset lose its long-rollout behavior between u275 and u300?
@@ -13,7 +39,8 @@ Under fixed R275, u275 states continued by G300 attain T256 paired coverage
 preserves about99.97% of u275's T64-correct cells. G275 only partly improves
 u300-produced states. This points to deficient cold-prefix state formation,
 which includes the encoder AND64 recurrent updates; it does not isolate a
-unique module or establish population reliability. Hybrid has not been run.
+unique module or establish population reliability. Hybrid had not been run at
+that audit's publication; its new code/launch is described above.
 
 1. [Results](evidence/block7_collapse_20261006/RESULTS.md),
    [summary](evidence/block7_collapse_20261006/summary.json),
