@@ -1,77 +1,88 @@
-# Incremental review: continuous execution-state coverage
+# Incremental review: block7 formation/collapse continuation audit
 
-- Review base: `df5107b8d529a9753f09b1eec750bba36be67295`.
-- Evidence head: `8ac3d7558d3d4bafb5f495e27e60db05d22f3d11`.
-- This later commit changes only this handoff. Earlier protocols and evidence
-  remain unchanged; publication performs no model fitting, training or inference.
+- Review base: `ebff366c6cc04c2c332b9764f8bf167b104fac12`.
+- Evidence head: `8924d884c4b7a9a3cca68a713cfbc84e73e25359`.
+- This later commit changes only the handoff. The evidence head remains stable.
+  No training or inference is performed during publication.
 
 ## Read first
 
-1. [Results](evidence/continuous_coverage_20261006/RESULTS.md),
-   [final summary](evidence/continuous_coverage_20261006/summary.json),
-   [validation](evidence/continuous_coverage_20261006/validation.json).
-2. [All checkpoint metrics](evidence/continuous_coverage_20261006/metrics.csv),
-   [dense records](evidence/continuous_coverage_20261006/dense.json),
-   [reach/retention trajectories](evidence/continuous_coverage_20261006/reach_retention_trajectory.png).
-3. [Protocol](new/continuous_coverage/PROTOCOL.md),
+1. [Results](evidence/block7_collapse_20261006/RESULTS.md),
+   [summary](evidence/block7_collapse_20261006/summary.json),
+   [saved-data validation](evidence/block7_collapse_20261006/validation.json).
+2. [Matrix summaries](evidence/block7_collapse_20261006/matrix_summary.csv),
+   [single-step summaries](evidence/block7_collapse_20261006/single_step_summary.csv).
+3. [Protocol](new/collapse_audit/PROTOCOL.md),
    [code map](GPT_CONTEXT.md),
-   [runtime qualification](evidence/continuous_coverage_20261006/runtime_qualification.json),
-   [reproduction](evidence/continuous_coverage_20261006/REPRODUCTION.md).
+   [reproduction and trace layouts](evidence/block7_collapse_20261006/REPRODUCTION.md).
+
+The [full matrix](evidence/block7_collapse_20261006/matrix.json.gz),
+[single-step records](evidence/block7_collapse_20261006/single_step.json.gz),
+[provenance](evidence/block7_collapse_20261006/provenance.json), packed
+trajectories and numeric state arrays are secondary; read the summaries first.
 
 ## New evidence
 
-COMPLETE16/16 trajectories in eight fresh paired training blocks,208 saved
-checkpoint records. Original C24/Z8 StreamingCell(5033 parameters), unchanged.
-Reset64x4 repeats the SAME batch8 with four cold starts; continuous256 carries
-one state through256 steps. Each super-update uses32 K8 backward windows,
-32 balanced losses divided by32, one clip and one AdamW step after step256.
-Parameters are fixed throughout the super-update; no state crosses updates.
+The prior dense checkpoint grid contains joint-ready block7/reset points
+u250/u275, followed by failed u300. This selected zero-training audit studies
+that trajectory only: init96008, schedule97008; producer and consumer
+checkpoints225/250/275/300, same32-map banks at sizes32/64. It hands off the
+complete numerical(C,Z) state atT64 and continues192 steps toT256.
 
-|Fixed u300|Joint readiness|Unchanged old Full|
-|---|---:|---:|
-|reset64x4|0/8|0/8|
-|continuous256|0/8|0/8|
+COMPLETE32/32 matrix and12/12 single-step units. Eight native diagonal
+trajectories reproduce saved original/flipped/AND Boolean bits exactly.
+Parameters are unchanged; no optimizer update or state-coordinate fit.
+Three fixed observation views R_P/R_C/R275 do not feed back into dynamics.
+Correct/wrong cohorts are fixed by the producer's native paired correctness
+atT64. This is ONE independent selected training trajectory, not44 trials.
 
-Frozen verdict: `NO_CONTINUOUS_COVERAGE_RELIABILITY_QUALIFICATION`.
-Joint wins0, losses0, net0/8, exact discordant-pair two-sided p1.
-Continuous-minus-reset pooled strict T64 reach is-0.0709758255 (3/8 positive);
-T64-correct retention to T256 is+0.1171953934 (4/8 positive). All eight pairs
-meet the reference support floor. Mixed continuous metrics do not rescue the
-primary. This is a negative qualification of the tested recipe, not a universal
-failure of continuous training or cellular computation.
+Fixed R275, all-changed paired coverage atT256:
 
-Joint readiness uses size32 strict16<d<32 pooled AND map-mean reach>=.80,
-retention>=.95,>=16 reference maps and>=100 T64-correct changed cells. It does
-not require additional coverage gain and is reported separately from old Full.
-Checkpoint grid u0,25,...,300 is frozen; onlyu300 is the formal endpoint.
-Intermediate Full is not evaluated. Dense points describe finite formation,
-collapse or recovery; no peak selection or phase-transition theorem follows.
+|Producer atT64|Consumer rule|size32|size64|
+|---:|---:|---:|---:|
+|275|275|.950144|.840536|
+|275|300|.970374|.933684|
+|300|275|.489719|.111351|
+|300|300|.425492|.059384|
 
-Reset also gives the encoder four credit-connected first windows versus one
-for continuous. This induced difference prevents isolating numerical state-age
-visitation from encoder-credit frequency. The experiment differs from old
-half-batch random-age warmstart: it supervises every K8 window of a complete
-continuous trajectory, with no loss-free prefix or cross-update state staleness.
+G300 continuously preserves u275's T64-correct cells at.999731/.999708
+and has more sustained progress on u275's initially wrong cells. Successful
+u225/u250 states also continue well under G300. Single-step destruction under
+fixed R275 is below.0003 on all u275 states sampled at64/128/192 and both sizes.
+G275 improves u300-produced states only partly; it does not restore the
+successful regime.
 
-## Verification and data scope
+The tested native collapse cannot be adequately described as G300 losing the
+ability to continue an already-successful state. The stronger distinction is
+the state supplied by the cold0..64 prefix. That prefix contains both encoder
+and recurrent updates: no unique module, state component, irreversible domain
+exit, or low-complexity contract is identified.
 
-All416 packed Boolean trace banks, three data banks, schedules,16 full training
-curves,208 full per-checkpoint summaries and16 final frontier tables are retained
-losslessly. Public package245.79MiB; arrays and gzip files are secondary.
-Saved-data validation recomputes R/S/continuous survival for every checkpoint,
-all bank tensor hashes, packed roundtrips and the paired final aggregate.
-Final frontier and old Full use saved evaluator outputs and are not regenerated.
-All208 local checkpoint file hashes and52 source snapshot/current bindings were
-checked during export; checkpoint contents and machine/session records stay local.
+## Unchanged claims
 
-Three actual-shape updates per arm had bitwise-equal eager/graph arithmetic,
-parameters and Adam states; this is not a300-update equivalence proof.
-Formal worker3439.86seconds excludes preflight and publication. Initial launch
-interruption was an execution-lifetime issue; the completed worker restarted
-from the identical initialization and schedules, not a selected checkpoint.
+The prior fixed-u300 continuous-coverage reliability verdict remains
+`NO_CONTINUOUS_COVERAGE_RELIABILITY_QUALIFICATION`, with0/8 joint readiness
+and0/8 old Full in both arms. Intermediate checkpoints do not replace the
+formal endpoint. No new Full gate, population success rate, phase-transition
+theorem or Hybrid architecture result is claimed. No new training was done.
 
-    python -X utf8 -B tools/export_continuous_coverage.py --verify-only
+## Data and verification
 
-Review questions: do the fixed dense records show transient joint readiness
-that training later destroys; how much can the negative final qualification
-say about trajectory visitation given the encoder-credit difference?
+All32 packed matrix trajectories retain three fixed readout views and both
+source worlds at every integer time64..256. All12 single-step records and10
+numeric state packages are retained losslessly. Per-map numerators and
+denominators are in the raw gzip JSON; the CSV summaries retain the full
+view/cohort matrix. The previous publication already contains the unchanged
+evaluation banks and native trajectories. Checkpoint bytes remain local;
+their hashes and input/source bindings are published. Machine/session receipts
+are excluded. Saved public-data verification needs no checkpoints or GPU:
+
+    python -X utf8 -B tools/export_block7_collapse.py --verify-only
+
+## Reviewer questions
+
+1. Does the producer-associated pattern remain consistent across all three
+   readout views, after separating immediate readout-switch changes?
+2. Given successful continuation by G300, what minimal execution-state
+   construction/write constraint should Hybrid v0 test, without attributing
+   this result uniquely to the encoder or encoding the task answer by hand?
