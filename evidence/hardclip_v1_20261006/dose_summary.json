@@ -1,0 +1,332 @@
+{
+  "schema": "hardclip-v1-training-dose-summary-v1",
+  "updates_per_trajectory": 300,
+  "trajectories": 16,
+  "training_dose_csv_rows": 19200,
+  "aggregation": "Sum lane-cell event counts and RMS sums over all 300 super-updates; zero denominators remain null.",
+  "by_arm_lane": {
+    "neural": [
+      {
+        "lane": 0,
+        "lane_name": "N",
+        "event_count": 3625095680,
+        "trigger_count": 211683392,
+        "trigger_fraction": 0.058393877206573484,
+        "raw_rms_sum": 631666470.035814,
+        "removed_rms_sum": 7260210.871981902,
+        "removed_fraction": 0.011493741106078125,
+        "actual_clipping": false,
+        "interpretation": "counterfactual_fixed_cap"
+      },
+      {
+        "lane": 1,
+        "lane_name": "E",
+        "event_count": 3625095680,
+        "trigger_count": 25018728,
+        "trigger_fraction": 0.006901535906495025,
+        "raw_rms_sum": 649094580.6433283,
+        "removed_rms_sum": 365919.4187361707,
+        "removed_fraction": 0.0005637382126553914,
+        "actual_clipping": false,
+        "interpretation": "counterfactual_fixed_cap"
+      },
+      {
+        "lane": 2,
+        "lane_name": "S",
+        "event_count": 3625095680,
+        "trigger_count": 0,
+        "trigger_fraction": 0.0,
+        "raw_rms_sum": 602291325.6958265,
+        "removed_rms_sum": 0.0,
+        "removed_fraction": 0.0,
+        "actual_clipping": false,
+        "interpretation": "counterfactual_fixed_cap"
+      },
+      {
+        "lane": 3,
+        "lane_name": "W",
+        "event_count": 3625095680,
+        "trigger_count": 0,
+        "trigger_fraction": 0.0,
+        "raw_rms_sum": 608736826.7146889,
+        "removed_rms_sum": 0.0,
+        "removed_fraction": 0.0,
+        "actual_clipping": false,
+        "interpretation": "counterfactual_fixed_cap"
+      }
+    ],
+    "hardclip": [
+      {
+        "lane": 0,
+        "lane_name": "N",
+        "event_count": 3625095680,
+        "trigger_count": 192431004,
+        "trigger_fraction": 0.05308301379785926,
+        "raw_rms_sum": 630555175.823512,
+        "removed_rms_sum": 6632186.836214984,
+        "removed_fraction": 0.010518011889369199,
+        "actual_clipping": true,
+        "interpretation": "actual"
+      },
+      {
+        "lane": 1,
+        "lane_name": "E",
+        "event_count": 3625095680,
+        "trigger_count": 24502872,
+        "trigger_fraction": 0.006759234559017212,
+        "raw_rms_sum": 648438250.5427284,
+        "removed_rms_sum": 362176.14659935876,
+        "removed_fraction": 0.0005585360615235535,
+        "actual_clipping": true,
+        "interpretation": "actual"
+      },
+      {
+        "lane": 2,
+        "lane_name": "S",
+        "event_count": 3625095680,
+        "trigger_count": 0,
+        "trigger_fraction": 0.0,
+        "raw_rms_sum": 601253066.4502147,
+        "removed_rms_sum": 0.0,
+        "removed_fraction": 0.0,
+        "actual_clipping": true,
+        "interpretation": "actual"
+      },
+      {
+        "lane": 3,
+        "lane_name": "W",
+        "event_count": 3625095680,
+        "trigger_count": 0,
+        "trigger_fraction": 0.0,
+        "raw_rms_sum": 607141743.4671383,
+        "removed_rms_sum": 0.0,
+        "removed_fraction": 0.0,
+        "actual_clipping": true,
+        "interpretation": "actual"
+      }
+    ]
+  },
+  "by_block": [
+    {
+      "block": 0,
+      "arm": "neural",
+      "event_count": 1812484096,
+      "trigger_count": 0,
+      "triggered_lanes": [],
+      "raw_rms_sum": 152655332.81821716,
+      "removed_rms_sum": 0.0,
+      "trigger_fraction": 0.0,
+      "removed_fraction": 0.0,
+      "actual_clipping": false
+    },
+    {
+      "block": 0,
+      "arm": "hardclip",
+      "event_count": 1812484096,
+      "trigger_count": 0,
+      "triggered_lanes": [],
+      "raw_rms_sum": 152655332.81821716,
+      "removed_rms_sum": 0.0,
+      "trigger_fraction": 0.0,
+      "removed_fraction": 0.0,
+      "actual_clipping": true
+    },
+    {
+      "block": 1,
+      "arm": "neural",
+      "event_count": 1812809728,
+      "trigger_count": 0,
+      "triggered_lanes": [],
+      "raw_rms_sum": 295081880.4988719,
+      "removed_rms_sum": 0.0,
+      "trigger_fraction": 0.0,
+      "removed_fraction": 0.0,
+      "actual_clipping": false
+    },
+    {
+      "block": 1,
+      "arm": "hardclip",
+      "event_count": 1812809728,
+      "trigger_count": 0,
+      "triggered_lanes": [],
+      "raw_rms_sum": 295081880.4988719,
+      "removed_rms_sum": 0.0,
+      "trigger_fraction": 0.0,
+      "removed_fraction": 0.0,
+      "actual_clipping": true
+    },
+    {
+      "block": 2,
+      "arm": "neural",
+      "event_count": 1812429824,
+      "trigger_count": 25018728,
+      "triggered_lanes": [
+        "E"
+      ],
+      "raw_rms_sum": 378977121.91607875,
+      "removed_rms_sum": 365919.4187361707,
+      "trigger_fraction": 0.013803970597208623,
+      "removed_fraction": 0.0009655448774483026,
+      "actual_clipping": false
+    },
+    {
+      "block": 2,
+      "arm": "hardclip",
+      "event_count": 1812429824,
+      "trigger_count": 24502872,
+      "triggered_lanes": [
+        "E"
+      ],
+      "raw_rms_sum": 378824951.6725399,
+      "removed_rms_sum": 362176.14659935876,
+      "trigger_fraction": 0.0135193493704063,
+      "removed_fraction": 0.0009560514559569653,
+      "actual_clipping": true
+    },
+    {
+      "block": 3,
+      "arm": "neural",
+      "event_count": 1812703232,
+      "trigger_count": 123216888,
+      "triggered_lanes": [
+        "N"
+      ],
+      "raw_rms_sum": 375772606.67646706,
+      "removed_rms_sum": 4070506.6509843175,
+      "trigger_fraction": 0.06797410950939375,
+      "removed_fraction": 0.010832366645844797,
+      "actual_clipping": false
+    },
+    {
+      "block": 3,
+      "arm": "hardclip",
+      "event_count": 1812703232,
+      "trigger_count": 123824772,
+      "triggered_lanes": [
+        "N"
+      ],
+      "raw_rms_sum": 376695864.4808718,
+      "removed_rms_sum": 4987152.121712982,
+      "trigger_fraction": 0.06830945618350395,
+      "removed_fraction": 0.013239200617680856,
+      "actual_clipping": true
+    },
+    {
+      "block": 4,
+      "arm": "neural",
+      "event_count": 1812474880,
+      "trigger_count": 0,
+      "triggered_lanes": [],
+      "raw_rms_sum": 393871139.1750484,
+      "removed_rms_sum": 0.0,
+      "trigger_fraction": 0.0,
+      "removed_fraction": 0.0,
+      "actual_clipping": false
+    },
+    {
+      "block": 4,
+      "arm": "hardclip",
+      "event_count": 1812474880,
+      "trigger_count": 0,
+      "triggered_lanes": [],
+      "raw_rms_sum": 393871139.1750484,
+      "removed_rms_sum": 0.0,
+      "trigger_fraction": 0.0,
+      "removed_fraction": 0.0,
+      "actual_clipping": true
+    },
+    {
+      "block": 5,
+      "arm": "neural",
+      "event_count": 1812131840,
+      "trigger_count": 0,
+      "triggered_lanes": [],
+      "raw_rms_sum": 175640298.11816216,
+      "removed_rms_sum": 0.0,
+      "trigger_fraction": 0.0,
+      "removed_fraction": 0.0,
+      "actual_clipping": false
+    },
+    {
+      "block": 5,
+      "arm": "hardclip",
+      "event_count": 1812131840,
+      "trigger_count": 0,
+      "triggered_lanes": [],
+      "raw_rms_sum": 175640298.11816216,
+      "removed_rms_sum": 0.0,
+      "trigger_fraction": 0.0,
+      "removed_fraction": 0.0,
+      "actual_clipping": true
+    },
+    {
+      "block": 6,
+      "arm": "neural",
+      "event_count": 1812570112,
+      "trigger_count": 0,
+      "triggered_lanes": [],
+      "raw_rms_sum": 334206976.88790965,
+      "removed_rms_sum": 0.0,
+      "trigger_fraction": 0.0,
+      "removed_fraction": 0.0,
+      "actual_clipping": false
+    },
+    {
+      "block": 6,
+      "arm": "hardclip",
+      "event_count": 1812570112,
+      "trigger_count": 0,
+      "triggered_lanes": [],
+      "raw_rms_sum": 334206976.88790965,
+      "removed_rms_sum": 0.0,
+      "trigger_fraction": 0.0,
+      "removed_fraction": 0.0,
+      "actual_clipping": true
+    },
+    {
+      "block": 7,
+      "arm": "neural",
+      "event_count": 1812779008,
+      "trigger_count": 88466504,
+      "triggered_lanes": [
+        "N"
+      ],
+      "raw_rms_sum": 385583846.99890316,
+      "removed_rms_sum": 3189704.2209975803,
+      "trigger_fraction": 0.04880159336002196,
+      "removed_fraction": 0.008272401050572675,
+      "actual_clipping": false
+    },
+    {
+      "block": 7,
+      "arm": "hardclip",
+      "event_count": 1812779008,
+      "trigger_count": 68606232,
+      "triggered_lanes": [
+        "N"
+      ],
+      "raw_rms_sum": 380411792.6319728,
+      "removed_rms_sum": 1645034.7145020016,
+      "trigger_fraction": 0.0378458883831029,
+      "removed_fraction": 0.004324352573616142,
+      "actual_clipping": true
+    }
+  ],
+  "zero_trigger_blocks": {
+    "neural": [
+      0,
+      1,
+      4,
+      5,
+      6
+    ],
+    "hardclip": [
+      0,
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  "interpretation_boundary": "Neural rows are counterfactual clipping dose. Zero observed trigger dose in a block limits this fixed intervention's negative efficacy result; it does not reject all large-write mechanisms."
+}

@@ -1,5 +1,57 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## HardClip-v1: conditional tail experiment
+
+Current stage: **COMPLETE**,16/16 training trajectories and208/208 predeclared
+checkpoint evaluations in3658.782seconds, about61minutes. The fixed u300 joint
+readiness endpoint is Neural0/8 and HardClip0/8; net paired gain0 and exact
+two-sided p=1. Verdict:`NO_HARDCLIP_RELIABILITY_QUALIFICATION`. Old Full and
+checkpoint-grid ever-ready also remain0/8 in each arm.
+
+**Intervention limitation:**5/8 HardClip blocks (0,1,4,5,6) never trigger clipping
+during training. Only blocks2,3,7 clip, each in one lane. The outcome-blind
+reference calibration does not imply meaningful intervention on every fresh
+training trajectory. This negative does not exclude general amplitude mechanisms.
+
+Public entry points:[results](evidence/hardclip_v1_20261006/RESULTS.md),
+[summary](evidence/hardclip_v1_20261006/summary.json),
+[dose](evidence/hardclip_v1_20261006/dose_summary.json), and
+[saved-data validation](evidence/hardclip_v1_20261006/validation.json).
+
+[Outcome-blind calibration](evidence/hardclip_v1_20261006/calibration/RESULTS.md)
+is COMPLETE/CALIBRATED: all four lanes have1% removed magnitude and9.82%–10.06%
+trigger rates. Fixed FP32 actual-write RMS caps, N/E/S/W, are0.3964515924,
+0.4826018810,0.4742255211,0.5157895088. The actual-shape eager/CUDA Graph
+qualification passed for both arms, including active clipping, unchanged caps,
+three optimizer updates, zero maximum gradient difference, and dose statistics.
+Measured runtime projection is about1 hour, without an enforced limit.
+
+Scientific entry points:
+[frozen protocol](new/hardclip_v1/PROTOCOL.md),
+[calibration runner](new/hardclip_v1/calibrate.py),
+[supplied writer/calibrator primitive](new/hardclip_v1/primitive.py),
+[fixed-cap training and dose](new/hardclip_v1/run.py), and
+[execution notes](new/hardclip_v1/EXECUTION.md).
+All8 prior neural u300 checkpoints, SAME16 training maps indices0..15,
+cold64 steps. Select actual-write lane caps with1% removed magnitude and
+at most20% trigger fraction in EVERY lane. No task outcomes or readout
+are used. If any lane fails the sparsity gate, do not start training or
+retune these design cutoffs. The original supplied root draft is preserved.
+
+    python -X utf8 -u -B new/hardclip_v1/calibrate.py --out runs/hardclip_v1_calibration_20261006_01
+
+Eight fresh paired Neural/HardClip training blocks (16 trajectories,
+208 predeclared checkpoint evaluations) started after calibration PASS.
+K8/reset64x4/u300 and the existing model/training
+rules remain fixed; caps are buffers, not learned parameters. One paired
+primary comparison replaces the previous three-test Holm family. No time
+cap, watchdog or recurring monitoring. Calibration is not efficacy evidence.
+
+    python -X utf8 -B tools/export_hardclip_v1.py --verify-only
+
+    python -X utf8 -u -B new/hardclip_v1/run.py --check --out analyses/hardclip_v1_qualification_20261006_01.json
+    pwsh -File tools/launch_hardclip_v1.ps1 -RunName hardclip_v1_20261006_01 -Qualification analyses/hardclip_v1_qualification_20261006_01.json
+
 ## Hybrid Writer v0: completed formal result
 
 Frozen protocol [hybrid_lane_write_budget_v1](new/hybrid_writer/PROTOCOL.md),

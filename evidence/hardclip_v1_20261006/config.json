@@ -1,0 +1,92 @@
+{
+  "protocol": "hardclip_v1_fixed_tail_v1",
+  "arms": [
+    "neural",
+    "hardclip"
+  ],
+  "blocks": 8,
+  "super_updates": 300,
+  "parameter_count_each_arm": 5033,
+  "carrier_channels": 24,
+  "latent_channels": 8,
+  "actual_write_caps": [
+    0.39645159244537354,
+    0.4826018810272217,
+    0.4742255210876465,
+    0.5157895088195801
+  ],
+  "calibration_binding": {
+    "directory": "runs/hardclip_v1_calibration_20261006_01",
+    "actual_write_caps": [
+      0.39645159244537354,
+      0.4826018810272217,
+      0.4742255210876465,
+      0.5157895088195801
+    ],
+    "summary_sha256": "be91938d9f70897cb10dc9ca80be287c834b5e02952a84b5deee74ae8efac600",
+    "status_sha256": "53ef4597b30e1e13ddde596e253c51524d6a88696704d5d394f142ce65d9229b",
+    "samples_sha256": "92e7e9c6c6c1976c8c66397ff768fc672542b79389edb4141db11e81ba45077d",
+    "inputs_sha256": "cd4f046d1cd72221bdd73916c98e9ab634aeb7309087b06cdd94e4f31a448bdf",
+    "parent_protocol": "hardclip_v1_tail_calibration_v1",
+    "outcome_blind": true
+  },
+  "initialization_seeds": [
+    116001,
+    116002,
+    116003,
+    116004,
+    116005,
+    116006,
+    116007,
+    116008
+  ],
+  "schedule_seeds": [
+    117001,
+    117002,
+    117003,
+    117004,
+    117005,
+    117006,
+    117007,
+    117008
+  ],
+  "mode": "reset64x4",
+  "batch": 8,
+  "forward_steps_per_update": 256,
+  "loss_windows": 32,
+  "credit_horizon": 8,
+  "optimizer_steps_per_update": 1,
+  "parameters_fixed_within_super_update": true,
+  "train_seed": 10002,
+  "eval_seeds": {
+    "32": 118032,
+    "64": 118064
+  },
+  "checkpoints": [
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300
+  ],
+  "formal_checkpoint": 300,
+  "optimizer": {
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "clip": 1.0,
+  "runtime_limit_enforced": false
+}

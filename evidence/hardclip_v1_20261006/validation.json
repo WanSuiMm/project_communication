@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "scope": "CPU/NumPy/Gzip saved-data checks; no Torch, model inference, training, or checkpoint loading.",
+  "record_keys": {
+    "expected": 208,
+    "observed": 208,
+    "unique": 208
+  },
+  "report_aggregate_matches_saved_summary": true,
+  "evaluation_summaries_checked": 208,
+  "packed_trace_files_shape_checked": 416,
+  "u300_trace_metric_banks_recomputed": 32,
+  "u300_original_flipped_and_rechecked": 32,
+  "metrics_csv_rows": 416,
+  "final_metrics_rows": 16,
+  "training_curves": 16,
+  "training_dose_rows": 19200,
+  "training_update_cadence": "256 forward steps, 32 loss/backward windows, 32 detaches, one optimizer step, horizon 8",
+  "evaluation_dose": {
+    "evaluation_dose_files_verified": 208,
+    "size_world_phase_groups_verified": 1664,
+    "lane_rows_verified": 6656,
+    "groups_per_evaluation": 8,
+    "rows_per_evaluation": 32,
+    "all_counts_and_values_finite": true,
+    "zero_raw_rms_keeps_removed_fraction_null": true,
+    "actual_vs_counterfactual_arm_labels_verified": true
+  },
+  "calibration": {
+    "status": "PASS",
+    "calibration_verdict": "CALIBRATED",
+    "raw_write_rms_shape": [
+      8,
+      64,
+      11776,
+      4
+    ],
+    "raw_write_rms_finite_nonnegative": true,
+    "input_maps_and_open_cell_index_binding": "PASS",
+    "frozen_caps_match_run_and_qualification": true,
+    "source_task_outcomes_or_training_updates_used": false
+  },
+  "data_bank_tensor_hashes_recomputed": {
+    "train": "5ff2af1eb77781ed766ff3c8ba1b4477cebb8b345873a715d9808b7cecdd5fee",
+    "evaluation32": "9360814f9bb857f8cf986f2bab08146f21f65ec8f19a29c8e0cb5d29b0ce52cc",
+    "evaluation64": "c014026516a085b015fbfb68f6627e5e5cf570b1dbd70c58fdd7aadb4c000ae8"
+  },
+  "checkpoint_hash_records_retained": 208,
+  "checkpoint_contents_published": false,
+  "old_Full_scope": "Saved u300 evaluator gate reused; not regenerated from traces.",
+  "frozen_run_evidence_changed": false,
+  "source_binding_status": "PASS",
+  "source_binding_files": {
+    "experiment": 63,
+    "calibration": 61
+  },
+  "permitted_launcher_transform_count": 1,
+  "checkpoint_file_hashes_verified_locally": 208,
+  "calibration_validation": {
+    "status": "PASS",
+    "calibration_verdict": "CALIBRATED",
+    "raw_write_rms_shape": [
+      8,
+      64,
+      11776,
+      4
+    ],
+    "raw_write_rms_finite_nonnegative": true,
+    "input_maps_and_open_cell_index_binding": "PASS",
+    "frozen_caps_match_run_and_qualification": true,
+    "source_task_outcomes_or_training_updates_used": false
+  }
+}

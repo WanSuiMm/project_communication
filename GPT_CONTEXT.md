@@ -1,6 +1,52 @@
 # Context for incremental scientific review
 
-## Latest formal result: Hybrid Writer v0 did not qualify this recipe
+## Latest formal result: HardClip-v1, with limited fresh-training dose
+
+- Frozen protocol:`hardclip_v1_tail_calibration_v1` and conditional training
+  `hardclip_v1_fixed_tail_v1`. All8 prior neural u300 models are used for
+  outcome-blind calibration on the SAME16 training maps, cold64 steps. No
+  readout, labels, optimizer or task scores select caps. Each lane has1% RMS
+  magnitude removal and trigger<=20%; all four passed at9.82%–10.06% triggers.
+- Canonical C24/Z8,5033 trainable parameters, masked stream and E/F/Q/readout
+  remain unchanged. With v=.1m and fixed b per six-channel lane, delta=v below
+  cap and delta=b*v/RMS(v) above cap. Caps are buffers. No STE/controller/loss
+  addition. Only above-cap writes differ; no full recurrent-stability theorem.
+-8 fresh paired blocks use init116001..116008 and schedule117001..117008,
+  reset64x4,300 fixed-parameter super-updates,32 K8 losses/backwards divided
+  by32,ONE AdamW step at each end. Fixed u300 is formal; no best-checkpoint
+  selection. Full and ever-ready are secondary.
+- COMPLETE16 trajectories/208 evaluations in3658.782seconds. Joint readiness
+  Neural0/8,HardClip0/8; candidate-only/reference-only0/0,net0,p=1. Verdict
+  `NO_HARDCLIP_RELIABILITY_QUALIFICATION`. Both also have Full0/8 and ever-ready0/8.
+- **Dose limitation:** HardClip blocks0,1,4,5,6 have zero training triggers
+  over all300 updates/lanes. Only block2(E),3(N),7(N) clip. Reference calibration
+  sparsity is not guaranteed on fresh trajectories. Keep zero doses and
+  undefined ratios explicit; do not interpret this as general amplitude
+  mechanism falsification or retune thresholds after seeing outcomes.
+
+Read [results](evidence/hardclip_v1_20261006/RESULTS.md),
+[dose summary](evidence/hardclip_v1_20261006/dose_summary.json),
+[final metrics](evidence/hardclip_v1_20261006/final_metrics.csv), then
+[validation](evidence/hardclip_v1_20261006/validation.json) and
+[publication manifest](HARDCLIP_V1_PUBLICATION_MANIFEST.json).
+All raw numeric banks, calibration RMS samples and packed traces are secondary;
+compressed JSON/CSV has lossless raw-hash bindings. No inference/training is
+needed for`python -X utf8 -B tools/export_hardclip_v1.py --verify-only`.
+
+|Concept|Exact symbols|Source|
+|---|---|---|
+|Fixed actual-write cap, true derivative|`FixedLaneHardClip.forward`|[primitive.py](new/hardclip_v1/primitive.py)|
+|Outcome-blind sampling/calibration|`calibrate_write_caps`, calibration runner|[calibrate.py](new/hardclip_v1/calibrate.py)|
+|Copied two-arm initialization|`HardClipCell`, `make_model`|[cells.py](new/hardclip_v1/cells.py)|
+|All-step training/evaluation dose|`TrainingDose`, `EvaluationDose`|[dose.py](new/hardclip_v1/dose.py)|
+|K8 graph qualification and training|`check`, `run`, `observed_evaluation`|[run.py](new/hardclip_v1/run.py)|
+|Single primary paired test|`aggregate`, `report`|[reporting.py](new/hardclip_v1/reporting.py)|
+
+The original tested source snapshots remain bound locally. The public launcher
+replaces its private executable path with environment discovery; that dispatch
+sanitization is explicitly distinguished from unchanged scientific source.
+
+## Earlier formal result: Hybrid Writer v0 did not qualify this recipe
 
 - Frozen protocol `hybrid_lane_write_budget_v1`; four arms neural/budget/hybrid/
   affine_hybrid, common C24/Z8 and masked lane permutation. Neural is the

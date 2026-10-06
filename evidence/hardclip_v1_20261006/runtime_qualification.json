@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "protocol": "hardclip_v1_fixed_tail_v1",
+  "calibration_binding": {
+    "actual_write_caps": [
+      0.39645159244537354,
+      0.4826018810272217,
+      0.4742255210876465,
+      0.5157895088195801
+    ],
+    "summary_sha256": "be91938d9f70897cb10dc9ca80be287c834b5e02952a84b5deee74ae8efac600",
+    "parent_protocol": "hardclip_v1_tail_calibration_v1",
+    "outcome_blind": true
+  },
+  "arms": [
+    {
+      "arm": "neural",
+      "status": "PASS",
+      "parameter_count": 5033,
+      "three_update_gradient_max_absolute_error": 0.0,
+      "active_branch_exercised_all_lanes": true,
+      "fixed_caps_unchanged": true
+    },
+    {
+      "arm": "hardclip",
+      "status": "PASS",
+      "parameter_count": 5033,
+      "three_update_gradient_max_absolute_error": 0.0,
+      "active_branch_exercised_all_lanes": true,
+      "fixed_caps_unchanged": true
+    }
+  ],
+  "actual_training_shape": [
+    8,
+    3,
+    32,
+    32
+  ],
+  "credit_horizon": 8,
+  "eager_graph_updates_each_arm": 3,
+  "atol": 1e-06,
+  "rtol": 1e-05,
+  "sanitization": "Retains CPU/graph equivalence and fixed-cap checks; removes device, memory, timing, and allocation telemetry."
+}

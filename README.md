@@ -1,6 +1,45 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest experiment: Hybrid Writer v0 did not qualify the tested recipe
+## Latest experiment: fixed HardClip-v1 did not qualify reliability
+
+Can clipping only unusually large lane writes improve formation under K8?
+Outcome-blind calibration passed on all8 prior neural u300 models: frozen
+actual-write RMS caps N/E/S/W are0.3964515924,0.4826018810,0.4742255211,
+0.5157895088, with1% magnitude removal and9.82%–10.06% event triggers on that
+reference distribution. Below the cap the write and its gradient are unchanged.
+
+The fresh paired experiment is **COMPLETE:16/16 trajectories and208/208
+predeclared checkpoint evaluations**,3658.782seconds (about61minutes).
+At fixed u300, joint readiness is **Neural0/8, HardClip0/8**; exact paired p=1,
+net gain0. Verdict:`NO_HARDCLIP_RELIABILITY_QUALIFICATION`. Old Full and
+checkpoint-grid ever-ready are also0/8 in each arm.
+
+The intervention did not transfer uniformly: **5/8 HardClip blocks never
+triggered clipping during training**. Only blocks2,3,7 were active, each in one
+lane. This is no reliability gain for the frozen recipe, with a substantial
+zero-dose limitation; it does not exclude large-write mechanisms in general.
+
+Start here for this update:
+
+1. [Result](evidence/hardclip_v1_20261006/RESULTS.md),
+   [aggregate](evidence/hardclip_v1_20261006/summary.json), and
+   [dose summary](evidence/hardclip_v1_20261006/dose_summary.json).
+2. [Formal metrics](evidence/hardclip_v1_20261006/final_metrics.csv),
+   [all checkpoint metrics](evidence/hardclip_v1_20261006/metrics.csv),
+   [calibration](evidence/hardclip_v1_20261006/calibration/RESULTS.md), and
+   [saved-data validation](evidence/hardclip_v1_20261006/validation.json).
+3. [Frozen protocol](new/hardclip_v1/PROTOCOL.md),
+   [primitive](new/hardclip_v1/primitive.py), [cell](new/hardclip_v1/cells.py),
+   [training/dose runner](new/hardclip_v1/run.py), and
+   [reproduction](evidence/hardclip_v1_20261006/REPRODUCTION.md).
+
+Saved-data check:`python -X utf8 -B tools/export_hardclip_v1.py --verify-only`.
+All416 packed traces,208 full summaries/dose records,16 training curves,
+calibration samples and numerical banks are secondary evidence; start with the
+small summaries. Checkpoints and private machine receipts stay local. The
+[incremental handoff](GPT_HANDOFF.md) identifies the stable result evidence head.
+
+## Earlier experiment: Hybrid Writer v0 did not qualify the tested recipe
 
 Can an explicit lane-write budget improve cold-start formation under K8? The
 four-arm `hybrid_lane_write_budget_v1` experiment kept C24/Z8 and the existing
