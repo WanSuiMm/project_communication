@@ -1,75 +1,77 @@
-# Incremental review: semantic-write source causal audit
+# Incremental review: continuous execution-state coverage
 
-- Review base: `606265480e56cc1b88f81f451148c8274601180c`.
-- Evidence head: `27eac03eec20cd7efc17a4a7c01adc0fede69d3d`.
-- This later commit changes only this handoff. Earlier frozen protocols/evidence
-  remain unchanged. Publication performs no new inference, training or updates.
+- Review base: `df5107b8d529a9753f09b1eec750bba36be67295`.
+- Evidence head: `8ac3d7558d3d4bafb5f495e27e60db05d22f3d11`.
+- This later commit changes only this handoff. Earlier protocols and evidence
+  remain unchanged; publication performs no model fitting, training or inference.
 
 ## Read first
 
-1. [Results](evidence/semantic_write_20261006/RESULTS.md),
-   [summary including all block deltas](evidence/semantic_write_20261006/summary.json),
-   [validation](evidence/semantic_write_20261006/validation.json).
-2. [396 measurement records](evidence/semantic_write_20261006/perunit.json),
-   [configuration](evidence/semantic_write_20261006/config.json),
-   [natural replay](evidence/semantic_write_20261006/replay.json).
-3. [Protocol](new/semantic_write_audit/PROTOCOL.md),
+1. [Results](evidence/continuous_coverage_20261006/RESULTS.md),
+   [final summary](evidence/continuous_coverage_20261006/summary.json),
+   [validation](evidence/continuous_coverage_20261006/validation.json).
+2. [All checkpoint metrics](evidence/continuous_coverage_20261006/metrics.csv),
+   [dense records](evidence/continuous_coverage_20261006/dense.json),
+   [reach/retention trajectories](evidence/continuous_coverage_20261006/reach_retention_trajectory.png).
+3. [Protocol](new/continuous_coverage/PROTOCOL.md),
    [code map](GPT_CONTEXT.md),
-   [reproduction](evidence/semantic_write_20261006/REPRODUCTION.md).
+   [runtime qualification](evidence/continuous_coverage_20261006/runtime_qualification.json),
+   [reproduction](evidence/continuous_coverage_20261006/REPRODUCTION.md).
 
-## New evidence and boundaries
+## New evidence
 
-COMPLETE396/396,33 frozen checkpoints x2 sizes x6 conditions; no training or
-optimizer updates. First8 factorial blocks, all four arms, plus selected C24
-Streaming seed4, on reused32-map evaluation cohorts. The independent primary
-unit is the paired training block(n8), not pixels, maps or rollout steps.
+COMPLETE16/16 trajectories in eight fresh paired training blocks,208 saved
+checkpoint records. Original C24/Z8 StreamingCell(5033 parameters), unchanged.
+Reset64x4 repeats the SAME batch8 with four cold starts; continuous256 carries
+one state through256 steps. Each super-update uses32 K8 backward windows,
+32 balanced losses divided by32, one clip and one AdamW step after step256.
+Parameters are fixed throughout the super-update; no state crosses updates.
 
-Primary native size32/T256 strict16<d<32 deltas:
+|Fixed u300|Joint readiness|Unchanged old Full|
+|---|---:|---:|
+|reset64x4|0/8|0/8|
+|continuous256|0/8|0/8|
 
-| Block | Source minus natural | Source minus orthogonal |
-|---:|---:|---:|
-|0|0|0|
-|1|0|0|
-|2|0.002893758|0.001653576|
-|3|0|0|
-|4|0|0|
-|5|0.001653576|0.001653576|
-|6|0|0|
-|7|0|0|
-|Mean|0.000568417|0.000413394|
+Frozen verdict: `NO_CONTINUOUS_COVERAGE_RELIABILITY_QUALIFICATION`.
+Joint wins0, losses0, net0/8, exact discordant-pair two-sided p1.
+Continuous-minus-reset pooled strict T64 reach is-0.0709758255 (3/8 positive);
+T64-correct retention to T256 is+0.1171953934 (4/8 positive). All eight pairs
+meet the reference support floor. Mixed continuous metrics do not rescue the
+primary. This is a negative qualification of the tested recipe, not a universal
+failure of continuous training or cellular computation.
 
-Only2/8 source-natural differences are positive. Frozen exploratory thresholds
-require both means>=0.05 and positives>=6/8. Verdict:
-`NO_PRIMARY_SOURCE_DRIVER_SIGNAL`. Native source T256 coverage improves0.5820
-to1.0000 but distant coverage changes only0.3217 to0.3223. This rejects the tested
-source-driver intervention; it is not a general semantic-write impossibility.
+Joint readiness uses size32 strict16<d<32 pooled AND map-mean reach>=.80,
+retention>=.95,>=16 reference maps and>=100 T64-correct changed cells. It does
+not require additional coverage gain and is reported separately from old Full.
+Checkpoint grid u0,25,...,300 is frozen; onlyu300 is the formal endpoint.
+Intermediate Full is not evaluated. Dense points describe finite formation,
+collapse or recovery; no peak selection or phase-transition theorem follows.
 
-Oracle solved-cell protection uses distant labels; its gains cannot qualify
-communication or rescue the primary. Protected-source preservation is a
-manipulation check. Removing all Q-nullspace components changes future state,
-so it is an ablation. Selected seed4 qualifies on the common cohort, but has a
-different width and is not a fresh matched replication.
+Reset also gives the encoder four credit-connected first windows versus one
+for continuous. This induced difference prevents isolating numerical state-age
+visitation from encoder-credit frequency. The experiment differs from old
+half-batch random-age warmstart: it supervises every K8 window of a complete
+continuous trajectory, with no loss-free prefix or cross-update state staleness.
 
-All64 factorial natural traces replay exactly. Two seed4 records correctly say
-NEW_COMMON_COHORT_REFERENCE. All396 packed Boolean traces and sampled FP32 margin
-arrays,66 natural signed-write/source arrays, intervention arrays and152064
-per-map endpoint rows are retained. NPZ is byte-exact compressed data; per-map
-CSV uses lossless gzip. Package317.89MiB; raw arrays are secondary.
+## Verification and data scope
 
-The completed worker imported75 validated units and computed321 new units.
-All225 imported file hashes match; the science-function AST, model/data/source
-bindings match.1318.938seconds covers this continuation worker only, excluding
-earlier work/preflight/publication. A local transient Windows JSON replacement
-failure interrupted the prior worker; machine records remain local.
+All416 packed Boolean trace banks, three data banks, schedules,16 full training
+curves,208 full per-checkpoint summaries and16 final frontier tables are retained
+losslessly. Public package245.79MiB; arrays and gzip files are secondary.
+Saved-data validation recomputes R/S/continuous survival for every checkpoint,
+all bank tensor hashes, packed roundtrips and the paired final aggregate.
+Final frontier and old Full use saved evaluator outputs and are not regenerated.
+All208 local checkpoint file hashes and52 source snapshot/current bindings were
+checked during export; checkpoint contents and machine/session records stay local.
 
-Saved-data validation recomputes all endpoint/per-map coverage, retention,
-regression and aggregate values, checks bank/file hashes and natural prefixes.
-It does not rerun logits or signed-write diagnostics. CPU projection/wiring and
-Windows-lock checks, plus natural CUDA replay, were recorded before dispatch.
-Checkpoint files stay local;33 file hashes were checked during export.
+Three actual-shape updates per arm had bitwise-equal eager/graph arithmetic,
+parameters and Adam states; this is not a300-update equivalence proof.
+Formal worker3439.86seconds excludes preflight and publication. Initial launch
+interruption was an execution-lifetime issue; the completed worker restarted
+from the identical initialization and schedules, not a selected checkpoint.
 
-    python -X utf8 -B tools/export_semantic_write.py --verify-only
+    python -X utf8 -B tools/export_continuous_coverage.py --verify-only
 
-Review questions: what does source preservation fail to change downstream;
-which secondary observations remain interpretable without distant-label
-injection; which narrower hypothesis survives this negative causal screen?
+Review questions: do the fixed dense records show transient joint readiness
+that training later destroys; how much can the negative final qualification
+say about trajectory visitation given the encoder-credit difference?
