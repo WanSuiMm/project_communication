@@ -1,0 +1,521 @@
+{
+  "schema": "hybrid-writer-paired-report-v1",
+  "status": "COMPLETE",
+  "expected_blocks": 8,
+  "arms": [
+    "neural",
+    "budget",
+    "hybrid",
+    "affine_hybrid"
+  ],
+  "predeclared_checkpoints": [
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300
+  ],
+  "formal_update": 300,
+  "formal_rows": {
+    "valid_rows": 32,
+    "invalid_rows": 0,
+    "complete_blocks": 8,
+    "expected_complete_blocks": 8,
+    "complete_blocks_by_arm": {
+      "neural": 8,
+      "budget": 8,
+      "hybrid": 8,
+      "affine_hybrid": 8
+    },
+    "all_arms_complete": true
+  },
+  "overall_verdict": "NO_PRIMARY_RELIABILITY_QUALIFICATION",
+  "primary_verdict": "NO_PRIMARY_RELIABILITY_QUALIFICATION",
+  "primary_comparisons": [
+    "budget_minus_neural",
+    "hybrid_minus_budget",
+    "hybrid_minus_neural"
+  ],
+  "holm_family_size": 3,
+  "qualification_rule": "For each primary contrast, candidate-only minus reference-only wins must be at least 6/8 and its Holm-adjusted exact two-sided discordant binomial p value must be at most 0.05 across the three primary contrasts.",
+  "comparisons": {
+    "budget_minus_neural": {
+      "name": "budget_minus_neural",
+      "role": "primary",
+      "candidate": "budget",
+      "reference": "neural",
+      "expected_pairs": 8,
+      "complete_pairs": 8,
+      "wins": 0,
+      "losses": 1,
+      "both_pass": 0,
+      "neither_pass": 7,
+      "discordant_pairs": 1,
+      "net_gain": -1,
+      "exact_two_sided_p": 1.0,
+      "holm_adjusted_p": 1.0,
+      "net_gain_threshold": 6,
+      "net_gain_threshold_met": false,
+      "reliability_qualified": false,
+      "verdict": "NO_RELIABILITY_QUALIFICATION",
+      "per_block": [
+        {
+          "block": 0,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": true,
+          "comparison": "reference_only"
+        },
+        {
+          "block": 1,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 2,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 3,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 4,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 5,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 6,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 7,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        }
+      ]
+    },
+    "hybrid_minus_budget": {
+      "name": "hybrid_minus_budget",
+      "role": "primary",
+      "candidate": "hybrid",
+      "reference": "budget",
+      "expected_pairs": 8,
+      "complete_pairs": 8,
+      "wins": 0,
+      "losses": 0,
+      "both_pass": 0,
+      "neither_pass": 8,
+      "discordant_pairs": 0,
+      "net_gain": 0,
+      "exact_two_sided_p": 1.0,
+      "holm_adjusted_p": 1.0,
+      "net_gain_threshold": 6,
+      "net_gain_threshold_met": false,
+      "reliability_qualified": false,
+      "verdict": "NO_RELIABILITY_QUALIFICATION",
+      "per_block": [
+        {
+          "block": 0,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 1,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 2,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 3,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 4,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 5,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 6,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 7,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        }
+      ]
+    },
+    "hybrid_minus_neural": {
+      "name": "hybrid_minus_neural",
+      "role": "primary",
+      "candidate": "hybrid",
+      "reference": "neural",
+      "expected_pairs": 8,
+      "complete_pairs": 8,
+      "wins": 0,
+      "losses": 1,
+      "both_pass": 0,
+      "neither_pass": 7,
+      "discordant_pairs": 1,
+      "net_gain": -1,
+      "exact_two_sided_p": 1.0,
+      "holm_adjusted_p": 1.0,
+      "net_gain_threshold": 6,
+      "net_gain_threshold_met": false,
+      "reliability_qualified": false,
+      "verdict": "NO_RELIABILITY_QUALIFICATION",
+      "per_block": [
+        {
+          "block": 0,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": true,
+          "comparison": "reference_only"
+        },
+        {
+          "block": 1,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 2,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 3,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 4,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 5,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 6,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 7,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        }
+      ]
+    },
+    "affine_minus_hybrid": {
+      "name": "affine_minus_hybrid",
+      "role": "secondary_capacity",
+      "candidate": "affine_hybrid",
+      "reference": "hybrid",
+      "expected_pairs": 8,
+      "complete_pairs": 8,
+      "wins": 0,
+      "losses": 0,
+      "both_pass": 0,
+      "neither_pass": 8,
+      "discordant_pairs": 0,
+      "net_gain": 0,
+      "exact_two_sided_p": 1.0,
+      "holm_adjusted_p": null,
+      "net_gain_threshold": 6,
+      "net_gain_threshold_met": null,
+      "reliability_qualified": null,
+      "verdict": "SECONDARY_DESCRIPTIVE_ONLY",
+      "per_block": [
+        {
+          "block": 0,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 1,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 2,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 3,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 4,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 5,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 6,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        },
+        {
+          "block": 7,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_pass"
+        }
+      ]
+    }
+  },
+  "per_arm": {
+    "neural": {
+      "valid_formal_blocks": 8,
+      "expected_formal_blocks": 8,
+      "formal_readiness_passes": 1,
+      "formal_readiness_rate": 0.125,
+      "formal_readiness_wilson95": {
+        "successes": 1,
+        "trials": 8,
+        "lower": 0.02241749145005667,
+        "upper": 0.4708881822128535
+      },
+      "formal_readiness_ci_status": "COMPLETE_BLOCKS"
+    },
+    "budget": {
+      "valid_formal_blocks": 8,
+      "expected_formal_blocks": 8,
+      "formal_readiness_passes": 0,
+      "formal_readiness_rate": 0.0,
+      "formal_readiness_wilson95": {
+        "successes": 0,
+        "trials": 8,
+        "lower": 0.0,
+        "upper": 0.32440756488388023
+      },
+      "formal_readiness_ci_status": "COMPLETE_BLOCKS"
+    },
+    "hybrid": {
+      "valid_formal_blocks": 8,
+      "expected_formal_blocks": 8,
+      "formal_readiness_passes": 0,
+      "formal_readiness_rate": 0.0,
+      "formal_readiness_wilson95": {
+        "successes": 0,
+        "trials": 8,
+        "lower": 0.0,
+        "upper": 0.32440756488388023
+      },
+      "formal_readiness_ci_status": "COMPLETE_BLOCKS"
+    },
+    "affine_hybrid": {
+      "valid_formal_blocks": 8,
+      "expected_formal_blocks": 8,
+      "formal_readiness_passes": 0,
+      "formal_readiness_rate": 0.0,
+      "formal_readiness_wilson95": {
+        "successes": 0,
+        "trials": 8,
+        "lower": 0.0,
+        "upper": 0.32440756488388023
+      },
+      "formal_readiness_ci_status": "COMPLETE_BLOCKS"
+    }
+  },
+  "checkpoint_grid": {
+    "observed_predeclared_records": 416,
+    "ignored_non_grid_records": 0,
+    "ignored_out_of_range_records": 0,
+    "invalid_records": 0,
+    "expected_records": 416,
+    "complete_trajectories": 32,
+    "expected_trajectories": 32,
+    "complete": true,
+    "by_arm": {
+      "neural": {
+        "expected_checkpoint_records": 104,
+        "observed_checkpoint_records": 104,
+        "complete_trajectories": 8,
+        "incomplete_trajectories": 0,
+        "everready": {
+          "successes": 1,
+          "known_nonready": 7,
+          "indeterminate_no_pass_trajectories": 0,
+          "denominator": 8,
+          "expected_trajectories": 8,
+          "value": 0.125,
+          "estimand": "P(any observed predeclared checkpoint is joint-ready); incomplete no-pass trajectories are unresolved and excluded."
+        },
+        "readiness_loss_after_first": {
+          "losses": 0,
+          "denominator": 1,
+          "value": 0.0,
+          "definition": "Among complete trajectories first joint-ready before u300, fraction with any later predeclared checkpoint not joint-ready."
+        }
+      },
+      "budget": {
+        "expected_checkpoint_records": 104,
+        "observed_checkpoint_records": 104,
+        "complete_trajectories": 8,
+        "incomplete_trajectories": 0,
+        "everready": {
+          "successes": 0,
+          "known_nonready": 8,
+          "indeterminate_no_pass_trajectories": 0,
+          "denominator": 8,
+          "expected_trajectories": 8,
+          "value": 0.0,
+          "estimand": "P(any observed predeclared checkpoint is joint-ready); incomplete no-pass trajectories are unresolved and excluded."
+        },
+        "readiness_loss_after_first": {
+          "losses": 0,
+          "denominator": 0,
+          "value": null,
+          "definition": "Among complete trajectories first joint-ready before u300, fraction with any later predeclared checkpoint not joint-ready."
+        }
+      },
+      "hybrid": {
+        "expected_checkpoint_records": 104,
+        "observed_checkpoint_records": 104,
+        "complete_trajectories": 8,
+        "incomplete_trajectories": 0,
+        "everready": {
+          "successes": 0,
+          "known_nonready": 8,
+          "indeterminate_no_pass_trajectories": 0,
+          "denominator": 8,
+          "expected_trajectories": 8,
+          "value": 0.0,
+          "estimand": "P(any observed predeclared checkpoint is joint-ready); incomplete no-pass trajectories are unresolved and excluded."
+        },
+        "readiness_loss_after_first": {
+          "losses": 0,
+          "denominator": 0,
+          "value": null,
+          "definition": "Among complete trajectories first joint-ready before u300, fraction with any later predeclared checkpoint not joint-ready."
+        }
+      },
+      "affine_hybrid": {
+        "expected_checkpoint_records": 104,
+        "observed_checkpoint_records": 104,
+        "complete_trajectories": 8,
+        "incomplete_trajectories": 0,
+        "everready": {
+          "successes": 0,
+          "known_nonready": 8,
+          "indeterminate_no_pass_trajectories": 0,
+          "denominator": 8,
+          "expected_trajectories": 8,
+          "value": 0.0,
+          "estimand": "P(any observed predeclared checkpoint is joint-ready); incomplete no-pass trajectories are unresolved and excluded."
+        },
+        "readiness_loss_after_first": {
+          "losses": 0,
+          "denominator": 0,
+          "value": null,
+          "definition": "Among complete trajectories first joint-ready before u300, fraction with any later predeclared checkpoint not joint-ready."
+        }
+      }
+    }
+  },
+  "claim_boundary": "Finite evidence for this K8 recipe only; it does not establish guaranteed closure, whole-NCA behavior, or 3D transport. The budget comparison bundles bounds and gates and does not isolate a mechanism.",
+  "protocol": "hybrid_lane_write_budget_v1",
+  "completed_arms": 32,
+  "expected_arms": 32,
+  "dense_records": 416,
+  "finished_utc": "2026-10-06T12:23:06.309300+00:00",
+  "elapsed_seconds": 8864.187,
+  "runtime_limit_enforced": false
+}

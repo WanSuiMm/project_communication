@@ -1,35 +1,45 @@
 # Reaction-Transport: local 2D / 3D qualification
 
-Hybrid Writer v0 implementation and prelaunch checks (2026-10-06):
-[frozen protocol](new/hybrid_writer/PROTOCOL.md),
-[cells and mechanical write contract](new/hybrid_writer/cells.py),
-[serial runner](new/hybrid_writer/run.py). Four arms are neural, budget,
-hybrid and affine_hybrid, with C24/Z8 and unchanged masked transport/E/Q/readout.
+## Hybrid Writer v0: completed formal result
+
+Frozen protocol [hybrid_lane_write_budget_v1](new/hybrid_writer/PROTOCOL.md),
+[cells and mechanical write contract](new/hybrid_writer/cells.py), and
+[serial runner](new/hybrid_writer/run.py). Four arms compare neural, budget,
+hybrid and affine_hybrid with C24/Z8 and unchanged masked transport/E/Q/readout.
 The bounded writer limits per-lane single-step RMS correction to .1; it does not
-guarantee semantic closure or full recurrent stability. Eight fresh paired blocks,
-300 matched reset64x4 super-updates each, K8; official endpoint stays u300.
-All four actual-shape eager/CUDA Graph checks passed three optimizer updates,
-with zero gradient differences; CPU initialization/transport/budget checks pass.
-Dense checkpoints u0,25,...,300, new shared held-out cohorts, packed paired traces,
-observed ever-ready and fixed-step gate/write telemetry are retained. Formal
-efficacy run was dispatched and verified after tool yield against the saved u25
-checkpoint and Adam steps. Public status is `PENDING_NOT_PUBLISHED`; see
-[historical launch verification](evidence/hybrid_writer_prelaunch_20261006/dispatch.json),
+guarantee semantic closure or full recurrent stability. Eight fresh paired blocks
+completed 300 matched reset64x4 super-updates each, with K8.
+
+**Execution and formal aggregation are COMPLETE:** 32/32 trajectories and
+416/416 predeclared checkpoint records in 8,864.187 seconds (about 2 h 28 min).
+At fixed u300, joint readiness is neural 1/8 and budget, hybrid and affine_hybrid
+0/8. Each primary paired contrast has zero candidate-only wins and Holm-adjusted
+exact p=1; none passes the frozen qualification rule. Verdict:
+`NO_PRIMARY_RELIABILITY_QUALIFICATION`. This fixed lane-write-budget recipe did
+not improve frozen reliability; the result gives no causal root diagnosis and
+does not reject general Hybrid or NCA designs. Ever-ready counts match u300;
+readiness-loss is undefined for the three arms with no ready trajectory.
+
+The formal run saves u0,25,...,300 checkpoints and shared held-out cohort
+measurements. CPU initialization/transport/budget checks and all four pre-run
+actual-shape eager/CUDA Graph comparisons passed; they are implementation checks,
+not efficacy evidence. The published package is under
+[evidence/hybrid_writer_20261006](evidence/hybrid_writer_20261006/RESULTS.md),
+with the [publication manifest](HYBRID_WRITER_PUBLICATION_MANIFEST.json).
+It retains 832 packed trace banks, 416 summaries, 416 telemetry records and 32
+curves losslessly compressed as secondary evidence. Checkpoints and machine
+receipts remain local. Historical launch details are in
+[dispatch](evidence/hybrid_writer_prelaunch_20261006/dispatch.json),
 [validation](evidence/hybrid_writer_prelaunch_20261006/validation.json) and
 [configuration](evidence/hybrid_writer_prelaunch_20261006/config.json).
-The persistent foreground session and original machine receipt remain local.
-Expected duration is about2.3-2.6hours, not a runtime limit or completed result.
 
-Repository-root Hybrid commands:
+Canonical saved-evidence verification from the repository root:
 
-    python -X utf8 -B new/hybrid_writer/check_cells.py
-    python -X utf8 -u -B new/hybrid_writer/run.py --check --out analyses/NEW_HYBRID_QUALIFICATION.json
-    pwsh -File tools/launch_hybrid_writer.ps1 -RunName NEW_HYBRID_RUN -Qualification analyses/NEW_HYBRID_QUALIFICATION.json
+    python -X utf8 -B tools/export_hybrid_writer.py --verify-only
 
-The tool-owned foreground session remains open for the worker's lifetime.
-No runtime cap, watchdog or recurring monitor; dispatch and completed efficacy
-are separate states. Original frozen evidence and the previous negative
-qualification remain unchanged.
+The implementation check is `python -X utf8 -B new/hybrid_writer/check_cells.py`;
+the frozen protocol and published [reproduction guide](evidence/hybrid_writer_20261006/REPRODUCTION.md)
+describe a fresh run.
 
 Completed zero-training audit (2026-10-06): block7/reset formation and
 collapse, [protocol](new/collapse_audit/PROTOCOL.md). The four existing u225,
@@ -52,7 +62,8 @@ The result points to deficient cold-prefix state formation rather than loss
 of continuation on already-successful states; it does not isolate encoder
 versus recurrent writes or prove a unique contract. See the new
 [results](evidence/block7_collapse_20261006/RESULTS.md) and
-[raw report](evidence/block7_collapse_20261006/frozen_RESULTS.md). Hybrid is not run.
+[raw report](evidence/block7_collapse_20261006/frozen_RESULTS.md). This audit did
+not evaluate Hybrid; its separate formal result is summarized above.
 
 Repository-root entry commands:
 

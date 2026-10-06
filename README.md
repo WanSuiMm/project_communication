@@ -1,32 +1,47 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest code: Hybrid Writer v0; efficacy pending
+## Latest experiment: Hybrid Writer v0 did not qualify the tested recipe
 
-Can an explicit lane write budget improve cold-start formation under K8?
-The new four-arm experiment keeps C24/Z8 and the existing transport/E/Q/readout,
-and compares neural, budget, hybrid and affine_hybrid. Bounded writers limit
-each lane's single-step RMS correction to .1. The Hybrid table has36 direct
-coefficients on two local magnitude features; it supplies no semantic-closure
-or full-recurrence stability guarantee.
+Can an explicit lane-write budget improve cold-start formation under K8? The
+four-arm `hybrid_lane_write_budget_v1` experiment kept C24/Z8 and the existing
+transport/E/Q/readout, comparing neural, budget, hybrid and affine_hybrid.
+Bounded writers limit each lane's single-step RMS correction to .1; Hybrid has
+36 direct coefficients on two local magnitude features. The formal run is
+**COMPLETE: 32/32 trajectories and 416/416 predeclared checkpoint records** in
+8,864.187 seconds (about 2 h 28 min).
 
-CPU invariants passed. All four actual-shape CUDA Graph/eager checks passed
-three optimizer updates with zero gradient differences. The formal32-trajectory
-run was launched and verified at checkpointu25. **No formal efficacy results
-are included in this code publication.** Fixed u300 is primary; intermediate
-ever-ready is secondary. Earlier negative qualifications remain unchanged.
+At fixed u300, joint readiness was neural **1/8**, budget **0/8**, hybrid **0/8**
+and affine_hybrid **0/8**. Each of the three primary paired contrasts had zero
+candidate-only wins and Holm-adjusted exact p=1; none qualified. The secondary
+ever-ready counts match these arm counts. Readiness-loss is undefined for the
+three arms with no ready trajectory. Verdict: `NO_PRIMARY_RELIABILITY_QUALIFICATION`.
+This fixed lane-write-budget recipe did not improve frozen reliability. The
+finite result gives no causal root diagnosis and does not reject general Hybrid
+or NCA designs.
 
-1. [Incremental handoff](GPT_HANDOFF.md) and [frozen protocol](new/hybrid_writer/PROTOCOL.md).
-2. [Cell and writer](new/hybrid_writer/cells.py), [runner](new/hybrid_writer/run.py),
-   [reporting and paired tests](new/hybrid_writer/reporting.py).
-3. [Prelaunch validation](evidence/hybrid_writer_prelaunch_20261006/validation.json),
-   [configuration](evidence/hybrid_writer_prelaunch_20261006/config.json),
-   [historical launch verification](evidence/hybrid_writer_prelaunch_20261006/dispatch.json).
+Read the newest saved evidence first:
 
-CPU check from repository root: `python -X utf8 -B new/hybrid_writer/check_cells.py`.
-The formal runner requires the historical local Torch2.5.1 CUDA environment;
-its source, dependencies and commands are in the protocol.
+1. [Results](evidence/hybrid_writer_20261006/RESULTS.md),
+   [summary](evidence/hybrid_writer_20261006/summary.json),
+   [validation](evidence/hybrid_writer_20261006/validation.json), and
+   [publication manifest](HYBRID_WRITER_PUBLICATION_MANIFEST.json).
+2. [Final metrics](evidence/hybrid_writer_20261006/final_metrics.csv),
+   [dense records](evidence/hybrid_writer_20261006/dense.json),
+   [per-arm records](evidence/hybrid_writer_20261006/perarm.json), and
+   [reach/retention trajectory](evidence/hybrid_writer_20261006/reach_retention_trajectory.png).
+3. [Reproduction and artifact map](evidence/hybrid_writer_20261006/REPRODUCTION.md),
+   then the [frozen protocol](new/hybrid_writer/PROTOCOL.md),
+   [cell and writer](new/hybrid_writer/cells.py),
+   [runner](new/hybrid_writer/run.py), and
+   [reporting](new/hybrid_writer/reporting.py).
 
-## Latest result: block7 formation/collapse continuation audit
+Saved-evidence verification from the repository root:
+`python -X utf8 -B tools/export_hybrid_writer.py --verify-only`.
+The publication keeps 832 packed trace banks, 416 summaries, 416 telemetry
+records and 32 curves losslessly compressed as secondary evidence. Checkpoints
+are not published. Earlier negative qualifications remain unchanged.
+
+## Earlier result: block7 formation/collapse continuation audit
 
 Why did block7/reset lose its long-rollout behavior between u275 and u300?
 A zero-training audit handed full T64 states between u225/u250/u275/u300 in
@@ -39,8 +54,8 @@ Under fixed R275, u275 states continued by G300 attain T256 paired coverage
 preserves about99.97% of u275's T64-correct cells. G275 only partly improves
 u300-produced states. This points to deficient cold-prefix state formation,
 which includes the encoder AND64 recurrent updates; it does not isolate a
-unique module or establish population reliability. Hybrid had not been run at
-that audit's publication; its new code/launch is described above.
+unique module or establish population reliability. This audit did not evaluate
+Hybrid; the separate Hybrid Writer result is reported above.
 
 1. [Results](evidence/block7_collapse_20261006/RESULTS.md),
    [summary](evidence/block7_collapse_20261006/summary.json),

@@ -1,6 +1,52 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: selected block7 formation/collapse continuation audit
+## Latest: Hybrid Writer v0 reliability screen
+
+`hybrid_lane_write_budget_v1`: execution and formal aggregation **COMPLETE**,
+32/32 trajectories and 416/416 predeclared checkpoint records in 8,864.187
+seconds (about 2 h 28 min). The official endpoint is fixed u300; intermediate
+checkpoints do not replace it.
+
+| Arm | Valid blocks | Joint-ready at u300 | Wilson 95% interval |
+|---|---:|---:|---:|
+| neural | 8/8 | 1/8 | [0.0224175, 0.470888] |
+| budget | 8/8 | 0/8 | [0, 0.324408] |
+| hybrid | 8/8 | 0/8 | [0, 0.324408] |
+| affine_hybrid | 8/8 | 0/8 | [0, 0.324408] |
+
+| Primary contrast (candidate − reference) | Complete pairs | Candidate-only wins | Losses | Holm-adjusted exact p | Verdict |
+|---|---:|---:|---:|---:|---|
+| budget − neural | 8 | 0 | 1 | 1 | NO_RELIABILITY_QUALIFICATION |
+| hybrid − budget | 8 | 0 | 0 | 1 | NO_RELIABILITY_QUALIFICATION |
+| hybrid − neural | 8 | 0 | 1 | 1 | NO_RELIABILITY_QUALIFICATION |
+
+The frozen rule requires at least 6/8 net wins and Holm-adjusted exact two-sided
+p<=0.05. Overall verdict: `NO_PRIMARY_RELIABILITY_QUALIFICATION`. Observed
+ever-ready counts on the predeclared grid match u300; readiness-loss is 0/1 for
+neural and undefined for budget, hybrid and affine_hybrid, which never became
+ready. This fixed lane-write-budget recipe did not improve frozen reliability.
+The finite result gives no causal root diagnosis and does not reject general
+Hybrid or NCA designs.
+
+1. [Results](evidence/hybrid_writer_20261006/RESULTS.md),
+   [summary](evidence/hybrid_writer_20261006/summary.json),
+   [saved-data validation](evidence/hybrid_writer_20261006/validation.json), and
+   [publication manifest](HYBRID_WRITER_PUBLICATION_MANIFEST.json).
+2. [Final metrics](evidence/hybrid_writer_20261006/final_metrics.csv),
+   [dense records](evidence/hybrid_writer_20261006/dense.json),
+   [per-arm records](evidence/hybrid_writer_20261006/perarm.json), and
+   [reach/retention trajectory](evidence/hybrid_writer_20261006/reach_retention_trajectory.png).
+3. [Reproduction and artifact map](evidence/hybrid_writer_20261006/REPRODUCTION.md),
+   then the [frozen protocol](new/hybrid_writer/PROTOCOL.md) and
+   [implementation](new/hybrid_writer/cells.py).
+
+The publication includes 832 packed trace banks, 416 summaries, 416 telemetry
+records and 32 curves as losslessly compressed secondary data. Checkpoints are
+not published. Verify saved evidence from the repository root:
+
+    python -X utf8 -B tools/export_hybrid_writer.py --verify-only
+
+## Selected block7 formation/collapse continuation audit
 
 COMPLETE32/32 producer-consumer matrix units and12/12 same-state single-step
 units,90.97seconds. No training, optimizer update or fitted state alignment.
@@ -21,7 +67,8 @@ more sustained progress. Its one-step destruction on u275 states is below
 .0003 at all tested times/sizes. G275 only partly improves u300-produced states.
 The distinction points to cold-prefix state formation (encoder plus64 updates),
 without identifying a unique module or excluding representation compatibility.
-Hybrid was not run. Earlier formal u300 negative qualification is unchanged.
+This zero-training audit did not evaluate Hybrid; see the separate formal result
+above. Earlier formal u300 negative qualification is unchanged.
 
 [Results](evidence/block7_collapse_20261006/RESULTS.md),
 [summary](evidence/block7_collapse_20261006/summary.json),

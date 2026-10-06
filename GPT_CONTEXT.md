@@ -1,8 +1,8 @@
 # Context for incremental scientific review
 
-## Latest implementation: Hybrid Writer v0, efficacy not published
+## Latest formal result: Hybrid Writer v0 did not qualify this recipe
 
-- Protocol `hybrid_lane_write_budget_v1`; four arms neural/budget/hybrid/
+- Frozen protocol `hybrid_lane_write_budget_v1`; four arms neural/budget/hybrid/
   affine_hybrid, common C24/Z8 and masked lane permutation. Neural is the
   unchanged free residual. Bounded arms use delta=.1*a*m/sqrt(.5^2+mean_lane(m^2)).
   Budget learns four constant coefficients; Hybrid has36 lane-specific hat
@@ -10,20 +10,45 @@
   Affine replaces only the proposal MLP and is a secondary capacity ablation.
 - Shared E/Q/readout and MLP tensors are copied from a canonical seeded cell.
   Zero proposals and a=.5 match initial numerical functions and proposal
-  Jacobian. The hard budget is mechanical; semantic closure, full-Jacobian
-  stability and the responsible block7 module remain unproved.
-- Eight fresh paired blocks; reset64x4 on the SAME batch8 per super-update,
-  32 K8 loss/backward windows and one AdamW step;300 updates, checkpoints every25.
-  The fixed-u300 J gate uses the existing strict reach/retention/support limits.
-  Three primary paired comparisons use exact discordant tests and Holm correction;
-  observed ever-ready and write telemetry are secondary, never model selection.
-- [Validation](evidence/hybrid_writer_prelaunch_20261006/validation.json) contains
-  CPU/runtime qualification only. Four actual-shape three-update GPU comparisons
-  have zero gradient differences. A reporting-only source rebinding adds Wilson
-  intervals/error labels without changing model, optimizer, evaluator or runtime.
-  [Dispatch](evidence/hybrid_writer_prelaunch_20261006/dispatch.json) verifies a
-  saved u25 checkpoint after tool yield. It is a historical launch receipt summary,
-  not current progress. Efficacy status: `PENDING_NOT_PUBLISHED`.
+  Jacobian. The hard budget is mechanical; semantic closure and full-Jacobian
+  stability remain unproved.
+- Formal execution and aggregation are **COMPLETE: 32/32 trajectories,
+  416/416 predeclared checkpoint records**, elapsed 8,864.187 seconds (about
+  2 h 28 min).
+  At fixed u300, joint-ready counts are neural 1/8, budget 0/8, hybrid 0/8 and
+  affine_hybrid 0/8. The three primary contrasts (budget−neural, hybrid−budget,
+  hybrid−neural) each have zero candidate-only wins and Holm-adjusted exact
+  two-sided p=1.0; all fail the frozen qualification rule. Overall verdict:
+  `NO_PRIMARY_RELIABILITY_QUALIFICATION`.
+- Ever-ready counts on the predeclared grid match the u300 counts. Readiness-loss
+  is 0/1 for neural and undefined for budget, hybrid and affine_hybrid because
+  none had a first-ready trajectory. This finite result says the tested fixed
+  lane-write-budget recipe did not improve frozen reliability; it supplies no
+  causal root diagnosis and does not reject general Hybrid or NCA designs.
+- CPU initialization/transport/budget checks and the pre-run actual-shape
+  three-update eager/CUDA Graph comparisons passed; those are implementation
+  checks, not the efficacy result. See the [prelaunch validation](evidence/hybrid_writer_prelaunch_20261006/validation.json)
+  and [historical dispatch record](evidence/hybrid_writer_prelaunch_20261006/dispatch.json).
+
+Read latest saved data before the frozen protocol and implementation:
+
+1. [Published results](evidence/hybrid_writer_20261006/RESULTS.md),
+   [summary](evidence/hybrid_writer_20261006/summary.json),
+   [validation](evidence/hybrid_writer_20261006/validation.json), and
+   [manifest](HYBRID_WRITER_PUBLICATION_MANIFEST.json).
+2. [Final metrics](evidence/hybrid_writer_20261006/final_metrics.csv),
+   [dense records](evidence/hybrid_writer_20261006/dense.json),
+   [per-arm records](evidence/hybrid_writer_20261006/perarm.json), and
+   [reach/retention trajectory](evidence/hybrid_writer_20261006/reach_retention_trajectory.png).
+3. [Reproduction and artifact map](evidence/hybrid_writer_20261006/REPRODUCTION.md),
+   then the [frozen protocol](new/hybrid_writer/PROTOCOL.md),
+   [cell and writer](new/hybrid_writer/cells.py), [runner](new/hybrid_writer/run.py),
+   and [reporting](new/hybrid_writer/reporting.py).
+
+Public saved-data verification from the repository root:
+`python -X utf8 -B tools/export_hybrid_writer.py --verify-only`. The publication
+retains 832 packed trace banks, 416 summaries, 416 telemetry records and 32
+curves losslessly compressed as secondary data; checkpoints are not published.
 
 |Concept|Symbols|Source|
 |---|---|---|
@@ -33,11 +58,11 @@
 |Formal/secondary separation and Holm comparisons|`aggregate`, `report`|[reporting.py](new/hybrid_writer/reporting.py)|
 |Mechanical invariants and baseline parity|`run_checks`|[check_cells.py](new/hybrid_writer/check_cells.py)|
 
-Start with the [protocol](new/hybrid_writer/PROTOCOL.md) and
-[configuration](evidence/hybrid_writer_prelaunch_20261006/config.json).
-No existing scientific conclusion is upgraded by this implementation.
+The unchanged [protocol](new/hybrid_writer/PROTOCOL.md) and
+[configuration](evidence/hybrid_writer_20261006/config.json) define this recipe.
+Earlier scientific conclusions remain unchanged.
 
-## Latest completed audit: block7 producer/consumer continuation
+## Earlier completed audit: block7 producer/consumer continuation
 
 - Protocol `block7_collapse_continuation_v1`, COMPLETE32 matrix +12 single-step
   units, zero training, optimizer updates or fitted state alignment. Selected
@@ -59,8 +84,9 @@ No existing scientific conclusion is upgraded by this implementation.
 - This supports prioritizing cold-prefix execution-state construction/write
   interfaces. Production includes the encoder AND64 recurrent steps. No unique
   producer module, latent decomposition, irreversible domain exit, general
-  closure theorem, phase transition, population reliability or Hybrid result
-  is established. Prior fixed-u300 formal negative verdict stays unchanged.
+  closure theorem, phase transition or population reliability is established.
+  This audit did not evaluate Hybrid; its separate formal result is reported
+  above. Prior fixed-u300 formal negative verdict stays unchanged.
 - Read [results](evidence/block7_collapse_20261006/RESULTS.md),
   [summary](evidence/block7_collapse_20261006/summary.json),
   [validation](evidence/block7_collapse_20261006/validation.json), then
