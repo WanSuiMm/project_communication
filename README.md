@@ -1,6 +1,41 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest result: semantic-write source causal audit
+## Latest result: continuous execution-state coverage
+
+Can supervised continuous execution make long cellular computation learnable
+with K8 credit? The unchanged C24/Z8 StreamingCell was trained in eight fresh
+paired blocks, comparing four cold64-step segments with one continuous256-step
+trajectory. Both arms use the same batch8,256 forward macro-steps,32 K8 backward
+windows,32 losses divided by32, and exactly one AdamW step at the end.
+
+**COMPLETE16/16**,208 dense checkpoint records,3439.86seconds. At fixed u300,
+joint reach/retention readiness and the unchanged old Full gate are both **0/8
+in each arm**. Verdict: `NO_CONTINUOUS_COVERAGE_RELIABILITY_QUALIFICATION`.
+The pooled strict-T64 reach delta is-0.0709758; retention-to-T256 delta is
++0.1171954 with4/8 positive pairs. These mixed diagnostics do not qualify the
+recipe. They do not establish that all continuous-training methods fail.
+
+1. [Results](evidence/continuous_coverage_20261006/RESULTS.md),
+   [final summary](evidence/continuous_coverage_20261006/summary.json),
+   [saved-data validation](evidence/continuous_coverage_20261006/validation.json).
+2. [All checkpoint metrics](evidence/continuous_coverage_20261006/metrics.csv),
+   [dense records](evidence/continuous_coverage_20261006/dense.json),
+   [final arm records](evidence/continuous_coverage_20261006/perarm.json).
+3. [Frozen protocol](new/continuous_coverage/PROTOCOL.md),
+   [short runtime qualification](evidence/continuous_coverage_20261006/runtime_qualification.json),
+   [reproduction and trace layouts](evidence/continuous_coverage_20261006/REPRODUCTION.md).
+
+Saved u0,25,...,300 points describe formation/decline; no intermediate peak
+replaces u300. The separate joint-readiness screen does not require future
+coverage gain, and does not rewrite the old Full gate. Reset also changes the
+encoder's credit frequency; this contrast cannot identify a unique state-age
+mechanism. All416 packed paired Boolean trace banks and all scientific numeric
+records are retained losslessly; read those arrays second. Checkpoint contents
+and machine/session receipts stay local, with checkpoint hashes published.
+
+    python -X utf8 -B tools/export_continuous_coverage.py --verify-only
+
+## Previous result: semantic-write source causal audit
 
 `semantic_write_source_causal_v1`: **COMPLETE**,396/396 frozen-checkpoint
 measurements, no training or optimizer updates. Protecting correct input sources

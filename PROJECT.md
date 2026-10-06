@@ -1,5 +1,53 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+Completed experiment (2026-10-06): continuous execution-state coverage,
+protocol [new/continuous_coverage/PROTOCOL.md](new/continuous_coverage/PROTOCOL.md).
+Original C24/Z8 StreamingCell, eight fresh paired initialization/schedule blocks,
+reset64x4 versus continuous256. Both use the same minibatch eight maps,256
+forward macro-steps,32 K8 backward windows,32 BCE terms divided by32, and one
+AdamW update at the end. Parameters are fixed for the whole super-update.
+No old warm states cross optimizer updates. Reset necessarily changes encoder
+credit frequency as well as numerical state ages; this is disclosed, not corrected.
+Checkpoints u0,25,...,300 retain model/optimizer states and paired Boolean traces
+on fresh32-map size32/64 cohorts. Formal endpoint stays u300; dense checkpoints
+only describe formation/decline. Final reach/retention joint readiness and the
+unchanged old Full gate are reported separately. No runtime cap or monitor.
+First dispatch: `runs/continuous_coverage_20261006_01` was interrupted after its
+first optimizer update. Its process disappeared without a Python error artifact;
+the preserved status is stale RUNNING, not proof of a live worker. A CPU lifetime
+control reproduced child reclamation after the launching tool shell exits.
+See [execution repair](new/continuous_coverage/EXECUTION_FIX.md). The replacement
+launcher runs Python in a persistent foreground tool session and verifies it from
+a separate tool call. The initial run and receipt remain unchanged.
+Replacement run: `runs/continuous_coverage_20261006_02`, passed
+[qualification](evidence/continuous_coverage_20261006/runtime_qualification.json). The existing scientific
+source hashes are unchanged; only the launcher changed and execution notes were
+added. The persistent execution owner is recorded in the local launch receipt.
+Advancing progress u250 to u275 was verified across separate tool calls. In this
+isolated tool environment a new shell cannot enumerate the other session's PIDs;
+use the bounded progress verifier below rather than the launcher's OS-process
+`-Verify` option. Neither verifier changes model state or creates a monitor.
+
+Repository-root commands:
+
+    python -X utf8 -B new/continuous_coverage/run.py --check --out analyses/NEW_COVERAGE_CHECK.json
+    pwsh -File tools/launch_continuous_coverage.ps1 -RunName NEW_COVERAGE_RUN -Qualification analyses/NEW_COVERAGE_CHECK.json
+    pwsh -File tools/verify_continuous_coverage_progress.ps1 -RunName NEW_COVERAGE_RUN -Qualification analyses/NEW_COVERAGE_CHECK.json -OwnerSessionId 12345
+
+The launch command stays running and returns a tool exec session; replace12345
+with that session ID in the separate verification call. Do not end that session
+before the worker completes. A finished chat reply is separate from the live
+execution session. Replacement execution finished COMPLETE16/16 with208/208
+dense records, in3439.86 seconds (about57.3 minutes); worker exit code0.
+Fixed-u300 joint readiness and unchanged old Full were0/8 in both arms.
+Frozen verdict: `NO_CONTINUOUS_COVERAGE_RELIABILITY_QUALIFICATION`.
+Public [results](evidence/continuous_coverage_20261006/RESULTS.md),
+[summary](evidence/continuous_coverage_20261006/summary.json),
+[dense metrics](evidence/continuous_coverage_20261006/metrics.csv), and
+[reproduction](evidence/continuous_coverage_20261006/REPRODUCTION.md).
+Verify the public saved-data export with
+`python -X utf8 -B tools/export_continuous_coverage.py --verify-only`.
+
 Completed zero-training audit (2026-10-06): semantic-write source protection,
 protocol [new/semantic_write_audit/PROTOCOL.md](new/semantic_write_audit/PROTOCOL.md).
 Execution is COMPLETE396/396 on the historical local CUDA backend.

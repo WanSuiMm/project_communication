@@ -1,5 +1,30 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
+## Latest: matched reset64x4 versus continuous256 training
+
+COMPLETE16/16 trajectories, eight fresh paired blocks,208 saved checkpoint
+records;3439.86seconds. Architecture unchanged(C24/Z8,5033 parameters).
+Each super-update uses the SAME batch8,256 steps,32 K8 backward windows,
+32 losses/32 and one AdamW step. Reset reinitializes at64-step boundaries;
+continuous carries state through256. No optimizer update occurs within a rollout.
+
+|Fixed-u300 arm|Joint readiness|Unchanged old Full|
+|---|---:|---:|
+|reset64x4|0/8|0/8|
+|continuous256|0/8|0/8|
+
+Frozen verdict: `NO_CONTINUOUS_COVERAGE_RELIABILITY_QUALIFICATION`.
+Joint net gain0/8, exact paired p1. Pooled strict reach delta-0.0709758;
+retention delta+0.1171954 with4/8 positive pairs. Dense points describe finite
+formation/decline and cannot replace u300. Encoder-credit frequency also changes
+under reset. This negative recipe qualification is not a universal impossibility.
+
+[Results](evidence/continuous_coverage_20261006/RESULTS.md),
+[summary](evidence/continuous_coverage_20261006/summary.json),
+[all checkpoint metrics](evidence/continuous_coverage_20261006/metrics.csv),
+[validation](evidence/continuous_coverage_20261006/validation.json),
+[protocol](new/continuous_coverage/PROTOCOL.md).
+
 ## Latest diagnostics: initialization geometry and continuation formation
 
 Two completed CPU diagnostics with zero new training. Initialization uses four

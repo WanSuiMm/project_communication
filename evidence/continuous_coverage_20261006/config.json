@@ -1,0 +1,94 @@
+{
+  "protocol": "continuous_execution_coverage_v1",
+  "architecture": {
+    "arm": "ws_additive",
+    "architecture": "streaming_carry",
+    "input_channels": 3,
+    "workspace_channels": 24,
+    "latent_channels": 8,
+    "workspace_hidden": 40,
+    "candidate_hidden": 16,
+    "workspace_input_channels": 67,
+    "candidate_input_channels": 67,
+    "communication_phases_per_macro_step": 2,
+    "transport_operator": "masked port permutation with blocked-link bounce-back",
+    "workspace_update": "W_new = T(W) + eta*F(T(W),Z,L(W),L(Z),X)",
+    "latent_update": "Z_new = Z + alpha * Q",
+    "alpha": 0.5,
+    "eta": 0.1,
+    "candidate_output_activation": null,
+    "learned_gates": false,
+    "readout": "Conv2d(Z, 1, kernel_size=1)",
+    "initialization": {
+      "workspace": "Conv2d(X, 24, kernel_size=1), default PyTorch init",
+      "latent": "zeros",
+      "F_last_layer": "zero initialized",
+      "Q_last_layer": "zero initialized",
+      "readout_weights": "default PyTorch init",
+      "readout_bias": "zero initialized"
+    },
+    "parameter_count": 5033,
+    "stability_guarantee": false,
+    "streaming": true,
+    "carrier_lanes": [
+      "N",
+      "E",
+      "S",
+      "W"
+    ],
+    "payload_channels_per_lane": 6,
+    "stationary_state": "Z",
+    "transport_parameters": 0,
+    "force_perception_clock": "L(W),L(Z) before stream; first feature is incoming T(W)",
+    "pure_transport_isometry": true,
+    "full_update_lossless": false
+  },
+  "arms": [
+    "reset64x4",
+    "continuous256"
+  ],
+  "blocks": 8,
+  "super_updates": 300,
+  "same_minibatch_repeated_in_reset": true,
+  "batch": 8,
+  "training_forward_steps_per_update": 256,
+  "credit_horizon": 8,
+  "loss_count": 32,
+  "loss_normalization": 32,
+  "parameters_fixed_within_super_update": true,
+  "optimizer_steps_per_super_update": 1,
+  "train_maps": 512,
+  "train_seed": 10002,
+  "eval_seeds": {
+    "32": 102032,
+    "64": 102064
+  },
+  "evaluation_maps_each_size": 32,
+  "checkpoints": [
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300
+  ],
+  "formal_checkpoint": 300,
+  "optimizer": {
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "clip": 1.0,
+  "runtime_limit_enforced": false
+}

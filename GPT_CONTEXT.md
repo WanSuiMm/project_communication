@@ -1,6 +1,58 @@
 # Context for incremental scientific review
 
-## Latest completed audit: semantic-write source protection
+## Latest completed experiment: continuous execution-state coverage
+
+- Protocol `continuous_execution_coverage_v1`; original C24/Z8 StreamingCell,
+  5033 parameters; eight fresh paired initialization/schedule blocks,16 trained
+  trajectories. Training maps512 at size32; fresh held-out32-map cohorts at
+  sizes32/64. Independent statistical unit: paired training block(n8).
+- Reset64x4 re-encodes the SAME batch8 four times. Continuous256 encodes once
+  and carries its numerical state through256 steps. Both accumulate32 balanced
+  BCE terms/32, use32 K8 backward windows with detached states, clip once and
+  perform one AdamW update only after step256. No state crosses optimizer updates.
+- **COMPLETE16/16**,208 records on the fixed u0,25,...,300 grid. The formal
+  endpoint remains u300; intermediate points are descriptive, not model selection.
+- Size32 primary joint readiness requires strict16<d<32 paired T64 coverage
+  (pooled AND map-mean)>=.80, T64-correct retention to T256>=.95, with>=16
+  contributing maps and>=100 reference cells. This is separate from the unchanged
+  old Full gate; an already-complete stable model needs no extra coverage gain.
+- Both joint readiness and old Full are0/8 in both arms. Net paired joint gain0,
+  exact discordant-pair two-sided p1, frozen verdict
+  `NO_CONTINUOUS_COVERAGE_RELIABILITY_QUALIFICATION`. Pooled R mean delta-0.0709758
+  (3/8 positive), endpoint S delta+0.1171954 (4/8 positive). No reliable joint
+  benefit is qualified. S and continuous-survival deltas require support in both
+  arms; null is not zero. Endpoint retention can conceal intervening regression.
+- Reset induces four encoder-credit windows versus one, in addition to different
+  state ages. This is an intervention consequence, not a compensated variable.
+  No unique visitation mechanism, population equivalence, global short-credit
+  solution, phase-transition theorem, general NCA superiority or3D result follows.
+- Three actual-shape updates per arm had bitwise-equal eager/graph loss, state,
+  gradients, clipping, parameters and Adam state. This is bounded execution
+  qualification, not300-update equivalence. Formal elapsed3439.86seconds excludes
+  preflight and publication. An initial launch was interrupted; final execution
+  restarted from the same frozen initialization/schedules, not a selected state.
+- Read [results](evidence/continuous_coverage_20261006/RESULTS.md),
+  [final summary](evidence/continuous_coverage_20261006/summary.json),
+  [validation](evidence/continuous_coverage_20261006/validation.json), then
+  [checkpoint metrics](evidence/continuous_coverage_20261006/metrics.csv) and
+  [dense records](evidence/continuous_coverage_20261006/dense.json).
+  All416 packed paired traces and bank/schedule records are secondary evidence;
+  checkpoint files and machine/session records remain local.
+
+| Concept | Exact symbols | Source |
+|---|---|---|
+|256-step clock and32 detached backward windows|`math_backward`, `finish_update`|[runtime.py](new/continuous_coverage/runtime.py)|
+|Fixed buffers and accelerated replay|`CapturedSuperK8`|[runtime.py](new/continuous_coverage/runtime.py)|
+|Dense checkpoints, frozen plans, final endpoint|`run`, `save_stage`, `CHECKPOINTS`|[run.py](new/continuous_coverage/run.py)|
+|Paired Boolean traces, packed arrays and summaries|`trace`, `pack`, `dense_summary`, `evaluate`|[evaluation.py](new/continuous_coverage/evaluation.py)|
+|Reach/hold support and paired qualification|`compact_pair_metrics`, `joint_readiness`, `aggregate_pairs`|[metrics.py](new/continuous_coverage/metrics.py)|
+|Bounded execution qualification|`qualify`|[checks.py](new/continuous_coverage/checks.py)|
+
+Verify saved public evidence without training:
+
+    python -X utf8 -B tools/export_continuous_coverage.py --verify-only
+
+## Previous completed audit: semantic-write source protection
 
 - `semantic_write_source_causal_v1`, COMPLETE396/396, zero training/optimizer
   updates. First8 paired factorial blocks, all four arms, plus the selected

@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "protocol": "continuous_execution_coverage_v1",
+  "scope": "Saved-data CPU arithmetic, provenance/file hashes, and record counts only; no model inference, training, optimizer update, or frontier regeneration.",
+  "source_bindings": {
+    "status": "PASS",
+    "files": 52,
+    "mismatches": []
+  },
+  "run_input_files": 929,
+  "public_scientific_file_counts": {
+    "training_curves": 16,
+    "evaluation_summaries": 208,
+    "packed_trace_banks": 416,
+    "final_frontier_csv": 16,
+    "data_banks": 3,
+    "checkpoint_files_published": 0
+  },
+  "data_bank_tensor_hashes_recomputed": 3,
+  "schedule_plan_sha256": "b17d0800edd74b3654d674e4722923b29b5c7f9679da3fe5a519dd1f8c48f897",
+  "checkpoint_sha256_verified_locally": 208,
+  "checkpoint_parameter_hashes_retained": 208,
+  "checkpoint_contents_published": false,
+  "packed_trace_shapes": {
+    "size32": [
+      257,
+      32,
+      32,
+      32
+    ],
+    "size64": [
+      257,
+      32,
+      64,
+      64
+    ]
+  },
+  "packed_trace_boolean_arrays": [
+    "correct",
+    "original_correct",
+    "flipped_correct"
+  ],
+  "packed_trace_roundtrip_equal": 416,
+  "R_S_and_continuous_survival_recomputed": 208,
+  "recomputed_saved_metric_rows": 208,
+  "final_aggregate_recomputed_from_u300_records": {
+    "independent_unit": "paired training block",
+    "paired_blocks": 8,
+    "joint_readiness_passes_at_u300": {
+      "reset64x4": 0,
+      "continuous256": 0
+    },
+    "saved_old_full_passes_at_u300": {
+      "reset64x4": 0,
+      "continuous256": 0
+    },
+    "primary_wins": 0,
+    "primary_losses": 0,
+    "primary_exact_two_sided_p": 1.0,
+    "R_strict_pooled_T64_mean_delta": -0.07097582547169812,
+    "R_strict_pooled_T64_positive_pairs": 3,
+    "S_retention64_to256_mean_delta": 0.11719539336588874,
+    "S_retention64_to256_positive_pairs": 4,
+    "primary_verdict": "NO_CONTINUOUS_COVERAGE_RELIABILITY_QUALIFICATION"
+  },
+  "frontier_and_old_full_scope": "Saved final summaries and perarm records were reused for frontier and old Full; neither frontier rows nor Full were regenerated from traces.",
+  "runtime_qualification_sanitized": true,
+  "frozen_evidence_changed": false,
+  "execution_elapsed_seconds": 3439.8600000000006,
+  "publication_fit_or_inference": false
+}
