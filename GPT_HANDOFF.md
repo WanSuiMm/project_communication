@@ -1,88 +1,89 @@
-# Incremental review: block7 formation/collapse continuation audit
+# Incremental review: Hybrid Writer v0 code and prelaunch checks
 
-- Review base: `ebff366c6cc04c2c332b9764f8bf167b104fac12`.
-- Evidence head: `8924d884c4b7a9a3cca68a713cfbc84e73e25359`.
-- This later commit changes only the handoff. The evidence head remains stable.
-  No training or inference is performed during publication.
+- Review base: `90888de0ca869392686cda40aee6fbe36f43caa3`.
+- Code/evidence head: `7373aa4d1f3c64bd1e84af108b9cc2ac617eab46`.
+- This later commit changes only the handoff; the code/evidence head stays stable.
+- Formal efficacy: `PENDING_NOT_PUBLISHED`. This is a code release, not a result.
 
 ## Read first
 
-1. [Results](evidence/block7_collapse_20261006/RESULTS.md),
-   [summary](evidence/block7_collapse_20261006/summary.json),
-   [saved-data validation](evidence/block7_collapse_20261006/validation.json).
-2. [Matrix summaries](evidence/block7_collapse_20261006/matrix_summary.csv),
-   [single-step summaries](evidence/block7_collapse_20261006/single_step_summary.csv).
-3. [Protocol](new/collapse_audit/PROTOCOL.md),
-   [code map](GPT_CONTEXT.md),
-   [reproduction and trace layouts](evidence/block7_collapse_20261006/REPRODUCTION.md).
+1. [Frozen protocol](new/hybrid_writer/PROTOCOL.md).
+2. [Writer implementation](new/hybrid_writer/cells.py) and
+   [CPU checks](new/hybrid_writer/check_cells.py).
+3. [Runner](new/hybrid_writer/run.py), [paired reporting](new/hybrid_writer/reporting.py),
+   and [configuration](evidence/hybrid_writer_prelaunch_20261006/config.json).
+4. [Prelaunch validation](evidence/hybrid_writer_prelaunch_20261006/validation.json),
+   [historical dispatch verification](evidence/hybrid_writer_prelaunch_20261006/dispatch.json),
+   and [source bindings](evidence/hybrid_writer_prelaunch_20261006/manifest.json).
 
-The [full matrix](evidence/block7_collapse_20261006/matrix.json.gz),
-[single-step records](evidence/block7_collapse_20261006/single_step.json.gz),
-[provenance](evidence/block7_collapse_20261006/provenance.json), packed
-trajectories and numeric state arrays are secondary; read the summaries first.
+No need to reread earlier large state packages for this implementation review.
+The previous causal motivation is the [block7 audit](evidence/block7_collapse_20261006/RESULTS.md).
 
-## New evidence
+## New implementation
 
-The prior dense checkpoint grid contains joint-ready block7/reset points
-u250/u275, followed by failed u300. This selected zero-training audit studies
-that trajectory only: init96008, schedule97008; producer and consumer
-checkpoints225/250/275/300, same32-map banks at sizes32/64. It hands off the
-complete numerical(C,Z) state atT64 and continues192 steps toT256.
+C24 remains four directional lanes of six payload coordinates; Z8, encoder,
+masked permutation, Q and readout keep their original architecture. Common
+initial tensors are copied explicitly from a canonical seeded StreamingCell.
 
-COMPLETE32/32 matrix and12/12 single-step units. Eight native diagonal
-trajectories reproduce saved original/flipped/AND Boolean bits exactly.
-Parameters are unchanged; no optimizer update or state-coordinate fit.
-Three fixed observation views R_P/R_C/R275 do not feed back into dynamics.
-Correct/wrong cohorts are fixed by the producer's native paired correctness
-atT64. This is ONE independent selected training trajectory, not44 trials.
+| Arm | Proposal | Writer | Parameters |
+|---|---|---|---:|
+| neural | original two-layer MLP | original free residual | 5033 |
+| budget | same MLP | radial bound with four constant learned gates | 5037 |
+| hybrid | same MLP | radial bound with36 state-conditioned coefficients | 5069 |
+| affine_hybrid | direct affine67->24 | same Hybrid writer | 2997 |
 
-Fixed R275, all-changed paired coverage atT256:
+Bounded arms use delta=.1*a*m/sqrt(.5^2+mean_lane(m^2)).
+The uniform per-lane RMS write budget is .1; zero proposals preserve C transport.
+The Hybrid gate is a convex hat interpolation at fixed knots0,.5,1 over lane
+RMS of incoming T(C) and pre-stream L(C). It has no direct target/readout/time
+input, but hidden magnitudes can carry semantics indirectly. All gates start
+at.5 and proposal outputs at zero; initial numerical functions and local
+proposal Jacobian match. No claim of semantic closure or full stability.
 
-|Producer atT64|Consumer rule|size32|size64|
-|---:|---:|---:|---:|
-|275|275|.950144|.840536|
-|275|300|.970374|.933684|
-|300|275|.489719|.111351|
-|300|300|.425492|.059384|
+Eight fresh paired initialization/schedule blocks,300 reset64x4 super-updates
+each, same batch8 and32 K8 losses/backwards per optimizer step. Official J
+endpoint remains u300, with three primary paired contrasts and Holm correction.
+Checkpoint-grid ever-ready and gate/write telemetry are secondary only.
 
-G300 continuously preserves u275's T64-correct cells at.999731/.999708
-and has more sustained progress on u275's initially wrong cells. Successful
-u225/u250 states also continue well under G300. Single-step destruction under
-fixed R275 is below.0003 on all u275 states sampled at64/128/192 and both sizes.
-G275 improves u300-produced states only partly; it does not restore the
-successful regime.
+## Verification and status
 
-The tested native collapse cannot be adequately described as G300 losing the
-ability to continue an already-successful state. The stronger distinction is
-the state supplied by the cold0..64 prefix. That prefix contains both encoder
-and recurrent updates: no unique module, state component, irreversible domain
-exit, or low-complexity contract is identified.
+CPU checks passed hats, copied initialization, affine inactive-module removal,
+bitexact randomized neural parity, zero-proposal carry, proposal Jacobian,
+large-message write bounds, finite gradients and observer behavior.
+All four actual training-shape GPU comparisons passed three AdamW updates;
+gradient maximum absolute difference is zero in every arm. Loss, states,
+parameters and Adam moments were also checked against eager arithmetic.
 
-## Unchanged claims
+A later reporting-only source rebinding added Wilson intervals and error labels;
+training cells, runtime, evaluator and launcher remained unchanged. This is
+documented in validation.json. Launch verification checked the saved u25 model
+and optimizer steps after tool yield. Published dispatch status is historical,
+not live progress or a final scientific verdict.
 
-The prior fixed-u300 continuous-coverage reliability verdict remains
-`NO_CONTINUOUS_COVERAGE_RELIABILITY_QUALIFICATION`, with0/8 joint readiness
-and0/8 old Full in both arms. Intermediate checkpoints do not replace the
-formal endpoint. No new Full gate, population success rate, phase-transition
-theorem or Hybrid architecture result is claimed. No new training was done.
+Original checkpoints, live training/evaluation outputs, machine manifests,
+launch receipts and logs are excluded. No additional model training or inference
+was performed for this publication.
 
-## Data and verification
+## Unchanged conclusions
 
-All32 packed matrix trajectories retain three fixed readout views and both
-source worlds at every integer time64..256. All12 single-step records and10
-numeric state packages are retained losslessly. Per-map numerators and
-denominators are in the raw gzip JSON; the CSV summaries retain the full
-view/cohort matrix. The previous publication already contains the unchanged
-evaluation banks and native trajectories. Checkpoint bytes remain local;
-their hashes and input/source bindings are published. Machine/session receipts
-are excluded. Saved public-data verification needs no checkpoints or GPU:
-
-    python -X utf8 -B tools/export_block7_collapse.py --verify-only
+The selected block7 audit supports successful continuation of earlier states
+by G300; it does not identify which cold-prefix component caused failure.
+The prior fixed-u300 continuous-coverage reliability qualification remains
+negative. This code release supplies no new efficacy, general BPTT solution,
+closure theorem, population reliability result or 3D result.
 
 ## Reviewer questions
 
-1. Does the producer-associated pattern remain consistent across all three
-   readout views, after separating immediate readout-switch changes?
-2. Given successful continuation by G300, what minimal execution-state
-   construction/write constraint should Hybrid v0 test, without attributing
-   this result uniquely to the encoder or encoding the task answer by hand?
+1. Do the lane RMS axes, pre-stream feature clock and bounded write implement
+   the declared intervention without a free residual bypass?
+2. Do the Budget and Hybrid controls distinguish constant from state-conditioned
+   regulation, while treating affine_hybrid as a capacity ablation?
+3. Do formal u300 and observed ever-ready remain distinct throughout aggregation?
+
+CPU reproduction from repository root:
+
+    python -X utf8 -B new/hybrid_writer/check_cells.py
+
+GPU qualification and fresh-run commands are in the protocol; they require
+the historical Torch2.5.1 CUDA environment. Existing output directories are
+never overwritten.
