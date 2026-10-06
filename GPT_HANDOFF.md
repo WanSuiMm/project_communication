@@ -1,89 +1,81 @@
-# Incremental review: Hybrid Writer v0 code and prelaunch checks
+# Incremental review: completed Hybrid Writer v0 experiment
 
-- Review base: `90888de0ca869392686cda40aee6fbe36f43caa3`.
-- Code/evidence head: `7373aa4d1f3c64bd1e84af108b9cc2ac617eab46`.
-- This later commit changes only the handoff; the code/evidence head stays stable.
-- Formal efficacy: `PENDING_NOT_PUBLISHED`. This is a code release, not a result.
+- Review base: `283ebe5ae584c53e26f588d8230808349a66472d`.
+- Prior implementation evidence: `7373aa4d1f3c64bd1e84af108b9cc2ac617eab46`.
+- Result evidence head: `ecdc145e55bd5a21a1f719c84791f82357b714f4`.
+- Execution: `COMPLETE`,32/32 trajectories and416/416 checkpoint evaluations.
+- Frozen verdict: `NO_PRIMARY_RELIABILITY_QUALIFICATION`.
+- This later handoff commit changes only review metadata; the evidence head stays stable.
 
 ## Read first
 
-1. [Frozen protocol](new/hybrid_writer/PROTOCOL.md).
-2. [Writer implementation](new/hybrid_writer/cells.py) and
-   [CPU checks](new/hybrid_writer/check_cells.py).
-3. [Runner](new/hybrid_writer/run.py), [paired reporting](new/hybrid_writer/reporting.py),
-   and [configuration](evidence/hybrid_writer_prelaunch_20261006/config.json).
-4. [Prelaunch validation](evidence/hybrid_writer_prelaunch_20261006/validation.json),
-   [historical dispatch verification](evidence/hybrid_writer_prelaunch_20261006/dispatch.json),
-   and [source bindings](evidence/hybrid_writer_prelaunch_20261006/manifest.json).
+1. [Frozen final report](evidence/hybrid_writer_20261006/RESULTS.md),
+   [aggregate](evidence/hybrid_writer_20261006/summary.json), and
+   [32-row formal metrics](evidence/hybrid_writer_20261006/final_metrics.csv).
+2. [Formation plot](evidence/hybrid_writer_20261006/reach_retention_trajectory.png),
+   [checkpoint metrics](evidence/hybrid_writer_20261006/metrics.csv), and
+   [dense records](evidence/hybrid_writer_20261006/dense.json).
+3. [Saved-data validation](evidence/hybrid_writer_20261006/validation.json),
+   [reproduction and artifact map](evidence/hybrid_writer_20261006/REPRODUCTION.md),
+   [publication manifest](HYBRID_WRITER_PUBLICATION_MANIFEST.json).
+4. Refer back to the unchanged [protocol](new/hybrid_writer/PROTOCOL.md),
+   [writer](new/hybrid_writer/cells.py), [runner](new/hybrid_writer/run.py), and
+   [reporter](new/hybrid_writer/reporting.py) only as needed.
 
-No need to reread earlier large state packages for this implementation review.
-The previous causal motivation is the [block7 audit](evidence/block7_collapse_20261006/RESULTS.md).
+Large packed arrays and full gzip JSON/CSV files are secondary evidence.
+Earlier audit state packages need not be reread for this result update.
 
-## New implementation
+## New decision-relevant evidence
 
-C24 remains four directional lanes of six payload coordinates; Z8, encoder,
-masked permutation, Q and readout keep their original architecture. Common
-initial tensors are copied explicitly from a canonical seeded StreamingCell.
+At the fixed u300 endpoint, joint readiness is neural1/8, budget0/8,
+hybrid0/8 and affine_hybrid0/8. Candidate-only/reference-only outcomes are
+0/1 for budget minus neural,0/0 for hybrid minus budget, and0/1 for hybrid
+minus neural. All three exact and Holm-adjusted p-values are1; none meets
+the predeclared net-gain and multiplicity requirements. Affine minus Hybrid
+is a descriptive capacity comparison, not a fourth primary test.
 
-| Arm | Proposal | Writer | Parameters |
-|---|---|---|---:|
-| neural | original two-layer MLP | original free residual | 5033 |
-| budget | same MLP | radial bound with four constant learned gates | 5037 |
-| hybrid | same MLP | radial bound with36 state-conditioned coefficients | 5069 |
-| affine_hybrid | direct affine67->24 | same Hybrid writer | 2997 |
+The predeclared u0,u25,...,u300 grid yields the same ever-ready counts.
+Neural has one trajectory first-ready before300 and no later readiness loss;
+the other arms have zero first-ready trajectories, so readiness-loss rates
+are undefined. Dense results never replace the final endpoint with a peak.
 
-Bounded arms use delta=.1*a*m/sqrt(.5^2+mean_lane(m^2)).
-The uniform per-lane RMS write budget is .1; zero proposals preserve C transport.
-The Hybrid gate is a convex hat interpolation at fixed knots0,.5,1 over lane
-RMS of incoming T(C) and pre-stream L(C). It has no direct target/readout/time
-input, but hidden magnitudes can carry semantics indirectly. All gates start
-at.5 and proposal outputs at zero; initial numerical functions and local
-proposal Jacobian match. No claim of semantic closure or full stability.
+Execution took8864.187seconds, about2h28m. All scientific records are retained:
+832 packed paired trace banks,416 full per-checkpoint summaries,416 writer
+telemetry files,32 training curves,32 final frontier CSVs, three numeric banks,
+all schedules and aggregates. Large text records use lossless gzip; NPZ files
+are unchanged.416 local checkpoint file hashes and58 source snapshot/current
+hashes were verified. Model/optimizer contents and private machine records
+remain local. The package is about411MiB.
 
-Eight fresh paired initialization/schedule blocks,300 reset64x4 super-updates
-each, same batch8 and32 K8 losses/backwards per optimizer step. Official J
-endpoint remains u300, with three primary paired contrasts and Holm correction.
-Checkpoint-grid ever-ready and gate/write telemetry are secondary only.
+Publication verification recomputed R/S/continuous survival at all416 checkpoints
+from saved Boolean traces, checked original/flipped AND and bitpack roundtrips,
+and checked the final paired aggregate and checkpoint grid. No model inference,
+training, optimizer update or new causal intervention was performed. Old Full
+and frontier remain saved evaluator outputs, not regenerated measurements.
 
-## Verification and status
+## Changed and unchanged claims
 
-CPU checks passed hats, copied initialization, affine inactive-module removal,
-bitexact randomized neural parity, zero-proposal carry, proposal Jacobian,
-large-message write bounds, finite gradients and observer behavior.
-All four actual training-shape GPU comparisons passed three AdamW updates;
-gradient maximum absolute difference is zero in every arm. Loss, states,
-parameters and Adam moments were also checked against eager arithmetic.
+The efficacy-pending label is replaced by a completed formal negative result:
+this fixed lane-write-budget/table recipe did not qualify a reliability gain
+under its frozen K8 protocol. No training code, evaluation bank, gate, schedule,
+checkpoint selection policy or historical evidence was changed for publication.
 
-A later reporting-only source rebinding added Wilson intervals and error labels;
-training cells, runtime, evaluator and launcher remained unchanged. This is
-documented in validation.json. Launch verification checked the saved u25 model
-and optimizer steps after tool yield. Published dispatch status is historical,
-not live progress or a final scientific verdict.
-
-Original checkpoints, live training/evaluation outputs, machine manifests,
-launch receipts and logs are excluded. No additional model training or inference
-was performed for this publication.
-
-## Unchanged conclusions
-
-The selected block7 audit supports successful continuation of earlier states
-by G300; it does not identify which cold-prefix component caused failure.
-The prior fixed-u300 continuous-coverage reliability qualification remains
-negative. This code release supplies no new efficacy, general BPTT solution,
-closure theorem, population reliability result or 3D result.
+The result does not isolate why formation failed: the budget contrast bundles
+radial bounds with regulation. It supplies no general rejection of Hybrid/NCA,
+no proof of semantic closure or recurrent stability, and no3D or general BPTT
+claim. Earlier block7 continuation evidence and previous formal negatives stay
+unchanged.
 
 ## Reviewer questions
 
-1. Do the lane RMS axes, pre-stream feature clock and bounded write implement
-   the declared intervention without a free residual bypass?
-2. Do the Budget and Hybrid controls distinguish constant from state-conditioned
-   regulation, while treating affine_hybrid as a capacity ablation?
-3. Do formal u300 and observed ever-ready remain distinct throughout aggregation?
+1. Do the final block table and formation curves suggest no readiness formation,
+   or formation below the joint thresholds? Keep this descriptive and distinguish
+   reach, retention and their support denominators.
+2. Do the secondary lane-gate/write telemetry records reveal a consistent pattern
+   worth testing, without treating a correlation as a causal diagnosis?
+3. Does any proposed next intervention address a specific observed deficit rather
+   than reinterpret this negative qualification as a positive result?
 
-CPU reproduction from repository root:
+CPU-only verification from repository root:
 
-    python -X utf8 -B new/hybrid_writer/check_cells.py
-
-GPU qualification and fresh-run commands are in the protocol; they require
-the historical Torch2.5.1 CUDA environment. Existing output directories are
-never overwritten.
+    python -X utf8 -B tools/export_hybrid_writer.py --verify-only
