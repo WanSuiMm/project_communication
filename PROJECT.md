@@ -1,5 +1,42 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## RRC-v0: interrupted partial evidence
+
+Current stage: **INCOMPLETE / INTERRUPTED**, local run `runs/rrc_v0_20261007_01`, launched
+2026-10-07. Three-arm actual-shape eager/CUDA Graph qualification PASS, with
+zero maximum gradient difference across three optimizer updates per arm.
+Dispatch was verified after the tool yielded: worker progress advanced and the
+first Current u025 checkpoint was saved. Later progress stopped at13:19 local,
+the original owner session became unavailable and the original worker was not
+found. The saved RUNNING status is stale. No final RRC result exists.
+The fixed publication snapshot retains10/24 u300 trajectories and137/312
+recorded stages: Current1/4, Factorized0/3, RRC0/3, primary pairs3/8.
+Formal verdict stays INCOMPLETE. No job was restarted for this upload.
+Main contrast: RRC versus the
+same factorized lane-shared content writer; the historical joint writer is a
+secondary reference. C24/Z8, original pre-stream L(C), unchanged Q/readout,
+K8/reset64x4/u300, eight paired blocks. Relation has five trainable scalars
+initialized at uniform pi and rho0.1; actual action and gradients are recorded.
+
+[Frozen protocol](new/rrc_v0/PROTOCOL.md),
+[runner](new/rrc_v0/run.py), and [execution](new/rrc_v0/EXECUTION.md).
+24 trajectories and312 checkpoint evaluations planned, without a time cap.
+Measured projection about2hours and336MiB saved evidence, excluding some
+I/O/optimizer overhead. Qualification:
+`analyses/rrc_v0_qualification_20261007_02.json`. The first attempt preserved
+an integration-check CLI error; no scientific training occurred in that attempt.
+Private receipt is in the corresponding run launch directory. No recurring
+monitor, watchdog or remote job was created. This is dispatch, not completion.
+
+[Public partial result](evidence/rrc_v0_20261007_partial01/RESULTS.md),
+[validation](evidence/rrc_v0_20261007_partial01/validation.json), and
+[publication manifest](RRC_V0_PARTIAL01_PUBLICATION_MANIFEST.json).
+
+    python -X utf8 -B tools/export_rrc_v0.py --verify-only
+
+    python -X utf8 -u -B new/rrc_v0/run.py --check --out analyses/rrc_v0_qualification_20261007_02.json
+    pwsh -File tools/launch_rrc_v0.ps1 -RunName rrc_v0_20261007_01 -Qualification analyses/rrc_v0_qualification_20261007_02.json
+
 ## HardClip-v1: conditional tail experiment
 
 Current stage: **COMPLETE**,16/16 training trajectories and208/208 predeclared

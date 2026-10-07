@@ -1,0 +1,367 @@
+{
+  "schema": "rrc-v0-paired-report-v1",
+  "status": "INCOMPLETE",
+  "expected_blocks": 8,
+  "arms": [
+    "current",
+    "factorized",
+    "rrc"
+  ],
+  "formal_update": 300,
+  "predeclared_checkpoints": [
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300
+  ],
+  "formal_rows": {
+    "valid_rows": 10,
+    "invalid_rows": 0,
+    "duplicate_rows": 0,
+    "complete_pairs": 3,
+    "expected_pairs": 8,
+    "complete_blocks_by_arm": {
+      "current": 4,
+      "factorized": 3,
+      "rrc": 3
+    },
+    "complete": false
+  },
+  "checkpoint_grid": {
+    "observed_predeclared_records": 137,
+    "ignored_non_grid_records": 0,
+    "ignored_out_of_range_records": 0,
+    "invalid_records": 0,
+    "duplicate_predeclared_records": 0,
+    "expected_records": 312,
+    "expected_size_rows": 624,
+    "exported_size_rows": 274,
+    "complete_trajectories": 10,
+    "expected_trajectories": 24,
+    "complete": false,
+    "by_arm": {
+      "current": {
+        "expected_checkpoint_records": 104,
+        "observed_checkpoint_records": 52,
+        "complete_trajectories": 4,
+        "incomplete_trajectories": 4,
+        "everready": {
+          "successes": 1,
+          "known_nonready": 3,
+          "indeterminate_no_pass_trajectories": 4,
+          "denominator": 4,
+          "expected_trajectories": 8,
+          "value": 0.25
+        },
+        "readiness_loss_after_first": {
+          "losses": 1,
+          "denominator": 1,
+          "value": 1.0
+        }
+      },
+      "factorized": {
+        "expected_checkpoint_records": 104,
+        "observed_checkpoint_records": 46,
+        "complete_trajectories": 3,
+        "incomplete_trajectories": 5,
+        "everready": {
+          "successes": 0,
+          "known_nonready": 3,
+          "indeterminate_no_pass_trajectories": 5,
+          "denominator": 3,
+          "expected_trajectories": 8,
+          "value": 0.0
+        },
+        "readiness_loss_after_first": {
+          "losses": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "rrc": {
+        "expected_checkpoint_records": 104,
+        "observed_checkpoint_records": 39,
+        "complete_trajectories": 3,
+        "incomplete_trajectories": 5,
+        "everready": {
+          "successes": 0,
+          "known_nonready": 3,
+          "indeterminate_no_pass_trajectories": 5,
+          "denominator": 3,
+          "expected_trajectories": 8,
+          "value": 0.0
+        },
+        "readiness_loss_after_first": {
+          "losses": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    }
+  },
+  "overall_verdict": "INCOMPLETE",
+  "primary_comparison": {
+    "candidate": "rrc",
+    "reference": "factorized",
+    "endpoint": "joint readiness at u300",
+    "complete_pairs": 3,
+    "expected_pairs": 8,
+    "wins": 0,
+    "losses": 0,
+    "both_ready": 0,
+    "neither_ready": 3,
+    "discordant_pairs": 0,
+    "net_gain": 0,
+    "exact_two_sided_p": null,
+    "net_gain_threshold": 6,
+    "net_gain_threshold_met": null,
+    "alpha": 0.05,
+    "reliability_qualified": null,
+    "verdict": "INCOMPLETE",
+    "per_block": [
+      {
+        "block": 0,
+        "status": "paired",
+        "current_ready": false,
+        "factorized_ready": false,
+        "rrc_ready": false,
+        "comparison": "neither_ready"
+      },
+      {
+        "block": 1,
+        "status": "paired",
+        "current_ready": false,
+        "factorized_ready": false,
+        "rrc_ready": false,
+        "comparison": "neither_ready"
+      },
+      {
+        "block": 2,
+        "status": "paired",
+        "current_ready": true,
+        "factorized_ready": false,
+        "rrc_ready": false,
+        "comparison": "neither_ready"
+      },
+      {
+        "block": 3,
+        "status": "missing_or_invalid_formal_pair",
+        "current_ready": false,
+        "factorized_ready": null,
+        "rrc_ready": null,
+        "comparison": "missing_or_invalid_formal_pair"
+      },
+      {
+        "block": 4,
+        "status": "missing_or_invalid_formal_pair",
+        "current_ready": null,
+        "factorized_ready": null,
+        "rrc_ready": null,
+        "comparison": "missing_or_invalid_formal_pair"
+      },
+      {
+        "block": 5,
+        "status": "missing_or_invalid_formal_pair",
+        "current_ready": null,
+        "factorized_ready": null,
+        "rrc_ready": null,
+        "comparison": "missing_or_invalid_formal_pair"
+      },
+      {
+        "block": 6,
+        "status": "missing_or_invalid_formal_pair",
+        "current_ready": null,
+        "factorized_ready": null,
+        "rrc_ready": null,
+        "comparison": "missing_or_invalid_formal_pair"
+      },
+      {
+        "block": 7,
+        "status": "missing_or_invalid_formal_pair",
+        "current_ready": null,
+        "factorized_ready": null,
+        "rrc_ready": null,
+        "comparison": "missing_or_invalid_formal_pair"
+      }
+    ]
+  },
+  "per_arm": {
+    "current": {
+      "valid_formal_blocks": 4,
+      "expected_formal_blocks": 8,
+      "formal_readiness_passes": 1,
+      "formal_readiness_rate": 0.25,
+      "formal_readiness_wilson95": null,
+      "formal_readiness_ci_status": "INCOMPLETE_NO_CI"
+    },
+    "factorized": {
+      "valid_formal_blocks": 3,
+      "expected_formal_blocks": 8,
+      "formal_readiness_passes": 0,
+      "formal_readiness_rate": 0.0,
+      "formal_readiness_wilson95": null,
+      "formal_readiness_ci_status": "INCOMPLETE_NO_CI"
+    },
+    "rrc": {
+      "valid_formal_blocks": 3,
+      "expected_formal_blocks": 8,
+      "formal_readiness_passes": 0,
+      "formal_readiness_rate": 0.0,
+      "formal_readiness_wilson95": null,
+      "formal_readiness_ci_status": "INCOMPLETE_NO_CI"
+    }
+  },
+  "old_full_secondary": {
+    "current": {
+      "passes": 0,
+      "observed": 4,
+      "unknown": 4,
+      "rate": 0.0
+    },
+    "factorized": {
+      "passes": 0,
+      "observed": 3,
+      "unknown": 5,
+      "rate": 0.0
+    },
+    "rrc": {
+      "passes": 0,
+      "observed": 3,
+      "unknown": 5,
+      "rate": 0.0
+    }
+  },
+  "final_metrics": {
+    "current": {
+      "32": {
+        "R_strict_pooled_T64": {
+          "mean": 0.48131768953068593,
+          "observed": 4,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.5230917729375433,
+          "observed": 4,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.7625793968347808,
+          "observed": 4,
+          "expected": 8
+        }
+      },
+      "64": {
+        "R_strict_pooled_T64": {
+          "mean": 0.5715155380333952,
+          "observed": 4,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.5728492189056105,
+          "observed": 4,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.8308048489861262,
+          "observed": 4,
+          "expected": 8
+        }
+      }
+    },
+    "factorized": {
+      "32": {
+        "R_strict_pooled_T64": {
+          "mean": 0.012876052948255114,
+          "observed": 3,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.016023845857109996,
+          "observed": 3,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.3898886004991062,
+          "observed": 3,
+          "expected": 8
+        }
+      },
+      "64": {
+        "R_strict_pooled_T64": {
+          "mean": 0.03888373531230674,
+          "observed": 3,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.03901652862674299,
+          "observed": 3,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.4501441680156033,
+          "observed": 3,
+          "expected": 8
+        }
+      }
+    },
+    "rrc": {
+      "32": {
+        "R_strict_pooled_T64": {
+          "mean": 0.07472924187725631,
+          "observed": 3,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.1166997938627744,
+          "observed": 3,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.6501128750706396,
+          "observed": 3,
+          "expected": 8
+        }
+      },
+      "64": {
+        "R_strict_pooled_T64": {
+          "mean": 0.09902597402597402,
+          "observed": 3,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.10183033326911278,
+          "observed": 3,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.4183164127188615,
+          "observed": 3,
+          "expected": 8
+        }
+      }
+    }
+  },
+  "qualification_rule": "The sole primary screen is RRC-only minus Factorized-only joint-ready blocks at u300: net gain must be at least 6/8 and the exact two-sided binomial sign-test p value over discordant pairs must be at most 0.05. Current and all intermediate checkpoints are secondary.",
+  "claim_boundary": "Finite evidence for this frozen RRC v0 recipe and eight paired blocks. The u300 RRC-versus-Factorized contrast is the sole reliability screen; Current, old Full, and ever-ready checkpoint counts are descriptive secondary outcomes. No peak checkpoint replaces u300.",
+  "execution_status": "PARTIAL_INTERRUPTED_SNAPSHOT",
+  "execution_errors": [],
+  "protocol": "rrc_v0_prestream_relation_factorization_v1",
+  "snapshot_utc": "2026-10-07T05:54:02.810597+00:00",
+  "run_id": "rrc_v0_20261007_01",
+  "execution_observation": "Last progress is stale; original tool session unavailable and original worker not found.",
+  "last_saved_progress_utc": "2026-10-07T05:19:09.584737+00:00",
+  "completed_arms": 10,
+  "expected_arms": 24,
+  "completed_dense_records": 137,
+  "expected_dense_records": 312,
+  "final_result_available": false
+}

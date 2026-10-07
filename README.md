@@ -1,6 +1,34 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest experiment: fixed HardClip-v1 did not qualify reliability
+## Latest upload: RRC-v0 interrupted partial snapshot
+
+The RRC three-arm experiment is **not complete**: this fixed snapshot contains
+10/24 u300 trajectories and137/312 fully recorded checkpoint evaluations.
+Observed joint readiness at u300 is Current1/4, Factorized0/3, RRC0/3.
+Only3/8 primary pairs are complete; the verdict remains `INCOMPLETE`.
+The original worker record stopped advancing, its tool session is unavailable,
+and the original worker was not found. Do not treat its stale RUNNING field or
+these partial counts as a final result. No new training was started for this upload.
+
+Start here:
+
+1. [Partial results](evidence/rrc_v0_20261007_partial01/RESULTS.md) and
+   [summary](evidence/rrc_v0_20261007_partial01/summary.json).
+2. [Endpoint metrics](evidence/rrc_v0_20261007_partial01/final_metrics.csv),
+   [all saved checkpoint metrics](evidence/rrc_v0_20261007_partial01/metrics.csv),
+   [saved-data validation](evidence/rrc_v0_20261007_partial01/validation.json).
+3. [Frozen protocol](new/rrc_v0/PROTOCOL.md), [cells](new/rrc_v0/cells.py),
+   [runner](new/rrc_v0/run.py), and
+   [reproduction](evidence/rrc_v0_20261007_partial01/REPRODUCTION.md).
+
+The sole primary contrast is RRC versus the matched factorized carrier writer.
+Current, dense formation behavior and relation activity remain secondary.
+All recorded packed traces, evaluator summaries and relation activity are
+secondary raw evidence; start with the small tables. Checkpoints stay local.
+
+    python -X utf8 -B tools/export_rrc_v0.py --verify-only
+
+## Previous completed experiment: fixed HardClip-v1 did not qualify reliability
 
 Can clipping only unusually large lane writes improve formation under K8?
 Outcome-blind calibration passed on all8 prior neural u300 models: frozen

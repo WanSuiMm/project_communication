@@ -1,6 +1,33 @@
 # Context for incremental scientific review
 
-## Latest formal result: HardClip-v1, with limited fresh-training dose
+## Latest upload is incomplete: RRC-v0 partial01
+
+Formal status fields: publication=`PARTIAL_INTERRUPTED`,
+aggregation/qualification=`INCOMPLETE`, final_result_available=false.
+10/24 u300 trajectories and137/312 recorded stages; primary pairs3/8.
+Observed Current1/4, Factorized0/3, RRC0/3. These are incomplete denominators,
+not final success rates. Original progress stopped advancing; its tool session
+is unavailable and original worker not found. Preserve that execution boundary.
+
+Primary: RRC minus Factorized at u300. All3 arms keep C24/Z8, pre-stream L(C),
+historical2-hop whole-state clock, Q/readout, and K8/reset64x4 training.
+Factorized/RRC share F31→96→6 across four lanes. RRC additionally learns
+4 softmax logits and1 sigmoid scalar, initially uniform pi and rho0.1.
+This convex lane mix is nonexpansive but generally dissipative; only pure
+transport is an isometry. Q can mix lanes through Z. Similar parameter count
+does not match function class or throughput. No universal stability result.
+
+Read [partial result](evidence/rrc_v0_20261007_partial01/RESULTS.md),
+[aggregate](evidence/rrc_v0_20261007_partial01/summary.json),
+[validation](evidence/rrc_v0_20261007_partial01/validation.json), then
+[protocol](new/rrc_v0/PROTOCOL.md) and `new/rrc_v0/` implementation.
+Raw dense records/curves/summaries/activity are losslessly gzipped. Every
+fully recorded Boolean trace is retained. Unfinished stages are excluded.
+`RRC_V0_PARTIAL01_PUBLICATION_MANIFEST.json` binds files, sources, banks,
+schedules and omitted checkpoint hashes. CPU verification requires NumPy,
+with no inference or optimizer updates.
+
+## Previous completed formal result: HardClip-v1, with limited fresh-training dose
 
 - Frozen protocol:`hardclip_v1_tail_calibration_v1` and conditional training
   `hardclip_v1_fixed_tail_v1`. All8 prior neural u300 models are used for
