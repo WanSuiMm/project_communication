@@ -1,0 +1,15 @@
+{
+  "status": "ERROR",
+  "completed_arms": 2,
+  "dense_records": 33,
+  "error": "ValueError('Out of range float values are not JSON compliant: inf')",
+  "elapsed_seconds": 739.7029999999995,
+  "finished_utc": "2026-10-07T08:18:21.043778+00:00",
+  "aggregation": "INCOMPLETE",
+  "interpretation": "Diagnostic float32 square overflow after finite state/logit checks; not proof of model-state inf.",
+  "repair": "Float64 observer arithmetic; cached evaluation and dense Boolean reductions separately qualified.",
+  "inherited_committed_stages": 33,
+  "restored_checkpoint": "block00/conditioned/u150",
+  "backend_deterministic": false,
+  "bitwise_uninterrupted_equivalence_guaranteed": false
+}

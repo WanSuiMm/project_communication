@@ -1,6 +1,31 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: Hybrid Writer v0 reliability screen
+## Latest: full-writer port-relation screen
+
+**COMPLETE:24/24 trajectories,312/312 predeclared stages,624 size-metric rows.**
+The fixed u300 size32 joint-readiness endpoint remains the only formal endpoint.
+
+| Arm | Joint-ready u300 | Old Full u300 | Dense ever-ready | Size32 strict pooled T64 mean | T64→T256 retention mean |
+|---|---:|---:|---:|---:|---:|
+| Current | 0/8 | 0/8 | 0/8 | .110424 | .548940 |
+| Constant | 0/8 | 0/8 | 1/8 | .137410 | .429450 |
+| Conditioned | 0/8 | 0/8 | 0/8 | .050948 | .475381 |
+
+Conditioned-minus-Current has8/8 complete pairs,0 candidate-only wins,0 losses,
+net0,exact two-sided p=1: **`NO_CONDITIONED_RELIABILITY_QUALIFICATION`**.
+This all-tie contrast does not establish equivalence. Constant's one dense
+success was lost by u300 and cannot replace that endpoint. Means above are
+across8 blocks, with insufficient initial support explicitly null in raw rows.
+
+Read [full result](evidence/port_relation_20261007_02/RESULTS.md),
+[aggregate](evidence/port_relation_20261007_02/summary.json),
+[all checkpoint metrics](evidence/port_relation_20261007_02/metrics.csv), and
+[saved-data validation](evidence/port_relation_20261007_02/validation.json).
+The [recovery record](evidence/port_relation_20261007_02/interruption_and_recovery.json)
+preserves the original diagnostic-overflow interruption and33 inherited stages.
+No general architecture rejection or unique collapse mechanism follows.
+
+## Earlier: Hybrid Writer v0 reliability screen
 
 `hybrid_lane_write_budget_v1`: execution and formal aggregation **COMPLETE**,
 32/32 trajectories and 416/416 predeclared checkpoint records in 8,864.187

@@ -1,0 +1,84 @@
+{
+  "protocol": "port_relation_v1_full_writer_native_k8",
+  "arms": [
+    "current",
+    "constant",
+    "conditioned"
+  ],
+  "blocks": 8,
+  "super_updates": 300,
+  "parameter_counts": {
+    "current": 5033,
+    "constant": 5049,
+    "conditioned": 5177
+  },
+  "carrier_channels": 24,
+  "latent_channels": 8,
+  "initialization_seeds": [
+    130001,
+    130002,
+    130003,
+    130004,
+    130005,
+    130006,
+    130007,
+    130008
+  ],
+  "schedule_seeds": [
+    131001,
+    131002,
+    131003,
+    131004,
+    131005,
+    131006,
+    131007,
+    131008
+  ],
+  "relation_initialization": "all coefficients zero",
+  "content_spatial_feature": "prestream_L(C_t)",
+  "primary_contrast": [
+    "conditioned",
+    "current"
+  ],
+  "mode": "reset64x4",
+  "batch": 8,
+  "forward_steps_per_update": 256,
+  "loss_windows": 32,
+  "credit_horizon": 8,
+  "optimizer_steps_per_update": 1,
+  "parameters_fixed_within_super_update": true,
+  "train_seed": 10002,
+  "train_maps": 512,
+  "eval_seeds": {
+    "32": 122032,
+    "64": 122064
+  },
+  "eval_maps_per_size": 32,
+  "checkpoints": [
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300
+  ],
+  "formal_checkpoint": 300,
+  "optimizer": {
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "clip": 1.0,
+  "runtime_limit_enforced": false
+}

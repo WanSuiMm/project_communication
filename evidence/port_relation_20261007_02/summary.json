@@ -1,0 +1,511 @@
+{
+  "schema": "port-relation-paired-report-v1",
+  "status": "COMPLETE",
+  "expected_blocks": 8,
+  "arms": [
+    "current",
+    "constant",
+    "conditioned"
+  ],
+  "formal_update": 300,
+  "predeclared_checkpoints": [
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300
+  ],
+  "formal_rows": {
+    "valid_rows": 24,
+    "invalid_rows": 0,
+    "duplicate_rows": 0,
+    "complete_blocks_by_arm": {
+      "current": 8,
+      "constant": 8,
+      "conditioned": 8
+    },
+    "complete": true
+  },
+  "checkpoint_grid": {
+    "ignored_non_grid_records": 0,
+    "ignored_out_of_range_records": 0,
+    "invalid_records": 0,
+    "duplicate_predeclared_records": 0,
+    "observed_predeclared_records": 312,
+    "expected_records": 312,
+    "expected_size_rows": 624,
+    "exported_size_rows": 624,
+    "complete_trajectories": 24,
+    "expected_trajectories": 24,
+    "complete": true,
+    "by_arm": {
+      "current": {
+        "expected_checkpoint_records": 104,
+        "observed_checkpoint_records": 104,
+        "complete_trajectories": 8,
+        "incomplete_trajectories": 0,
+        "everready": {
+          "successes": 0,
+          "known_nonready": 8,
+          "indeterminate_no_pass_trajectories": 0,
+          "denominator": 8,
+          "expected_trajectories": 8,
+          "value": 0.0
+        },
+        "readiness_loss_after_first": {
+          "losses": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "constant": {
+        "expected_checkpoint_records": 104,
+        "observed_checkpoint_records": 104,
+        "complete_trajectories": 8,
+        "incomplete_trajectories": 0,
+        "everready": {
+          "successes": 1,
+          "known_nonready": 7,
+          "indeterminate_no_pass_trajectories": 0,
+          "denominator": 8,
+          "expected_trajectories": 8,
+          "value": 0.125
+        },
+        "readiness_loss_after_first": {
+          "losses": 1,
+          "denominator": 1,
+          "value": 1.0
+        }
+      },
+      "conditioned": {
+        "expected_checkpoint_records": 104,
+        "observed_checkpoint_records": 104,
+        "complete_trajectories": 8,
+        "incomplete_trajectories": 0,
+        "everready": {
+          "successes": 0,
+          "known_nonready": 8,
+          "indeterminate_no_pass_trajectories": 0,
+          "denominator": 8,
+          "expected_trajectories": 8,
+          "value": 0.0
+        },
+        "readiness_loss_after_first": {
+          "losses": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    }
+  },
+  "overall_verdict": "NO_CONDITIONED_RELIABILITY_QUALIFICATION",
+  "primary_comparison": {
+    "candidate": "conditioned",
+    "reference": "current",
+    "complete_pairs": 8,
+    "expected_pairs": 8,
+    "wins": 0,
+    "losses": 0,
+    "both_ready": 0,
+    "neither_ready": 8,
+    "discordant_pairs": 0,
+    "net_gain": 0,
+    "per_block": [
+      {
+        "block": 0,
+        "status": "paired",
+        "candidate_ready": false,
+        "reference_ready": false,
+        "comparison": "neither_ready"
+      },
+      {
+        "block": 1,
+        "status": "paired",
+        "candidate_ready": false,
+        "reference_ready": false,
+        "comparison": "neither_ready"
+      },
+      {
+        "block": 2,
+        "status": "paired",
+        "candidate_ready": false,
+        "reference_ready": false,
+        "comparison": "neither_ready"
+      },
+      {
+        "block": 3,
+        "status": "paired",
+        "candidate_ready": false,
+        "reference_ready": false,
+        "comparison": "neither_ready"
+      },
+      {
+        "block": 4,
+        "status": "paired",
+        "candidate_ready": false,
+        "reference_ready": false,
+        "comparison": "neither_ready"
+      },
+      {
+        "block": 5,
+        "status": "paired",
+        "candidate_ready": false,
+        "reference_ready": false,
+        "comparison": "neither_ready"
+      },
+      {
+        "block": 6,
+        "status": "paired",
+        "candidate_ready": false,
+        "reference_ready": false,
+        "comparison": "neither_ready"
+      },
+      {
+        "block": 7,
+        "status": "paired",
+        "candidate_ready": false,
+        "reference_ready": false,
+        "comparison": "neither_ready"
+      }
+    ],
+    "endpoint": "joint readiness at update 300, size 32",
+    "exact_two_sided_p": 1.0,
+    "net_gain_threshold": 6,
+    "net_gain_threshold_met": false,
+    "alpha": 0.05,
+    "reliability_qualified": false,
+    "verdict": "NO_CONDITIONED_RELIABILITY_QUALIFICATION"
+  },
+  "secondary_comparisons": {
+    "conditioned_minus_constant": {
+      "candidate": "conditioned",
+      "reference": "constant",
+      "complete_pairs": 8,
+      "expected_pairs": 8,
+      "wins": 0,
+      "losses": 0,
+      "both_ready": 0,
+      "neither_ready": 8,
+      "discordant_pairs": 0,
+      "net_gain": 0,
+      "per_block": [
+        {
+          "block": 0,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 1,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 2,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 3,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 4,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 5,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 6,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 7,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        }
+      ]
+    },
+    "constant_minus_current": {
+      "candidate": "constant",
+      "reference": "current",
+      "complete_pairs": 8,
+      "expected_pairs": 8,
+      "wins": 0,
+      "losses": 0,
+      "both_ready": 0,
+      "neither_ready": 8,
+      "discordant_pairs": 0,
+      "net_gain": 0,
+      "per_block": [
+        {
+          "block": 0,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 1,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 2,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 3,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 4,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 5,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 6,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        },
+        {
+          "block": 7,
+          "status": "paired",
+          "candidate_ready": false,
+          "reference_ready": false,
+          "comparison": "neither_ready"
+        }
+      ]
+    },
+    "interpretation": "Descriptive paired counts only; these contrasts do not qualify the primary result and receive no multiplicity-adjusted claims."
+  },
+  "per_arm": {
+    "current": {
+      "valid_formal_blocks": 8,
+      "expected_formal_blocks": 8,
+      "formal_readiness_passes": 0,
+      "formal_readiness_rate": 0.0,
+      "formal_readiness_wilson95": {
+        "successes": 0,
+        "trials": 8,
+        "lower": 0.0,
+        "upper": 0.32440756488388023
+      },
+      "formal_readiness_ci_status": "COMPLETE_BLOCKS"
+    },
+    "constant": {
+      "valid_formal_blocks": 8,
+      "expected_formal_blocks": 8,
+      "formal_readiness_passes": 0,
+      "formal_readiness_rate": 0.0,
+      "formal_readiness_wilson95": {
+        "successes": 0,
+        "trials": 8,
+        "lower": 0.0,
+        "upper": 0.32440756488388023
+      },
+      "formal_readiness_ci_status": "COMPLETE_BLOCKS"
+    },
+    "conditioned": {
+      "valid_formal_blocks": 8,
+      "expected_formal_blocks": 8,
+      "formal_readiness_passes": 0,
+      "formal_readiness_rate": 0.0,
+      "formal_readiness_wilson95": {
+        "successes": 0,
+        "trials": 8,
+        "lower": 0.0,
+        "upper": 0.32440756488388023
+      },
+      "formal_readiness_ci_status": "COMPLETE_BLOCKS"
+    }
+  },
+  "old_full_secondary": {
+    "current": {
+      "passes": 0,
+      "observed": 8,
+      "unknown": 0,
+      "rate": 0.0
+    },
+    "constant": {
+      "passes": 0,
+      "observed": 8,
+      "unknown": 0,
+      "rate": 0.0
+    },
+    "conditioned": {
+      "passes": 0,
+      "observed": 8,
+      "unknown": 0,
+      "rate": 0.0
+    }
+  },
+  "final_metrics": {
+    "current": {
+      "32": {
+        "R_strict_pooled_T64": {
+          "mean": 0.11042418772563177,
+          "observed": 8,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.13851369852025064,
+          "observed": 8,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.5489396324449541,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "64": {
+        "R_strict_pooled_T64": {
+          "mean": 0.13378362708719851,
+          "observed": 8,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.13779404477658677,
+          "observed": 8,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.39637403355305595,
+          "observed": 8,
+          "expected": 8
+        }
+      }
+    },
+    "constant": {
+      "32": {
+        "R_strict_pooled_T64": {
+          "mean": 0.13740974729241875,
+          "observed": 8,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.1702094774346728,
+          "observed": 8,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.42945016170544137,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "64": {
+        "R_strict_pooled_T64": {
+          "mean": 0.17446950371057515,
+          "observed": 8,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.1790951376510759,
+          "observed": 8,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.4780019154708225,
+          "observed": 8,
+          "expected": 8
+        }
+      }
+    },
+    "conditioned": {
+      "32": {
+        "R_strict_pooled_T64": {
+          "mean": 0.05094765342960289,
+          "observed": 8,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.08211890373436473,
+          "observed": 8,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.4753814353276805,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "64": {
+        "R_strict_pooled_T64": {
+          "mean": 0.057166048237476806,
+          "observed": 8,
+          "expected": 8
+        },
+        "R_strict_mean_T64": {
+          "mean": 0.059605925480895536,
+          "observed": 8,
+          "expected": 8
+        },
+        "S_retention64_to256": {
+          "mean": 0.3662537928260611,
+          "observed": 8,
+          "expected": 8
+        }
+      }
+    }
+  },
+  "qualification_rule": "The sole primary screen compares conditioned with current on size-32 joint readiness at u300. Qualification requires conditioned-only minus current-only blocks >=6/8 and an exact two-sided sign-test p<=0.05 over discordant paired blocks.",
+  "claim_boundary": "This is finite evidence for this three-arm candidate and eight paired initialization/schedule blocks. A failure to form the endpoint rejects reliable formation for this candidate under this protocol; it does not close the broader port-relation route or prove a relation-algebra causal mechanism. A scheduled nonfinite evaluation is recorded as non-ready with trace_complete=false and numerical_failure=true; its attempt record is not a completed Boolean bank trace. Training or engineering errors stop the run and leave the experiment incomplete.",
+  "protocol": "port_relation_v1_full_writer_native_k8",
+  "completed_arms": 24,
+  "expected_arms": 24,
+  "dense_records": 312,
+  "expected_dense_records": 312,
+  "finished_utc": "2026-10-07T10:20:24.501882+00:00",
+  "elapsed_seconds": 4799.797000000002,
+  "runtime_limit_enforced": false
+}

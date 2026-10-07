@@ -1,6 +1,52 @@
 # Context for incremental scientific review
 
-## Engineering-only update: execution protection
+## Latest completed screen: full-writer port relations
+
+Formal fields: execution=`COMPLETE`,aggregation=`COMPLETE`,
+final_result_available=true,verdict=`NO_CONDITIONED_RELIABILITY_QUALIFICATION`.
+Canonical evidence: `evidence/port_relation_20261007_02/`. Read its
+[RESULTS.md](evidence/port_relation_20261007_02/RESULTS.md) and
+[final_metrics.csv](evidence/port_relation_20261007_02/final_metrics.csv) first.
+24/24 u300 trajectories,312/312 stages,624 metric rows. Current/Constant/
+Conditioned each have0/8 joint-ready and0/8 old Full at u300. The sole primary
+contrast is Conditioned versus Current:8/8 pairs,0 wins,0 losses,p=1. This is
+a negative finite screen, not equivalence or a causal root diagnosis.
+Constant has1/8 ever-ready,then1/1 readiness loss; all other ever-ready counts
+are0/8. Intermediate stages never select the formal checkpoint.
+
+Runtime ID `port_relation_v1_full_writer_native_k8` and the retained protocol
+header alias `port_relation_conditioned_v1` identify this same recipe.
+Both relation arms retain the full original writer. C24 has four6D lanes,
+Z8 materializes semantics. `U=T_M(C)`;
+`C'=U+.1*(F_original(U,Z,L_pre(C),L(Z),X)+K(Z)U)`;
+`Z'=Z+.5*Q_original(C',Z,L(C'),L(Z),X)`.
+Current K=0; Constant learns16 global matrix entries; Conditioned uses a
+zero-initialized8→16 Conv1×1 on tanh(Z),144 extra parameters. Counts are
+5033/5049/5177; capacity is not matched. No gate,softmax or projection added.
+
+Eight paired init130001..130008/schedule131001..131008 blocks use reset64×4,
+same batch repeated four times,32 K8 loss/backward windows,loss/32 and ONE
+AdamW update per super-update. There are300 super-updates. All256 physical
+forward steps remain; cached evaluation changes execution cost, not endpoint
+definitions. `PortRelationCell` / `_apply_lane_matrix` live in
+[cells.py](new/port_relation/cells.py); `observed_evaluation`, recovery and
+qualification live in [run.py](new/port_relation/run.py). `EvaluationActivity`
+uses float64 diagnostic operands; `evaluation_graph.evaluate` caches the
+two-world rollout; `reporting.aggregate` applies the sole primary gate.
+
+The parent stopped after2 trajectories/33 stages because float32 telemetry
+squaring overflowed strict JSON after finite state/logit checks. The child
+restored conditioned u150 with Adam/RNG, inherited33 committed stages, and
+replayed unsaved work. Original evidence remains unchanged. Public
+[qualification](evidence/port_relation_20261007_02/runtime_qualification.json)
+binds zero eager/captured gradient differences and identical u175/u150 saved
+reports/Boolean traces, including live checkpoint loading into the cache.
+Backend nondeterminism prevents an uninterrupted bitwise-equivalence claim.
+Raw archive entries retain original bytes and hashes; checkpoints and private
+machine receipts stay local. CPU verification uses saved records only:
+`python -X utf8 -B tools/export_port_relation.py --verify-only`.
+
+## Previous engineering-only update: execution protection
 
 New code lives in `tools/start_protected_job.ps1`,
 `tools/protected_job_worker.ps1`, `tools/launch_rrc_protected.ps1`, and
@@ -12,7 +58,7 @@ They do not cover a forced Codex service restart, machine reboot, or CUDA
 recovery execution. No research run was resumed and no RRC-v1 was implemented.
 RRC-v0 evidence, its qualification and scientific claims remain unchanged.
 
-## Latest upload is incomplete: RRC-v0 partial01
+## Previous upload is incomplete: RRC-v0 partial01
 
 Formal status fields: publication=`PARTIAL_INTERRUPTED`,
 aggregation/qualification=`INCOMPLETE`, final_result_available=false.

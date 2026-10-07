@@ -1,6 +1,35 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest engineering update: independent execution and checkpoint recovery
+## Latest completed experiment: full-writer port relations
+
+The three-arm K8 formation screen is **COMPLETE:24/24 u300 trajectories,
+312/312 stages,624 size-metric rows**. Joint readiness at the fixed u300
+endpoint is **Current0/8,Constant0/8,Conditioned0/8**. The sole primary
+Conditioned-minus-Current contrast has zero discordant pairs,p=1 and no
+qualification (`NO_CONDITIONED_RELIABILITY_QUALIFICATION`). All-tie p=1 does
+not establish equivalence. Constant became ready at one intermediate stage
+and later lost readiness; dense stages do not replace u300.
+
+Start here for this update:
+
+1. [Final results](evidence/port_relation_20261007_02/RESULTS.md),
+   [summary](evidence/port_relation_20261007_02/summary.json), and
+   [endpoint table](evidence/port_relation_20261007_02/final_metrics.csv).
+2. [Saved-data validation](evidence/port_relation_20261007_02/validation.json),
+   [recovery provenance](evidence/port_relation_20261007_02/interruption_and_recovery.json),
+   and [reproduction](evidence/port_relation_20261007_02/REPRODUCTION.md).
+3. [Frozen protocol](new/port_relation/PROTOCOL.md),
+   [cell](new/port_relation/cells.py), [runner](new/port_relation/run.py), and
+   [publication manifest](PORT_RELATION_PUBLICATION_MANIFEST.json).
+
+Raw traces, per-map/evaluation records and training curves are compressed by
+block under `evidence/port_relation_20261007_02/raw/`; do not open them first.
+The interrupted parent remains ERROR/INCOMPLETE. The completed child repairs
+diagnostic overflow and retains33 committed parent stages. This negative result
+applies to the frozen candidate and eight paired blocks, without a general
+claim about relation architectures. See [incremental review](GPT_HANDOFF.md).
+
+## Previous engineering update: independent execution and checkpoint recovery
 
 The new [execution wrapper](tools/PROTECTED_EXECUTION.md) runs an authorized
 job through an on-demand Windows Task Scheduler task, records its exit status,
@@ -11,7 +40,7 @@ restore checks, but its CUDA continuation has not been executed.
 See [engineering validation](evidence/execution_protection_20261007_01/README.md).
 No research training was restarted. The scientific snapshot below is unchanged.
 
-## Latest upload: RRC-v0 interrupted partial snapshot
+## Previous upload: RRC-v0 interrupted partial snapshot
 
 The RRC three-arm experiment is **not complete**: this fixed snapshot contains
 10/24 u300 trajectories and137/312 fully recorded checkpoint evaluations.

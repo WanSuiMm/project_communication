@@ -1,5 +1,63 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## New experiment: full-writer port relations
+
+Stage: **COMPLETE** on2026-10-07 at18:20 local:24/24 u300 trajectories,
+312/312 stage records,624 size rows. Formal Current/Constant/Conditioned
+joint-readiness is0/8 each. Sole primary conditioned-current has0 wins,
+0 losses,p=1; verdict `NO_CONDITIONED_RELIABILITY_QUALIFICATION`.
+Constant was ever-ready1/8 and lost readiness; dense stages remain secondary.
+Canonical public evidence is [final results](evidence/port_relation_20261007_02/RESULTS.md)
+and [saved-data validation](evidence/port_relation_20261007_02/validation.json).
+The completed recovery inherited2 trajectories/33 stages and restored
+conditioned u150. Original ERROR/INCOMPLETE evidence is retained: finite T256
+banks at u175 were recorded before diagnostic squaring overflowed strict JSON.
+Protocol `port_relation_v1_full_writer_native_k8` compares Current5033 parameters,
+state-independent learned K5049, and Z-conditioned learned K(Z)5177. Both added
+relations are zero-initialized; full historical E/F/Q/readout and pre-stream
+L(C), C24/Z8, eta0.1/alpha0.5, K8/reset64x4/u300 remain intact.
+Eight fresh paired initialization/schedule blocks; original fixed train/eval
+banks. Primary is conditioned versus Current at the frozen u300 joint-readiness
+endpoint. Constant comparisons and dense formation are secondary.
+
+[Protocol](new/port_relation/PROTOCOL.md), [cells](new/port_relation/cells.py),
+[runner](new/port_relation/run.py), [execution](new/port_relation/EXECUTION.md).
+Original evidence remains unchanged in `runs/port_relation_20261007_01`.
+Current qualification: `analyses/port_relation_qualification_20261007_03.json`;
+new recovery output: `runs/port_relation_20261007_02`. Diagnostic operands now
+use float64 before scaling/squaring, skip absent zero-action reductions and
+retain nonfinite diagnostic flags. Repeated fixed-bank T256 evaluations use a
+persistent CUDA Graph cache with live parameter storage and explicit cleanup,
+and dense reports avoid unused passage-time argmaxes. First-capture and cached
+timings are measured separately. All four cold64
+segments and32 K8 training windows remain. Model/loss/optimizer/schedule/banks are
+unchanged. The child inherited completed trajectories, restored conditioned
+u150 model/Adam/RNG, and replayed the unsaved prefix. The uncommitted u175 was used
+only for zero-training regression, not model selection. The protected launcher
+has no recurring trigger or time limit. Resumed process time was4799.797seconds
+(about80minutes); original partial process time is recorded separately.
+
+The full u175/u150 report dictionaries and packed Boolean traces match the old
+artifacts exactly, including after loading a second checkpoint into the cached
+model. Two actual-shape eager/CUDA Graph optimizer updates per arm have zero
+maximum gradient difference. Cached two-size evaluations measured3.89/4.70/6.00
+seconds (Current/Constant/Conditioned), versus8.80/9.14/9.91 in the original
+qualification. These are single qualification timing observations, not repeated
+systems measurements. The projected full budget is1.34 hours versus1.76 hours
+originally; remaining recovery work is1.20 hours, excluding IO/optimizer overhead
+and additional full-endpoint analysis. Expected evidence is about310 MB.
+
+Saved-data publication check (no inference or optimizer updates):
+
+```powershell
+python -X utf8 -B tools/export_port_relation.py --verify-only
+```
+
+Fresh qualification/launch commands are in the self-contained
+[reproduction note](evidence/port_relation_20261007_02/REPRODUCTION.md).
+Earlier numbered EXECUTION examples are historical. Retained scientific source
+hashes bind qualification `_03`; no new training was started for publication.
+
 ## Independent execution protection
 
 Read-only system-event diagnosis found the Codex sandbox service asked to stop
@@ -21,7 +79,7 @@ a model or force a Codex restart/reboot.
 [public engineering validation](evidence/execution_protection_20261007_01/README.md).
 Recovery restores committed model/AdamW state into a new run directory; CPU
 restore parity is checked, while CUDA continuation remains unexecuted.
-No further experiment has been dispatched by this protection work.
+The new full-writer port-relation experiment above uses this execution protection.
 
 ## RRC-v0: interrupted partial evidence
 
