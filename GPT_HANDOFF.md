@@ -1,62 +1,61 @@
-# Incremental review: RRC-v0 code and interrupted partial evidence
+# Incremental review: execution protection and fixed-parent recovery
 
-- Review base: `71ad6ef6c83d7b792a5227874beeccedb899cd8a`.
-- Evidence head: `8c5b11afca26cf6205686f51e79acf495af4e120`.
-- Publication status: `PARTIAL_INTERRUPTED`; aggregation/verdict: `INCOMPLETE`.
-- Snapshot contains10/24 u300 trajectories,137/312 complete checkpoint stages.
-- Only3/8 primary paired blocks are complete. No final efficacy judgment.
-- This handoff changes review metadata only; evidence head stays fixed.
+- Review base: `c316425d885d999829b3bc1a17fdc6721901de94`.
+- Engineering evidence head: `67adfa60c70e4b9884412d8073168ffddc050315`.
+- Scientific evidence head remains `8c5b11afca26cf6205686f51e79acf495af4e120`.
+- RRC publication stays `PARTIAL_INTERRUPTED`; formal verdict stays `INCOMPLETE`.
+- No research training was resumed. No RRC-v1 was implemented or launched.
+- This later handoff commit changes review metadata only.
 
 ## Read first
 
-1. [Partial results](evidence/rrc_v0_20261007_partial01/RESULTS.md),
-   [summary](evidence/rrc_v0_20261007_partial01/summary.json), and
-   [endpoint table](evidence/rrc_v0_20261007_partial01/final_metrics.csv).
-2. [Protocol](new/rrc_v0/PROTOCOL.md), [cell](new/rrc_v0/cells.py),
-   [runner](new/rrc_v0/run.py), and [reporter](new/rrc_v0/reporting.py).
-3. [Saved-data validation](evidence/rrc_v0_20261007_partial01/validation.json),
-   [reproduction](evidence/rrc_v0_20261007_partial01/REPRODUCTION.md), and
-   [publication bindings](RRC_V0_PARTIAL01_PUBLICATION_MANIFEST.json).
+1. [Engineering validation](evidence/execution_protection_20261007_01/README.md),
+   [lifecycle proof](evidence/execution_protection_20261007_01/validation.json),
+   and [recovery proof](evidence/execution_protection_20261007_01/recovery_validation.json).
+2. [Execution contract](tools/PROTECTED_EXECUTION.md),
+   [launcher](tools/start_protected_job.ps1), and
+   [worker](tools/protected_job_worker.ps1).
+3. [Recovery scope](new/rrc_recovery/README.md),
+   [entrypoint](new/rrc_recovery/run.py), and
+   [CPU checker](new/rrc_recovery/check_recovery.py).
+4. [Publication bindings](EXECUTION_PROTECTION_PUBLICATION_MANIFEST.json).
 
-All274 fully recorded packed trace banks,137 evaluator summaries and relation
-activity records, frozen curves and numeric data banks are secondary evidence.
-Compressed JSON is lossless; do not open all raw files before the summary.
-The partly evaluated u175 stage is excluded, while its checkpoint stays local.
+## Changed engineering evidence
 
-## Changed code and observed evidence
+System events show the Codex sandbox service was asked to stop and stopped
+seconds after the last RRC progress, then restarted. Service teardown is the
+likely trigger; the native Python exit cause and requester remain unproved.
 
-Three arms: Current5033 parameters, Factorized4983, RRC4988.
-Factorized and RRC share the same F31→96→6 across four six-dimensional lanes.
-RRC learns four softmax relation logits and one sigmoid coefficient, initialized
-at uniform pi and rho0.1. Pre-stream L(C), C24/Z8, whole-state two-hop clock,
-encoder/Q/readout, data and K8/reset64x4/u300 remain fixed within this experiment.
-Common E/Q/readout and the two shared F initializations match per block.
+The launcher now dispatches a unique on-demand Task Scheduler task under the
+interactive user, with no password, recurring trigger, automatic retry or time
+cap. A CPU sentinel continued after the initiating tool exited, returned code
+zero, and cleared its temporary idle-sleep request. Its task registration was
+removed. No forced service restart or reboot was tested.
 
-Actual-shape eager/CUDA Graph qualification passed all3 arms, three optimizer
-updates each, with zero maximum gradient difference. Relation gradients/action
-are exercised. No new inference or training was performed for publication.
+Recovery validates the full frozen configuration, source bundle, schedules,
+banks, recorded stages and latest committed model/AdamW checkpoints on CPU.
+It copies only committed stages into a distinct child. It skips ten completed
+trajectories, resumes the partial Factorized trajectory from u150, and can
+execute the remaining 175 stages. The orphan u175 stage is ignored.
+Tiny CPU save/restore parity passed for all three arms. The public proof binds
+that test's source version separately from the final metadata/validation changes.
+The final source audit also passed; CUDA remained uninitialized.
 
-Observed u300 joint readiness: Current1/4, Factorized0/3, RRC0/3.
-Old Full is0/4,0/3,0/3 respectively. The sole primary RRC−Factorized test has
-three complete pairs and zero observed discordances; final p/qualification
-are unset. These incomplete counts cannot reject or establish the architecture.
+## Unchanged claims and limits
 
-Saved progress stopped advancing at13:19 local. The original tool session
-is unavailable and original worker was not found. Its saved RUNNING field is
-stale. The interruption cause is not established; no restart occurred as part
-of this upload. Frozen evidence and local checkpoints are retained.
+The scientific snapshot still has ten of 24 u300 trajectories and 137 of 312
+fully recorded checkpoint evaluations. Joint readiness remains Current1/4,
+Factorized0/3, RRC0/3, with only three of eight primary pairs. Old Full remains
+0/4,0/3,0/3. Do not reinterpret these incomplete denominators as final rates.
+The old qualified runner, launcher, cells, protocol and evidence are unchanged.
 
-## Boundaries and reviewer questions
+CUDA recovery is unexecuted. The helper requires the retained local parent
+checkpoints and is specific to the original 137-stage snapshot; it cannot resume
+a recovery child after a second interruption. Runtime GPU comparison is by
+model name, not device identity. Original backend RNG state is unavailable,
+so exact uninterrupted CUDA equivalence is not claimed. The resumed arm's
+capture setup timing is explicitly scoped to the resumed session.
+Temporary idle prevention does not cover manual sleep, logout or power loss.
 
-Previous HardClip/Hybrid negatives and earlier causal audits stay unchanged.
-The relation map is a convex lane-permutation mixture, nonexpansive but generally
-dissipative. Only pure stream is lossless. Q/Z remains a cross-lane bypass;
-approximate parameter matching does not match function class or MACs.
-Do not claim recurrent stability, payload-basis invariance of the whole cell,
-or reliable formation from this incomplete upload.
-
-Review whether the implementation matches the intended pre-stream intervention,
-and keep incomplete endpoints separate from dense formation diagnostics.
-A final result requires the remaining14 trajectories and175 checkpoint stages.
-
-    python -X utf8 -B tools/export_rrc_v0.py --verify-only
+Review the process ownership and recovery commit boundaries. Do not use this
+engineering update as new evidence for any architecture mechanism.
