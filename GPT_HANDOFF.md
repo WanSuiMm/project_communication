@@ -1,61 +1,68 @@
-# Incremental review: execution protection and fixed-parent recovery
+# Incremental review: completed full-writer port-relation screen
 
-- Review base: `c316425d885d999829b3bc1a17fdc6721901de94`.
-- Engineering evidence head: `67adfa60c70e4b9884412d8073168ffddc050315`.
-- Scientific evidence head remains `8c5b11afca26cf6205686f51e79acf495af4e120`.
-- RRC publication stays `PARTIAL_INTERRUPTED`; formal verdict stays `INCOMPLETE`.
-- No research training was resumed. No RRC-v1 was implemented or launched.
-- This later handoff commit changes review metadata only.
+- Review base: `d3a95be5230b48532bad51370c6d1d021e4e9775`.
+- Stable code/evidence head: `196106541d7dae3c555cd141461109cd50817ccd`.
+- This later commit updates review metadata only; the evidence head stays fixed.
+- Execution/aggregation: **COMPLETE**,24/24 u300 trajectories,312/312 stages,
+  624 size rows and624 complete packed Boolean banks; numerical failures0.
+- Formal verdict: `NO_CONDITIONED_RELIABILITY_QUALIFICATION`.
+- The separate earlier RRC-v0 partial snapshot remains INCOMPLETE; this update
+  does not complete or reinterpret that experiment.
 
-## Read first
+## Minimal reading order
 
-1. [Engineering validation](evidence/execution_protection_20261007_01/README.md),
-   [lifecycle proof](evidence/execution_protection_20261007_01/validation.json),
-   and [recovery proof](evidence/execution_protection_20261007_01/recovery_validation.json).
-2. [Execution contract](tools/PROTECTED_EXECUTION.md),
-   [launcher](tools/start_protected_job.ps1), and
-   [worker](tools/protected_job_worker.ps1).
-3. [Recovery scope](new/rrc_recovery/README.md),
-   [entrypoint](new/rrc_recovery/run.py), and
-   [CPU checker](new/rrc_recovery/check_recovery.py).
-4. [Publication bindings](EXECUTION_PROTECTION_PUBLICATION_MANIFEST.json).
+1. [Results](evidence/port_relation_20261007_02/RESULTS.md),
+   [summary](evidence/port_relation_20261007_02/summary.json), and
+   [formal metrics](evidence/port_relation_20261007_02/final_metrics.csv).
+2. [All stage metrics](evidence/port_relation_20261007_02/metrics.csv),
+   [validation](evidence/port_relation_20261007_02/validation.json),
+   [interruption/recovery](evidence/port_relation_20261007_02/interruption_and_recovery.json).
+3. [Protocol](new/port_relation/PROTOCOL.md), [cell](new/port_relation/cells.py),
+   [runner](new/port_relation/run.py), [reporter](new/port_relation/reporting.py).
+4. [Reproduction](evidence/port_relation_20261007_02/REPRODUCTION.md),
+   [engineering qualification](evidence/port_relation_20261007_02/runtime_qualification.json),
+   [publication manifest](PORT_RELATION_PUBLICATION_MANIFEST.json).
 
-## Changed engineering evidence
+Do not open the block ZIP archives or compressed dense records first. They
+retain every recorded per-stage/per-map result, packed correctness trace,
+relation-activity record, training curve and completion marker. Checkpoints and
+private launch receipts stay local; checkpoint/source/bank/plan hashes remain.
+The evidence package is about324.48MiB, compressed without dropping trace times.
 
-System events show the Codex sandbox service was asked to stop and stopped
-seconds after the last RRC progress, then restarted. Service teardown is the
-likely trigger; the native Python exit cause and requester remain unproved.
+## New decision-relevant evidence
 
-The launcher now dispatches a unique on-demand Task Scheduler task under the
-interactive user, with no password, recurring trigger, automatic retry or time
-cap. A CPU sentinel continued after the initiating tool exited, returned code
-zero, and cleared its temporary idle-sleep request. Its task registration was
-removed. No forced service restart or reboot was tested.
+Current/Constant/Conditioned are each0/8 joint-ready and0/8 old Full at u300.
+Conditioned-current has8/8 pairs,0 wins,0 losses,net0,p=1; the all-tie contrast
+does not establish equivalence. Size32 block-mean strict pooled T64 coverage is
+.110424/.137410/.050948; retention is.548940/.429450/.475381, respectively.
+Constant is ever-ready1/8 and loses readiness; the other arms are never ready
+on the saved checkpoint grid. Intermediate success cannot select an endpoint.
 
-Recovery validates the full frozen configuration, source bundle, schedules,
-banks, recorded stages and latest committed model/AdamW checkpoints on CPU.
-It copies only committed stages into a distinct child. It skips ten completed
-trajectories, resumes the partial Factorized trajectory from u150, and can
-execute the remaining 175 stages. The orphan u175 stage is ignored.
-Tiny CPU save/restore parity passed for all three arms. The public proof binds
-that test's source version separately from the final metadata/validation changes.
-The final source audit also passed; CUDA remained uninitialized.
+Both candidate arms retain the historical full writer and add only a learned
+port-matrix action:16 constant entries versus144 Z-conditioned coefficients,
+initialized to zero. Counts5033/5049/5177 are not matched. Primary is only
+Conditioned-current; other contrasts/dense stages/size64/old Full are secondary.
+Runtime ID `port_relation_v1_full_writer_native_k8` retains the frozen protocol
+header alias `port_relation_conditioned_v1`. See reproduction for the explicit
+32-backward-window/one-optimizer-step implementation of the training wording.
 
-## Unchanged claims and limits
+The parent remains ERROR/INCOMPLETE after2 trajectories/33 stages: diagnostic
+float32 squaring overflowed after finite state/logit checks. The repaired child
+inherits33 stages, restores conditioned u150 model/Adam/RNG and replays unsaved
+work. Qualified cached evaluation preserves full u175/u150 report dictionaries
+and packed traces, including live parameter reload; eager/captured gradients
+match exactly in the two-update qualification. Backend nondeterminism means
+this is not a bitwise uninterrupted-replay claim. No new experiment was launched
+for publication. Saved-data verification and CPU cell/activity/report checks pass.
 
-The scientific snapshot still has ten of 24 u300 trajectories and 137 of 312
-fully recorded checkpoint evaluations. Joint readiness remains Current1/4,
-Factorized0/3, RRC0/3, with only three of eight primary pairs. Old Full remains
-0/4,0/3,0/3. Do not reinterpret these incomplete denominators as final rates.
-The old qualified runner, launcher, cells, protocol and evidence are unchanged.
+## Reviewer questions and claim boundary
 
-CUDA recovery is unexecuted. The helper requires the retained local parent
-checkpoints and is specific to the original 137-stage snapshot; it cannot resume
-a recovery child after a second interruption. Runtime GPU comparison is by
-model name, not device identity. Original backend RNG state is unavailable,
-so exact uninterrupted CUDA equivalence is not claimed. The resumed arm's
-capture setup timing is explicitly scoped to the resumed session.
-Temporary idle prevention does not cover manual sleep, logout or power loss.
+Does retaining the original full writer isolate the tested port-relation
+addition sufficiently? What can be inferred from all arms failing the endpoint,
+given low continuous reach/retention and a transient Constant success?
+Does the preserved recovery bridge change interpretation beyond the stated
+nondeterministic-replay limit? Review raw activity only for a specific question.
 
-Review the process ownership and recovery commit boundaries. Do not use this
-engineering update as new evidence for any architecture mechanism.
+The frozen candidate failed this finite reliability screen. The evidence does
+not establish a general relation-algebra failure, a unique formation mechanism,
+a population success rate, or a solution to short-BPTT credit assignment.
