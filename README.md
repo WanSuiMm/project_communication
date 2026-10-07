@@ -1,5 +1,16 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
+## Latest engineering update: independent execution and checkpoint recovery
+
+The new [execution wrapper](tools/PROTECTED_EXECUTION.md) runs an authorized
+job through an on-demand Windows Task Scheduler task, records its exit status,
+and temporarily prevents idle sleep. A CPU sentinel continued after the
+initiating tool exited and completed normally. The [recovery entrypoint](new/rrc_recovery/README.md)
+restores the interrupted RRC run into a new directory; it has CPU model/AdamW
+restore checks, but its CUDA continuation has not been executed.
+See [engineering validation](evidence/execution_protection_20261007_01/README.md).
+No research training was restarted. The scientific snapshot below is unchanged.
+
 ## Latest upload: RRC-v0 interrupted partial snapshot
 
 The RRC three-arm experiment is **not complete**: this fixed snapshot contains

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "cpu_only": true,
+  "training_performed": false,
+  "originating_tool_exited_before_worker_completed": true,
+  "post_parent_exit_running_heartbeat_observed": 14,
+  "final_heartbeat_count": 26,
+  "exit_code": 0,
+  "execution_time_limit": "PT0S",
+  "recurring_triggers": 0,
+  "idle_request_cleared": true,
+  "argument_quoting_roundtrip": "PASS",
+  "checked_local": "2026-10-07T14:29:45.8561231+08:00",
+  "source_sha256": {
+    "tools/start_protected_job.ps1": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf",
+    "tools/protected_job_worker.ps1": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41",
+    "tools/protected_job_smoke.py": "d1ca5a9f38b702bef7415caaae03e0ea93d0206b2a87e975e852e820d942041b",
+    "tools/launch_rrc_protected.ps1": "274f4b7e680cb811f7d23295513c039fe69702e415701566cd806c036474046e"
+  },
+  "limitations": [
+    "No forced Codex restart or machine reboot was induced.",
+    "Idle prevention does not cover manual sleep or shutdown."
+  ],
+  "task_registration_removed": true,
+  "scientific_training_launched": false,
+  "interruption_diagnostic": {
+    "service_stopped_local": "2026-10-07T13:19:14.950",
+    "service_stop_request_local": "2026-10-07T13:19:14.949",
+    "interpretation": "Service teardown is the likely interruption trigger; native Python exit cause and requester remain unproved.",
+    "service_running_local": "2026-10-07T13:19:16.873",
+    "last_progress_local": "2026-10-07T13:19:09"
+  }
+}

@@ -1,5 +1,17 @@
 # Context for incremental scientific review
 
+## Engineering-only update: execution protection
+
+New code lives in `tools/start_protected_job.ps1`,
+`tools/protected_job_worker.ps1`, `tools/launch_rrc_protected.ps1`, and
+`new/rrc_recovery/`. Read [execution details](tools/PROTECTED_EXECUTION.md)
+and [validation](evidence/execution_protection_20261007_01/README.md).
+The independent task has no recurring trigger or time cap. CPU checks cover
+survival after the initiating tool exits and model/AdamW checkpoint restoration.
+They do not cover a forced Codex service restart, machine reboot, or CUDA
+recovery execution. No research run was resumed and no RRC-v1 was implemented.
+RRC-v0 evidence, its qualification and scientific claims remain unchanged.
+
 ## Latest upload is incomplete: RRC-v0 partial01
 
 Formal status fields: publication=`PARTIAL_INTERRUPTED`,

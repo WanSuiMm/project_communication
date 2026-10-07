@@ -1,0 +1,57 @@
+{
+  "publication": "execution_protection_20261007_01",
+  "review_base": "c316425d885d999829b3bc1a17fdc6721901de94",
+  "scientific_evidence_head": "8c5b11afca26cf6205686f51e79acf495af4e120",
+  "scope": "Engineering launch protection and fixed-parent recovery only",
+  "lifecycle_test": "PASS",
+  "cpu_restore_parity": "PASS",
+  "cuda_recovery_executed": false,
+  "scientific_training_launched": false,
+  "scientific_verdict": "INCOMPLETE unchanged",
+  "files": {
+    "tools/start_protected_job.ps1": {
+      "sha256": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf",
+      "bytes": 3028
+    },
+    "tools/protected_job_worker.ps1": {
+      "sha256": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41",
+      "bytes": 4017
+    },
+    "tools/protected_job_smoke.py": {
+      "sha256": "d1ca5a9f38b702bef7415caaae03e0ea93d0206b2a87e975e852e820d942041b",
+      "bytes": 618
+    },
+    "tools/launch_rrc_protected.ps1": {
+      "sha256": "274f4b7e680cb811f7d23295513c039fe69702e415701566cd806c036474046e",
+      "bytes": 2284
+    },
+    "tools/PROTECTED_EXECUTION.md": {
+      "sha256": "2c4dfef2dfb74540e1a8f0820016c8d8d95d2409cbbd28a21a762f9d6db056f6",
+      "bytes": 3759
+    },
+    "new/rrc_recovery/run.py": {
+      "sha256": "d2229f3ad27934add81be14a5f60bc25f6db2617c20cf81f965e98aeb274a922",
+      "bytes": 41322
+    },
+    "new/rrc_recovery/check_recovery.py": {
+      "sha256": "eb7d7195f3fa3b46c7922a21c38dc19bfdce658505da1a44b53739a7d644ea16",
+      "bytes": 9199
+    },
+    "new/rrc_recovery/README.md": {
+      "sha256": "065cec3645e8c9f15a8297ec27fc6211aa4ee7ae2f8722753d83be60f4637385",
+      "bytes": 4271
+    },
+    "evidence/execution_protection_20261007_01/README.md": {
+      "sha256": "fd9a49503e4bbe02562f4133540a64fc7315f5d6917bc493ddb5f2bb656c8cf0",
+      "bytes": 2060
+    },
+    "evidence/execution_protection_20261007_01/validation.json": {
+      "sha256": "8313f745263a06076223d4a210608297027dcfce9e08943ac0e8d9f4396f63f5",
+      "bytes": 1522
+    },
+    "evidence/execution_protection_20261007_01/recovery_validation.json": {
+      "sha256": "762dd5bc03153612e9ed91a309fc7f042d03e0e8b1aa569ee8579c43ae8329b2",
+      "bytes": 12157
+    }
+  }
+}

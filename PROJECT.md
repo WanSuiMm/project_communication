@@ -1,5 +1,28 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## Independent execution protection
+
+Read-only system-event diagnosis found the Codex sandbox service asked to stop
+and stopped at13:19:14, then running at13:19:16 on2026-10-07, within seconds
+of the last RRC progress. This supports service/session teardown as the likely
+trigger; a native Python exit code was not recorded. The original scientific
+sources and interrupted evidence remain unchanged.
+
+[Independent launcher](tools/launch_rrc_protected.ps1) now uses a unique
+on-demand Windows Task Scheduler task, outside the originating tool lifecycle.
+It has no recurring trigger or execution limit, a private heartbeat/exit-code
+receipt, and temporary idle-sleep prevention released on exit. A24-second CPU
+test survived the initiating tool's exit, completed with code0 and cleared its
+power request. Its scheduler registration was removed. The test did not train
+a model or force a Codex restart/reboot.
+
+[Execution details](tools/PROTECTED_EXECUTION.md),
+[checkpoint recovery](new/rrc_recovery/README.md), and
+[public engineering validation](evidence/execution_protection_20261007_01/README.md).
+Recovery restores committed model/AdamW state into a new run directory; CPU
+restore parity is checked, while CUDA continuation remains unexecuted.
+No further experiment has been dispatched by this protection work.
+
 ## RRC-v0: interrupted partial evidence
 
 Current stage: **INCOMPLETE / INTERRUPTED**, local run `runs/rrc_v0_20261007_01`, launched
