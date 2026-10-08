@@ -1,4 +1,43 @@
-# Incremental review: selected StreamingCell Full reevaluation
+# Incremental review: cue-once delayed credit
+
+- Review base: `dd704eb2163b251896a8e99522d8f52edf4817a4`.
+- Stable code/evidence head: `734ed9bcc8de0d0e1b710c1ddc2d031bf0740adb`.
+- This later commit changes review metadata only; the evidence head stays fixed.
+- Execution: **COMPLETE**,12/12 u300 trajectories,72 checkpoint bindings,
+  3600 updates,1387.609seconds. Frozen verdict: **BASELINE_UNQUALIFIED**.
+
+Read [results](evidence/delayed_credit_20261008_01/RESULTS.md) and
+[endpoint metrics](evidence/delayed_credit_20261008_01/final_metrics.csv)
+first, then [protocol](new/delayed_credit/PROTOCOL.md),
+[credit cuts](new/delayed_credit/training.py), and
+[saved-data validation](evidence/delayed_credit_20261008_01/validation.json).
+Skip packed trajectories and full training curves on the first read.
+
+The original5033-parameter StreamingCell gets cue-bearing inputs only at
+initialization; all recurrent training/evaluation inputs are(mask,0,0).
+Dense K8, terminal K8 and terminal K64 each have0/4 reach passes on fresh
+maps. Mean size32 T64 strict pooled coverage is6.054%,0.259%,14.179%.
+K64 exceeds terminal K8 in4/4 paired blocks descriptively; its best block
+has45.571% pooled/53.853% mean-map coverage, below .80 qualification.
+All24 trace banks are finite throughT256. Thus the K64 positive control
+failed to qualify: no qualified short-credit bottleneck or unique cause
+follows. B's encoder is disconnected, while F/Q train in the final8 steps.
+This screen does not isolate an encoder-only effect.
+
+The approximately25.1MiB public package includes all valid Boolean times,
+768 per-map records, all training updates, exact banks/schedules and72
+checkpoint bindings. Checkpoint contents and private receipts stay local.
+Earlier Full results are unchanged; the deferred producer-consumer swap
+was not run. No new architecture, sweep or publication-time inference.
+
+Reviewer questions: What can the4/4 descriptive K64 advantage establish
+without a qualified positive control? How does cue-once differ from the
+earlier repeatedly available source cue? Keep learning, reach and long
+execution stability separate; do not treat a gate failure as zero learning.
+
+---
+
+# Previous handoff: selected StreamingCell Full reevaluation
 
 - Review base: `80b556a3010484707f682ffea150f48bfda91de7`.
 - Stable code/evidence head: `7333c5f919a9cef89dce2750715134bddf0e59d2`.
