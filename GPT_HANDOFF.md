@@ -1,4 +1,68 @@
-# Incremental review: completed full-writer port-relation screen
+# Incremental review: completed addressed-delta development screen
+
+- Review base: `f080e69a79451fd6341e3b9fa3e5a23070d863b5`.
+- Stable code/evidence head: `7a5ee01886c1a8d214625bb278217f4d10a4056a`.
+- This later commit changes review metadata only; the evidence head stays fixed.
+- Execution and aggregation: **COMPLETE**,12/12 u300 endpoints,156/156 stages.
+- Frozen verdict: `NO_DEVELOPMENTAL_SIGNAL`.
+
+## Read this update first
+
+1. [Results](evidence/addressed_delta_20261008_02/RESULTS.md),
+   [summary](evidence/addressed_delta_20261008_02/summary.json), and
+   [formal metrics](evidence/addressed_delta_20261008_02/final_metrics.csv).
+2. [All-stage metrics](evidence/addressed_delta_20261008_02/metrics.csv),
+   [saved-data validation](evidence/addressed_delta_20261008_02/validation.json),
+   [recovery](evidence/addressed_delta_20261008_02/interruption_and_recovery.json).
+3. [Protocol](new/addressed_delta/PROTOCOL.md), [cells](new/addressed_delta/cells.py),
+   [writer](new/addressed_delta/writer.py), [source map](ARCHITECTURE.md).
+4. [Reproduction](evidence/addressed_delta_20261008_02/REPRODUCTION.md),
+   [qualification](evidence/addressed_delta_20261008_02/runtime_qualification.json),
+   [publication manifest](ADDRESSED_DELTA_PUBLICATION_MANIFEST.json).
+
+Do not open the four raw block archives first. The approximately3.09MiB evidence
+package retains all9,984 per-map metric rows,156 evaluations and completion
+markers,12 training curves, banks and schedules, with lossless compression.
+Checkpoint contents and private process metadata stay local. Full Boolean
+trajectories were not persisted; old Full was not evaluated.
+
+## New evidence and claim boundary
+
+At fixed u300, Current is joint-ready2/4, Additive0/4, Delta0/4. Neither candidate
+is ever-ready on the saved checkpoint grid. Primary Delta-minus-Additive has
+0 wins,0 losses,4 ties and descriptive p=1; ties do not establish equivalence.
+Size32 block-mean strict pooled T64 coverage is.5292/.0992/.1826; retention is
+.9657/.0573/.1614 (Current/Additive/Delta). Four blocks are developmental only.
+
+Candidates replace the entire carrier writer with matched initially identical
+K/V heads: C'=U+.1K^T V versus C'=U+.1K^T(V-KU), K=A/sqrt(1+||A||_F^2).
+They retain C24/Z8, E/Q/readout, transport, pre-stream perception and K8 training.
+Current5033 and candidates5689 parameters are not capacity matched. The feedback
+term includes structured damping; this is not a semantic duplicate proof or
+a general failure theorem for addressed writing.
+
+The cancelled parent retained Current u300 and Additive u200. After one failed
+pre-training restart, the child inherited22 stages and resumed Additive u200
+model/Adam/RNG with a JSON tuple/list compatibility fix. Numerical training source
+was unchanged; helper source is separately bound. Recovered process time is
+2570.515seconds. Nondeterminism prevents an uninterrupted bitwise-replay claim.
+Qualification bound71 source files individually; the protocol's integrated
+qualification-time ZIP was not generated. The public record states this deviation.
+
+The saved-data exporter verifies all source/bank/archive hashes, records,
+per-map count-to-aggregate agreement, gates, report tables and marker/curve
+bindings, with no model inference or optimizer updates. CPU primitive/cell/report
+checks pass; publication launched no new task training campaign.
+
+Reviewer questions: What does the matched zero-success primary contrast establish,
+given the positive contextual Current results? Can writer replacement be cleanly
+distinguished from the feedback subtraction using these controls? Previous
+port-relation and other frozen conclusions below remain unchanged; skip them
+unless comparing experiments.
+
+---
+
+## Previous handoff: full-writer port-relation screen
 
 - Review base: `d3a95be5230b48532bad51370c6d1d021e4e9775`.
 - Stable code/evidence head: `196106541d7dae3c555cd141461109cd50817ccd`.
