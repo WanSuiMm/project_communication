@@ -1,4 +1,59 @@
-# Incremental review: completed addressed-delta development screen
+# Incremental review: selected StreamingCell Full reevaluation
+
+- Review base: `80b556a3010484707f682ffea150f48bfda91de7`.
+- Stable code/evidence head: `7333c5f919a9cef89dce2750715134bddf0e59d2`.
+- This later commit changes review metadata only; the evidence head stays fixed.
+- Execution and saved-data verification: **COMPLETE**,6/6 units, zero training
+  and optimizer updates,83.516seconds. No new architecture or threshold changes.
+
+## Read this update first
+
+1. [Results](evidence/streaming_full_reeval_20261008_01/RESULTS.md),
+   [summary](evidence/streaming_full_reeval_20261008_01/summary.json), and
+   [all144 gate values](evidence/streaming_full_reeval_20261008_01/full_gates.csv).
+2. [Frozen protocol](new/streaming_full_reeval/PROTOCOL.md),
+   [runner](new/streaming_full_reeval/run.py),
+   [validation](evidence/streaming_full_reeval_20261008_01/validation.json), and
+   [saved-data reproduction](evidence/streaming_full_reeval_20261008_01/REPRODUCTION.md).
+3. Individual unit summaries only when comparing a specific failed gate.
+   Skip packed NPZ traces and frontier CSV at first reading.
+
+## New evidence and claim boundary
+
+| Selected checkpoint | Historical Full cohort | Addressed selection cohort | Role |
+|---|---|---|---|
+| Current block00/u300 | PASS | FAIL | primary |
+| Current block02/u300 | FAIL | FAIL | primary |
+| Current block00/u275 | PASS | PASS | diagnostic |
+
+Block00/u300's only selecting-cohort failure is size32 ever-regression .16>.15.
+Block02/u300 fails that gate at both sizes in both cohorts; the historical size64
+retention is also .9264164<.95. All frontier effect/support gates pass for all six
+units. Diagnostic u275 cannot replace the fixed u300 endpoints.
+
+This confirms one new selected u300 Full-success instance on the historical
+seed4-followup maps (50032/50064), but neither selected u300 passes both cohorts.
+The second cohort (122032/122064) is the data used to select the models by Joint;
+this is not independent validation or a formation-rate estimate. The original
+Current2/4 Joint result and candidate `NO_DEVELOPMENTAL_SIGNAL` remain unchanged.
+This reevaluation separates Full from Joint rather than redefining either.
+
+The approximately7.4MiB package retains all12 paired/original/flipped trace banks
+at integer times0..256,384 per-map summaries,53,599 frontier strata and both exact
+map cohorts. Export verification checks hashes, bank identity, Boolean conjunction,
+trace-derived transitions/regression, CSV-derived frontier effects and the unchanged
+Full predicate. No new model inference is used during publication verification.
+Model contents and private process receipts stay local; their provenance hashes remain.
+
+Reviewer questions: How should one new strict historical-cohort success be weighed
+against the selecting-cohort regression failure? What does u275 passing both cohorts
+and u300 losing one gate establish, without a causal intervention? Which conclusions
+actually require cross-cohort Full versus Joint? Avoid inferring a common hidden
+interface or mechanism from phenotype alone.
+
+---
+
+# Previous handoff: completed addressed-delta development screen
 
 - Review base: `f080e69a79451fd6341e3b9fa3e5a23070d863b5`.
 - Stable code/evidence head: `7a5ee01886c1a8d214625bb278217f4d10a4056a`.
