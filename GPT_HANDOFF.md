@@ -1,4 +1,58 @@
-# Incremental review: cue-once delayed credit
+# Incremental review: learnable ordered composition
+
+- Review base: `bfa266cf97ab2118632dc5a49ae877519b7a79d0`.
+- Stable code/evidence head: `58aa2720c39c57de565d4086d7fca3eeb80cb22e`.
+- This later commit changes review metadata only; the evidence head stays fixed.
+- Execution: **COMPLETE**,5/5 units,750 updates,94.179seconds.
+- Frozen verdict: **POSITIVE_CONTROLS_UNQUALIFIED**.
+
+Read [results](evidence/learnable_gcr_20261009_01/RESULTS.md),
+[35 final metric rows](evidence/learnable_gcr_20261009_01/final_metrics.csv),
+and [aggregate](evidence/learnable_gcr_20261009_01/aggregate.json), then
+[protocol](new/learnable_gcr/PROTOCOL.md),
+[cells](new/learnable_gcr/cells.py), [credit graph and verdict](new/learnable_gcr/run.py),
+and [saved-array validation](evidence/learnable_gcr_20261009_01/validation.json).
+Skip raw banks, predictions and training curves on the first read.
+
+This update adds a new directed-path task and cell. It does not modify the
+original StreamingCell, Region Identity or earlier frozen results. Endpoint
+target is an ordered second-order interaction of Gaussian8D tokens divided
+by path length, passed through tanh. Both primary models learn the same4D
+encoder and use a20D workspace plus count. GCR accumulates literal first/second
+prefix sums; Full Writer has a free vector residual head on the same graph.
+Terminal T64 MSE only,150 updates, one paired initialization/schedule block;
+u150 alone is primary. Train lengths16..32; long tests64/96.
+
+| Primary held-out T64 R2 | K8 | K64 |
+|---|---:|---:|
+| Full Writer | -.001659 | -.001638 |
+| Learnable GCR | .260103 | .535750 |
+
+Both K64 controls had to reach.5. Full Writer did not, so the four-arm
+architecture-by-credit test is unqualified. GCR K64 clears its own threshold,
+but GCR's K64-minus-K8 gap is.275647, not negligible. The offline fixed raw8D
+evidence MLP reaches.820608; it diagnoses a learnable readout from complete
+statistics and is not a matched NCA. All saved predictions are finite through
+the declared horizons. Parameter counts5921/GCR and6677/Full Writer are
+reported; no capacity-matching claim is made.
+
+The1.36MiB evidence package retains all750 losses,15 checkpoint bindings and
+stage evaluations, exact banks/teacher/schedule, and all final predictions.
+Saved-data verification recomputes all35 MSE/R2 rows without inference or
+optimizer updates. Six executed-source hashes match the public code. Model
+contents and private receipts remain local. A sandbox dispatch failure occurred
+before training; the separate authorized launch completed normally, without
+a training restart, and cleared idle-sleep prevention.
+
+Reviewer questions: Which conclusions survive the Full Writer K64 control
+failure? What does the within-GCR truncation gap establish on this single
+task-matched block? What can the offline evidence diagnostic rule out about
+readout learnability, without qualifying recurrent evidence formation? Do not
+infer reliability, generic NCA expressivity or restored credit for early writes.
+
+---
+
+# Previous handoff: cue-once delayed credit
 
 - Review base: `dd704eb2163b251896a8e99522d8f52edf4817a4`.
 - Stable code/evidence head: `734ed9bcc8de0d0e1b710c1ddc2d031bf0740adb`.
