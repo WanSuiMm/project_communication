@@ -1,6 +1,44 @@
 # Context for incremental scientific review
 
-## Current: cue-once delayed-credit screen
+## Current: learnable ordered-composition screen
+
+Formal fields: execution=COMPLETE, aggregation=COMPLETE,
+final_result_available=true, verdict=POSITIVE_CONTROLS_UNQUALIFIED.
+Canonical evidence: `evidence/learnable_gcr_20261009_01/`.
+All5/5 units completed150 updates each; elapsed94.179seconds. One paired
+initialization/schedule block compares Full Writer/GCR at terminal K8/K64,
+plus a separate offline raw8D sufficient-evidence MLP diagnostic.
+
+This is a new task and cell, not the original StreamingCell or Region Identity.
+Each random simple directed path carries Gaussian8D tokens. Endpoint target is
+tanh(sum_{i<j}(a^T x_i)(b^T x_j)/n) for one hidden orthonormal teacher. Train
+lengths16..32, evaluate held-out16..32 and longer64/96 paths. Primary metric is
+held-out T64 R2 at u150. Only terminal T64 MSE supervises training. K8 detaches
+the first56 steps; the shared trainable phi is recomputed inside the last8-step
+graph, so its suffix uses receive credit while early individual inputs do not.
+
+Full Writer held-out R2 is-.001659/K8 and-.001638/K64. GCR is.260103/K8 and
+.535750/K64. Both K64 arms had to reach.5; Full Writer failed, so no qualified
+architecture-by-credit result follows. GCR's own K64-K8 gap is.275647; the
+data do not show a negligible truncation gap. Fixed-evidence MLP R2=.820608 is
+an offline readout diagnostic and not a matched recurrent positive control.
+No reliability, general NCA guarantee, history-gradient recovery, arbitrary
+learned composition, routing or cyclic-duplicate claim is supported.
+
+Read [results](evidence/learnable_gcr_20261009_01/RESULTS.md),
+[all metrics](evidence/learnable_gcr_20261009_01/final_metrics.csv), then
+[protocol](new/learnable_gcr/PROTOCOL.md). Exact source: `OrderedCell.step`,
+`FixedEvidenceMLP` in [cells.py](new/learnable_gcr/cells.py); `make_bank` in
+[tasks.py](new/learnable_gcr/tasks.py); `forward_credit`, `check`, `verdict` in
+[run.py](new/learnable_gcr/run.py). Both architectures use the same4D phi,
+20D workspace plus count, endpoint EMA with rho=.5, and shared initial
+interpreter. GCR literally accumulates S1 and ordered S2, reading S2/n;
+Full Writer has an unconstrained vector residual head. Counts5921/6677 are
+reported, not capacity matched. Publication verification recomputes metrics
+from saved arrays without training or inference. Exact banks, all750 losses,
+15 stage evaluations and checkpoint bindings remain in the compact package.
+
+## Previous: cue-once delayed-credit screen
 
 Formal fields: execution=COMPLETE, aggregation=COMPLETE,
 final_result_available=true, verdict=BASELINE_UNQUALIFIED.

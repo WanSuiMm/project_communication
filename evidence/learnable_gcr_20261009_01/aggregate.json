@@ -1,0 +1,533 @@
+{
+  "status": "COMPLETE",
+  "config": {
+    "protocol": "learnable_gcr_v0",
+    "teacher_seed": 170001,
+    "init_seed": 170101,
+    "schedule_seed": 170201,
+    "updates": 150,
+    "batch_size": 16,
+    "train_steps": 64,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_norm": 1.0,
+    "rho": 0.5,
+    "banks": {
+      "train": [
+        512,
+        8,
+        [
+          16,
+          32
+        ],
+        170301
+      ],
+      "heldout": [
+        128,
+        8,
+        [
+          16,
+          32
+        ],
+        170401
+      ],
+      "length64": [
+        128,
+        16,
+        [
+          64,
+          64
+        ],
+        170501
+      ],
+      "length96": [
+        128,
+        16,
+        [
+          96,
+          96
+        ],
+        170502
+      ]
+    },
+    "arms": [
+      [
+        "full_writer_k8",
+        "full_writer",
+        8
+      ],
+      [
+        "full_writer_k64",
+        "full_writer",
+        64
+      ],
+      [
+        "gcr_k8",
+        "gcr",
+        8
+      ],
+      [
+        "gcr_k64",
+        "gcr",
+        64
+      ]
+    ],
+    "primary": "heldout_T64_u150",
+    "checkpoints": [
+      50,
+      100,
+      150
+    ],
+    "device": "cuda:0",
+    "dtype": "float32",
+    "tf32": false
+  },
+  "elapsed_seconds": 94.1790997999999,
+  "decision": {
+    "verdict": "POSITIVE_CONTROLS_UNQUALIFIED",
+    "controls_qualified": false,
+    "primary_r2": {
+      "full_writer_k8": -0.0016589551549759385,
+      "full_writer_k64": -0.0016376156366493255,
+      "gcr_k8": 0.2601032593544145,
+      "gcr_k64": 0.5357503802662453
+    },
+    "full_writer_credit_gap": 2.133951832661296e-05,
+    "gcr_credit_gap": 0.27564712091183086,
+    "architecture_by_credit_gap": -0.27562578139350424
+  },
+  "results": {
+    "full_writer_k8": {
+      "status": "COMPLETE",
+      "systems": {
+        "training_seconds_this_dispatch": 15.774941399999989,
+        "peak_allocated_mib": 24.02978515625,
+        "resumed_from_update": 1,
+        "parameters": {
+          "phi": 32,
+          "interpreter": 5889,
+          "writer": 756,
+          "common": 5921,
+          "total": 6677
+        }
+      },
+      "evaluations": {
+        "heldout": {
+          "seconds": 2.1095915000000787,
+          "horizons": {
+            "T64": {
+              "finite": true,
+              "mse": 0.2026103765084601,
+              "r2": -0.0016589551549759385,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T128": {
+              "finite": true,
+              "mse": 0.2026103765084601,
+              "r2": -0.0016589551549759385,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.2026103765084601,
+              "r2": -0.0016589551549759385,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        },
+        "length64": {
+          "seconds": 2.02501089999987,
+          "horizons": {
+            "T128": {
+              "finite": true,
+              "mse": 0.17791176818324864,
+              "r2": -0.002342048191032342,
+              "target_variance": 0.17749606384799807,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.17791176818324864,
+              "r2": -0.002342048191032342,
+              "target_variance": 0.17749606384799807,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        },
+        "length96": {
+          "seconds": 1.9713425999998435,
+          "horizons": {
+            "T128": {
+              "finite": true,
+              "mse": 0.2262553679713523,
+              "r2": -0.00817941847470971,
+              "target_variance": 0.22441974496330974,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.2262553679713523,
+              "r2": -0.00817941847470971,
+              "target_variance": 0.22441974496330974,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        }
+      }
+    },
+    "full_writer_k64": {
+      "status": "COMPLETE",
+      "systems": {
+        "training_seconds_this_dispatch": 20.788492299999916,
+        "peak_allocated_mib": 38.85009765625,
+        "resumed_from_update": 1,
+        "parameters": {
+          "phi": 32,
+          "interpreter": 5889,
+          "writer": 756,
+          "common": 5921,
+          "total": 6677
+        }
+      },
+      "evaluations": {
+        "heldout": {
+          "seconds": 2.155808099999831,
+          "horizons": {
+            "T64": {
+              "finite": true,
+              "mse": 0.20260606006140952,
+              "r2": -0.0016376156366493255,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T128": {
+              "finite": true,
+              "mse": 0.20260606006140952,
+              "r2": -0.0016376156366493255,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.20260606006140952,
+              "r2": -0.0016376156366493255,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        },
+        "length64": {
+          "seconds": 2.0669843000000583,
+          "horizons": {
+            "T128": {
+              "finite": true,
+              "mse": 0.17782986780056795,
+              "r2": -0.0018806273521407846,
+              "target_variance": 0.17749606384799807,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.17782986780056795,
+              "r2": -0.0018806273521407846,
+              "target_variance": 0.17749606384799807,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        },
+        "length96": {
+          "seconds": 2.067918899999995,
+          "horizons": {
+            "T128": {
+              "finite": true,
+              "mse": 0.2268394537264416,
+              "r2": -0.010782067164043285,
+              "target_variance": 0.22441974496330974,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.2268394537264416,
+              "r2": -0.010782067164043285,
+              "target_variance": 0.22441974496330974,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        }
+      }
+    },
+    "gcr_k8": {
+      "status": "COMPLETE",
+      "systems": {
+        "training_seconds_this_dispatch": 11.976032900000064,
+        "peak_allocated_mib": 23.4189453125,
+        "resumed_from_update": 1,
+        "parameters": {
+          "phi": 32,
+          "interpreter": 5889,
+          "writer": 0,
+          "common": 5921,
+          "total": 5921
+        }
+      },
+      "evaluations": {
+        "heldout": {
+          "seconds": 1.7272155000000566,
+          "horizons": {
+            "T64": {
+              "finite": true,
+              "mse": 0.14966247386705633,
+              "r2": 0.2601032593544145,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T128": {
+              "finite": true,
+              "mse": 0.14966247386705633,
+              "r2": 0.2601032593544145,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.14966247386705633,
+              "r2": 0.2601032593544145,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        },
+        "length64": {
+          "seconds": 2.0190428999999313,
+          "horizons": {
+            "T128": {
+              "finite": true,
+              "mse": 0.10589056677470021,
+              "r2": 0.4034201971634622,
+              "target_variance": 0.17749606384799807,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.10589056677470021,
+              "r2": 0.4034201971634622,
+              "target_variance": 0.17749606384799807,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        },
+        "length96": {
+          "seconds": 1.7422656000001098,
+          "horizons": {
+            "T128": {
+              "finite": true,
+              "mse": 0.1713586703973084,
+              "r2": 0.23643674746478416,
+              "target_variance": 0.22441974496330974,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.1713586703973084,
+              "r2": 0.23643674746478416,
+              "target_variance": 0.22441974496330974,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        }
+      }
+    },
+    "gcr_k64": {
+      "status": "COMPLETE",
+      "systems": {
+        "training_seconds_this_dispatch": 19.57592509999995,
+        "peak_allocated_mib": 33.6455078125,
+        "resumed_from_update": 1,
+        "parameters": {
+          "phi": 32,
+          "interpreter": 5889,
+          "writer": 0,
+          "common": 5921,
+          "total": 5921
+        }
+      },
+      "evaluations": {
+        "heldout": {
+          "seconds": 1.6921296999998958,
+          "horizons": {
+            "T64": {
+              "finite": true,
+              "mse": 0.09390600439808605,
+              "r2": 0.5357503802662453,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T128": {
+              "finite": true,
+              "mse": 0.09390600439808605,
+              "r2": 0.5357503802662453,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.09390600439808605,
+              "r2": 0.5357503802662453,
+              "target_variance": 0.20227481166692346,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        },
+        "length64": {
+          "seconds": 1.910472499999969,
+          "horizons": {
+            "T128": {
+              "finite": true,
+              "mse": 0.05863492591087108,
+              "r2": 0.6696550636689942,
+              "target_variance": 0.17749606384799807,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.05863492591087108,
+              "r2": 0.6696550636689942,
+              "target_variance": 0.17749606384799807,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        },
+        "length96": {
+          "seconds": 1.7655377000000954,
+          "horizons": {
+            "T128": {
+              "finite": true,
+              "mse": 0.10357805101735326,
+              "r2": 0.5384628432124492,
+              "target_variance": 0.22441974496330974,
+              "n": 128,
+              "count_matches_length": true
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.10357805101735326,
+              "r2": 0.5384628432124492,
+              "target_variance": 0.22441974496330974,
+              "n": 128,
+              "count_matches_length": true
+            }
+          }
+        }
+      }
+    },
+    "fixed_raw_evidence_mlp": {
+      "status": "COMPLETE",
+      "systems": {
+        "training_seconds_this_dispatch": 1.3426564999999755,
+        "peak_allocated_mib": 21.79541015625,
+        "resumed_from_update": 1,
+        "parameters": {
+          "total": 4801
+        }
+      },
+      "evaluations": {
+        "heldout": {
+          "horizons": {
+            "T64": {
+              "finite": true,
+              "mse": 0.03628645192205451,
+              "r2": 0.8206081537141375,
+              "target_variance": 0.20227481166692346,
+              "n": 128
+            },
+            "T128": {
+              "finite": true,
+              "mse": 0.03628645192205451,
+              "r2": 0.8206081537141375,
+              "target_variance": 0.20227481166692346,
+              "n": 128
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.03628645192205451,
+              "r2": 0.8206081537141375,
+              "target_variance": 0.20227481166692346,
+              "n": 128
+            }
+          }
+        },
+        "length64": {
+          "horizons": {
+            "T128": {
+              "finite": true,
+              "mse": 0.02502814006943895,
+              "r2": 0.8589932670795886,
+              "target_variance": 0.17749606384799807,
+              "n": 128
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.02502814006943895,
+              "r2": 0.8589932670795886,
+              "target_variance": 0.17749606384799807,
+              "n": 128
+            }
+          }
+        },
+        "length96": {
+          "horizons": {
+            "T128": {
+              "finite": true,
+              "mse": 0.03323681675195035,
+              "r2": 0.8518988747742129,
+              "target_variance": 0.22441974496330974,
+              "n": 128
+            },
+            "T256": {
+              "finite": true,
+              "mse": 0.03323681675195035,
+              "r2": 0.8518988747742129,
+              "target_variance": 0.22441974496330974,
+              "n": 128
+            }
+          }
+        }
+      }
+    }
+  },
+  "claim_scope": "one-block task-matched developmental screen; no generic short-credit guarantee"
+}

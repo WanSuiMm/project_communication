@@ -1,6 +1,41 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest completed experiment: cue-once delayed credit
+## Latest completed experiment: learnable ordered composition
+
+Can structured second-order local state reduce the terminal K8-versus-K64
+learning gap? This new directed-path task is **COMPLETE:5/5 units,750 updates
+in94.179seconds**. One paired block compares Full Writer/GCR at K8/K64, plus an
+offline fixed-evidence MLP diagnostic. Primary held-out T64 R2:
+
+| Model | K8 | K64 |
+|---|---:|---:|
+| Full Writer | -.001659 | -.001638 |
+| Learnable GCR | .260103 | .535750 |
+
+Frozen verdict: **POSITIVE_CONTROLS_UNQUALIFIED**. Full Writer K64 failed the
+required R2>=.5 control; GCR K64 cleared that threshold individually. This does
+not establish improved short-credit learning or a qualified architecture
+comparison. The offline raw8D evidence MLP reaches R2=.820608 but is not a
+matched NCA. All saved predictions remain finite through the evaluated horizons.
+
+Start here for this update:
+
+1. [Results](evidence/learnable_gcr_20261009_01/RESULTS.md),
+   [35 final metric rows](evidence/learnable_gcr_20261009_01/final_metrics.csv),
+   and [aggregate](evidence/learnable_gcr_20261009_01/aggregate.json).
+2. [Frozen protocol](new/learnable_gcr/PROTOCOL.md),
+   [cell equations/source map](ARCHITECTURE.md), and [runner](new/learnable_gcr/run.py).
+3. [Saved-array verification](evidence/learnable_gcr_20261009_01/validation.json)
+   and [reproduction](evidence/learnable_gcr_20261009_01/REPRODUCTION.md).
+
+The compressed1.36MiB evidence package includes exact banks/schedule, all750
+training updates,15 checkpoint bindings and intermediate evaluations, and all
+saved per-example predictions. Read compact tables first. Weights and private
+receipts remain local; earlier frozen evidence is unchanged. This screen uses
+a new ordered-composition task and cell, rather than Region Identity or the
+original StreamingCell. See [incremental review](GPT_HANDOFF.md).
+
+## Previous completed experiment: cue-once delayed credit
 
 Can terminal-only K8 training learn the same task as terminal-only K64 when
 the source cue is available only at initialization? The original StreamingCell

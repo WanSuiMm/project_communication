@@ -1,0 +1,102 @@
+{
+  "update": 50,
+  "next_update": 51,
+  "formal_endpoint": false,
+  "checkpoint_sha256": "16098f0aa72197e7f2c64c8132f2889f50cd7a729eb1d3815c315f49f7dd85a6",
+  "config": {
+    "protocol": "learnable_gcr_v0",
+    "teacher_seed": 170001,
+    "init_seed": 170101,
+    "schedule_seed": 170201,
+    "updates": 150,
+    "batch_size": 16,
+    "train_steps": 64,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_norm": 1.0,
+    "rho": 0.5,
+    "banks": {
+      "train": [
+        512,
+        8,
+        [
+          16,
+          32
+        ],
+        170301
+      ],
+      "heldout": [
+        128,
+        8,
+        [
+          16,
+          32
+        ],
+        170401
+      ],
+      "length64": [
+        128,
+        16,
+        [
+          64,
+          64
+        ],
+        170501
+      ],
+      "length96": [
+        128,
+        16,
+        [
+          96,
+          96
+        ],
+        170502
+      ]
+    },
+    "arms": [
+      [
+        "full_writer_k8",
+        "full_writer",
+        8
+      ],
+      [
+        "full_writer_k64",
+        "full_writer",
+        64
+      ],
+      [
+        "gcr_k8",
+        "gcr",
+        8
+      ],
+      [
+        "gcr_k64",
+        "gcr",
+        64
+      ]
+    ],
+    "primary": "heldout_T64_u150",
+    "checkpoints": [
+      50,
+      100,
+      150
+    ],
+    "device": "cuda:0",
+    "dtype": "float32",
+    "tf32": false
+  },
+  "source_hashes": {
+    "new/learnable_gcr/run.py": "22ae2a8f6373898d69c862e0a369bf5f13e47e0782672900904cbdc46687f1a3",
+    "new/learnable_gcr/cells.py": "ef2da9c66b1fef97f118d1186ee19b79ccea967f775b2ca984942e2a36ee3421",
+    "new/learnable_gcr/tasks.py": "e679ac8c993764b64a3ddaaf1239bb8e135233fbcabea03e5969c7810862dab4",
+    "new/learnable_gcr/PROTOCOL.md": "6e6d8927c4199cc9a188e0503c64ec563ffe41ca2055a1c97b6129494e9058c8",
+    "tools/start_protected_job.ps1": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf",
+    "tools/protected_job_worker.ps1": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41"
+  },
+  "weights_published": false
+}

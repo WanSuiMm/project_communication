@@ -1,0 +1,74 @@
+{
+  "status": "COMPLETE",
+  "systems": {
+    "training_seconds_this_dispatch": 1.3426564999999755,
+    "peak_allocated_mib": 21.79541015625,
+    "resumed_from_update": 1,
+    "parameters": {
+      "total": 4801
+    }
+  },
+  "evaluations": {
+    "heldout": {
+      "horizons": {
+        "T64": {
+          "finite": true,
+          "mse": 0.03628645192205451,
+          "r2": 0.8206081537141375,
+          "target_variance": 0.20227481166692346,
+          "n": 128
+        },
+        "T128": {
+          "finite": true,
+          "mse": 0.03628645192205451,
+          "r2": 0.8206081537141375,
+          "target_variance": 0.20227481166692346,
+          "n": 128
+        },
+        "T256": {
+          "finite": true,
+          "mse": 0.03628645192205451,
+          "r2": 0.8206081537141375,
+          "target_variance": 0.20227481166692346,
+          "n": 128
+        }
+      }
+    },
+    "length64": {
+      "horizons": {
+        "T128": {
+          "finite": true,
+          "mse": 0.02502814006943895,
+          "r2": 0.8589932670795886,
+          "target_variance": 0.17749606384799807,
+          "n": 128
+        },
+        "T256": {
+          "finite": true,
+          "mse": 0.02502814006943895,
+          "r2": 0.8589932670795886,
+          "target_variance": 0.17749606384799807,
+          "n": 128
+        }
+      }
+    },
+    "length96": {
+      "horizons": {
+        "T128": {
+          "finite": true,
+          "mse": 0.03323681675195035,
+          "r2": 0.8518988747742129,
+          "target_variance": 0.22441974496330974,
+          "n": 128
+        },
+        "T256": {
+          "finite": true,
+          "mse": 0.03323681675195035,
+          "r2": 0.8518988747742129,
+          "target_variance": 0.22441974496330974,
+          "n": 128
+        }
+      }
+    }
+  }
+}

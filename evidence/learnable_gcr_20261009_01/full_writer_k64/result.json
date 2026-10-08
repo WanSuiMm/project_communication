@@ -1,0 +1,88 @@
+{
+  "status": "COMPLETE",
+  "systems": {
+    "training_seconds_this_dispatch": 20.788492299999916,
+    "peak_allocated_mib": 38.85009765625,
+    "resumed_from_update": 1,
+    "parameters": {
+      "phi": 32,
+      "interpreter": 5889,
+      "writer": 756,
+      "common": 5921,
+      "total": 6677
+    }
+  },
+  "evaluations": {
+    "heldout": {
+      "seconds": 2.155808099999831,
+      "horizons": {
+        "T64": {
+          "finite": true,
+          "mse": 0.20260606006140952,
+          "r2": -0.0016376156366493255,
+          "target_variance": 0.20227481166692346,
+          "n": 128,
+          "count_matches_length": true
+        },
+        "T128": {
+          "finite": true,
+          "mse": 0.20260606006140952,
+          "r2": -0.0016376156366493255,
+          "target_variance": 0.20227481166692346,
+          "n": 128,
+          "count_matches_length": true
+        },
+        "T256": {
+          "finite": true,
+          "mse": 0.20260606006140952,
+          "r2": -0.0016376156366493255,
+          "target_variance": 0.20227481166692346,
+          "n": 128,
+          "count_matches_length": true
+        }
+      }
+    },
+    "length64": {
+      "seconds": 2.0669843000000583,
+      "horizons": {
+        "T128": {
+          "finite": true,
+          "mse": 0.17782986780056795,
+          "r2": -0.0018806273521407846,
+          "target_variance": 0.17749606384799807,
+          "n": 128,
+          "count_matches_length": true
+        },
+        "T256": {
+          "finite": true,
+          "mse": 0.17782986780056795,
+          "r2": -0.0018806273521407846,
+          "target_variance": 0.17749606384799807,
+          "n": 128,
+          "count_matches_length": true
+        }
+      }
+    },
+    "length96": {
+      "seconds": 2.067918899999995,
+      "horizons": {
+        "T128": {
+          "finite": true,
+          "mse": 0.2268394537264416,
+          "r2": -0.010782067164043285,
+          "target_variance": 0.22441974496330974,
+          "n": 128,
+          "count_matches_length": true
+        },
+        "T256": {
+          "finite": true,
+          "mse": 0.2268394537264416,
+          "r2": -0.010782067164043285,
+          "target_variance": 0.22441974496330974,
+          "n": 128,
+          "count_matches_length": true
+        }
+      }
+    }
+  }
+}

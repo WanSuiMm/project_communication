@@ -1,5 +1,60 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## Learnable ordered composition: developmental GCR v0
+
+Stage: **COMPLETE**,5/5 units,750 updates,94.179seconds; frozen verdict
+**POSITIVE_CONTROLS_UNQUALIFIED**. Primary held-out T64 R2 is-.001659 for
+Full Writer K8,-.001638 for Full Writer K64,.260103 for GCR K8 and.535750 for
+GCR K64. Full Writer K64 failed the required.5 positive-control threshold;
+GCR qualified individually. This does not establish an architecture advantage
+in short-credit learnability. The offline fixed-evidence diagnostic reaches
+R2=.820608. All saved predictions are finite at the evaluated horizons.
+The protected worker exited0 and cleared idle-sleep prevention.
+Public [results](evidence/learnable_gcr_20261009_01/RESULTS.md),
+[all metrics](evidence/learnable_gcr_20261009_01/final_metrics.csv), and
+[saved-data validation](evidence/learnable_gcr_20261009_01/validation.json)
+retain exact banks/schedule,750 loss records,15 checkpoint bindings and stage
+evaluations, and all final predictions. Verification uses saved data only:
+`python -X utf8 -B tools/export_learnable_gcr.py --verify-only`.
+The new task isolates terminal temporal credit on random simple directed paths:
+Gaussian 8D tokens, a hidden ordered second-order teacher, and endpoint T64 MSE
+only. One paired initialization/schedule block compares Full Writer and
+Learnable GCR at K8/K64 for150 updates each, plus one fixed raw-evidence MLP
+diagnostic. This is a task-matched developmental screen, not a reliability
+estimate, a generic NCA result, or another historical seed4 audit.
+
+Both primary cells share the exact initial trainable4D encoder and interpreter.
+GCR maintains literal first/second prefix sums with no evidence decay; S2/n is
+provided explicitly to the interpreter. Full Writer has a free20D vector
+residual writer on the same predecessor graph. Their parameter counts are5921
+and6677. Frozen qualification checks passed path/teacher algebra, identical
+K8/K64 forward outputs, encoder gradients in the K8 suffix, and the absence of
+early input credit under K8. Actual-shape one-update timings estimate56 seconds
+for the four primary training arms, excluding evaluation, checkpoints and setup;
+peak allocated memory in these checks was35.83 MiB. These checks do not qualify
+either positive control's ability to learn; both K64 endpoint R2 values must
+reach.5 for a qualified credit-gap conclusion.
+
+Read [protocol](new/learnable_gcr/PROTOCOL.md), [task](new/learnable_gcr/tasks.py),
+[cells](new/learnable_gcr/cells.py), and [runner/checks](new/learnable_gcr/run.py).
+Local qualification is
+`analyses/learnable_gcr_qualification_20261009_02/qualification.json`;
+scientific output is `runs/learnable_gcr_20261009_01`.
+The existing protected on-demand worker supplies independent execution,
+temporary idle-sleep prevention, no runtime cap and no recurring monitor.
+Small atomic checkpoints retain each completed update and optimizer state;
+u50/u100/u150 checkpoints are saved, and u150 alone is the primary endpoint.
+
+From this repository root in the established CUDA environment:
+
+```powershell
+python -X utf8 -u -B new/learnable_gcr/run.py --check --out analyses/NEW_GCR_CHECK
+& ./tools/start_protected_job.ps1 -JobName NEW_GCR_RUN -Script new/learnable_gcr/run.py -ScriptArguments @('--out','runs/NEW_GCR_RUN','--qualification','analyses/NEW_GCR_CHECK/qualification.json')
+```
+
+Use fresh names; historical results and StreamingCell implementations remain
+unchanged. Explicit resume requires the same frozen sources/configuration/data.
+
 ## Delayed-credit cue-once screen
 
 Stage: **COMPLETE**, protocol `delayed_credit_cue_once_streaming_v0`.

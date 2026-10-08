@@ -1,5 +1,30 @@
 # Tensor and operator map
 
+## Learnable GCR: a separate directed-path task
+
+This task's input is x[B,N,8] and a static predecessor index pred[B,N] on a
+simple directed Manhattan path. A trainable linear phi produces p[B,N,4].
+State consists of count[B,N,1], workspace[B,N,20] and endpoint z[B,1]. Starting
+from zeros, both variants read the preceding cell's previous state; missing
+predecessors supply zeros and inactive grid cells remain zero.
+
+GCR uses n'=n_pred+1, S1'=S1_pred+p, S2'=S2_pred+S1_pred outer p. Workspace
+contains S1[4] and row-major S2[16]; evidence is not decayed. Full Writer uses
+h'=h_pred+.1*MLP(h_pred,p,log-count), with a25->16->20 ReLU MLP. Both endpoint
+interpreters consume(log1p(n)/log97,workspace/n), using21->256->1 ReLU;
+z'=.5z+.5*interpreter, y=tanh(z). Endpoint-only decoding is exact pruning
+because z does not influence any workspace update. GCR's S2/n matches the
+teacher scale. Local inputs remain available each step.
+
+`OrderedCell.initialize/step/feature/predict`: [cells.py](new/learnable_gcr/cells.py).
+`forward_credit`: [run.py](new/learnable_gcr/run.py), with56 no-grad steps plus
+8 differentiable steps, versus64 differentiable steps. Exact phi caching
+inside a gradient window retains the sum of parameter gradients from every
+use. Shared phi/interpreter initialization matches across arms; model counts
+are5921/GCR and6677/Full Writer. [Completed evidence](evidence/learnable_gcr_20261009_01/RESULTS.md)
+is control-unqualified; this structure does not establish a generic NCA or
+short-credit learning guarantee.
+
 ## Addressed delta writer: replace the carrier head
 
 C[B,24,H,W] is reshaped into four6D directional ports; stationary Z has8 channels.
