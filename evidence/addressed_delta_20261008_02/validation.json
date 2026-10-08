@@ -1,0 +1,52 @@
+{
+  "archive_checks": {
+    "archive_entries_hash_checked": 636,
+    "checkpoint_markers": 156,
+    "per_map_metric_rows": 9984,
+    "reporter_aggregate_equal": true,
+    "reporter_csv_exports_equal": true,
+    "stage_records": 156,
+    "training_curves": 12
+  },
+  "bank_tensor_hashes_checked": 3,
+  "checkpoint_contents_published": false,
+  "config_sha256": "7d7bea6dcd9b269c1687bc57e7fd612fc23895d3bd3779d9f9bde2d206d285e3",
+  "dense_stage_records": 156,
+  "final_readiness": {
+    "additive": {
+      "expected_blocks": 4,
+      "missing_or_invalid": 0,
+      "not_ready": 4,
+      "observed_endpoints": 4,
+      "ready": 0
+    },
+    "current": {
+      "expected_blocks": 4,
+      "missing_or_invalid": 0,
+      "not_ready": 2,
+      "observed_endpoints": 4,
+      "ready": 2
+    },
+    "delta": {
+      "expected_blocks": 4,
+      "missing_or_invalid": 0,
+      "not_ready": 4,
+      "observed_endpoints": 4,
+      "ready": 0
+    }
+  },
+  "final_records": 12,
+  "formal_training_updates_per_arm": 300,
+  "frozen_evidence_changed": false,
+  "full_boolean_arrays_persisted": false,
+  "inference_or_optimizer_updates": 0,
+  "old_full_evaluated": false,
+  "protocol": "addressed_delta_native_k8_development_v1",
+  "qualification_sha256": "987b329cc4f3daf8f58a095a452f4fbb603b08fab0eb319be0844c1de759a6dd",
+  "sanitized_qualification_sha256": "7de60831432e3f3d7224b66de0efa16165eaa65e2b31818d087f0cc1f81da1fb",
+  "schedule_plan_sha256": "f92b0b27e1ebd00c94e3359b2cc7ee56d498e387095ab49bad8cf0ef2b787aaa",
+  "scope": "Saved CPU data, source and artifact hashes, reporter arithmetic, records, markers, CSVs, and training-curve cadence only.",
+  "source_hashes_checked": 71,
+  "status": "PASS",
+  "verdict": "NO_DEVELOPMENTAL_SIGNAL"
+}

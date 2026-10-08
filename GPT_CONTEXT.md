@@ -1,6 +1,55 @@
 # Context for incremental scientific review
 
-## Latest completed screen: full-writer port relations
+## Latest completed screen: addressed delta writer
+
+Formal fields: execution=`COMPLETE`, aggregation=`COMPLETE`,
+final_result_available=true, verdict=`NO_DEVELOPMENTAL_SIGNAL`.
+Canonical evidence: `evidence/addressed_delta_20261008_02/`.
+Read [results](evidence/addressed_delta_20261008_02/RESULTS.md),
+[summary](evidence/addressed_delta_20261008_02/summary.json) and
+[u300 table](evidence/addressed_delta_20261008_02/final_metrics.csv) first.
+All12 u300 endpoints and156 scheduled stages are unique and complete.
+Current2/4, Additive0/4, Delta0/4 joint-ready; primary Delta-minus-Additive has
+0 wins,0 losses,4 ties and descriptive p=1. All-tie results do not show equivalence.
+No candidate was ever-ready on the checkpoint grid; no stage selects u300.
+
+This screen replaces the full carrier writer, unlike the preceding port-relation
+addition. C24/Z8, encoder E, Q/readout, masked permutation, pre-stream perception
+and K8/reset64x4/u300 remain. Let U=T_M(C), K=A/sqrt(1+||A||_F^2).
+The matched candidates use C'=U+.1K^T V versus C'=U+.1K^T(V-KU).
+Keys start zero, values use ordinary initialization; candidate tensors initially
+match exactly. Counts5033/5689/5689: Current is contextual, not capacity matched.
+Four paired init140001..140004/schedule141001..141004 blocks are developmental
+evidence only. A write-contraction property for fixed keys does not guarantee
+full recurrent stability or semantic preservation. The feedback term includes
+structured damping; it is not a proved duplicate-avoidance mechanism.
+
+Source symbols: `AddressedDeltaCell.step`/`make_model` in
+[cells.py](new/addressed_delta/cells.py), `AddressedDeltaWriter` in
+[writer.py](new/addressed_delta/writer.py), `run`/`save_stage`/`committed` in
+[runner](new/addressed_delta/run.py), and `aggregate`/`report` in
+[reporter](new/addressed_delta/reporting.py). The original unconstrained carrier
+head is removed. Q retains its historical bootstrap delay: keys get gradient on
+update2, values on update3 in the CPU integration check.
+
+The user cancelled the parent after Current u300 and Additive u200. A first
+restart failed before training because JSON lists were compared with Python
+tuples in optimizer betas. The separate [compatibility entrypoint](tools/recover_addressed_delta.py)
+canonicalizes config representation, preserves qualified numerical source and
+records its own source hash. The completed child inherited22 stages and restored
+Additive u200 model/Adam/RNG. Backend nondeterminism prevents an uninterrupted
+bitwise-replay claim. Recovered process time is2570.515seconds, separate from
+parent compute. See [recovery](evidence/addressed_delta_20261008_02/interruption_and_recovery.json).
+
+Every stage has compact per-map and aggregate metrics. Full Boolean trajectories
+were transient; old Full was intentionally not evaluated. Publication verification
+uses saved data only: `python -X utf8 -B tools/export_addressed_delta.py --verify-only`.
+Qualification bound71 individual source files and copied their snapshots; it
+did not generate the qualification-time integrated source ZIP described in the
+protocol. The public manifest preserves the actual per-file binding, without
+retroactively claiming that an integrated ZIP existed at qualification.
+
+## Previous completed screen: full-writer port relations
 
 Formal fields: execution=`COMPLETE`,aggregation=`COMPLETE`,
 final_result_available=true,verdict=`NO_CONDITIONED_RELIABILITY_QUALIFICATION`.

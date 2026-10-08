@@ -1,6 +1,33 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest completed experiment: full-writer port relations
+## Latest completed experiment: addressed delta writer
+
+Can subtracting an addressed carrier read improve continuation formation under
+K8 training? This four-block development screen is **COMPLETE:12/12 u300
+trajectories and156/156 checkpoint stages**. Fixed-endpoint joint readiness is
+**Current2/4, Addressed-additive0/4, Addressed-delta0/4**. Neither candidate
+became ready on the saved checkpoint grid. The frozen verdict is
+`NO_DEVELOPMENTAL_SIGNAL`; four blocks do not establish reliability or equivalence.
+
+Start here for this update:
+
+1. [Results](evidence/addressed_delta_20261008_02/RESULTS.md),
+   [aggregate](evidence/addressed_delta_20261008_02/summary.json), and
+   [endpoint table](evidence/addressed_delta_20261008_02/final_metrics.csv).
+2. [Saved-data validation](evidence/addressed_delta_20261008_02/validation.json),
+   [recovery record](evidence/addressed_delta_20261008_02/interruption_and_recovery.json),
+   and [reproduction](evidence/addressed_delta_20261008_02/REPRODUCTION.md).
+3. [Protocol](new/addressed_delta/PROTOCOL.md),
+   [cell](new/addressed_delta/cells.py), [writer](new/addressed_delta/writer.py),
+   and [source map](ARCHITECTURE.md).
+
+Per-map metrics, training curves and completion markers are compressed by block;
+do not open raw archives first. No full Boolean trajectories or old Full metric
+were recorded in this screen. Checkpoints and private process receipts stay local.
+The cancelled parent and a pre-training recovery failure remain in provenance.
+See [incremental review](GPT_HANDOFF.md).
+
+## Previous completed experiment: full-writer port relations
 
 The three-arm K8 formation screen is **COMPLETE:24/24 u300 trajectories,
 312/312 stages,624 size-metric rows**. Joint readiness at the fixed u300

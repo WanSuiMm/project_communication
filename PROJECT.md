@@ -1,5 +1,71 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## Addressed-write development screen
+
+Stage: **COMPLETE** on 2026-10-08 at 14:08 local: 12/12 u300 trajectories
+and 156/156 dense stages, with no missing, duplicate or invalid records.
+The fixed u300 joint-readiness counts are Current2/4, Additive0/4, Delta0/4.
+Primary Delta-minus-Additive has0 wins,0 losses and4 ties; frozen verdict is
+`NO_DEVELOPMENTAL_SIGNAL`. Neither candidate was ever-ready on the saved grid.
+Canonical public results: [completed report](evidence/addressed_delta_20261008_02/RESULTS.md)
+and [aggregate](evidence/addressed_delta_20261008_02/summary.json).
+Local original evidence remains in `runs/addressed_delta_20261008_02`.
+Qualification `analyses/addressed_delta_qualification_20261007_01.json` is PASS:
+three actual-shape eager/CUDA Graph optimizer updates per arm have zero maximum
+gradient difference. The parent `runs/addressed_delta_20261007_01` was cancelled
+by the user after Current block0 u300 and Additive block0 u200. The child inherited
+22 complete stages, skipped the completed Current trajectory, and restored
+Additive u200 model/Adam/RNG before continuing to completion.
+Output: `runs/addressed_delta_20261008_02`. The private guard directory retains
+the launch receipt and process verification. Recovered process time was2570.515
+seconds (about42.8minutes), separate from the cancelled parent's compute.
+The protected worker exited0 and cleared its temporary idle-sleep prevention.
+Protocol `addressed_delta_native_k8_development_v1` compares Current5033,
+Addressed-additive5689 and Addressed-delta5689 parameters across4 new paired
+blocks (init140001..140004,schedule141001..141004). The candidates share all
+initial tensors; the only difference is the feedback subtraction `-K U`.
+C24/Z8, original E/Q/readout, masked transport, pre-stream perception and
+300 reset64x4/K8 super-updates remain. Fixed u300 is the only endpoint.
+This is a developmental screen; even4 paired wins have two-sided p=.125.
+
+The old writer is replaced, with no unconstrained residual bypass. Keys start
+at zero, values use ordinary random initialization. The historical Q-out
+bootstrap delay remains. Full correctness arrays are transient: persist the
+per-map R/S tables, compact evaluations, training curves and model/Adam/RNG
+checkpoints; old Full is intentionally not evaluated. Expected local evidence
+is about30 MB according to the completed local qualification.
+
+[Protocol](new/addressed_delta/PROTOCOL.md), [cells](new/addressed_delta/cells.py),
+[reference writer](new/addressed_delta/writer.py),
+[runner](new/addressed_delta/run.py), [light evaluator](new/addressed_delta/evaluation.py).
+
+Canonical fresh entry commands from the repository root:
+
+```powershell
+python -X utf8 -u -B new/addressed_delta/run.py --check --out analyses/addressed_delta_qualification_20261007_01.json
+pwsh -NoProfile -File tools/launch_addressed_delta.ps1 -RunName addressed_delta_20261007_01 -Qualification analyses/addressed_delta_qualification_20261007_01.json
+```
+
+The protected task is on-demand with no time cap or recurring monitor, and
+temporarily prevents idle sleep. The first recovery dispatch failed before any
+training because JSON-loaded optimizer betas are lists, while the frozen runner
+compares them directly with tuples. `tools/recover_addressed_delta.py` provides
+JSON-canonical config comparison, preserves the frozen numerical runner and
+qualification, and snapshots/binds its own source in the child manifest.
+The saved-data recovery check is `analyses/addressed_delta_recovery_check_20261008_01.json`.
+Recovery must use this compatibility entrypoint rather than the original launcher:
+
+```powershell
+& ./tools/start_protected_job.ps1 -JobName addressed_delta_20261008_02 -Script tools/recover_addressed_delta.py -ScriptArguments @('--out','runs/addressed_delta_20261008_02','--qualification','analyses/addressed_delta_qualification_20261007_01.json','--resume-parent','runs/addressed_delta_20261007_01')
+```
+
+For later recovery, use a new output/job name and the latest interrupted child
+as the resume parent. Only committed stages are inherited; model/Adam/RNG and
+the same next minibatch are restored.
+Source/configuration/banks/plan/checkpoint/curve hashes are checked. Backend
+nondeterminism prevents a bitwise uninterrupted-run equivalence claim.
+Previous completed negative evidence below remains unchanged.
+
 ## New experiment: full-writer port relations
 
 Stage: **COMPLETE** on2026-10-07 at18:20 local:24/24 u300 trajectories,

@@ -1,6 +1,37 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: full-writer port-relation screen
+## Latest: addressed delta writer development screen
+
+**COMPLETE:12/12 u300 trajectories,156/156 scheduled checkpoint stages.**
+The fixed u300 size32 joint-readiness predicate requires pooled and mean-map
+strict T64 coverage for16<d<32 >=.80, all-changed T64-correct retention toT256
+>=.95, and retention support of at least16 maps/100 pixels.
+
+| Arm | Joint-ready u300 | Dense ever-ready | Size32 strict pooled T64 mean | T64-to-T256 retention mean |
+|---|---:|---:|---:|---:|
+| Current | 2/4 | 2/4 | .5292 | .9657 |
+| Addressed-additive | 0/4 | 0/4 | .0992 | .0573 |
+| Addressed-delta | 0/4 | 0/4 | .1826 | .1614 |
+
+Means are across four blocks. Primary Delta-minus-Additive has0 wins,0 losses,
+4 ties and descriptive exact p=1: **`NO_DEVELOPMENTAL_SIGNAL`**. Numerical
+advantages over Additive do not pass the predeclared criterion (Delta ready>=2/4
+and net paired wins>=1), and all ties do not establish equivalence. Current is
+contextual; its parameter count differs from the candidates. The old Full metric
+was not evaluated. This finite negative screen does not reject addressed writing
+in general or identify a unique formation failure mechanism.
+
+Read [result](evidence/addressed_delta_20261008_02/RESULTS.md),
+[aggregate](evidence/addressed_delta_20261008_02/summary.json),
+[all-stage metrics](evidence/addressed_delta_20261008_02/metrics.csv),
+[validation](evidence/addressed_delta_20261008_02/validation.json), and
+[recovery provenance](evidence/addressed_delta_20261008_02/interruption_and_recovery.json).
+Completed recovery inherited22 parent stages and resumed Additive u200; elapsed
+recovered process time is2570.515seconds. The cancelled parent and failed
+pre-training recovery dispatch are preserved separately. No training was run
+for publication.
+
+## Previous: full-writer port-relation screen
 
 **COMPLETE:24/24 trajectories,312/312 predeclared stages,624 size-metric rows.**
 The fixed u300 size32 joint-readiness endpoint remains the only formal endpoint.

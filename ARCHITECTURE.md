@@ -1,5 +1,36 @@
 # Tensor and operator map
 
+## Addressed delta writer: replace the carrier head
+
+C[B,24,H,W] is reshaped into four6D directional ports; stationary Z has8 channels.
+The masked permutation gives U=T_M(C). Writer features are
+`[U,Z,L_pre(C),L(Z),X]` (67 channels), preserving the original feature clock.
+A shared67-to-40 tanh perception feeds a key head40-to-16 (4 reads x4 ports)
+and a value head40-to-24 (4 reads x6 payload). Each cell normalizes
+`K=A/sqrt(1+||A||_F^2)` independently. Candidate writes are:
+
+```math
+C'_{add}=U+0.1K^\top V,\qquad
+C'_{delta}=U+0.1K^\top(V-KU).
+```
+
+Both retain `Z'=Z+0.5Q(C',Z,L(C'),L(Z),X)` and readout(Z'). The original
+f_in/f_out modules are removed and their perception weights copied into the
+new writer. Common encoder/Q/readout match Current; Additive/Delta match each
+other in all initial tensors. K starts zero; V is ordinarily initialized.
+Counts are Current5033 and candidates5689 each. Initial carry preservation
+does not imply full learned-recurrence stability or semantic preservation.
+
+`AddressedDeltaCell.step` and `make_model`: [cells.py](new/addressed_delta/cells.py).
+`AddressedDeltaWriter`: [writer.py](new/addressed_delta/writer.py).
+`run`/`save_stage`/`committed`: [runner](new/addressed_delta/run.py).
+`aggregate`: [reporter](new/addressed_delta/reporting.py).
+Evaluation reuses frozen CUDA rollout/metrics helpers and persists compact
+metrics only; the [protocol](new/addressed_delta/PROTOCOL.md) defines the
+four-block developmental gate. [Completed results](evidence/addressed_delta_20261008_02/RESULTS.md)
+are negative for both candidates. The compatibility recovery helper changes
+JSON config representation only, with its source bound in child provenance.
+
 ## Current195/200 audit: unchanged cell, separate intervention axes
 
 E=encoder, F=f_in/f_out, Q=q_in/q_out, R=readout. The frozen audit replaces

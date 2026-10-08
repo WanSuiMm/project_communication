@@ -1,0 +1,90 @@
+{
+  "protocol": "addressed_delta_native_k8_development_v1",
+  "developmental_only": true,
+  "arms": [
+    "current",
+    "additive",
+    "delta"
+  ],
+  "blocks": 4,
+  "super_updates": 300,
+  "parameter_counts": {
+    "current": 5033,
+    "additive": 5689,
+    "delta": 5689
+  },
+  "carrier_channels": 24,
+  "latent_channels": 8,
+  "reads": 4,
+  "ports": 4,
+  "payload_per_port": 6,
+  "write_step": 0.1,
+  "latent_step": 0.5,
+  "initialization_seeds": [
+    140001,
+    140002,
+    140003,
+    140004
+  ],
+  "schedule_seeds": [
+    141001,
+    141002,
+    141003,
+    141004
+  ],
+  "key_initialization": "zero",
+  "value_initialization": "normal PyTorch Conv2d initialization",
+  "candidates_initial_tensors_identical": true,
+  "perception_copied_from_current_f_in": true,
+  "unused_original_writer_removed": true,
+  "content_spatial_feature": "prestream_L(C_t)",
+  "primary_contrast": [
+    "delta",
+    "additive"
+  ],
+  "contextual_reference": "current",
+  "mode": "reset64x4",
+  "batch": 8,
+  "forward_steps_per_update": 256,
+  "loss_windows": 32,
+  "credit_horizon": 8,
+  "optimizer_steps_per_update": 1,
+  "parameters_fixed_within_super_update": true,
+  "train_seed": 10002,
+  "train_maps": 512,
+  "train_size": 32,
+  "eval_seeds": {
+    "32": 122032,
+    "64": 122064
+  },
+  "eval_maps_per_size": 32,
+  "checkpoints": [
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300
+  ],
+  "formal_checkpoint": 300,
+  "optimizer": {
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "clip": 1.0,
+  "full_boolean_trace_persistence": false,
+  "old_full_evaluated": false,
+  "runtime_limit_enforced": false
+}

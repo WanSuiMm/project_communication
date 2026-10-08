@@ -1,0 +1,877 @@
+{
+  "claim_boundary": "Current is contextual. Delta versus additive is the sole primary contrast. Full phenotype evaluation is not run. No checkpoint selection.",
+  "completeness": {
+    "complete_requires_both_sets": true,
+    "dense_stage_records_complete": true,
+    "expected_dense_stage_records": 156,
+    "expected_final_records": 12,
+    "final_records_complete": true,
+    "global_training_or_engineering_error": false,
+    "observed_unique_dense_stage_records": 156,
+    "observed_unique_final_records": 12
+  },
+  "dense_stage_diagnostics": {
+    "by_arm": {
+      "additive": {
+        "complete_trajectories": 4,
+        "complete_trajectories_with_a_later_readiness_failure": 0,
+        "ever_ready_blocks": 0,
+        "expected_stage_records": 52,
+        "incomplete_trajectories": 0,
+        "indeterminate_without_any_pass_blocks": 0,
+        "known_nonready_blocks": 4,
+        "observed_first_pass_checkpoint_counts": {
+          "0": 0,
+          "100": 0,
+          "125": 0,
+          "150": 0,
+          "175": 0,
+          "200": 0,
+          "225": 0,
+          "25": 0,
+          "250": 0,
+          "275": 0,
+          "300": 0,
+          "50": 0,
+          "75": 0
+        },
+        "observed_stage_records": 52
+      },
+      "current": {
+        "complete_trajectories": 4,
+        "complete_trajectories_with_a_later_readiness_failure": 0,
+        "ever_ready_blocks": 2,
+        "expected_stage_records": 52,
+        "incomplete_trajectories": 0,
+        "indeterminate_without_any_pass_blocks": 0,
+        "known_nonready_blocks": 2,
+        "observed_first_pass_checkpoint_counts": {
+          "0": 0,
+          "100": 0,
+          "125": 0,
+          "150": 0,
+          "175": 0,
+          "200": 0,
+          "225": 0,
+          "25": 0,
+          "250": 0,
+          "275": 1,
+          "300": 1,
+          "50": 0,
+          "75": 0
+        },
+        "observed_stage_records": 52
+      },
+      "delta": {
+        "complete_trajectories": 4,
+        "complete_trajectories_with_a_later_readiness_failure": 0,
+        "ever_ready_blocks": 0,
+        "expected_stage_records": 52,
+        "incomplete_trajectories": 0,
+        "indeterminate_without_any_pass_blocks": 0,
+        "known_nonready_blocks": 4,
+        "observed_first_pass_checkpoint_counts": {
+          "0": 0,
+          "100": 0,
+          "125": 0,
+          "150": 0,
+          "175": 0,
+          "200": 0,
+          "225": 0,
+          "25": 0,
+          "250": 0,
+          "275": 0,
+          "300": 0,
+          "50": 0,
+          "75": 0
+        },
+        "observed_stage_records": 52
+      }
+    },
+    "checkpoint_selection": "none; dense checkpoints are diagnostics only",
+    "expected_stage_records": 156,
+    "observed_unique_stage_records": 156,
+    "record_counts": {
+      "ambiguous_keys": 0,
+      "duplicate_records": 0,
+      "input_records": 156,
+      "invalid_records": 0,
+      "observed_unique_records": 156
+    }
+  },
+  "execution_status": {
+    "completed_arms": 12,
+    "dense_records": 156,
+    "elapsed_seconds": 2570.5149999999994,
+    "expected_arms": 12,
+    "expected_dense_records": 156,
+    "finished_utc": "2026-10-08T06:08:00.212892+00:00",
+    "protocol": "addressed_delta_native_k8_development_v1",
+    "runtime_limit_enforced": false,
+    "status": "COMPLETE"
+  },
+  "final_metric_means_by_arm": {
+    "additive": {
+      "32": {
+        "R_strict_mean_T64": {
+          "expected": 4,
+          "mean": 0.1481539146121236,
+          "observed": 4
+        },
+        "R_strict_pooled_T64": {
+          "expected": 4,
+          "mean": 0.09918772563176895,
+          "observed": 4
+        },
+        "S_continuous_survival64_to256": {
+          "expected": 4,
+          "mean": 0.0419465544924225,
+          "observed": 4
+        },
+        "S_retention64_to256": {
+          "expected": 4,
+          "mean": 0.05730868640137288,
+          "observed": 4
+        },
+        "coverage_T128_mean_map": {
+          "expected": 4,
+          "mean": 0.1520276300403081,
+          "observed": 4
+        },
+        "coverage_T128_pooled": {
+          "expected": 4,
+          "mean": 0.12277112848070347,
+          "observed": 4
+        },
+        "coverage_T256_mean_map": {
+          "expected": 4,
+          "mean": 0.0329423533156879,
+          "observed": 4
+        },
+        "coverage_T256_pooled": {
+          "expected": 4,
+          "mean": 0.02845627747923791,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.6673699468374252,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.5215189009904861,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.8009577393531799,
+          "observed": 4
+        },
+        "flipped_bce_T128": {
+          "expected": 4,
+          "mean": 1.5824982076883316,
+          "observed": 4
+        },
+        "flipped_bce_T256": {
+          "expected": 4,
+          "mean": 4.562261551618576,
+          "observed": 4
+        },
+        "flipped_bce_T64": {
+          "expected": 4,
+          "mean": 0.5187970027327538,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.6535716652870178,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.5211558043956757,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.7862243354320526,
+          "observed": 4
+        },
+        "original_bce_T128": {
+          "expected": 4,
+          "mean": 1.6510411947965622,
+          "observed": 4
+        },
+        "original_bce_T256": {
+          "expected": 4,
+          "mean": 4.682733178138733,
+          "observed": 4
+        },
+        "original_bce_T64": {
+          "expected": 4,
+          "mean": 0.5506649762392044,
+          "observed": 4
+        },
+        "retention_reference_maps": {
+          "expected": 4,
+          "mean": 30.0,
+          "observed": 4
+        },
+        "retention_reference_pixels": {
+          "expected": 4,
+          "mean": 2227.5,
+          "observed": 4
+        },
+        "support_record_coverage": {
+          "expected_blocks": 4,
+          "observed_blocks": 4
+        }
+      },
+      "64": {
+        "R_strict_mean_T64": {
+          "expected": 4,
+          "mean": 0.1239259393525812,
+          "observed": 4
+        },
+        "R_strict_pooled_T64": {
+          "expected": 4,
+          "mean": 0.12560876623376624,
+          "observed": 4
+        },
+        "S_continuous_survival64_to256": {
+          "expected": 4,
+          "mean": 0.04300365485392389,
+          "observed": 4
+        },
+        "S_retention64_to256": {
+          "expected": 4,
+          "mean": 0.05741932207737989,
+          "observed": 4
+        },
+        "coverage_T128_mean_map": {
+          "expected": 4,
+          "mean": 0.07117468875693501,
+          "observed": 4
+        },
+        "coverage_T128_pooled": {
+          "expected": 4,
+          "mean": 0.060214581503325385,
+          "observed": 4
+        },
+        "coverage_T256_mean_map": {
+          "expected": 4,
+          "mean": 0.015274477757358646,
+          "observed": 4
+        },
+        "coverage_T256_pooled": {
+          "expected": 4,
+          "mean": 0.012887438825448613,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.6074374914169312,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.5201243162155151,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.7322636097669601,
+          "observed": 4
+        },
+        "flipped_bce_T128": {
+          "expected": 4,
+          "mean": 1.697320431470871,
+          "observed": 4
+        },
+        "flipped_bce_T256": {
+          "expected": 4,
+          "mean": 5.0188427567481995,
+          "observed": 4
+        },
+        "flipped_bce_T64": {
+          "expected": 4,
+          "mean": 0.5967967808246613,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.5975673049688339,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.5192254781723022,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.7116421014070511,
+          "observed": 4
+        },
+        "original_bce_T128": {
+          "expected": 4,
+          "mean": 1.8124768435955048,
+          "observed": 4
+        },
+        "original_bce_T256": {
+          "expected": 4,
+          "mean": 5.213065266609192,
+          "observed": 4
+        },
+        "original_bce_T64": {
+          "expected": 4,
+          "mean": 0.6537006199359894,
+          "observed": 4
+        },
+        "retention_reference_maps": {
+          "expected": 4,
+          "mean": 30.75,
+          "observed": 4
+        },
+        "retention_reference_pixels": {
+          "expected": 4,
+          "mean": 5508.0,
+          "observed": 4
+        },
+        "support_record_coverage": {
+          "expected_blocks": 4,
+          "observed_blocks": 4
+        }
+      }
+    },
+    "current": {
+      "32": {
+        "R_strict_mean_T64": {
+          "expected": 4,
+          "mean": 0.6039492612395797,
+          "observed": 4
+        },
+        "R_strict_pooled_T64": {
+          "expected": 4,
+          "mean": 0.5291516245487364,
+          "observed": 4
+        },
+        "S_continuous_survival64_to256": {
+          "expected": 4,
+          "mean": 0.9177986824181954,
+          "observed": 4
+        },
+        "S_retention64_to256": {
+          "expected": 4,
+          "mean": 0.9657387923502163,
+          "observed": 4
+        },
+        "coverage_T128_mean_map": {
+          "expected": 4,
+          "mean": 0.7597632174524231,
+          "observed": 4
+        },
+        "coverage_T128_pooled": {
+          "expected": 4,
+          "mean": 0.6987664875427455,
+          "observed": 4
+        },
+        "coverage_T256_mean_map": {
+          "expected": 4,
+          "mean": 0.7911796494626533,
+          "observed": 4
+        },
+        "coverage_T256_pooled": {
+          "expected": 4,
+          "mean": 0.7369931607230094,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.9470153301954269,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.9529975056648254,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.9285557568073273,
+          "observed": 4
+        },
+        "flipped_bce_T128": {
+          "expected": 4,
+          "mean": 0.3771962448954582,
+          "observed": 4
+        },
+        "flipped_bce_T256": {
+          "expected": 4,
+          "mean": 0.8440982177853584,
+          "observed": 4
+        },
+        "flipped_bce_T64": {
+          "expected": 4,
+          "mean": 0.20527375862002373,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.9397827237844467,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.9425549358129501,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.9248907715082169,
+          "observed": 4
+        },
+        "original_bce_T128": {
+          "expected": 4,
+          "mean": 0.41342226043343544,
+          "observed": 4
+        },
+        "original_bce_T256": {
+          "expected": 4,
+          "mean": 0.9120839685201645,
+          "observed": 4
+        },
+        "original_bce_T64": {
+          "expected": 4,
+          "mean": 0.23457817360758781,
+          "observed": 4
+        },
+        "retention_reference_maps": {
+          "expected": 4,
+          "mean": 31.75,
+          "observed": 4
+        },
+        "retention_reference_pixels": {
+          "expected": 4,
+          "mean": 5049.0,
+          "observed": 4
+        },
+        "support_record_coverage": {
+          "expected_blocks": 4,
+          "observed_blocks": 4
+        }
+      },
+      "64": {
+        "R_strict_mean_T64": {
+          "expected": 4,
+          "mean": 0.6471140529157521,
+          "observed": 4
+        },
+        "R_strict_pooled_T64": {
+          "expected": 4,
+          "mean": 0.650278293135436,
+          "observed": 4
+        },
+        "S_continuous_survival64_to256": {
+          "expected": 4,
+          "mean": 0.935578745202152,
+          "observed": 4
+        },
+        "S_retention64_to256": {
+          "expected": 4,
+          "mean": 0.9726636591634925,
+          "observed": 4
+        },
+        "coverage_T128_mean_map": {
+          "expected": 4,
+          "mean": 0.586233444768547,
+          "observed": 4
+        },
+        "coverage_T128_pooled": {
+          "expected": 4,
+          "mean": 0.5265403438323504,
+          "observed": 4
+        },
+        "coverage_T256_mean_map": {
+          "expected": 4,
+          "mean": 0.6723038914923444,
+          "observed": 4
+        },
+        "coverage_T256_pooled": {
+          "expected": 4,
+          "mean": 0.6215522650269796,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.9162689298391342,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.9339587986469269,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.8923460096120834,
+          "observed": 4
+        },
+        "flipped_bce_T128": {
+          "expected": 4,
+          "mean": 0.2861744314432144,
+          "observed": 4
+        },
+        "flipped_bce_T256": {
+          "expected": 4,
+          "mean": 0.41918597742915154,
+          "observed": 4
+        },
+        "flipped_bce_T64": {
+          "expected": 4,
+          "mean": 0.2753925733268261,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.9091050624847412,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.9296624809503555,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.8866920471191406,
+          "observed": 4
+        },
+        "original_bce_T128": {
+          "expected": 4,
+          "mean": 0.2967683672904968,
+          "observed": 4
+        },
+        "original_bce_T256": {
+          "expected": 4,
+          "mean": 0.3991227727383375,
+          "observed": 4
+        },
+        "original_bce_T64": {
+          "expected": 4,
+          "mean": 0.29376040026545525,
+          "observed": 4
+        },
+        "retention_reference_maps": {
+          "expected": 4,
+          "mean": 32.0,
+          "observed": 4
+        },
+        "retention_reference_pixels": {
+          "expected": 4,
+          "mean": 16504.25,
+          "observed": 4
+        },
+        "support_record_coverage": {
+          "expected_blocks": 4,
+          "observed_blocks": 4
+        }
+      }
+    },
+    "delta": {
+      "32": {
+        "R_strict_mean_T64": {
+          "expected": 4,
+          "mean": 0.2487430028562798,
+          "observed": 4
+        },
+        "R_strict_pooled_T64": {
+          "expected": 4,
+          "mean": 0.1825812274368231,
+          "observed": 4
+        },
+        "S_continuous_survival64_to256": {
+          "expected": 4,
+          "mean": 0.1515013320286626,
+          "observed": 4
+        },
+        "S_retention64_to256": {
+          "expected": 4,
+          "mean": 0.16136599304995572,
+          "observed": 4
+        },
+        "coverage_T128_mean_map": {
+          "expected": 4,
+          "mean": 0.12982850079250088,
+          "observed": 4
+        },
+        "coverage_T128_pooled": {
+          "expected": 4,
+          "mean": 0.10356619443087445,
+          "observed": 4
+        },
+        "coverage_T256_mean_map": {
+          "expected": 4,
+          "mean": 0.07506505459011839,
+          "observed": 4
+        },
+        "coverage_T256_pooled": {
+          "expected": 4,
+          "mean": 0.05465315095261358,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.6379489451646805,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.5808551758527756,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.8457532078027725,
+          "observed": 4
+        },
+        "flipped_bce_T128": {
+          "expected": 4,
+          "mean": 1.0200223177671432,
+          "observed": 4
+        },
+        "flipped_bce_T256": {
+          "expected": 4,
+          "mean": 2.8793910145759583,
+          "observed": 4
+        },
+        "flipped_bce_T64": {
+          "expected": 4,
+          "mean": 0.33049097657203674,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.6339424699544907,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.5819501876831055,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.832782655954361,
+          "observed": 4
+        },
+        "original_bce_T128": {
+          "expected": 4,
+          "mean": 1.0019776225090027,
+          "observed": 4
+        },
+        "original_bce_T256": {
+          "expected": 4,
+          "mean": 2.8573803305625916,
+          "observed": 4
+        },
+        "original_bce_T64": {
+          "expected": 4,
+          "mean": 0.3516286388039589,
+          "observed": 4
+        },
+        "retention_reference_maps": {
+          "expected": 4,
+          "mean": 32.0,
+          "observed": 4
+        },
+        "retention_reference_pixels": {
+          "expected": 4,
+          "mean": 2953.5,
+          "observed": 4
+        },
+        "support_record_coverage": {
+          "expected_blocks": 4,
+          "observed_blocks": 4
+        }
+      },
+      "64": {
+        "R_strict_mean_T64": {
+          "expected": 4,
+          "mean": 0.18640620045046116,
+          "observed": 4
+        },
+        "R_strict_pooled_T64": {
+          "expected": 4,
+          "mean": 0.18541280148423006,
+          "observed": 4
+        },
+        "S_continuous_survival64_to256": {
+          "expected": 4,
+          "mean": 0.31520975575108096,
+          "observed": 4
+        },
+        "S_retention64_to256": {
+          "expected": 4,
+          "mean": 0.3285629400431498,
+          "observed": 4
+        },
+        "coverage_T128_mean_map": {
+          "expected": 4,
+          "mean": 0.11904646155355866,
+          "observed": 4
+        },
+        "coverage_T128_pooled": {
+          "expected": 4,
+          "mean": 0.10104153595181328,
+          "observed": 4
+        },
+        "coverage_T256_mean_map": {
+          "expected": 4,
+          "mean": 0.08905027333388477,
+          "observed": 4
+        },
+        "coverage_T256_pooled": {
+          "expected": 4,
+          "mean": 0.07083071903626553,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.6589181125164032,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.5981759876012802,
+          "observed": 4
+        },
+        "flipped_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.8000059425830841,
+          "observed": 4
+        },
+        "flipped_bce_T128": {
+          "expected": 4,
+          "mean": 1.2475319504737854,
+          "observed": 4
+        },
+        "flipped_bce_T256": {
+          "expected": 4,
+          "mean": 3.2504893839359283,
+          "observed": 4
+        },
+        "flipped_bce_T64": {
+          "expected": 4,
+          "mean": 0.5552586242556572,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T128": {
+          "expected": 4,
+          "mean": 0.656476303935051,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T256": {
+          "expected": 4,
+          "mean": 0.602062776684761,
+          "observed": 4
+        },
+        "original_balanced_accuracy_T64": {
+          "expected": 4,
+          "mean": 0.7750762552022934,
+          "observed": 4
+        },
+        "original_bce_T128": {
+          "expected": 4,
+          "mean": 1.2643868774175644,
+          "observed": 4
+        },
+        "original_bce_T256": {
+          "expected": 4,
+          "mean": 3.232630044221878,
+          "observed": 4
+        },
+        "original_bce_T64": {
+          "expected": 4,
+          "mean": 0.580361619591713,
+          "observed": 4
+        },
+        "retention_reference_maps": {
+          "expected": 4,
+          "mean": 31.75,
+          "observed": 4
+        },
+        "retention_reference_pixels": {
+          "expected": 4,
+          "mean": 6983.0,
+          "observed": 4
+        },
+        "support_record_coverage": {
+          "expected_blocks": 4,
+          "observed_blocks": 4
+        }
+      }
+    }
+  },
+  "final_readiness": {
+    "by_arm": {
+      "additive": {
+        "expected_blocks": 4,
+        "missing_or_invalid": 0,
+        "not_ready": 4,
+        "observed_endpoints": 4,
+        "ready": 0
+      },
+      "current": {
+        "expected_blocks": 4,
+        "missing_or_invalid": 0,
+        "not_ready": 2,
+        "observed_endpoints": 4,
+        "ready": 2
+      },
+      "delta": {
+        "expected_blocks": 4,
+        "missing_or_invalid": 0,
+        "not_ready": 4,
+        "observed_endpoints": 4,
+        "ready": 0
+      }
+    }
+  },
+  "primary_delta_minus_additive": {
+    "additive_only_wins": 0,
+    "delta_only_wins": 0,
+    "developmental_signal_rule": {
+      "criterion_satisfied_on_available_records": false,
+      "delta_ready_at_least": 2,
+      "net_paired_wins_at_least": 1,
+      "passed": false
+    },
+    "exact_two_sided_p_descriptive_only": 1.0,
+    "expected_pairs": 4,
+    "inference_boundary": "Four paired blocks are developmental evidence only; even 4 wins and 0 losses have exact two-sided p=0.125.",
+    "net_paired_wins": 0,
+    "observed_pairs": 4,
+    "ties": 4
+  },
+  "protocol": "addressed_delta_native_k8_development_v1",
+  "record_counts": {
+    "dense_stages": {
+      "ambiguous_keys": 0,
+      "duplicate_records": 0,
+      "input_records": 156,
+      "invalid_records": 0,
+      "observed_unique_records": 156
+    },
+    "final": {
+      "ambiguous_keys": 0,
+      "duplicate_records": 0,
+      "input_records": 12,
+      "invalid_records": 0,
+      "observed_unique_records": 12
+    }
+  },
+  "status": "COMPLETE",
+  "verdict": "NO_DEVELOPMENTAL_SIGNAL"
+}
