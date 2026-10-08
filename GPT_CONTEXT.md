@@ -1,5 +1,32 @@
 # Context for incremental scientific review
 
+## Latest completed evaluation: Full reevaluation of selected checkpoints
+
+Formal fields: execution=`COMPLETE`, aggregation=`COMPLETE`,
+final_result_available=true; six evaluations without training completed in83.516s.
+The historical Full summarizer and predicate are unchanged. For the two primary
+u300 checkpoints, block00 passes on `historical_full` and fails on the reused
+`addressed_selection` cohort (size32 ever-regression .16>.15). Block02 fails
+historically (ever-regression .3223896/.3286505 at sizes32/64; size64 retention
+.9264164<.95) and on selection (.2727033/.2588534 ever-regression at sizes32/64).
+Diagnostic block00/u275 passes both cohorts but does not replace u300. These
+results show one selected checkpoint passing the Full gate at u300 on
+`historical_full`, but none passing on both cohorts; the reused selection cohort
+is not independent validation. No
+success-rate estimate, mechanism claim or architecture go decision follows.
+
+Canonical evidence: `evidence/streaming_full_reeval_20261008_01/`. Read
+[results](evidence/streaming_full_reeval_20261008_01/RESULTS.md),
+[summary](evidence/streaming_full_reeval_20261008_01/summary.json),
+[Full gates](evidence/streaming_full_reeval_20261008_01/full_gates.csv),
+[validation](evidence/streaming_full_reeval_20261008_01/validation.json),
+[reproduction](evidence/streaming_full_reeval_20261008_01/REPRODUCTION.md), and
+[manifest](evidence/streaming_full_reeval_20261008_01/manifest.json). Cohorts
+have32 maps at each size32/64: `historical_full` seeds50032/50064 and
+`addressed_selection` seeds122032/122064. Raw traces and frontier records are
+grouped by unit. Frozen scope: [protocol](new/streaming_full_reeval/PROTOCOL.md);
+entrypoint: [runner](new/streaming_full_reeval/run.py).
+
 ## Latest completed screen: addressed delta writer
 
 Formal fields: execution=`COMPLETE`, aggregation=`COMPLETE`,

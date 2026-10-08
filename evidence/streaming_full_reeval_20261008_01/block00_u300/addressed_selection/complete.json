@@ -1,0 +1,29 @@
+{
+  "complete": true,
+  "binding": {
+    "model": "block00_u300",
+    "block": 0,
+    "update": 300,
+    "primary": true,
+    "checkpoint": "runs/addressed_delta_20261008_02/block00/current/checkpoints/u300.pt",
+    "checkpoint_sha256": "472d12cc1af550fdb42a2cfab2e3add36f83989c517615db900c459218cb411a",
+    "parameter_sha256": "3770a1240856bfda9310b6b1645eb71439fca07cf13ec5e966b6c6176b9e6203",
+    "initialization_seed": 140001,
+    "schedule_seed": 141001,
+    "stage_record_sha256": "015e7a395cba9a97b1d8fe35a281d9facd6b812a0ce73e88bf4e856ade306e2c",
+    "cohort": "addressed_selection",
+    "unit": "block00_u300/addressed_selection",
+    "full_pass": false,
+    "reasons": [
+      "size32_ever_regressed_over_ever_correct: observed 0.16, requires <=0.15"
+    ],
+    "seconds": 14.093999999999141,
+    "completed_utc": "2026-10-08T07:12:35.067493+00:00"
+  },
+  "artifacts_sha256": {
+    "matched_frontier_strata.csv": "eef86804bdd8090396a2b5a1a5aa493622fbf65eeafeef3bc3e1c15a31f80e30",
+    "size32_traces.npz": "e4ea1412f39a38421a3f0362863783b593b07cbae4ae121869b97f3fe319d5bc",
+    "size64_traces.npz": "142f14bde89a8efdb8cafac3f0111e3c00b7caa0eb32490b0151af010b5646e4",
+    "summary.json": "e8c6b502174961063e12f0424d4dcfc86dfbbdd21b4e8c27e976cc70da45c420"
+  }
+}

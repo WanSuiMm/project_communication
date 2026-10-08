@@ -1,5 +1,37 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## Selected StreamingCell Full reevaluation
+
+Stage: **COMPLETE**, all6/6 model/cohort evaluations without training, in83.516 seconds.
+The historical Full summarizer and predicate are unchanged. Primary checkpoints
+are Current block00/u300 and Current block02/u300; block00/u275 is diagnostic
+only.
+On `historical_full` (the seed4-follow-up cohort), block00/u300 passes. Block02/u300
+fails with ever-regression .3223896 at size32 and .3286505 at size64, plus
+size64 retention .9264164<.95. On the reused `addressed_selection` cohort,
+block00/u300 fails the size32 ever-regression limit (.16>.15); block02/u300 fails
+at sizes32/64 (.2727033 and .2588534). Diagnostic block00/u275 passes both
+cohorts, but cannot replace a u300 endpoint. One selected checkpoint passes the
+Full gate at u300 on `historical_full`, but none pass on both cohorts. The result
+gives no success-rate estimate, mechanism claim or architecture go decision.
+
+Both cohorts have32 maps at sizes32/64. `historical_full` uses seeds50032/50064;
+`addressed_selection` uses122032/122064, reusing the cohort that selected
+the models.
+The six units completed in83.516 seconds. Read the public
+[results](evidence/streaming_full_reeval_20261008_01/RESULTS.md),
+[summary](evidence/streaming_full_reeval_20261008_01/summary.json),
+[Full-gate table](evidence/streaming_full_reeval_20261008_01/full_gates.csv),
+[saved-data validation](evidence/streaming_full_reeval_20261008_01/validation.json),
+[reproduction](evidence/streaming_full_reeval_20261008_01/REPRODUCTION.md), and
+[manifest](evidence/streaming_full_reeval_20261008_01/manifest.json). Raw traces,
+per-map summaries and matched-frontier files are grouped by unit, for example
+`block00_u300/historical_full/`; start with the summaries and tables. See the
+[frozen protocol](new/streaming_full_reeval/PROTOCOL.md) and
+[runner](new/streaming_full_reeval/run.py) for the measurement plan and entrypoint.
+Verify the saved public evidence from the repository root with:
+`python -X utf8 -B tools/export_streaming_full_reeval.py --verify-only`.
+
 ## Addressed-write development screen
 
 Stage: **COMPLETE** on 2026-10-08 at 14:08 local: 12/12 u300 trajectories

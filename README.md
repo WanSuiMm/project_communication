@@ -1,5 +1,31 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
+## Latest completed update: Full reevaluation of selected checkpoints
+
+The evaluation without training is **COMPLETE:6/6 model/cohort units in83.516s**.
+It applies the unchanged historical Full summarizer and predicate. At u300,
+block00 passes on the `historical_full` seed4-follow-up cohort; block02 fails
+there with ever-regression .3223896 at size32 and .3286505 at size64, plus
+size64 retention .9264164<.95. On the reused `addressed_selection` cohort,
+block00 fails the size32 ever-regression limit (.16>.15), and block02 fails at
+sizes32/64 (.2727033 and .2588534). Thus one selected u300 checkpoint strictly
+passes on `historical_full`, but neither passes on both cohorts. This gives no
+success-rate estimate, mechanism claim or architecture go decision. Diagnostic
+block00/u275 passes on both cohorts but cannot replace the u300 primary
+checkpoints.
+
+Both cohorts contain32 maps at each size32/64. `historical_full` uses seeds
+50032/50064; `addressed_selection` uses122032/122064 and is reused validation.
+Start with [results](evidence/streaming_full_reeval_20261008_01/RESULTS.md),
+[summary](evidence/streaming_full_reeval_20261008_01/summary.json),
+[Full gates](evidence/streaming_full_reeval_20261008_01/full_gates.csv),
+[validation](evidence/streaming_full_reeval_20261008_01/validation.json),
+[reproduction](evidence/streaming_full_reeval_20261008_01/REPRODUCTION.md), and
+[manifest](evidence/streaming_full_reeval_20261008_01/manifest.json). Raw traces,
+per-map summaries and frontier records are organized by checkpoint and cohort,
+for example `block00_u300/historical_full/`; consult the compact tables first.
+See the [frozen protocol](new/streaming_full_reeval/PROTOCOL.md) for scope.
+
 ## Latest completed experiment: addressed delta writer
 
 Can subtracting an addressed carrier read improve continuation formation under

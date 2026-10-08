@@ -1,0 +1,132 @@
+{
+  "protocol": "streaming_selected_full_reevaluation_v1",
+  "status": "COMPLETE",
+  "expected_units": 6,
+  "completed_units": 6,
+  "training": false,
+  "optimizer_updates": 0,
+  "units": [
+    {
+      "model": "block00_u300",
+      "block": 0,
+      "update": 300,
+      "primary": true,
+      "checkpoint": "runs/addressed_delta_20261008_02/block00/current/checkpoints/u300.pt",
+      "checkpoint_sha256": "472d12cc1af550fdb42a2cfab2e3add36f83989c517615db900c459218cb411a",
+      "parameter_sha256": "3770a1240856bfda9310b6b1645eb71439fca07cf13ec5e966b6c6176b9e6203",
+      "initialization_seed": 140001,
+      "schedule_seed": 141001,
+      "stage_record_sha256": "015e7a395cba9a97b1d8fe35a281d9facd6b812a0ce73e88bf4e856ade306e2c",
+      "cohort": "historical_full",
+      "unit": "block00_u300/historical_full",
+      "full_pass": true,
+      "reasons": [],
+      "seconds": 13.406000000000859,
+      "completed_utc": "2026-10-08T07:12:20.968540+00:00"
+    },
+    {
+      "model": "block00_u300",
+      "block": 0,
+      "update": 300,
+      "primary": true,
+      "checkpoint": "runs/addressed_delta_20261008_02/block00/current/checkpoints/u300.pt",
+      "checkpoint_sha256": "472d12cc1af550fdb42a2cfab2e3add36f83989c517615db900c459218cb411a",
+      "parameter_sha256": "3770a1240856bfda9310b6b1645eb71439fca07cf13ec5e966b6c6176b9e6203",
+      "initialization_seed": 140001,
+      "schedule_seed": 141001,
+      "stage_record_sha256": "015e7a395cba9a97b1d8fe35a281d9facd6b812a0ce73e88bf4e856ade306e2c",
+      "cohort": "addressed_selection",
+      "unit": "block00_u300/addressed_selection",
+      "full_pass": false,
+      "reasons": [
+        "size32_ever_regressed_over_ever_correct: observed 0.16, requires <=0.15"
+      ],
+      "seconds": 14.093999999999141,
+      "completed_utc": "2026-10-08T07:12:35.067493+00:00"
+    },
+    {
+      "model": "block02_u300",
+      "block": 2,
+      "update": 300,
+      "primary": true,
+      "checkpoint": "runs/addressed_delta_20261008_02/block02/current/checkpoints/u300.pt",
+      "checkpoint_sha256": "337c6bb440b7cc7d300abfc803052aa74222e0d3167827fe49aee2afcd028764",
+      "parameter_sha256": "0ca97c9a5cd1ce374ce76861f30567dd183e2a219004e6683adedf23bc195605",
+      "initialization_seed": 140003,
+      "schedule_seed": 141003,
+      "stage_record_sha256": "0b80074b39403cdbab6b2a01ced79a046ac3a483ccda0b9596ee5fc7fd5ed4b7",
+      "cohort": "historical_full",
+      "unit": "block02_u300/historical_full",
+      "full_pass": false,
+      "reasons": [
+        "size32_ever_regressed_over_ever_correct: observed 0.32238959701300374, requires <=0.15",
+        "size64_all_changed_retention64_to256: observed 0.9264164041223901, requires >=0.95",
+        "size64_ever_regressed_over_ever_correct: observed 0.32865052718383697, requires <=0.15"
+      ],
+      "seconds": 13.906000000000859,
+      "completed_utc": "2026-10-08T07:12:49.043769+00:00"
+    },
+    {
+      "model": "block02_u300",
+      "block": 2,
+      "update": 300,
+      "primary": true,
+      "checkpoint": "runs/addressed_delta_20261008_02/block02/current/checkpoints/u300.pt",
+      "checkpoint_sha256": "337c6bb440b7cc7d300abfc803052aa74222e0d3167827fe49aee2afcd028764",
+      "parameter_sha256": "0ca97c9a5cd1ce374ce76861f30567dd183e2a219004e6683adedf23bc195605",
+      "initialization_seed": 140003,
+      "schedule_seed": 141003,
+      "stage_record_sha256": "0b80074b39403cdbab6b2a01ced79a046ac3a483ccda0b9596ee5fc7fd5ed4b7",
+      "cohort": "addressed_selection",
+      "unit": "block02_u300/addressed_selection",
+      "full_pass": false,
+      "reasons": [
+        "size32_ever_regressed_over_ever_correct: observed 0.27270327349524814, requires <=0.15",
+        "size64_ever_regressed_over_ever_correct: observed 0.2588533647314555, requires <=0.15"
+      ],
+      "seconds": 13.92200000000048,
+      "completed_utc": "2026-10-08T07:13:02.973660+00:00"
+    },
+    {
+      "model": "block00_u275",
+      "block": 0,
+      "update": 275,
+      "primary": false,
+      "checkpoint": "runs/addressed_delta_20261008_02/block00/current/checkpoints/u275.pt",
+      "checkpoint_sha256": "03084cac84af1e8b577e721e40f0945721d64f633a5b8a1c3d69dbae985a0e9b",
+      "parameter_sha256": "1cd583165c31f95b7ac96a3320f4007115498e5d9d5919a5466978f358387365",
+      "initialization_seed": 140001,
+      "schedule_seed": 141001,
+      "stage_record_sha256": "1094c1a4e344fff488641573feb97b97a9b99ae77a867069d80102fdff7f5215",
+      "cohort": "historical_full",
+      "unit": "block00_u275/historical_full",
+      "full_pass": true,
+      "reasons": [],
+      "seconds": 14.0,
+      "completed_utc": "2026-10-08T07:13:17.035489+00:00"
+    },
+    {
+      "model": "block00_u275",
+      "block": 0,
+      "update": 275,
+      "primary": false,
+      "checkpoint": "runs/addressed_delta_20261008_02/block00/current/checkpoints/u275.pt",
+      "checkpoint_sha256": "03084cac84af1e8b577e721e40f0945721d64f633a5b8a1c3d69dbae985a0e9b",
+      "parameter_sha256": "1cd583165c31f95b7ac96a3320f4007115498e5d9d5919a5466978f358387365",
+      "initialization_seed": 140001,
+      "schedule_seed": 141001,
+      "stage_record_sha256": "1094c1a4e344fff488641573feb97b97a9b99ae77a867069d80102fdff7f5215",
+      "cohort": "addressed_selection",
+      "unit": "block00_u275/addressed_selection",
+      "full_pass": true,
+      "reasons": [],
+      "seconds": 13.781000000000859,
+      "completed_utc": "2026-10-08T07:13:30.830638+00:00"
+    }
+  ],
+  "primary_passes_by_cohort": {
+    "historical_full": 1,
+    "addressed_selection": 0
+  },
+  "claim_boundary": "Selected-checkpoint descriptive Full evaluation; no formation-rate or mechanism claim."
+}
