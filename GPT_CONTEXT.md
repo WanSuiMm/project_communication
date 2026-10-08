@@ -1,5 +1,39 @@
 # Context for incremental scientific review
 
+## Current: cue-once delayed-credit screen
+
+Formal fields: execution=COMPLETE, aggregation=COMPLETE,
+final_result_available=true, verdict=BASELINE_UNQUALIFIED.
+Canonical evidence: `evidence/delayed_credit_20261008_01/`.
+There are12/12 u300 trajectories,72 checkpoint bindings and3600 updates;
+elapsed1387.609s. All T0..256 paired rollouts at sizes32/64 are finite.
+
+The task remains Region Identity, but source cues enter only `initial(x)`;
+every recurrent train/evaluation step receives `(mask,0,0)`. The original
+StreamingCell C24/Z8 and5033 parameters remain. Arms: dense losses8..64 with
+K8 cuts; terminalL64 with K8 cuts; terminalL64 with full K64 credit.
+One optimizer step per64-step trajectory, fixed300 updates, matched
+init150001..150004 and schedule151001..151004. Held-out maps are fresh
+seeds152032/152064,32 each, with qualified geometric support.
+
+T64 reach is primary; T128/T256 hold is secondary. All arms have0/4 reach
+passes. Mean strict pooled T64 coverage: dense K8 .060536, terminal K8
+.002589, terminal K64 .141786. Full credit is descriptively higher than
+terminal K8 in4/4 pairs, but C's positive control is unqualified. Do not
+claim a qualified credit bottleneck, equivalence, or a general NCA limitation.
+B's encoder has no gradient after detach; F/Q remain trainable in the final
+window. This is part of the intervention, not an isolated encoder ablation.
+
+Read [report](evidence/delayed_credit_20261008_01/RESULTS.md),
+[endpoint table](evidence/delayed_credit_20261008_01/final_metrics.csv), then
+[protocol](new/delayed_credit/PROTOCOL.md). Exact code symbols:
+`backward_trajectory` in [training.py](new/delayed_credit/training.py),
+`evaluate`, `_reach_gate`, `_hold_gate` in
+[evaluation.py](new/delayed_credit/evaluation.py), and `aggregate` in
+[reporting.py](new/delayed_credit/reporting.py).
+The publication verifier uses saved arrays only, without training/inference.
+No new architecture or deferred producer-consumer audit was run.
+
 ## Latest completed evaluation: Full reevaluation of selected checkpoints
 
 Formal fields: execution=`COMPLETE`, aggregation=`COMPLETE`,

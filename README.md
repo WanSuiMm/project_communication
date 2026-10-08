@@ -1,5 +1,34 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
+## Latest completed experiment: cue-once delayed credit
+
+Can terminal-only K8 training learn the same task as terminal-only K64 when
+the source cue is available only at initialization? The original StreamingCell
+is unchanged. This four-block, three-arm screen is **COMPLETE:12/12 u300
+trajectories in23.13minutes**, with72 complete checkpoint bindings.
+Dense K8, terminal K8 and terminal K64 each have**0/4 primary reach passes**:
+the frozen verdict is **BASELINE_UNQUALIFIED**. Strict-band pooled T64 coverage
+means are6.054%,0.259%,14.179%. K64 is descriptively higher than terminal K8 in
+4/4 pairs, but the K64 positive control did not qualify. This screen does not
+establish the proposed temporal-credit bottleneck or its mechanism.
+All12 trajectories stay finite throughT256 on both evaluation sizes.
+
+Start here:
+
+1. [Results](evidence/delayed_credit_20261008_01/RESULTS.md),
+   [all endpoint metrics](evidence/delayed_credit_20261008_01/final_metrics.csv),
+   and [aggregate](evidence/delayed_credit_20261008_01/summary.json).
+2. [Frozen protocol](new/delayed_credit/PROTOCOL.md),
+   [training credit cuts](new/delayed_credit/training.py), and
+   [evaluation](new/delayed_credit/evaluation.py).
+3. [Saved-data validation](evidence/delayed_credit_20261008_01/validation.json)
+   and [reproduction](evidence/delayed_credit_20261008_01/REPRODUCTION.md).
+
+The approximately25.1MiB package retains full valid Boolean trajectories,
+all per-map metrics and all3600 training updates. Read compact summaries first.
+Weights and private process receipts remain local. Earlier results below
+are preserved. The deferred producer-consumer swap was not run.
+
 ## Latest completed update: Full reevaluation of selected checkpoints
 
 The evaluation without training is **COMPLETE:6/6 model/cohort units in83.516s**.

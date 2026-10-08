@@ -1,5 +1,66 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## Delayed-credit cue-once screen
+
+Stage: **COMPLETE**, protocol `delayed_credit_cue_once_streaming_v0`.
+All12/12 u300 trajectories and72/72 checkpoint bindings completed in1387.609s
+(23.13minutes). Frozen verdict: **BASELINE_UNQUALIFIED**. Dense K8, terminal
+K8 and terminal K64 each have0/4 primary reach passes. Mean size32 T64 strict
+pooled coverage across the four blocks is6.054%,0.259%,14.179%, respectively.
+K64 exceeds terminal K8 on this descriptive score in4/4 paired blocks, but
+its positive control is unqualified; no qualified temporal-credit gap or
+unique failure mechanism follows. Every trajectory stays finite throughT256
+at both sizes. The protected worker exited0 and cleared idle-sleep prevention.
+Public [results](evidence/delayed_credit_20261008_01/RESULTS.md),
+[endpoint table](evidence/delayed_credit_20261008_01/final_metrics.csv),
+[summary](evidence/delayed_credit_20261008_01/summary.json), and
+[saved-data validation](evidence/delayed_credit_20261008_01/validation.json)
+preserve the frozen failure. No training or inference was used for publication.
+The u275/u300 producer-consumer swap is deferred. This screen keeps the
+original StreamingCell (C24/Z8,5033 parameters) and supplies source cues only
+to initialization; all recurrent training and evaluation inputs contain
+static geometry plus two zero cue channels.
+
+Four fresh paired blocks compare dense K8 supervision, terminal-only K8,
+and terminal-only K64:12 trajectories of300 updates, one64-step trajectory
+and one AdamW update per minibatch. Initialization150001..150004 and
+schedule151001..151004 are paired across arms. Only u300 is evaluated on
+fresh32-map cohorts at sizes32/64 (seeds152032/152064). T64 learning is primary;
+T128/T256 retention and regression are secondary. No new architecture,
+hyperparameter sweep, AMP, CUDA Graph or recurring monitor is used.
+
+The actual-shape qualification is **PASS**: three one-update checks,
+identical terminal forward states and identical B/C terminal loss, correct
+gradient cuts, expected absence of encoder gradients in terminal K8, and
+peak allocated memory490.712 MiB. Measured training estimate is59.68minutes,
+excluding evaluation and overhead. This is implementation evidence, not a
+task-learning result. The protected on-demand job has no time limit and
+temporarily prevents idle sleep. Checkpoints at50-step intervals retain
+model/Adam/RNG/curve bindings; only u300 is the formal endpoint.
+
+Read the [protocol](new/delayed_credit/PROTOCOL.md),
+[trainer](new/delayed_credit/training.py),
+[runner](new/delayed_credit/run.py),
+[evaluator](new/delayed_credit/evaluation.py), and
+[reporter](new/delayed_credit/reporting.py).
+Local outputs are `runs/delayed_credit_20261008_01`; qualification is
+`analyses/delayed_credit_qualification_20261008_01/qualification.json`.
+The private guard directory retains launch and completion receipts.
+Publication verification checks12 units,72 checkpoint bindings,3600 training
+updates,24 losslessly packed Boolean trace banks,768 per-map records and all
+primary/secondary gate values. Model checkpoint contents remain local.
+Verify from the repository root with:
+`python -X utf8 -B tools/export_delayed_credit.py --verify-only`.
+
+From the repository root, in the established Torch2.5.1 CUDA environment:
+
+```powershell
+python -X utf8 -u -B new/delayed_credit/run.py --check --out analyses/delayed_credit_qualification_20261008_01
+& ./tools/start_protected_job.ps1 -JobName delayed_credit_20261008_01 -Script new/delayed_credit/run.py -ScriptArguments @('--out','runs/delayed_credit_20261008_01','--qualification','analyses/delayed_credit_qualification_20261008_01/qualification.json')
+```
+
+Use new output/job names when reproducing; existing evidence is read-only.
+
 ## Selected StreamingCell Full reevaluation
 
 Stage: **COMPLETE**, all6/6 model/cohort evaluations without training, in83.516 seconds.

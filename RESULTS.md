@@ -1,5 +1,33 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
+## Latest: cue-once delayed-credit screen
+
+**COMPLETE:12/12 u300 trajectories,72 checkpoint bindings,1387.609seconds.**
+The fixed size32/T64 reach gate requires strict16<d<32 pooled and mean-map
+coverage >=.80, original/flipped open BA >=.85 and sufficient map support.
+All numerical rollouts remain finite throughT256 at sizes32/64.
+
+| Arm | T64 reach passes | Mean strict pooled T64 coverage |
+|---|---:|---:|
+| Dense K8 | 0/4 | 6.054% |
+| Terminal K8 | 0/4 | 0.259% |
+| Terminal K64 | 0/4 | 14.179% |
+
+Frozen verdict: **BASELINE_UNQUALIFIED**. K64 descriptively exceeds terminal
+K8 in4/4 paired blocks. Its strongest block reaches45.571% strict pooled
+coverage and53.853% mean-map coverage, still below the .80 gate. Full credit
+did not establish a qualified positive control, so the screen cannot identify
+the proposed short-credit bottleneck or explain a unique failure mechanism.
+Means are across four independent paired model blocks, not pooled repeats.
+
+Read [unchanged frozen report](evidence/delayed_credit_20261008_01/RESULTS.md),
+[all endpoint metrics](evidence/delayed_credit_20261008_01/final_metrics.csv),
+[aggregate](evidence/delayed_credit_20261008_01/summary.json), and
+[saved-data verification](evidence/delayed_credit_20261008_01/validation.json).
+All maps, Boolean times and training updates are retained in the public package;
+model contents and private process receipts remain local. No inference or
+training was run for publication. Earlier results below remain unchanged.
+
 ## Latest: addressed delta writer development screen
 
 **COMPLETE:12/12 u300 trajectories,156/156 scheduled checkpoint stages.**

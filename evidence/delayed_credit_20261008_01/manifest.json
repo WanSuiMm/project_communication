@@ -1,0 +1,103 @@
+{
+  "all_boolean_trace_prefixes_published": true,
+  "backend": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  },
+  "checkpoint_contents_published": false,
+  "claim_boundary": "Developmental screen; K64 positive control unqualified; no temporal-credit gap claim.",
+  "config": {
+    "architecture": "original StreamingCell C24/Z8",
+    "arms": [
+      "dense_k8",
+      "terminal_k8",
+      "terminal_k64"
+    ],
+    "batch": 8,
+    "checkpoint_grid": [
+      50,
+      100,
+      150,
+      200,
+      250,
+      300
+    ],
+    "clip_norm": 1.0,
+    "continuous_monitoring": false,
+    "cue_initialization_only": true,
+    "dense_loss_normalization": "mean of eight losses",
+    "evaluation_maps_per_size": 32,
+    "evaluation_seeds": {
+      "32": 152032,
+      "64": 152064
+    },
+    "formal_checkpoint": 300,
+    "initialization_seeds": [
+      150001,
+      150002,
+      150003,
+      150004
+    ],
+    "midpoint_efficacy_evaluation": false,
+    "old_full_evaluated": false,
+    "optimizer": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "lr": 0.001,
+      "weight_decay": 0.0001
+    },
+    "parameter_count": 5033,
+    "primary": "terminal_k64 versus terminal_k8 T64 reach on fresh size32 maps",
+    "protocol": "delayed_credit_cue_once_streaming_v0",
+    "runtime_limit_enforced": false,
+    "schedule_seeds": [
+      151001,
+      151002,
+      151003,
+      151004
+    ],
+    "steps_per_update": 64,
+    "terminal_loss": "L64 only",
+    "train_maps": 512,
+    "train_seed": 10002,
+    "train_size": 32,
+    "updates": 300
+  },
+  "data_sha256": {
+    "evaluation32": "da8d2307584810a21e18a348d7ad2750540ba8cf4f1b306d12a1aecdebad3844",
+    "evaluation64": "b124e2cd204fa436eedeca5cef1d0379d5726675fd3c550e1f5eff9217c75cb4",
+    "train": "5ff2af1eb77781ed766ff3c8ba1b4477cebb8b345873a715d9808b7cecdd5fee"
+  },
+  "execution_status": "COMPLETE",
+  "expected_trajectories": 12,
+  "finished_utc": "2026-10-08T08:55:15.627150+00:00",
+  "protocol": "delayed_credit_cue_once_streaming_v0",
+  "qualification_sha256": "87520fc72dca2914a3eae7ae2ee3231bb5e115c641c5bc4d004d648c80b03ead",
+  "seconds": 1387.6089999999986,
+  "source_sha256": {
+    "new/continuous_coverage/evaluation.py": "65fdbc0a5257b56ac93176afe438e818cf8ab554ae9c728dbd27434b6fbec8e4",
+    "new/delayed_credit/PROTOCOL.md": "3fceb3008b5accb2c1ad7849b524ae6643c940c70bf5f6fb7c0024380c2b1ba3",
+    "new/delayed_credit/evaluation.py": "99f720d60c6253fcee80b5c7224075a803d2b18a3a3214f6ebe7bfb7bd6d16d8",
+    "new/delayed_credit/reporting.py": "7ffe3c1891bd06726181c2114692e9eed7c0377f94f2529bb9af5e9467638024",
+    "new/delayed_credit/run.py": "b9978ada328e897b3fcec7d05bb70fc12ba342c06e179c92b335872a478fe11c",
+    "new/delayed_credit/training.py": "4808731642e9bd1464c4faf5a803e992fdfe4fe179caf523d3250c16d3af045f",
+    "new/masked_medium/masked_cells.py": "3e1fcb4a2f30dd2958fd5970c2d6137afe81f21978bea99c03e9950d1830c6e6",
+    "new/nca_inertial_wind_tunnel/cells.py": "f1376f62b21a5d58b993657e667acd8267de8d50102a67f88681d2a144063182",
+    "new/nca_inertial_wind_tunnel/tasks.py": "790e0820c7c65c947a7a3a406e1e4f9080796ae82c13d067ff0ccf73ae292e65",
+    "new/seed4_followup/phenotype.py": "9a6f870845d1b928b5e28a50d1e6ccb81b28abc1633346d29c6f1e5a50db72af",
+    "new/short_bptt/training.py": "de12cc2a429e8f99ccb8948f4a4615faf0b21f828fa6fe20dfb4f64384f040ad",
+    "new/streaming_carry/stream_cells.py": "88152e1243d519590a6aa22b66ba2e84eda9b59831c2722f254c1b440fbc7dfb",
+    "new/trajectory_qualification/common.py": "5abad75997cc204b3b26e4d7c5cd44b5245c97060e458af2a1912a761850bac4",
+    "new/workspace_revision/revision_cells.py": "60126004f39b6bc2e4c5a443ffcf7dc1ac9436bb2b4ec9ba4d9061f2adc28565",
+    "new/workspace_revision/run_revision.py": "3e4eef97fa1c96c36f8ab95a16f64257532bb9a6bf3fc0bfcc24da2e162e6bb6",
+    "tools/protected_job_worker.ps1": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41",
+    "tools/start_protected_job.ps1": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf"
+  },
+  "started_utc": "2026-10-08T08:32:07.972526+00:00",
+  "torch": "2.5.1"
+}
