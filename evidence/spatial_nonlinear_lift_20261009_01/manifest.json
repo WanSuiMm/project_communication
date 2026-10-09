@@ -1,0 +1,198 @@
+{
+  "config": {
+    "protocol": "spatial_nonlinear_lift_v0",
+    "updates": 300,
+    "batch_size": 16,
+    "train_steps": 64,
+    "blocks": 3,
+    "init_seeds": [
+      180101,
+      180102,
+      180103
+    ],
+    "schedule_seeds": [
+      180201,
+      180202,
+      180203
+    ],
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_norm": 1.0,
+    "checkpoints": [
+      100,
+      200,
+      300
+    ],
+    "banks": {
+      "train": [
+        256,
+        8,
+        64,
+        180301
+      ],
+      "heldout": [
+        64,
+        8,
+        64,
+        180401
+      ],
+      "long128": [
+        32,
+        8,
+        128,
+        180501
+      ],
+      "long256": [
+        32,
+        8,
+        256,
+        180502
+      ],
+      "spatial16": [
+        32,
+        16,
+        64,
+        180601
+      ]
+    },
+    "arms": [
+      [
+        "original_k64",
+        "original",
+        64
+      ],
+      [
+        "original_k8",
+        "original",
+        8
+      ],
+      [
+        "lifted_k8",
+        "lifted",
+        8
+      ]
+    ],
+    "teacher": {
+      "a": [
+        0.8,
+        -0.6,
+        0.2
+      ],
+      "b": [
+        0.1,
+        0.15,
+        0.9
+      ],
+      "gamma": [
+        0.05,
+        0.4,
+        0.8
+      ]
+    },
+    "primary": "heldout_T64_u300",
+    "positive_control_r2": 0.5,
+    "gap_threshold": 0.1,
+    "equivalent_tolerance_r2": 0.02,
+    "device": "cuda:0",
+    "dtype": "float32"
+  },
+  "source_hashes": {
+    "new/spatial_nonlinear_lift/run.py": "a82533d20c2a3f3075ab10ecd92dafa2461d5261efa88ab9d595d027455e7049",
+    "new/spatial_nonlinear_lift/cells.py": "59d73cfc851a18095d101e7c3a78f73582ab278317d52843497180f2f2cbd787",
+    "new/spatial_nonlinear_lift/tasks.py": "e2b6e05f33514f1d2440e9723c673891ab7e56001859bac68de728fcb66685af",
+    "new/spatial_nonlinear_lift/THEORY.md": "0ba73eb35aa9c2c5cdfa139187f572693c251722e2e3cdcc0b6714d2e436e417",
+    "new/spatial_nonlinear_lift/PROTOCOL.md": "1949e86e9505bc73fd614ba53bf3805bc8dd332b38b3ebfb2adb7732eeed0007",
+    "tools/start_protected_job.ps1": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf",
+    "tools/protected_job_worker.ps1": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41"
+  },
+  "data_hashes": {
+    "banks/train.npz": "777749e3a6a134f302f585e5e250790e4343b2b85b7895d26df1485da1e67f41",
+    "banks/heldout.npz": "761ea5a1dd060a94550fd89125c2e84e3ecf2d0ddc31f7acad70ace2f3a2c356",
+    "banks/long128.npz": "6b64c05864fe0068b27a3de4b8d1130e1487e1fdf56514a61cbd8df9901113da",
+    "banks/long256.npz": "07da8275714d82e234ee0d9fad93dc67e654749f4d760ca4a075713a9a15d527",
+    "banks/spatial16.npz": "cabf83f1cba9b1178e64e0ba6e4e83b9b645484e689d78c14804d0937f0124f6",
+    "banks/schedule_block00.npy": "8b6e4a27d2ceab9158e046faffe8685121f4ea52dc28aa0311eb1b8bb73e09ac",
+    "banks/schedule_block01.npy": "5497fa87abd72cc65960003fd9df7348f5d6dcd7a2a1657122a249694c41c46f",
+    "banks/schedule_block02.npy": "51577f0d691dc1df3011e6ddbdabf51ba25d1765a731dccca3f844ec251bd027",
+    "banks/teacher.json": "30c633a7bd3ebdf29d4e99e361d878525352e827fe41304f83cde7fc50c1a86a"
+  },
+  "bank_support": {
+    "train": {
+      "metadata": {
+        "seed": 180301,
+        "samples": 256,
+        "side": 8,
+        "steps": 64,
+        "phase_length": 32,
+        "cycle_length": 64,
+        "periodic_spatial_boundary": true
+      },
+      "target_variance": 0.018792137503623962,
+      "target_min": -0.4952235519886017,
+      "target_max": 0.9121348857879639
+    },
+    "heldout": {
+      "metadata": {
+        "seed": 180401,
+        "samples": 64,
+        "side": 8,
+        "steps": 64,
+        "phase_length": 32,
+        "cycle_length": 64,
+        "periodic_spatial_boundary": true
+      },
+      "target_variance": 0.027213402092456818,
+      "target_min": -0.8111896514892578,
+      "target_max": 0.8572986721992493
+    },
+    "long128": {
+      "metadata": {
+        "seed": 180501,
+        "samples": 32,
+        "side": 8,
+        "steps": 128,
+        "phase_length": 64,
+        "cycle_length": 128,
+        "periodic_spatial_boundary": true
+      },
+      "target_variance": 0.00882523413747549,
+      "target_min": -0.39574819803237915,
+      "target_max": 0.35763201117515564
+    },
+    "long256": {
+      "metadata": {
+        "seed": 180502,
+        "samples": 32,
+        "side": 8,
+        "steps": 256,
+        "phase_length": 128,
+        "cycle_length": 256,
+        "periodic_spatial_boundary": true
+      },
+      "target_variance": 0.006626948714256287,
+      "target_min": -0.18082715570926666,
+      "target_max": 0.3046466112136841
+    },
+    "spatial16": {
+      "metadata": {
+        "seed": 180601,
+        "samples": 32,
+        "side": 16,
+        "steps": 64,
+        "phase_length": 32,
+        "cycle_length": 64,
+        "periodic_spatial_boundary": true
+      },
+      "target_variance": 0.023101575672626495,
+      "target_min": -0.5294986963272095,
+      "target_max": 0.5259491801261902
+    }
+  },
+  "qualification_sha256": "5b04d34a33518a9c6f353f2953ab0fd4ecf298dc34b9a8e4e642aab231bea9b1",
+  "independent_unit": "paired initialization/minibatch-schedule block"
+}

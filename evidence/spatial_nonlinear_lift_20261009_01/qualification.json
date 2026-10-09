@@ -1,0 +1,216 @@
+{
+  "status": "PASS",
+  "config": {
+    "protocol": "spatial_nonlinear_lift_v0",
+    "updates": 300,
+    "batch_size": 16,
+    "train_steps": 64,
+    "blocks": 3,
+    "init_seeds": [
+      180101,
+      180102,
+      180103
+    ],
+    "schedule_seeds": [
+      180201,
+      180202,
+      180203
+    ],
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_norm": 1.0,
+    "checkpoints": [
+      100,
+      200,
+      300
+    ],
+    "banks": {
+      "train": [
+        256,
+        8,
+        64,
+        180301
+      ],
+      "heldout": [
+        64,
+        8,
+        64,
+        180401
+      ],
+      "long128": [
+        32,
+        8,
+        128,
+        180501
+      ],
+      "long256": [
+        32,
+        8,
+        256,
+        180502
+      ],
+      "spatial16": [
+        32,
+        16,
+        64,
+        180601
+      ]
+    },
+    "arms": [
+      [
+        "original_k64",
+        "original",
+        64
+      ],
+      [
+        "original_k8",
+        "original",
+        8
+      ],
+      [
+        "lifted_k8",
+        "lifted",
+        8
+      ]
+    ],
+    "teacher": {
+      "a": [
+        0.8,
+        -0.6,
+        0.2
+      ],
+      "b": [
+        0.1,
+        0.15,
+        0.9
+      ],
+      "gamma": [
+        0.05,
+        0.4,
+        0.8
+      ]
+    },
+    "primary": "heldout_T64_u300",
+    "positive_control_r2": 0.5,
+    "gap_threshold": 0.1,
+    "equivalent_tolerance_r2": 0.02,
+    "device": "cuda:0",
+    "dtype": "float32"
+  },
+  "source_hashes": {
+    "new/spatial_nonlinear_lift/run.py": "a82533d20c2a3f3075ab10ecd92dafa2461d5261efa88ab9d595d027455e7049",
+    "new/spatial_nonlinear_lift/cells.py": "59d73cfc851a18095d101e7c3a78f73582ab278317d52843497180f2f2cbd787",
+    "new/spatial_nonlinear_lift/tasks.py": "e2b6e05f33514f1d2440e9723c673891ab7e56001859bac68de728fcb66685af",
+    "new/spatial_nonlinear_lift/THEORY.md": "0ba73eb35aa9c2c5cdfa139187f572693c251722e2e3cdcc0b6714d2e436e417",
+    "new/spatial_nonlinear_lift/PROTOCOL.md": "1949e86e9505bc73fd614ba53bf3805bc8dd332b38b3ebfb2adb7732eeed0007",
+    "tools/start_protected_job.ps1": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf",
+    "tools/protected_job_worker.ps1": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41"
+  },
+  "checks": {
+    "initial_cpu64": {
+      "max_projected_state_error": 2.1316282072803006e-14,
+      "max_output_error": 1.5265566588595902e-16,
+      "full_gradient": {
+        "relative_l2": 3.3293204065401425e-16,
+        "cosine": 1.0
+      },
+      "lifted_k8_vs_original_full": {
+        "relative_l2": 3.3293204065401425e-16,
+        "cosine": 1.0
+      },
+      "lifted_k8_group_norms": {
+        "a": 0.005563434602016694,
+        "b": 0.010746549016776243,
+        "gamma": 0.05555142431133808
+      },
+      "original_k8_group_norms": {
+        "a": 4.494084497167486e-06,
+        "b": 0.0005195696057328019,
+        "gamma": 0.0007304053575784184
+      }
+    },
+    "perturbed_cpu64": {
+      "max_projected_state_error": 1.7763568394002505e-14,
+      "max_output_error": 4.85722573273506e-17,
+      "full_gradient": {
+        "relative_l2": 3.3331867478555275e-16,
+        "cosine": 1.0000000000000002
+      },
+      "lifted_k8_vs_original_full": {
+        "relative_l2": 3.3331867478555275e-16,
+        "cosine": 1.0000000000000002
+      },
+      "lifted_k8_group_norms": {
+        "a": 0.0007265863446715315,
+        "b": 0.00861825798352002,
+        "gamma": 0.0287891477723849
+      },
+      "original_k8_group_norms": {
+        "a": 1.2145873361563697e-05,
+        "b": 4.089851355716524e-05,
+        "gamma": 0.002224846712224676
+      }
+    },
+    "initial_actual_cuda32": {
+      "max_projected_state_error": 1.71661376953125e-05,
+      "max_output_error": 4.470348358154297e-08,
+      "full_gradient": {
+        "relative_l2": 1.516303171911204e-07,
+        "cosine": 1.0
+      },
+      "lifted_k8_vs_original_full": {
+        "relative_l2": 1.516303171911204e-07,
+        "cosine": 1.0
+      },
+      "lifted_k8_group_norms": {
+        "a": 0.003157137893140316,
+        "b": 0.007042222190648317,
+        "gamma": 0.0053202188573777676
+      },
+      "original_k8_group_norms": {
+        "a": 9.742924703459721e-06,
+        "b": 0.0009408935438841581,
+        "gamma": 0.00010406183719169348
+      }
+    }
+  },
+  "state_hessian_max_absolute": 0.031554256039551705,
+  "early_input_gradient_zero": true,
+  "suffix_input_gradient_norm": 0.00639326823875308,
+  "teacher_probe": {
+    "target_variance": 0.002930957591161132,
+    "quadratic_output_rms_fraction": 0.7381077408790588
+  },
+  "smoke": {
+    "original_k64": {
+      "update_seconds": 0.10576959999980318,
+      "loss": 0.003242652863264084,
+      "gradient_norm": 0.005474801640957594,
+      "peak_allocated_mib": 67.38720703125,
+      "incremental_peak_mib": 2.53125
+    },
+    "original_k8": {
+      "update_seconds": 0.03380269999979646,
+      "loss": 0.003242652863264084,
+      "gradient_norm": 0.00014299029135145247,
+      "peak_allocated_mib": 65.19970703125,
+      "incremental_peak_mib": 0.34375
+    },
+    "lifted_k8": {
+      "update_seconds": 0.027768999999352673,
+      "loss": 0.003242652863264084,
+      "gradient_norm": 0.005474802106618881,
+      "peak_allocated_mib": 65.41845703125,
+      "incremental_peak_mib": 0.5625
+    }
+  },
+  "estimated_training_seconds": 150.60716999905708,
+  "torch_version": "2.5.1",
+  "cuda_version": "11.8",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}

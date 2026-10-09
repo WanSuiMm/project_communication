@@ -1,5 +1,48 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## Spatial Nonlinear Lift v0: genuine quadratic state writes on a cyclic grid
+
+Current stage: **COMPLETE**,9/9 arms,2700 updates in137.859seconds. Verdict:
+**SHORT_CREDIT_RECOVERY_DEVELOPMENTAL**. All three K64 controls qualified.
+Heldout T64 R2 for original K8 is-.653966884/.027684190/.050469104;
+K64 is.999999727/.999999959/.999586778, matched by lifted K8 to within
+4.414e-10. The protected worker exited0 and cleared idle-sleep prevention.
+Read public [results](evidence/spatial_nonlinear_lift_20261009_01/RESULTS.md)
+and [aggregate](evidence/spatial_nonlinear_lift_20261009_01/aggregate.json).
+This new screen combines cyclic 2D transport with a nonzero state Hessian in one cell. The
+exact moment lift uses42 rather than2 scalars per cell and the same nine
+parameters. CPU64 initial/perturbed and actual-shape CUDA32 forward/full
+gradient checks passed; lifted K8 matches original full credit, while early
+input gradients remain cut. A fixed teacher probe has output variance.002931
+and quadratic-term output RMS fraction.7381. Numerical qualification and
+the completed matched-teacher learning result are distinct evidence.
+
+Read [derivation](new/spatial_nonlinear_lift/THEORY.md),
+[frozen protocol](new/spatial_nonlinear_lift/PROTOCOL.md),
+[cell](new/spatial_nonlinear_lift/cells.py),
+[task](new/spatial_nonlinear_lift/tasks.py), and
+[runner](new/spatial_nonlinear_lift/run.py).
+Final qualification: `analyses/spatial_nonlinear_lift_qualification_20261009_02/qualification.json`.
+The first qualification is retained; final source adds fail-closed existing
+output/recovery guards. Three paired blocks compare original K8/K64 and
+lifted K8,300 updates each, same terminal T64 supervision. Block00 K64 runs
+first and stops the screen if its frozen heldout R2<.5 control fails.
+Only u300 is primary. Local output: `runs/spatial_nonlinear_lift_20261009_01`.
+Exact forward/full-gradient equivalence predicts K64/lifted-K8 agreement;
+the empirical signal is the original K8 gap and state/systems tradeoff.
+This remains a three-block matched finite-degree teacher screen, with fixed
+features/transport and no autonomous continuation or generic NCA claim.
+Atomic latest checkpoints and the established independent protected worker
+provide explicit recovery and temporary idle-sleep prevention, with no time
+cap or recurring monitor. Earlier evidence remains unchanged.
+
+From repository root in the established CUDA environment, with fresh names:
+
+```powershell
+python -X utf8 -B new/spatial_nonlinear_lift/run.py --check --out analyses/NEW_SPATIAL_CHECK
+& ./tools/start_protected_job.ps1 -JobName NEW_SPATIAL_RUN -Script new/spatial_nonlinear_lift/run.py -ScriptArguments @('--out','runs/NEW_SPATIAL_RUN','--qualification','analyses/NEW_SPATIAL_CHECK/qualification.json')
+```
+
 ## Exact raw-state lift and late projection: Reparam-GCR v0
 
 Stage: **COMPLETE**,1/1 new arm,150 updates,20.144seconds. Frozen verdict:

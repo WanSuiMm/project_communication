@@ -1,6 +1,45 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest completed experiment: exact GCR lift and late projection
+## Latest completed experiment: spatial nonlinear lift
+
+Can exact parameter deferral recover terminal short-credit learning for
+quadratic state writes on a cyclic 2D grid? **COMPLETE:9/9 trajectories,
+2700 updates in137.859seconds.** All three original-K64 positive controls
+qualified. Frozen verdict: **SHORT_CREDIT_RECOVERY_DEVELOPMENTAL**.
+
+| Paired block | Original K8 R2 | Original K64 R2 | Lifted K8 R2 |
+|---|---:|---:|---:|
+| 0 | -.653967 | .999999727 | .999999727 |
+| 1 | .027684 | .999999959 | .999999959 |
+| 2 | .050469 | .999586778 | .999586777 |
+
+These are heldout T64 endpoints at u300. Original-full and lifted-short
+have the same nine parameter coordinates and exact real-arithmetic forward
+functions; their primary R2 differs by at most4.42e-10. Unlike the previous
+bilinear check, this cell has a nonzero state Hessian. Its lift carries42
+rather than2 scalars per cell. This is a three-block, matched polynomial
+teacher screen with fixed features and transport. It does not establish
+general learned-feedback NCA, autonomous stability, or population reliability.
+
+Start here:
+
+1. [Results](evidence/spatial_nonlinear_lift_20261009_01/RESULTS.md),
+   [36 final metric rows](evidence/spatial_nonlinear_lift_20261009_01/final_metrics.csv),
+   [aggregate](evidence/spatial_nonlinear_lift_20261009_01/aggregate.json), and
+   [run-reported systems costs](evidence/spatial_nonlinear_lift_20261009_01/systems.csv).
+2. [Exact derivation](new/spatial_nonlinear_lift/THEORY.md),
+   [frozen protocol](new/spatial_nonlinear_lift/PROTOCOL.md), and
+   [cell](new/spatial_nonlinear_lift/cells.py).
+3. [Qualification](evidence/spatial_nonlinear_lift_20261009_01/qualification.json),
+   [saved-array verification](evidence/spatial_nonlinear_lift_20261009_01/validation.json),
+   and [reproduction](evidence/spatial_nonlinear_lift_20261009_01/REPRODUCTION.md).
+
+The approximately31.0MiB package retains compressed exact input/target banks, schedules, all
+training curves, intermediate evaluations, checkpoint bindings and predictions.
+Read compact summaries before opening raw banks. Learned weights and private
+receipts remain local; earlier evidence is unchanged. See [incremental review](GPT_HANDOFF.md).
+
+## Previous completed experiment: exact GCR lift and late projection
 
 Can moving the learned projection after fixed local composition recover the
 K8 learning gap? **COMPLETE: one new arm,150 updates in20.144seconds.**

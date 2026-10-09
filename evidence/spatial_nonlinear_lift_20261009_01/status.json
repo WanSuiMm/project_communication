@@ -1,0 +1,37 @@
+{
+  "status": "COMPLETE",
+  "completed_units": 9,
+  "total_units": 9,
+  "stopped_at_predeclared_control": false,
+  "elapsed_seconds": 137.85892330000024,
+  "decision": {
+    "verdict": "SHORT_CREDIT_RECOVERY_DEVELOPMENTAL",
+    "controls_qualified": true,
+    "paired_primary": [
+      {
+        "block": 0,
+        "original_k64": 0.9999997267763743,
+        "original_k8": -0.6539668836343997,
+        "lifted_k8": 0.9999997267483074,
+        "full_minus_original_short": 1.653966610410774,
+        "lifted_short_minus_full": -2.8066882151733807e-11
+      },
+      {
+        "block": 1,
+        "original_k64": 0.9999999586860162,
+        "original_k8": 0.027684190324797076,
+        "lifted_k8": 0.9999999586887599,
+        "full_minus_original_short": 0.9723157683612191,
+        "lifted_short_minus_full": 2.7436941607561494e-12
+      },
+      {
+        "block": 2,
+        "original_k64": 0.9995867775227861,
+        "original_k8": 0.05046910393484738,
+        "lifted_k8": 0.9995867770814327,
+        "full_minus_original_short": 0.9491176735879387,
+        "lifted_short_minus_full": -4.413533982727813e-10
+      }
+    ]
+  }
+}

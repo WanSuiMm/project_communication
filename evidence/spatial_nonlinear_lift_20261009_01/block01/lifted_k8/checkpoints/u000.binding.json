@@ -1,0 +1,146 @@
+{
+  "block": 1,
+  "arm": "lifted_k8",
+  "update": 0,
+  "next_update": 1,
+  "checkpoint_sha256": "60cd69b40a474f9c386f5312cd638b1b0f3ead53e1a1cd0121fcb46e5626ff35",
+  "model_parameter_sha256": "1a25334d98ca16bb3e2e831ba2f32516939fc0bd8a9811e384879b9986c34c1d",
+  "initial_parameter_sha256": "1a25334d98ca16bb3e2e831ba2f32516939fc0bd8a9811e384879b9986c34c1d",
+  "model_parameters": {
+    "a": {
+      "shape": [
+        3
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "b": {
+      "shape": [
+        3
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "gamma": {
+      "shape": [
+        3
+      ],
+      "dtype": "float32",
+      "finite": true
+    }
+  },
+  "config": {
+    "protocol": "spatial_nonlinear_lift_v0",
+    "updates": 300,
+    "batch_size": 16,
+    "train_steps": 64,
+    "blocks": 3,
+    "init_seeds": [
+      180101,
+      180102,
+      180103
+    ],
+    "schedule_seeds": [
+      180201,
+      180202,
+      180203
+    ],
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_norm": 1.0,
+    "checkpoints": [
+      100,
+      200,
+      300
+    ],
+    "banks": {
+      "train": [
+        256,
+        8,
+        64,
+        180301
+      ],
+      "heldout": [
+        64,
+        8,
+        64,
+        180401
+      ],
+      "long128": [
+        32,
+        8,
+        128,
+        180501
+      ],
+      "long256": [
+        32,
+        8,
+        256,
+        180502
+      ],
+      "spatial16": [
+        32,
+        16,
+        64,
+        180601
+      ]
+    },
+    "arms": [
+      [
+        "original_k64",
+        "original",
+        64
+      ],
+      [
+        "original_k8",
+        "original",
+        8
+      ],
+      [
+        "lifted_k8",
+        "lifted",
+        8
+      ]
+    ],
+    "teacher": {
+      "a": [
+        0.8,
+        -0.6,
+        0.2
+      ],
+      "b": [
+        0.1,
+        0.15,
+        0.9
+      ],
+      "gamma": [
+        0.05,
+        0.4,
+        0.8
+      ]
+    },
+    "primary": "heldout_T64_u300",
+    "positive_control_r2": 0.5,
+    "gap_threshold": 0.1,
+    "equivalent_tolerance_r2": 0.02,
+    "device": "cuda:0",
+    "dtype": "float32"
+  },
+  "source_hashes": {
+    "new/spatial_nonlinear_lift/run.py": "a82533d20c2a3f3075ab10ecd92dafa2461d5261efa88ab9d595d027455e7049",
+    "new/spatial_nonlinear_lift/cells.py": "59d73cfc851a18095d101e7c3a78f73582ab278317d52843497180f2f2cbd787",
+    "new/spatial_nonlinear_lift/tasks.py": "e2b6e05f33514f1d2440e9723c673891ab7e56001859bac68de728fcb66685af",
+    "new/spatial_nonlinear_lift/THEORY.md": "0ba73eb35aa9c2c5cdfa139187f572693c251722e2e3cdcc0b6714d2e436e417",
+    "new/spatial_nonlinear_lift/PROTOCOL.md": "1949e86e9505bc73fd614ba53bf3805bc8dd332b38b3ebfb2adb7732eeed0007",
+    "tools/start_protected_job.ps1": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf",
+    "tools/protected_job_worker.ps1": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41"
+  },
+  "weights_published": false,
+  "optimizer_state_published": false,
+  "checkpoint_contents_published": false
+}

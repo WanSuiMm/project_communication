@@ -1,6 +1,54 @@
 # Context for incremental scientific review
 
-## Current: exact GCR lift and late projection
+## Current: spatial nonlinear lift
+
+Formal fields: execution=COMPLETE, aggregation=COMPLETE,
+final_result_available=true, verdict=SHORT_CREDIT_RECOVERY_DEVELOPMENTAL.
+Canonical evidence: `evidence/spatial_nonlinear_lift_20261009_01/`.
+All9/9 arms completed300 updates each in137.859seconds. Three paired
+initialization/schedule blocks compare original K8, original K64 and lifted
+K8 using the same nine parameters, same input banks and terminal T64 loss.
+
+Primary heldout R2, ordered by block0/1/2:
+original K8=-.653966884/.027684190/.050469104;
+original K64=.999999727/.999999959/.999586778;
+lifted K8=.999999727/.999999959/.999586777.
+All three K64 controls satisfy the frozen.5 threshold. The largest primary
+absolute lifted-short/full difference is4.414e-10. Matching these two arms
+is predicted by the exact gradient identity; the measured original K8 gap
+and systems tradeoff are the empirical questions.
+
+`SpatialPolynomialCell.step/project/predict` in
+[cells.py](new/spatial_nonlinear_lift/cells.py) implements cyclic P/Q shifts,
+quadratic dependence on a normalized historical scalar u, and either direct
+u/z state or raw U/M0/M1/M2 moments. Read the
+[proof](new/spatial_nonlinear_lift/THEORY.md) and
+[protocol](new/spatial_nonlinear_lift/PROTOCOL.md). Fixed feature dimension3;
+nine learnable a/b/gamma coordinates; state2->42 scalars per cell plus one
+shared time counter. No EMA. `forward/check/update/decision` are in
+[run.py](new/spatial_nonlinear_lift/run.py); phase-separated input generation
+and hidden teacher coefficients are in [tasks.py](new/spatial_nonlinear_lift/tasks.py).
+
+The teacher probe's quadratic-term removal changes output RMS by.7381.
+All64-step state/output and gradient checks passed at initial/perturbed
+CPU64 and actual-shape CUDA32 parameters. Early input credit remains cut;
+all parameter groups and suffix inputs have nonzero short-credit gradients.
+
+Read [results](evidence/spatial_nonlinear_lift_20261009_01/RESULTS.md),
+[36 metrics](evidence/spatial_nonlinear_lift_20261009_01/final_metrics.csv), and
+[saved-array verification](evidence/spatial_nonlinear_lift_20261009_01/validation.json).
+The package contains exact compressed banks and schedules,2700 loss records,
+27 stage evaluations and36 checkpoint bindings. Checkpoint contents and
+learned final parameter values remain local. Verification uses saved arrays
+and hashes, with no inference or optimizer updates.
+
+Limits: matched finite-degree teacher; fixed input features and transport;
+three developmental blocks. Long128/256 are separate proportionally phased
+teacher-labeled episodes, not autonomous continuation/stability evaluations.
+No unrestricted learned feedback, learned routing, general vision task,
+or population success-rate claim. Prior frozen results are unchanged.
+
+## Previous: exact GCR lift and late projection
 
 Formal fields: execution=COMPLETE, aggregation=COMPLETE,
 final_result_available=true, verdict=NEAR_FULL_CREDIT_DEVELOPMENTAL.

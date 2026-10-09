@@ -1,5 +1,39 @@
 # Tensor and operator map
 
+## Spatial nonlinear lift: quadratic state writes on a cyclic 2D grid
+
+Input e[B,T,H,W,3] has fixed parameter-independent features. P shifts rows
+forward and Q shifts columns backward, with periodic boundaries. Original
+state u,z[B,H,W] starts at zero; time t counts completed updates, d=max(1,t).
+Parameters a,b,gamma each have3 coordinates:
+
+```math
+v=P u/d,\qquad u'=P u+a^T e,
+z'=Q z+(b^T e)(gamma_0+gamma_1 v+gamma_2 v^2).
+```
+
+This is nonlinear in recurrent state u when gamma_2*(b^T e) is nonzero.
+Lifted state U[3],M0[3],M1[3,3],M2[3,3,3] at every cell starts at zero:
+
+```math
+V=P U/d,\quad U'=P U+e,\quad M0'=Q M0+e,
+M1'=Q M1+V\otimes e,\quad M2'=Q M2+V\otimes V\otimes e.
+```
+
+Project u=<a,U> and z=gamma_0<b,M0>+gamma_1<a outer b,M1>
++gamma_2<a outer a outer b,M2>; prediction is tanh(z/(t+1)) after each
+update. These projections reproduce every original state exactly in real
+arithmetic. Raw moments are parameter-independent, so direct terminal
+contraction with K8 gives the original full64 parameter gradient. Early
+input gradients are still truncated. There is no readout EMA or learned
+feedback into raw moments. State2->42 scalars/cell; nine parameters remain.
+
+Exact symbols: `SpatialPolynomialCell.initialize/step/project/predict/detach`
+in [cells.py](new/spatial_nonlinear_lift/cells.py);
+`forward/check/update/decision` in [runner](new/spatial_nonlinear_lift/run.py).
+[Proof and assumptions](new/spatial_nonlinear_lift/THEORY.md);
+[completed results](evidence/spatial_nonlinear_lift_20261009_01/RESULTS.md).
+
 ## Reparam-GCR: raw-state lift with late learned projection
 
 For x[B,N,8], keep count[B,N,1], U[B,N,8], V[B,N,8,8] and endpoint z[B,1].
