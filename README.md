@@ -1,6 +1,53 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest completed experiment: spatial nonlinear lift
+## Latest completed experiment: AU-NCA with learned nonlinear feedback
+
+**COMPLETE:9/9 arms,27,000 optimizer updates.** All three K64 controls
+qualify. Frozen verdict: **AU_BENEFIT_DEVELOPMENTAL**. The target is a fixed
+procedural RGBA flower grown from one living cell on a32-by-32 grid.
+
+| Paired block | Original K8 T64 NMSE | Original K64 T64 NMSE | AU-K8 T64 NMSE |
+|---|---:|---:|---:|
+| 0 | .230793 | .000192 | .129319 |
+| 1 | .248437 | .000442 | .141727 |
+| 2 | .174778 | .004828 | .202447 |
+| Mean | .218003 | .001821 | .157831 |
+
+Lower is better; NMSE divides RGBA MSE by blank-image MSE. AU improves
+two of three paired blocks and the mean by.060171. It does not meet the
+strong-recovery criterion or match full credit. T256 mean NMSE is.344005
+for Original K8 and.260740 for AU-K8, but both are worse than at T64.
+Untrained damaged-T256 mean NMSE worsens from.349973 to.436238.
+These are mixed continuation/regrowth results, not a stability guarantee.
+
+Start here:
+
+1. [Results](evidence/au_nca_20261009_01/RESULTS.md),
+   [aggregate](evidence/au_nca_20261009_01/aggregate.json), and
+   [all final metrics](evidence/au_nca_20261009_01/final_metrics.csv).
+2. [Theory](new/au_nca/THEORY.md), [frozen protocol](new/au_nca/PROTOCOL.md),
+   [cell](new/au_nca/cells.py), and [runner](new/au_nca/run.py).
+3. [Qualification](evidence/au_nca_20261009_01/qualification.json),
+   [saved-data verification](evidence/au_nca_20261009_01/validation.json), and
+   [reproduction](evidence/au_nca_20261009_01/REPRODUCTION.md).
+
+AU and Original have the same8,336 learned parameters and real-arithmetic
+forward function at matched parameters. AU stores145 instead of16 scalars
+per cell and changes the truncated gradient of the output projection W;
+it does not restore the feature network's early-history gradient. A visible
+state pool is rebased at optimizer boundaries to avoid stale parameterized
+states. Pool-index/firing plans match, while learned pool values and reset
+identities can differ. This is a three-block, single-target developmental
+screen with free learned feedback, not an exact published-recipe replication,
+general BPTT solution or population reliability estimate.
+
+One interrupted run was explicitly resumed from u1175; completed arms were
+skipped and the archived pre-resume curve is retained as partial evidence.
+The final worker exited0 and cleared idle-sleep protection. Read summaries
+before raw arrays. Checkpoint contents and private receipts remain local.
+See [incremental review](GPT_HANDOFF.md); earlier evidence is unchanged.
+
+## Previous completed experiment: spatial nonlinear lift
 
 Can exact parameter deferral recover terminal short-credit learning for
 quadratic state writes on a cyclic 2D grid? **COMPLETE:9/9 trajectories,

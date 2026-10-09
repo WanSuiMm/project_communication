@@ -1,0 +1,20 @@
+{
+  "aggregate_elapsed_seconds_resumed_process_only": 1254.7156838,
+  "aggregate_is_total_wall_clock_across_attempts": false,
+  "committed_checkpoint_update_before_resume": 1175,
+  "completed_arms": 9,
+  "completed_arms_skipped_on_resume": 2,
+  "execution": "COMPLETE",
+  "historical_tail_after_committed_checkpoint": "Updates 1176..1200 are retained from the interrupted attempt as historical partial evidence; they are excluded from the canonical 1..3000 training log.",
+  "idle_sleep_request_cleared": true,
+  "initial_interrupted_attempt_runtime_included": false,
+  "initial_interruption_cause": "Unknown; no stderr evidence was retained in the public package.",
+  "inter_attempt_gap_included": false,
+  "planned_arms": 9,
+  "pre_resume_log_recorded_through_update": 1200,
+  "pre_resume_log_records": 1200,
+  "private_launch_receipts_published": false,
+  "resume_started_at_update": 1176,
+  "resumed_arm": "block00/au_k8",
+  "resumed_worker_exit_code": 0
+}

@@ -1,6 +1,40 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: cue-once delayed-credit screen
+## Latest: AU-NCA learned-feedback screen
+
+**COMPLETE:9/9 arms,27,000 updates; all3 K64 controls qualify.**
+Frozen verdict: **AU_BENEFIT_DEVELOPMENTAL**. Primary is cold-seed T64
+normalized RGBA MSE at u3000; lower is better.
+
+| Paired block | Original K8 | Original K64 | AU-K8 | K8 minus AU |
+|---|---:|---:|---:|---:|
+| 0 | .230793 | .000192 | .129319 | +.101474 |
+| 1 | .248437 | .000442 | .141727 | +.106709 |
+| 2 | .174778 | .004828 | .202447 | -.027669 |
+| Mean | .218003 | .001821 | .157831 | +.060171 |
+
+AU passes the predeclared developmental-benefit rule in2/3 paired blocks.
+Strong recovery fails; every AU T64 NMSE remains above.10 and far from K64.
+At T256, Original-K8/AU mean NMSE is.344005/.260740, both worse than T64;
+untrained damaged-T256 mean NMSE is.349973/.436238. These secondary results
+do not support uniformly stable execution or improved regeneration.
+
+Same8,336 parameters and real-arithmetic forward function at matched
+parameters; state cost16->145 scalars per cell. AU changes W's truncated
+credit, not the upstream network's early-history credit. This is a
+three-block, single procedural target screen, not a general BPTT solution
+or population success-rate estimate. One interrupted trajectory was resumed
+from u1175; two completed arms were skipped. The original interrupted
+record and pre-resume curve remain distinct from the canonical27,000 updates.
+
+Read [full report](evidence/au_nca_20261009_01/RESULTS.md),
+[all final endpoints](evidence/au_nca_20261009_01/final_metrics.csv),
+[aggregate](evidence/au_nca_20261009_01/aggregate.json), and
+[saved-data verification](evidence/au_nca_20261009_01/validation.json).
+No inference, training, or optimizer update was run for publication.
+Earlier evidence below and in the repository is unchanged.
+
+## Previous: cue-once delayed-credit screen
 
 **COMPLETE:12/12 u300 trajectories,72 checkpoint bindings,1387.609seconds.**
 The fixed size32/T64 reach gate requires strict16<d<32 pooled and mean-map

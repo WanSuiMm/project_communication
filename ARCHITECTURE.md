@@ -1,5 +1,50 @@
 # Tensor and operator map
 
+## AU-NCA: accumulated updates with learned nonlinear feedback
+
+Visible state s[B,16,H,W] contains RGBA and12 hidden channels. Fixed
+identity/Sobel-x/Sobel-y perception gives48 channels; a learned1-by-1
+affine map and ReLU gives128 features. Append a constant to obtain
+h[B,129,H,W]; the learned output W[16,129,1,1] starts at zero.
+Both representations have8,336 learned parameters.
+The constant is appended to h; e's last coordinate accumulates firing
+activity rather than staying equal to one.
+
+```math
+\widetilde{s}'=s+m\odot W h_\eta(s),\quad
+a=\operatorname{alive}(s)\land\operatorname{alive}(\widetilde{s}'),\quad
+s'=a\odot\widetilde{s}'.
+```
+
+Firing m is a Bernoulli(.5) scalar per cell, broadcast across channels.
+Alive is neighborhood max-alpha>.1, computed before and after the write.
+AU stores b[B,16,H,W],e[B,129,H,W] and uses
+
+```math
+s=b+We,\qquad b'=a\odot b,\qquad
+e'=a\odot(e+m\odot h_\eta(s)).
+```
+
+This is the same fixed-parameter forward function; state cost rises16->145
+scalars/cell. The prefix's numeric e survives truncation at step56. For a
+terminal T64 loss with boundary sensitivity delta, AU K8 adds
+sum_i delta_i e_i^T to the output-projection gradient, while the feature
+gradient equals ordinary K8 at the same parameters and trajectory.
+The feature history still depends on learned parameters, so AU K8 is not
+the full gradient. Hard alive masks make this derivative identity piecewise.
+
+The pool stores only visible states. Each optimizer update canonicalizes
+to b=pooled state,e=0, preventing W updates from changing cached states.
+During evaluation intact T128/T256 retain the actual T64 state; damage
+creates a separate visible-state branch with all channels in the right
+half erased and e reset. Both branches use the same suffix firing masks.
+
+Code: `FixedPerception`, `NCACell.initialize/visible/step/detach` in
+[cells.py](new/au_nca/cells.py); `rollout/update/evaluate` in
+[runner](new/au_nca/run.py). Read [derivation](new/au_nca/THEORY.md),
+[protocol](new/au_nca/PROTOCOL.md), and
+[completed evidence](evidence/au_nca_20261009_01/RESULTS.md).
+
 ## Spatial nonlinear lift: quadratic state writes on a cyclic 2D grid
 
 Input e[B,T,H,W,3] has fixed parameter-independent features. P shifts rows

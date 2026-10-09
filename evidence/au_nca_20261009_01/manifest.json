@@ -1,0 +1,108 @@
+{
+  "checkpoint_bindings_note": "Local checkpoint payloads were checked on CPU during export; bindings retain hashes, sizes, update numbers, and canonical parameter hashes, while weights are excluded.",
+  "completed_units": 9,
+  "config": {
+    "arms": [
+      [
+        "original_k64",
+        "original",
+        64
+      ],
+      [
+        "original_k8",
+        "original",
+        8
+      ],
+      [
+        "au_k8",
+        "au",
+        8
+      ]
+    ],
+    "batch_size": 8,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "blocks": 3,
+    "channels": 16,
+    "checkpoints": [
+      1000,
+      2000,
+      3000
+    ],
+    "control_alpha_iou_min": 0.8,
+    "control_nmse_max": 0.1,
+    "device": "cuda:0",
+    "dtype": "float32",
+    "eps": 1e-08,
+    "eval_batch": 8,
+    "eval_episodes": 32,
+    "eval_steps": [
+      64,
+      128,
+      256
+    ],
+    "evaluation_seeds": [
+      190401,
+      190402,
+      190403
+    ],
+    "fire_probability": 0.5,
+    "hidden": 128,
+    "init_seeds": [
+      190101,
+      190102,
+      190103
+    ],
+    "lr": 0.002,
+    "mean_worsening_tolerance": 0.02,
+    "paired_nmse_gain_min": 0.05,
+    "per_parameter_gradient_normalization": true,
+    "pool_size": 512,
+    "protocol": "accumulated_update_nca_v0",
+    "recovery_interval": 25,
+    "runtime_cap": null,
+    "schedule_seeds": [
+      190201,
+      190202,
+      190203
+    ],
+    "size": 32,
+    "strong_gap_original_nmse_min": 0.2,
+    "strong_recovery_au_nmse_max": 0.1,
+    "train_steps": 64,
+    "training_damage": false,
+    "updates": 3000,
+    "weight_decay": 0.0
+  },
+  "data_hashes": {
+    "block00_inputs.npz": "ec7e83ef4a609a32255b9a52d67ac69df3ad07639d9e5e63b0152da265c559dc",
+    "block01_inputs.npz": "1187148132fffea174cad9f44cfb6348af62a7beafb80775339014bd075d449e",
+    "block02_inputs.npz": "ffe1a31e619812f35126ff19494935a31ca6ac2f390955e5d0895d7e3ddbcf24",
+    "target_rgba.npy": "9e283574cdba132edaad5e049f3ed2c633be8206724d48473c237c3fa97a6d54"
+  },
+  "planned_units": 9,
+  "private_artifacts_excluded": [
+    "checkpoint tensor contents",
+    "optimizer and pool state",
+    "local dispatch and launch receipts",
+    "status and lock files",
+    "worker logs and machine identifiers"
+  ],
+  "qualification_sha256": "a84053b5c4fd4b3e09488b192a604222d60e2575a33f7f1904f0a0572f499d36",
+  "run_id": "au_nca_20261009_01",
+  "schema": "au-nca-public-evidence-v1",
+  "source_hashes": {
+    "new/au_nca/PROTOCOL.md": "ce2d1312e37bd86e5753969eaf38e0f49b42c9de1d4a0e612650d6ff39cb826d",
+    "new/au_nca/THEORY.md": "e9752e001a463b7fc19a5f244e3f2d9ab16d52ba044bdf91e8972374e1f1a4c6",
+    "new/au_nca/cells.py": "cd9cb6bee563c4285c1930876cd7bbdbbfdbf84e77270cb244e04e13aac5d3a6",
+    "new/au_nca/checks.py": "4d0143b7264115f8961a7b462001a0e6be97b4ec54994231bcc083567e9f12df",
+    "new/au_nca/run.py": "8cde026785aa00246c6517e8db205b81d941cfe8a02e92436776d26610d753b7",
+    "new/au_nca/tasks.py": "2c8dbde48326dde78d0987adfb923bd71d20bb184a1eb9481cc8d905f82cc8c6",
+    "tools/protected_job_worker.ps1": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41",
+    "tools/start_protected_job.ps1": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf"
+  },
+  "status": "COMPLETE",
+  "verdict": "AU_BENEFIT_DEVELOPMENTAL"
+}

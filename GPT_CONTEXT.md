@@ -1,6 +1,57 @@
 # Context for incremental scientific review
 
-## Current: spatial nonlinear lift
+## Current: AU-NCA with free learned feedback
+
+Formal fields: execution=COMPLETE, aggregation=COMPLETE,
+final_result_available=true, verdict=AU_BENEFIT_DEVELOPMENTAL.
+Canonical evidence: `evidence/au_nca_20261009_01/`.
+All9/9 arms completed3,000 updates each. Three paired initialization/schedule
+blocks compare Original K64, Original K8 and AU-K8; u3000 cold-seed T64
+growth on32 fixed held-out firing trajectories is the primary endpoint.
+Blocks are the independent units; episodes and pixels are not replicates.
+
+Primary mean NMSE: Original K8=.218002828, K64=.001820943,
+AU-K8=.157831440. The paired Original-K8 minus AU gains are
+.101473983/.106709372/-.027669192. All three K64 controls qualify;
+the frozen two-of-three benefit condition passes, but strong recovery fails.
+T256 mean NMSE is.344004532/.001834166/.260740094 for K8/K64/AU;
+damaged T256 is.349972726/.128006306/.436237971. Retention and untrained
+regeneration therefore remain unresolved and partly negative.
+
+`NCACell.initialize/visible/step/detach` in [cells.py](new/au_nca/cells.py)
+implements16 visible channels, fixed zero-padded Sobel perception,
+128 learned ReLU features plus a constant, and a shared16-by-129 projection.
+Original stores s; AU stores b,e and rematerializes s=b+W e. At fixed
+parameters they have the same forward function and full gradient. K8 adds
+the boundary term sum_i delta_i e_i^T to W's gradient; feature-parameter
+gradients remain the same as ordinary K8 at matched parameters/trajectories.
+No equality to full BPTT is claimed under learned nonlinear feedback.
+
+`rollout/update/train_arm/evaluate/decision` in [runner](new/au_nca/run.py)
+define the no-grad prefix, single terminal loss, per-tensor gradient
+normalization, pool handling, autonomous continuation, and frozen decision.
+`make_target/make_seed` in [tasks.py](new/au_nca/tasks.py) define one
+procedural flower and single-cell seed; no external dataset or teacher.
+Only visible states enter the pool; AU starts each optimizer update with
+b=pooled state,e=0 and retains e across the K8 cut. Parameters remain fixed
+through all64 rollout steps. Same pool indices and firing plans do not imply
+identical learned pool values or worst-loss reset identities across arms.
+
+Read [results](evidence/au_nca_20261009_01/RESULTS.md),
+[final metrics](evidence/au_nca_20261009_01/final_metrics.csv), then
+[theory](new/au_nca/THEORY.md) and [protocol](new/au_nca/PROTOCOL.md).
+Public evidence preserves target, packed evaluation masks, schedules,
+canonical curves, saved predictions and diagnostics. One explicit recovery
+retains the interrupted prefix and skips two completed arms. The aggregate
+elapsed field covers the resumed process only, not total active or calendar
+time. Verification uses saved data only; no new inference or training.
+
+Limits: three blocks, one fixed target, state16->145, upstream temporal
+credit still truncated; terminal improvement does not establish reliable
+long execution or regeneration. Prior exact polynomial-lift results and
+all historical negative results are unchanged.
+
+## Previous: spatial nonlinear lift
 
 Formal fields: execution=COMPLETE, aggregation=COMPLETE,
 final_result_available=true, verdict=SHORT_CREDIT_RECOVERY_DEVELOPMENTAL.

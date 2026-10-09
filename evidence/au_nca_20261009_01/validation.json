@@ -1,0 +1,58 @@
+{
+  "canonical_training_updates": 27000,
+  "checkpoint_bindings": 36,
+  "checkpoint_weights_published": false,
+  "completed_arms": 9,
+  "continuation_curve_records": 9216,
+  "decision_recomputed": {
+    "all_controls_qualified": true,
+    "control_passes": 3,
+    "paired_primary": [
+      {
+        "block": 0,
+        "full_minus_au": -0.12912711255906553,
+        "nmse": {
+          "au_k8": 0.12931943344117067,
+          "original_k64": 0.0001923208821051287,
+          "original_k8": 0.23079341636326245
+        },
+        "original_short_minus_au": 0.10147398292209178
+      },
+      {
+        "block": 1,
+        "full_minus_au": -0.14128544658516462,
+        "nmse": {
+          "au_k8": 0.14172746180574694,
+          "original_k64": 0.00044201522058232327,
+          "original_k8": 0.24843683347713047
+        },
+        "original_short_minus_au": 0.10670937167138353
+      },
+      {
+        "block": 2,
+        "full_minus_au": -0.19761893135335265,
+        "nmse": {
+          "au_k8": 0.20244742493928963,
+          "original_k64": 0.004828493585936983,
+          "original_k8": 0.174778233170776
+        },
+        "original_short_minus_au": -0.027669191768513623
+      }
+    ],
+    "verdict": "AU_BENEFIT_DEVELOPMENTAL"
+  },
+  "final_metric_rows": 45,
+  "historical_partial_records_excluded": 1200,
+  "input_banks": 3,
+  "intermediate_diagnostics": 18,
+  "intermediate_prediction_episodes": 144,
+  "max_metric_recomputation_abs_error": 0.0,
+  "per_episode_metric_rows": 1440,
+  "recovery_boundary": {
+    "committed_update": 1175,
+    "historical_log_through": 1200,
+    "resume_update": 1176
+  },
+  "scope": "Offline public evidence integrity; no training, model inference, CUDA, private run, or checkpoint payload is used.",
+  "status": "PASS"
+}

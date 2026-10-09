@@ -1,5 +1,69 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## AU-NCA v0: free nonlinear feedback with deferred output projection
+
+Current stage: **COMPLETE; AU_BENEFIT_DEVELOPMENTAL**. This authorized
+developmental screen moves beyond the finite polynomial lift to a standard
+16-channel, 128-ReLU-unit local NCA. Original K8, Original K64 and AU-K8 use
+the same 8,336 learned parameters and forward function at matched parameters.
+AU stores a 16-channel base plus a 129-channel accumulator; it adds direct
+historical-feature credit to the output projection, without restoring the
+feature network's truncated history. All9/9 arms and27,000 canonical updates
+completed. All three K64 controls qualify. Mean cold-seed T64 NMSE is
+.218002828 for Original K8,.001820943 for K64 and.157831440 for AU-K8.
+AU improves2/3 paired blocks and passes the frozen developmental-benefit
+rule, but does not meet strong recovery or match full credit. T256 mean
+NMSE is.344004532/.260740094 for Original K8/AU; damaged-T256 mean NMSE
+is.349972726/.436237971. Long execution and untrained regrowth are mixed.
+
+Read public [results](evidence/au_nca_20261009_01/RESULTS.md),
+[aggregate](evidence/au_nca_20261009_01/aggregate.json),
+[qualification](evidence/au_nca_20261009_01/qualification.json) and
+[saved-data verification](evidence/au_nca_20261009_01/validation.json).
+Local scientific output is `runs/au_nca_20261009_01`.
+CPU64 nonzero-parameter forward/full-gradient max errors are
+5.55e-16/3.33e-16; the W-specific K8 identity error is1.67e-16.
+CUDA32 actual-shape forward/full-gradient max errors are4.17e-7/1.58e-8,
+with identical alive masks. Numerical equivalence and the completed
+task-learning result are distinct evidence.
+
+On2026-10-09 the original processes exited without an stderr traceback;
+the termination cause is unknown. At18:09 local time, explicit recovery
+resumed block0 AU-K8 from its validated u1175 checkpoint at update1176.
+The two completed Original arms were preserved and skipped. Source/data
+hashes, finite checkpoint state and a free run lock passed preflight.
+The resumed worker completed at18:30 local time with exit0 and cleared
+idle-sleep protection. Aggregate elapsed1254.716seconds covers the resumed
+process only. Original receipts and the pre-resume snapshot remain local;
+public evidence retains sanitized recovery provenance and the interrupted
+training prefix. Earlier results remain unchanged.
+
+Read the [frozen protocol](new/au_nca/PROTOCOL.md),
+[derivation](new/au_nca/THEORY.md), [cell](new/au_nca/cells.py),
+[target](new/au_nca/tasks.py), and [runner](new/au_nca/run.py).
+Three paired blocks receive3,000 updates per arm, terminal T64 RGBA loss,
+K8/K64 credit, matched pool-index and firing schedules, and one fixed
+procedural flower target. u3000 cold-seed growth is primary; same-state
+T128/T256 continuation and untrained damage/regrowth are secondary.
+The first K64 control runs before the other arms and stops the comparison
+if it cannot qualify. This is an adaptation of Growing/Persistent NCA,
+not an exact replication or a general BPTT solution.
+
+The pool stores visible states only; each optimizer update starts AU with
+base equal to that state and accumulator zero. Within the rollout, numeric
+accumulated features survive K8 cuts and parameters remain fixed. Atomic
+latest checkpoints every25 updates retain model, optimizer, visible pool
+and RNG state. Named checkpoints at1000/2000/3000 support inspection.
+The existing protected worker supplies independent on-demand execution,
+temporary idle-sleep prevention, no runtime cap and no recurring monitor.
+
+From this repository root, with fresh output names:
+
+```powershell
+python -X utf8 -B new/au_nca/run.py --check --out analyses/NEW_AU_CHECK
+& ./tools/start_protected_job.ps1 -JobName NEW_AU_RUN -Script new/au_nca/run.py -ScriptArguments @('--out','runs/NEW_AU_RUN','--qualification','analyses/NEW_AU_CHECK/qualification.json')
+```
+
 ## Spatial Nonlinear Lift v0: genuine quadratic state writes on a cyclic grid
 
 Current stage: **COMPLETE**,9/9 arms,2700 updates in137.859seconds. Verdict:
