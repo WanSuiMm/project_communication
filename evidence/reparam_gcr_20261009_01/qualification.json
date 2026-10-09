@@ -1,0 +1,262 @@
+{
+  "status": "PASS",
+  "config": {
+    "protocol": "reparam_gcr_v0",
+    "teacher_seed": 170001,
+    "init_seed": 170101,
+    "schedule_seed": 170201,
+    "updates": 150,
+    "batch_size": 16,
+    "train_steps": 64,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_norm": 1.0,
+    "rho": 0.5,
+    "banks": {
+      "train": [
+        512,
+        8,
+        [
+          16,
+          32
+        ],
+        170301
+      ],
+      "heldout": [
+        128,
+        8,
+        [
+          16,
+          32
+        ],
+        170401
+      ],
+      "length64": [
+        128,
+        16,
+        [
+          64,
+          64
+        ],
+        170501
+      ],
+      "length96": [
+        128,
+        16,
+        [
+          96,
+          96
+        ],
+        170502
+      ]
+    },
+    "arms": [
+      [
+        "reparam_gcr_k8",
+        "reparam_gcr",
+        8
+      ]
+    ],
+    "primary": "heldout_T64_u150",
+    "checkpoints": [
+      50,
+      100,
+      150
+    ],
+    "device": "cuda:0",
+    "dtype": "float32",
+    "tf32": false,
+    "reference_evidence": "evidence/learnable_gcr_20261009_01",
+    "reference_commit": "58aa2720c39c57de565d4086d7fca3eeb80cb22e",
+    "state_scalars_per_node": 73,
+    "learned_parameters": 5921,
+    "primary_tolerance": 0.02,
+    "minimum_descriptive_improvement": 0.1
+  },
+  "source_hashes": {
+    "new/reparam_gcr/run.py": "55ddb422735a8a5cc8247cf3033262edd6efeba459b4b7789109fc26de11528d",
+    "new/reparam_gcr/cells.py": "d24a512683f995954cac3b0543bfcb4907e28b1adcc9992dca850091a9c655ec",
+    "new/reparam_gcr/PROTOCOL.md": "5cad65c412f47f319f19e7377748f69a7374cc876c1fbcefcadc3b5e50756e69",
+    "new/learnable_gcr/run.py": "22ae2a8f6373898d69c862e0a369bf5f13e47e0782672900904cbdc46687f1a3",
+    "new/learnable_gcr/cells.py": "ef2da9c66b1fef97f118d1186ee19b79ccea967f775b2ca984942e2a36ee3421",
+    "new/learnable_gcr/tasks.py": "e679ac8c993764b64a3ddaaf1239bb8e135233fbcabea03e5969c7810862dab4",
+    "new/learnable_gcr/PROTOCOL.md": "6e6d8927c4199cc9a188e0503c64ec563ffe41ca2055a1c97b6129494e9058c8",
+    "tools/start_protected_job.ps1": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf",
+    "tools/protected_job_worker.ps1": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41"
+  },
+  "data_hashes": {
+    "banks/heldout.npz": "7b8a74f414854f5bc0ac2cda07b20a4804eb48a0a5a59f7504093db3de892d21",
+    "banks/length64.npz": "917f6a87b083303c60a63d70135bfdf7ecc3bd13d2f6d5f62f7eb2696425064c",
+    "banks/length96.npz": "ad78c40f87c74702deb9606b8b7796140a8cfc2b1926067e7d2e11dd46d45f40",
+    "banks/schedule.npy": "7c7cae9a7421ab1c77e3bcf00aa6eacef8bc4686ea132fedff17b641c827f633",
+    "banks/teacher.json": "78d827405a186c999857b662846f8a3e2aab9592da06f49d0925e32faa61cf44",
+    "banks/train.npz": "c5ca2788588eb4cbe0e7fcd8271eb8df015695e0183e756e8eda36218099c5e3"
+  },
+  "locked_reference_r2": {
+    "gcr_k8": 0.2601032593544145,
+    "gcr_k64": 0.5357503802662453
+  },
+  "trained_reference_checkpoint_sha256": "0c839a942dc75a23d8d6eac26bf8f895e1a76a6c0321d0c6f438c04c8baf5f35",
+  "checks": {
+    "initial_cpu_float64": {
+      "dtype": "torch.float64",
+      "loss": 0.20956618520340936,
+      "steps_checked": 64,
+      "max_projected_state_absolute_error": 5.329070518200751e-15,
+      "max_prediction_absolute_error": 4.163336342344337e-17,
+      "full_gradient_equivalence": {
+        "phi": {
+          "cosine": 1.0,
+          "norm_ratio": 1.0000000000000002,
+          "relative_l2_error": 5.507019845468645e-16,
+          "expected_scale": 1.0
+        },
+        "interpreter": {
+          "cosine": 1.0000000000000002,
+          "norm_ratio": 0.9999999999999999,
+          "relative_l2_error": 5.108340129034924e-16,
+          "expected_scale": 1.0
+        },
+        "all": {
+          "cosine": 1.0,
+          "norm_ratio": 1.0,
+          "relative_l2_error": 5.139336962677481e-16,
+          "expected_scale": 1.0
+        }
+      },
+      "new_k8_vs_old_full_gradient": {
+        "phi": {
+          "cosine": 1.0,
+          "norm_ratio": 0.9960937499970207,
+          "relative_l2_error": 7.274809229515226e-12,
+          "expected_scale": 0.99609375
+        },
+        "interpreter": {
+          "cosine": 0.9999999999999999,
+          "norm_ratio": 0.9960937499994973,
+          "relative_l2_error": 4.3797183271752904e-12,
+          "expected_scale": 0.99609375
+        },
+        "all": {
+          "cosine": 1.0,
+          "norm_ratio": 0.9960937499993113,
+          "relative_l2_error": 4.659869313580349e-12,
+          "expected_scale": 0.99609375
+        }
+      }
+    },
+    "trained_reference_cpu_float64": {
+      "dtype": "torch.float64",
+      "loss": 0.14027993702057162,
+      "steps_checked": 64,
+      "max_projected_state_absolute_error": 8.881784197001252e-15,
+      "max_prediction_absolute_error": 2.7755575615628914e-16,
+      "full_gradient_equivalence": {
+        "phi": {
+          "cosine": 0.9999999999999998,
+          "norm_ratio": 1.0000000000000009,
+          "relative_l2_error": 1.2155270625072175e-15,
+          "expected_scale": 1.0
+        },
+        "interpreter": {
+          "cosine": 0.9999999999999996,
+          "norm_ratio": 1.0000000000000007,
+          "relative_l2_error": 1.1473221183837631e-15,
+          "expected_scale": 1.0
+        },
+        "all": {
+          "cosine": 0.9999999999999998,
+          "norm_ratio": 1.0000000000000007,
+          "relative_l2_error": 1.2111612503974795e-15,
+          "expected_scale": 1.0
+        }
+      },
+      "new_k8_vs_old_full_gradient": {
+        "phi": {
+          "cosine": 0.9999999999999998,
+          "norm_ratio": 0.9960937500013927,
+          "relative_l2_error": 9.160247169588352e-12,
+          "expected_scale": 0.99609375
+        },
+        "interpreter": {
+          "cosine": 0.9999999999999998,
+          "norm_ratio": 0.996093750003949,
+          "relative_l2_error": 1.8692880028620876e-11,
+          "expected_scale": 0.99609375
+        },
+        "all": {
+          "cosine": 1.0,
+          "norm_ratio": 0.9960937500015603,
+          "relative_l2_error": 1.0068013376841653e-11,
+          "expected_scale": 0.99609375
+        }
+      }
+    },
+    "initial_cuda_float32": {
+      "dtype": "torch.float32",
+      "loss": 0.12241174280643463,
+      "steps_checked": 64,
+      "max_projected_state_absolute_error": 9.5367431640625e-06,
+      "max_prediction_absolute_error": 4.470348358154297e-08,
+      "full_gradient_equivalence": {
+        "phi": {
+          "cosine": 0.9999999999999221,
+          "norm_ratio": 1.0000000319171796,
+          "relative_l2_error": 3.9595219754881125e-07,
+          "expected_scale": 1.0
+        },
+        "interpreter": {
+          "cosine": 0.9999999999999768,
+          "norm_ratio": 1.0000000079507316,
+          "relative_l2_error": 2.160246457709836e-07,
+          "expected_scale": 1.0
+        },
+        "all": {
+          "cosine": 0.9999999999999756,
+          "norm_ratio": 1.0000000084286458,
+          "relative_l2_error": 2.2104835996154737e-07,
+          "expected_scale": 1.0
+        }
+      },
+      "new_k8_vs_old_full_gradient": {
+        "phi": {
+          "cosine": 0.999999999999929,
+          "norm_ratio": 0.9960938432220471,
+          "relative_l2_error": 3.873247996688454e-07,
+          "expected_scale": 0.99609375
+        },
+        "interpreter": {
+          "cosine": 0.9999999999999766,
+          "norm_ratio": 0.9960938036511388,
+          "relative_l2_error": 2.2313465321634093e-07,
+          "expected_scale": 0.99609375
+        },
+        "all": {
+          "cosine": 0.9999999999999754,
+          "norm_ratio": 0.996093804440221,
+          "relative_l2_error": 2.2756929757372663e-07,
+          "expected_scale": 0.99609375
+        }
+      }
+    }
+  },
+  "credit_cut": {
+    "early_input_gradient_exactly_zero": true,
+    "suffix_input_and_phi_gradient_nonzero": true
+  },
+  "smoke": {
+    "update_seconds": 0.08824909999975716,
+    "estimated_training_seconds": 13.237364999963575,
+    "loss": 0.12241173535585403,
+    "gradient_norm": 0.28606027364730835,
+    "peak_allocated_mib": 19.2802734375
+  },
+  "torch_version": "2.5.1",
+  "cuda_version": "11.8",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}

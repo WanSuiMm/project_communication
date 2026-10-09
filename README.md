@@ -1,6 +1,38 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest completed experiment: learnable ordered composition
+## Latest completed experiment: exact GCR lift and late projection
+
+Can moving the learned projection after fixed local composition recover the
+K8 learning gap? **COMPLETE: one new arm,150 updates in20.144seconds.**
+Reparam-GCR K8 held-out T64 R2 is **.535705**, versus locked old GCR
+K8 **.260103** and K64 **.535750**. Frozen verdict:
+**NEAR_FULL_CREDIT_DEVELOPMENTAL**. This recovers99.983% of the observed
+one-block gap, on the same known validation cohorts.
+
+The fixed recurrence now carries raw first/ordered-second moments; the same
+learned projection is applied at the endpoint. Exact forward and full-gradient
+checks pass. Parameter count remains5921; per-cell state increases21->73
+scalars. This supports parameter placement for a linear degree-two composition
+task, with additional state cost. It does not establish generic NCA trainability,
+early-input gradient recovery or fresh-seed reliability. The earlier four-arm
+control-unqualified verdict below is unchanged.
+
+Start here:
+
+1. [Results](evidence/reparam_gcr_20261009_01/RESULTS.md),
+   [seven final metric rows](evidence/reparam_gcr_20261009_01/final_metrics.csv),
+   and [aggregate](evidence/reparam_gcr_20261009_01/aggregate.json).
+2. [Frozen protocol](new/reparam_gcr/PROTOCOL.md),
+   [cell](new/reparam_gcr/cells.py), and [architecture](ARCHITECTURE.md).
+3. [Qualification](evidence/reparam_gcr_20261009_01/qualification.json),
+   [saved-array verification](evidence/reparam_gcr_20261009_01/validation.json),
+   and [reproduction](evidence/reparam_gcr_20261009_01/REPRODUCTION.md).
+
+The1.20MiB package contains exact banks/schedule, all150 losses, intermediate
+evaluations, checkpoint bindings and saved predictions. Weights remain local.
+See [incremental review](GPT_HANDOFF.md).
+
+## Previous completed experiment: learnable ordered composition
 
 Can structured second-order local state reduce the terminal K8-versus-K64
 learning gap? This new directed-path task is **COMPLETE:5/5 units,750 updates

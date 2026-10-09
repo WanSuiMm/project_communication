@@ -1,5 +1,34 @@
 # Tensor and operator map
 
+## Reparam-GCR: raw-state lift with late learned projection
+
+For x[B,N,8], keep count[B,N,1], U[B,N,8], V[B,N,8,8] and endpoint z[B,1].
+With the same predecessor gather and active-cell mask as old GCR:
+
+```math
+n'=n_{pred}+1,\qquad U'=U_{pred}+x,\qquad
+V'=V_{pred}+U_{pred}x^\top.
+```
+
+At the endpoint, the bias-free W[4,8] produces S1=WU and S2=WVW^T.
+The unchanged21->256->1 interpreter consumes normalized count/S1/S2;
+z'=.5z+.5*interpreter and y=tanh(z). These projected states and outputs
+equal old GCR in exact arithmetic, including full64 parameter gradients.
+Only the location of W and fixed-state dimension change:5921 parameters
+remain, per-cell state rises21->73 scalars.
+
+`ReparamGCR.initialize/step/project_workspace`:
+[cells.py](new/reparam_gcr/cells.py). `forward` and `check`:
+[run.py](new/reparam_gcr/run.py). K8 detaches raw count/U/V/z after step56;
+live W is applied throughout the final window. Since the first three variables
+are independent of learned parameters, their cut loses no parameter path.
+The residual endpoint EMA cut contributes the known255/256 gradient scale in
+the bounded check; early input credit remains absent.
+
+[Completed evidence](evidence/reparam_gcr_20261009_01/RESULTS.md) recovers
+the old one-block GCR learning gap. The construction depends on linear
+projection and degree-two sufficient statistics, not arbitrary neural dynamics.
+
 ## Learnable GCR: a separate directed-path task
 
 This task's input is x[B,N,8] and a static predecessor index pred[B,N] on a

@@ -1,0 +1,96 @@
+{
+  "update": 100,
+  "next_update": 101,
+  "formal_endpoint": false,
+  "checkpoint_sha256": "6bc94fe30ae82db4f65a757b111042314eef8327622d25912613cd486dbcee54",
+  "config": {
+    "protocol": "reparam_gcr_v0",
+    "teacher_seed": 170001,
+    "init_seed": 170101,
+    "schedule_seed": 170201,
+    "updates": 150,
+    "batch_size": 16,
+    "train_steps": 64,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_norm": 1.0,
+    "rho": 0.5,
+    "banks": {
+      "train": [
+        512,
+        8,
+        [
+          16,
+          32
+        ],
+        170301
+      ],
+      "heldout": [
+        128,
+        8,
+        [
+          16,
+          32
+        ],
+        170401
+      ],
+      "length64": [
+        128,
+        16,
+        [
+          64,
+          64
+        ],
+        170501
+      ],
+      "length96": [
+        128,
+        16,
+        [
+          96,
+          96
+        ],
+        170502
+      ]
+    },
+    "arms": [
+      [
+        "reparam_gcr_k8",
+        "reparam_gcr",
+        8
+      ]
+    ],
+    "primary": "heldout_T64_u150",
+    "checkpoints": [
+      50,
+      100,
+      150
+    ],
+    "device": "cuda:0",
+    "dtype": "float32",
+    "tf32": false,
+    "reference_evidence": "evidence/learnable_gcr_20261009_01",
+    "reference_commit": "58aa2720c39c57de565d4086d7fca3eeb80cb22e",
+    "state_scalars_per_node": 73,
+    "learned_parameters": 5921,
+    "primary_tolerance": 0.02,
+    "minimum_descriptive_improvement": 0.1
+  },
+  "source_hashes": {
+    "new/reparam_gcr/run.py": "55ddb422735a8a5cc8247cf3033262edd6efeba459b4b7789109fc26de11528d",
+    "new/reparam_gcr/cells.py": "d24a512683f995954cac3b0543bfcb4907e28b1adcc9992dca850091a9c655ec",
+    "new/reparam_gcr/PROTOCOL.md": "5cad65c412f47f319f19e7377748f69a7374cc876c1fbcefcadc3b5e50756e69",
+    "new/learnable_gcr/run.py": "22ae2a8f6373898d69c862e0a369bf5f13e47e0782672900904cbdc46687f1a3",
+    "new/learnable_gcr/cells.py": "ef2da9c66b1fef97f118d1186ee19b79ccea967f775b2ca984942e2a36ee3421",
+    "new/learnable_gcr/tasks.py": "e679ac8c993764b64a3ddaaf1239bb8e135233fbcabea03e5969c7810862dab4",
+    "new/learnable_gcr/PROTOCOL.md": "6e6d8927c4199cc9a188e0503c64ec563ffe41ca2055a1c97b6129494e9058c8",
+    "tools/start_protected_job.ps1": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf",
+    "tools/protected_job_worker.ps1": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41"
+  },
+  "weights_published": false
+}

@@ -1,5 +1,53 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## Exact raw-state lift and late projection: Reparam-GCR v0
+
+Stage: **COMPLETE**,1/1 new arm,150 updates,20.144seconds. Frozen verdict:
+**NEAR_FULL_CREDIT_DEVELOPMENTAL**. New K8 held-out R2=.535704758 versus
+locked old K8=.260103259 and old K64=.535750380; new-minus-old K64=-.0000456223.
+The recovered fraction of this one block's R2 credit gap is.99983449. Long64/96
+R2 values at T128 are.669788533/.538553402, with identical T256 metrics and
+finite predictions. Saved-array validation checks all7 final metric rows,
+150 losses, three named checkpoints and all source/data hashes without inference.
+Peak allocated memory is23.17MiB. The protected worker exited0 and cleared
+idle-sleep prevention. This supports late parameter placement in the current
+linear degree-two task, with greater state cost; no generic NCA or reliability
+claim follows. Public [results](evidence/reparam_gcr_20261009_01/RESULTS.md) and
+[aggregate](evidence/reparam_gcr_20261009_01/aggregate.json) preserve the endpoint.
+Exactly one new150-update K8 arm uses the previous ordered-path banks,
+initialization, schedule,5921 parameters, interpreter and optimizer unchanged.
+Fixed local recurrence accumulates raw U[8],V[64]; the learned W projects
+WU/WVW^T at the endpoint each step. Per-node state rises21->73 scalars.
+The new within-GCR question compares u150 against locked old K8/K64 R2
+.2601032594/.5357503803. The earlier four-arm control-unqualified verdict is
+unchanged; this is a one-block developmental intervention on known cohorts.
+
+Bounded checks passed at initial and trained-reference parameters: per-step
+forward/state equivalence, full64 gradient equivalence, and the expected
+new-K8/old-full gradient relationship. In actual-shape FP32, overall cosine is
+.9999999999999754, norm ratio.9960938044 versus255/256=.99609375, and scaled
+relative L2 error2.276e-7. Early input gradients remain exactly zero under the
+raw-state cut; W and suffix-input gradients are nonzero. One new-model optimizer
+smoke update estimates13.24seconds for training, excluding evaluation and file
+overhead, with19.28MiB peak allocated memory. These checks do not establish the
+general NCA trainability; the completed learning result is reported separately above.
+
+Read [protocol](new/reparam_gcr/PROTOCOL.md), [cell](new/reparam_gcr/cells.py),
+and [runner/checks](new/reparam_gcr/run.py). Qualification is
+`analyses/reparam_gcr_qualification_20261009_01/qualification.json`;
+scientific output is `runs/reparam_gcr_20261009_01`.
+Atomic latest checkpoints protect each completed optimizer update; named
+u50/u100/u150 checkpoints remain, and only u150 is primary. The existing
+protected on-demand worker runs independently, has no runtime cap, temporarily
+prevents idle sleep and creates no recurring trigger.
+
+From repository root in the established CUDA environment, using fresh names:
+
+```powershell
+python -X utf8 -u -B new/reparam_gcr/run.py --check --out analyses/NEW_REPARAM_CHECK
+& ./tools/start_protected_job.ps1 -JobName NEW_REPARAM_RUN -Script new/reparam_gcr/run.py -ScriptArguments @('--out','runs/NEW_REPARAM_RUN','--qualification','analyses/NEW_REPARAM_CHECK/qualification.json')
+```
+
 ## Learnable ordered composition: developmental GCR v0
 
 Stage: **COMPLETE**,5/5 units,750 updates,94.179seconds; frozen verdict

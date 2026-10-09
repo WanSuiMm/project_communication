@@ -1,0 +1,179 @@
+{
+  "status": "COMPLETE",
+  "config": {
+    "protocol": "reparam_gcr_v0",
+    "teacher_seed": 170001,
+    "init_seed": 170101,
+    "schedule_seed": 170201,
+    "updates": 150,
+    "batch_size": 16,
+    "train_steps": 64,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_norm": 1.0,
+    "rho": 0.5,
+    "banks": {
+      "train": [
+        512,
+        8,
+        [
+          16,
+          32
+        ],
+        170301
+      ],
+      "heldout": [
+        128,
+        8,
+        [
+          16,
+          32
+        ],
+        170401
+      ],
+      "length64": [
+        128,
+        16,
+        [
+          64,
+          64
+        ],
+        170501
+      ],
+      "length96": [
+        128,
+        16,
+        [
+          96,
+          96
+        ],
+        170502
+      ]
+    },
+    "arms": [
+      [
+        "reparam_gcr_k8",
+        "reparam_gcr",
+        8
+      ]
+    ],
+    "primary": "heldout_T64_u150",
+    "checkpoints": [
+      50,
+      100,
+      150
+    ],
+    "device": "cuda:0",
+    "dtype": "float32",
+    "tf32": false,
+    "reference_evidence": "evidence/learnable_gcr_20261009_01",
+    "reference_commit": "58aa2720c39c57de565d4086d7fca3eeb80cb22e",
+    "state_scalars_per_node": 73,
+    "learned_parameters": 5921,
+    "primary_tolerance": 0.02,
+    "minimum_descriptive_improvement": 0.1
+  },
+  "decision": {
+    "verdict": "NEAR_FULL_CREDIT_DEVELOPMENTAL",
+    "new_k8_r2": 0.5357047579964681,
+    "old_k8_r2": 0.2601032593544145,
+    "old_k64_r2": 0.5357503802662453,
+    "new_minus_old_k8": 0.27560149864205363,
+    "new_minus_old_k64": -4.56222697772235e-05,
+    "recovered_credit_gap_fraction": 0.9998344903091086,
+    "reference_qualified": true
+  },
+  "evaluations": {
+    "heldout": {
+      "seconds": 1.867584000000079,
+      "horizons": {
+        "T64": {
+          "finite": true,
+          "mse": 0.09391523263411307,
+          "r2": 0.5357047579964681,
+          "target_variance": 0.20227481166692346,
+          "n": 128,
+          "count_matches_length": true
+        },
+        "T128": {
+          "finite": true,
+          "mse": 0.09391523263411307,
+          "r2": 0.5357047579964681,
+          "target_variance": 0.20227481166692346,
+          "n": 128,
+          "count_matches_length": true
+        },
+        "T256": {
+          "finite": true,
+          "mse": 0.09391523263411307,
+          "r2": 0.5357047579964681,
+          "target_variance": 0.20227481166692346,
+          "n": 128,
+          "count_matches_length": true
+        }
+      }
+    },
+    "length64": {
+      "seconds": 2.0220898000002308,
+      "horizons": {
+        "T128": {
+          "finite": true,
+          "mse": 0.05861123557179332,
+          "r2": 0.6697885333277807,
+          "target_variance": 0.17749606384799807,
+          "n": 128,
+          "count_matches_length": true
+        },
+        "T256": {
+          "finite": true,
+          "mse": 0.05861123557179332,
+          "r2": 0.6697885333277807,
+          "target_variance": 0.17749606384799807,
+          "n": 128,
+          "count_matches_length": true
+        }
+      }
+    },
+    "length96": {
+      "seconds": 1.916872400000102,
+      "horizons": {
+        "T128": {
+          "finite": true,
+          "mse": 0.10355772785531056,
+          "r2": 0.5385534019199552,
+          "target_variance": 0.22441974496330974,
+          "n": 128,
+          "count_matches_length": true
+        },
+        "T256": {
+          "finite": true,
+          "mse": 0.10355772785531056,
+          "r2": 0.5385534019199552,
+          "target_variance": 0.22441974496330974,
+          "n": 128,
+          "count_matches_length": true
+        }
+      }
+    }
+  },
+  "systems": {
+    "training_and_intermediate_eval_seconds": 13.332902000000104,
+    "peak_allocated_mib": 23.16650390625,
+    "parameters": {
+      "phi": 32,
+      "interpreter": 5889,
+      "writer": 0,
+      "common": 5921,
+      "total": 5921
+    },
+    "state_scalars_per_node": 73,
+    "resumed_from_update": 1
+  },
+  "elapsed_seconds": 20.144349999999577,
+  "claim_scope": "one-block exact raw-state lift and late projection; no generic NCA or reliability claim"
+}

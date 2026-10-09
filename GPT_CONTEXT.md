@@ -1,6 +1,41 @@
 # Context for incremental scientific review
 
-## Current: learnable ordered-composition screen
+## Current: exact GCR lift and late projection
+
+Formal fields: execution=COMPLETE, aggregation=COMPLETE,
+final_result_available=true, verdict=NEAR_FULL_CREDIT_DEVELOPMENTAL.
+Canonical evidence: `evidence/reparam_gcr_20261009_01/`.
+Exactly one new K8 arm completed150 updates in20.144seconds, reusing the
+previous ordered-path task, banks, initialization, schedule and optimizer.
+Primary u150 held-out T64 R2=.535704758, versus locked old GCR K8=.260103259
+and K64=.535750380. New-minus-old K64=-.0000456223. Long64/96 R2 at T128/T256
+is.669788533/.538553402; all saved predictions are finite.
+
+`ReparamGCR` in [cells.py](new/reparam_gcr/cells.py) carries fixed local raw
+moments U[8],V[64] plus count, then applies live learned W as WU/WVW^T at the
+endpoint. Same5921 parameters and interpreter; per-cell state21->73. The
+[runner](new/reparam_gcr/run.py) cuts the raw-state graph after56 steps and
+projects within the last8 steps. Forward/full64 gradients match the old GCR.
+New K8 versus old full gradient has cosine approximately1 and norm ratio
+.9960938044, matching the endpoint EMA factor255/256. Early input gradients
+are still zero; this is parameter-credit relocation, not history recovery.
+
+Read [results](evidence/reparam_gcr_20261009_01/RESULTS.md),
+[protocol](new/reparam_gcr/PROTOCOL.md), then
+[qualification](evidence/reparam_gcr_20261009_01/qualification.json).
+[Publication verification](evidence/reparam_gcr_20261009_01/validation.json)
+recomputes all seven final metrics from saved arrays without inference and
+checks150 losses, three checkpoint bindings and source/data hashes.
+Weights are excluded; [reproduction](evidence/reparam_gcr_20261009_01/REPRODUCTION.md)
+explains how to regenerate the trained-reference qualification.
+
+Scope: one developmental block on reused cohorts, bias-free linear projection,
+degree-two task-matched statistics, enlarged state. No generic nonlinear NCA,
+fresh-seed reliability, arbitrary composition or autonomous stability claim.
+The previous Full Writer positive control remains unqualified; the separate
+within-GCR intervention uses its individually qualified GCR-K64 reference.
+
+## Previous: learnable ordered-composition screen
 
 Formal fields: execution=COMPLETE, aggregation=COMPLETE,
 final_result_available=true, verdict=POSITIVE_CONTROLS_UNQUALIFIED.
