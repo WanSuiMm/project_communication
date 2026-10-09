@@ -1,4 +1,62 @@
-# Incremental review: AU-NCA with free learned feedback
+# Incremental review: ReLU input-lift beyond AU-NCA
+
+- Review base: `14bc7031db1486c2d67dde5b475d5dacdf65a62e`.
+- Stable code/evidence head: `0224d425388f9d74d2eb3db299b28d77b476d01f`.
+- This later commit changes review metadata only; the evidence head stays fixed.
+- Execution: **COMPLETE**, 3/3 new arms, 9,000 optimizer updates, 5,174 seconds.
+- Qualification: **PASS**. Frozen learning verdict: **NO_QUALIFIED_RELU_LIFT_BENEFIT**.
+- Nine historical AU-NCA/original controls are hash-pinned and were not retrained.
+
+Read [results](evidence/relu_input_lift_20261009_01/RESULTS.md),
+[final metrics](evidence/relu_input_lift_20261009_01/final_metrics.csv), and
+[saved-data verification](evidence/relu_input_lift_20261009_01/validation.json), then
+[theory](new/relu_input_lift/THEORY.md), [protocol](new/relu_input_lift/PROTOCOL.md),
+and [cell](new/relu_input_lift/cells.py). Consult
+[reference bindings](evidence/relu_input_lift_20261009_01/reference_bindings.json)
+for the unchanged controls. Skip raw training logs, input banks, and prediction
+arrays on the first read.
+
+This adds input-feature history to the previous W-only parameter-deferral
+construction. The lifted state stores masked perceived inputs separately for
+each ReLU row and contracts them with the current feature matrix. Fixed-parameter
+forward and full-gradient checks pass away from ReLU boundaries. K8 gains a
+direct historical feature-parameter credit path, but historical input feedback
+remains detached. It is not exact full-system short BPTT. Parameters remain
+8,336; state grows from AU's 145 to 6,289 scalars per cell.
+
+At fixed u3000, paired AU/new T64 NMSE values are .129319/.139306,
+.141727/.175434, and .202447/.128720. Mean NMSE changes from .157831 to
+.147820, a .010011 gain, with only 1/3 improving blocks. Both the .03 mean-gain
+and 2/3 improving-block requirements fail; strong recovery also fails. Improved
+secondary intact-continuation means and feature-gradient cosines do not reverse
+that frozen conclusion. Damaged-T256 mean NMSE is .436912 versus AU's .436238.
+The remaining K64 gap cannot be attributed solely to input feedback by this test.
+
+The public package includes all 9,000 training records, 1,920 episode metrics,
+compressed predictions, inputs, intermediate diagnostics, and checkpoint hash
+bindings. Offline verification recomputes saved metrics exactly and checks
+source/data/control hashes, with no inference or training. Checkpoint weights
+and private dispatch/guard records stay local. Scientific completion is verified;
+the stale private guard receipt does not establish worker-exit or sleep-request
+cleanup status. [Reproduction](evidence/relu_input_lift_20261009_01/REPRODUCTION.md)
+explains offline verification and the local-reference requirement for new runs.
+
+The new protocol explicitly records the executed one-based training-mask seed
+index; the preceding frozen AU document is not rewritten. Earlier scientific
+evidence and verdicts remain unchanged.
+
+Reviewer questions:
+
+1. Does the construction isolate direct historical feature-parameter credit
+   from the still-truncated dependence through perceived inputs?
+2. Do the state cost, mixed paired outcomes, and failed frozen gate limit the
+   result to a qualified algebraic construction without qualified learning benefit?
+3. Do the public arrays, hash bindings, and checkpoint metadata support the
+   reported endpoint without suggesting that checkpoint weights were published?
+
+---
+
+# Previous incremental review: AU-NCA with free learned feedback
 
 - Review base: `133526df4b3ab8ff0b8d4c0dbcb63961747d3d0e`.
 - Stable code/evidence head: `fb291076adfb4fb2b01d57ec20fe1c75e9585c06`.
