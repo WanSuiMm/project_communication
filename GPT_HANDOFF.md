@@ -1,4 +1,63 @@
-# Incremental review: spatial nonlinear lift
+# Incremental review: AU-NCA with free learned feedback
+
+- Review base: `133526df4b3ab8ff0b8d4c0dbcb63961747d3d0e`.
+- Stable code/evidence head: `fb291076adfb4fb2b01d57ec20fe1c75e9585c06`.
+- This later commit changes review metadata only; the evidence head stays fixed.
+- Execution: **COMPLETE**,9/9 arms,27,000 canonical optimizer updates.
+- Frozen verdict: **AU_BENEFIT_DEVELOPMENTAL**; all3 K64 controls qualified.
+
+Read [results](evidence/au_nca_20261009_01/RESULTS.md),
+[45 final endpoints](evidence/au_nca_20261009_01/final_metrics.csv),
+and [aggregate](evidence/au_nca_20261009_01/aggregate.json), then
+[theory](new/au_nca/THEORY.md), [protocol](new/au_nca/PROTOCOL.md),
+[cell](new/au_nca/cells.py) and
+[qualification](evidence/au_nca_20261009_01/qualification.json).
+Skip packed masks, raw predictions and training curves on the first read.
+
+This extends the parameter-deferral experiments to an unrestricted learned
+local feedback network, beyond the preceding fixed polynomial teacher family. Both realizations
+have the same8,336 learned parameters and fixed-parameter forward function.
+AU changes state storage16->145 scalars per cell and the K8 credit path of
+the output projection W. Its upstream feature-parameter gradient still equals
+ordinary K8 at matched parameters and trajectories; it does not recover
+full credit for the whole system.
+
+At fixed u3000, paired Original-K8/AU T64 NMSE values are
+.230793/.129319,.248437/.141727,.174778/.202447. Mean NMSE falls from
+.218003 to.157831, with gains in2/3 blocks. K64 mean NMSE is.001821.
+The frozen developmental-benefit rule passes; the strong-recovery rule fails.
+AU is worse in the third block and never reaches the primary.10 threshold.
+The fixed target is one procedural flower, with a visible-state pool,
+terminal T64 supervision and stochastic firing. Same index/firing schedules
+do not imply identical learned pool contents or reset identities.
+
+Same-state T256 mean NMSE is.344005 for Original K8 and.260740 for AU,
+but both deteriorate relative to T64. Untrained damaged-T256 NMSE worsens
+from.349973 to.436238. No uniform stability/regeneration or broad
+short-BPTT solution follows from the primary benefit.
+
+[Saved-data verification](evidence/au_nca_20261009_01/validation.json)
+checks prediction metrics, canonical training updates, checkpoint metadata
+bindings and source/input hashes without inference or training. The interrupted
+prefix and one explicit u1175 recovery are preserved separately; updates
+1176..1200 in the archived prefix were replayed, not double counted.
+Aggregate elapsed time covers only the resumed process. Learned checkpoint
+contents and private launch receipts remain local. Earlier claims/evidence
+are unchanged; [reproduction](evidence/au_nca_20261009_01/REPRODUCTION.md)
+provides qualification and fresh-run commands.
+
+Reviewer questions:
+
+1. Does the implementation preserve the original fixed-parameter forward
+   function with stochastic firing, alive masks and a trainable output bias?
+2. Is the W-only truncated-credit intervention correctly separated from the
+   state-cost increase, divergent learned pool values and still-truncated eta?
+3. Do the mixed third-block, continuation and damage results limit the
+   conclusion to a developmental terminal-learning benefit on one target?
+
+---
+
+# Previous incremental review: spatial nonlinear lift
 
 - Review base: `a470a02279ffb5aed827d22ee1acaed05c76fb0f`.
 - Stable code/evidence head: `a764cf4c43b0d2a9c6fc92168e25afe7100a3fe4`.
