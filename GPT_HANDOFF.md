@@ -1,4 +1,57 @@
-# Incremental review: exact GCR lift and late projection
+# Incremental review: spatial nonlinear lift
+
+- Review base: `a470a02279ffb5aed827d22ee1acaed05c76fb0f`.
+- Stable code/evidence head: `a764cf4c43b0d2a9c6fc92168e25afe7100a3fe4`.
+- This later commit changes review metadata only; the evidence head stays fixed.
+- Execution: **COMPLETE**,9/9 arms,2700 updates in137.859seconds.
+- Frozen verdict: **SHORT_CREDIT_RECOVERY_DEVELOPMENTAL**.
+
+Read [results](evidence/spatial_nonlinear_lift_20261009_01/RESULTS.md),
+[36 final metrics](evidence/spatial_nonlinear_lift_20261009_01/final_metrics.csv),
+and [aggregate](evidence/spatial_nonlinear_lift_20261009_01/aggregate.json), then
+[proof](new/spatial_nonlinear_lift/THEORY.md),
+[protocol](new/spatial_nonlinear_lift/PROTOCOL.md),
+[cell](new/spatial_nonlinear_lift/cells.py), and
+[qualification](evidence/spatial_nonlinear_lift_20261009_01/qualification.json).
+Skip raw banks/predictions/training curves on the first read.
+
+The gap between the supplied checks is now closed: genuine quadratic
+dependence on historical state and cyclic2D transport coexist in one cell.
+Original/full and lifted/short have exactly the same real-arithmetic forward
+function and parameter gradients. At fixed u300, original K8 heldout R2 is
+-.653966884/.027684190/.050469104; original K64 is
+.999999727/.999999959/.999586778; lifted K8 matches within4.414e-10.
+All three K64 controls qualify. Across all four final evaluation banks, the
+maximum full/lifted R2 difference is1.476e-9.
+
+All three arms use the same nine parameter coordinates, initialization and
+minibatch schedule within each block. Lifted execution carries42 instead of2
+scalars per cell; early input gradients still remain cut. The input map and
+transport are fixed and the teacher is in the matched polynomial family.
+Matching full/lifted is predicted by the theorem. The experimental evidence
+is the large original K8 gap plus the measured state/systems cost, not a new
+general feedback-learning guarantee. Three blocks are developmental, not a
+population reliability estimate. Long128/256 are fresh proportionally phased
+teacher-labeled episodes, not autonomous continuation-stability rollouts.
+
+[Saved-array validation](evidence/spatial_nonlinear_lift_20261009_01/validation.json)
+checks all final/intermediate predictions,2700 finite loss records, source/data
+hashes and checkpoint bindings without inference or training. Exact compressed
+banks/schedules and all curves remain public. Learned parameter/checkpoint
+contents and private receipts remain local. Earlier evidence is unchanged.
+
+Reviewer questions:
+
+1. Does the quadratic lift preserve the same normalized pre-update state,
+   including the distinct Q-transported M0, in both implementations?
+2. Does the result isolate parameter placement while accounting for42 versus2
+   state scalars, fixed features/transport, and a matched teacher?
+3. What would be needed to retain a finite parameter-independent closure
+   while introducing learned feedback or a broader task family?
+
+---
+
+# Previous incremental review: exact GCR lift and late projection
 
 - Review base: `cd1b8efa353eb52111511bf47d94e0c897b60f60`.
 - Stable code/evidence head: `bee767d5d89594bd25cb26c310b76231c32dae2c`.
