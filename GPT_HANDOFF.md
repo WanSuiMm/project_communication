@@ -1,4 +1,50 @@
-# Incremental review: learnable ordered composition
+# Incremental review: exact GCR lift and late projection
+
+- Review base: `cd1b8efa353eb52111511bf47d94e0c897b60f60`.
+- Stable code/evidence head: `bee767d5d89594bd25cb26c310b76231c32dae2c`.
+- This later commit changes review metadata only; the evidence head stays fixed.
+- Execution: **COMPLETE**, one new K8 arm,150 updates,20.144seconds.
+- Frozen verdict: **NEAR_FULL_CREDIT_DEVELOPMENTAL**.
+
+Read [results](evidence/reparam_gcr_20261009_01/RESULTS.md),
+[seven final metric rows](evidence/reparam_gcr_20261009_01/final_metrics.csv),
+and [aggregate](evidence/reparam_gcr_20261009_01/aggregate.json), then
+[protocol](new/reparam_gcr/PROTOCOL.md),
+[cell](new/reparam_gcr/cells.py), [runner](new/reparam_gcr/run.py),
+and [qualification](evidence/reparam_gcr_20261009_01/qualification.json).
+Skip raw banks, predictions and training curves on the first read.
+
+New K8 held-out T64 R2=.535704758, versus locked old GCR K8=.260103259
+and K64=.535750380. Same known banks/init/schedule,150 updates and5921
+learned parameters. Fixed local raw moments are projected by live W at the
+endpoint; per-cell state increases21->73. Forward/full-gradient equivalence
+passes. New K8 versus old full gradient cosine is approximately1 and its
+norm ratio matches the255/256 endpoint EMA factor. Early input gradients
+remain zero: the change relocates shared parameter credit.
+
+This is one developmental block for a linear degree-two task on reused
+cohorts. The previous four-arm verdict remains POSITIVE_CONTROLS_UNQUALIFIED;
+the original StreamingCell and historical evidence are unchanged. No fresh-seed
+reliability, general nonlinear NCA, or autonomous stability claim follows.
+
+[Saved-array verification](evidence/reparam_gcr_20261009_01/validation.json)
+checks all150 losses, seven final metric rows, three checkpoint bindings and
+source/data hashes without inference. The1.20MiB evidence package excludes
+weights and private receipts. [Reproduction](evidence/reparam_gcr_20261009_01/REPRODUCTION.md)
+explains the trained-reference checkpoint requirement and its regeneration.
+
+Reviewer questions:
+
+1. Does the state lift move the same learned computation into the last credit
+   window, rather than add information or alter the exact forward function?
+2. Which conclusion survives the21->73 state-cost increase and the limited
+   linear degree-two task, and which would require fresh tasks or seeds?
+3. Are the separate within-GCR result and the unchanged unqualified Full Writer
+   comparison kept distinct?
+
+---
+
+# Previous incremental review: learnable ordered composition
 
 - Review base: `bfa266cf97ab2118632dc5a49ae877519b7a79d0`.
 - Stable code/evidence head: `58aa2720c39c57de565d4086d7fca3eeb80cb22e`.
