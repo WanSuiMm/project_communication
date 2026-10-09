@@ -1,5 +1,47 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## ReLU input lift v0: direct historical credit for the feature layer
+
+Current stage: **COMPLETE; NO_QUALIFIED_RELU_LIFT_BENEFIT**. Three new K8 arms use
+the same seeds, target, mask schedules, optimizer and3000-update endpoint as
+AU-NCA, reusing its nine completed arms as frozen historical controls.
+The new representation stores activation-conditioned augmented inputs and
+rematerializes both learned affine layers after truncation. It preserves
+direct historical feature-layer credit while leaving feedback through past
+perceptions truncated. State is6289 floats/cell versus145 for AU; parameters
+remain8336. CPU64 forward/full-gradient and boundary identities and CUDA32
+actual-shape checks passed. The grouped-convolution implementation measured
+approximately0.574seconds/update and2264MiB peak allocated in the short smoke;
+all three arms completed9000 updates in5174.037seconds. Mean T64 NMSE is
+.147819952 versus AU's .157831440, with only1/3 paired blocks improving.
+Mean gain .010011488 fails the frozen .03 criterion and the two-block
+improvement condition. Mean T256 NMSE is.201255 versus AU's .260740;
+damaged T256 is.436912 versus.436238. These secondary values do not change
+the negative primary verdict. Read [results](evidence/relu_input_lift_20261009_01/RESULTS.md),
+[aggregate](evidence/relu_input_lift_20261009_01/aggregate.json) and
+[saved-data verification](evidence/relu_input_lift_20261009_01/validation.json).
+
+Read the [prospective protocol](new/relu_input_lift/PROTOCOL.md),
+[derivation](new/relu_input_lift/THEORY.md), [cell](new/relu_input_lift/cells.py),
+and [runner](new/relu_input_lift/run.py). Local output is
+`runs/relu_input_lift_20261009_01`; scientific completion is established by
+the saved arm results, full curves and terminal aggregate. The guard's launch
+receipt remained stale, so its exit code and sleep-request cleanup are
+unconfirmed. Public [qualification](evidence/relu_input_lift_20261009_01/qualification.json)
+preserves the successful optimized checks fromqualification02 and
+explicitly rebinds a documentation-only correction to one-based firing-mask
+indices, matching the historical executed source. The earlier frozen AU
+protocol's zero-based wording is preserved. Atomic latest checkpoints every25
+updates and the independent protected worker support explicit recovery and
+temporary idle-sleep prevention. There is no runtime cap or recurring monitor.
+
+From this repository root, with fresh output names:
+
+```powershell
+python -X utf8 -B new/relu_input_lift/run.py --check --out analyses/NEW_RELU_CHECK
+& ./tools/start_protected_job.ps1 -JobName NEW_RELU_RUN -Script new/relu_input_lift/run.py -ScriptArguments @('--out','runs/NEW_RELU_RUN','--qualification','analyses/NEW_RELU_CHECK/qualification.json','--reference','runs/au_nca_20261009_01')
+```
+
 ## AU-NCA v0: free nonlinear feedback with deferred output projection
 
 Current stage: **COMPLETE; AU_BENEFIT_DEVELOPMENTAL**. This authorized

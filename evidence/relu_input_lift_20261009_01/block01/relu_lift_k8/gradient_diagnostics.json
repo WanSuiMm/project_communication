@@ -1,0 +1,55 @@
+{
+  "same_parameters_inputs_loss": true,
+  "losses": {
+    "full": 0.012559281662106514,
+    "original_k8": 0.012559281662106514,
+    "au_k8": 0.012559279799461365,
+    "relu_lift_k8": 0.012559279799461365
+  },
+  "groups": {
+    "W": {
+      "full_norm": 0.34729821910185193,
+      "original_k8": {
+        "norm": 0.06983563743695365,
+        "cosine_full": 0.5566067208367161,
+        "relative_residual": 0.9036516703250427,
+        "captured_parallel_component": 0.11192394032957859
+      },
+      "au_k8": {
+        "norm": 0.42097629538776826,
+        "cosine_full": 0.6082216206012173,
+        "relative_residual": 0.9973924162620348,
+        "captured_parallel_component": 0.7372536642359069
+      },
+      "relu_lift_k8": {
+        "norm": 0.4209800992735346,
+        "cosine_full": 0.6082229516715362,
+        "relative_residual": 0.9973974305818432,
+        "captured_parallel_component": 0.7372619394285865
+      },
+      "new_minus_au_norm": 2.547712424489693e-05
+    },
+    "eta": {
+      "full_norm": 0.18218397125760144,
+      "original_k8": {
+        "norm": 0.029716325340237545,
+        "cosine_full": 0.3234145871709427,
+        "relative_residual": 0.9597395695837204,
+        "captured_parallel_component": 0.05275268195005576
+      },
+      "au_k8": {
+        "norm": 0.02971631964604425,
+        "cosine_full": 0.3234146138366199,
+        "relative_residual": 0.9597395702722584,
+        "captured_parallel_component": 0.05275267619115514
+      },
+      "relu_lift_k8": {
+        "norm": 0.14171565444283674,
+        "cosine_full": 0.38057414056761163,
+        "relative_residual": 1.00648310158975,
+        "captured_parallel_component": 0.29603764273147554
+      },
+      "new_minus_au_norm": 0.11937301980328678
+    }
+  }
+}

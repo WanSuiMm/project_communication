@@ -1,0 +1,46 @@
+{
+  "status": "COMPLETE",
+  "decision": {
+    "verdict": "NO_QUALIFIED_RELU_LIFT_BENEFIT",
+    "mean_au_minus_new": 0.010011487904466246,
+    "improving_blocks": 1,
+    "paired_primary": [
+      {
+        "block": 0,
+        "nmse": {
+          "original_k64": 0.0001923208821051287,
+          "original_k8": 0.23079341636326245,
+          "au_k8": 0.12931943344117067,
+          "relu_lift_k8": 0.13930577259454346
+        },
+        "au_minus_new": -0.009986339153372797,
+        "half_remaining_gap_recovered": false
+      },
+      {
+        "block": 1,
+        "nmse": {
+          "original_k64": 0.00044201522058232327,
+          "original_k8": 0.24843683347713047,
+          "au_k8": 0.14172746180574694,
+          "relu_lift_k8": 0.17543394472861812
+        },
+        "au_minus_new": -0.03370648292287118,
+        "half_remaining_gap_recovered": false
+      },
+      {
+        "block": 2,
+        "nmse": {
+          "original_k64": 0.004828493585936983,
+          "original_k8": 0.174778233170776,
+          "au_k8": 0.20244742493928963,
+          "relu_lift_k8": 0.12872013914964692
+        },
+        "au_minus_new": 0.07372728578964272,
+        "half_remaining_gap_recovered": false
+      }
+    ]
+  },
+  "completed_units": 3,
+  "planned_units": 3,
+  "elapsed_seconds_this_execution": 5174.0369145
+}

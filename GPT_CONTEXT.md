@@ -1,6 +1,58 @@
 # Context for incremental scientific review
 
-## Current: AU-NCA with free learned feedback
+## Current: ReLU input lift versus frozen AU-NCA controls
+
+Formal fields: execution=COMPLETE, aggregation=COMPLETE,
+final_result_available=true, verdict=NO_QUALIFIED_RELU_LIFT_BENEFIT.
+Canonical evidence: `evidence/relu_input_lift_20261009_01/`.
+Three new K8 arms completed 3,000 updates each, reusing nine frozen historical
+arms from `evidence/au_nca_20261009_01/`. Seeds, input-bank bytes, target,
+training firing rule, K8, terminal T64 loss and optimizer settings are matched;
+learned pool contents and reset identities can diverge. Controls are not
+contemporaneous reruns. Independent units are three model/schedule blocks.
+
+At fixed u3000, AU/new T64 NMSE is .129319/.139306,
+.141727/.175434, .202447/.128720. Mean gain is .010011, below .03,
+and only one block improves, below two. Preserve the frozen negative verdict.
+Original K64 mean is .001821 versus new .147820. Secondary T256 mean is
+.201255 versus AU .260740; damaged T256 is .436912 versus .436238.
+
+`ReLUInputLiftCell.initialize/visible/step/detach` in
+[cells.py](new/relu_input_lift/cells.py) stores b[B,16,H,W],
+U[B,128,49,H,W],v[B,1,H,W]. The 49-dimensional input is fixed perception
+plus one; A is feature weight plus bias. Each hidden row is e_j=<A_j,U_j>,
+and x=b+W_h e+w0 v. Accumulate m*1[A_j p>0]*p into U and gate all state
+components by the same hard alive mask. A grouped 1-by-1 convolution contracts
+the rows; no-grad prefix updates are in place on rollout-owned state only.
+Both full-gradient and forward identities qualify. K8 retains historical
+direct A and W paths, but not historical feedback through perceived states.
+U is a direct sensitivity-like forward statistic, not a full RTRL Jacobian.
+State is 6,289 floats/cell, 43.4 times AU; parameters remain 8,336.
+
+`qualify/reference_binding/train_arm/decision/report` in
+[runner](new/relu_input_lift/run.py) bind historical hashes, train only the
+new arm, checkpoint every25 updates and apply the prospective decision.
+It reuses the earlier `rollout/update/evaluate` implementations.
+The first56 steps run without a graph; the last8 differentiate through live
+A/W rematerialization. Only visible states enter the pool, rebased at each
+optimizer update. Intermediate u1000/u2000 results are diagnostic only.
+
+Read [results](evidence/relu_input_lift_20261009_01/RESULTS.md),
+[final metrics](evidence/relu_input_lift_20261009_01/final_metrics.csv),
+[theory](new/relu_input_lift/THEORY.md), then
+[protocol](new/relu_input_lift/PROTOCOL.md).
+Source, inputs, checkpoint metadata and metrics are bound in the public
+package without publishing learned checkpoint contents or process receipts.
+The old protocol's zero-based firing wording differed from its executed
+one-based update loop. New code matches the historical executed loop;
+the correction and documentation-only qualification rebinding are explicit.
+
+Limits: one target, three blocks, historical controls, large state,
+still-truncated feedback credit; no universal BPTT or efficiency claim.
+Negative primary benefit does not prove feedback credit is the sole remaining
+cause. All earlier results remain unchanged.
+
+## Previous: AU-NCA with free learned feedback
 
 Formal fields: execution=COMPLETE, aggregation=COMPLETE,
 final_result_available=true, verdict=AU_BENEFIT_DEVELOPMENTAL.

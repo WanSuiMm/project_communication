@@ -1,5 +1,43 @@
 # Tensor and operator map
 
+## ReLU input lift: activation-conditioned historical inputs
+
+The new mode shares the original/AU parameters. Let p=[perceive(x);1] have49
+coordinates, A[128,49] concatenate feature weight and bias, and W=[W_h,w0]
+be the unchanged output projection. Per cell, store b[16],U[128,49],v[1].
+
+```math
+e_j=\langle A_j,U_j\rangle,\qquad x=b+W_h e+w_0v,
+\qquad d_j=\mathbf1[A_jp>0],
+```
+
+```math
+U'_j=q\odot(U_j+m\odot d_jp),\qquad
+v'=q\odot(v+m),\qquad b'=q\odot b.
+```
+
+The same scalar firing m and pre/post alive mask q apply. Initialize b=x0,
+U=v=0. At fixed parameters, the projected update exactly matches original
+NCA in real arithmetic, including output bias. In finite precision the
+identities are numerical and hard branch changes must be checked.
+State grows145->6289 floats/cell versus AU; parameters stay8336.
+
+At the final K8 boundary, detach b/U/v but reconstruct with live A/W.
+W's gradient equals AU-K8 at matched parameters. Relative to original K8,
+A_j receives sum_i (W_h^T delta_i)_j U_ij. The missing historical term is
+(partial_theta vec U)^T vec R, with R_ijk=(W_h^T delta_i)_j A_jk.
+Feedback through historical perceived inputs remains truncated. The lift
+is not a general full-credit equivalence under K8.
+
+`ReLUInputLiftCell._lifted_feature_sum` uses grouped pointwise convolution
+to avoid the large einsum layout conversion. No-grad steps mutate only owned
+state; differentiable suffix steps are out of place. Pool/evaluation branch
+canonicalization follows the AU runner. Exact symbols are in
+[cell](new/relu_input_lift/cells.py), [checks](new/relu_input_lift/checks.py),
+[theory](new/relu_input_lift/THEORY.md), and [runner](new/relu_input_lift/run.py).
+The [completed screen](evidence/relu_input_lift_20261009_01/RESULTS.md)
+does not pass the prospective learning-benefit criterion.
+
 ## AU-NCA: accumulated updates with learned nonlinear feedback
 
 Visible state s[B,16,H,W] contains RGBA and12 hidden channels. Fixed

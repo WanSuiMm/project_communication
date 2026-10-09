@@ -1,0 +1,97 @@
+{
+  "canonical_training_updates": 9000,
+  "checkpoint_bindings": 12,
+  "checkpoint_weights_published": false,
+  "continuation_curve_records": 3072,
+  "decision_recomputed": {
+    "improving_blocks": 1,
+    "mean_au_minus_new": 0.010011487904466246,
+    "paired_primary": [
+      {
+        "au_minus_new": -0.009986339153372797,
+        "block": 0,
+        "half_remaining_gap_recovered": false,
+        "nmse": {
+          "au_k8": 0.12931943344117067,
+          "original_k64": 0.0001923208821051287,
+          "original_k8": 0.23079341636326245,
+          "relu_lift_k8": 0.13930577259454346
+        }
+      },
+      {
+        "au_minus_new": -0.03370648292287118,
+        "block": 1,
+        "half_remaining_gap_recovered": false,
+        "nmse": {
+          "au_k8": 0.14172746180574694,
+          "original_k64": 0.00044201522058232327,
+          "original_k8": 0.24843683347713047,
+          "relu_lift_k8": 0.17543394472861812
+        }
+      },
+      {
+        "au_minus_new": 0.07372728578964272,
+        "block": 2,
+        "half_remaining_gap_recovered": false,
+        "nmse": {
+          "au_k8": 0.20244742493928963,
+          "original_k64": 0.004828493585936983,
+          "original_k8": 0.174778233170776,
+          "relu_lift_k8": 0.12872013914964692
+        }
+      }
+    ],
+    "verdict": "NO_QUALIFIED_RELU_LIFT_BENEFIT"
+  },
+  "elapsed_seconds_this_execution": 5174.0369145,
+  "final_metric_rows": 60,
+  "historical_control_result_hashes": {
+    "evidence/au_nca_20261009_01/block00/au_k8/result.json": "4e9c3dc0c1f5162546c99f4521063fb8aabf1f76280dd24b2dfd0364b20b696b",
+    "evidence/au_nca_20261009_01/block00/original_k64/result.json": "beac79cbffb05c7d39a3ba0d0175f61b1dbc31a7fc954dd6aa4c4489982c88f6",
+    "evidence/au_nca_20261009_01/block00/original_k8/result.json": "7d7f5876b0511e71d2fa8b23baa2bf469ed7bf13741942b261aacd1205382d2d",
+    "evidence/au_nca_20261009_01/block01/au_k8/result.json": "26b9a4525b3d875037f9d7552ede7863a43a964e44e16f157a19a9dff68ef693",
+    "evidence/au_nca_20261009_01/block01/original_k64/result.json": "214cd05b1b18c91077d70151f34ea2991f52ef24615471e31c2b7ecd81195408",
+    "evidence/au_nca_20261009_01/block01/original_k8/result.json": "1e875c3ee43fbfaaffa872e731b9a2f17459f6cbcd55d10b18a5f5ae08afd4ae",
+    "evidence/au_nca_20261009_01/block02/au_k8/result.json": "cefe08c0d78374214586c3e7af2dbad30b3d1363fd056c284ad38936d272b42a",
+    "evidence/au_nca_20261009_01/block02/original_k64/result.json": "89f6377947fb6393d3f492cc11e6c7a329fb180807e233407834f73922345505",
+    "evidence/au_nca_20261009_01/block02/original_k8/result.json": "fa7da6ed6c5c3c161405680f96582f181dc3b0610a1a9ae0540c80bd584c47e6"
+  },
+  "historical_controls_pinned_not_rerun": 9,
+  "historical_final_metric_rows": 45,
+  "historical_per_episode_metric_rows": 1440,
+  "input_banks": 3,
+  "intermediate_diagnostics": 6,
+  "intermediate_prediction_episodes": 48,
+  "max_metric_recomputation_abs_error": 0.0,
+  "new_arms_complete": 3,
+  "new_final_metric_rows": 15,
+  "new_per_episode_metric_rows": 480,
+  "per_episode_metric_rows": 1920,
+  "public_qualification_sha256": "b3f4c5321592a15f60e577a8468cd61d691923c637fd26be0977fdc530060d12",
+  "reference_bindings_sha256": "9216b8043b06aa54610a6d5c8e21aa0b0647f3d63edce53f4fcdd6848f498103",
+  "scope": "Offline public evidence integrity; no private run/checkpoint payload, training, model inference, or CUDA.",
+  "source_qualification_sha256": "ab7447e68284e5a0906279bba1e7faf059924ebe5db6833532f252a3bcf5411b",
+  "status": "PASS",
+  "training_update_range_per_block": "1..3000, unique and ordered",
+  "verified_data_hashes": {
+    "block00_inputs.npz": "ec7e83ef4a609a32255b9a52d67ac69df3ad07639d9e5e63b0152da265c559dc",
+    "block01_inputs.npz": "1187148132fffea174cad9f44cfb6348af62a7beafb80775339014bd075d449e",
+    "block02_inputs.npz": "ffe1a31e619812f35126ff19494935a31ca6ac2f390955e5d0895d7e3ddbcf24",
+    "target_rgba.npy": "9e283574cdba132edaad5e049f3ed2c633be8206724d48473c237c3fa97a6d54"
+  },
+  "verified_source_hashes": {
+    "new/au_nca/PROTOCOL.md": "ce2d1312e37bd86e5753969eaf38e0f49b42c9de1d4a0e612650d6ff39cb826d",
+    "new/au_nca/THEORY.md": "e9752e001a463b7fc19a5f244e3f2d9ab16d52ba044bdf91e8972374e1f1a4c6",
+    "new/au_nca/cells.py": "cd9cb6bee563c4285c1930876cd7bbdbbfdbf84e77270cb244e04e13aac5d3a6",
+    "new/au_nca/checks.py": "4d0143b7264115f8961a7b462001a0e6be97b4ec54994231bcc083567e9f12df",
+    "new/au_nca/run.py": "8cde026785aa00246c6517e8db205b81d941cfe8a02e92436776d26610d753b7",
+    "new/au_nca/tasks.py": "2c8dbde48326dde78d0987adfb923bd71d20bb184a1eb9481cc8d905f82cc8c6",
+    "new/relu_input_lift/PROTOCOL.md": "30047af620f2aea4bc86b8972d81dd61c86b755fed6df8f7752e1b98cbf055e1",
+    "new/relu_input_lift/THEORY.md": "8e23fe7ee1aa1d32cbfe6d65bc05ea13c1f5f605b0657a128dfa8380a755e1a9",
+    "new/relu_input_lift/cells.py": "3159fab010f6e961cab8fee0bd98464dd2155bd2b941e45acad407a950024c50",
+    "new/relu_input_lift/checks.py": "4fb538a9ca95158d7a3f1762623f7512c43f2d227ca86cab857116bb2ff20891",
+    "new/relu_input_lift/run.py": "13c5dc0e3dcdffc94c0fe8f24056d737e53b0aa26e8d70d4884590bd61aa73a7",
+    "tools/protected_job_worker.ps1": "0dd133fdb1ed5277e65eae18bf8220b01cf0c34fe5bfbdab7928b5b39d18cd41",
+    "tools/start_protected_job.ps1": "202854fe521b5fb2ea4b5922ef6f09569bb86721408968c21db8b6ba29f9deaf"
+  }
+}

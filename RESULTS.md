@@ -1,6 +1,42 @@
 # Results: inertial NCA screen, with preserved A0/v1 evidence
 
-## Latest: AU-NCA learned-feedback screen
+## Latest: ReLU activation-conditioned input lift
+
+**COMPLETE: 3/3 new arms, 9,000 updates, 5,174.037 seconds.** Frozen verdict:
+**NO_QUALIFIED_RELU_LIFT_BENEFIT**. The nine earlier AU-NCA arms are frozen
+historical controls; they were not retrained. Primary is u3000 cold-seed T64
+NMSE on the same held-out firing plans, with three paired blocks as independent
+units.
+
+| Block | Original K8 | Original K64 | AU-K8 | Input lift K8 | AU minus new |
+|---|---:|---:|---:|---:|---:|
+| 0 | .230793 | .000192 | .129319 | .139306 | -.009986 |
+| 1 | .248437 | .000442 | .141727 | .175434 | -.033706 |
+| 2 | .174778 | .004828 | .202447 | .128720 | +.073727 |
+| Mean | .218003 | .001821 | .157831 | .147820 | +.010011 |
+
+Benefit requires mean AU-minus-new gain at least .03, improvement in at least
+two blocks, and at most one block worsening by more than .02. The first two
+conditions fail; strong recovery also fails. The small mean improvement and
+block2 gain cannot replace this frozen negative verdict.
+
+Mean intact T256 NMSE is .201255 versus AU's .260740; both exceed their T64
+values. Mean untrained damaged-T256 NMSE is .436912 versus .436238.
+At the new final checkpoints, feature-gradient cosine to full credit improves
+from .4485/.3234/.5288 to .6123/.3806/.7136 when comparing parameterizations
+at matched parameters. W gradients remain numerically equal to AU-K8.
+These local diagnostics are not evidence of uniform training benefit.
+
+Read [frozen report](evidence/relu_input_lift_20261009_01/RESULTS.md),
+[aggregate](evidence/relu_input_lift_20261009_01/aggregate.json),
+[final metrics](evidence/relu_input_lift_20261009_01/final_metrics.csv), and
+[saved-data verification](evidence/relu_input_lift_20261009_01/validation.json).
+The public package preserves all new training records, predictions and input
+banks. Scientific completion is supported by those artifacts; the launch
+guard's stale receipt does not establish its exit code or sleep-request cleanup.
+No inference, training or optimizer update was run for publication.
+
+## Previous: AU-NCA learned-feedback screen
 
 **COMPLETE:9/9 arms,27,000 updates; all3 K64 controls qualify.**
 Frozen verdict: **AU_BENEFIT_DEVELOPMENTAL**. Primary is cold-seed T64

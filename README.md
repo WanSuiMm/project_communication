@@ -1,6 +1,48 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest completed experiment: AU-NCA with learned nonlinear feedback
+## Latest completed experiment: ReLU input lift
+
+**COMPLETE: 3/3 new arms, 9,000 updates in 5,174 seconds.** Frozen verdict:
+**NO_QUALIFIED_RELU_LIFT_BENEFIT**. This screen adds direct historical credit
+to the ReLU feature layer, comparing three new K8 arms against the nine frozen
+AU-NCA controls. The task remains one procedural RGBA flower grown on a
+32-by-32 grid; lower T64 normalized MSE is better.
+
+| Paired block | Original K64 | AU-K8 | ReLU input lift K8 | AU minus new |
+|---|---:|---:|---:|---:|
+| 0 | .000192 | .129319 | .139306 | -.009986 |
+| 1 | .000442 | .141727 | .175434 | -.033706 |
+| 2 | .004828 | .202447 | .128720 | +.073727 |
+| Mean | .001821 | .157831 | .147820 | +.010011 |
+
+Only one of three blocks improves, and mean gain .010011 is below the frozen
+.03 threshold. The forward and gradient identities qualify, but the additional
+direct feature-layer credit does not pass the learning-benefit criterion.
+Mean intact T256 NMSE improves descriptively from .260740 to .201255;
+damaged T256 remains essentially unchanged (.436238 versus .436912).
+These secondary metrics do not replace the fixed u3000/T64 endpoint.
+
+Start here:
+
+1. [Results](evidence/relu_input_lift_20261009_01/RESULTS.md),
+   [aggregate](evidence/relu_input_lift_20261009_01/aggregate.json), and
+   [final metrics](evidence/relu_input_lift_20261009_01/final_metrics.csv).
+2. [Theory](new/relu_input_lift/THEORY.md),
+   [frozen protocol](new/relu_input_lift/PROTOCOL.md),
+   [cell](new/relu_input_lift/cells.py), and [runner](new/relu_input_lift/run.py).
+3. [Qualification](evidence/relu_input_lift_20261009_01/qualification.json),
+   [saved-data verification](evidence/relu_input_lift_20261009_01/validation.json),
+   and [reproduction](evidence/relu_input_lift_20261009_01/REPRODUCTION.md).
+
+Parameters remain 8,336 and the fixed-parameter forward function is unchanged.
+State grows from AU's 145 to 6,289 floats/cell. Historical feedback through
+perceived states remains truncated. Controls are historical executions, not
+new training; this three-block single-target result neither disproves nonlinear
+deferral in general nor identifies the remaining bottleneck. Raw arrays are
+secondary reading; weights and private process records remain local.
+See [incremental review](GPT_HANDOFF.md). Earlier evidence is unchanged.
+
+## Previous completed experiment: AU-NCA with learned nonlinear feedback
 
 **COMPLETE:9/9 arms,27,000 optimizer updates.** All three K64 controls
 qualify. Frozen verdict: **AU_BENEFIT_DEVELOPMENTAL**. The target is a fixed
