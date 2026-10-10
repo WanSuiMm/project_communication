@@ -1,4 +1,59 @@
-# Incremental review: ReLU input-lift beyond AU-NCA
+# Incremental review: FIVES real-task qualification
+
+- Review base: `07ad395f59de48bc6e7ea4fdf1e8329d115c5c84`.
+- Stable code/evidence head: `ee77191865d3a181a3619fb3b848c2cff5176cd7`.
+- This later commit changes review metadata only; the evidence head stays fixed.
+- Execution: **COMPLETE**; software checks passed; task qualification: **FAIL**.
+- Frozen verdict: **TASK_UNQUALIFIED**; short-credit comparison: **NOT_STARTED**.
+
+Read [results](evidence/fives_nca_20261010_01/RESULTS.md), then
+[protocol](new/real_task_fives/PROTOCOL.md),
+[cell](new/real_task_fives/cells.py), and [runner](new/real_task_fives/run.py).
+Consult [summary](evidence/fives_nca_20261010_01/summary.json) and
+[per-image metrics](evidence/fives_nca_20261010_01/final_per_image_metrics.csv)
+after the result summary. The large aggregate and data manifest are secondary.
+
+This adds an external real-image vessel-refinement screen on official FIVES.
+The 600 training images form an image-level 480/120 development split at
+512 resolution. Four OOF teachers prepare training inputs and a full-training
+teacher initializes validation. The complete archive was unpacked, but test
+files were excluded from dataset discovery, decoding, training and evaluation.
+Patient separation is not established. The earlier unrun DRIVE preparation
+is included for context; earlier published experiments and claims are unchanged.
+
+Only Standard K64 trained, completing 1,500 updates. Coarse/T8/T64 clDice is
+.885511/.885600/.885686. The T64-over-coarse gain .000175 and T64-over-T8
+gain .000086 both fail the frozen .01 gates; coarse floors and the Dice guard
+pass. T256 clDice declines to .853819. T8 here is the same K64 model's rollout
+horizon, not the separately trained T8 reference. That reference, Standard K8
+and AU-K8 did not start. There is no positive or negative AU benefit result,
+nor a general finding that longer computation cannot improve this task.
+
+The package preserves 1,440 final plan-specific metric rows, 720 plan-averaged
+image/horizon rows, 151 sampled training records, intermediate T64 diagnostics,
+software checks and source/data/teacher hash bindings. Intermediate evaluations
+use 16 images, while the fixed u1500 endpoint uses all 120; do not substitute
+the smaller-cohort scores for the final endpoint. The 1,556.739-second elapsed
+field describes the recovered pipeline, excluding prior download/transfer and
+failed acquisition. It is not an end-to-end speed measurement.
+
+Run `python tools/publish_fives_nca.py --verify` to check public hashes and
+recompute summaries/gates from saved metric rows without training or inference.
+Image arrays, predictions and model weights are not published; the verifier
+does not recompute pixel-level segmentation metrics from those absent arrays.
+Private acquisition/dispatch records remain local. See the
+[entry point](new/real_task_fives/README.md) for fresh-run dependencies/commands.
+
+Reviewer questions:
+
+1. Do the saved rows and stopping gates justify task nonqualification without
+   drawing an AU-K8 conclusion?
+2. What concrete task or training qualification would establish meaningful
+   multi-step repair before another short-credit comparison?
+
+---
+
+# Previous incremental review: ReLU input-lift beyond AU-NCA
 
 - Review base: `14bc7031db1486c2d67dde5b475d5dacdf65a62e`.
 - Stable code/evidence head: `0224d425388f9d74d2eb3db299b28d77b476d01f`.
