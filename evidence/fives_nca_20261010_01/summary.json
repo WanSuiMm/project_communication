@@ -1,0 +1,147 @@
+{
+  "coarse_baseline_mean": {
+    "betti0_error": 57.55,
+    "betti1_error": 7.333333333333333,
+    "cldice": 0.8855107241376187,
+    "dice": 0.8709089955164876,
+    "precision": 0.8698259956275834,
+    "recall": 0.8770361436983534
+  },
+  "dataset": {
+    "name": "FIVES",
+    "patient_disjoint": false,
+    "resolution": "512x512 development resolution",
+    "split_unit": "image",
+    "test_labels_loaded": false,
+    "training_images": 480,
+    "validation_images": 120
+  },
+  "final_horizon_means": {
+    "128": {
+      "betti0_error": 42.93333333333333,
+      "betti1_error": 12.445833333333333,
+      "cldice": 0.8831639551156297,
+      "dice": 0.8647722146786143,
+      "n_images": 120,
+      "n_plans": 240,
+      "precision": 0.8477583768825935,
+      "recall": 0.8878488864434894
+    },
+    "16": {
+      "betti0_error": 53.275,
+      "betti1_error": 7.45,
+      "cldice": 0.8857292078860721,
+      "dice": 0.871134319484446,
+      "n_images": 120,
+      "n_plans": 240,
+      "precision": 0.8699930118852355,
+      "recall": 0.8773692622264799
+    },
+    "256": {
+      "betti0_error": 103.74166666666666,
+      "betti1_error": 73.55833333333334,
+      "cldice": 0.8538186573527885,
+      "dice": 0.8407096709421922,
+      "n_images": 120,
+      "n_plans": 240,
+      "precision": 0.809796331067148,
+      "recall": 0.8830292153831731
+    },
+    "32": {
+      "betti0_error": 48.96666666666667,
+      "betti1_error": 7.266666666666667,
+      "cldice": 0.8858848162417876,
+      "dice": 0.8710310619155268,
+      "n_images": 120,
+      "n_plans": 240,
+      "precision": 0.8687823248800797,
+      "recall": 0.8783933395178988
+    },
+    "64": {
+      "betti0_error": 43.28333333333333,
+      "betti1_error": 7.295833333333333,
+      "cldice": 0.8856858989231923,
+      "dice": 0.8699167714978443,
+      "n_images": 120,
+      "n_plans": 240,
+      "precision": 0.8635009324819001,
+      "recall": 0.8815378438323347
+    },
+    "8": {
+      "betti0_error": 55.545833333333334,
+      "betti1_error": 7.2875,
+      "cldice": 0.8855997949688439,
+      "dice": 0.871031186569796,
+      "n_images": 120,
+      "n_plans": 240,
+      "precision": 0.8700582233071594,
+      "recall": 0.8770847509240063
+    }
+  },
+  "gate_differences": {
+    "k64_cldice_gain": 0.00017517478557360633,
+    "k64_dice_guard": -0.0009922240186432951,
+    "within_model_depth": 8.610395434838214e-05
+  },
+  "gates": {
+    "coarse_cldice_floor": true,
+    "coarse_dice_floor": true,
+    "k64_cldice_gain": false,
+    "k64_dice_guard": true,
+    "within_model_depth": false
+  },
+  "intermediate_t64_diagnostics": {
+    "1000": {
+      "mean": {
+        "betti0_error": 36.78125,
+        "betti1_error": 4.09375,
+        "cldice": 0.8978091036132861,
+        "dice": 0.8882308831356857,
+        "precision": 0.8768045848486801,
+        "recall": 0.9011505492320279
+      },
+      "n_images": 16,
+      "n_plans": 32
+    },
+    "250": {
+      "mean": {
+        "betti0_error": 41.65625,
+        "betti1_error": 3.65625,
+        "cldice": 0.8947195796049332,
+        "dice": 0.8891782981475056,
+        "precision": 0.8881747993422214,
+        "recall": 0.8916763465938188
+      },
+      "n_images": 16,
+      "n_plans": 32
+    },
+    "500": {
+      "mean": {
+        "betti0_error": 40.53125,
+        "betti1_error": 3.53125,
+        "cldice": 0.8982103724787158,
+        "dice": 0.8928035376273366,
+        "precision": 0.8861453397976897,
+        "recall": 0.900859390673458
+      },
+      "n_images": 16,
+      "n_plans": 32
+    }
+  },
+  "schema": "fives_real_task_nca_public_summary_v1",
+  "status": "COMPLETE",
+  "training": {
+    "elapsed_scope": "recovered pipeline process only; excludes earlier acquisition/download/transfer work; not an end-to-end speed measurement",
+    "elapsed_seconds": 1556.7387325763702,
+    "evaluation_repeats_per_image": 2,
+    "trained_arm": "standard_k64",
+    "training_rollout_steps": 64,
+    "unrun_arms": [
+      "standard_t8",
+      "standard_k8",
+      "au_k8"
+    ],
+    "updates": 1500
+  },
+  "verdict": "TASK_UNQUALIFIED"
+}

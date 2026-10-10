@@ -1,6 +1,52 @@
 # Cellular computation: reaction-transport and inertial NCA screens
 
-## Latest completed experiment: ReLU input lift
+## Latest real-task experiment: FIVES vessel NCA screen
+
+**COMPLETE: TASK_UNQUALIFIED.** The official FIVES training set was used at
+512 × 512 development resolution. Of its 600 training images, 480 supplied
+training data with out-of-fold coarse predictions and 120 formed the fixed
+validation set. The recovered pipeline elapsed 1,556.739 seconds, excluding
+the earlier local download/transfer and failed acquisition attempt. Only
+Standard K64 reached scientific training: 1,500 updates and evaluation on all
+120 validation images. Its frozen gates fail, so the T8 reference, Standard
+K8, and AU-K8 were not run.
+
+| Endpoint | Mean Dice | Mean clDice |
+|---|---:|---:|
+| Coarse baseline | .870909 | .885511 |
+| Standard K64, T8 | .871031 | .885600 |
+| Standard K64, T64 | .869917 | .885686 |
+| Standard K64, T256 | .840710 | .853819 |
+
+The T64 clDice gain over coarse is .000175, below the frozen .01 threshold;
+the within-model T64-over-T8 gain is .000086, also below .01. The T64 Dice
+guard passes. Since Standard K64 did not qualify, this run gives no conclusion
+about AU-K8 or the short-credit comparison. This is one developmental block;
+it establishes no patient-disjoint, native-2048, test-set, clinical, or
+population-reliability result. It also does not establish a general absence of
+benefit from longer compute.
+
+Start here:
+
+1. [Results](evidence/fives_nca_20261010_01/RESULTS.md).
+2. [Frozen protocol](new/real_task_fives/PROTOCOL.md).
+3. [Cell](new/real_task_fives/cells.py),
+   [runner](new/real_task_fives/run.py), and then the remaining code in
+   `new/real_task_fives/`.
+
+The public [aggregate](evidence/fives_nca_20261010_01/aggregate.json) holds
+per-image and per-plan metric tables; read it after the concise result
+summary. These detailed tables are secondary.
+
+The official archive was extracted, while dataset discovery and image decoding
+were restricted to the official training tree; test files were excluded from
+training and evaluation. The four OOF coarse teachers serve only the 480
+development-training images; a separate full-training teacher supplies
+validation initialization. The protocol does not establish patient-level
+separation. Model weights and private process receipts are not part of the
+public evidence package. See [incremental review](GPT_HANDOFF.md).
+
+## Previous completed experiment: ReLU input lift
 
 **COMPLETE: 3/3 new arms, 9,000 updates in 5,174 seconds.** Frozen verdict:
 **NO_QUALIFIED_RELU_LIFT_BENEFIT**. This screen adds direct historical credit

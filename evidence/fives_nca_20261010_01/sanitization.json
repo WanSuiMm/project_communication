@@ -1,0 +1,18 @@
+{
+  "excluded": [
+    "model weights and checkpoints",
+    "source images, masks, prepared NPZ data, and caches",
+    "full runtime logs and dispatch/launch receipts",
+    "disposable GPU software-smoke output",
+    "attempt marker from sampled training JSONL"
+  ],
+  "notes": [
+    "Metric rows, aggregate gates, configuration, split identifiers and hashes are retained.",
+    "The complete final per-plan rows remain in aggregate.json; CSV values average the two plans per image.",
+    "Only sparse training records saved at update 1 and subsequent sampled updates are included."
+  ],
+  "redactions": {
+    "omitted_dispatch_attempt_marker": 1
+  },
+  "scope": "allowlisted text and JSON evidence only"
+}

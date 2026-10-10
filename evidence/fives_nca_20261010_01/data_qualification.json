@@ -1,0 +1,104 @@
+{
+  "config": {
+    "arms": {
+      "au_k8": [
+        "au",
+        8,
+        64
+      ],
+      "standard_k64": [
+        "original",
+        64,
+        64
+      ],
+      "standard_k8": [
+        "original",
+        8,
+        64
+      ],
+      "standard_t8": [
+        "original",
+        8,
+        8
+      ]
+    },
+    "batch": 2,
+    "channels": 16,
+    "checkpoint_chunk": 8,
+    "checkpoints": [
+      250,
+      500,
+      1000,
+      1500
+    ],
+    "dataset": "FIVES",
+    "diagnostic_per_category": 4,
+    "eval_seed": 200401,
+    "eval_steps": [
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "evaluation_repeats": 2,
+    "fire_probability": 0.5,
+    "full_teacher_steps": 1600,
+    "halo": 64,
+    "hidden": 128,
+    "image_size": 512,
+    "init_seed": 200101,
+    "input_size": 192,
+    "lr": 0.001,
+    "oof_teacher_steps": 1200,
+    "per_tensor_gradient_normalization": true,
+    "perception_width": 64,
+    "protocol": "real_task_fives_nca_v0",
+    "recovery_interval": 25,
+    "runtime_cap": null,
+    "schedule_seed": 200201,
+    "scored_center": 64,
+    "supervision": "terminal_only",
+    "teacher_seeds": [
+      201101,
+      201102,
+      201103,
+      201104,
+      201105
+    ],
+    "train_steps": 64,
+    "updates": 1500,
+    "weight_decay": 0.0
+  },
+  "dataset": "FIVES",
+  "example_id": "1_A",
+  "rgb_shape": [
+    3,
+    512,
+    512
+  ],
+  "source": "official Figshare19688169/file34969398",
+  "source_hashes": {
+    "PROTOCOL.md": "1d7445cb258de10c46f60c43c30406a9431dbe6754caab112ff021b909bad905",
+    "acquire.py": "37320e592b536909096b2068cfc513714116652ed5182488a02f9bf9003222c7",
+    "cells.py": "6168c7979d44274a6c9f78795ae6b9bb3fe0d9d00f7278926d06c58aed76f473",
+    "checks.py": "a3df90ab17ff20a762ea56dc1bbda3bd2557370e17d31e5f0b1f962a32d8bb21",
+    "coarse.py": "4314aacb0470f8f0baf7ca86896fae094ebeeb76c66105477302a6d4b374669a",
+    "common.py": "6021929223e2a85787348e3d047a694a28e679c837601ac839e1bf34b26bd8b8",
+    "data.py": "f7bb431bb37bd9f95c2e8a758b57752078cc394bbf98ffd86955b7b263037430",
+    "metrics.py": "616795f0c493c0d7ff7b2f4ac3b02c82bb34e0c8b838d26dcf33cbc6f839db1a",
+    "pipeline.py": "3bcbf5c0396a590ff2596fc0cdd066ecf63db5967be79b763316687672dbc0ad",
+    "prepare.py": "b0b022fd6ec5db4ac3af91bef00d54fc3551700c1e2b13aee2919754bb7cdfe2",
+    "run.py": "7c6f53bc38cbdeb0bc373025c4ad7f026f318271ee879b4e70a4a54eb5b03253",
+    "server_job.py": "2d8dca0f8faf7b936847edf02a9bb3de9aad3d6776678dc602c69242c8cde2ea"
+  },
+  "target_shape": [
+    1,
+    512,
+    512
+  ],
+  "test_labels_loaded": false,
+  "train_count": 480,
+  "validation_count": 120
+}

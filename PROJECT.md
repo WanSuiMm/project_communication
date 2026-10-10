@@ -1,5 +1,46 @@
 # Reaction-Transport: local 2D / 3D qualification
 
+## Real-task FIVES NCA v0: completed, task unqualified
+
+Current stage: **COMPLETE; TASK_UNQUALIFIED**. The official FIVES training
+tree was processed at 512 × 512, using 480 images for development training
+with four out-of-fold coarse teachers and 120 for validation with a separate
+full-training teacher. Standard K64 completed 1,500 updates and all 120
+validation evaluations. Recovered pipeline elapsed was 1,556.739 seconds,
+excluding the earlier local download/transfer and failed acquisition attempt.
+Its T64 clDice gain over coarse was .000175 and over its own T8 output .000086,
+both below the frozen .01 gates. The T64 Dice guard passed. Standard T8, Standard
+K8, and AU-K8 were not started, so the AU short-credit comparison remains
+unqualified.
+
+Read the public [results](evidence/fives_nca_20261010_01/RESULTS.md),
+[aggregate](evidence/fives_nca_20261010_01/aggregate.json), and frozen
+[protocol](new/real_task_fives/PROTOCOL.md). The archive was extracted, while
+dataset discovery and decoding were restricted to the official training tree;
+test files were excluded from training and evaluation. The image-level split
+does not establish patient separation. This one-block developmental result
+makes no native-2048, clinical, or population reliability claim. An initial
+Figshare request returned HTTP 403; the official archive was later obtained
+and verified against the pinned size and MD5 before the pipeline recovered.
+That failed acquisition history is preserved, while
+private server receipts and checkpoints remain outside the public evidence.
+
+## Real-task NCA v0: retinal vessel refinement
+
+Current stage: **WAITING_FOR_DATA; no real-data training launched**. This new
+single-block developmental experiment moves AU-NCA to real DRIVE vessel
+refinement. The official anonymous download request returned403; a local
+official training-set directory is required. See the self-contained
+[entry point](new/real_task_nca/README.md) and [protocol](new/real_task_nca/PROTOCOL.md).
+The implementation uses image-level16/4 splits, out-of-fold coarse predictions,
+a common RGB-conditioned16-channel cell and terminal64-step supervision.
+Standard K64 and a separately trained T8 reference must establish task and
+depth qualification before Standard K8 / AU-K8 start. K64 uses exact activation
+checkpointing; AU preserves direct projection credit and truncates historical
+feature credit. Small CPU numerical checks are software evidence only.
+Checkpoint recovery and the existing protected worker are implemented; no
+scientific learning, timing or accuracy result is claimed for this stage.
+
 ## ReLU input lift v0: direct historical credit for the feature layer
 
 Current stage: **COMPLETE; NO_QUALIFIED_RELU_LIFT_BENEFIT**. Three new K8 arms use

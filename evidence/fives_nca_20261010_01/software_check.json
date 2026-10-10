@@ -1,0 +1,97 @@
+{
+  "activation_checkpoint_max_forward_error": 0.0,
+  "activation_checkpoint_max_gradient_error": 0.0,
+  "coarse_forward_shape": [
+    1,
+    1,
+    32,
+    32
+  ],
+  "cpu64": {
+    "K8_boundary_direct_term": {
+      "actual_projection_grad_vs_suffix_plus_boundary": {
+        "atol": 2e-10,
+        "max_abs_error": 2.7755575615628914e-17,
+        "passed": true,
+        "rtol": 2e-09
+      },
+      "actual_vs_split_forward": {
+        "atol": 2e-11,
+        "max_abs_error": 2.220446049250313e-16,
+        "passed": true,
+        "rtol": 2e-10
+      },
+      "boundary_direct_term_norm": 0.0919385042620428,
+      "cut_accumulator_norm": 14.317736387766377,
+      "history_preserved_at_cut": true,
+      "non_projection_gradient_max_abs_error": 4.336808689942018e-19,
+      "passed": true,
+      "prefix_steps": 3,
+      "suffix_projection_grad_vs_original_K8": {
+        "atol": 2e-10,
+        "max_abs_error": 2.0816681711721685e-17,
+        "passed": true,
+        "rtol": 2e-09
+      },
+      "suffix_steps": 8
+    },
+    "dtype": "float64",
+    "fixed_fov": {
+      "outside_fov_max_abs": 0.0,
+      "passed": true
+    },
+    "hidden": 128,
+    "original_vs_au_forward": {
+      "atol": 2e-11,
+      "max_abs_error": 2.220446049250313e-16,
+      "passed": true,
+      "rtol": 2e-10
+    },
+    "original_vs_au_full_gradients": {
+      "atol": 2e-10,
+      "compared": 9,
+      "max_abs_error": 4.163336342344337e-17,
+      "passed": true,
+      "rtol": 2e-09
+    },
+    "passed": true,
+    "perception_width": 64,
+    "projection_randomized_for_nonzero_dynamics": true,
+    "projection_zero_at_initialization": true,
+    "shape": [
+      1,
+      16,
+      6,
+      7
+    ],
+    "steps": 11
+  },
+  "oof_split_disjoint": true,
+  "outer_split_disjoint": true,
+  "passed": true,
+  "perfect_line_metrics": {
+    "betti0_error": 0,
+    "betti1_error": 0,
+    "cldice": 1.0,
+    "dice": 1.0,
+    "precision": 1.0,
+    "recall": 1.0
+  },
+  "schema": "real_task_nca_checks_v1",
+  "scope": "small CPU64 numerical qualification; no dataset or training",
+  "sources": {
+    "PROTOCOL.md": "1d7445cb258de10c46f60c43c30406a9431dbe6754caab112ff021b909bad905",
+    "acquire.py": "37320e592b536909096b2068cfc513714116652ed5182488a02f9bf9003222c7",
+    "cells.py": "6168c7979d44274a6c9f78795ae6b9bb3fe0d9d00f7278926d06c58aed76f473",
+    "checks.py": "a3df90ab17ff20a762ea56dc1bbda3bd2557370e17d31e5f0b1f962a32d8bb21",
+    "coarse.py": "4314aacb0470f8f0baf7ca86896fae094ebeeb76c66105477302a6d4b374669a",
+    "common.py": "6021929223e2a85787348e3d047a694a28e679c837601ac839e1bf34b26bd8b8",
+    "data.py": "f7bb431bb37bd9f95c2e8a758b57752078cc394bbf98ffd86955b7b263037430",
+    "metrics.py": "616795f0c493c0d7ff7b2f4ac3b02c82bb34e0c8b838d26dcf33cbc6f839db1a",
+    "pipeline.py": "3bcbf5c0396a590ff2596fc0cdd066ecf63db5967be79b763316687672dbc0ad",
+    "prepare.py": "b0b022fd6ec5db4ac3af91bef00d54fc3551700c1e2b13aee2919754bb7cdfe2",
+    "run.py": "7c6f53bc38cbdeb0bc373025c4ad7f026f318271ee879b4e70a4a54eb5b03253",
+    "server_job.py": "2d8dca0f8faf7b936847edf02a9bb3de9aad3d6776678dc602c69242c8cde2ea"
+  },
+  "torch_version": "2.11.0+cu128"
+}

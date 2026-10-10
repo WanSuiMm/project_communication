@@ -1,6 +1,65 @@
 # Context for incremental scientific review
 
-## Current: ReLU input lift versus frozen AU-NCA controls
+## Current: real-task FIVES AU-NCA screen
+
+Formal fields: execution=COMPLETE, aggregation=COMPLETE,
+final_result_available=true, verdict=TASK_UNQUALIFIED.
+Read the concise [results](evidence/fives_nca_20261010_01/RESULTS.md) first;
+the per-image/repeated-plan [aggregate](evidence/fives_nca_20261010_01/aggregate.json)
+is secondary evidence. The frozen protocol is
+[PROTOCOL.md](new/real_task_fives/PROTOCOL.md); source entry points are
+`new/real_task_fives/cells.py`, `run.py`, and `pipeline.py`.
+
+The official FIVES training tree was processed at 512 × 512. The fixed split
+uses 480 development-training images with four out-of-fold coarse teachers
+and 120 validation images initialized by a separate teacher trained on all
+480. The archive was extracted, but dataset discovery and decoding were
+restricted to the official training tree, excluding test files from training
+and evaluation. The recovered pipeline elapsed 1,556.739 seconds, excluding
+the earlier local download/transfer and failed acquisition attempt. Only
+`standard_k64` completed scientific training (1,500 updates); the separate
+T8 reference, `standard_k8`, and `au_k8` were not started.
+
+| Endpoint | Mean Dice | Mean clDice |
+|---|---:|---:|
+| Coarse baseline | .870908996 | .885510724 |
+| K64 T8 | .871031187 | .885599795 |
+| K64 T64 | .869916771 | .885685899 |
+| K64 T256 | .840709671 | .853818657 |
+
+The coarse Dice/clDice floors pass. The K64 Dice guard passes: T64 is
+.000992 below coarse, within the frozen .005 margin. The required K64 T64
+clDice gain over coarse is only .000175 (threshold .01), and its gain over
+the same checkpoint's T8 output is .000086 (threshold .01); both gates fail.
+These failures stop the protocol before the short-credit comparison. There is
+no AU-K8 result and no conclusion about AU benefit. The one-block result does
+not establish statistical significance, patient-disjoint performance,
+native-2048 performance, test-set performance, anatomical correctness, or
+clinical value. It does not show that longer compute generally cannot help.
+
+Code and data flow: `data.discover_fives/split_ids/inner_folds/load_image`
+define the train-only discovery, fixed image-level split, folds, and resize;
+`coarse.SmallUNet/train_teacher/predict_image` prepare four OOF training maps
+and one full-training validation map. `ConditionalNCACell.initialize` in
+`cells.py` places the coarse logit in visible channel 0 and zeros the other
+15 state channels. `encode_image` computes fixed RGB features once;
+`step` combines 64-channel state and RGB perception into 128 ReLU features,
+projects the appended 128 features plus constant-one feature to a 16-channel
+increment, and applies the shared scalar fire mask and fixed support mask.
+`run.rollout_train/train_update/evaluate/qualification/experiment` implement
+training, horizon evaluation, gate order, and the stop before K8/AU. The
+primary metric is equal-image-weight mean T64 clDice; Dice is its frozen
+non-degradation guard. Repeated fire plans are averaged within image and do
+not create independent experimental units. Hidden-state reset is a secondary
+16-image diagnostic, not a primary endpoint.
+
+The preserved HTTP 403 acquisition attempt and subsequent recovery are
+deployment history only; the checked official archive enabled this completed
+pipeline. Private server receipts and model weights are not in the public
+evidence package. Per-image and per-plan metric tables are secondary; start
+with RESULTS.md.
+
+## Previous: ReLU input lift versus frozen AU-NCA controls
 
 Formal fields: execution=COMPLETE, aggregation=COMPLETE,
 final_result_available=true, verdict=NO_QUALIFIED_RELU_LIFT_BENEFIT.

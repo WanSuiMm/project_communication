@@ -1,0 +1,50 @@
+{
+  "executed_source_sha256": {
+    "PROTOCOL.md": "1d7445cb258de10c46f60c43c30406a9431dbe6754caab112ff021b909bad905",
+    "acquire.py": "37320e592b536909096b2068cfc513714116652ed5182488a02f9bf9003222c7",
+    "cells.py": "6168c7979d44274a6c9f78795ae6b9bb3fe0d9d00f7278926d06c58aed76f473",
+    "checks.py": "a3df90ab17ff20a762ea56dc1bbda3bd2557370e17d31e5f0b1f962a32d8bb21",
+    "coarse.py": "4314aacb0470f8f0baf7ca86896fae094ebeeb76c66105477302a6d4b374669a",
+    "common.py": "6021929223e2a85787348e3d047a694a28e679c837601ac839e1bf34b26bd8b8",
+    "data.py": "f7bb431bb37bd9f95c2e8a758b57752078cc394bbf98ffd86955b7b263037430",
+    "metrics.py": "616795f0c493c0d7ff7b2f4ac3b02c82bb34e0c8b838d26dcf33cbc6f839db1a",
+    "pipeline.py": "3bcbf5c0396a590ff2596fc0cdd066ecf63db5967be79b763316687672dbc0ad",
+    "prepare.py": "b0b022fd6ec5db4ac3af91bef00d54fc3551700c1e2b13aee2919754bb7cdfe2",
+    "run.py": "7c6f53bc38cbdeb0bc373025c4ad7f026f318271ee879b4e70a4a54eb5b03253",
+    "server_job.py": "2d8dca0f8faf7b936847edf02a9bb3de9aad3d6776678dc602c69242c8cde2ea"
+  },
+  "final_per_image_horizon_rows": 720,
+  "inspection_input_sha256": {
+    "aggregate_sha256": "fa0d8df57a0184f831fb92856082b51a41130716d1d7953eea0897a9563c222d",
+    "data_qualification_sha256": "65d3bba46bec0021084e7cd37b4d9a0a01f5c52b4af3abf59aeeb87995c3097b",
+    "eval_u1000_sha256": "ab11aee4eb4b48ba9f0fb6a9f5076df4def8454ca82f33ed8d518882a3540ce7",
+    "eval_u250_sha256": "1aac73c1f337fb8bfaf0c2beac89ecca8d8c65a4ba533d6ab5413eb6cb2b04bc",
+    "eval_u500_sha256": "a72a2d375581f53e6bb3ec01b3615bd53a3b6ecf4666ebe77b2a80b387cec0fe",
+    "manifest_sha256": "820dc9fd0b5a19212081910cd5bb741bfb5296f946c03c65db81b5b320731e72",
+    "pipeline_status_sha256": "37096653234cbbe45011a004fa636fa832d91b3000f27a59826c34149843ed0a",
+    "sampled_training_log_sha256": "dba04f317be514e3e6df49e3be5696167b0f026bbcfa78f62f99d4d1f9282ce9",
+    "software_check_sha256": "f6e5996c71ddb8daac679b55d7c2cb6b4360054aef78f5fed285f00310faa12e"
+  },
+  "public_artifact_sha256": {
+    "RESULTS.md": "72cb96086bb79d66f7d9201a392caf2559d8d6210026f739ee385a613d3c7a92",
+    "aggregate.json": "8916df24e5a026fed11b63828ed2ccd4d12c7b7537aa09736846a666964622cc",
+    "data_qualification.json": "21e06c51e9b66e31b67486f20f866ec7ae6b6d5fbe070a01acf10630a795b199",
+    "eval_u1000.json": "03c7a475ea98312c34c34b12d8d5938bf80e5740cb16ea49d0593dfea035f20c",
+    "eval_u250.json": "873fd0968ae45c18a68ec606e3f2ea19dac013b03f4f1cfa3c4121e21b435ea3",
+    "eval_u500.json": "a7fff69241c2e5838244d4c3a9c539505f17ebf37591cbdd7ebd8dc05acd3c63",
+    "final_per_image_metrics.csv": "fc323f476a3ba02422341ae27488a340133a7894061d570b3355bd34e7245839",
+    "manifest.json": "820dc9fd0b5a19212081910cd5bb741bfb5296f946c03c65db81b5b320731e72",
+    "pipeline_status.json": "b93d548dafcb9935b3df237ec2750989dfaa8c5aa2bd80e3e82039e7f63d2c15",
+    "software_check.json": "c8e82360d294d428f5797af9bdbc16d4a2c8673acb0d55c07530fd56b583e524",
+    "summary.json": "920467e40be57c96b7378f93b927e1f050595e4e116b91d49179971f887420bc",
+    "training_samples.jsonl": "f5f0a59465bf481c8d14716fb520c5248809a8b20a5dc5e9b210c8a756345ed5"
+  },
+  "run_id": "fives_nca_20261010_01",
+  "schema": "fives_nca_public_provenance_v1",
+  "source_binding_sha256": "fd4e3ae2bf3f45909269889efb3631740b1722879864cb97d72a0134e4b5b431",
+  "source_hashes_verified_against_current_tree": true,
+  "source_root": "new/real_task_fives",
+  "status": "COMPLETE",
+  "training_sample_rows": 151,
+  "verdict": "TASK_UNQUALIFIED"
+}
